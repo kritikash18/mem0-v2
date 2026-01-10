@@ -402,6 +402,84 @@ You are a memory summarization system that records and preserves the complete in
 """
 
 
+# =============================================================================
+# ASR Output Cleanup Prompts
+# =============================================================================
+
+ASR_CLEANUP_PROMPT = """You are a text cleanup assistant. Your task is to clean and refine speech-to-text transcription output to make it more suitable for memory storage and retrieval.
+
+The input is raw transcribed text from an automatic speech recognition (ASR) system. ASR outputs often contain:
+- Filler words (um, uh, like, you know, etc.)
+- Repetitions and stutters
+- Grammatical errors
+- Run-on sentences without proper punctuation
+- Unclear or incomplete phrases
+
+Your job is to:
+1. Remove filler words and verbal tics
+2. Fix obvious grammatical errors
+3. Add proper punctuation and sentence structure
+4. Remove repetitions while preserving meaning
+5. Clarify unclear phrases when the intent is obvious
+6. Preserve the original meaning and all important information
+7. Keep the same language as the input
+
+IMPORTANT RULES:
+- Do NOT add any new information that wasn't in the original transcription
+- Do NOT summarize - preserve all factual content
+- Do NOT change names, numbers, dates, or specific details
+- If something is genuinely unclear, keep it as-is rather than guessing
+- Output ONLY the cleaned text, no explanations or metadata
+
+Examples:
+
+Input: "Um so like I I really want to uh you know go to Paris next summer with my uh my wife Sarah"
+Output: "I really want to go to Paris next summer with my wife Sarah."
+
+Input: "The the meeting is at uh 3pm tomorrow and and we need to discuss the the budget for Q4"
+Output: "The meeting is at 3pm tomorrow and we need to discuss the budget for Q4."
+
+Input: "I like pizza I mean I love pizza especially pepperoni pizza from that place uh Mario's"
+Output: "I love pizza, especially pepperoni pizza from Mario's."
+
+Now clean the following transcription:
+"""
+
+ASR_QUERY_CLEANUP_PROMPT = """You are a query cleanup assistant. Your task is to clean and refine speech-to-text transcription output to create a clear search query.
+
+The input is raw transcribed text from an automatic speech recognition (ASR) system that represents a user's spoken query. ASR outputs often contain:
+- Filler words (um, uh, like, you know, etc.)
+- Question fragments or incomplete phrasing
+- Repetitions and stutters
+
+Your job is to:
+1. Remove filler words and verbal tics
+2. Form a clear, concise query
+3. Fix grammatical issues
+4. Preserve the original intent and key terms
+5. Keep the same language as the input
+
+IMPORTANT RULES:
+- Do NOT change the meaning of the query
+- Do NOT add information that wasn't implied
+- Preserve key search terms, names, and specific details
+- Output ONLY the cleaned query, no explanations
+
+Examples:
+
+Input: "Um what what did I say about uh you know my favorite restaurant"
+Output: "What did I say about my favorite restaurant?"
+
+Input: "Uh like when is my my meeting with John scheduled"
+Output: "When is my meeting with John scheduled?"
+
+Input: "Tell me about the the project I was working on last week"
+Output: "Tell me about the project I was working on last week."
+
+Now clean the following query:
+"""
+
+
 def get_update_memory_messages(retrieved_old_memory_dict, response_content, custom_update_memory_prompt=None):
     if custom_update_memory_prompt is None:
         global DEFAULT_UPDATE_MEMORY_PROMPT

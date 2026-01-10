@@ -28,10 +28,14 @@ from mem0.memory.telemetry import capture_event
 from mem0.memory.utils import (
     extract_json,
     get_fact_retrieval_messages,
+    is_audio_query,
     parse_messages,
     parse_vision_messages,
+    parse_audio_messages,
+    parse_multimodal_messages,
     process_telemetry_filters,
     remove_code_blocks,
+    transcribe_audio_query,
 )
 from mem0.utils.factory import (
     EmbedderFactory,
@@ -39,6 +43,7 @@ from mem0.utils.factory import (
     LlmFactory,
     VectorStoreFactory,
     RerankerFactory,
+    ASRFactory,
 )
 
 # Suppress SWIG deprecation warnings globally
@@ -195,6 +200,16 @@ class Memory(MemoryBase):
                 config.reranker.provider, 
                 config.reranker.config
             )
+
+        # Initialize ASR (Automatic Speech Recognition) if configured
+        self.asr = None
+        self.enable_audio = False
+        if config.asr:
+            self.asr = ASRFactory.create(
+                config.asr.provider,
+                config.asr.config
+            )
+            self.enable_audio = True
 
         self.enable_graph = False
 
@@ -361,6 +376,18 @@ class Memory(MemoryBase):
             results = self._create_procedural_memory(messages, metadata=processed_metadata, prompt=prompt)
             return results
 
+        # Process audio messages if ASR is enabled (with optional LLM cleanup)
+        if self.enable_audio and self.asr:
+            audio_language = self.config.asr.config.get("language") if self.config.asr.config else None
+            messages = parse_audio_messages(
+                messages, 
+                self.asr, 
+                language=audio_language,
+                llm=self.llm,  # Pass LLM for cleanup
+                asr_config=self.config.asr  # Pass ASR config for cleanup settings
+            )
+
+        # Process vision messages if vision is enabled
         if self.config.llm.config.get("enable_vision"):
             messages = parse_vision_messages(messages, self.llm, self.config.llm.config.get("vision_details"))
         else:
@@ -757,7 +784,7 @@ class Memory(MemoryBase):
 
     def search(
         self,
-        query: str,
+        query: Any,
         *,
         user_id: Optional[str] = None,
         agent_id: Optional[str] = None,
@@ -766,17 +793,26 @@ class Memory(MemoryBase):
         filters: Optional[Dict[str, Any]] = None,
         threshold: Optional[float] = None,
         rerank: bool = True,
+        audio_language: Optional[str] = None,
     ):
         """
-        Searches for memories based on a query
+        Searches for memories based on a query (text or audio).
+
         Args:
-            query (str): Query to search for.
+            query: Query to search for. Can be:
+                - str: Text query or audio file path/URL
+                - bytes: Raw audio bytes
+                - dict: Audio format dict (e.g., {"type": "audio_url", "audio_url": {"url": "..."}})
+                       or HuggingFace audio format {"array": [...], "sampling_rate": 16000}
+                - np.ndarray: Audio samples as numpy array
             user_id (str, optional): ID of the user to search for. Defaults to None.
             agent_id (str, optional): ID of the agent to search for. Defaults to None.
             run_id (str, optional): ID of the run to search for. Defaults to None.
             limit (int, optional): Limit the number of results. Defaults to 100.
             filters (dict, optional): Legacy filters to apply to the search. Defaults to None.
             threshold (float, optional): Minimum score for a memory to be included in the results. Defaults to None.
+            rerank (bool, optional): Whether to rerank results. Defaults to True.
+            audio_language (str, optional): Language code for audio transcription. Defaults to None.
             filters (dict, optional): Enhanced metadata filtering with operators:
                 - {"key": "value"} - exact match
                 - {"key": {"eq": "value"}} - equals
@@ -799,6 +835,17 @@ class Memory(MemoryBase):
                   and potentially "relations" if graph store is enabled.
                   Example for v1.1+: `{"results": [{"id": "...", "memory": "...", "score": 0.8, ...}]}`
         """
+        # Handle audio query - transcribe to text if needed (with optional LLM cleanup)
+        if is_audio_query(query):
+            query = transcribe_audio_query(
+                query, 
+                self.asr, 
+                language=audio_language,
+                llm=self.llm,  # Pass LLM for cleanup
+                asr_config=self.config.asr if self.config.asr else None  # Pass ASR config for cleanup settings
+            )
+            logger.info(f"Transcribed audio query: {query[:100]}..." if len(query) > 100 else f"Transcribed audio query: {query}")
+
         _, effective_filters = _build_filters_and_metadata(
             user_id=user_id, agent_id=agent_id, run_id=run_id, input_filters=filters
         )
@@ -1263,6 +1310,16 @@ class AsyncMemory(MemoryBase):
                 config.reranker.config
             )
 
+        # Initialize ASR (Automatic Speech Recognition) if configured
+        self.asr = None
+        self.enable_audio = False
+        if config.asr:
+            self.asr = ASRFactory.create(
+                config.asr.provider,
+                config.asr.config
+            )
+            self.enable_audio = True
+
         self.enable_graph = False
 
         if self.config.graph_store.config:
@@ -1387,6 +1444,18 @@ class AsyncMemory(MemoryBase):
             )
             return results
 
+        # Process audio messages if ASR is enabled (with optional LLM cleanup)
+        if self.enable_audio and self.asr:
+            audio_language = self.config.asr.config.get("language") if self.config.asr.config else None
+            messages = parse_audio_messages(
+                messages, 
+                self.asr, 
+                language=audio_language,
+                llm=self.llm,  # Pass LLM for cleanup
+                asr_config=self.config.asr  # Pass ASR config for cleanup settings
+            )
+
+        # Process vision messages if vision is enabled
         if self.config.llm.config.get("enable_vision"):
             messages = parse_vision_messages(messages, self.llm, self.config.llm.config.get("vision_details"))
         else:
@@ -1806,7 +1875,7 @@ class AsyncMemory(MemoryBase):
 
     async def search(
         self,
-        query: str,
+        query: Any,
         *,
         user_id: Optional[str] = None,
         agent_id: Optional[str] = None,
@@ -1816,17 +1885,27 @@ class AsyncMemory(MemoryBase):
         threshold: Optional[float] = None,
         metadata_filters: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
+        audio_language: Optional[str] = None,
     ):
         """
-        Searches for memories based on a query
+        Searches for memories based on a query (text or audio).
+
         Args:
-            query (str): Query to search for.
+            query: Query to search for. Can be:
+                - str: Text query or audio file path/URL
+                - bytes: Raw audio bytes
+                - dict: Audio format dict (e.g., {"type": "audio_url", "audio_url": {"url": "..."}})
+                       or HuggingFace audio format {"array": [...], "sampling_rate": 16000}
+                - np.ndarray: Audio samples as numpy array
             user_id (str, optional): ID of the user to search for. Defaults to None.
             agent_id (str, optional): ID of the agent to search for. Defaults to None.
             run_id (str, optional): ID of the run to search for. Defaults to None.
             limit (int, optional): Limit the number of results. Defaults to 100.
             filters (dict, optional): Legacy filters to apply to the search. Defaults to None.
             threshold (float, optional): Minimum score for a memory to be included in the results. Defaults to None.
+            metadata_filters (dict, optional): Additional metadata filters. Defaults to None.
+            rerank (bool, optional): Whether to rerank results. Defaults to True.
+            audio_language (str, optional): Language code for audio transcription. Defaults to None.
             filters (dict, optional): Enhanced metadata filtering with operators:
                 - {"key": "value"} - exact match
                 - {"key": {"eq": "value"}} - equals
@@ -1849,6 +1928,19 @@ class AsyncMemory(MemoryBase):
                   and potentially "relations" if graph store is enabled.
                   Example for v1.1+: `{"results": [{"id": "...", "memory": "...", "score": 0.8, ...}]}`
         """
+        # Handle audio query - transcribe to text if needed (with optional LLM cleanup)
+        if is_audio_query(query):
+            # Run transcription in thread pool to avoid blocking
+            asr_config = self.config.asr if self.config.asr else None
+            query = await asyncio.to_thread(
+                transcribe_audio_query, 
+                query, 
+                self.asr, 
+                audio_language,
+                self.llm,  # Pass LLM for cleanup
+                asr_config  # Pass ASR config for cleanup settings
+            )
+            logger.info(f"Transcribed audio query: {query[:100]}..." if len(query) > 100 else f"Transcribed audio query: {query}")
 
         _, effective_filters = _build_filters_and_metadata(
             user_id=user_id, agent_id=agent_id, run_id=run_id, input_filters=filters

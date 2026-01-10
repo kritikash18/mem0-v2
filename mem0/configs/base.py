@@ -8,6 +8,7 @@ from mem0.graphs.configs import GraphStoreConfig
 from mem0.llms.configs import LlmConfig
 from mem0.vector_stores.configs import VectorStoreConfig
 from mem0.configs.rerankers.config import RerankerConfig
+from mem0.asr.configs import AsrConfig
 
 # Set up the directory path
 home_dir = os.path.expanduser("~")
@@ -50,6 +51,10 @@ class MemoryConfig(BaseModel):
     )
     reranker: Optional[RerankerConfig] = Field(
         description="Configuration for the reranker",
+        default=None,
+    )
+    asr: Optional[AsrConfig] = Field(
+        description="Configuration for ASR (Automatic Speech Recognition) to process audio input",
         default=None,
     )
     version: str = Field(

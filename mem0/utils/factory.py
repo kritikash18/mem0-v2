@@ -1,5 +1,5 @@
 import importlib
-from typing import Dict, Optional, Union
+from typing import Dict, List, Optional, Union
 
 from mem0.configs.embeddings.base import BaseEmbedderConfig
 from mem0.configs.llms.anthropic import AnthropicConfig
@@ -16,6 +16,11 @@ from mem0.configs.rerankers.sentence_transformer import SentenceTransformerReran
 from mem0.configs.rerankers.zero_entropy import ZeroEntropyRerankerConfig
 from mem0.configs.rerankers.llm import LLMRerankerConfig
 from mem0.configs.rerankers.huggingface import HuggingFaceRerankerConfig
+from mem0.configs.asr.base import BaseAsrConfig
+from mem0.configs.asr.openai_whisper import OpenAIWhisperConfig
+from mem0.configs.asr.google_stt import GoogleSTTConfig
+from mem0.configs.asr.assemblyai import AssemblyAIConfig
+from mem0.configs.asr.local import LocalAsrConfig
 from mem0.embeddings.mock import MockEmbeddings
 
 
@@ -281,3 +286,101 @@ class RerankerFactory:
             raise ImportError(f"Could not import reranker for provider '{provider_name}': {e}")
 
         return reranker_class(config)
+
+
+class ASRFactory:
+    """
+    Factory for creating ASR (Automatic Speech Recognition) instances.
+    
+    Supports multiple ASR providers including:
+    - OpenAI Whisper (API and local)
+    - Google Cloud Speech-to-Text
+    - AssemblyAI
+    - Local/self-hosted models (Wav2Vec2, HuBERT, etc.)
+    """
+
+    # Provider mappings with their config classes
+    provider_to_class = {
+        "openai_whisper": ("mem0.asr.openai_whisper.OpenAIWhisperASR", OpenAIWhisperConfig),
+        "whisper": ("mem0.asr.openai_whisper.OpenAIWhisperASR", OpenAIWhisperConfig),  # Alias
+        "google_stt": ("mem0.asr.google_stt.GoogleSTTASR", GoogleSTTConfig),
+        "google": ("mem0.asr.google_stt.GoogleSTTASR", GoogleSTTConfig),  # Alias
+        "assemblyai": ("mem0.asr.assemblyai.AssemblyAIASR", AssemblyAIConfig),
+        "local": ("mem0.asr.local.LocalASR", LocalAsrConfig),
+        "wav2vec2": ("mem0.asr.local.LocalASR", LocalAsrConfig),  # Alias for local
+        "hubert": ("mem0.asr.local.LocalASR", LocalAsrConfig),  # Alias for local
+    }
+
+    @classmethod
+    def create(cls, provider_name: str, config: Optional[Union[BaseAsrConfig, Dict]] = None, **kwargs):
+        """
+        Create an ASR instance with the appropriate configuration.
+
+        Args:
+            provider_name (str): The ASR provider name (e.g., 'openai_whisper', 'google_stt', 'assemblyai', 'local')
+            config: Configuration object or dict. If None, will create default config
+            **kwargs: Additional configuration parameters
+
+        Returns:
+            Configured ASR instance
+
+        Raises:
+            ValueError: If provider is not supported
+            ImportError: If provider class cannot be imported
+        """
+        if provider_name not in cls.provider_to_class:
+            raise ValueError(
+                f"Unsupported ASR provider: {provider_name}. "
+                f"Supported providers: {cls.get_supported_providers()}"
+            )
+
+        class_path, config_class = cls.provider_to_class[provider_name]
+
+        # Handle configuration
+        if config is None:
+            config = config_class(**kwargs)
+        elif isinstance(config, dict):
+            config.update(kwargs)
+            config = config_class(**config)
+        elif isinstance(config, BaseAsrConfig) and not isinstance(config, config_class):
+            # Convert base config to provider-specific config
+            config_dict = {
+                "model": config.model,
+                "api_key": config.api_key,
+                "language": config.language,
+                "sample_rate": config.sample_rate,
+            }
+            config_dict.update(kwargs)
+            config = config_class(**config_dict)
+
+        # Import and create the ASR class
+        try:
+            asr_class = load_class(class_path)
+        except (ImportError, AttributeError) as e:
+            raise ImportError(f"Could not import ASR provider '{provider_name}': {e}")
+
+        return asr_class(config)
+
+    @classmethod
+    def register_provider(cls, name: str, class_path: str, config_class=None):
+        """
+        Register a new ASR provider.
+
+        Args:
+            name (str): Provider name
+            class_path (str): Full path to ASR class (e.g., 'mypackage.asr.CustomASR')
+            config_class: Configuration class for the provider (defaults to BaseAsrConfig)
+        """
+        if config_class is None:
+            config_class = BaseAsrConfig
+        cls.provider_to_class[name] = (class_path, config_class)
+
+    @classmethod
+    def get_supported_providers(cls) -> List[str]:
+        """
+        Get list of supported ASR providers.
+
+        Returns:
+            list: List of supported provider names
+        """
+        return list(cls.provider_to_class.keys())
