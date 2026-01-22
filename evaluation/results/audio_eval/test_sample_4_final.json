@@ -1,0 +1,119 @@
+{
+  "config": {
+    "experiment": "test_sample_4",
+    "dataset": "byteCode18/spoken-squad-1k-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "top_k": 10,
+    "infer_memories": true
+  },
+  "summary": {
+    "count": 1,
+    "em_mean": 1,
+    "em_std": 0.0,
+    "em_min": 1,
+    "em_max": 1,
+    "f1_mean": 1.0,
+    "f1_std": 0.0,
+    "f1_min": 1.0,
+    "f1_max": 1.0,
+    "bleu_mean": 1.0,
+    "bleu_std": 0.0,
+    "bleu_min": 1.0,
+    "bleu_max": 1.0,
+    "llm_mean": 1,
+    "llm_std": 0.0,
+    "llm_min": 1,
+    "llm_max": 1,
+    "total_time_mean": 21.875,
+    "total_time_std": 0.0,
+    "total_time_min": 21.875,
+    "total_time_max": 21.875,
+    "add_time_mean": 20.699,
+    "add_time_std": 0.0,
+    "add_time_min": 20.699,
+    "add_time_max": 20.699,
+    "search_time_mean": 0.491,
+    "search_time_std": 0.0,
+    "search_time_min": 0.491,
+    "search_time_max": 0.491,
+    "answer_time_mean": 0.685,
+    "answer_time_std": 0.0,
+    "answer_time_min": 0.685,
+    "answer_time_max": 0.685,
+    "em_correct": 1,
+    "em_pct": 100.0,
+    "llm_correct": 1,
+    "llm_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 1,
+      "above_50": 1,
+      "above_80": 1
+    },
+    "bleu": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 1,
+      "above_50": 1,
+      "above_80": 1
+    }
+  },
+  "results": [
+    {
+      "idx": 4,
+      "user_id": "eval_4_f1245c25",
+      "question": "The largest brand of what store in the UK is located in Kingston Park?",
+      "ground_truth": "tesco",
+      "prediction": "Tesco",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The largest Tesco store in the United Kingdom is located in Kingston Park on the edge of Newcastle",
+          "score": 0.740322920561833
+        },
+        {
+          "memory": "The largest suburban shopping areas outside the city centre are Gosforth and Biker",
+          "score": 0.410620377383812
+        },
+        {
+          "memory": "The largest indoor shopping centre in Europe, the MetroCentre, is located in Gateshead, close to Newcastle",
+          "score": 0.4000831223168721
+        },
+        {
+          "memory": "The Newgate Centre is a shopping destination in Newcastle",
+          "score": 0.36758931724183674
+        },
+        {
+          "memory": "Central Arcade is a shopping destination in Newcastle",
+          "score": 0.35012180556356626
+        },
+        {
+          "memory": "Granger Market is a traditional shopping destination in Newcastle",
+          "score": 0.34781755477748544
+        },
+        {
+          "memory": "Eldon Garden and Monument Mall are relatively modern shopping complexes in Newcastle",
+          "score": 0.3140621251648718
+        },
+        {
+          "memory": "Other shopping destinations in Newcastle include Granger Street and the area around Grey's Monument",
+          "score": 0.31374743205192834
+        }
+      ],
+      "add_time": 20.699,
+      "search_time": 0.491,
+      "answer_time": 0.685,
+      "total_time": 21.875,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    }
+  ]
+}

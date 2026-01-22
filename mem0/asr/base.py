@@ -25,7 +25,6 @@ class AudioInput:
         - Base64 encoded audio
         - Raw audio bytes
         - NumPy arrays with sample rate
-        - HuggingFace datasets audio format
     """
 
     def __init__(

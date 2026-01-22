@@ -232,7 +232,6 @@ def is_audio_content(content):
             return True
         if content_type == "audio":
             return True
-        # HuggingFace audio format
         if "array" in content and "sampling_rate" in content:
             return True
         if "audio" in content and isinstance(content["audio"], dict):
@@ -255,7 +254,7 @@ def get_audio_transcription(audio_obj, asr, language=None, llm=None, asr_config=
             - str: URL or file path
             - dict: {"type": "audio_url", "audio_url": {"url": "..."}} or
                     {"type": "audio", "audio": {"data": "base64...", "format": "wav"}} or
-                    {"array": [...], "sampling_rate": 16000} (HuggingFace format)
+                    {"array": [...], "sampling_rate": 16000}
             - Full message dict with audio content
         asr: ASR instance for transcription
         language: Optional language code
@@ -294,11 +293,9 @@ def get_audio_transcription(audio_obj, asr, language=None, llm=None, asr_config=
                 audio_source = audio_data["path"]
                 
         elif "array" in audio_obj and "sampling_rate" in audio_obj:
-            # HuggingFace audio format
             audio_source = audio_obj
             
         elif "audio" in audio_obj and isinstance(audio_obj["audio"], dict):
-            # Nested HuggingFace format
             audio_source = audio_obj
             
         elif "content" in audio_obj:
@@ -395,14 +392,8 @@ def parse_audio_messages(messages, asr=None, language=None, llm=None, asr_config
         # Check if content is audio
         if is_audio_content(content):
             try:
-                transcription = get_audio_transcription(
-                    content, asr, language, 
-                    llm=llm, asr_config=asr_config
-                )
-                returned_messages.append({
-                    "role": msg["role"],
-                    "content": transcription
-                })
+                transcription = get_audio_transcription(content, asr, language, llm=llm, asr_config=asr_config)
+                returned_messages.append({"role": msg["role"], "content": transcription})
             except Exception as e:
                 raise Exception(f"Error transcribing audio: {e}")
         else:
@@ -410,36 +401,6 @@ def parse_audio_messages(messages, asr=None, language=None, llm=None, asr_config
             returned_messages.append(msg)
     
     return returned_messages
-
-
-def parse_multimodal_messages(messages, llm=None, asr=None, vision_details="auto", audio_language=None, asr_config=None):
-    """
-    Parse messages that may contain text, images, and/or audio.
-    
-    This is a unified function that handles all multimodal content types.
-    Audio transcription can optionally be cleaned using the same LLM.
-    
-    Args:
-        messages: List of message dicts
-        llm: LLM instance for vision processing and ASR cleanup (required for image content)
-        asr: ASR instance for audio transcription (required for audio content)
-        vision_details: Detail level for image processing ("auto", "low", "high")
-        audio_language: Language code for audio transcription
-        asr_config: Optional ASR config with cleanup settings
-        
-    Returns:
-        list: Messages with multimodal content converted to text
-    """
-    # First pass: handle audio (with optional LLM cleanup)
-    messages = parse_audio_messages(
-        messages, asr=asr, language=audio_language, 
-        llm=llm, asr_config=asr_config
-    )
-    
-    # Second pass: handle images
-    messages = parse_vision_messages(messages, llm=llm, vision_details=vision_details)
-    
-    return messages
 
 
 # =============================================================================
@@ -554,7 +515,7 @@ def clean_asr_output(transcription, llm, custom_prompt=None, is_query=False):
             logger.warning("LLM returned empty response for ASR cleanup, using original")
             return transcription
         
-        logger.debug(f"ASR cleanup: '{transcription[:50]}...' -> '{cleaned[:50]}...'")
+        logger.debug("ASR cleanup completed")
         return cleaned
         
     except Exception as e:
@@ -572,7 +533,7 @@ def transcribe_audio_query(query, asr, language=None, llm=None, asr_config=None)
             - bytes: Raw audio bytes
             - dict: Audio format dict (e.g., {"type": "audio_url", "audio_url": {"url": "..."}})
             - np.ndarray: Audio samples as numpy array
-            - dict: HuggingFace audio format {"array": [...], "sampling_rate": 16000}
+            - dict: {"array": [...], "sampling_rate": 16000}
         asr: ASR instance for transcription
         language: Optional language code
         llm: Optional LLM instance for cleaning transcription
@@ -608,11 +569,9 @@ def transcribe_audio_query(query, asr, language=None, llm=None, asr_config=None)
                 audio_source = audio_data["path"]
                 
         elif "array" in query and "sampling_rate" in query:
-            # HuggingFace audio format - pass as is
             audio_source = query
             
         elif "audio" in query and isinstance(query["audio"], dict):
-            # Nested HuggingFace format - pass as is
             audio_source = query
     
     # Transcribe using ASR
@@ -632,12 +591,7 @@ def transcribe_audio_query(query, asr, language=None, llm=None, asr_config=None)
         custom_prompt = getattr(asr_config, 'query_cleanup_prompt', None)
     
     if enable_cleanup and llm is not None:
-        transcription = clean_asr_output(
-            transcription, 
-            llm, 
-            custom_prompt=custom_prompt,
-            is_query=True
-        )
+        transcription = clean_asr_output(transcription, llm, custom_prompt=custom_prompt,is_query=True)
     
     return transcription
 

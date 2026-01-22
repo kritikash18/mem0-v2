@@ -1,0 +1,570 @@
+{
+  "config": {
+    "experiment": "first_10",
+    "dataset": "byteCode18/spoken-squad-1k-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "top_k": 10,
+    "infer_memories": true
+  },
+  "summary": {
+    "count": 10,
+    "em_mean": 0.5,
+    "em_std": 0.527,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.693,
+    "f1_std": 0.3515,
+    "f1_min": 0.1818,
+    "f1_max": 1.0,
+    "bleu_mean": 0.5167,
+    "bleu_std": 0.3908,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "llm_mean": 1,
+    "llm_std": 0.0,
+    "llm_min": 1,
+    "llm_max": 1,
+    "total_time_mean": 24.7509,
+    "total_time_std": 2.3944,
+    "total_time_min": 20.205,
+    "total_time_max": 27.282,
+    "add_time_mean": 23.4241,
+    "add_time_std": 2.3588,
+    "add_time_min": 19.039,
+    "add_time_max": 25.796,
+    "search_time_mean": 0.5074,
+    "search_time_std": 0.096,
+    "search_time_min": 0.416,
+    "search_time_max": 0.697,
+    "answer_time_mean": 0.8192,
+    "answer_time_std": 0.1596,
+    "answer_time_min": 0.648,
+    "answer_time_max": 1.11,
+    "em_correct": 5,
+    "em_pct": 50.0,
+    "llm_correct": 10,
+    "llm_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 10,
+      "zero": 0,
+      "perfect": 5,
+      "above_50": 7,
+      "above_80": 5
+    },
+    "bleu": {
+      "total": 10,
+      "zero": 1,
+      "perfect": 3,
+      "above_50": 6,
+      "above_80": 3
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_753247d2",
+      "question": "What does UMC stand for?",
+      "ground_truth": "united methodist church",
+      "prediction": "United Methodist Church",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "In the 19th century, UMC's main predecessor was a leader in Evangelicalism",
+          "score": 0.6408276859786883
+        },
+        {
+          "memory": "UMC was founded in 1968 by the union of the Methodist Church, U.S.A., and the Evangelical United Brethren Church",
+          "score": 0.6375839245381627
+        },
+        {
+          "memory": "The United Methodist Church (UMC) is a mainline Protestant Methodist denomination",
+          "score": 0.604996581376632
+        },
+        {
+          "memory": "UMC embraces both liturgical and evangelical elements",
+          "score": 0.5090567952813954
+        },
+        {
+          "memory": "UMC traces its roots back to the revival movement of John and Charles Wesley in England",
+          "score": 0.5027371450789196
+        },
+        {
+          "memory": "UMC traces its roots back to the Great Awakening in the United States",
+          "score": 0.497255491072414
+        },
+        {
+          "memory": "The Church's theological orientation is decidedly Wesleyan",
+          "score": 0.327764881450747
+        }
+      ],
+      "add_time": 24.628,
+      "search_time": 0.434,
+      "answer_time": 0.695,
+      "total_time": 25.758,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_1e4e2a63",
+      "question": "Who tackled Ronnie Hillman for a loss of yardage?",
+      "ground_truth": "thompson",
+      "prediction": "Shaq Thompson",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Shaq Thompson tackled Ronnie Hillman for a three-yard loss",
+          "score": 0.7323089326998985
+        },
+        {
+          "memory": "Thomas Davis tackled C.J. Anderson for a one-yard gain on third down",
+          "score": 0.48546650572478295
+        },
+        {
+          "memory": "Denver settled for a 3-0 lead on a Brandon McManus 34-yard field goal",
+          "score": 0.3820758374823845
+        },
+        {
+          "memory": "C.J. Anderson had a pair of carries that moved the ball up 20 yards to the Panthers' 14-yard line",
+          "score": 0.3811637314241847
+        },
+        {
+          "memory": "Denver took the opening kickoff",
+          "score": 0.3749072712938015
+        },
+        {
+          "memory": "Peyton Manning completed an 18-yard pass to tight end Owen Daniels",
+          "score": 0.35842364794200104
+        },
+        {
+          "memory": "Peyton Manning completed a 22-yard throw to receiver Andre Caldwell",
+          "score": 0.3217254977240501
+        },
+        {
+          "memory": "This score marked the first time in the entire postseason that Carolina was facing a deficit",
+          "score": 0.2532807191947512
+        }
+      ],
+      "add_time": 23.58,
+      "search_time": 0.474,
+      "answer_time": 0.878,
+      "total_time": 24.932,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_7591aee4",
+      "question": "What can keep an object from moving when it is being pushed on a surface?",
+      "ground_truth": "static friction",
+      "prediction": "Static friction",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Pushing against an object on a frictional surface can result in the object not moving due to static friction",
+          "score": 0.6745314289984128
+        },
+        {
+          "memory": "Static friction is generated between the object and the table surface",
+          "score": 0.521649970382553
+        },
+        {
+          "memory": "In a situation with no movement, the static friction force exactly balances the applied force",
+          "score": 0.45033929506065873
+        },
+        {
+          "memory": "The upper limit of static friction is determined by the characteristics of the contact between the surface and the object",
+          "score": 0.4207821386392364
+        },
+        {
+          "memory": "When static friction balances the applied force, there is no acceleration",
+          "score": 0.40411284565745065
+        },
+        {
+          "memory": "Static friction increases or decreases in response to the applied force",
+          "score": 0.38605017599724767
+        }
+      ],
+      "add_time": 21.784,
+      "search_time": 0.697,
+      "answer_time": 0.671,
+      "total_time": 23.151,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_671e32a8",
+      "question": "What type of shadow does the North Pennines cast?",
+      "ground_truth": "rain",
+      "prediction": "The North Pennines cast a rain shadow.",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Newcastle is in the rain shadow of the North Pennines",
+          "score": 0.6579107702059487
+        },
+        {
+          "memory": "Newcastle's climate is similar to the remainder of the British Isles",
+          "score": 0.32667426747978817
+        },
+        {
+          "memory": "Newcastle's climate is significantly milder than some other locations at a similar latitude",
+          "score": 0.3217449087985837
+        },
+        {
+          "memory": "Newcastle has milder winters and cooler summers compared to other areas influenced by the Gulf Stream, such as inland Scandinavia",
+          "score": 0.31095582398583377
+        },
+        {
+          "memory": "Newcastle is influenced by the warming of the Gulf Stream via the North Atlantic Drift",
+          "score": 0.2958901836226912
+        },
+        {
+          "memory": "The climate in Newcastle is oceanic, classified as K\u00f6ppen's Cfb",
+          "score": 0.2822775084588334
+        },
+        {
+          "memory": "Newcastle is among the driest cities in the UK",
+          "score": 0.2744024867815471
+        },
+        {
+          "memory": "Temperature extremes recorded at Newcastle Weather Centre include \u221212.6\u00b0C (9.3\u00b0F) during January 1982",
+          "score": 0.26689344525796627
+        },
+        {
+          "memory": "Temperature extremes recorded at Newcastle Weather Centre include 32.5\u00b0C (90.5\u00b0F) during August 1990",
+          "score": 0.2109220017250556
+        }
+      ],
+      "add_time": 25.113,
+      "search_time": 0.428,
+      "answer_time": 0.926,
+      "total_time": 26.467,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.1429,
+      "llm": 1
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_51fb1b4b",
+      "question": "The largest brand of what store in the UK is located in Kingston Park?",
+      "ground_truth": "tesco",
+      "prediction": "Tesco",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The largest Tesco store in the United Kingdom is located in Kingston Park on the edge of Newcastle",
+          "score": 0.7403475340775593
+        },
+        {
+          "memory": "The largest suburban shopping areas outside the city centre are Gosforth and Biker",
+          "score": 0.41065613635888715
+        },
+        {
+          "memory": "The largest indoor shopping centre in Europe, the MetroCentre, is located in Gateshead, close to Newcastle",
+          "score": 0.4001905841394574
+        },
+        {
+          "memory": "The Newgate Centre is a shopping destination in Newcastle",
+          "score": 0.3675857883244198
+        },
+        {
+          "memory": "Central Arcade is a shopping destination in Newcastle",
+          "score": 0.35014519746464345
+        },
+        {
+          "memory": "Granger Market is a traditional shopping destination in Newcastle",
+          "score": 0.3476830933039585
+        },
+        {
+          "memory": "Eldon Garden and Monument Mall are relatively modern shopping complexes in Newcastle",
+          "score": 0.3141154421280674
+        },
+        {
+          "memory": "Other shopping destinations in Newcastle include Granger Street and the area around Grey's Monument",
+          "score": 0.31376767514230924
+        }
+      ],
+      "add_time": 19.039,
+      "search_time": 0.518,
+      "answer_time": 0.648,
+      "total_time": 20.205,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_ffd16afe",
+      "question": "What do some civil disobedient people feel the need to acknowledge.",
+      "ground_truth": "punishment",
+      "prediction": "Some civil disobedients feel the need to accept punishment.",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Some civil disobedients feel it is incumbent upon them to accept punishment due to their belief in the validity of the social contract",
+          "score": 0.7112526913268087
+        },
+        {
+          "memory": "Some civil disobedients are anarchists and do not believe in the legitimacy of any government",
+          "score": 0.6235147565356189
+        },
+        {
+          "memory": "Civil disobedients who favor the existence of government may not believe in the legitimacy of their particular government or specific laws it has enacted",
+          "score": 0.5934594111535386
+        },
+        {
+          "memory": "Anarchists see no need to accept punishment for violating criminal law that does not infringe on the rights of others",
+          "score": 0.39703311681975534
+        },
+        {
+          "memory": "The social contract binds all to obey the laws established by a legitimate government",
+          "score": 0.3164095739506278
+        }
+      ],
+      "add_time": 20.059,
+      "search_time": 0.659,
+      "answer_time": 0.763,
+      "total_time": 21.481,
+      "em": 0,
+      "f1": 0.2222,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_46c6bd2f",
+      "question": "Who does the Presiding Officer submit the final bill to?",
+      "ground_truth": "the monarch",
+      "prediction": "The Monarch.",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Presiding Officer submits the Bill to the Monarch for Royal Assent",
+          "score": 0.6210156607383446
+        },
+        {
+          "memory": "Royal Assent occurs after a Bill has been passed",
+          "score": 0.42236986934847587
+        },
+        {
+          "memory": "During the four-week period, the Law Officers of the Scottish Government or UK Government can refer the Bill to the Supreme Court of the United Kingdom",
+          "score": 0.41143627848609193
+        },
+        {
+          "memory": "The Supreme Court of the United Kingdom rules on whether the Bill is within the powers of the Parliament",
+          "score": 0.4105843156559845
+        },
+        {
+          "memory": "Once Royal Assent is granted, the Bill becomes an Act of the Scottish Parliament",
+          "score": 0.39970245684924943
+        },
+        {
+          "memory": "Acts of the Scottish Parliament begin with the phrase: 'The Bill for this Act of the Scottish Parliament was passed by the Parliament on [Date] and received Royal Assent on [Date]'",
+          "score": 0.32435068108703957
+        },
+        {
+          "memory": "Royal Assent cannot occur until a four-week period has elapsed",
+          "score": 0.2844355839421454
+        },
+        {
+          "memory": "Acts of the Scottish Parliament do not begin with a conventional enacting formula",
+          "score": 0.26356639404342147
+        }
+      ],
+      "add_time": 25.672,
+      "search_time": 0.501,
+      "answer_time": 0.774,
+      "total_time": 26.948,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_8504403f",
+      "question": "What caused Jacksonville's tourism to become less desirable at the latter half of the 19th century?",
+      "ground_truth": "yellow fever outbreaks",
+      "prediction": "Yellow fever outbreaks.",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Jacksonville's tourism was impacted by yellow fever outbreaks in the late 19th century",
+          "score": 0.7505180660536174
+        },
+        {
+          "memory": "Visitors arrived in Jacksonville by steamboat and later by railroad",
+          "score": 0.6370678778658768
+        },
+        {
+          "memory": "During Reconstruction and the Gilded Age, Jacksonville and nearby St. Augustine became popular winter resorts for the rich and famous",
+          "score": 0.601735321492353
+        },
+        {
+          "memory": "From 1893 to 1938, Jacksonville was the site of the Florida Old Confederate Soldiers and Sailors Home",
+          "score": 0.52000456272513
+        },
+        {
+          "memory": "The extension of the Florida East Coast Railway further south drew visitors to other areas",
+          "score": 0.4571359340052602
+        },
+        {
+          "memory": "Cleveland's visit highlighted Florida's visibility as a worthy place for tourism",
+          "score": 0.43404664995333575
+        },
+        {
+          "memory": "President Grover Cleveland attended the subtropical exposition in Jacksonville on February 22, 1888",
+          "score": 0.4178858388712951
+        },
+        {
+          "memory": "There was a nearby cemetery associated with the Florida Old Confederate Soldiers and Sailors Home in Jacksonville",
+          "score": 0.40711834007344266
+        }
+      ],
+      "add_time": 23.869,
+      "search_time": 0.416,
+      "answer_time": 0.699,
+      "total_time": 24.985,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667,
+      "llm": 1
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_e25414d9",
+      "question": "How many NFL teams have had only one loss by the end of a regular season?",
+      "ground_truth": "ten",
+      "prediction": "Ten teams have completed a regular season with only one loss.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to complete a regular season with only one loss",
+          "score": 0.6257466452680909
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.5813118398222334
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to achieve a 15\u20131 record",
+          "score": 0.4517685085790605
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to make eight appearances in the Super Bowl",
+          "score": 0.417762855212855
+        },
+        {
+          "memory": "For the third straight season, the No. 1 seeds from both conferences met in the Super Bowl",
+          "score": 0.34933835135705016
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.32525724213638385
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.28134251907628116
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.27628269298675556
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.259173776548563
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.2461227627042371
+        }
+      ],
+      "add_time": 25.796,
+      "search_time": 0.458,
+      "answer_time": 1.028,
+      "total_time": 27.282,
+      "em": 0,
+      "f1": 0.1818,
+      "bleu": 0.0909,
+      "llm": 1
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_121ec146",
+      "question": "How are the pyrenoid and thylakoids arranged?",
+      "ground_truth": "stacked in groups of three",
+      "prediction": "The pyrenoid is contained within Euglenophyte chloroplasts, which have thylakoids stacked in groups of three.",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Euglenophyte chloroplasts have thylakoids stacked in groups of three",
+          "score": 0.5705879737508499
+        },
+        {
+          "memory": "Euglenophyte chloroplasts have a pyrenoid",
+          "score": 0.5358012887190613
+        },
+        {
+          "memory": "Euglenophyte chloroplasts have three membranes",
+          "score": 0.364647068786717
+        },
+        {
+          "memory": "Paramylon is contained in membrane-bound granules in the cytoplasm of the Euglenophyte",
+          "score": 0.34711280008132817
+        },
+        {
+          "memory": "Euglenophyte chloroplasts retain the cyanobacterial membranes and the secondary host's phagosomal membrane",
+          "score": 0.3373665331780706
+        },
+        {
+          "memory": "Euglenophytes contain chloroplasts derived from green algae",
+          "score": 0.29608074576707144
+        },
+        {
+          "memory": "Euglenophytes are a group of common flagellated protists",
+          "score": 0.2629279391043431
+        },
+        {
+          "memory": "Starch in Euglenophytes is stored in the form of paramylon",
+          "score": 0.2580452786231558
+        },
+        {
+          "memory": "It is thought that the membrane of the primary endosymbiont was lost in Euglenophytes",
+          "score": 0.2528234469696678
+        }
+      ],
+      "add_time": 24.701,
+      "search_time": 0.489,
+      "answer_time": 1.11,
+      "total_time": 26.3,
+      "em": 0,
+      "f1": 0.5263,
+      "bleu": 0.2667,
+      "llm": 1
+    }
+  ]
+}

@@ -302,13 +302,9 @@ class ASRFactory:
     # Provider mappings with their config classes
     provider_to_class = {
         "openai_whisper": ("mem0.asr.openai_whisper.OpenAIWhisperASR", OpenAIWhisperConfig),
-        "whisper": ("mem0.asr.openai_whisper.OpenAIWhisperASR", OpenAIWhisperConfig),  # Alias
         "google_stt": ("mem0.asr.google_stt.GoogleSTTASR", GoogleSTTConfig),
-        "google": ("mem0.asr.google_stt.GoogleSTTASR", GoogleSTTConfig),  # Alias
         "assemblyai": ("mem0.asr.assemblyai.AssemblyAIASR", AssemblyAIConfig),
-        "local": ("mem0.asr.local.LocalASR", LocalAsrConfig),
-        "wav2vec2": ("mem0.asr.local.LocalASR", LocalAsrConfig),  # Alias for local
-        "hubert": ("mem0.asr.local.LocalASR", LocalAsrConfig),  # Alias for local
+        "local": ("mem0.asr.local.LocalASR", LocalAsrConfig)
     }
 
     @classmethod

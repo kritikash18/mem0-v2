@@ -32,7 +32,6 @@ from mem0.memory.utils import (
     parse_messages,
     parse_vision_messages,
     parse_audio_messages,
-    parse_multimodal_messages,
     process_telemetry_filters,
     remove_code_blocks,
     transcribe_audio_query,
@@ -45,6 +44,8 @@ from mem0.utils.factory import (
     RerankerFactory,
     ASRFactory,
 )
+
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # Suppress SWIG deprecation warnings globally
 warnings.filterwarnings("ignore", category=DeprecationWarning, message=".*SwigPy.*")
@@ -379,13 +380,7 @@ class Memory(MemoryBase):
         # Process audio messages if ASR is enabled (with optional LLM cleanup)
         if self.enable_audio and self.asr:
             audio_language = self.config.asr.config.get("language") if self.config.asr.config else None
-            messages = parse_audio_messages(
-                messages, 
-                self.asr, 
-                language=audio_language,
-                llm=self.llm,  # Pass LLM for cleanup
-                asr_config=self.config.asr  # Pass ASR config for cleanup settings
-            )
+            messages = parse_audio_messages(messages, self.asr, language=audio_language, llm=self.llm, asr_config=self.config.asr)
 
         # Process vision messages if vision is enabled
         if self.config.llm.config.get("enable_vision"):
@@ -465,6 +460,8 @@ class Memory(MemoryBase):
             ],
             response_format={"type": "json_object"},
         )
+
+        logger.info(f"Response: {response}")
 
         try:
             response = remove_code_blocks(response)
@@ -837,13 +834,7 @@ class Memory(MemoryBase):
         """
         # Handle audio query - transcribe to text if needed (with optional LLM cleanup)
         if is_audio_query(query):
-            query = transcribe_audio_query(
-                query, 
-                self.asr, 
-                language=audio_language,
-                llm=self.llm,  # Pass LLM for cleanup
-                asr_config=self.config.asr if self.config.asr else None  # Pass ASR config for cleanup settings
-            )
+            query = transcribe_audio_query(query, self.asr, language=audio_language, llm=self.llm, asr_config=self.config.asr if self.config.asr else None)
             logger.info(f"Transcribed audio query: {query[:100]}..." if len(query) > 100 else f"Transcribed audio query: {query}")
 
         _, effective_filters = _build_filters_and_metadata(
@@ -1447,13 +1438,7 @@ class AsyncMemory(MemoryBase):
         # Process audio messages if ASR is enabled (with optional LLM cleanup)
         if self.enable_audio and self.asr:
             audio_language = self.config.asr.config.get("language") if self.config.asr.config else None
-            messages = parse_audio_messages(
-                messages, 
-                self.asr, 
-                language=audio_language,
-                llm=self.llm,  # Pass LLM for cleanup
-                asr_config=self.config.asr  # Pass ASR config for cleanup settings
-            )
+            messages = parse_audio_messages(messages, self.asr, language=audio_language, llm=self.llm, asr_config=self.config.asr)
 
         # Process vision messages if vision is enabled
         if self.config.llm.config.get("enable_vision"):
@@ -1932,14 +1917,7 @@ class AsyncMemory(MemoryBase):
         if is_audio_query(query):
             # Run transcription in thread pool to avoid blocking
             asr_config = self.config.asr if self.config.asr else None
-            query = await asyncio.to_thread(
-                transcribe_audio_query, 
-                query, 
-                self.asr, 
-                audio_language,
-                self.llm,  # Pass LLM for cleanup
-                asr_config  # Pass ASR config for cleanup settings
-            )
+            query = await asyncio.to_thread(transcribe_audio_query, query, self.asr, audio_language, self.llm, asr_config)
             logger.info(f"Transcribed audio query: {query[:100]}..." if len(query) > 100 else f"Transcribed audio query: {query}")
 
         _, effective_filters = _build_filters_and_metadata(

@@ -41,13 +41,9 @@ class AsrConfig(BaseModel):
         provider = values.data.get("provider")
         supported_providers = (
             "openai_whisper",
-            "whisper",
             "google_stt",
-            "google",
             "assemblyai",
             "local",
-            "wav2vec2",
-            "hubert",
         )
         if provider in supported_providers:
             return v
