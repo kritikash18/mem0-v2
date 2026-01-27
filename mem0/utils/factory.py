@@ -303,6 +303,7 @@ class ASRFactory:
     provider_to_class = {
         "openai_whisper": ("mem0.asr.openai_whisper.OpenAIWhisperASR", OpenAIWhisperConfig),
         "google_stt": ("mem0.asr.google_stt.GoogleSTTASR", GoogleSTTConfig),
+        "speech_recognition_google": ("mem0.asr.speech_recognition_google.SpeechRecognitionGoogleASR", BaseAsrConfig),
         "assemblyai": ("mem0.asr.assemblyai.AssemblyAIASR", AssemblyAIConfig),
         "local": ("mem0.asr.local.LocalASR", LocalAsrConfig)
     }

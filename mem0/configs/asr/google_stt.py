@@ -12,7 +12,7 @@ class GoogleSTTConfig(BaseAsrConfig):
     def __init__(
         self,
         # Base parameters
-        model: str = "latest_long",
+        model: str = "default",
         api_key: Optional[str] = None,
         language: str = "en-US",
         sample_rate: int = 16000,
@@ -43,9 +43,10 @@ class GoogleSTTConfig(BaseAsrConfig):
         Initialize Google Cloud Speech-to-Text configuration.
 
         Args:
-            model: Google STT model.
-                Options: 'latest_long', 'latest_short', 'phone_call', 'video', 'command_and_search'.
-                Defaults to "latest_long"
+            model: Google STT v1 model.
+                Options: 'default', 'phone_call', 'video', 'command_and_search'.
+                Use empty string '' or 'default' for the default model.
+                Defaults to "default"
             api_key: API key (alternative to credentials file).
                 Defaults to None
             language: BCP-47 language code (e.g., 'en-US', 'es-ES').

@@ -69,6 +69,12 @@ class MemoryConfig(BaseModel):
         description="Custom prompt for the update memory",
         default=None,
     )
+    modality_weights: Dict[str, float] = Field(
+        description="Weights for different modalities in retrieval. Keys: 'audio', 'image', 'text'. "
+                    "During search, similarity scores are multiplied by the corresponding modality weight. "
+                    "Default is 1.0 for all modalities (no weighting).",
+        default={"audio": 1.0, "image": 1.0, "text": 1.0},
+    )
 
 
 class AzureConfig(BaseModel):

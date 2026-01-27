@@ -26,6 +26,7 @@ from mem0.memory.setup import mem0_dir, setup_config
 from mem0.memory.storage import SQLiteManager
 from mem0.memory.telemetry import capture_event
 from mem0.memory.utils import (
+    detect_modality_from_messages,
     extract_json,
     get_fact_retrieval_messages,
     is_audio_query,
@@ -376,6 +377,12 @@ class Memory(MemoryBase):
         if agent_id is not None and memory_type == MemoryType.PROCEDURAL.value:
             results = self._create_procedural_memory(messages, metadata=processed_metadata, prompt=prompt)
             return results
+
+        # Detect modality BEFORE processing (audio/vision processing converts to text)
+        original_modality = detect_modality_from_messages(messages)
+        
+        # Add modality to metadata for tracking
+        processed_metadata["modality"] = original_modality
 
         # Process audio messages if ASR is enabled (with optional LLM cleanup)
         if self.enable_audio and self.asr:
@@ -888,6 +895,23 @@ class Memory(MemoryBase):
             except Exception as e:
                 logger.warning(f"Reranking failed, using original results: {e}")
 
+        # Apply modality weighting AFTER reranking to avoid conflicts
+        # This ensures reranker works with original scores, then we apply modality preference
+        if original_memories:
+            modality_weights = self.config.modality_weights
+            for memory in original_memories:
+                modality = memory.get("modality", "text")  # Default to text if not specified
+                weight = modality_weights.get(modality, 1.0)  # Default to 1.0 if modality not in config
+                
+                # Store original score for debugging/transparency
+                if memory.get("score") is not None:
+                    memory["original_score"] = memory["score"]
+                    memory["score"] = memory["score"] * weight
+                    memory["modality_weight"] = weight
+            
+            # Re-sort by weighted score (descending)
+            original_memories.sort(key=lambda x: x.get("score", 0), reverse=True)
+
         if self.enable_graph:
             return {"results": original_memories, "relations": graph_entities}
 
@@ -999,6 +1023,7 @@ class Memory(MemoryBase):
             "run_id",
             "actor_id",
             "role",
+            "modality",  # Promote modality to top level for easy access
         ]
 
         core_and_promoted_keys = {"data", "hash", "created_at", "updated_at", "id", *promoted_payload_keys}
@@ -1434,6 +1459,12 @@ class AsyncMemory(MemoryBase):
                 messages, metadata=processed_metadata, prompt=prompt, llm=llm
             )
             return results
+
+        # Detect modality BEFORE processing (audio/vision processing converts to text)
+        original_modality = detect_modality_from_messages(messages)
+        
+        # Add modality to metadata for tracking
+        processed_metadata["modality"] = original_modality
 
         # Process audio messages if ASR is enabled (with optional LLM cleanup)
         if self.enable_audio and self.asr:
@@ -1976,6 +2007,23 @@ class AsyncMemory(MemoryBase):
             except Exception as e:
                 logger.warning(f"Reranking failed, using original results: {e}")
 
+        # Apply modality weighting AFTER reranking to avoid conflicts
+        # This ensures reranker works with original scores, then we apply modality preference
+        if original_memories:
+            modality_weights = self.config.modality_weights
+            for memory in original_memories:
+                modality = memory.get("modality", "text")  # Default to text if not specified
+                weight = modality_weights.get(modality, 1.0)  # Default to 1.0 if modality not in config
+                
+                # Store original score for debugging/transparency
+                if memory.get("score") is not None:
+                    memory["original_score"] = memory["score"]
+                    memory["score"] = memory["score"] * weight
+                    memory["modality_weight"] = weight
+            
+            # Re-sort by weighted score (descending)
+            original_memories.sort(key=lambda x: x.get("score", 0), reverse=True)
+
         if self.enable_graph:
             return {"results": original_memories, "relations": graph_entities}
 
@@ -2089,6 +2137,7 @@ class AsyncMemory(MemoryBase):
             "run_id",
             "actor_id",
             "role",
+            "modality",  # Promote modality to top level for easy access
         ]
 
         core_and_promoted_keys = {"data", "hash", "created_at", "updated_at", "id", *promoted_payload_keys}

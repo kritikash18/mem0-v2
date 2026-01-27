@@ -306,7 +306,9 @@ def evaluate_sample(
 def run_evaluation(
     num_samples: Optional[int] = None,
     experiment_name: Optional[str] = None,
-    sample_indices: Optional[List[int]] = None
+    sample_indices: Optional[List[int]] = None,
+    asr_provider: Optional[str] = None,
+    asr_model: Optional[str] = None
 ) -> List[Dict[str, Any]]:
     """
     Run full evaluation pipeline.
@@ -315,11 +317,21 @@ def run_evaluation(
         num_samples: Number of samples to evaluate (None for all)
         experiment_name: Name for output files
         sample_indices: Specific sample indices to evaluate (overrides num_samples if provided)
+        asr_provider: ASR provider to use (overrides config.ASR_PROVIDER)
+        asr_model: ASR model to use (overrides config.ASR_MODEL)
         
     Returns:
         List of result dictionaries
     """
     from mem0 import Memory
+    
+    # Override config with runtime parameters
+    if asr_provider:
+        logger.info(f"Overriding ASR provider: {config.ASR_PROVIDER} → {asr_provider}")
+        config.ASR_PROVIDER = asr_provider
+    if asr_model:
+        logger.info(f"Overriding ASR model: {config.ASR_MODEL} → {asr_model}")
+        config.ASR_MODEL = asr_model
     
     # Validate configuration before starting
     config.validate_config()
@@ -531,6 +543,19 @@ def main():
         type=str,
         help="Evaluate specific sample indices as comma-separated list (e.g., '0,5,10,15')"
     )
+    parser.add_argument(
+        "--asr-provider",
+        type=str,
+        default=None,
+        choices=["openai_whisper", "speech_recognition_google", "assemblyai", "google_stt", "local"],
+        help="ASR provider to use (default: from config.py, usually openai_whisper)"
+    )
+    parser.add_argument(
+        "--asr-model",
+        type=str,
+        default=None,
+        help="ASR model to use (e.g., 'whisper-1' for OpenAI, 'best' or 'nano' for AssemblyAI)"
+    )
     
     args = parser.parse_args()
     
@@ -547,7 +572,9 @@ def main():
     run_evaluation(
         num_samples=args.num_samples,
         experiment_name=args.experiment_name,
-        sample_indices=sample_indices
+        sample_indices=sample_indices,
+        asr_provider=args.asr_provider,
+        asr_model=args.asr_model
     )
 
 

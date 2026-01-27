@@ -6,7 +6,7 @@ Evaluation framework for testing audio-based memory retrieval systems using the 
 
 This evaluation tests the pipeline:
 ```
-Audio → ASR Transcription → Memory Extraction → Memory Storage
+Audio → Memory Ingestion → ASR Transcription → Transcription Cleanup → Memory Extraction → Memory Storage
                                     ↓
 Question → Memory Search → Answer Generation → Evaluation Metrics
 ```
@@ -50,11 +50,66 @@ We use the [Spoken SQuAD](https://huggingface.co/datasets/AudioLLMs/spoken_squad
 # Install dependencies
 pip install datasets soundfile nltk openai
 
-# Quick test (10 samples)
+# Quick test (10 samples, default: OpenAI Whisper)
 python -m audio_eval.evaluator --num_samples 10
 
 # Full evaluation (100 samples)
 python -m audio_eval.evaluator --num_samples 100 --experiment_name my_experiment
+
+# Use different ASR at runtime (overrides config.py)
+python -m audio_eval.evaluator --num_samples 10 --asr-provider assemblyai --asr-model best
+
+# Use Google Cloud Speech-to-Text v1
+python -m audio_eval.evaluator -n 10 --asr-provider google_stt --asr-model default
+
+# Compare ASR providers
+python -m audio_eval.evaluator -n 50 -e whisper_test --asr-provider openai_whisper
+python -m audio_eval.evaluator -n 50 -e assembly_test --asr-provider assemblyai --asr-model best
+python -m audio_eval.evaluator -n 50 -e google_test --asr-provider google_stt --asr-model default
+```
+
+### ASR Runtime Selection
+
+You can specify the ASR provider at runtime without editing `config.py`:
+
+```bash
+# Use AssemblyAI instead of default Whisper
+python -m audio_eval.evaluator --asr-provider assemblyai --asr-model best -n 10
+
+# Use local Whisper model
+python -m audio_eval.evaluator --asr-provider local --asr-model openai/whisper-large-v3
+```
+
+**Supported ASR Providers:**
+- `openai_whisper` (default) - OpenAI Whisper API
+  - Models: `whisper-1`
+  - Requires: `OPENAI_API_KEY`
+- `speech_recognition_google` - Free Google Speech Recognition (via `speech_recognition` library)
+  - **No API key required!**
+  - Simple, easy to set up
+  - Limited to ~50 requests/day per IP
+  - Good for testing/prototyping
+- `assemblyai` - AssemblyAI transcription service
+  - Models: `best`, `nano`
+  - Requires: `ASSEMBLYAI_API_KEY`
+- `google_stt` - Google Cloud Speech-to-Text (v1 API)
+  - Models: `default`, `phone_call`, `video`, `command_and_search`
+  - Requires: Google Cloud credentials
+  - **Note**: Requires explicit language code (e.g., "en-US"), defaults to "en-US" if `ASR_LANGUAGE=None`
+- `local` - Local Whisper models via Hugging Face
+  - Models: `openai/whisper-base`, `openai/whisper-large-v3`
+  - No API key needed
+
+**API Keys:**
+```bash
+# OpenAI (for Whisper, LLM, embeddings)
+export OPENAI_API_KEY="your-openai-key"
+
+# AssemblyAI (optional, only if using AssemblyAI)
+export ASSEMBLYAI_API_KEY="your-assemblyai-key"
+
+# Google Cloud (optional, only if using Google STT)
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/credentials.json"
 ```
 
 ## Configuration

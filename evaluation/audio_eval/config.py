@@ -27,6 +27,8 @@ load_dotenv()
 # =============================================================================
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
+GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 # Validate required API key
@@ -53,9 +55,9 @@ ANSWER_COLUMN = "answer"
 # ASR (Automatic Speech Recognition)
 # =============================================================================
 
-ASR_PROVIDER = "openai_whisper"  # Options: "openai_whisper", "local", "assemblyai", "google_stt"
-ASR_MODEL = "whisper-1"          # For local: "openai/whisper-base", "openai/whisper-large-v3"
-ASR_LANGUAGE = None              # None = auto-detect, or "en", "es", etc.
+ASR_PROVIDER = "openai_whisper"  # Options: "openai_whisper", "speech_recognition_google", "assemblyai", "google_stt", "local"
+ASR_MODEL = "whisper-1"          # whisper-1 | best/nano (AssemblyAI) | default/phone_call/video/command_and_search (Google STT v1) | openai/whisper-* (local)
+ASR_LANGUAGE = None              # None = auto-detect (Whisper/AssemblyAI) or defaults to "en-US" (Google STT). Use "en-US", "es-ES", etc. for explicit language
 ASR_ENABLE_CLEANUP = True        # Use LLM to clean ASR output
 
 # =============================================================================
@@ -110,6 +112,67 @@ EXPERIMENT_NAME = "default"
 # CONFIG BUILDER (matches mem0 MemoryConfig structure)
 # =============================================================================
 
+def _get_asr_config() -> dict:
+    """
+    Build ASR configuration based on provider.
+    
+    Returns:
+        dict: ASR configuration with provider, config, and enable_cleanup
+    """
+    asr_config = {
+        "provider": ASR_PROVIDER,
+        "config": {
+            "model": ASR_MODEL,
+            "language": ASR_LANGUAGE,
+        },
+        "enable_cleanup": ASR_ENABLE_CLEANUP,
+    }
+    
+    # Set API key/credentials based on provider
+    if ASR_PROVIDER == "openai_whisper":
+        asr_config["config"]["api_key"] = OPENAI_API_KEY
+    elif ASR_PROVIDER == "assemblyai":
+        asr_config["config"]["api_key"] = ASSEMBLYAI_API_KEY
+        # AssemblyAI supports "best" and "nano" models
+        if ASR_MODEL not in ["best", "nano"]:
+            import warnings
+            warnings.warn(
+                f"ASR_MODEL '{ASR_MODEL}' is not a standard AssemblyAI model. "
+                f"Valid options: 'best', 'nano'. Defaulting to 'best'."
+            )
+            asr_config["config"]["model"] = "best"
+    
+    elif ASR_PROVIDER == "google_stt":
+        # Google Cloud Speech-to-Text v1 uses credentials file
+        credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        if credentials_path:
+            asr_config["config"]["credentials_path"] = credentials_path
+        
+        # Google STT v1 requires a valid language code (doesn't support None/auto-detect)
+        # Default to "en-US" if None
+        if ASR_LANGUAGE is None:
+            asr_config["config"]["language"] = "en-US"
+            import warnings
+            warnings.warn(
+                "Google STT requires explicit language code. Defaulting to 'en-US'. "
+                "Set ASR_LANGUAGE='es-ES' (or other BCP-47 code) for other languages."
+            )
+        
+        # Valid models for v1 API: default, phone_call, video, command_and_search
+        # Note: Use empty string or "default" for the default model
+        valid_models = ["default", "", "phone_call", "video", "command_and_search"]
+        if ASR_MODEL not in valid_models:
+            import warnings
+            warnings.warn(
+                f"ASR_MODEL '{ASR_MODEL}' is not a standard Google STT v1 model. "
+                f"Valid options: 'default', 'phone_call', 'video', 'command_and_search'. "
+                f"Defaulting to 'default'."
+            )
+            asr_config["config"]["model"] = "default"
+    
+    return asr_config
+
+
 def get_mem0_config() -> dict:
     """
     Build configuration dictionary for mem0 Memory.from_config().
@@ -151,15 +214,7 @@ def get_mem0_config() -> dict:
                 "on_disk": QDRANT_ON_DISK,     # Persistent storage
             },
         },
-        "asr": {
-            "provider": ASR_PROVIDER,
-            "config": {
-                "model": ASR_MODEL,
-                "language": ASR_LANGUAGE,
-                "api_key": OPENAI_API_KEY,
-            },
-            "enable_cleanup": ASR_ENABLE_CLEANUP,
-        },
+        "asr": _get_asr_config(),
         "version": "v1.1",
     }
     
@@ -205,6 +260,26 @@ def validate_config():
     
     if not OPENAI_API_KEY and ASR_PROVIDER == "openai_whisper":
         errors.append("OPENAI_API_KEY required for OpenAI Whisper ASR")
+    
+    if not ASSEMBLYAI_API_KEY and ASR_PROVIDER == "assemblyai":
+        errors.append("ASSEMBLYAI_API_KEY required for AssemblyAI ASR. Set via: export ASSEMBLYAI_API_KEY='your-key'")
+    
+    if ASR_PROVIDER == "speech_recognition_google":
+        try:
+            import speech_recognition
+        except ImportError:
+            errors.append("SpeechRecognition library required for speech_recognition_google. Install via: pip install SpeechRecognition")
+    
+    if ASR_PROVIDER == "google_stt":
+        if not GOOGLE_APPLICATION_CREDENTIALS:
+            errors.append(
+                "GOOGLE_APPLICATION_CREDENTIALS required for Google Cloud Speech-to-Text. "
+                "Set via: export GOOGLE_APPLICATION_CREDENTIALS='/path/to/credentials.json'"
+            )
+        try:
+            import google.cloud.speech_v1
+        except ImportError:
+            errors.append("google-cloud-speech library required for google_stt. Install via: pip install google-cloud-speech")
     
     if errors:
         raise ValueError("Configuration errors:\n" + "\n".join(f"  - {e}" for e in errors))

@@ -345,6 +345,74 @@ def get_audio_transcription(audio_obj, asr, language=None, llm=None, asr_config=
     return transcription
 
 
+def detect_modality_from_message(msg):
+    """
+    Detect the modality (audio, image, or text) from a message.
+    
+    Args:
+        msg: Message dict with role and content
+        
+    Returns:
+        str: One of "audio", "image", or "text"
+    """
+    if not isinstance(msg, dict):
+        return "text"
+    
+    content = msg.get("content")
+    
+    # Check for audio content
+    if is_audio_content(content):
+        return "audio"
+    
+    # Check for image content
+    if isinstance(content, list):
+        # Multiple items - check if any are images
+        for item in content:
+            if isinstance(item, dict) and item.get("type") == "image_url":
+                return "image"
+    elif isinstance(content, dict) and content.get("type") == "image_url":
+        return "image"
+    
+    # Default to text
+    return "text"
+
+
+def detect_modality_from_messages(messages):
+    """
+    Detect the primary modality from a list of messages.
+    Priority: audio > image > text (if mixed modalities, use the richer one)
+    
+    Args:
+        messages: List of message dicts
+        
+    Returns:
+        str: One of "audio", "image", or "text"
+    """
+    if not messages:
+        return "text"
+    
+    has_audio = False
+    has_image = False
+    
+    for msg in messages:
+        if not isinstance(msg, dict) or msg.get("role") == "system":
+            continue
+        
+        modality = detect_modality_from_message(msg)
+        if modality == "audio":
+            has_audio = True
+        elif modality == "image":
+            has_image = True
+    
+    # Priority: audio > image > text
+    if has_audio:
+        return "audio"
+    elif has_image:
+        return "image"
+    else:
+        return "text"
+
+
 def parse_audio_messages(messages, asr=None, language=None, llm=None, asr_config=None):
     """
     Parse audio messages and convert them to text using ASR.
