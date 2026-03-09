@@ -164,7 +164,9 @@ def evaluate_sample(
     sample: Dict,
     idx: int,
     memory,
-    openai_client: OpenAI
+    openai_client: OpenAI,
+    judge_client: OpenAI = None,
+    judge_model: str = None,
 ) -> Dict[str, Any]:
     """
     Evaluate a single audio sample through the full pipeline.
@@ -179,7 +181,9 @@ def evaluate_sample(
         sample: Dataset sample with audio, question, answer
         idx: Sample index
         memory: mem0 Memory instance
-        openai_client: OpenAI client for answer generation
+        openai_client: OpenAI-compatible client for answer generation
+        judge_client: OpenAI-compatible client for LLM judge (defaults to openai_client)
+        judge_model: Model name for LLM judge (defaults to gpt-4o-mini)
         
     Returns:
         Result dictionary with prediction, metrics, and timing info
@@ -258,7 +262,8 @@ def evaluate_sample(
             prediction=prediction,
             ground_truth=ground_truth,
             include_llm_judge=True,
-            openai_client=openai_client,
+            openai_client=judge_client or openai_client,
+            judge_model=judge_model,
         )
         
         # Compile result
@@ -290,11 +295,13 @@ def evaluate_sample(
         })
     
     finally:
-        # Cleanup: delete memories for this user to avoid interference
-        try:
-            memory.delete_all(user_id=user_id)
-        except Exception as cleanup_error:
-            logger.debug(f"Cleanup error for {user_id}: {cleanup_error}")
+        if config.CLEANUP_AFTER_SAMPLE:
+            try:
+                memory.delete_all(user_id=user_id)
+            except Exception as cleanup_error:
+                logger.debug(f"Cleanup error for {user_id}: {cleanup_error}")
+        else:
+            logger.debug(f"Skipping cleanup for {user_id} (CLEANUP_AFTER_SAMPLE=False)")
     
     return result
 
@@ -308,7 +315,13 @@ def run_evaluation(
     experiment_name: Optional[str] = None,
     sample_indices: Optional[List[int]] = None,
     asr_provider: Optional[str] = None,
-    asr_model: Optional[str] = None
+    asr_model: Optional[str] = None,
+    asr_model_type: Optional[str] = None,
+    llm_provider: Optional[str] = None,
+    llm_model: Optional[str] = None,
+    cleanup_after_sample: Optional[bool] = None,
+    judge_provider: Optional[str] = None,
+    judge_model: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Run full evaluation pipeline.
@@ -319,6 +332,12 @@ def run_evaluation(
         sample_indices: Specific sample indices to evaluate (overrides num_samples if provided)
         asr_provider: ASR provider to use (overrides config.ASR_PROVIDER)
         asr_model: ASR model to use (overrides config.ASR_MODEL)
+        asr_model_type: ASR model architecture type for local models (overrides config.ASR_MODEL_TYPE)
+        llm_provider: LLM provider to use (overrides config.LLM_PROVIDER)
+        llm_model: LLM model to use (overrides config.LLM_MODEL)
+        cleanup_after_sample: Whether to delete memories after each sample (overrides config.CLEANUP_AFTER_SAMPLE)
+        judge_provider: LLM provider for the judge (overrides config.LLM_JUDGE_PROVIDER)
+        judge_model: LLM model for the judge (overrides config.LLM_JUDGE_MODEL)
         
     Returns:
         List of result dictionaries
@@ -332,6 +351,24 @@ def run_evaluation(
     if asr_model:
         logger.info(f"Overriding ASR model: {config.ASR_MODEL} → {asr_model}")
         config.ASR_MODEL = asr_model
+    if asr_model_type:
+        logger.info(f"Overriding ASR model type: {config.ASR_MODEL_TYPE} → {asr_model_type}")
+        config.ASR_MODEL_TYPE = asr_model_type
+    if llm_provider:
+        logger.info(f"Overriding LLM provider: {config.LLM_PROVIDER} → {llm_provider}")
+        config.LLM_PROVIDER = llm_provider
+    if llm_model:
+        logger.info(f"Overriding LLM model: {config.LLM_MODEL} → {llm_model}")
+        config.LLM_MODEL = llm_model
+    if cleanup_after_sample is not None:
+        logger.info(f"Overriding cleanup: {config.CLEANUP_AFTER_SAMPLE} → {cleanup_after_sample}")
+        config.CLEANUP_AFTER_SAMPLE = cleanup_after_sample
+    if judge_provider:
+        logger.info(f"Overriding judge provider: {config.LLM_JUDGE_PROVIDER} → {judge_provider}")
+        config.LLM_JUDGE_PROVIDER = judge_provider
+    if judge_model:
+        logger.info(f"Overriding judge model: {config.LLM_JUDGE_MODEL} → {judge_model}")
+        config.LLM_JUDGE_MODEL = judge_model
     
     # Validate configuration before starting
     config.validate_config()
@@ -357,8 +394,31 @@ def run_evaluation(
     mem0_config = config.get_mem0_config()
     memory = Memory.from_config(mem0_config)
     
-    # Initialize OpenAI client for answer generation (uses same API key)
-    openai_client = OpenAI(api_key=config.OPENAI_API_KEY)
+    # Initialize LLM client for answer generation
+    # Ollama exposes an OpenAI-compatible API at /v1, so we reuse the OpenAI client
+    if config.LLM_PROVIDER == "ollama":
+        openai_client = OpenAI(
+            base_url=f"{config.OLLAMA_BASE_URL}/v1",
+            api_key="ollama",
+        )
+    else:
+        openai_client = OpenAI(api_key=config.OPENAI_API_KEY)
+    
+    # LLM Judge client — can use a different provider/model from answer generation
+    judge_provider = config.LLM_JUDGE_PROVIDER or config.LLM_PROVIDER
+    judge_model = config.LLM_JUDGE_MODEL or "gpt-4o-mini"
+    
+    if judge_provider == "ollama":
+        judge_client = OpenAI(
+            base_url=f"{config.OLLAMA_BASE_URL}/v1",
+            api_key="ollama",
+        )
+    elif judge_provider == config.LLM_PROVIDER and config.LLM_PROVIDER != "ollama":
+        judge_client = openai_client
+    else:
+        judge_client = OpenAI(api_key=config.OPENAI_API_KEY)
+    
+    logger.info(f"Judge: {judge_provider}/{judge_model}")
     
     # Run evaluation
     results = []
@@ -375,6 +435,8 @@ def run_evaluation(
             idx=idx,
             memory=memory,
             openai_client=openai_client,
+            judge_client=judge_client,
+            judge_model=judge_model,
         )
         results.append(result)
         
@@ -425,13 +487,16 @@ def save_results(
     # Build output data
     data = {
         "config": {
+            "framework": "mem0",
             "experiment": experiment_name,
             "dataset": config.DATASET_NAME,
             "asr": f"{config.ASR_PROVIDER}/{config.ASR_MODEL}",
             "llm": f"{config.LLM_PROVIDER}/{config.LLM_MODEL}",
             "embedder": f"{config.EMBEDDER_PROVIDER}/{config.EMBEDDER_MODEL}",
+            "judge": f"{config.LLM_JUDGE_PROVIDER or config.LLM_PROVIDER}/{config.LLM_JUDGE_MODEL or 'gpt-4o-mini'}",
             "top_k": config.TOP_K,
             "infer_memories": config.INFER_MEMORIES,
+            "cleanup_after_sample": config.CLEANUP_AFTER_SAMPLE,
         },
         "summary": summary,
         "distributions": {
@@ -554,7 +619,46 @@ def main():
         "--asr-model",
         type=str,
         default=None,
-        help="ASR model to use (e.g., 'whisper-1' for OpenAI, 'best' or 'nano' for AssemblyAI)"
+        help="ASR model to use (e.g., 'whisper-1' for OpenAI, 'best' or 'nano' for AssemblyAI, 'facebook/wav2vec2-base-960h' for local)"
+    )
+    parser.add_argument(
+        "--asr-model-type",
+        type=str,
+        default=None,
+        choices=["wav2vec2", "hubert", "whisper"],
+        help="Model architecture type for local ASR (e.g., 'wav2vec2', 'hubert', 'whisper'). Only used with --asr-provider local"
+    )
+    parser.add_argument(
+        "--llm-provider",
+        type=str,
+        default=None,
+        choices=["openai", "anthropic", "ollama", "groq", "together"],
+        help="LLM provider to use (default: from config.py, usually openai)"
+    )
+    parser.add_argument(
+        "--llm-model",
+        type=str,
+        default=None,
+        help="LLM model to use (e.g., 'gpt-4o-mini', 'llama3.2', 'claude-3-5-sonnet-20241022')"
+    )
+    parser.add_argument(
+        "--no-cleanup",
+        action="store_true",
+        default=False,
+        help="Disable per-sample memory cleanup (memories accumulate across samples)"
+    )
+    parser.add_argument(
+        "--judge-provider",
+        type=str,
+        default=None,
+        choices=["openai", "ollama", "anthropic", "groq", "together"],
+        help="LLM provider for the judge (default: same as --llm-provider)"
+    )
+    parser.add_argument(
+        "--judge-model",
+        type=str,
+        default=None,
+        help="LLM model for the judge (default: gpt-4o-mini). E.g., 'qwen2.5', 'llama3.2'"
     )
     
     args = parser.parse_args()
@@ -574,7 +678,13 @@ def main():
         experiment_name=args.experiment_name,
         sample_indices=sample_indices,
         asr_provider=args.asr_provider,
-        asr_model=args.asr_model
+        asr_model=args.asr_model,
+        asr_model_type=args.asr_model_type,
+        llm_provider=args.llm_provider,
+        llm_model=args.llm_model,
+        cleanup_after_sample=not args.no_cleanup,
+        judge_provider=args.judge_provider,
+        judge_model=args.judge_model,
     )
 
 

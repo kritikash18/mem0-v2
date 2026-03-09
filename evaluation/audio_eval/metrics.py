@@ -217,14 +217,30 @@ def llm_judge(
             generated_answer=prediction
         )
         
-        response = client.chat.completions.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            response_format={"type": "json_object"},
-            temperature=0.0,
-        )
+        kwargs = {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.0,
+        }
         
-        result = json.loads(response.choices[0].message.content)
+        # response_format is supported by OpenAI and Ollama but may fail on
+        # some providers/models; fall back to raw parsing if it errors
+        try:
+            kwargs["response_format"] = {"type": "json_object"}
+            response = client.chat.completions.create(**kwargs)
+        except Exception:
+            kwargs.pop("response_format", None)
+            response = client.chat.completions.create(**kwargs)
+        
+        content = response.choices[0].message.content.strip()
+        
+        # Parse JSON from response — handle cases where model wraps it in markdown
+        if content.startswith("```"):
+            content = content.split("```")[1]
+            if content.startswith("json"):
+                content = content[4:]
+        
+        result = json.loads(content)
         label = result.get("label", "").upper()
         return 1 if label == "CORRECT" else 0
         
@@ -242,7 +258,8 @@ def compute_metrics(
     prediction: str,
     ground_truth: str,
     include_llm_judge: bool = True,
-    openai_client: Optional[Any] = None
+    openai_client: Optional[Any] = None,
+    judge_model: Optional[str] = None,
 ) -> Dict[str, float]:
     """
     Compute all metrics for a single prediction.
@@ -252,7 +269,8 @@ def compute_metrics(
         prediction: Model's predicted answer
         ground_truth: Ground truth answer
         include_llm_judge: Whether to run LLM judge (slower, costs API credits)
-        openai_client: Pre-initialized OpenAI client
+        openai_client: Pre-initialized OpenAI client for judge
+        judge_model: Model name for LLM judge (defaults to gpt-4o-mini)
         
     Returns:
         Dictionary with em, f1, bleu, and optionally llm scores
@@ -264,7 +282,11 @@ def compute_metrics(
     }
     
     if include_llm_judge:
-        metrics["llm"] = llm_judge(question, ground_truth, prediction, client=openai_client)
+        metrics["llm"] = llm_judge(
+            question, ground_truth, prediction,
+            model=judge_model or "gpt-4o-mini",
+            client=openai_client,
+        )
     
     return metrics
 

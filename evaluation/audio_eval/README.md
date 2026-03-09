@@ -39,7 +39,7 @@ We use the [Spoken SQuAD](https://huggingface.co/datasets/AudioLLMs/spoken_squad
 | **EM** | Exact Match | 0 or 1 | Normalized string match |
 | **F1** | Token-level | 0-1 | Precision/Recall harmonic mean |
 | **BLEU** | N-gram | 0-1 | Unigram overlap (BLEU-1) |
-| **LLM** | Semantic | 0 or 1 | GPT-4o-mini correctness judge |
+| **LLM** | Semantic | 0 or 1 | Configurable LLM correctness judge (default: GPT-4o-mini) |
 | **Latency** | Time | seconds | Per-component and total |
 
 ## Quick Start
@@ -62,10 +62,25 @@ python -m audio_eval.evaluator --num_samples 10 --asr-provider assemblyai --asr-
 # Use Google Cloud Speech-to-Text v1
 python -m audio_eval.evaluator -n 10 --asr-provider google_stt --asr-model default
 
+# Use Ollama with Llama 3.2
+python -m audio_eval.evaluator -n 10 --llm-provider ollama --llm-model llama3.2
+
+# Use Ollama for everything (answer gen + judge)
+python -m audio_eval.evaluator -n 10 \
+  --llm-provider ollama --llm-model llama3.2 \
+  --judge-provider ollama --judge-model qwen2.5
+
+# Persistent memory mode (no per-sample cleanup)
+python -m audio_eval.evaluator -n 50 --no-cleanup -e persistent_test
+
 # Compare ASR providers
 python -m audio_eval.evaluator -n 50 -e whisper_test --asr-provider openai_whisper
 python -m audio_eval.evaluator -n 50 -e assembly_test --asr-provider assemblyai --asr-model best
 python -m audio_eval.evaluator -n 50 -e google_test --asr-provider google_stt --asr-model default
+
+# Compare LLM providers
+python -m audio_eval.evaluator -n 50 -e gpt4_test --llm-provider openai --llm-model gpt-4o-mini
+python -m audio_eval.evaluator -n 50 -e llama_test --llm-provider ollama --llm-model llama3.2
 ```
 
 ### ASR Runtime Selection
@@ -114,26 +129,65 @@ export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/credentials.json"
 
 ## Configuration
 
-Edit `config.py` to change settings:
+Edit `config.py` to change defaults, or use CLI flags to override at runtime.
 
 ```python
 # ASR
-ASR_PROVIDER = "openai_whisper"  # or "local", "assemblyai"
+ASR_PROVIDER = "openai_whisper"  # or "local", "assemblyai", "google_stt"
 ASR_MODEL = "whisper-1"
+ASR_MODEL_TYPE = "wav2vec2"      # For local ASR: "wav2vec2", "hubert", "whisper"
 
-# LLM  
-LLM_PROVIDER = "openai"
+# LLM (used for ASR cleanup, fact extraction, and answer generation)
+LLM_PROVIDER = "openai"          # or "ollama", "anthropic", "groq", "together"
 LLM_MODEL = "gpt-4o-mini"
+OLLAMA_BASE_URL = "http://localhost:11434"
+
+# LLM Judge (separate from the main LLM — controls evaluation scoring)
+LLM_JUDGE_PROVIDER = None        # None = same as LLM_PROVIDER
+LLM_JUDGE_MODEL = None           # None = "gpt-4o-mini". E.g., "qwen2.5", "llama3.2"
 
 # Embedder
 EMBEDDER_PROVIDER = "openai"
 EMBEDDER_MODEL = "text-embedding-3-small"
 
 # Memory
-TOP_K = 5
-INFER_MEMORIES = True  # Extract facts vs raw transcript
-USE_READING_COMPREHENSION_PROMPT = True  # Custom RC prompt vs default
+TOP_K = 10
+INFER_MEMORIES = True                     # Extract facts vs raw transcript
+USE_READING_COMPREHENSION_PROMPT = True   # Custom RC prompt vs default
+CLEANUP_AFTER_SAMPLE = True               # True = isolated, False = persistent memory
 ```
+
+### CLI Reference
+
+All `config.py` settings can be overridden at the command line:
+
+```
+usage: python -m audio_eval.evaluator [-h] [-n NUM_SAMPLES] [-e EXPERIMENT_NAME]
+                                      [-i INDEX] [--indices INDICES]
+                                      [--asr-provider {openai_whisper,speech_recognition_google,assemblyai,google_stt,local}]
+                                      [--asr-model ASR_MODEL]
+                                      [--asr-model-type {wav2vec2,hubert,whisper}]
+                                      [--llm-provider {openai,anthropic,ollama,groq,together}]
+                                      [--llm-model LLM_MODEL]
+                                      [--judge-provider {openai,ollama,anthropic,groq,together}]
+                                      [--judge-model JUDGE_MODEL]
+                                      [--no-cleanup]
+```
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `-n`, `--num_samples` | Number of samples to evaluate | All |
+| `-e`, `--experiment_name` | Name for output files | `"default"` |
+| `-i`, `--index` | Evaluate a specific sample index (repeatable) | — |
+| `--indices` | Comma-separated sample indices (e.g., `"0,5,10"`) | — |
+| `--asr-provider` | ASR provider | `openai_whisper` |
+| `--asr-model` | ASR model name | `whisper-1` |
+| `--asr-model-type` | Architecture for local ASR | `wav2vec2` |
+| `--llm-provider` | LLM provider for cleanup, extraction, and answer generation | `openai` |
+| `--llm-model` | LLM model name | `gpt-4o-mini` |
+| `--judge-provider` | LLM provider for the evaluation judge | Same as `--llm-provider` |
+| `--judge-model` | LLM model for the evaluation judge | `gpt-4o-mini` |
+| `--no-cleanup` | Disable per-sample memory deletion (persistent mode) | Off (isolated) |
 
 ### Custom Memory Extraction Prompt
 
@@ -278,13 +332,16 @@ Results saved to `results/audio_eval/{experiment}_final.json`:
 ```json
 {
   "config": {
+    "framework": "mem0",
     "experiment": "my_experiment",
     "dataset": "byteCode18/spoken-squad-1k-memory-eval",
     "asr": "openai_whisper/whisper-1",
     "llm": "openai/gpt-4o-mini",
+    "judge": "ollama/qwen2.5",
     "embedder": "openai/text-embedding-3-small",
-    "top_k": 5,
-    "infer_memories": true
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": true
   },
   "summary": {
     "count": 100,

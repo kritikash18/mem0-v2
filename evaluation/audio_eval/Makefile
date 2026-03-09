@@ -34,12 +34,25 @@ run:
 full:
 	python -m audio_eval.evaluator --experiment_name full_eval
 
-# Different ASR configurations (edit config.py first)
+# Different ASR configurations
 run-openai-whisper:
 	python -m audio_eval.evaluator --num_samples 100 --experiment_name openai_whisper
 
 run-local-whisper:
-	python -m audio_eval.evaluator --num_samples 100 --experiment_name local_whisper
+	python -m audio_eval.evaluator --num_samples 100 --experiment_name local_whisper \
+		--asr-provider local --asr-model openai/whisper-base --asr-model-type whisper
+
+run-wav2vec2-base:
+	python -m audio_eval.evaluator --num_samples 100 --experiment_name wav2vec2_base \
+		--asr-provider local --asr-model facebook/wav2vec2-base-960h --asr-model-type wav2vec2
+
+run-wav2vec2-large:
+	python -m audio_eval.evaluator --num_samples 100 --experiment_name wav2vec2_large \
+		--asr-provider local --asr-model facebook/wav2vec2-large-960h --asr-model-type wav2vec2
+
+run-hubert:
+	python -m audio_eval.evaluator --num_samples 100 --experiment_name hubert_large \
+		--asr-provider local --asr-model facebook/hubert-large-ls960-ft --asr-model-type hubert
 
 # Analysis
 compare:

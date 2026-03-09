@@ -107,10 +107,19 @@ class LocalASR(ASRBase):
             "model": self.config.model,
             "device": device,
             "torch_dtype": torch_dtype,
-            "chunk_length_s": self.config.chunk_length_s,
-            "stride_length_s": (self.config.stride_length_s, self.config.stride_length_s),
-            "return_timestamps": self.config.return_timestamps,
         }
+
+        is_ctc = self.config.model_type in ("wav2vec2", "hubert")
+
+        if self.config.return_timestamps:
+            # CTC models require 'char' or 'word', not True
+            pipeline_kwargs["return_timestamps"] = "word" if is_ctc else self.config.return_timestamps
+            pipeline_kwargs["chunk_length_s"] = self.config.chunk_length_s
+            pipeline_kwargs["stride_length_s"] = (self.config.stride_length_s, self.config.stride_length_s)
+        elif not is_ctc:
+            # Seq2seq models (Whisper) support chunked long-form with timestamps
+            pipeline_kwargs["chunk_length_s"] = self.config.chunk_length_s
+            pipeline_kwargs["stride_length_s"] = (self.config.stride_length_s, self.config.stride_length_s)
 
         self._pipeline = pipeline(**pipeline_kwargs)
         logger.info(f"Initialized ASR pipeline with model: {self.config.model}")
@@ -273,18 +282,24 @@ class LocalASR(ASRBase):
         # Prepare input
         inputs = {"array": audio_array, "sampling_rate": target_sr}
 
-        # Build generate kwargs
-        generate_kwargs = self.config.generate_kwargs or {}
-        if self.config.language:
-            generate_kwargs["language"] = self.config.language
-        generate_kwargs.update(kwargs.get("generate_kwargs", {}))
+        # Build pipeline call kwargs
+        pipeline_call_kwargs = {
+            "batch_size": self.config.batch_size,
+        }
+
+        # generate_kwargs and language are only supported by seq2seq models (Whisper),
+        # not CTC models (Wav2Vec2, HuBERT) which decode directly from logits
+        is_ctc = self.config.model_type in ("wav2vec2", "hubert")
+        if not is_ctc:
+            generate_kwargs = self.config.generate_kwargs or {}
+            if self.config.language:
+                generate_kwargs["language"] = self.config.language
+            generate_kwargs.update(kwargs.get("generate_kwargs", {}))
+            if generate_kwargs:
+                pipeline_call_kwargs["generate_kwargs"] = generate_kwargs
 
         # Run pipeline
-        result = self._pipeline(
-            inputs,
-            batch_size=self.config.batch_size,
-            generate_kwargs=generate_kwargs if generate_kwargs else None,
-        )
+        result = self._pipeline(inputs, **pipeline_call_kwargs)
 
         if isinstance(result, dict):
             return result.get("text", "").strip()

@@ -57,6 +57,7 @@ ANSWER_COLUMN = "answer"
 
 ASR_PROVIDER = "openai_whisper"  # Options: "openai_whisper", "speech_recognition_google", "assemblyai", "google_stt", "local"
 ASR_MODEL = "whisper-1"          # whisper-1 | best/nano (AssemblyAI) | default/phone_call/video/command_and_search (Google STT v1) | openai/whisper-* (local)
+ASR_MODEL_TYPE = "wav2vec2"      # Model architecture type for local ASR: "wav2vec2", "hubert", "whisper". Only used when ASR_PROVIDER="local"
 ASR_LANGUAGE = None              # None = auto-detect (Whisper/AssemblyAI) or defaults to "en-US" (Google STT). Use "en-US", "es-ES", etc. for explicit language
 ASR_ENABLE_CLEANUP = True        # Use LLM to clean ASR output
 
@@ -65,8 +66,14 @@ ASR_ENABLE_CLEANUP = True        # Use LLM to clean ASR output
 # =============================================================================
 
 LLM_PROVIDER = "openai"          # Options: "openai", "anthropic", "ollama", "groq", "together"
-LLM_MODEL = "gpt-4o-mini"
+LLM_MODEL = "gpt-4o-mini"        # gpt-4o-mini | claude-3-5-sonnet-20241022 | llama3.2 | llama3.1:70b | etc.
 LLM_TEMPERATURE = 0.0
+OLLAMA_BASE_URL = "http://localhost:11434"  # Ollama server URL (only used when provider="ollama")
+
+# LLM Judge — separate provider/model for evaluation scoring
+# Defaults to the same as the main LLM; override to use a cheaper/different model for judging
+LLM_JUDGE_PROVIDER = None        # None = same as LLM_PROVIDER. Options: "openai", "ollama", etc.
+LLM_JUDGE_MODEL = None           # None = "gpt-4o-mini". Examples: "qwen2.5", "llama3.2", "gpt-4o"
 
 # =============================================================================
 # EMBEDDER
@@ -93,6 +100,8 @@ QDRANT_ON_DISK = True              # True = persistent storage, False = in-memor
 
 TOP_K = 10                        # Number of memories to retrieve
 INFER_MEMORIES = True            # True = extract facts, False = store raw transcript
+CLEANUP_AFTER_SAMPLE = True      # True = delete memories after each sample (isolated evaluation)
+                                  # False = accumulate memories across samples (persistent evaluation)
 
 # Use custom reading comprehension prompt for memory extraction
 USE_READING_COMPREHENSION_PROMPT = True  # True = use custom RC prompt, False = use default mem0 prompt
@@ -170,6 +179,13 @@ def _get_asr_config() -> dict:
             )
             asr_config["config"]["model"] = "default"
     
+    elif ASR_PROVIDER == "local":
+        asr_config["config"]["model_type"] = ASR_MODEL_TYPE
+        asr_config["config"]["use_pipeline"] = True
+        asr_config["config"]["device"] = "auto"
+        # Local models don't need an API key
+        asr_config["config"].pop("api_key", None)
+    
     return asr_config
 
 
@@ -188,14 +204,23 @@ def get_mem0_config() -> dict:
     Returns:
         Configuration dictionary compatible with Memory.from_config()
     """
+    # Build LLM config based on provider
+    llm_config = {
+        "model": LLM_MODEL,
+        "temperature": LLM_TEMPERATURE,
+    }
+    
+    # Add provider-specific settings
+    if LLM_PROVIDER == "openai":
+        llm_config["api_key"] = OPENAI_API_KEY
+    elif LLM_PROVIDER == "ollama":
+        llm_config["ollama_base_url"] = OLLAMA_BASE_URL
+    # Other providers (anthropic, groq, etc.) use API keys from environment
+    
     config = {
         "llm": {
             "provider": LLM_PROVIDER,
-            "config": {
-                "model": LLM_MODEL,
-                "temperature": LLM_TEMPERATURE,
-                "api_key": OPENAI_API_KEY,  # Explicit, falls back to env var in mem0
-            },
+            "config": llm_config,
         },
         "embedder": {
             "provider": EMBEDDER_PROVIDER,
@@ -254,6 +279,16 @@ def validate_config():
     
     if not OPENAI_API_KEY and LLM_PROVIDER == "openai":
         errors.append("OPENAI_API_KEY required for OpenAI LLM provider")
+    
+    if LLM_PROVIDER == "ollama":
+        # Check if Ollama is running
+        try:
+            import requests
+            response = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=2)
+            if response.status_code != 200:
+                errors.append(f"Ollama server not responding at {OLLAMA_BASE_URL}. Start with: ollama serve")
+        except Exception as e:
+            errors.append(f"Cannot connect to Ollama at {OLLAMA_BASE_URL}. Ensure Ollama is running: ollama serve")
     
     if not OPENAI_API_KEY and EMBEDDER_PROVIDER == "openai":
         errors.append("OPENAI_API_KEY required for OpenAI embedder provider")
