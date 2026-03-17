@@ -11,13 +11,22 @@ Main evaluation pipeline for testing audio-based memory retrieval:
 Usage:
     # Evaluate first 100 samples
     python -m audio_eval.evaluator --num_samples 100 --experiment_name my_test
-    
+
+    # Incremental runs — run 0-99, then build on it with 100-499, etc.
+    python -m audio_eval.evaluator --start 0   --end 100  --experiment_name run_0_100
+    python -m audio_eval.evaluator --start 100 --end 500  --experiment_name run_100_500
+    # Then merge: python -m audio_eval.combine_results results/run_0_100_final.json results/run_100_500_final.json -o results/merged.json
+
+    # Skip LLM judge during evaluation, score later in one batch
+    python -m audio_eval.evaluator -n 100 --skip-judge --experiment_name no_judge_run
+    python -m audio_eval.run_judge results/audio_eval/no_judge_run_final.json
+
     # Evaluate specific indices (multiple -i flags)
     python -m audio_eval.evaluator -i 0 -i 5 -i 10 --experiment_name debug_test
-    
+
     # Evaluate specific indices (comma-separated)
     python -m audio_eval.evaluator --indices "0,5,10,15,20" --experiment_name selected_samples
-    
+
     # Evaluate single sample
     python -m audio_eval.evaluator -i 42 --experiment_name sample_42
 """
@@ -53,28 +62,40 @@ logger = logging.getLogger(__name__)
 def load_evaluation_dataset(num_samples: Optional[int] = None):
     """
     Load dataset from HuggingFace.
-    
+
+    When USE_AUDIO_QUERY is enabled, loads from AUDIO_QUERY_DATASET (v2) which
+    contains the spoken instruction_v2 column, and decodes both audio columns.
+
     Args:
         num_samples: Number of samples to load (None for all)
-        
+
     Returns:
         HuggingFace dataset with decoded audio
     """
-    logger.info(f"Loading dataset: {config.DATASET_NAME}")
-    
+    dataset_name = (
+        config.AUDIO_QUERY_DATASET if config.USE_AUDIO_QUERY
+        else config.DATASET_NAME
+    )
+    logger.info(f"Loading dataset: {dataset_name}")
+
     ds = load_dataset(
-        config.DATASET_NAME,
+        dataset_name,
         split=config.DATASET_SPLIT,
         token=config.HF_TOKEN
     )
-    
-    # Decode audio column
+
+    # Always decode the context audio column
     ds = ds.cast_column(config.AUDIO_COLUMN, Audio(decode=True))
-    
+
+    # Decode the spoken query column when audio queries are enabled
+    if config.USE_AUDIO_QUERY:
+        ds = ds.cast_column(config.AUDIO_QUERY_COLUMN, Audio(decode=True))
+        logger.info(f"Audio query mode: using '{config.AUDIO_QUERY_COLUMN}' column for search")
+
     # Limit samples if specified
     if num_samples and num_samples < len(ds):
         ds = ds.select(range(num_samples))
-    
+
     logger.info(f"Loaded {len(ds)} samples")
     
     # Debug: Check audio format
@@ -167,6 +188,8 @@ def evaluate_sample(
     openai_client: OpenAI,
     judge_client: OpenAI = None,
     judge_model: str = None,
+    include_llm_judge: bool = True,
+    use_audio_query: bool = False,
 ) -> Dict[str, Any]:
     """
     Evaluate a single audio sample through the full pipeline.
@@ -206,7 +229,18 @@ def evaluate_sample(
     
     question = sample[config.QUESTION_COLUMN]
     ground_truth = sample[config.ANSWER_COLUMN]
-    
+
+    # Build the search query — either spoken audio or plain text
+    if use_audio_query:
+        query_raw = sample[config.AUDIO_QUERY_COLUMN]
+        search_query = {
+            "array": query_raw["array"],
+            "sampling_rate": query_raw["sampling_rate"],
+        }
+        logger.debug(f"[Sample {idx}] Query mode: audio ({config.AUDIO_QUERY_COLUMN})")
+    else:
+        search_query = question
+
     # Debug: Verify audio format
     logger.debug(f"[Sample {idx}] Audio format: dict with keys {audio.keys()}")
     logger.debug(f"[Sample {idx}] Audio array shape: {audio['array'].shape}")
@@ -233,10 +267,10 @@ def evaluate_sample(
         # Extract added memories info if available
         num_memories_added = len(add_result.get("results", [])) if isinstance(add_result, dict) else 0
         
-        # Step 2: Search memories with question
+        # Step 2: Search memories — text question or spoken audio query
         search_start = time.time()
         search_result = memory.search(
-            query=question,
+            query=search_query,
             user_id=user_id,
             limit=config.TOP_K,
         )
@@ -261,7 +295,7 @@ def evaluate_sample(
             question=question,
             prediction=prediction,
             ground_truth=ground_truth,
-            include_llm_judge=True,
+            include_llm_judge=include_llm_judge,
             openai_client=judge_client or openai_client,
             judge_model=judge_model,
         )
@@ -314,6 +348,8 @@ def run_evaluation(
     num_samples: Optional[int] = None,
     experiment_name: Optional[str] = None,
     sample_indices: Optional[List[int]] = None,
+    start: Optional[int] = None,
+    end: Optional[int] = None,
     asr_provider: Optional[str] = None,
     asr_model: Optional[str] = None,
     asr_model_type: Optional[str] = None,
@@ -322,23 +358,36 @@ def run_evaluation(
     cleanup_after_sample: Optional[bool] = None,
     judge_provider: Optional[str] = None,
     judge_model: Optional[str] = None,
+    skip_judge: bool = False,
+    qdrant_path: Optional[str] = None,
+    audio_query: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     Run full evaluation pipeline.
-    
+
+    Index selection priority (highest to lowest):
+        sample_indices > start/end range > num_samples (first N) > all
+
     Args:
-        num_samples: Number of samples to evaluate (None for all)
+        num_samples: Evaluate first N samples
         experiment_name: Name for output files
-        sample_indices: Specific sample indices to evaluate (overrides num_samples if provided)
-        asr_provider: ASR provider to use (overrides config.ASR_PROVIDER)
-        asr_model: ASR model to use (overrides config.ASR_MODEL)
-        asr_model_type: ASR model architecture type for local models (overrides config.ASR_MODEL_TYPE)
-        llm_provider: LLM provider to use (overrides config.LLM_PROVIDER)
-        llm_model: LLM model to use (overrides config.LLM_MODEL)
-        cleanup_after_sample: Whether to delete memories after each sample (overrides config.CLEANUP_AFTER_SAMPLE)
-        judge_provider: LLM provider for the judge (overrides config.LLM_JUDGE_PROVIDER)
-        judge_model: LLM model for the judge (overrides config.LLM_JUDGE_MODEL)
-        
+        sample_indices: Explicit list of dataset indices to evaluate
+        start: Start of index range (inclusive); use with end for incremental runs
+        end: End of index range (exclusive); use with start for incremental runs
+        asr_provider: ASR provider override
+        asr_model: ASR model override
+        asr_model_type: Model architecture for local ASR
+        llm_provider: LLM provider override
+        llm_model: LLM model override
+        cleanup_after_sample: Per-sample memory cleanup toggle
+        judge_provider: LLM judge provider override
+        judge_model: LLM judge model override
+        skip_judge: Skip LLM judge (set llm=None); run judge later with run_judge.py
+        qdrant_path: Override Qdrant local storage path; required when running two
+                     experiments in parallel to avoid the file lock conflict
+        audio_query: Use spoken audio (instruction_v2) as search query instead of
+                     text; loads from AUDIO_QUERY_DATASET automatically
+
     Returns:
         List of result dictionaries
     """
@@ -369,22 +418,33 @@ def run_evaluation(
     if judge_model:
         logger.info(f"Overriding judge model: {config.LLM_JUDGE_MODEL} → {judge_model}")
         config.LLM_JUDGE_MODEL = judge_model
-    
+    if qdrant_path:
+        logger.info(f"Overriding Qdrant path: {config.QDRANT_PATH} → {qdrant_path}")
+        config.QDRANT_PATH = qdrant_path
+    if audio_query:
+        config.USE_AUDIO_QUERY = True
+
     # Validate configuration before starting
     config.validate_config()
     
     experiment_name = experiment_name or config.EXPERIMENT_NAME
     
-    # Load dataset
+    # Load dataset and resolve which indices to evaluate
     if sample_indices:
-        # Load full dataset to access specific indices
         dataset = load_evaluation_dataset(None)
-        # Validate indices
         max_idx = max(sample_indices)
         if max_idx >= len(dataset):
             raise ValueError(f"Index {max_idx} out of range. Dataset has {len(dataset)} samples.")
         indices_to_evaluate = sample_indices
-        logger.info(f"Evaluating specific indices: {sample_indices}")
+        logger.info(f"Evaluating {len(indices_to_evaluate)} explicit indices")
+    elif start is not None or end is not None:
+        dataset = load_evaluation_dataset(None)
+        _start = start if start is not None else 0
+        _end = min(end, len(dataset)) if end is not None else len(dataset)
+        if _start >= len(dataset):
+            raise ValueError(f"--start {_start} is out of range. Dataset has {len(dataset)} samples.")
+        indices_to_evaluate = list(range(_start, _end))
+        logger.info(f"Evaluating range [{_start}, {_end}) = {len(indices_to_evaluate)} samples")
     else:
         dataset = load_evaluation_dataset(num_samples)
         indices_to_evaluate = list(range(len(dataset)))
@@ -437,6 +497,8 @@ def run_evaluation(
             openai_client=openai_client,
             judge_client=judge_client,
             judge_model=judge_model,
+            include_llm_judge=not skip_judge,
+            use_audio_query=config.USE_AUDIO_QUERY,
         )
         results.append(result)
         
@@ -497,6 +559,7 @@ def save_results(
             "top_k": config.TOP_K,
             "infer_memories": config.INFER_MEMORIES,
             "cleanup_after_sample": config.CLEANUP_AFTER_SAMPLE,
+            "query_mode": "audio" if config.USE_AUDIO_QUERY else "text",
         },
         "summary": summary,
         "distributions": {
@@ -609,6 +672,24 @@ def main():
         help="Evaluate specific sample indices as comma-separated list (e.g., '0,5,10,15')"
     )
     parser.add_argument(
+        "--start",
+        type=int,
+        default=None,
+        help="Start of index range (inclusive). Use with --end for incremental runs, e.g. --start 100 --end 500"
+    )
+    parser.add_argument(
+        "--end",
+        type=int,
+        default=None,
+        help="End of index range (exclusive). Use with --start for incremental runs."
+    )
+    parser.add_argument(
+        "--skip-judge",
+        action="store_true",
+        default=False,
+        help="Skip LLM judge during evaluation (saves cost). Run scoring later with run_judge.py"
+    )
+    parser.add_argument(
         "--asr-provider",
         type=str,
         default=None,
@@ -660,7 +741,27 @@ def main():
         default=None,
         help="LLM model for the judge (default: gpt-4o-mini). E.g., 'qwen2.5', 'llama3.2'"
     )
-    
+    parser.add_argument(
+        "--qdrant-path",
+        type=str,
+        default=None,
+        help=(
+            "Override Qdrant local storage path (default: ./qdrant_data). "
+            "Set a different path per terminal when running two experiments in parallel "
+            "to avoid the Qdrant file lock, e.g. --qdrant-path ./qdrant_data_gpt4o"
+        )
+    )
+    parser.add_argument(
+        "--audio-query",
+        action="store_true",
+        default=False,
+        help=(
+            "Use spoken audio (instruction_v2) as the search query instead of text. "
+            "Automatically loads from byteCode18/spoken-squad-memory-eval-v2. "
+            "mem0 transcribes the audio query via the configured ASR before searching."
+        )
+    )
+
     args = parser.parse_args()
     
     # Parse indices
@@ -677,14 +778,19 @@ def main():
         num_samples=args.num_samples,
         experiment_name=args.experiment_name,
         sample_indices=sample_indices,
+        start=args.start,
+        end=args.end,
         asr_provider=args.asr_provider,
         asr_model=args.asr_model,
         asr_model_type=args.asr_model_type,
         llm_provider=args.llm_provider,
+        qdrant_path=args.qdrant_path,
         llm_model=args.llm_model,
         cleanup_after_sample=not args.no_cleanup,
         judge_provider=args.judge_provider,
         judge_model=args.judge_model,
+        skip_judge=args.skip_judge,
+        audio_query=args.audio_query,
     )
 
 

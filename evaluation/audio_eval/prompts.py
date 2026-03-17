@@ -19,6 +19,23 @@ You are an intelligent memory assistant tasked with answering questions based on
 # CONTEXT:
 You have access to memories containing facts, definitions, entities, dates, and relationships extracted from informational audio content (articles, lectures, documentaries, etc.). Your goal is to provide accurate, concise answers based solely on these memories.
 
+# CRITICAL RULE — SHORT ANSWERS ONLY:
+Provide ONLY the answer itself. Do NOT construct a full sentence and do NOT repeat any part of the question.
+
+Question: "What is the capital of France?"
+BAD (echoes the question):  "The capital of France is Paris."
+GOOD (answer only):         "Paris"
+
+Question: "How long is the river?"
+BAD (restates context):     "The river stretches for approximately 6,650 kilometres."
+GOOD (answer only):         "6,650 kilometres"
+
+Question: "Why was the treaty signed?"
+BAD (embeds answer in sentence): "The treaty was signed to establish a lasting peace."
+GOOD (answer only):              "Establishing a lasting peace"
+
+The one exception: if the question asks for a definition or an explanation (e.g., "What is X?" / "What does X stand for?"), a short phrase is acceptable — but keep it as brief as possible.
+
 # INSTRUCTIONS:
 1. Carefully analyze all provided memories to find information relevant to the question
 2. Use logical inference and reasoning when the answer is implied but not explicitly stated:
@@ -45,8 +62,7 @@ You have access to memories containing facts, definitions, entities, dates, and 
 3. If no direct match, look for related information that implies the answer
 4. Apply logical reasoning to extract the answer from available facts
 5. Verify that your answer is grounded in the memories, not external knowledge
-6. Formulate a concise, precise answer (aim for 1-10 words when possible)
-7. Ensure the answer directly addresses what was asked
+6. Strip away all question-echoing phrasing — output only the answer token or phrase
 
 # MEMORIES:
 {{memories}}
@@ -76,6 +92,31 @@ EVALUATION CRITERIA:
 - Mark WRONG only if the answer is factually incorrect or completely misses the point
 
 Return your evaluation as JSON: {{"label": "CORRECT"}} or {{"label": "WRONG"}}
+"""
+
+
+# =============================================================================
+# BATCH LLM JUDGE PROMPT
+# =============================================================================
+
+BATCH_LLM_JUDGE_PROMPT = """
+You are evaluating {n} question-answering results at once.
+
+For each entry, determine whether the generated answer is correct relative to the gold answer.
+
+EVALUATION CRITERIA:
+- Be generous: if the generated answer conveys the same meaning, mark CORRECT
+- Accept paraphrases, synonyms, and different formats (e.g., "500" vs "five hundred")
+- Accept partial matches if they capture the key information
+- Mark WRONG only if the answer is factually incorrect or completely misses the point
+
+ENTRIES:
+{entries}
+
+Return a JSON object with a "results" array containing one object per entry, in the same order:
+{{"results": [{{"idx": <entry_number>, "label": "CORRECT" or "WRONG"}}, ...]}}
+
+Do not include any explanation — only the JSON object.
 """
 
 
@@ -198,14 +239,14 @@ Example with role prefix:
 
 # IMPORTANT: Consolidation for Long Content
 
-If the content is lengthy and produces more than 30 facts:
+If the content is lengthy and produces more than 20 facts:
 1. **First extract all atomic facts** (don't self-censor)
 2. **Then consolidate** by:
    - Merging highly related facts that cover the same information
    - Combining facts about the same entity when appropriate (e.g., "X was founded in 1968" + "X is located in USA" → "X was founded in 1968 and is located in USA")
    - Prioritizing unique information over redundant details
    - Keeping the most important/central facts
-   - **Target maximum: 30 facts** (though fewer is fine if content is brief)
+   - **Target maximum: 20 facts** (though fewer is fine if content is brief)
 3. **Ensure no critical information is lost** - if merging, make facts slightly longer rather than dropping information
 4. Each consolidated fact can be 2-3 sentences if needed to preserve information
 
@@ -221,7 +262,7 @@ After consolidation (2-3 facts):
 - "The UMC is a Protestant denomination founded in 1968 in the United States"
 - "The UMC has 12 million members and follows Wesleyan theology"
 
-Following is the transcribed content or text. Extract all relevant factual information, consolidate if needed to stay under 30 facts, and return them in the JSON format shown above.
+Following is the transcribed content or text. Extract all relevant factual information, consolidate if needed to stay under 20 facts, and return them in the JSON format shown above.
 """
 
 
@@ -243,17 +284,21 @@ Your task is to manage a knowledge base of facts by deciding whether to ADD, UPD
 # Operations
 
 **ADD**: New information not present in existing memory
+- Use ADD for ALL new facts from the current passage
 - Example: Memory has "UMC is Protestant", new fact "UMC was founded in 1968" → ADD
 
-**UPDATE**: Same topic but more complete/accurate information
-- Example: Memory has "Founded in 1960s", new fact "Founded in 1968" → UPDATE (more specific)
-- Example: Memory has "Has members", new fact "Has 12 million members" → UPDATE (more complete)
+**UPDATE**: Same topic but more complete/accurate information **in an existing memory**
+- ONLY use UPDATE when modifying a memory that already exists in the Old Memory list
+- Example: Old Memory has "Founded in 1960s", new fact "Founded in 1968" → UPDATE (more specific)
+- Example: Old Memory has "Has members", new fact "Has 12 million members" → UPDATE (more complete)
+- NEVER use UPDATE for a fact that's being added in the current batch — those are always ADD
 
-**DELETE**: Contradictory or incorrect information
-- Example: Memory has "Founded in 1960", new fact "Founded in 1968" → DELETE old, ADD new
+**DELETE**: Contradictory or incorrect information **in an existing memory**
+- ONLY use DELETE when removing a memory that already exists in the Old Memory list
+- Example: Old Memory has "Founded in 1960", new fact "Founded in 1968" → DELETE old, ADD new
 
-**NONE**: Fact already present (even if worded differently)
-- Example: Memory has "UMC stands for United Methodist Church", new fact "UMC means United Methodist Church" → NONE
+**NONE**: Fact already present in Old Memory (even if worded differently)
+- Example: Old Memory has "UMC stands for United Methodist Church", new fact "UMC means United Methodist Church" → NONE
 
 # Important Guidelines for Reading Comprehension
 
@@ -287,7 +332,29 @@ Return JSON with "memory" key containing list of facts with their status:
 
 # Examples
 
-**Example 1: Preserve Atomic Facts**
+**Example 1: Multiple New Facts from Current Passage — ALL are ADD**
+Old Memory:
+```json
+[
+  {"id": "0", "text": "Marie Curie was a physicist"}
+]
+```
+Retrieved Facts: ["Marie Curie won the Nobel Prize in 1903", "She conducted research on radioactivity", "She was the first woman to win a Nobel Prize"]
+
+New Memory:
+```json
+{
+  "memory": [
+    {"id": "0", "text": "Marie Curie was a physicist", "event": "NONE"},
+    {"id": "1", "text": "Marie Curie won the Nobel Prize in 1903", "event": "ADD"},
+    {"id": "2", "text": "She conducted research on radioactivity", "event": "ADD"},
+    {"id": "3", "text": "She was the first woman to win a Nobel Prize", "event": "ADD"}
+  ]
+}
+```
+✓ All new facts from the current passage are ADD, even though they relate to the same entity
+
+**Example 2: Preserve Atomic Facts, Update Existing**
 Old Memory:
 ```json
 [
@@ -305,9 +372,9 @@ New Memory:
   ]
 }
 ```
-✓ Kept definition separate, updated to more specific version
+✓ Updated existing memory to more specific version, added new definition as separate fact
 
-**Example 2: No Unnecessary Merging**
+**Example 3: No Unnecessary Merging**
 Old Memory:
 ```json
 [

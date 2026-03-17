@@ -17,7 +17,7 @@ import statistics
 from collections import Counter
 from typing import Any, Dict, List, Optional
 
-from .prompts import LLM_JUDGE_PROMPT
+from .prompts import BATCH_LLM_JUDGE_PROMPT, LLM_JUDGE_PROMPT
 
 logger = logging.getLogger(__name__)
 
@@ -247,6 +247,101 @@ def llm_judge(
     except Exception as e:
         logger.warning(f"LLM judge error: {e}")
         return 0
+
+
+# =============================================================================
+# BATCH LLM JUDGE
+# =============================================================================
+
+def batch_llm_judge(
+    samples: List[Dict[str, str]],
+    model: str = "gpt-4o-mini",
+    client: Optional[Any] = None,
+    batch_size: int = 10,
+) -> List[int]:
+    """
+    Judge a list of samples using batched LLM calls.
+
+    Sends up to `batch_size` entries per API call instead of one call per
+    sample, which reduces cost and latency significantly for large runs.
+
+    Args:
+        samples: List of dicts with keys "question", "ground_truth", "prediction".
+                 Entries may also include an "idx" key for logging purposes.
+        model: OpenAI-compatible model name
+        client: Optional pre-initialised OpenAI client
+        batch_size: Maximum number of entries per LLM call (10-20 recommended)
+
+    Returns:
+        List of integers (1=CORRECT, 0=WRONG) in the same order as ``samples``.
+    """
+    if not samples:
+        return []
+
+    if client is None:
+        from openai import OpenAI
+        client = OpenAI()
+
+    labels: List[int] = [0] * len(samples)
+
+    for batch_start in range(0, len(samples), batch_size):
+        batch = samples[batch_start : batch_start + batch_size]
+
+        # Format entries block
+        entry_lines = []
+        for local_idx, s in enumerate(batch, start=1):
+            entry_lines.append(
+                f"[{local_idx}]\n"
+                f"Question: {s.get('question', '')}\n"
+                f"Gold Answer: {s.get('ground_truth', '')}\n"
+                f"Generated Answer: {s.get('prediction', '')}"
+            )
+        entries_block = "\n\n".join(entry_lines)
+
+        prompt = BATCH_LLM_JUDGE_PROMPT.format(
+            n=len(batch),
+            entries=entries_block,
+        )
+
+        kwargs = {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.0,
+        }
+
+        try:
+            try:
+                kwargs["response_format"] = {"type": "json_object"}
+                response = client.chat.completions.create(**kwargs)
+            except Exception:
+                kwargs.pop("response_format", None)
+                response = client.chat.completions.create(**kwargs)
+
+            content = response.choices[0].message.content.strip()
+
+            # Strip markdown fences if present
+            if content.startswith("```"):
+                content = content.split("```")[1]
+                if content.startswith("json"):
+                    content = content[4:]
+
+            parsed = json.loads(content)
+            batch_results = parsed.get("results", [])
+
+            for item in batch_results:
+                # "idx" in the response is 1-based within the batch
+                local_idx = int(item.get("idx", 0)) - 1
+                if 0 <= local_idx < len(batch):
+                    global_idx = batch_start + local_idx
+                    labels[global_idx] = 1 if str(item.get("label", "")).upper() == "CORRECT" else 0
+
+        except Exception as e:
+            logger.warning(
+                f"Batch LLM judge error (batch starting at {batch_start}): {e}. "
+                "Falling back to 0 for all entries in this batch."
+            )
+
+    return labels
 
 
 # =============================================================================

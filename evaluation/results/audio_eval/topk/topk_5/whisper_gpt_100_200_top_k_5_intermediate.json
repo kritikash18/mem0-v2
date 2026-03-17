@@ -1,0 +1,3862 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "whisper_gpt_100_200_top_k_5",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 5,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text"
+  },
+  "summary": {
+    "count": 100,
+    "em_mean": 0.53,
+    "em_std": 0.5016,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.6996,
+    "f1_std": 0.3887,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.6604,
+    "bleu_std": 0.4082,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 20.6713,
+    "total_time_std": 4.2178,
+    "total_time_min": 12.005,
+    "total_time_max": 32.847,
+    "add_time_mean": 19.6172,
+    "add_time_std": 4.2232,
+    "add_time_min": 10.858,
+    "add_time_max": 31.942,
+    "search_time_mean": 0.3176,
+    "search_time_std": 0.0424,
+    "search_time_min": 0.248,
+    "search_time_max": 0.502,
+    "answer_time_mean": 0.7366,
+    "answer_time_std": 0.2052,
+    "answer_time_min": 0.529,
+    "answer_time_max": 1.538,
+    "em_correct": 53,
+    "em_pct": 53.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 100,
+      "zero": 18,
+      "perfect": 53,
+      "above_50": 75,
+      "above_80": 58
+    },
+    "bleu": {
+      "total": 100,
+      "zero": 21,
+      "perfect": 52,
+      "above_50": 72,
+      "above_80": 52
+    }
+  },
+  "results": [
+    {
+      "idx": 100,
+      "user_id": "eval_100_15929717",
+      "question": "When did the Germanic tribes claim territory in north and west Europe?",
+      "ground_truth": "the middle period of classical antiquity",
+      "prediction": "During the middle period of Classical Antiquity.",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Germanic tribes originated from Scandinavia and Northern Europe",
+          "score": 0.6965931259519708
+        },
+        {
+          "memory": "Germanic tribes expanded throughout Northern and Western Europe during the middle period of Classical Antiquity",
+          "score": 0.6799433242349814
+        },
+        {
+          "memory": "Germanic tribes conquered Celtic and other peoples",
+          "score": 0.6530275375315147
+        },
+        {
+          "memory": "Germanic tribes expanded into Southern Europe in Late Antiquity",
+          "score": 0.6426246705471321
+        },
+        {
+          "memory": "By 800 CE, Germanic tribes formed the Holy Roman Empire, the First German Empire",
+          "score": 0.5815764738900199
+        }
+      ],
+      "add_time": 30.092,
+      "search_time": 0.316,
+      "answer_time": 0.898,
+      "total_time": 31.306,
+      "em": 0,
+      "f1": 0.9091,
+      "bleu": 0.7143
+    },
+    {
+      "idx": 101,
+      "user_id": "eval_101_ad62580e",
+      "question": "Germany referred to which area more so than an actual country?",
+      "ground_truth": "central europe",
+      "prediction": "Central Europe",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "'Germany' remained largely a conceptual term referring to an amorphous area of Central Europe",
+          "score": 0.6759068155861215
+        },
+        {
+          "memory": "By 800 CE, Germanic tribes formed the Holy Roman Empire, the First German Empire",
+          "score": 0.4182378106636281
+        },
+        {
+          "memory": "A great number of small states and principalities existed in a loosely autonomous confederation within the Holy Roman Empire",
+          "score": 0.38883463760055403
+        },
+        {
+          "memory": "There was little cultural integration or national identity in the Holy Roman Empire",
+          "score": 0.38345606449361924
+        },
+        {
+          "memory": "The Holy Roman Empire was described as 'not holy,' 'not Roman,' and 'not an empire'",
+          "score": 0.3491058499219788
+        }
+      ],
+      "add_time": 23.934,
+      "search_time": 0.318,
+      "answer_time": 1.143,
+      "total_time": 25.395,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 102,
+      "user_id": "eval_102_684c9835",
+      "question": "what was NTL Telewest re-branded to in 2007?",
+      "ground_truth": "virgin media",
+      "prediction": "Virgin Media",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media rebranded in 2007 from NTL",
+          "score": 0.7095714117926373
+        },
+        {
+          "memory": "From 30 November 2006 until 30 July 2009, Telewest only carried one linear HD channel, BBC HD",
+          "score": 0.5263160015058717
+        },
+        {
+          "memory": "Telewest started to offer high-definition television with a capable set-top box",
+          "score": 0.5108439082267039
+        },
+        {
+          "memory": "The ITV HD trial concluded before 30 November 2006",
+          "score": 0.40370980724067873
+        },
+        {
+          "memory": "Virgin Media has made a number of statements suggesting that more linear HD channels are on the way",
+          "score": 0.3734913148532655
+        }
+      ],
+      "add_time": 19.751,
+      "search_time": 0.291,
+      "answer_time": 1.415,
+      "total_time": 21.457,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 103,
+      "user_id": "eval_103_7300571c",
+      "question": "What did Virgin Media concentrate on instead of offering linear channels?",
+      "ground_truth": "video on demand",
+      "prediction": "Video on demand service",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media has made a number of statements suggesting that more linear HD channels are on the way",
+          "score": 0.7267368461521944
+        },
+        {
+          "memory": "Virgin Media concentrated on its video on demand service to carry a modest selection of HD content",
+          "score": 0.6940543946813251
+        },
+        {
+          "memory": "Virgin Media claimed that other HD channels were 'locked up' or otherwise withheld from their platform",
+          "score": 0.647060571435115
+        },
+        {
+          "memory": "Virgin Media had the option to carry Channel 4 HD in the future",
+          "score": 0.6200389800551244
+        },
+        {
+          "memory": "Virgin Media rebranded in 2007 from NTL",
+          "score": 0.6052636059733899
+        }
+      ],
+      "add_time": 19.487,
+      "search_time": 0.303,
+      "answer_time": 0.613,
+      "total_time": 20.403,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.75
+    },
+    {
+      "idx": 104,
+      "user_id": "eval_104_b73a47df",
+      "question": "What unit is measured to determine circuit complexity?",
+      "ground_truth": "number of gates",
+      "prediction": "Number of gates",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Other complexity measures include the number of gates in circuit complexity",
+          "score": 0.7009916247030028
+        },
+        {
+          "memory": "Other complexity measures include the amount of communication in communication complexity",
+          "score": 0.5273587063087499
+        },
+        {
+          "memory": "Other complexity measures include the number of processors in parallel computing",
+          "score": 0.5152743330997187
+        },
+        {
+          "memory": "Computational complexity studies problems and quantifies the amount of resources needed to solve them, such as time and storage",
+          "score": 0.48611092712712667
+        },
+        {
+          "memory": "The theory of computational complexity formalizes the intuition of problem difficulty by introducing mathematical models of computation",
+          "score": 0.4164250178963158
+        }
+      ],
+      "add_time": 15.395,
+      "search_time": 0.315,
+      "answer_time": 0.882,
+      "total_time": 16.592,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 105,
+      "user_id": "eval_105_c3704a9c",
+      "question": "There is a public database of epitopes for pathogens known to be recognizable by what cells?",
+      "ground_truth": "b",
+      "prediction": "B-cells",
+      "num_memories_added": 14,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A publicly accessible database has been established for cataloging epitopes from pathogens recognizable by B-cells",
+          "score": 0.7884205884419301
+        },
+        {
+          "memory": "More recent developments in predicting immunogenicity rely on machine learning techniques using databases of existing known epitopes",
+          "score": 0.5628582142838919
+        },
+        {
+          "memory": "Early techniques for predicting immunogenicity relied on the observation that hydrophilic amino acids are overrepresented in epitope regions compared to hydrophobic amino acids",
+          "score": 0.5265336505784415
+        },
+        {
+          "memory": "These databases usually come from well-studied virus proteins",
+          "score": 0.484746251105024
+        },
+        {
+          "memory": "Computational methods have been developed to predict the immunogenicity of peptides and proteins",
+          "score": 0.44446877765872983
+        }
+      ],
+      "add_time": 31.942,
+      "search_time": 0.305,
+      "answer_time": 0.601,
+      "total_time": 32.847,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.0
+    },
+    {
+      "idx": 106,
+      "user_id": "eval_106_e8aaba37",
+      "question": "What event took away his ability of speech?",
+      "ground_truth": "apoplectic stroke",
+      "prediction": "An apoplectic stroke",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "An apoplectic stroke deprived him of his speech",
+          "score": 0.7081783671914779
+        },
+        {
+          "memory": "He died shortly afterwards at 2:45 a.m. on 18 February 1546",
+          "score": 0.2558014136467929
+        },
+        {
+          "memory": "He died in Eilben, the city of his birth",
+          "score": 0.251157902837905
+        },
+        {
+          "memory": "He was 62 years old at the time of his death",
+          "score": 0.23658624860648306
+        },
+        {
+          "memory": "The funeral was held by his friends Johannes Bugenhagen and Philip Melanchthon",
+          "score": 0.23331510682044893
+        }
+      ],
+      "add_time": 15.4,
+      "search_time": 0.254,
+      "answer_time": 0.887,
+      "total_time": 16.54,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 107,
+      "user_id": "eval_107_21ce1e21",
+      "question": "Where was Luther buried?",
+      "ground_truth": "castle church in wittenberg",
+      "prediction": "Wittenberg",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "He was buried in the castle church in Wittenberg, beneath the pulpit",
+          "score": 0.7102193693330262
+        },
+        {
+          "memory": "The funeral was held by his friends Johannes Bugenhagen and Philip Melanchthon",
+          "score": 0.5170947261498278
+        },
+        {
+          "memory": "He died in Eilben, the city of his birth",
+          "score": 0.4464938305748131
+        },
+        {
+          "memory": "Charles V ordered the troops not to disturb the grave",
+          "score": 0.4029808145089905
+        },
+        {
+          "memory": "He died shortly afterwards at 2:45 a.m. on 18 February 1546",
+          "score": 0.3904543903653659
+        }
+      ],
+      "add_time": 16.343,
+      "search_time": 0.248,
+      "answer_time": 1.538,
+      "total_time": 18.129,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 1.0
+    },
+    {
+      "idx": 108,
+      "user_id": "eval_108_403829e8",
+      "question": "What is the key accomplishment of Genghis Khan that modern Mongolians celebrate?",
+      "ground_truth": "uniting warring tribes",
+      "prediction": "Uniting warring tribes",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Genghis Khan became one of the central figures of Mongolian national identity",
+          "score": 0.6617925388606929
+        },
+        {
+          "memory": "Genghis Khan is viewed positively by Mongolians for his role in uniting warring tribes",
+          "score": 0.6446066389475782
+        },
+        {
+          "memory": "Mongolians claim that Genghis Khan's butchery is exaggerated while his positive role is underrated",
+          "score": 0.5896149927484859
+        },
+        {
+          "memory": "In the early 1990s, the memory of Genghis Khan and the Mongolian national identity experienced a powerful revival",
+          "score": 0.5883211661794082
+        },
+        {
+          "memory": "Genghis Khan is referred to as the father of the Mongols, especially among the younger generation",
+          "score": 0.5768400134523953
+        }
+      ],
+      "add_time": 19.89,
+      "search_time": 0.339,
+      "answer_time": 0.719,
+      "total_time": 20.948,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 109,
+      "user_id": "eval_109_36167d9b",
+      "question": "How do Mongolians sometime describe their relationship to Genghis Khan?",
+      "ground_truth": "genghis khans children",
+      "prediction": "Genghis Khan's children",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Mongolians often refer to themselves as Genghis Khan's children",
+          "score": 0.753098473702413
+        },
+        {
+          "memory": "Mongolians often refer to their country as Genghis Khan's Mongolia",
+          "score": 0.7453039288448082
+        },
+        {
+          "memory": "Genghis Khan is referred to as the father of the Mongols, especially among the younger generation",
+          "score": 0.6603679545751088
+        },
+        {
+          "memory": "Genghis Khan became one of the central figures of Mongolian national identity",
+          "score": 0.6505539060248402
+        },
+        {
+          "memory": "Genghis Khan is viewed positively by Mongolians for his role in uniting warring tribes",
+          "score": 0.646941329132491
+        }
+      ],
+      "add_time": 22.621,
+      "search_time": 0.275,
+      "answer_time": 0.669,
+      "total_time": 23.564,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 110,
+      "user_id": "eval_110_832b39ec",
+      "question": "What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?",
+      "ground_truth": "his brutality",
+      "prediction": "His butchery",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Mongolians believe that Genghis Khan's butchery is exaggerated while his positive role is underrated",
+          "score": 0.7849624733926341
+        },
+        {
+          "memory": "Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan",
+          "score": 0.7814196636006606
+        },
+        {
+          "memory": "There is a significant divide in the perception of Genghis Khan's brutality",
+          "score": 0.6364434952943272
+        },
+        {
+          "memory": "Genghis Khan is viewed positively by Mongolians for his role in uniting warring tribes",
+          "score": 0.6207855881760842
+        },
+        {
+          "memory": "Genghis Khan became one of the central figures of Mongolian national identity",
+          "score": 0.611295648202228
+        }
+      ],
+      "add_time": 21.392,
+      "search_time": 0.315,
+      "answer_time": 0.945,
+      "total_time": 22.651,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 111,
+      "user_id": "eval_111_eb8d4320",
+      "question": "What is the general perception of non-Mongolian histories of Genghis Khan by Mongolians themselves?",
+      "ground_truth": "unfairly biased",
+      "prediction": "Unfairly biased",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan",
+          "score": 0.7181395847120872
+        },
+        {
+          "memory": "Mongolians claim that Genghis Khan's butchery is exaggerated while his positive role is underrated",
+          "score": 0.6528666877607527
+        },
+        {
+          "memory": "There is a significant divide in the perception of Genghis Khan's brutality",
+          "score": 0.6461869426429525
+        },
+        {
+          "memory": "Genghis Khan is viewed positively by Mongolians for his role in uniting warring tribes",
+          "score": 0.622134372301878
+        },
+        {
+          "memory": "Genghis Khan became one of the central figures of Mongolian national identity",
+          "score": 0.6025306898485354
+        }
+      ],
+      "add_time": 20.033,
+      "search_time": 0.336,
+      "answer_time": 0.641,
+      "total_time": 21.01,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 112,
+      "user_id": "eval_112_e087ebe0",
+      "question": "Who continued to hold the citadel of Bukhara after the Mongols took the rest of the city?",
+      "ground_truth": "turkish defenders",
+      "prediction": "Turkish defenders",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A unit of Turkish defenders held Bukhara's citadel for another twelve days",
+          "score": 0.6355716017598393
+        },
+        {
+          "memory": "City leaders of Bukhara opened the gates to the Mongols",
+          "score": 0.6206899188319801
+        },
+        {
+          "memory": "Genghis Khan had the surviving population of Bukhara assemble in the main mosque",
+          "score": 0.617093548387234
+        },
+        {
+          "memory": "Bukhara had a citadel typical of Khwarezmi cities",
+          "score": 0.6151239518780988
+        },
+        {
+          "memory": "As the Mongol soldiers looted Bukhara, a fire broke out, razing most of the city to the ground",
+          "score": 0.5690172556362354
+        }
+      ],
+      "add_time": 21.762,
+      "search_time": 0.307,
+      "answer_time": 0.576,
+      "total_time": 22.645,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 113,
+      "user_id": "eval_113_6659e4f7",
+      "question": "How did Genghis Khan describe himself to the people of Bukhara?",
+      "ground_truth": "the flail of god",
+      "prediction": "The flail of God",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Genghis Khan declared that he was the flail of God, sent to punish the people of Bukhara for their sins",
+          "score": 0.6414675383036164
+        },
+        {
+          "memory": "Genghis Khan had the surviving population of Bukhara assemble in the main mosque",
+          "score": 0.6263982052687789
+        },
+        {
+          "memory": "City leaders of Bukhara opened the gates to the Mongols",
+          "score": 0.5019557129021726
+        },
+        {
+          "memory": "Young men from Bukhara who had not fought were drafted into the Mongolian army",
+          "score": 0.45550350552840596
+        },
+        {
+          "memory": "As the Mongol soldiers looted Bukhara, a fire broke out, razing most of the city to the ground",
+          "score": 0.45041327083155225
+        }
+      ],
+      "add_time": 21.334,
+      "search_time": 0.318,
+      "answer_time": 0.563,
+      "total_time": 22.216,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 114,
+      "user_id": "eval_114_e006a16c",
+      "question": "Higher rates of health and social problems are just two of examples of effects from what?",
+      "ground_truth": "inequality",
+      "prediction": "Inequality",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems",
+          "score": 0.6460151827268437
+        },
+        {
+          "memory": "Effects of inequality include lower rates of social goods",
+          "score": 0.5358748114999996
+        },
+        {
+          "memory": "Effects of inequality include a lower level of economic utility in society due to resources devoted to high-end consumption",
+          "score": 0.4615310840687957
+        },
+        {
+          "memory": "In the top 21 industrialized countries, life expectancy is lower in more unequal countries",
+          "score": 0.3368849314299081
+        },
+        {
+          "memory": "There is a lower level of economic growth when human capital is neglected for high-end consumption",
+          "score": 0.3320757288111904
+        }
+      ],
+      "add_time": 17.201,
+      "search_time": 0.363,
+      "answer_time": 1.128,
+      "total_time": 18.693,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 115,
+      "user_id": "eval_115_3df65469",
+      "question": "Why does a lower level of economic growth occur due to high-end consumption?",
+      "ground_truth": "human capital is neglected",
+      "prediction": "Neglect of human capital",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "There is a lower level of economic growth when human capital is neglected for high-end consumption",
+          "score": 0.7762553571794307
+        },
+        {
+          "memory": "Effects of inequality include a lower level of economic utility in society due to resources devoted to high-end consumption",
+          "score": 0.6386076937245979
+        },
+        {
+          "memory": "Effects of inequality include lower rates of social goods",
+          "score": 0.44973759050377504
+        },
+        {
+          "memory": "In the top 21 industrialized countries, life expectancy is lower in more unequal countries",
+          "score": 0.395906514331669
+        },
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems",
+          "score": 0.35923752455685043
+        }
+      ],
+      "add_time": 15.524,
+      "search_time": 0.273,
+      "answer_time": 0.613,
+      "total_time": 16.411,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 116,
+      "user_id": "eval_116_e88858ac",
+      "question": "What is lower in countries with more inequality for the top 21 industrialized countries?",
+      "ground_truth": "life expectancy",
+      "prediction": "Life expectancy",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "In the top 21 industrialized countries, life expectancy is lower in more unequal countries",
+          "score": 0.7803298509521028
+        },
+        {
+          "memory": "The correlation coefficient for life expectancy and inequality in the top 21 industrialized countries is R = 0.907",
+          "score": 0.6134231426721597
+        },
+        {
+          "memory": "Effects of inequality include lower rates of social goods",
+          "score": 0.552274482564419
+        },
+        {
+          "memory": "Effects of inequality include a lower level of economic utility in society due to resources devoted to high-end consumption",
+          "score": 0.5479242646115006
+        },
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems",
+          "score": 0.5062804466777023
+        }
+      ],
+      "add_time": 15.766,
+      "search_time": 0.421,
+      "answer_time": 1.392,
+      "total_time": 17.579,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 117,
+      "user_id": "eval_117_61a1aece",
+      "question": "What is a lower rate of social goods an effect of?",
+      "ground_truth": "inequality",
+      "prediction": "Inequality",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include lower rates of social goods",
+          "score": 0.7377753571761443
+        },
+        {
+          "memory": "Effects of inequality include a lower level of economic utility in society due to resources devoted to high-end consumption",
+          "score": 0.603628675640929
+        },
+        {
+          "memory": "There is a lower level of economic growth when human capital is neglected for high-end consumption",
+          "score": 0.527374947557652
+        },
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems",
+          "score": 0.5078750816630281
+        },
+        {
+          "memory": "In the top 21 industrialized countries, life expectancy is lower in more unequal countries",
+          "score": 0.4082171062655983
+        }
+      ],
+      "add_time": 17.102,
+      "search_time": 0.281,
+      "answer_time": 1.013,
+      "total_time": 18.396,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 118,
+      "user_id": "eval_118_e2e8ebdf",
+      "question": "In U.S. states, what happens to the life expectancy in less economically equal ones?",
+      "ground_truth": "life expectancy is lower",
+      "prediction": "Lower life expectancy",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A similar relationship between life expectancy and inequality exists among U.S. states",
+          "score": 0.7228804039976916
+        },
+        {
+          "memory": "In the top 21 industrialized countries, life expectancy is lower in more unequal countries",
+          "score": 0.6895237209884346
+        },
+        {
+          "memory": "The correlation coefficient for life expectancy and inequality among U.S. states is R = -0.620",
+          "score": 0.6138628200872747
+        },
+        {
+          "memory": "The correlation coefficient for life expectancy and inequality in the top 21 industrialized countries is R = 0.907",
+          "score": 0.5275994582426791
+        },
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems",
+          "score": 0.4628082494249361
+        }
+      ],
+      "add_time": 18.864,
+      "search_time": 0.295,
+      "answer_time": 0.597,
+      "total_time": 19.755,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 1.0
+    },
+    {
+      "idx": 119,
+      "user_id": "eval_119_4e38f360",
+      "question": "What other areas did the Apollo missions help spur advancements in?",
+      "ground_truth": "avionics telecommunications and computers",
+      "prediction": "Avionics, telecommunications, and computers",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Apollo spurred advances in many areas of technology incidental to rocketry and manned spaceflight, including avionics, telecommunications, and computers",
+          "score": 0.6552412467216979
+        },
+        {
+          "memory": "Apollo set several major human spaceflight milestones",
+          "score": 0.5531682388403603
+        },
+        {
+          "memory": "The Apollo program laid the foundation for NASA's current human spaceflight capability",
+          "score": 0.5417271534206897
+        },
+        {
+          "memory": "The Apollo program greatly contributed to the understanding of the Moon's composition and geological history",
+          "score": 0.5315264553633519
+        },
+        {
+          "memory": "The Apollo program funded the construction of NASA's Johnson Space Center and Kennedy Space Center",
+          "score": 0.49852885290968174
+        }
+      ],
+      "add_time": 19.609,
+      "search_time": 0.293,
+      "answer_time": 0.683,
+      "total_time": 20.585,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5
+    },
+    {
+      "idx": 120,
+      "user_id": "eval_120_68c305bb",
+      "question": "What resource is the economy of southern California depedent on?",
+      "ground_truth": "petroleum",
+      "prediction": "Petroleum",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California's economy is dominated and heavily dependent on an abundance of petroleum",
+          "score": 0.7566996304253837
+        },
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States",
+          "score": 0.7001494796698582
+        },
+        {
+          "memory": "Other industries in Southern California include software, automotive, ports, finance, biomedical, and regional logistics",
+          "score": 0.6483920937362696
+        },
+        {
+          "memory": "The vast majority of transport in Southern California runs on petroleum",
+          "score": 0.5505611286005863
+        },
+        {
+          "memory": "Southern California is famous for tourism, Hollywood, film, television, and music",
+          "score": 0.5337240914961636
+        }
+      ],
+      "add_time": 15.468,
+      "search_time": 0.273,
+      "answer_time": 0.61,
+      "total_time": 16.351,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 121,
+      "user_id": "eval_121_cb6e3be1",
+      "question": "Southern California is most famous for tourism and what notably named district?",
+      "ground_truth": "hollywood",
+      "prediction": "Hollywood",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California is famous for tourism, Hollywood, film, television, and music",
+          "score": 0.7482022249797196
+        },
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States",
+          "score": 0.5324482625222412
+        },
+        {
+          "memory": "Southern California's economy is dominated and heavily dependent on an abundance of petroleum",
+          "score": 0.48344597289736096
+        },
+        {
+          "memory": "Southern California has been heavily impacted by the housing crash",
+          "score": 0.47978503432026587
+        },
+        {
+          "memory": "Other industries in Southern California include software, automotive, ports, finance, biomedical, and regional logistics",
+          "score": 0.4571704810224618
+        }
+      ],
+      "add_time": 15.589,
+      "search_time": 0.293,
+      "answer_time": 0.628,
+      "total_time": 16.51,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 122,
+      "user_id": "eval_122_358ca56c",
+      "question": "The region was a leader in what event between 2001 - 2007?",
+      "ground_truth": "the housing bubble",
+      "prediction": "The housing bubble",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California was a leader in the housing bubble from 2001 to 2007",
+          "score": 0.31471286537806176
+        },
+        {
+          "memory": "Other industries in Southern California include software, automotive, ports, finance, biomedical, and regional logistics",
+          "score": 0.21625877083450007
+        },
+        {
+          "memory": "Southern California's economy is dominated and heavily dependent on an abundance of petroleum",
+          "score": 0.15418249956851776
+        },
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States",
+          "score": 0.14803051063148068
+        },
+        {
+          "memory": "The vast majority of transport in Southern California runs on petroleum",
+          "score": 0.11697552869808306
+        }
+      ],
+      "add_time": 15.425,
+      "search_time": 0.257,
+      "answer_time": 0.753,
+      "total_time": 16.435,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 123,
+      "user_id": "eval_123_b10d315e",
+      "question": "What was the effect of the housing crash on the region?",
+      "ground_truth": "heavily impacted",
+      "prediction": "Heavily impacted",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California has been heavily impacted by the housing crash",
+          "score": 0.6654484253509008
+        },
+        {
+          "memory": "Southern California was a leader in the housing bubble from 2001 to 2007",
+          "score": 0.5214493673206446
+        },
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States",
+          "score": 0.295571138032884
+        },
+        {
+          "memory": "Southern California's economy is dominated and heavily dependent on an abundance of petroleum",
+          "score": 0.2788788424883514
+        },
+        {
+          "memory": "Other industries in Southern California include software, automotive, ports, finance, biomedical, and regional logistics",
+          "score": 0.27690140907214456
+        }
+      ],
+      "add_time": 17.586,
+      "search_time": 0.255,
+      "answer_time": 0.601,
+      "total_time": 18.442,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 124,
+      "user_id": "eval_124_4a3ea9ed",
+      "question": "What alumni was also Obama's campaign adviser?",
+      "ground_truth": "david axelrod",
+      "prediction": "David Axelrod",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "David Axelrod was an Obama campaign advisor and top political advisor to President Bill Clinton",
+          "score": 0.5835773799439621
+        },
+        {
+          "memory": "Saul Alinsky is the founder of Modern Community Organizing",
+          "score": 0.3540761908077451
+        },
+        {
+          "memory": "Paul Wolfowitz was the former World Bank President",
+          "score": 0.30797636326497635
+        },
+        {
+          "memory": "Robert Bork served as Attorney General and Federal Judge",
+          "score": 0.2962911796559512
+        },
+        {
+          "memory": "Bernie Sanders is a United States Senator from Vermont and was a 2016 Democratic presidential candidate",
+          "score": 0.2831361141372669
+        }
+      ],
+      "add_time": 20.224,
+      "search_time": 0.312,
+      "answer_time": 0.596,
+      "total_time": 21.132,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 125,
+      "user_id": "eval_125_98acae26",
+      "question": "What alumni was also an Attorney General and a federal judge?",
+      "ground_truth": "robert bork",
+      "prediction": "Robert Bork",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Robert Bork served as Attorney General and Federal Judge",
+          "score": 0.6153785474177699
+        },
+        {
+          "memory": "John Paul Stevens served as a Supreme Court Justice",
+          "score": 0.4355823577784955
+        },
+        {
+          "memory": "Ramsey Clark served as Attorney General",
+          "score": 0.4144332701272696
+        },
+        {
+          "memory": "David Axelrod was an Obama campaign advisor and top political advisor to President Bill Clinton",
+          "score": 0.3023670077768414
+        },
+        {
+          "memory": "Carol Moseley Braun was the first female African-American Senator",
+          "score": 0.2660169575429483
+        }
+      ],
+      "add_time": 21.981,
+      "search_time": 0.292,
+      "answer_time": 0.604,
+      "total_time": 22.877,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 126,
+      "user_id": "eval_126_11a6cab1",
+      "question": "What kind of immune system do bacteria have?",
+      "ground_truth": "rudimentary",
+      "prediction": "Rudimentary immune system",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections",
+          "score": 0.5804416757824198
+        },
+        {
+          "memory": "Basic immune mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system",
+          "score": 0.4669967383928839
+        },
+        {
+          "memory": "Multiple defense mechanisms have evolved to recognize and neutralize pathogens",
+          "score": 0.4461007172122815
+        },
+        {
+          "memory": "Basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates",
+          "score": 0.4362580315121549
+        },
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, avoiding detection and neutralization by the immune system",
+          "score": 0.43050141763006977
+        }
+      ],
+      "add_time": 22.326,
+      "search_time": 0.285,
+      "answer_time": 0.622,
+      "total_time": 23.233,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 127,
+      "user_id": "eval_127_cca994b8",
+      "question": "Which other ancient organism formed basic immune mechanisms?",
+      "ground_truth": "bacteria",
+      "prediction": "Plants and invertebrates",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates",
+          "score": 0.709075023393964
+        },
+        {
+          "memory": "Simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections",
+          "score": 0.5179582850971749
+        },
+        {
+          "memory": "Multiple defense mechanisms have evolved to recognize and neutralize pathogens",
+          "score": 0.5054542011235635
+        },
+        {
+          "memory": "Basic immune mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system",
+          "score": 0.5039885534074824
+        },
+        {
+          "memory": "Jawed vertebrates have the ability to adapt over time to recognize specific pathogens more efficiently",
+          "score": 0.4560620426014148
+        }
+      ],
+      "add_time": 21.96,
+      "search_time": 0.312,
+      "answer_time": 0.616,
+      "total_time": 22.888,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 128,
+      "user_id": "eval_128_c50c1993",
+      "question": "How does adaptive/acquired immunity help in the future?",
+      "ground_truth": "creates immunological memory",
+      "prediction": "Enhanced response to subsequent encounters with the same pathogen.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen",
+          "score": 0.6964377471221292
+        },
+        {
+          "memory": "Acquired immunity leads to an enhanced response to subsequent encounters with the same pathogen",
+          "score": 0.6528127959688215
+        },
+        {
+          "memory": "The process of acquired immunity is the basis of vaccination",
+          "score": 0.5465928821463188
+        },
+        {
+          "memory": "Jawed vertebrates have the ability to adapt over time to recognize specific pathogens more efficiently",
+          "score": 0.5255634874564687
+        },
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, avoiding detection and neutralization by the immune system",
+          "score": 0.4960911516708164
+        }
+      ],
+      "add_time": 21.968,
+      "search_time": 0.371,
+      "answer_time": 0.728,
+      "total_time": 23.067,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 129,
+      "user_id": "eval_129_037f190d",
+      "question": "The idea of acquired immunity in jawed vertebrates is the basis of what medical treatment?",
+      "ground_truth": "vaccination",
+      "prediction": "Vaccination",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Jawed vertebrates have the ability to adapt over time to recognize specific pathogens more efficiently",
+          "score": 0.583405892123218
+        },
+        {
+          "memory": "The process of acquired immunity is the basis of vaccination",
+          "score": 0.5597499227988058
+        },
+        {
+          "memory": "Jawed vertebrates, including humans, have more sophisticated defense mechanisms",
+          "score": 0.5193961310810059
+        },
+        {
+          "memory": "Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen",
+          "score": 0.4859256057798063
+        },
+        {
+          "memory": "Acquired immunity leads to an enhanced response to subsequent encounters with the same pathogen",
+          "score": 0.45874403092127086
+        }
+      ],
+      "add_time": 22.901,
+      "search_time": 0.317,
+      "answer_time": 0.813,
+      "total_time": 24.031,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 130,
+      "user_id": "eval_130_3cb2f734",
+      "question": "What is the ability to recognize and adapt to new specific pathogens called?",
+      "ground_truth": "adaptive or acquired immunity",
+      "prediction": "Adaptive immunity",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Jawed vertebrates have the ability to adapt over time to recognize specific pathogens more efficiently",
+          "score": 0.644484395499994
+        },
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, avoiding detection and neutralization by the immune system",
+          "score": 0.601206968395172
+        },
+        {
+          "memory": "Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen",
+          "score": 0.5882245829316102
+        },
+        {
+          "memory": "Multiple defense mechanisms have evolved to recognize and neutralize pathogens",
+          "score": 0.5756339792431794
+        },
+        {
+          "memory": "Acquired immunity leads to an enhanced response to subsequent encounters with the same pathogen",
+          "score": 0.5553041406358892
+        }
+      ],
+      "add_time": 21.436,
+      "search_time": 0.329,
+      "answer_time": 0.585,
+      "total_time": 22.35,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 1.0
+    },
+    {
+      "idx": 131,
+      "user_id": "eval_131_4f777af4",
+      "question": "What is the name for O3 most often used?",
+      "ground_truth": "ozone",
+      "prediction": "Ozone",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Trioxygen, O3, is usually known as ozone",
+          "score": 0.7415188741674141
+        },
+        {
+          "memory": "The O8 cluster has the potential to be a much more powerful oxidizer than either O2 or O3",
+          "score": 0.5456334365193358
+        },
+        {
+          "memory": "The metastable molecule tetraoxygen, O4, was discovered in 2001",
+          "score": 0.5258763504448563
+        },
+        {
+          "memory": "Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation",
+          "score": 0.4963728840772156
+        },
+        {
+          "memory": "Ozone is a very reactive allotrope of oxygen that is damaging to lung tissue",
+          "score": 0.4573485061593783
+        }
+      ],
+      "add_time": 28.916,
+      "search_time": 0.311,
+      "answer_time": 0.559,
+      "total_time": 29.786,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 132,
+      "user_id": "eval_132_3a771165",
+      "question": "What  does ozone's characteristic to cause damage effect?",
+      "ground_truth": "lung tissue",
+      "prediction": "Damage to lung tissue",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Ozone is a very reactive allotrope of oxygen that is damaging to lung tissue",
+          "score": 0.6555867406381218
+        },
+        {
+          "memory": "Ozone absorbs strongly in the UV region of the spectrum",
+          "score": 0.5251384752204964
+        },
+        {
+          "memory": "Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation",
+          "score": 0.5052750255922731
+        },
+        {
+          "memory": "Near the Earth's surface, ozone is a pollutant formed as a byproduct of automobile exhaust",
+          "score": 0.4612903472886134
+        },
+        {
+          "memory": "The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet",
+          "score": 0.45326449883485675
+        }
+      ],
+      "add_time": 28.134,
+      "search_time": 0.302,
+      "answer_time": 0.679,
+      "total_time": 29.114,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 133,
+      "user_id": "eval_133_dcad7ff4",
+      "question": "What function does ozone perform for the planet?",
+      "ground_truth": "protective radiation shield",
+      "prediction": "Protective radiation shield",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet",
+          "score": 0.6522867915990017
+        },
+        {
+          "memory": "Near the Earth's surface, ozone is a pollutant formed as a byproduct of automobile exhaust",
+          "score": 0.5458384765059517
+        },
+        {
+          "memory": "Ozone absorbs strongly in the UV region of the spectrum",
+          "score": 0.5315254213427539
+        },
+        {
+          "memory": "Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation",
+          "score": 0.5180030077232247
+        },
+        {
+          "memory": "Ozone is a very reactive allotrope of oxygen that is damaging to lung tissue",
+          "score": 0.49782178553216594
+        }
+      ],
+      "add_time": 27.935,
+      "search_time": 0.308,
+      "answer_time": 1.465,
+      "total_time": 29.708,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 134,
+      "user_id": "eval_134_18c5f526",
+      "question": "What light radiation does ozone absorb?",
+      "ground_truth": "ultraviolet",
+      "prediction": "UV radiation",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Ozone absorbs strongly in the UV region of the spectrum",
+          "score": 0.7435270778563399
+        },
+        {
+          "memory": "Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation",
+          "score": 0.5331119291738701
+        },
+        {
+          "memory": "Ozone is a very reactive allotrope of oxygen that is damaging to lung tissue",
+          "score": 0.5204131421965249
+        },
+        {
+          "memory": "The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet",
+          "score": 0.4875751345594763
+        },
+        {
+          "memory": "Near the Earth's surface, ozone is a pollutant formed as a byproduct of automobile exhaust",
+          "score": 0.4581338868858234
+        }
+      ],
+      "add_time": 26.333,
+      "search_time": 0.376,
+      "answer_time": 0.63,
+      "total_time": 27.34,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 135,
+      "user_id": "eval_135_1113dbef",
+      "question": "How many sons did B\u00f6rte bear Genghis Khan after Jochi?",
+      "ground_truth": "three",
+      "prediction": "Two",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The names of Genghis Khan's sons were documented",
+          "score": 0.6107527782107847
+        },
+        {
+          "memory": "Borte had three sons: Chagatai (1187\u20131241), Ogedei (1189\u20131241), and Tolui (1190\u20131232)",
+          "score": 0.5746532148144453
+        },
+        {
+          "memory": "Genghis Khan had many other children with his other wives, but they were excluded from the succession",
+          "score": 0.5491051285476312
+        },
+        {
+          "memory": "At least six daughters of Genghis Khan are known to have existed",
+          "score": 0.5430907262218814
+        },
+        {
+          "memory": "No documents have survived that definitively provide the number or names of the daughters born to the consorts of Genghis Khan",
+          "score": 0.5229929908226177
+        }
+      ],
+      "add_time": 15.632,
+      "search_time": 0.294,
+      "answer_time": 0.626,
+      "total_time": 16.552,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 136,
+      "user_id": "eval_136_ac3db2bd",
+      "question": "How many names of Ghengis Khan's daughters are known?",
+      "ground_truth": "six",
+      "prediction": "At least six",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The names of Genghis Khan's daughters were not documented",
+          "score": 0.8274538888252077
+        },
+        {
+          "memory": "At least six daughters of Genghis Khan are known",
+          "score": 0.8129670945786928
+        },
+        {
+          "memory": "No documents have survived that provide the number or names of daughters born to the consorts of Genghis Khan",
+          "score": 0.73643887356762
+        },
+        {
+          "memory": "The names of Genghis Khan's sons were documented",
+          "score": 0.7265010484496384
+        },
+        {
+          "memory": "Genghis Khan had many other children with his other wives, but they were excluded from the succession",
+          "score": 0.661102596200724
+        }
+      ],
+      "add_time": 20.686,
+      "search_time": 0.311,
+      "answer_time": 0.66,
+      "total_time": 21.657,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 137,
+      "user_id": "eval_137_6f2accb3",
+      "question": "What did Luther seek to restore?",
+      "ground_truth": "public order",
+      "prediction": "Public order",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Luther worked alongside the authorities to restore public order",
+          "score": 0.6536029502034673
+        },
+        {
+          "memory": "Luther set about reversing or modifying new church practices",
+          "score": 0.6422454208641395
+        },
+        {
+          "memory": "Luther signaled his reinvention as a conservative force within the Reformation",
+          "score": 0.6242049735066991
+        },
+        {
+          "memory": "Luther faced a battle against the established church and radical reformers",
+          "score": 0.5689823567781507
+        },
+        {
+          "memory": "Luther banished the Zwickau prophets",
+          "score": 0.5226111242751308
+        }
+      ],
+      "add_time": 12.492,
+      "search_time": 0.26,
+      "answer_time": 0.645,
+      "total_time": 13.397,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 138,
+      "user_id": "eval_138_c154ceae",
+      "question": "What was Luther's force within the Reformation?",
+      "ground_truth": "conservative",
+      "prediction": "Conservative force",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Luther signaled his reinvention as a conservative force within the Reformation",
+          "score": 0.7471291268736274
+        },
+        {
+          "memory": "Luther faced a battle against radical reformers",
+          "score": 0.6792941186247587
+        },
+        {
+          "memory": "Luther faced a battle against the established church",
+          "score": 0.6501178913512102
+        },
+        {
+          "memory": "Luther set about reversing or modifying new church practices",
+          "score": 0.6056316700227498
+        },
+        {
+          "memory": "Luther worked alongside the authorities to restore public order",
+          "score": 0.600099992660587
+        }
+      ],
+      "add_time": 13.034,
+      "search_time": 0.279,
+      "answer_time": 0.766,
+      "total_time": 14.079,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 139,
+      "user_id": "eval_139_c93e4a14",
+      "question": "What did the radical reformers cause in the new order?",
+      "ground_truth": "unrest and violence",
+      "prediction": "Social unrest and violence",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Radical reformers threatened the new order by fomenting social unrest and violence",
+          "score": 0.798813689964465
+        },
+        {
+          "memory": "Luther faced a battle against radical reformers",
+          "score": 0.5935864861429541
+        },
+        {
+          "memory": "Luther set about reversing or modifying new church practices",
+          "score": 0.5421910583298102
+        },
+        {
+          "memory": "Luther signaled his reinvention as a conservative force within the Reformation",
+          "score": 0.4705592026508174
+        },
+        {
+          "memory": "Luther worked alongside the authorities to restore public order",
+          "score": 0.44596364703444524
+        }
+      ],
+      "add_time": 13.122,
+      "search_time": 0.281,
+      "answer_time": 0.685,
+      "total_time": 14.088,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.75
+    },
+    {
+      "idx": 140,
+      "user_id": "eval_140_8a93abb1",
+      "question": "Besides the radicals who else did Luther have to deal with?",
+      "ground_truth": "established church",
+      "prediction": "The established church",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Luther faced a battle against radical reformers",
+          "score": 0.7562586436591596
+        },
+        {
+          "memory": "Luther faced a battle against the established church",
+          "score": 0.6658168815051295
+        },
+        {
+          "memory": "Luther worked alongside the authorities to restore public order",
+          "score": 0.6534771170205949
+        },
+        {
+          "memory": "Luther banished the Zwickau prophets",
+          "score": 0.596273059933357
+        },
+        {
+          "memory": "Luther set about reversing or modifying new church practices",
+          "score": 0.5871967019467168
+        }
+      ],
+      "add_time": 12.734,
+      "search_time": 0.379,
+      "answer_time": 1.191,
+      "total_time": 14.303,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 141,
+      "user_id": "eval_141_68c659ef",
+      "question": "How many times has Polonia won the cup?",
+      "ground_truth": "twice",
+      "prediction": "Twice",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Polonia Warsaw won the cup twice",
+          "score": 0.7727342996911082
+        },
+        {
+          "memory": "Polonia Warsaw won the country's championship in 1946",
+          "score": 0.5996814061485618
+        },
+        {
+          "memory": "Polonia Warsaw won the Ekstraklasa Championship in 2000",
+          "score": 0.545633066571481
+        },
+        {
+          "memory": "Polonia Warsaw is currently playing in the 4th League",
+          "score": 0.5251824689094884
+        },
+        {
+          "memory": "Polonia Warsaw was relegated from the country's top flight in 2013",
+          "score": 0.5137503867172375
+        }
+      ],
+      "add_time": 19.251,
+      "search_time": 0.321,
+      "answer_time": 0.565,
+      "total_time": 20.137,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 142,
+      "user_id": "eval_142_f1c3bad4",
+      "question": "How many lakes are there in Warsaw?",
+      "ground_truth": "several",
+      "prediction": "I don't know",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "There are several lakes in Warsaw, mainly the Okspo Lakes",
+          "score": 0.8092298381296343
+        },
+        {
+          "memory": "There are many small lakes in the parks of Warsaw",
+          "score": 0.7822678897074096
+        },
+        {
+          "memory": "Lakes in Warsaw include those in Lazienki and Wilan\u00f3w Parks, and Kamionek Lake",
+          "score": 0.773869288333864
+        },
+        {
+          "memory": "Czerniakow Lake is one of the lakes in Warsaw",
+          "score": 0.6819374162907974
+        },
+        {
+          "memory": "Natural reserves in Warsaw include Bielany Forest, Kibaty Woods, and Czerniakow Lake",
+          "score": 0.6219697797494416
+        }
+      ],
+      "add_time": 20.141,
+      "search_time": 0.307,
+      "answer_time": 0.751,
+      "total_time": 21.199,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 143,
+      "user_id": "eval_143_5742d934",
+      "question": "Why are the small lakes in the parks emptied before winter?",
+      "ground_truth": "to clean them",
+      "prediction": "To clean them of plants and sediments.",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The majority of small lakes in the parks are emptied before winter to clean them of plants and sediments",
+          "score": 0.8885923824018915
+        },
+        {
+          "memory": "Only a few small lakes in the parks are permanent",
+          "score": 0.6680699412230817
+        },
+        {
+          "memory": "There are many small lakes in the parks of Warsaw",
+          "score": 0.5210019981422521
+        },
+        {
+          "memory": "Lakes in Warsaw include those in Lazienki and Wilan\u00f3w Parks, and Kamionek Lake",
+          "score": 0.4154044929071995
+        },
+        {
+          "memory": "There are several lakes in Warsaw, mainly the Okspo Lakes",
+          "score": 0.3831532555052718
+        }
+      ],
+      "add_time": 20.262,
+      "search_time": 0.502,
+      "answer_time": 0.713,
+      "total_time": 21.477,
+      "em": 0,
+      "f1": 0.6,
+      "bleu": 0.4286
+    },
+    {
+      "idx": 144,
+      "user_id": "eval_144_cc3b89e9",
+      "question": "What is stage 1 in the life of a bill?",
+      "ground_truth": "introductory",
+      "prediction": "The first, or introductory, stage of the Bill.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Stage 1 is the first, or introductory, stage of the Bill",
+          "score": 0.8060469989099649
+        },
+        {
+          "memory": "Documents from the Presiding Officer and the Member in charge of the Bill are lodged during Stage 1",
+          "score": 0.6119435658839338
+        },
+        {
+          "memory": "In Stage 1, the Minister or Member in charge of the Bill formally introduces it to Parliament",
+          "score": 0.6084197872318324
+        },
+        {
+          "memory": "After committee review, Stage 1 is submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill",
+          "score": 0.5298253052773223
+        },
+        {
+          "memory": "Stage 1 usually takes place initially in the relevant committee or committees",
+          "score": 0.5187307169719677
+        }
+      ],
+      "add_time": 19.769,
+      "search_time": 0.311,
+      "answer_time": 0.746,
+      "total_time": 20.827,
+      "em": 0,
+      "f1": 0.2857,
+      "bleu": 0.0
+    },
+    {
+      "idx": 145,
+      "user_id": "eval_145_f631b6f7",
+      "question": "What are presented to parliament in addition to the bill itself?",
+      "ground_truth": "accompanying documents",
+      "prediction": "Documents from the Presiding Officer and the Member in charge of the Bill",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "These documents indicate whether the Bill is within the legislative competence of the Parliament",
+          "score": 0.5755524209503038
+        },
+        {
+          "memory": "After committee consideration, Stage 1 is submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill",
+          "score": 0.569334488838041
+        },
+        {
+          "memory": "If the whole Parliament agrees in a vote to the general principles of the Bill, it then proceeds to Stage 2",
+          "score": 0.5546281425777493
+        },
+        {
+          "memory": "Documents from the Presiding Officer and the Member in charge of the Bill are lodged during Stage 1",
+          "score": 0.5473262943756816
+        },
+        {
+          "memory": "In Stage 1, the Minister or Member in charge of the Bill formally introduces it to Parliament",
+          "score": 0.5435752313701395
+        }
+      ],
+      "add_time": 21.654,
+      "search_time": 0.308,
+      "answer_time": 0.796,
+      "total_time": 22.758,
+      "em": 0,
+      "f1": 0.1667,
+      "bleu": 0.0769
+    },
+    {
+      "idx": 146,
+      "user_id": "eval_146_3c433d74",
+      "question": "Where are bills typically gestated in Stage 1?",
+      "ground_truth": "in the relevant committee or committees",
+      "prediction": "Relevant committee or committees",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Stage 1 is the first, or introductory, stage of a Bill in Parliament",
+          "score": 0.5350865129037258
+        },
+        {
+          "memory": "Documents from the Presiding Officer and the Member in charge of the Bill are lodged during Stage 1",
+          "score": 0.5172942944492791
+        },
+        {
+          "memory": "Stage 1 usually takes place initially in the relevant committee or committees",
+          "score": 0.4707622791101418
+        },
+        {
+          "memory": "In Stage 1, the Minister or Member in charge of the Bill formally introduces it to Parliament",
+          "score": 0.44140753470829813
+        },
+        {
+          "memory": "After committee review, Stage 1 is submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill",
+          "score": 0.4227540938681833
+        }
+      ],
+      "add_time": 20.68,
+      "search_time": 0.339,
+      "answer_time": 0.636,
+      "total_time": 21.654,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 1.0
+    },
+    {
+      "idx": 147,
+      "user_id": "eval_147_69131acf",
+      "question": "Which group did not agree to sign these agreements?",
+      "ground_truth": "the swiss cities",
+      "prediction": "The Swiss cities",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "The Swiss cities did not sign the Augsburg Confession or the Schmalkaldic League agreements",
+          "score": 0.49331926539768534
+        },
+        {
+          "memory": "The Schmalkaldic League was formed by leading Protestant nobles such as John of Saxony, Philip of Hesse, and George, Margrave of Brandenburg-Ansbach",
+          "score": 0.3532443534136177
+        },
+        {
+          "memory": "The Marburg Colloquy paved the way for the signing of the Augsburg Confession in 1530",
+          "score": 0.28434443669593673
+        },
+        {
+          "memory": "The Marburg Colloquy paved the way for the formation of the Schmalkaldic League in 1531",
+          "score": 0.24412468299227535
+        }
+      ],
+      "add_time": 10.858,
+      "search_time": 0.293,
+      "answer_time": 0.854,
+      "total_time": 12.005,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 148,
+      "user_id": "eval_148_558d140a",
+      "question": "Where did Apollo 1's crew conduct tests at Kennedy Space Center?",
+      "ground_truth": "altitude chamber",
+      "prediction": "Altitude chamber",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee conducted tests in the altitude chamber at the Kennedy Space Center",
+          "score": 0.656765963260458
+        },
+        {
+          "memory": "Grissom, White, and Chaffee trained and conducted tests of their spacecraft at North American",
+          "score": 0.5658296572670206
+        },
+        {
+          "memory": "The name Apollo 1 was chosen as a motivational focus on the first manned flight",
+          "score": 0.5443368100995479
+        },
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1",
+          "score": 0.5428047854464879
+        },
+        {
+          "memory": "Both the spacecraft and launch vehicle would be fueled for the more rigorous countdown simulation test",
+          "score": 0.42733820023786095
+        }
+      ],
+      "add_time": 18.003,
+      "search_time": 0.285,
+      "answer_time": 0.56,
+      "total_time": 18.848,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 149,
+      "user_id": "eval_149_bac4d5f1",
+      "question": "What was a plugs-out test done to simulate on the LC-34?",
+      "ground_truth": "launch countdown",
+      "prediction": "A launch countdown",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The plugs-out test would simulate a launch countdown on LC-34",
+          "score": 0.8241987026182758
+        },
+        {
+          "memory": "If the plugs-out test was successful, it would be followed by a more rigorous countdown simulation test",
+          "score": 0.649268064189549
+        },
+        {
+          "memory": "The plugs-out test involved the spacecraft transferring from pads supplied to internal power",
+          "score": 0.6245900128544806
+        },
+        {
+          "memory": "A plugs-out test was planned for January",
+          "score": 0.5930409492723141
+        },
+        {
+          "memory": "Both the spacecraft and launch vehicle would be fueled for the more rigorous countdown simulation test",
+          "score": 0.4027647784449673
+        }
+      ],
+      "add_time": 19.231,
+      "search_time": 0.329,
+      "answer_time": 0.547,
+      "total_time": 20.107,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 150,
+      "user_id": "eval_150_b756a9b7",
+      "question": "What other location did Apollo 1 test at besides Kennedy Space Center?",
+      "ground_truth": "north american",
+      "prediction": "North American",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee conducted tests in the altitude chamber at the Kennedy Space Center",
+          "score": 0.6135101519899104
+        },
+        {
+          "memory": "Grissom, White, and Chaffee trained and conducted tests of their spacecraft at North American",
+          "score": 0.5407192082558913
+        },
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1",
+          "score": 0.5165044267566512
+        },
+        {
+          "memory": "The name Apollo 1 was chosen as a motivational focus on the first manned flight",
+          "score": 0.496049609231637
+        },
+        {
+          "memory": "Both the spacecraft and launch vehicle would be fueled for the more rigorous countdown simulation test",
+          "score": 0.4094409187928907
+        }
+      ],
+      "add_time": 18.909,
+      "search_time": 0.316,
+      "answer_time": 1.214,
+      "total_time": 20.439,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 151,
+      "user_id": "eval_151_370be2c7",
+      "question": "What was the Henry Cole Wing previously called?",
+      "ground_truth": "school for naval architects",
+      "prediction": "The Science Schools",
+      "num_memories_added": 14,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The Science Schools is located to the northwest of the garden and is now known as the Henry Cole Wing",
+          "score": 0.6267266539758085
+        },
+        {
+          "memory": "The building also houses prints, drawings, paintings, photographs, and the Royal Institute of British Architects (RIBA) Drawings and Archives Collections",
+          "score": 0.34684297794026725
+        },
+        {
+          "memory": "J. W. Wilde designed the impressive staircase that rises the full height of the Science Schools building",
+          "score": 0.3263921828167817
+        },
+        {
+          "memory": "The building includes the Sackler Centre for Arts Education",
+          "score": 0.3147261915721681
+        },
+        {
+          "memory": "The building houses the prints and architectural drawings of the V&A",
+          "score": 0.3146675433853536
+        }
+      ],
+      "add_time": 25.059,
+      "search_time": 0.308,
+      "answer_time": 0.579,
+      "total_time": 25.947,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 152,
+      "user_id": "eval_152_df4ce238",
+      "question": "What part of the V&A collection does the Henry Cole Wing houses?",
+      "ground_truth": "prints drawings paintings and photographs",
+      "prediction": "The prints and architectural drawings",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The building houses the prints and architectural drawings of the V&A",
+          "score": 0.5729297347729436
+        },
+        {
+          "memory": "The Science Schools are located to the northwest of the garden, now the Henry Cole Wing",
+          "score": 0.5145817105117683
+        },
+        {
+          "memory": "The building also houses the Royal Institute of British Architects' drawings and archives collections",
+          "score": 0.4945796586281402
+        },
+        {
+          "memory": "The balustrades and columns of the building are made of Portland stone",
+          "score": 0.33016236643118135
+        },
+        {
+          "memory": "Colonel Henry Young Darrochcott Scott, later Major General, worked at the museum after Captain Fowke",
+          "score": 0.3209958750245615
+        }
+      ],
+      "add_time": 23.979,
+      "search_time": 0.349,
+      "answer_time": 0.679,
+      "total_time": 25.007,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.6
+    },
+    {
+      "idx": 153,
+      "user_id": "eval_153_75e19c4b",
+      "question": "Where is corporal punishment practiced the most?",
+      "ground_truth": "the south",
+      "prediction": "Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Corporal punishment is still used in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas",
+          "score": 0.668647109406283
+        },
+        {
+          "memory": "Corporal punishment often took place in the classroom or hallway, but is usually given privately in the principal's office nowadays",
+          "score": 0.6594810067258257
+        },
+        {
+          "memory": "Private schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas, and most other states may also use corporal punishment",
+          "score": 0.655643202425449
+        },
+        {
+          "memory": "The remaining states, mostly in the South, have not banned corporal punishment",
+          "score": 0.6296342783027317
+        },
+        {
+          "memory": "Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle",
+          "score": 0.6236699338820018
+        }
+      ],
+      "add_time": 16.678,
+      "search_time": 0.323,
+      "answer_time": 0.843,
+      "total_time": 17.845,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 154,
+      "user_id": "eval_154_bfea522c",
+      "question": "Is corporal punishment increasing or declining in the South?",
+      "ground_truth": "declining",
+      "prediction": "I don't know",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The remaining states, mostly in the South, have not banned corporal punishment",
+          "score": 0.6731668912642597
+        },
+        {
+          "memory": "Corporal punishment is still used in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas",
+          "score": 0.6261183134121101
+        },
+        {
+          "memory": "Private schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas, and most other states may also use corporal punishment",
+          "score": 0.5795269512477297
+        },
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.5682777810785167
+        },
+        {
+          "memory": "Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle",
+          "score": 0.5206927849740289
+        }
+      ],
+      "add_time": 15.642,
+      "search_time": 0.278,
+      "answer_time": 0.655,
+      "total_time": 16.576,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 155,
+      "user_id": "eval_155_a5ecd1c6",
+      "question": "What tool is used in corporal punishment?",
+      "ground_truth": "wooden paddle",
+      "prediction": "Wooden paddle",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle",
+          "score": 0.6750850546658984
+        },
+        {
+          "memory": "Corporal punishment often took place in the classroom or hallway, but is usually given privately in the principal's office nowadays",
+          "score": 0.5981440865415526
+        },
+        {
+          "memory": "Corporal punishment is still used in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas",
+          "score": 0.5808046863908418
+        },
+        {
+          "memory": "Private schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas, and most other states may also use corporal punishment",
+          "score": 0.5628143754866876
+        },
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.49766563212409487
+        }
+      ],
+      "add_time": 17.047,
+      "search_time": 0.311,
+      "answer_time": 0.714,
+      "total_time": 18.072,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 156,
+      "user_id": "eval_156_22549de5",
+      "question": "Where is corporal punishment usually performed these days?",
+      "ground_truth": "principals office",
+      "prediction": "In the principal's office",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Corporal punishment often took place in the classroom or hallway, but is usually given privately in the principal's office nowadays",
+          "score": 0.7731475188100567
+        },
+        {
+          "memory": "Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle",
+          "score": 0.6566718466076795
+        },
+        {
+          "memory": "Corporal punishment is still used in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas",
+          "score": 0.6509814712937905
+        },
+        {
+          "memory": "Private schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas, and most other states may also use corporal punishment",
+          "score": 0.6133192494777675
+        },
+        {
+          "memory": "The remaining states, mostly in the South, have not banned corporal punishment",
+          "score": 0.6046062501345795
+        }
+      ],
+      "add_time": 15.679,
+      "search_time": 0.263,
+      "answer_time": 0.877,
+      "total_time": 16.819,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.25
+    },
+    {
+      "idx": 157,
+      "user_id": "eval_157_29fa32d0",
+      "question": "What religion's schools were integrated into New Zealand public schools between 1979 and 1984?",
+      "ground_truth": "catholic",
+      "prediction": "I don't know",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Private school numbers in New Zealand have been in decline since the mid-1970s",
+          "score": 0.5944976306973497
+        },
+        {
+          "memory": "Private schools in New Zealand cater to around 28,000 students",
+          "score": 0.5760718810812252
+        },
+        {
+          "memory": "As of April 2014, there are 88 private schools in New Zealand",
+          "score": 0.5747917292046657
+        },
+        {
+          "memory": "Private schools in New Zealand also serve niche markets",
+          "score": 0.5575063728492566
+        },
+        {
+          "memory": "Private schools in New Zealand are now largely restricted to the largest cities: Auckland, Hamilton, Wellington, and Christchurch",
+          "score": 0.5550840789810538
+        }
+      ],
+      "add_time": 28.113,
+      "search_time": 0.344,
+      "answer_time": 0.686,
+      "total_time": 29.142,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 158,
+      "user_id": "eval_158_619c4222",
+      "question": "What city, along with Hamilton, Wellington and Christchurch, is one of the largest in New Zealand?",
+      "ground_truth": "auckland",
+      "prediction": "Auckland",
+      "num_memories_added": 17,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Private schools in New Zealand are now largely restricted to the largest cities: Auckland, Hamilton, Wellington, and Christchurch",
+          "score": 0.6948715246524699
+        },
+        {
+          "memory": "Private schools in New Zealand cater to around 28,000 students",
+          "score": 0.44472703770098954
+        },
+        {
+          "memory": "28,000 students represent 3.7% of the entire student population in New Zealand",
+          "score": 0.4358044784237123
+        },
+        {
+          "memory": "As of April 2014, there are 88 private schools in New Zealand",
+          "score": 0.435130662944197
+        },
+        {
+          "memory": "Private schools in New Zealand also serve niche markets",
+          "score": 0.4169407053014006
+        }
+      ],
+      "add_time": 30.881,
+      "search_time": 0.398,
+      "answer_time": 0.628,
+      "total_time": 31.907,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 159,
+      "user_id": "eval_159_81959c68",
+      "question": "The region spans starting at islands found in which body of water?",
+      "ground_truth": "pacific ocean",
+      "prediction": "Pacific Ocean",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains",
+          "score": 0.49942964813174995
+        },
+        {
+          "memory": "Southern California extends into large and small interior valleys",
+          "score": 0.30492100150408447
+        },
+        {
+          "memory": "Southern California includes the transverse and peninsular ranges with their peaks",
+          "score": 0.28117007388566173
+        },
+        {
+          "memory": "Southern California reaches the vast deserts of California",
+          "score": 0.24456210049990007
+        },
+        {
+          "memory": "Southern California consists of a varied collection of geologic, topographic, and natural ecosystem landscapes",
+          "score": 0.2394339293021832
+        }
+      ],
+      "add_time": 14.55,
+      "search_time": 0.287,
+      "answer_time": 0.91,
+      "total_time": 15.747,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 160,
+      "user_id": "eval_160_360dbade",
+      "question": "What term best describes southern California's collection of landscapes?",
+      "ground_truth": "varied",
+      "prediction": "Diversity",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of a varied collection of geologic, topographic, and natural ecosystem landscapes",
+          "score": 0.769598326325613
+        },
+        {
+          "memory": "Southern California spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains",
+          "score": 0.6074812182336766
+        },
+        {
+          "memory": "Southern California includes the transverse and peninsular ranges with their peaks",
+          "score": 0.5788492025428664
+        },
+        {
+          "memory": "The diversity of Southern California outnumbers other major regions in the state and country",
+          "score": 0.5784163948616947
+        },
+        {
+          "memory": "Southern California extends into large and small interior valleys",
+          "score": 0.5760060217886198
+        }
+      ],
+      "add_time": 12.699,
+      "search_time": 0.32,
+      "answer_time": 0.623,
+      "total_time": 13.641,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 161,
+      "user_id": "eval_161_28891536",
+      "question": "What type of landscapes other than geologic and natural ecosystem landscapes can be found in southern California?",
+      "ground_truth": "topographic",
+      "prediction": "Topographic landscapes",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of a varied collection of geologic, topographic, and natural ecosystem landscapes",
+          "score": 0.7549705535446211
+        },
+        {
+          "memory": "The diversity of Southern California outnumbers other major regions in the state and country",
+          "score": 0.5638309221138099
+        },
+        {
+          "memory": "Southern California spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains",
+          "score": 0.5492689939455588
+        },
+        {
+          "memory": "Southern California extends into large and small interior valleys",
+          "score": 0.5248054386443931
+        },
+        {
+          "memory": "Southern California includes the transverse and peninsular ranges with their peaks",
+          "score": 0.5026325457918469
+        }
+      ],
+      "add_time": 12.976,
+      "search_time": 0.286,
+      "answer_time": 0.645,
+      "total_time": 13.907,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 162,
+      "user_id": "eval_162_6d700dba",
+      "question": "The region spans which mountains other than the Transverse ranges?",
+      "ground_truth": "peninsular ranges",
+      "prediction": "Peninsular ranges",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California includes the transverse and peninsular ranges with their peaks",
+          "score": 0.5692750748986453
+        },
+        {
+          "memory": "Southern California extends into large and small interior valleys",
+          "score": 0.3918253692058324
+        },
+        {
+          "memory": "Southern California spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains",
+          "score": 0.32496251033624235
+        },
+        {
+          "memory": "Southern California reaches the vast deserts of California",
+          "score": 0.3016590068567003
+        },
+        {
+          "memory": "Southern California consists of a varied collection of geologic, topographic, and natural ecosystem landscapes",
+          "score": 0.2942536228855873
+        }
+      ],
+      "add_time": 11.929,
+      "search_time": 0.305,
+      "answer_time": 0.621,
+      "total_time": 12.855,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 163,
+      "user_id": "eval_163_36e013e9",
+      "question": "The mountain ranges tail off into what kind of geographical formation?",
+      "ground_truth": "valleys",
+      "prediction": "Deserts",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California includes the transverse and peninsular ranges with their peaks",
+          "score": 0.41666372936679397
+        },
+        {
+          "memory": "Southern California consists of a varied collection of geologic, topographic, and natural ecosystem landscapes",
+          "score": 0.3692366432898636
+        },
+        {
+          "memory": "Southern California extends into large and small interior valleys",
+          "score": 0.3511623490508563
+        },
+        {
+          "memory": "Southern California spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains",
+          "score": 0.2811907684945646
+        },
+        {
+          "memory": "Southern California reaches the vast deserts of California",
+          "score": 0.2744729770128336
+        }
+      ],
+      "add_time": 14.031,
+      "search_time": 0.368,
+      "answer_time": 0.712,
+      "total_time": 15.11,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 164,
+      "user_id": "eval_164_9dda6648",
+      "question": "Newcastle served as a northern fortress for which country during the Middle Ages?",
+      "ground_truth": "england",
+      "prediction": "England",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress",
+          "score": 0.8419181162056499
+        },
+        {
+          "memory": "Newcastle was successfully defended against the Scots three times during the 14th century",
+          "score": 0.677358555414563
+        },
+        {
+          "memory": "The stone wall was built to defend Newcastle from invaders during the Border War against Scotland",
+          "score": 0.6282762129472546
+        },
+        {
+          "memory": "A 25-foot (7.6 m) high stone wall was built around Newcastle in the 13th century",
+          "score": 0.5974953232834486
+        },
+        {
+          "memory": "Newcastle was incorporated first by Henry III",
+          "score": 0.5746752984697906
+        }
+      ],
+      "add_time": 19.53,
+      "search_time": 0.411,
+      "answer_time": 0.642,
+      "total_time": 20.583,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 165,
+      "user_id": "eval_165_b8222bce",
+      "question": "Who granted Newcastle a new charter in 1589?",
+      "ground_truth": "elizabeth",
+      "prediction": "Elizabeth",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A new charter was granted to Newcastle by Elizabeth in 1589",
+          "score": 0.8898954050018625
+        },
+        {
+          "memory": "Newcastle was incorporated first by Henry III",
+          "score": 0.7012320484469294
+        },
+        {
+          "memory": "Newcastle was created a county corporate with its own sheriff by Henry IV in 1400",
+          "score": 0.6648415846450413
+        },
+        {
+          "memory": "Newcastle was successfully defended against the Scots three times during the 14th century",
+          "score": 0.5993844286840428
+        },
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress",
+          "score": 0.5837164013735968
+        }
+      ],
+      "add_time": 18.807,
+      "search_time": 0.358,
+      "answer_time": 0.613,
+      "total_time": 19.778,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 166,
+      "user_id": "eval_166_ba15651f",
+      "question": "How many times did Newcastle fight off the Scots during the 14th century?",
+      "ground_truth": "three times",
+      "prediction": "Three times",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Newcastle was successfully defended against the Scots three times during the 14th century",
+          "score": 0.8627454531107872
+        },
+        {
+          "memory": "The stone wall was built to defend Newcastle from invaders during the Border War against Scotland",
+          "score": 0.6250292248275036
+        },
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress",
+          "score": 0.5695552359562388
+        },
+        {
+          "memory": "King William the Lion of Scotland was imprisoned in Newcastle in 1174",
+          "score": 0.5498575288252656
+        },
+        {
+          "memory": "Newcastle was created a county corporate with its own sheriff by Henry IV in 1400",
+          "score": 0.5422630806653608
+        }
+      ],
+      "add_time": 18.822,
+      "search_time": 0.336,
+      "answer_time": 0.758,
+      "total_time": 19.916,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 167,
+      "user_id": "eval_167_0876ddf8",
+      "question": "In 1735, where did John and Charles Wesley teach the gospel in America?",
+      "ground_truth": "colony of georgia",
+      "prediction": "Georgia",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "In 1735, John and Charles Wesley went to America to teach the gospel to the American Indians in the colony of Georgia",
+          "score": 0.830939563719163
+        },
+        {
+          "memory": "John Wesley returned to England and met with a group of clergy he respected",
+          "score": 0.4913046510828023
+        },
+        {
+          "memory": "John Wesley said the clergy appeared to be of one heart and one judgment, resolved to be Bible Christians",
+          "score": 0.4036349589911672
+        },
+        {
+          "memory": "The ministers resolved to preach plain 'old' Bible Christianity with all their might",
+          "score": 0.38412301987925673
+        },
+        {
+          "memory": "Their teaching emphasized salvation by God's grace, acquired through faith in Christ",
+          "score": 0.34344161194742007
+        }
+      ],
+      "add_time": 20.343,
+      "search_time": 0.38,
+      "answer_time": 0.82,
+      "total_time": 21.542,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 1.0
+    },
+    {
+      "idx": 168,
+      "user_id": "eval_168_42f4f25d",
+      "question": "In 1735, who did John and Charles Wesley teach the gospel to in America?",
+      "ground_truth": "american indians",
+      "prediction": "American Indians",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "In 1735, John and Charles Wesley went to America to teach the gospel to the American Indians in the colony of Georgia",
+          "score": 0.8472725777143064
+        },
+        {
+          "memory": "John Wesley returned to England and met with a group of clergy he respected",
+          "score": 0.5118748528234708
+        },
+        {
+          "memory": "The clergy John Wesley met with appeared to be of one heart and one judgment",
+          "score": 0.47706500805713586
+        },
+        {
+          "memory": "The clergy resolved to be Bible Christians and to preach plain 'old' Bible Christianity",
+          "score": 0.37162628600640424
+        },
+        {
+          "memory": "Their teaching emphasized salvation by God's grace, acquired through faith in Christ",
+          "score": 0.36008825045771764
+        }
+      ],
+      "add_time": 16.972,
+      "search_time": 0.311,
+      "answer_time": 0.679,
+      "total_time": 17.962,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 169,
+      "user_id": "eval_169_ce90a868",
+      "question": "What did \"The Holy Club's\" teachings emphasize?",
+      "ground_truth": "salvation by gods grace",
+      "prediction": "Salvation by God's grace, acquired through faith in Christ",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The 'Holy Club' disbanded in less than two years",
+          "score": 0.533542444047854
+        },
+        {
+          "memory": "Their teaching emphasized salvation by God's grace, acquired through faith in Christ",
+          "score": 0.5204692805179706
+        },
+        {
+          "memory": "The clergy resolved to be Bible Christians and to preach plain 'old' Bible Christianity",
+          "score": 0.4309759004288728
+        },
+        {
+          "memory": "The membership in the Church of England was not always emphasized or appreciated in the Anglican churches of their day",
+          "score": 0.3910188390346376
+        },
+        {
+          "memory": "The clergy John Wesley met with appeared to be of one heart and one judgment",
+          "score": 0.36475188575887674
+        }
+      ],
+      "add_time": 16.424,
+      "search_time": 0.304,
+      "answer_time": 0.744,
+      "total_time": 17.472,
+      "em": 0,
+      "f1": 0.4286,
+      "bleu": 0.2222
+    },
+    {
+      "idx": 170,
+      "user_id": "eval_170_5cdca268",
+      "question": "In what century did the history of the steam engine begin?",
+      "ground_truth": "first century ad",
+      "prediction": "1st century AD",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The history of the steam engine stretches back to the 1st century AD",
+          "score": 0.7835855869507888
+        },
+        {
+          "memory": "The few steam-powered engines known in the following centuries were essentially experimental devices",
+          "score": 0.5989915069935496
+        },
+        {
+          "memory": "The first recorded rudimentary steam engine was the aeolipile",
+          "score": 0.5563417592270039
+        },
+        {
+          "memory": "A rudimentary steam turbine device was described by Giovanni Branca in 1629",
+          "score": 0.5457835431760722
+        },
+        {
+          "memory": "A rudimentary steam turbine device was described by Taki al-Din in 1551",
+          "score": 0.5279635883497587
+        }
+      ],
+      "add_time": 19.826,
+      "search_time": 0.306,
+      "answer_time": 0.646,
+      "total_time": 20.779,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 171,
+      "user_id": "eval_171_483af9e7",
+      "question": "Who conceptualized the aeolipile?",
+      "ground_truth": "hero of alexandria",
+      "prediction": "Hero of Alexandria",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The aeolipile was described by the Greek mathematician Hero of Alexandria",
+          "score": 0.7500744616801363
+        },
+        {
+          "memory": "The first recorded rudimentary steam engine was the aeolipile",
+          "score": 0.5453645837090324
+        },
+        {
+          "memory": "Denis Papin first used a piston to raise weights in 1690",
+          "score": 0.30939869669906334
+        },
+        {
+          "memory": "A rudimentary steam turbine device was also described by Giovanni Branca in 1629",
+          "score": 0.2843316223559129
+        },
+        {
+          "memory": "A rudimentary steam turbine device was described by Taki al-Din in 1551",
+          "score": 0.2809527447782357
+        }
+      ],
+      "add_time": 20.992,
+      "search_time": 0.296,
+      "answer_time": 0.709,
+      "total_time": 21.998,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 172,
+      "user_id": "eval_172_71c8a864",
+      "question": "What was Hero of Alexandria's nationality?",
+      "ground_truth": "greek",
+      "prediction": "Greek",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The aeolipile was described by the Greek mathematician Hero of Alexandria",
+          "score": 0.5441684078947755
+        },
+        {
+          "memory": "The first recorded rudimentary steam engine was the aeolipile",
+          "score": 0.15827172860493458
+        },
+        {
+          "memory": "Denis Papin was a Huguenot refugee who did useful work on the steam digester in 1679",
+          "score": 0.1477940903914347
+        },
+        {
+          "memory": "The history of the steam engine stretches back to the 1st century AD",
+          "score": 0.1295808039172688
+        },
+        {
+          "memory": "Denis Papin first used a piston to raise weights in 1690",
+          "score": 0.0934478858233171
+        }
+      ],
+      "add_time": 22.188,
+      "search_time": 0.381,
+      "answer_time": 0.559,
+      "total_time": 23.127,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 173,
+      "user_id": "eval_173_6087796d",
+      "question": "Where was the Space Task Group located?",
+      "ground_truth": "nasas langley research center",
+      "prediction": "NASA's Langley Research Center",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Robert R. Gilruth's Space Task Group had been directing the nation's manned space program from NASA's Langley Research Center",
+          "score": 0.6377834461796377
+        },
+        {
+          "memory": "Administrator Webb announced the conversion of the Space Task Group to the Manned Spacecraft Center on September 19, 1961",
+          "score": 0.5974653250244719
+        },
+        {
+          "memory": "Managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group",
+          "score": 0.5232626857652913
+        },
+        {
+          "memory": "A new Mission Control Center would be included in the Manned Spacecraft Center",
+          "score": 0.44264184540190965
+        },
+        {
+          "memory": "Gilruth was given authority to grow his organization into a new NASA center called the Manned Spacecraft Center (MSC)",
+          "score": 0.43357772512796644
+        }
+      ],
+      "add_time": 17.249,
+      "search_time": 0.315,
+      "answer_time": 0.873,
+      "total_time": 18.437,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.75
+    },
+    {
+      "idx": 174,
+      "user_id": "eval_174_ea863d0b",
+      "question": "Where was the Manned Spacecraft Center located?",
+      "ground_truth": "houston texas",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A new Mission Control Center would be included in the Manned Spacecraft Center",
+          "score": 0.689810100102165
+        },
+        {
+          "memory": "Administrator Webb announced the conversion of the Space Task Group to the Manned Spacecraft Center on September 19, 1961",
+          "score": 0.6793854929221328
+        },
+        {
+          "memory": "Gilruth was given authority to grow his organization into a new NASA center called the Manned Spacecraft Center (MSC)",
+          "score": 0.5689524800696952
+        },
+        {
+          "memory": "Robert R. Gilruth's Space Task Group had been directing the nation's manned space program from NASA's Langley Research Center",
+          "score": 0.5206223295009464
+        },
+        {
+          "memory": "NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida",
+          "score": 0.4390060821922824
+        }
+      ],
+      "add_time": 18.158,
+      "search_time": 0.314,
+      "answer_time": 0.74,
+      "total_time": 19.212,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 175,
+      "user_id": "eval_175_c03c7e7a",
+      "question": "What university donated the land for the Manned Spacecraft Center?",
+      "ground_truth": "rice university",
+      "prediction": "Rice University",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "A site for the MSC was chosen in Houston, Texas, on land donated by Rice University",
+          "score": 0.5672896270346497
+        },
+        {
+          "memory": "Administrator Webb announced the conversion of the Space Task Group to the Manned Spacecraft Center on September 19, 1961",
+          "score": 0.5621077144879698
+        },
+        {
+          "memory": "Gilruth was given authority to grow his organization into a new NASA center called the Manned Spacecraft Center (MSC)",
+          "score": 0.5341444702808262
+        },
+        {
+          "memory": "A new Mission Control Center would be included in the Manned Spacecraft Center",
+          "score": 0.5226875616739811
+        },
+        {
+          "memory": "Robert R. Gilruth's Space Task Group had been directing the nation's manned space program from NASA's Langley Research Center",
+          "score": 0.43047284587898804
+        }
+      ],
+      "add_time": 17.545,
+      "search_time": 0.3,
+      "answer_time": 0.598,
+      "total_time": 18.443,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 176,
+      "user_id": "eval_176_065383e3",
+      "question": "In what state were the original launching facilities for missions?",
+      "ground_truth": "florida",
+      "prediction": "Florida",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida",
+          "score": 0.4931635169369544
+        },
+        {
+          "memory": "A new Mission Control Center would be included in the Manned Spacecraft Center",
+          "score": 0.4354468792256123
+        },
+        {
+          "memory": "Administrator Webb announced the conversion of the Space Task Group to the Manned Spacecraft Center on September 19, 1961",
+          "score": 0.39459072125386485
+        },
+        {
+          "memory": "Gilruth was given authority to grow his organization into a new NASA center called the Manned Spacecraft Center (MSC)",
+          "score": 0.3867721051485085
+        },
+        {
+          "memory": "A site for the MSC was chosen in Houston, Texas, on land donated by Rice University",
+          "score": 0.36233268434552157
+        }
+      ],
+      "add_time": 17.306,
+      "search_time": 0.344,
+      "answer_time": 0.584,
+      "total_time": 18.234,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 177,
+      "user_id": "eval_177_e387059e",
+      "question": "How does HT strive to amass power?",
+      "ground_truth": "ideological struggle",
+      "prediction": "Through ideological struggle and influencing elites.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "HT seeks to take power through ideological struggle to change Muslim public opinion",
+          "score": 0.5399659842663698
+        },
+        {
+          "memory": "HT aims to influence elites to facilitate a change of government",
+          "score": 0.5301141392557653
+        },
+        {
+          "memory": "Many HT members have joined terrorist groups",
+          "score": 0.45795680713003684
+        },
+        {
+          "memory": "HT does not work for a democratic system",
+          "score": 0.43375871420290346
+        },
+        {
+          "memory": "Many jihadi terrorists have cited HT as a key influence",
+          "score": 0.4210186285953916
+        }
+      ],
+      "add_time": 15.239,
+      "search_time": 0.286,
+      "answer_time": 0.877,
+      "total_time": 16.402,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 178,
+      "user_id": "eval_178_f2fe1d8d",
+      "question": "Who specifically does HT target to change the opinion of?",
+      "ground_truth": "government",
+      "prediction": "Muslim public opinion",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "HT seeks to take power through ideological struggle to change Muslim public opinion",
+          "score": 0.5500443079297113
+        },
+        {
+          "memory": "HT aims to influence elites to facilitate a change of government",
+          "score": 0.5365527991234694
+        },
+        {
+          "memory": "Many jihadi terrorists have cited HT as a key influence",
+          "score": 0.4749751514012882
+        },
+        {
+          "memory": "Many HT members have joined terrorist groups",
+          "score": 0.46498330912243807
+        },
+        {
+          "memory": "HT does not work for a democratic system",
+          "score": 0.36347909115443966
+        }
+      ],
+      "add_time": 16.029,
+      "search_time": 0.265,
+      "answer_time": 0.57,
+      "total_time": 16.864,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 179,
+      "user_id": "eval_179_69fa045e",
+      "question": "Where did HT fail to pull off a bloodless coup in 1974?",
+      "ground_truth": "egypt",
+      "prediction": "Jordan",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "HT attempted a 'bloodless' coup in 1968 and 1969 in Jordan",
+          "score": 0.6277696905280503
+        },
+        {
+          "memory": "HT's coup attempt in Jordan allegedly failed",
+          "score": 0.5738278274723235
+        },
+        {
+          "memory": "HT was banned in Egypt in 1974",
+          "score": 0.4848432738000362
+        },
+        {
+          "memory": "HT does not work for a democratic system",
+          "score": 0.4217243402883595
+        },
+        {
+          "memory": "HT aims to influence elites to facilitate a change of government",
+          "score": 0.4111105989932352
+        }
+      ],
+      "add_time": 18.6,
+      "search_time": 0.316,
+      "answer_time": 0.659,
+      "total_time": 19.575,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 180,
+      "user_id": "eval_180_e2105eb6",
+      "question": "What have many HT members graduated to joining?",
+      "ground_truth": "terrorist groups",
+      "prediction": "Terrorist groups",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Many HT members have joined terrorist groups",
+          "score": 0.6880622223677163
+        },
+        {
+          "memory": "Many jihadi terrorists have cited HT as a key influence",
+          "score": 0.44526881156297604
+        },
+        {
+          "memory": "HT aims to influence elites to facilitate a change of government",
+          "score": 0.34217027267307254
+        },
+        {
+          "memory": "HT does not engage in armed jihad",
+          "score": 0.3336450522131254
+        },
+        {
+          "memory": "HT is currently banned in both Jordan and Egypt",
+          "score": 0.2879962709952021
+        }
+      ],
+      "add_time": 18.195,
+      "search_time": 0.305,
+      "answer_time": 0.785,
+      "total_time": 19.285,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 181,
+      "user_id": "eval_181_6c620311",
+      "question": "What is the second largest contrubtor to Kenyas GDP?",
+      "ground_truth": "agriculture",
+      "prediction": "Agriculture",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Agriculture is the second largest contributor to Kenya's gross domestic product (GDP), after the service sector",
+          "score": 0.7477744599137357
+        },
+        {
+          "memory": "In 2005, agriculture\u2014including forestry and fishing\u2014accounted for 24% of Kenya's GDP",
+          "score": 0.670711797895272
+        },
+        {
+          "memory": "Horticultural produce and tea are the main growth sectors in Kenya",
+          "score": 0.5791605548591743
+        },
+        {
+          "memory": "Horticultural produce and tea are the two most valuable exports of Kenya",
+          "score": 0.5698829325768308
+        },
+        {
+          "memory": "In 2005, agriculture accounted for 50% of revenue from exports in Kenya",
+          "score": 0.5592284309473554
+        }
+      ],
+      "add_time": 19.035,
+      "search_time": 0.309,
+      "answer_time": 0.557,
+      "total_time": 19.901,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 182,
+      "user_id": "eval_182_0e9758c8",
+      "question": "What can cause fluctuations in the production of corn?",
+      "ground_truth": "weather",
+      "prediction": "Sharp weather-related fluctuations",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The production of major food staples, such as corn, is subject to sharp weather-related fluctuations",
+          "score": 0.7406644788076715
+        },
+        {
+          "memory": "Production downturns in Kenya periodically necessitate food aid",
+          "score": 0.34471723891038736
+        },
+        {
+          "memory": "In 2005, agriculture accounted for 50% of revenue from exports in Kenya",
+          "score": 0.28010983690755054
+        },
+        {
+          "memory": "In 2004, food aid was provided for 1.8 million people in Kenya due to an intermittent drought",
+          "score": 0.27574181801599096
+        },
+        {
+          "memory": "The principal cash crops in Kenya are tea, horticultural produce, and coffee",
+          "score": 0.2674681626200086
+        }
+      ],
+      "add_time": 20.595,
+      "search_time": 0.359,
+      "answer_time": 0.622,
+      "total_time": 21.577,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.0
+    },
+    {
+      "idx": 183,
+      "user_id": "eval_183_2c8a433a",
+      "question": "What is it called when people in society rebel against laws they think are unfair?",
+      "ground_truth": "civil disobedience",
+      "prediction": "Civil disobedience",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.6943535112959789
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.4795655925783304
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.4562276339662228
+        },
+        {
+          "memory": "Civil disobedience was used in South Africa in the fight against apartheid",
+          "score": 0.42550156058623667
+        },
+        {
+          "memory": "Civil disobedience was employed in East Germany to oust their communist government",
+          "score": 0.41407588167822396
+        }
+      ],
+      "add_time": 21.39,
+      "search_time": 0.311,
+      "answer_time": 0.869,
+      "total_time": 22.57,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 184,
+      "user_id": "eval_184_93da4311",
+      "question": "What is an example of major civil disobedience in South Africa?",
+      "ground_truth": "the fight against apartheid",
+      "prediction": "Fight against apartheid",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience was used in South Africa in the fight against apartheid",
+          "score": 0.800476327747079
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.6537578646088502
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.6421930570674843
+        },
+        {
+          "memory": "One of the earliest massive implementations of civil disobedience was by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.6103071954918844
+        },
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.6085786473317533
+        }
+      ],
+      "add_time": 21.317,
+      "search_time": 0.314,
+      "answer_time": 0.673,
+      "total_time": 22.304,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 185,
+      "user_id": "eval_185_82afb56e",
+      "question": "What was the the movement called that brought Baltic countries independence from the Soviet Union?",
+      "ground_truth": "singing revolution",
+      "prediction": "The Singing Revolution",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The Singing Revolution used civil disobedience to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.6412464537856541
+        },
+        {
+          "memory": "East Germany used civil disobedience to oust their communist government",
+          "score": 0.4372906473795024
+        },
+        {
+          "memory": "Czechoslovakia's Velvet Revolution involved civil disobedience",
+          "score": 0.42271242521114827
+        },
+        {
+          "memory": "Civil disobedience was seen in the 2004 Orange Revolution in Ukraine",
+          "score": 0.3964211078031654
+        },
+        {
+          "memory": "Civil disobedience was seen in the 2003 Rose Revolution in Georgia",
+          "score": 0.379492782423545
+        }
+      ],
+      "add_time": 22.402,
+      "search_time": 0.344,
+      "answer_time": 0.836,
+      "total_time": 23.582,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 186,
+      "user_id": "eval_186_057a361e",
+      "question": "In 2004 the Orange revolution occurred in what country?",
+      "ground_truth": "ukraine",
+      "prediction": "Ukraine",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience was also seen in the 2004 Orange Revolution in Ukraine",
+          "score": 0.7146296852932836
+        },
+        {
+          "memory": "Civil disobedience was seen in the 2003 Rose Revolution in Georgia",
+          "score": 0.5170193806884968
+        },
+        {
+          "memory": "Czechoslovakia's Velvet Revolution involved civil disobedience",
+          "score": 0.4422354651939351
+        },
+        {
+          "memory": "The Singing Revolution used civil disobedience to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.4362767130751237
+        },
+        {
+          "memory": "East Germany used civil disobedience to oust their communist government",
+          "score": 0.3817764942073547
+        }
+      ],
+      "add_time": 22.244,
+      "search_time": 0.324,
+      "answer_time": 0.745,
+      "total_time": 23.313,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 187,
+      "user_id": "eval_187_5a7cc4af",
+      "question": "Where was the location of the 2003 Rose revolution?",
+      "ground_truth": "georgia",
+      "prediction": "Georgia",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience was seen in the 2003 Rose Revolution in Georgia",
+          "score": 0.576127631260185
+        },
+        {
+          "memory": "Civil disobedience was also present in the 2004 Orange Revolution in Ukraine",
+          "score": 0.4556735355281291
+        },
+        {
+          "memory": "Czechoslovakia's Velvet Revolution involved civil disobedience",
+          "score": 0.38705451566517507
+        },
+        {
+          "memory": "The Singing Revolution used civil disobedience to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.34534610722436027
+        },
+        {
+          "memory": "One of the earliest massive implementations of civil disobedience was by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.336877326472288
+        }
+      ],
+      "add_time": 23.621,
+      "search_time": 0.31,
+      "answer_time": 0.529,
+      "total_time": 24.46,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 188,
+      "user_id": "eval_188_2478a506",
+      "question": "Which people brought forward one of the earliest examples of Civil Disobedience?",
+      "ground_truth": "egyptians",
+      "prediction": "Egyptians",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "One of the earliest massive implementations of civil disobedience was by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.6661505243523572
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.6493494848921295
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.6355824320237793
+        },
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.6099909017586915
+        },
+        {
+          "memory": "Civil disobedience was a key component of the American Civil Rights Movement",
+          "score": 0.6067904550847448
+        }
+      ],
+      "add_time": 24.469,
+      "search_time": 0.309,
+      "answer_time": 0.587,
+      "total_time": 25.364,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 189,
+      "user_id": "eval_189_dd53573c",
+      "question": "Who was one of the earliest examples of Civil Disobedience against?",
+      "ground_truth": "the british",
+      "prediction": "British occupation",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "One of the earliest massive implementations of civil disobedience was by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.674416646022485
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.6239534441192321
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.6206749687339257
+        },
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.6185840896481615
+        },
+        {
+          "memory": "Civil disobedience was a key component of the American Civil Rights Movement",
+          "score": 0.6011751047221847
+        }
+      ],
+      "add_time": 22.767,
+      "search_time": 0.42,
+      "answer_time": 0.574,
+      "total_time": 23.76,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 190,
+      "user_id": "eval_190_d54725a3",
+      "question": "Why do people chose civil disobedience to protest?",
+      "ground_truth": "nonviolent resistance",
+      "prediction": "To rebel against unfair laws.",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.7092099559553764
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.6948885427236344
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.6886854894110841
+        },
+        {
+          "memory": "Civil disobedience was a key component of the American Civil Rights Movement",
+          "score": 0.5951008600312837
+        },
+        {
+          "memory": "Civil disobedience was used in South Africa in the fight against apartheid",
+          "score": 0.5937068362748548
+        }
+      ],
+      "add_time": 22.647,
+      "search_time": 0.308,
+      "answer_time": 0.728,
+      "total_time": 23.684,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 191,
+      "user_id": "eval_191_af630e1a",
+      "question": "What civil rights movement in the US was known for it's disobedience?",
+      "ground_truth": "american civil rights movement",
+      "prediction": "American Civil Rights Movement",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience was a key component of the American Civil Rights Movement",
+          "score": 0.7366951306300235
+        },
+        {
+          "memory": "Civil disobedience has been part of various movements worldwide",
+          "score": 0.6657222305678134
+        },
+        {
+          "memory": "Civil disobedience has been used in many non-violent resistance movements",
+          "score": 0.6635618279309917
+        },
+        {
+          "memory": "Civil disobedience is a way people have rebelled against what they deem to be unfair laws",
+          "score": 0.6071277092385179
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire utilized civil disobedience",
+          "score": 0.5820360965229007
+        }
+      ],
+      "add_time": 21.881,
+      "search_time": 0.308,
+      "answer_time": 0.959,
+      "total_time": 23.148,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 192,
+      "user_id": "eval_192_333c95b3",
+      "question": "What health condition can deep sea diving cause?",
+      "ground_truth": "oxygen toxicity",
+      "prediction": "Oxygen toxicity",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving",
+          "score": 0.6349807505086803
+        },
+        {
+          "memory": "Acute oxygen toxicity, causing seizures, is the most feared effect for divers",
+          "score": 0.6001131855089612
+        },
+        {
+          "memory": "Exposure to O2 partial pressures greater than 160 kPa may lead to convulsions, which are normally fatal for divers",
+          "score": 0.5815585299192426
+        },
+        {
+          "memory": "Acute oxygen toxicity can also occur by breathing 100% O2 at a depth of only 6 meters",
+          "score": 0.5194171091843327
+        },
+        {
+          "memory": "Acute oxygen toxicity can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more",
+          "score": 0.5035734664846379
+        }
+      ],
+      "add_time": 17.012,
+      "search_time": 0.281,
+      "answer_time": 0.564,
+      "total_time": 17.857,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 193,
+      "user_id": "eval_193_bfae4627",
+      "question": "To what can the use of prolonged breathing of oxygen at 60 kPa lead?",
+      "ground_truth": "permanent pulmonary fibrosis",
+      "prediction": "Permanent pulmonary fibrosis",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can lead to permanent pulmonary fibrosis",
+          "score": 0.7398713101730866
+        },
+        {
+          "memory": "Acute oxygen toxicity can also occur by breathing 100% O2 at a depth of only 6 meters",
+          "score": 0.6165274582705983
+        },
+        {
+          "memory": "Acute oxygen toxicity can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more",
+          "score": 0.6003867427145471
+        },
+        {
+          "memory": "Exposure to O2 partial pressures greater than 160 kPa may lead to convulsions, which are normally fatal for divers",
+          "score": 0.5941481187092933
+        },
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving",
+          "score": 0.5182187062849486
+        }
+      ],
+      "add_time": 20.177,
+      "search_time": 0.283,
+      "answer_time": 0.606,
+      "total_time": 21.066,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 194,
+      "user_id": "eval_194_3879c36e",
+      "question": "What is the most feared condition that divers want to avoid?",
+      "ground_truth": "seizures",
+      "prediction": "Acute oxygen toxicity",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Acute oxygen toxicity, causing seizures, is the most feared effect for divers",
+          "score": 0.6868933117247478
+        },
+        {
+          "memory": "Exposure to O2 partial pressures greater than 160 kPa may lead to convulsions, which are normally fatal for divers",
+          "score": 0.5575606530511089
+        },
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving",
+          "score": 0.5233258569824034
+        },
+        {
+          "memory": "Acute oxygen toxicity can also occur by breathing 100% O2 at a depth of only 6 meters",
+          "score": 0.4436040158802075
+        },
+        {
+          "memory": "Acute oxygen toxicity can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more",
+          "score": 0.4354188868589551
+        }
+      ],
+      "add_time": 17.557,
+      "search_time": 0.313,
+      "answer_time": 0.632,
+      "total_time": 18.502,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 195,
+      "user_id": "eval_195_30b91c17",
+      "question": "What physical condition can acute oxygen toxicity cause?",
+      "ground_truth": "seizures",
+      "prediction": "Seizures",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Acute oxygen toxicity can also occur by breathing 100% O2 at a depth of only 6 meters",
+          "score": 0.7100280899454194
+        },
+        {
+          "memory": "Acute oxygen toxicity can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more",
+          "score": 0.7043413826720916
+        },
+        {
+          "memory": "Acute oxygen toxicity, causing seizures, is the most feared effect for divers",
+          "score": 0.5987415030344934
+        },
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving",
+          "score": 0.5897918981052077
+        },
+        {
+          "memory": "Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can lead to permanent pulmonary fibrosis",
+          "score": 0.5550848727656905
+        }
+      ],
+      "add_time": 16.027,
+      "search_time": 0.471,
+      "answer_time": 0.598,
+      "total_time": 17.096,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 196,
+      "user_id": "eval_196_840f4e3e",
+      "question": "Where did Huguenots and Walloons settle in England?",
+      "ground_truth": "canterbury",
+      "prediction": "Canterbury, Sandwich, Faversham, Maidstone",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane",
+          "score": 0.6201971288811183
+        },
+        {
+          "memory": "Huguenot refugees also settled elsewhere in Kent, particularly in Sandwich, Faversham, and Maidstone",
+          "score": 0.5895454128423809
+        },
+        {
+          "memory": "Many Huguenots worked as weavers",
+          "score": 0.4816812724320611
+        },
+        {
+          "memory": "There used to be refugee churches in Sandwich, Faversham, and Maidstone",
+          "score": 0.36619379675359176
+        },
+        {
+          "memory": "The Weavers' is a half-timbered house by the river",
+          "score": 0.22860834620453466
+        }
+      ],
+      "add_time": 22.579,
+      "search_time": 0.314,
+      "answer_time": 0.708,
+      "total_time": 23.602,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.0
+    },
+    {
+      "idx": 197,
+      "user_id": "eval_197_3a70e820",
+      "question": "What house was the site of a weaving school in Canterbury?",
+      "ground_truth": "the weavers",
+      "prediction": "The Weaver's",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The Weaver's was the site of a weaving school from the late 16th century to about 1830",
+          "score": 0.6106158733855589
+        },
+        {
+          "memory": "Evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane",
+          "score": 0.5374358119058507
+        },
+        {
+          "memory": "The Weaver's derives its name from a weaving school that was moved there in the last years of the 19th century",
+          "score": 0.5047639309443545
+        },
+        {
+          "memory": "Weavers' windows survive on the top floor of the houses in Turnagin Lane",
+          "score": 0.49676486862190977
+        },
+        {
+          "memory": "The Weaver's is a half-timbered house by the river",
+          "score": 0.4676146978545123
+        }
+      ],
+      "add_time": 21.997,
+      "search_time": 0.286,
+      "answer_time": 0.592,
+      "total_time": 22.874,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.5
+    },
+    {
+      "idx": 198,
+      "user_id": "eval_198_e513c7b2",
+      "question": "What social construct did Huguenot refugees in Canterbury practice?",
+      "ground_truth": "economic separation",
+      "prediction": "I don't know",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Huguenot refugees also settled elsewhere in Kent, particularly in Sandwich, Faversham, and Maidstone",
+          "score": 0.6496680594309472
+        },
+        {
+          "memory": "Many Huguenots worked as weavers",
+          "score": 0.5702284672779073
+        },
+        {
+          "memory": "Evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane",
+          "score": 0.562780780779439
+        },
+        {
+          "memory": "Other refugees practiced a variety of occupations necessary to sustain the community",
+          "score": 0.5335196640812405
+        },
+        {
+          "memory": "There used to be refugee churches in Sandwich, Faversham, and Maidstone",
+          "score": 0.47477943561209296
+        }
+      ],
+      "add_time": 22.925,
+      "search_time": 0.332,
+      "answer_time": 0.711,
+      "total_time": 23.968,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 199,
+      "user_id": "eval_199_56462d31",
+      "question": "What is located on the site of The Weaving House currently?",
+      "ground_truth": "restaurant",
+      "prediction": "A restaurant",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The Weaver's was the site of a weaving school from the late 16th century to about 1830",
+          "score": 0.6267149180036738
+        },
+        {
+          "memory": "The Weaver's derives its name from a weaving school that was moved there in the last years of the 19th century",
+          "score": 0.5776075832518426
+        },
+        {
+          "memory": "Weavers' windows survive on the top floor of the houses in Turnagin Lane",
+          "score": 0.5713724429242495
+        },
+        {
+          "memory": "The Weaver's is a half-timbered house by the river",
+          "score": 0.5703089633403654
+        },
+        {
+          "memory": "The Weaver's has been adapted as a restaurant",
+          "score": 0.5316308003318437
+        }
+      ],
+      "add_time": 21.505,
+      "search_time": 0.318,
+      "answer_time": 0.577,
+      "total_time": 22.4,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5
+    }
+  ]
+}

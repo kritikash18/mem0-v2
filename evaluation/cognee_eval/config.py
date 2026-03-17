@@ -33,7 +33,7 @@ if not OPENAI_API_KEY:
 # DATASET (same as audio_eval for fair comparison)
 # =============================================================================
 
-DATASET_NAME = "byteCode18/spoken-squad-1k-memory-eval"
+DATASET_NAME = "byteCode18/spoken-squad-memory-eval"
 DATASET_SPLIT = "test"
 
 AUDIO_COLUMN = "context"
@@ -72,7 +72,7 @@ LLM_TEMPERATURE = 0.0
 # EVALUATION SETTINGS
 # =============================================================================
 
-TOP_K = 5                        # Number of results to retrieve from Cognee
+TOP_K = 10                        # Number of results to retrieve from Cognee
 RESET_BETWEEN_SAMPLES = True     # Reset Cognee state between samples for isolation
 
 # =============================================================================

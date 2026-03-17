@@ -43,13 +43,19 @@ if not OPENAI_API_KEY:
 # DATASET
 # =============================================================================
 
-DATASET_NAME = "byteCode18/spoken-squad-1k-memory-eval"
+DATASET_NAME = "byteCode18/spoken-squad-memory-eval"
 DATASET_SPLIT = "test"
 
 # Original columns from Spoken SQuAD
 AUDIO_COLUMN = "context"
 QUESTION_COLUMN = "instruction"
 ANSWER_COLUMN = "answer"
+
+# Audio query experiment — v2 dataset adds spoken versions of the questions
+# Switch to this dataset + column to test audio queries instead of text queries
+AUDIO_QUERY_DATASET = "byteCode18/spoken-squad-memory-eval-v2"
+AUDIO_QUERY_COLUMN = "instruction_v2"   # same dict format as AUDIO_COLUMN
+USE_AUDIO_QUERY = False                  # set True or use --audio-query CLI flag
 
 # =============================================================================
 # ASR (Automatic Speech Recognition)

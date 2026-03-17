@@ -370,12 +370,17 @@ async def _run_evaluation_async(
     num_samples: Optional[int] = None,
     experiment_name: Optional[str] = None,
     sample_indices: Optional[List[int]] = None,
+    start: Optional[int] = None,
+    end: Optional[int] = None,
     search_type: Optional[str] = None,
+    no_reset: bool = False,
 ) -> List[Dict[str, Any]]:
     """Async implementation of the evaluation runner."""
 
     if search_type:
         config.COGNEE_SEARCH_TYPE = search_type
+    if no_reset:
+        config.RESET_BETWEEN_SAMPLES = False
 
     config.validate_config()
 
@@ -384,13 +389,22 @@ async def _run_evaluation_async(
     # Setup Cognee environment
     setup_cognee_env()
 
-    # Load dataset
+    # Load dataset and resolve which indices to evaluate
     if sample_indices:
         dataset = load_evaluation_dataset(None)
         max_idx = max(sample_indices)
         if max_idx >= len(dataset):
             raise ValueError(f"Index {max_idx} out of range. Dataset has {len(dataset)} samples.")
         indices_to_evaluate = sample_indices
+        logger.info(f"Evaluating {len(indices_to_evaluate)} explicit indices")
+    elif start is not None or end is not None:
+        dataset = load_evaluation_dataset(None)
+        _start = start if start is not None else 0
+        _end = min(end, len(dataset)) if end is not None else len(dataset)
+        if _start >= len(dataset):
+            raise ValueError(f"--start {_start} is out of range. Dataset has {len(dataset)} samples.")
+        indices_to_evaluate = list(range(_start, _end))
+        logger.info(f"Evaluating range [{_start}, {_end}) = {len(indices_to_evaluate)} samples")
     else:
         dataset = load_evaluation_dataset(num_samples)
         indices_to_evaluate = list(range(len(dataset)))
@@ -438,7 +452,10 @@ def run_evaluation(
     num_samples: Optional[int] = None,
     experiment_name: Optional[str] = None,
     sample_indices: Optional[List[int]] = None,
+    start: Optional[int] = None,
+    end: Optional[int] = None,
     search_type: Optional[str] = None,
+    no_reset: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     Run full Cognee evaluation pipeline (sync wrapper).
@@ -451,6 +468,7 @@ def run_evaluation(
         experiment_name: Name for output files
         sample_indices: Specific indices to evaluate
         search_type: Cognee search type override
+        no_reset: Disable prune between samples (memories accumulate across samples)
 
     Returns:
         List of result dictionaries
@@ -459,7 +477,10 @@ def run_evaluation(
         num_samples=num_samples,
         experiment_name=experiment_name,
         sample_indices=sample_indices,
+        start=start,
+        end=end,
         search_type=search_type,
+        no_reset=no_reset,
     ))
 
 
@@ -483,6 +504,7 @@ def save_results(results: List[Dict], experiment_name: str, suffix: str):
             "search_type": config.COGNEE_SEARCH_TYPE,
             "answer_llm": f"{config.LLM_PROVIDER}/{config.LLM_MODEL}",
             "top_k": config.TOP_K,
+            "reset_between_samples": config.RESET_BETWEEN_SAMPLES,
         },
         "summary": summary,
         "distributions": {
@@ -590,6 +612,18 @@ def main():
         help="Comma-separated list of sample indices",
     )
     parser.add_argument(
+        "--start",
+        type=int,
+        default=None,
+        help="Start of index range (inclusive). Use with --end for incremental runs.",
+    )
+    parser.add_argument(
+        "--end",
+        type=int,
+        default=None,
+        help="End of index range (exclusive). Use with --start for incremental runs.",
+    )
+    parser.add_argument(
         "--search-type",
         type=str,
         default=None,
@@ -598,6 +632,12 @@ def main():
             "SUMMARIES", "GRAPH_SUMMARY_COMPLETION", "GRAPH_COMPLETION_COT",
         ],
         help="Cognee search type to use",
+    )
+    parser.add_argument(
+        "--no-reset",
+        action="store_true",
+        default=False,
+        help="Disable prune between samples — Cognee knowledge graph accumulates across samples",
     )
 
     args = parser.parse_args()
@@ -616,7 +656,10 @@ def main():
         num_samples=args.num_samples,
         experiment_name=args.experiment_name,
         sample_indices=sample_indices,
+        start=args.start,
+        end=args.end,
         search_type=args.search_type,
+        no_reset=args.no_reset,
     )
 
 

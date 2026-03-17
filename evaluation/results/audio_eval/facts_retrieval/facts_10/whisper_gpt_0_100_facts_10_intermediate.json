@@ -1,0 +1,4530 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "whisper_gpt_0_100_facts_10",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text"
+  },
+  "summary": {
+    "count": 100,
+    "em_mean": 0.6,
+    "em_std": 0.4924,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.7305,
+    "f1_std": 0.3868,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.6913,
+    "bleu_std": 0.4114,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 17.8313,
+    "total_time_std": 4.2239,
+    "total_time_min": 8.356,
+    "total_time_max": 26.956,
+    "add_time_mean": 16.7228,
+    "add_time_std": 4.2229,
+    "add_time_min": 6.856,
+    "add_time_max": 25.642,
+    "search_time_mean": 0.2954,
+    "search_time_std": 0.05,
+    "search_time_min": 0.241,
+    "search_time_max": 0.466,
+    "answer_time_mean": 0.8132,
+    "answer_time_std": 0.2018,
+    "answer_time_min": 0.567,
+    "answer_time_max": 1.427,
+    "em_correct": 60,
+    "em_pct": 60.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 100,
+      "zero": 17,
+      "perfect": 60,
+      "above_50": 77,
+      "above_80": 63
+    },
+    "bleu": {
+      "total": 100,
+      "zero": 19,
+      "perfect": 60,
+      "above_50": 73,
+      "above_80": 61
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_5d9afb34",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "Trust in God's Word",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded the citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.7027901232076578
+        },
+        {
+          "memory": "Luther wrote to the Elector about the ravages committed by Satan during his absence",
+          "score": 0.550653867549748
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized the primacy of core Christian values such as love, patience, charity, and freedom",
+          "score": 0.5027042818034656
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.47127083149906873
+        },
+        {
+          "memory": "Luther preached eight sermons beginning on Invocavit Sunday, 9 March 1522",
+          "score": 0.46788786980823033
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.4071210372730415
+        }
+      ],
+      "add_time": 19.118,
+      "search_time": 0.249,
+      "answer_time": 0.773,
+      "total_time": 20.141,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_ba1f2014",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "I don't know",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.6352504428035344
+        },
+        {
+          "memory": "Luther preached eight sermons beginning on Invocavit Sunday, 9 March 1522",
+          "score": 0.6249380432307088
+        },
+        {
+          "memory": "Luther wrote to the Elector about the ravages committed by Satan during his absence",
+          "score": 0.5554786580121511
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized the primacy of core Christian values such as love, patience, charity, and freedom",
+          "score": 0.4984774996313305
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.4792430889315683
+        },
+        {
+          "memory": "Luther reminded the citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.47027734632013063
+        }
+      ],
+      "add_time": 18.393,
+      "search_time": 0.263,
+      "answer_time": 1.141,
+      "total_time": 19.797,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_e6c0294c",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "Trust God's Word rather than violence.",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.7028801796186641
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized core Christian values such as love, patience, charity, and freedom",
+          "score": 0.5550392671357662
+        },
+        {
+          "memory": "Luther preached eight sermons beginning on Invocavit Sunday, 9 March 1522",
+          "score": 0.5116866538436649
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.46277313853709257
+        },
+        {
+          "memory": "Luther wrote to the Elector about Satan entering his sheepfold during his absence",
+          "score": 0.4582711503734972
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.4373811792614051
+        }
+      ],
+      "add_time": 14.422,
+      "search_time": 0.248,
+      "answer_time": 0.821,
+      "total_time": 15.492,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_7c03ae07",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "Montcalm and 7,000 troops",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.7832294000711371
+        },
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged Fort William Henry",
+          "score": 0.7080872049672449
+        },
+        {
+          "memory": "In February 1757, they launched a raid against the position across frozen Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.6465486443272834
+        },
+        {
+          "memory": "In January 1757, French irregular forces and their allies ambushed British Rangers near Ticonderoga",
+          "score": 0.6406966977253942
+        },
+        {
+          "memory": "Fort William Henry capitulated with an agreement to withdraw under parole",
+          "score": 0.49504199122328635
+        },
+        {
+          "memory": "During the withdrawal, some of Montcalm's Indian allies attacked the British column, killing and capturing several hundred men, women, children, and slaves",
+          "score": 0.4517547903398906
+        },
+        {
+          "memory": "Some Indians who participated in the campaign traveled from beyond the Mississippi and returned having been exposed to European carriers",
+          "score": 0.35036256555969
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.2478737219480111
+        }
+      ],
+      "add_time": 24.218,
+      "search_time": 0.288,
+      "answer_time": 0.914,
+      "total_time": 25.421,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_f6b3984a",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "Lake George",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged Fort William Henry",
+          "score": 0.5389830096967894
+        },
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.534187252402136
+        },
+        {
+          "memory": "In February 1757, French irregular forces launched a raid against the position across Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.5265454791110551
+        },
+        {
+          "memory": "Fort William Henry capitulated with an agreement to withdraw under parole",
+          "score": 0.47931082916240986
+        },
+        {
+          "memory": "In January 1757, French irregular forces ambushed British Rangers near Ticonderoga",
+          "score": 0.4403841707567864
+        },
+        {
+          "memory": "During the withdrawal, some of Montcalm's Indian allies attacked the British column, killing and capturing several hundred men, women, children, and slaves",
+          "score": 0.32147639050440513
+        },
+        {
+          "memory": "Some Indians traveled from beyond the Mississippi to participate in the campaign and returned afterward having been exposed to European carriers",
+          "score": 0.25900947608069685
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.1421839113695799
+        }
+      ],
+      "add_time": 19.682,
+      "search_time": 0.249,
+      "answer_time": 0.67,
+      "total_time": 20.601,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_e0a3ac27",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "Guidance and intervention for governance",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "People from tropical climates were seen as needing guidance and intervention from the European Empire for governance",
+          "score": 0.6784621393727552
+        },
+        {
+          "memory": "People from tropical climates were viewed as incapable of evolving their social structure",
+          "score": 0.5102809830029875
+        },
+        {
+          "memory": "Tropical climates were believed to yield lazy attitudes, sexual promiscuity, exotic culture, and moral degeneracy",
+          "score": 0.4767786480094641
+        },
+        {
+          "memory": "Geographic scholars under colonizing empires believed the world could be split into climatic zones",
+          "score": 0.38774546911613006
+        },
+        {
+          "memory": "Northern Europe and the mid-Atlantic temperate climate were thought to produce hard-working, moral, and upstanding individuals",
+          "score": 0.36681469671944356
+        },
+        {
+          "memory": "Orientalism is a view of a people based on their geographical location",
+          "score": 0.27758941002781995
+        }
+      ],
+      "add_time": 14.916,
+      "search_time": 0.264,
+      "answer_time": 0.729,
+      "total_time": 15.909,
+      "em": 0,
+      "f1": 0.75,
+      "bleu": 0.6
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_d80e090f",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "Electronics Manufacturer Radio Corporation of America (RCA)",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: CBS, Mutual Broadcasting System, and NBC",
+          "score": 0.6660154996283412
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.6146717877321612
+        },
+        {
+          "memory": "NBC Blue network was created in 1927",
+          "score": 0.5629369403724918
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.5142232991085427
+        },
+        {
+          "memory": "NBC Blue was created for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.47362234705126804
+        },
+        {
+          "memory": "NBC Red served the major cities and tested drama series",
+          "score": 0.43357031528401635
+        }
+      ],
+      "add_time": 14.902,
+      "search_time": 0.248,
+      "answer_time": 0.794,
+      "total_time": 15.943,
+      "em": 0,
+      "f1": 0.7273,
+      "bleu": 0.5714
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_5d1644ae",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "Major cities",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "NBC Blue was created in 1927 for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.7154126319518301
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.7062457628533043
+        },
+        {
+          "memory": "NBC Red served the major cities and was used to test drama series",
+          "score": 0.6807760513078831
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.5464479255758069
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: CBS, Mutual Broadcasting System, and NBC",
+          "score": 0.5038850083553028
+        }
+      ],
+      "add_time": 13.164,
+      "search_time": 0.278,
+      "answer_time": 0.772,
+      "total_time": 14.213,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_19a1edb7",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "NBC Blue",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "NBC Blue was created for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.6689840881069358
+        },
+        {
+          "memory": "NBC Red served the major cities and tested drama series",
+          "score": 0.6380192833147096
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.5703378894150403
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: Columbia Broadcasting System (CBS), Mutual Broadcasting System, and National Broadcasting Company (NBC)",
+          "score": 0.5509625583254929
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.5062028292371195
+        },
+        {
+          "memory": "NBC Blue network was created in 1927",
+          "score": 0.49972026539734365
+        }
+      ],
+      "add_time": 15.555,
+      "search_time": 0.252,
+      "answer_time": 0.82,
+      "total_time": 16.627,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 1.0
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_2debe842",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "pH or available iron",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Commensal flora can change environmental conditions, such as pH or available iron, to reduce the probability of pathogen growth",
+          "score": 0.8231275195294037
+        },
+        {
+          "memory": "Commensal flora in the genitourinary and gastrointestinal tracts serve as biological barriers by competing with pathogenic bacteria for food and space",
+          "score": 0.6693192727634928
+        },
+        {
+          "memory": "Probiotic flora have shown effectiveness in intestinal infections in children",
+          "score": 0.47733775501279097
+        },
+        {
+          "memory": "Reintroduction of probiotic flora, such as pure cultures of lactobacilli found in unpasteurized yogurt, helps restore a healthy balance of microbial populations",
+          "score": 0.4634201931718499
+        },
+        {
+          "memory": "Preliminary data suggest probiotics may be beneficial in studies on bacterial gastroenteritis, inflammatory bowel diseases, urinary tract infections, and post-surgical infections",
+          "score": 0.4389334913612939
+        },
+        {
+          "memory": "Oral antibiotics can lead to an overgrowth of fungi and cause conditions such as vaginal candidiasis or yeast infection",
+          "score": 0.3963861351797178
+        },
+        {
+          "memory": "Most antibiotics non-specifically target bacteria and do not affect fungi",
+          "score": 0.3331432293947413
+        }
+      ],
+      "add_time": 21.487,
+      "search_time": 0.336,
+      "answer_time": 1.133,
+      "total_time": 22.957,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_d8b98c99",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "Rugby",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.7510443929321654
+        },
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.6956106615174372
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.618376428994531
+        }
+      ],
+      "add_time": 7.985,
+      "search_time": 0.251,
+      "answer_time": 0.646,
+      "total_time": 8.881,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_d16a0f25",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "High school",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.4688939854055677
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.43716522771535976
+        },
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.4161881184351829
+        }
+      ],
+      "add_time": 8.01,
+      "search_time": 0.278,
+      "answer_time": 0.795,
+      "total_time": 9.083,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_626638ed",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "A popular sport",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.6918570648060679
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.61231014145964
+        },
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.571689620187084
+        }
+      ],
+      "add_time": 6.856,
+      "search_time": 0.251,
+      "answer_time": 1.249,
+      "total_time": 8.356,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_1a2cf160",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7761489108712261
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine) and in the east by a modern canalized section",
+          "score": 0.6344818884324924
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.612322320326273
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.384147614570451
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2973365199862871
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel,' which means 'donkey'",
+          "score": 0.2124127986822941
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.11867519728501104
+        }
+      ],
+      "add_time": 16.289,
+      "search_time": 0.252,
+      "answer_time": 0.647,
+      "total_time": 17.188,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_2cd80c3e",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "Donkey",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5433705811909109
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.434044845790803
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine) and in the east by a modern canalized section",
+          "score": 0.38795744921904884
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel,' which means 'donkey'",
+          "score": 0.37664659179910365
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.24281180979070857
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2421603541158784
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.2056842744270155
+        }
+      ],
+      "add_time": 14.625,
+      "search_time": 0.265,
+      "answer_time": 0.681,
+      "total_time": 15.57,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_513f4d2f",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7646754754741594
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine) and in the east by a modern canalized section",
+          "score": 0.6311818576013528
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5966347888143824
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.3975422348396731
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2986389047369966
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel,' which is also the local pronunciation of 'essel,' meaning 'donkey'",
+          "score": 0.25348150432620103
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.1294957827923904
+        }
+      ],
+      "add_time": 17.174,
+      "search_time": 0.289,
+      "answer_time": 0.664,
+      "total_time": 18.127,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_5da419a0",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "Small islands",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5856777216214887
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.5220455626834765
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine) and in the east by a modern canalized section",
+          "score": 0.48353540644630755
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.4831123648940441
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel,' which means 'donkey'",
+          "score": 0.21004247499308962
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.13264132119503358
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.13192557329818694
+        }
+      ],
+      "add_time": 18.396,
+      "search_time": 0.31,
+      "answer_time": 1.307,
+      "total_time": 20.013,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_bcae1fe7",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "Kim Wilkie",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.7589866915772777
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.6244808319951471
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a blend of traditional and modern elements",
+          "score": 0.5279794322836127
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.5045658380634519
+        },
+        {
+          "memory": "The layout of the garden is formal and features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.5037022996250238
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.49421992255015657
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.433652982927532
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer, which are replaced by bay trees in winter",
+          "score": 0.36917311354387583
+        },
+        {
+          "memory": "In the two corners by the north fa\u00e7ade, an American sweetgum tree is planted",
+          "score": 0.3318579457910288
+        },
+        {
+          "memory": "The water feature may be drained to use the area for receptions, gatherings, or exhibition purposes",
+          "score": 0.31643930610210774
+        }
+      ],
+      "add_time": 23.688,
+      "search_time": 0.304,
+      "answer_time": 0.726,
+      "total_time": 24.717,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_312de0bf",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "Elliptical",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The layout of the garden is formal and features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.6783133529597783
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a blend of traditional and modern elements",
+          "score": 0.5486105465827578
+        },
+        {
+          "memory": "The water feature may be drained for receptions, gatherings, or exhibition purposes",
+          "score": 0.494337252742349
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.481780927075687
+        },
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.4542544604032794
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.3927224973310114
+        },
+        {
+          "memory": "The garden is located in front of bronze doors leading to the refreshment rooms",
+          "score": 0.36692441154940486
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.364031562465969
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer, which are replaced by bay trees in winter",
+          "score": 0.3082162270961307
+        },
+        {
+          "memory": "In the two corners by the north fa\u00e7ade, an American sweetgum tree is planted",
+          "score": 0.25313446325842204
+        }
+      ],
+      "add_time": 21.128,
+      "search_time": 0.292,
+      "answer_time": 0.642,
+      "total_time": 22.062,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_09b03ca4",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "Receptions, gatherings, or exhibition purposes",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The water feature may be drained to use the area for receptions, gatherings, or exhibition purposes",
+          "score": 0.7312446140938074
+        },
+        {
+          "memory": "The layout of the garden is formal and features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.4922413549378668
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.3134171924594189
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.2983318040616401
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer, which are replaced by bay trees in winter",
+          "score": 0.2827465699173921
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.27623965542239515
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a blend of traditional and modern elements",
+          "score": 0.26829255940631
+        },
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.26411595353825523
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.26189395705036755
+        },
+        {
+          "memory": "In the two corners by the north fa\u00e7ade, an American sweetgum tree is planted",
+          "score": 0.17920191791023096
+        }
+      ],
+      "add_time": 24.342,
+      "search_time": 0.317,
+      "answer_time": 0.728,
+      "total_time": 25.387,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_8a22b79c",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "American sweetgum",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "In the two corners by the north fa\u00e7ade, an American sweetgum tree is planted",
+          "score": 0.7124192564834523
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer, which are replaced by bay trees in winter",
+          "score": 0.533815720182355
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.4807208191576668
+        },
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.37991737038113366
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.37790982091806025
+        },
+        {
+          "memory": "The layout of the garden is formal and features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.3646316368203467
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.3615240411128777
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a blend of traditional and modern elements",
+          "score": 0.3570661528719498
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.3432008185454968
+        },
+        {
+          "memory": "The water feature may be drained to use the area for receptions, gatherings, or exhibition purposes",
+          "score": 0.22689117035667292
+        }
+      ],
+      "add_time": 20.07,
+      "search_time": 0.299,
+      "answer_time": 0.61,
+      "total_time": 20.979,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_73864ceb",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "Static equilibrium",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium, where several forces canceled each other out",
+          "score": 0.6282345604830882
+        },
+        {
+          "memory": "Forces are additive vector quantities; they have magnitude and direction",
+          "score": 0.39555651448162704
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.3494810546363968
+        },
+        {
+          "memory": "The resulting force when two forces act on a point particle is known as the resultant or net force",
+          "score": 0.2920601842850399
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.28733369131087894
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.28316519775051413
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector equal in magnitude and direction to the diagonal of the parallelogram",
+          "score": 0.09739149463932387
+        }
+      ],
+      "add_time": 18.641,
+      "search_time": 0.387,
+      "answer_time": 0.664,
+      "total_time": 19.692,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_583c22f5",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "Magnitude and direction",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Forces are additive vector quantities; they have magnitude and direction",
+          "score": 0.7446461129704601
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium, where several forces canceled each other out",
+          "score": 0.5175736211637962
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.49045069963673615
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.4742861296280432
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.4361595311715105
+        },
+        {
+          "memory": "The resulting force when two forces act on a point particle is known as the resultant or net force",
+          "score": 0.4288357974701995
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector equal in magnitude and direction to the diagonal of the parallelogram",
+          "score": 0.3547292695767542
+        }
+      ],
+      "add_time": 19.326,
+      "search_time": 0.298,
+      "answer_time": 0.794,
+      "total_time": 20.419,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_b267437b",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "Resultant or net force",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The resulting force when two forces act on a point particle is known as the resultant or net force",
+          "score": 0.7843297608639956
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.6489469747849453
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.6405077872975996
+        },
+        {
+          "memory": "Forces are additive vector quantities; they have magnitude and direction",
+          "score": 0.5285694431424696
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.46804324572757605
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium, where several forces cancelled each other out",
+          "score": 0.46141089833925025
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector that is equal in magnitude and direction to the transversal of the parallelogram",
+          "score": 0.41840279862764157
+        }
+      ],
+      "add_time": 18.986,
+      "search_time": 0.27,
+      "answer_time": 0.695,
+      "total_time": 19.952,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_a0e20a68",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "Their respective lines of application",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.8323197242799705
+        },
+        {
+          "memory": "Forces are additive vector quantities; they have magnitude and direction",
+          "score": 0.44913861667714117
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium, where several forces canceled each other out",
+          "score": 0.4320119454913932
+        },
+        {
+          "memory": "The resulting force when two forces act on a point particle is known as the resultant or net force",
+          "score": 0.3910351146365275
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.38224622584118906
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.3808825675722861
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector equal in magnitude and direction to the diagonal of the parallelogram",
+          "score": 0.2218058223369378
+        }
+      ],
+      "add_time": 22.997,
+      "search_time": 0.281,
+      "answer_time": 0.664,
+      "total_time": 23.942,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 0.8
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_e884f8df",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "October 1973",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.9099522893213835
+        },
+        {
+          "memory": "The 1973 oil crisis is referred to as the 'first oil shock'",
+          "score": 0.7409049027589529
+        },
+        {
+          "memory": "The 1979 oil crisis is referred to as the 'second oil shock'",
+          "score": 0.6214452461949216
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.5945964601177993
+        },
+        {
+          "memory": "The embargo caused an oil crisis with many short and long-term effects on global politics and the global economy",
+          "score": 0.49918060766800015
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) proclaimed an oil embargo",
+          "score": 0.45505008925998114
+        },
+        {
+          "memory": "OAPEC consists of the Arab members of OPEC plus Egypt and Syria",
+          "score": 0.25592385786728256
+        }
+      ],
+      "add_time": 16.7,
+      "search_time": 0.248,
+      "answer_time": 0.68,
+      "total_time": 17.627,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_b0428ae7",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "'Second oil shock'",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1979 oil crisis is referred to as the 'second oil shock'",
+          "score": 0.6583922237447308
+        },
+        {
+          "memory": "The 1973 oil crisis is referred to as the 'first oil shock'",
+          "score": 0.641819274385856
+        },
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.610103998905376
+        },
+        {
+          "memory": "The embargo caused an oil crisis with many short and long-term effects on global politics and the global economy",
+          "score": 0.5843341358245424
+        },
+        {
+          "memory": "OAPEC proclaimed an oil embargo in October 1973",
+          "score": 0.5108354960984988
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.4565306167028226
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) consists of the Arab members of OPEC plus Egypt and Syria",
+          "score": 0.24073420489263547
+        }
+      ],
+      "add_time": 15.557,
+      "search_time": 0.248,
+      "answer_time": 1.154,
+      "total_time": 16.958,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.0
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_842169ab",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "Most of the Peanuts television specials",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Since 2000, ABC has owned the television rights to most of the Peanuts television specials",
+          "score": 0.6652451579361787
+        },
+        {
+          "memory": "ABC acquired the broadcast rights to Peanuts specials from CBS",
+          "score": 0.5317011535437031
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards, Emmy Awards, American Music Awards, Disney Parks Christmas Day Parade, Tournament of Roses Parade, Country Music Association Awards, and the CMA Music Festival",
+          "score": 0.5049984337346817
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include It's the Great Pumpkin, Charlie Brown and A Charlie Brown Thanksgiving",
+          "score": 0.4764553028098918
+        },
+        {
+          "memory": "CBS originated the Peanuts specials in 1965 with the debut of A Charlie Brown Christmas",
+          "score": 0.41649204627287095
+        }
+      ],
+      "add_time": 15.954,
+      "search_time": 0.257,
+      "answer_time": 0.927,
+      "total_time": 17.138,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.1667
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_76e210d6",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "Academy Awards",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards, Emmy Awards, American Music Awards, Disney Parks Christmas Day Parade, Tournament of Roses Parade, Country Music Association Awards, and the CMA Music Festival",
+          "score": 0.6841630611119931
+        },
+        {
+          "memory": "Since 2000, ABC has owned the television rights to most of the Peanuts television specials",
+          "score": 0.5038831381514335
+        },
+        {
+          "memory": "ABC acquired the broadcast rights to Peanuts specials from CBS",
+          "score": 0.37844123662493345
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include It's the Great Pumpkin, Charlie Brown and A Charlie Brown Thanksgiving",
+          "score": 0.3735209858070555
+        },
+        {
+          "memory": "CBS originated the Peanuts specials in 1965 with the debut of A Charlie Brown Christmas",
+          "score": 0.23073843775975245
+        }
+      ],
+      "add_time": 13.342,
+      "search_time": 0.384,
+      "answer_time": 0.648,
+      "total_time": 14.373,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_23b59149",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "No",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "BSkyB has no veto over the presence of channels on their EPG",
+          "score": 0.8906403002721918
+        },
+        {
+          "memory": "BSkyB does not have control over the channel's content or carriage issues such as picture quality",
+          "score": 0.6750781637013484
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0E is entitled to access BSkyB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.6718178427453803
+        },
+        {
+          "memory": "Open access is an enforced part of BSkyB's operating license from Ofcom",
+          "score": 0.5851995291393498
+        },
+        {
+          "memory": "Third-party channels may receive free carriage on a BSkyB leased transponder or actual payment for being carried",
+          "score": 0.5849725556315903
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts, which can include reduced prices or free EPG entries",
+          "score": 0.50019631359948
+        }
+      ],
+      "add_time": 15.429,
+      "search_time": 0.256,
+      "answer_time": 0.661,
+      "total_time": 16.346,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_4feba87b",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB does not have control over the channel's content or carriage issues such as picture quality",
+          "score": 0.7380842873506218
+        },
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.6728678240047519
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access BSKYB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.6074777833750991
+        },
+        {
+          "memory": "Discounts for third-party channels can include reduced prices, free EPG entries, free carriage on a BSKYB leased transponder, or actual payment for being carried",
+          "score": 0.5160902062614416
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.5158043213630282
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts on EPG entries",
+          "score": 0.40025623667353416
+        }
+      ],
+      "add_time": 17.69,
+      "search_time": 0.245,
+      "answer_time": 0.667,
+      "total_time": 18.602,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_c5d184de",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB does not have control over the channel's content or carriage issues such as picture quality",
+          "score": 0.7823333121086531
+        },
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.6281144734254714
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access BSKYB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.5857388892815699
+        },
+        {
+          "memory": "Third-party channels may receive free carriage on a BSKYB leased transponder or actual payment for being carried",
+          "score": 0.5016467389477453
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.44356873920891604
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts, which can include reduced prices or free EPG entries",
+          "score": 0.3858859648582189
+        }
+      ],
+      "add_time": 17.577,
+      "search_time": 0.258,
+      "answer_time": 0.567,
+      "total_time": 18.401,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_3636763d",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "William Booth",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "William Booth was the founder of the Salvation Army",
+          "score": 0.7324170014478382
+        },
+        {
+          "memory": "John Wesley is revered as the founder of Methodism",
+          "score": 0.3977670174649177
+        },
+        {
+          "memory": "Notable examples of saints include St. Matthew, Dietrich Bonhoeffer, William Booth, David Livingstone, and John Wesley",
+          "score": 0.2996498270017006
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.26092459223268905
+        },
+        {
+          "memory": "Methodist institutions may be named after a biblical figure, such as St. James U.M.C.",
+          "score": 0.2583039223991103
+        },
+        {
+          "memory": "Methodists honor notable heroes and heroines of the Christian faith as examples of holy living and commitment to Christ",
+          "score": 0.24584913719135992
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr to the Nazis",
+          "score": 0.24098263774048376
+        },
+        {
+          "memory": "1 Corinthians 11:1 references the imitation of exemplary saints",
+          "score": 0.1362426717663145
+        },
+        {
+          "memory": "Exemplary saints include martyrs, confessors of the faith, evangelists, and important biblical figures",
+          "score": 0.12302043782111796
+        }
+      ],
+      "add_time": 18.426,
+      "search_time": 0.286,
+      "answer_time": 0.68,
+      "total_time": 19.392,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_1ddfcbc1",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "John Wesley",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "John Wesley is revered as the founder of Methodism",
+          "score": 0.8231959389826529
+        },
+        {
+          "memory": "Methodists honor notable heroes and heroines of the Christian faith as examples of holy living and commitment to Christ",
+          "score": 0.5440513037847388
+        },
+        {
+          "memory": "Methodist institutions may be named after a biblical figure, such as St. James U.M.C.",
+          "score": 0.5321004970431853
+        },
+        {
+          "memory": "Notable examples of saints include St. Matthew, Dietrich Bonhoeffer, William Booth, David Livingstone, and John Wesley",
+          "score": 0.4405734318551351
+        },
+        {
+          "memory": "William Booth was the founder of the Salvation Army",
+          "score": 0.38046854705368244
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.2841258911455437
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr to the Nazis",
+          "score": 0.2772611604257862
+        },
+        {
+          "memory": "1 Corinthians 11:1 references the imitation of exemplary saints",
+          "score": 0.2684839133093832
+        },
+        {
+          "memory": "Exemplary saints include martyrs, confessors of the faith, evangelists, and important biblical figures",
+          "score": 0.2348845432276663
+        }
+      ],
+      "add_time": 16.923,
+      "search_time": 0.261,
+      "answer_time": 0.873,
+      "total_time": 18.057,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_8dd40487",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "Elton Rule",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Elton Rule was named President and Chief Operating Officer of ABC a few months after Goldenson reduced his role in the company",
+          "score": 0.7118812284416436
+        },
+        {
+          "memory": "Goldenson reduced his role in the company after suffering a heart attack",
+          "score": 0.6439940779850606
+        },
+        {
+          "memory": "On January 17, 1972, Elton Rule was named President and Chief Operating Officer of ABC",
+          "score": 0.5810857844449848
+        },
+        {
+          "memory": "ABC Great States was the Central West Division of ABC Theatres",
+          "score": 0.34781105814756097
+        },
+        {
+          "memory": "ABC Great States was sold to Henry Plitt in 1974",
+          "score": 0.3311738174537823
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act banned cigarette advertising from all television and radio networks",
+          "score": 0.20033705234713955
+        },
+        {
+          "memory": "In April 1970, Congress passed the Public Health Cigarette Smoking Act",
+          "score": 0.15477415227058675
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act took effect on January 2, 1971",
+          "score": 0.15458551415615882
+        }
+      ],
+      "add_time": 17.869,
+      "search_time": 0.286,
+      "answer_time": 0.754,
+      "total_time": 18.91,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_289e5bc6",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "Degrees of privilege",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Mote stated that the position of people within the four-class system did not indicate their actual social power and wealth",
+          "score": 0.5853150192584735
+        },
+        {
+          "memory": "Mote wrote that the usage of the term 'social classes' for the four-class system was misleading",
+          "score": 0.5565689373259759
+        },
+        {
+          "memory": "Some Mongols and Simu lived in poverty and were ill-treated",
+          "score": 0.4167530263934004
+        },
+        {
+          "memory": "The four-class system entailed 'degrees of privilege' to which people were entitled institutionally and legally",
+          "score": 0.4014057606490273
+        },
+        {
+          "memory": "A person's standing within the classes did not guarantee their social status",
+          "score": 0.400061747261322
+        },
+        {
+          "memory": "There were wealthy and socially well-standing Chinese individuals",
+          "score": 0.39485557925880743
+        },
+        {
+          "memory": "There were less wealthy Mongols and Simu",
+          "score": 0.39310438697780414
+        },
+        {
+          "memory": "Frederick W. Mote is a historian",
+          "score": 0.28683370061041313
+        }
+      ],
+      "add_time": 16.167,
+      "search_time": 0.351,
+      "answer_time": 0.813,
+      "total_time": 17.331,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_aab53663",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "Wealthy and socially well-standing",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "There were wealthy and socially well-standing Chinese individuals",
+          "score": 0.5953672008490805
+        },
+        {
+          "memory": "A person's standing within the classes did not guarantee their status",
+          "score": 0.4114941760524877
+        },
+        {
+          "memory": "Some Mongols and Simu lived in poverty and were ill-treated",
+          "score": 0.3861715625126768
+        },
+        {
+          "memory": "The four-class system entailed 'degrees of privilege' to which people were entitled institutionally and legally",
+          "score": 0.33035854358784233
+        },
+        {
+          "memory": "There were less wealthy Mongols and Simu",
+          "score": 0.319682743858827
+        },
+        {
+          "memory": "Mote stated that the position of people within the four-class system did not indicate their actual social power and wealth",
+          "score": 0.2706755367405935
+        },
+        {
+          "memory": "Mote wrote that the usage of the term 'social classes' for the four-class system was misleading",
+          "score": 0.20588779685455202
+        },
+        {
+          "memory": "Frederick W. Mote is a historian",
+          "score": 0.09303044799261645
+        }
+      ],
+      "add_time": 16.966,
+      "search_time": 0.304,
+      "answer_time": 0.695,
+      "total_time": 17.964,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 0.5
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_8ac4d098",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.685520196907061
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.5115342240874547
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use in factories, mills, and mines",
+          "score": 0.4792895290503183
+        },
+        {
+          "memory": "There have been steam-powered farm tractors, motorcycles, and automobiles such as the Stanley Steamer",
+          "score": 0.47893262979637324
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.43160480200757717
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4276572328345915
+        }
+      ],
+      "add_time": 12.662,
+      "search_time": 0.26,
+      "answer_time": 0.892,
+      "total_time": 13.813,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_8bb2dc3f",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "Steamboats, farm tractors, motorcycles, automobiles",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.7420815403732418
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.6512936039852902
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use in factories, mills, and mines",
+          "score": 0.6093889646941367
+        },
+        {
+          "memory": "There have been steam-powered farm tractors, motorcycles, and automobiles such as the Stanley Steamer",
+          "score": 0.5577309760504066
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.5217852946898349
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5115091730915327
+        }
+      ],
+      "add_time": 14.902,
+      "search_time": 0.252,
+      "answer_time": 1.318,
+      "total_time": 16.472,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.0
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_f5ba67b8",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "Stanley Steamer",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "There have been steam-powered farm tractors, motorcycles, and automobiles such as the Stanley Steamer",
+          "score": 0.6862083177394945
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.6329563528945823
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.49529232255754074
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.4854933372842823
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use in factories, mills, and mines",
+          "score": 0.43701404773188546
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4267652261620591
+        }
+      ],
+      "add_time": 12.955,
+      "search_time": 0.251,
+      "answer_time": 0.707,
+      "total_time": 13.913,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_da362d38",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "Factories",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines saw widespread commercial use in factories, mills, and mines",
+          "score": 0.6531608515070035
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.5727955317275444
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.5553140599062332
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5498019743788256
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4881168257048013
+        },
+        {
+          "memory": "There have been steam-powered farm tractors, motorcycles, and automobiles such as the Stanley Steamer",
+          "score": 0.4740729393840438
+        }
+      ],
+      "add_time": 14.431,
+      "search_time": 0.241,
+      "answer_time": 0.696,
+      "total_time": 15.369,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_ba56c84b",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "Enrico Fermi",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Enrico Fermi created the first nuclear reactor",
+          "score": 0.711661982011603
+        },
+        {
+          "memory": "Edward Teller is known as the father of the hydrogen bomb",
+          "score": 0.3835067053637698
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.29616975582485955
+        },
+        {
+          "memory": "Luis Walter Alvarez was one of the most brilliant and productive experimental physicists of the 20th century",
+          "score": 0.29381924163075535
+        },
+        {
+          "memory": "Arthur H. Compton discovered the Compton effect",
+          "score": 0.27735578264355676
+        },
+        {
+          "memory": "Robert A. Millikan was notable for calculating the elementary charge",
+          "score": 0.2755564270353203
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.23143472598080328
+        },
+        {
+          "memory": "A. A. Michelson was notable for calculating the speed of light",
+          "score": 0.1867209267335982
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.17262274986413553
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was a notable astrophysicist",
+          "score": 0.1686517085100783
+        }
+      ],
+      "add_time": 18.507,
+      "search_time": 0.391,
+      "answer_time": 0.807,
+      "total_time": 19.705,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_ba465252",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "Edward Teller",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Edward Teller is known as the father of the hydrogen bomb",
+          "score": 0.7250178309817951
+        },
+        {
+          "memory": "Enrico Fermi created the first nuclear reactor",
+          "score": 0.41410509108060195
+        },
+        {
+          "memory": "Luis Walter Alvarez was one of the most brilliant and productive experimental physicists of the 20th century",
+          "score": 0.33686586563390447
+        },
+        {
+          "memory": "Robert A. Millikan was notable for calculating the elementary charge",
+          "score": 0.3368635072651034
+        },
+        {
+          "memory": "Arthur H. Compton discovered the Compton effect",
+          "score": 0.2796637274702226
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was an astrophysicist",
+          "score": 0.26236098293980464
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.25414146590519937
+        },
+        {
+          "memory": "A. A. Michelson was notable for calculating the speed of light",
+          "score": 0.24774535205959558
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.24453788887591993
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.24230234148102983
+        }
+      ],
+      "add_time": 19.044,
+      "search_time": 0.304,
+      "answer_time": 0.67,
+      "total_time": 20.018,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_923d4fbf",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "Dallas, Texas",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The new denomination was given birth by the union of two churches with distinguished histories and influential ministries in various parts of the world",
+          "score": 0.7141623812543514
+        },
+        {
+          "memory": "The United Methodist Church was formed by the union of the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.4731957836354508
+        },
+        {
+          "memory": "The union was proclaimed at the Constituting General Conference in Dallas, Texas",
+          "score": 0.42991885942966135
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.42070367688537214
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.3828507326159818
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.3623502634470406
+        }
+      ],
+      "add_time": 14.37,
+      "search_time": 0.251,
+      "answer_time": 0.734,
+      "total_time": 15.355,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_4830cdc1",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "I don't know",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The proclamation made at the conference was, 'Lord of the Church, we are united in thee. In thy Church and now in the United Methodist Church,'",
+          "score": 0.5836491130066153
+        },
+        {
+          "memory": "The new denomination was given birth by the united churches",
+          "score": 0.4201086667846032
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.3863225728083638
+        },
+        {
+          "memory": "The United Methodist Church was formed by the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.3832223909415108
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.37279888250444143
+        },
+        {
+          "memory": "The Evangelical United Brethren Church and the Methodist Church had distinguished histories and influential ministries in various parts of the world",
+          "score": 0.34135151453041157
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.32514503062056654
+        },
+        {
+          "memory": "The Constituting General Conference took place in Dallas, Texas",
+          "score": 0.27045572992254063
+        }
+      ],
+      "add_time": 16.742,
+      "search_time": 0.361,
+      "answer_time": 0.702,
+      "total_time": 17.805,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_45395cbb",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "Waxy cuticle",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Examples of mechanical barriers include the waxy cuticle of many leaves, the exoskeleton of insects, the shells and membranes of externally deposited eggs, and skin",
+          "score": 0.7484878929967016
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.47702770239771897
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.4761100359561894
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.3613079993281226
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.3414773987511439
+        },
+        {
+          "memory": "The flushing action of tears and urine mechanically expels pathogens",
+          "score": 0.3342598655798613
+        },
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.2932230339344177
+        }
+      ],
+      "add_time": 17.393,
+      "search_time": 0.258,
+      "answer_time": 0.834,
+      "total_time": 18.485,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_54e41242",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "Coughing and sneezing",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.6798284273223618
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.5510805986562147
+        },
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.5278155523137311
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.5127837243603808
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.48943442359612177
+        },
+        {
+          "memory": "The flushing action of tears and urine mechanically expels pathogens",
+          "score": 0.47356057883222863
+        },
+        {
+          "memory": "Examples of mechanical barriers include the waxy cuticle of many leaves, the exoskeleton of insects, the shells and membranes of externally deposited eggs, and skin",
+          "score": 0.44598678923464957
+        }
+      ],
+      "add_time": 17.693,
+      "search_time": 0.251,
+      "answer_time": 0.731,
+      "total_time": 18.675,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_4ac49bc4",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "Mucus",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.7773307386941792
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.5460712172663669
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.4172914088280034
+        },
+        {
+          "memory": "The flushing action of tears and urine mechanically expels pathogens",
+          "score": 0.3758920233318687
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.37522270719996587
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.3253990993516175
+        },
+        {
+          "memory": "Examples of mechanical barriers include the waxy cuticle of many leaves, the exoskeleton of insects, the shells and membranes of externally deposited eggs, and skin",
+          "score": 0.30024180392004035
+        }
+      ],
+      "add_time": 17.785,
+      "search_time": 0.295,
+      "answer_time": 1.25,
+      "total_time": 19.33,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_2da7f53d",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "Tears",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The flushing action of tears and urine mechanically expels pathogens",
+          "score": 0.7667332552471345
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.466253310373585
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.34476697454801836
+        },
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.3303694452055569
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.328960639331664
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.3020440988074096
+        },
+        {
+          "memory": "Examples of mechanical barriers include the waxy cuticle of many leaves, the exoskeleton of insects, the shells and membranes of externally deposited eggs, and skin",
+          "score": 0.2208535004168978
+        }
+      ],
+      "add_time": 16.796,
+      "search_time": 0.278,
+      "answer_time": 0.649,
+      "total_time": 17.723,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_571dd417",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "Chicago Bears",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7942088907600644
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3929518270971252
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37833326758870744
+        }
+      ],
+      "add_time": 9.585,
+      "search_time": 0.288,
+      "answer_time": 0.702,
+      "total_time": 10.576,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 50,
+      "user_id": "eval_50_2ed26d3b",
+      "question": "What position did Rivera play in Super Bowl XX?",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7809408986804405
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3651999902040639
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.36109431767136885
+        }
+      ],
+      "add_time": 10.55,
+      "search_time": 0.314,
+      "answer_time": 0.599,
+      "total_time": 11.463,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 51,
+      "user_id": "eval_51_25d89725",
+      "question": "Who was replaced by Kubiak in Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7503730381963903
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.47365667679543344
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3416010933549737
+        }
+      ],
+      "add_time": 8.298,
+      "search_time": 0.25,
+      "answer_time": 0.659,
+      "total_time": 9.207,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 52,
+      "user_id": "eval_52_f81b1fe7",
+      "question": "What team did Kubiak play for in Super Bowl XXI?",
+      "ground_truth": "broncos",
+      "prediction": "Broncos",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7004223026905032
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.5023221591920329
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37353332127667127
+        }
+      ],
+      "add_time": 8.175,
+      "search_time": 0.252,
+      "answer_time": 1.195,
+      "total_time": 9.622,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 53,
+      "user_id": "eval_53_cebb0721",
+      "question": "What position did Rivera play in Super Bowl XX? ",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7774415402288996
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3785542961585385
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3553041933187975
+        }
+      ],
+      "add_time": 8.034,
+      "search_time": 0.256,
+      "answer_time": 0.652,
+      "total_time": 8.942,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 54,
+      "user_id": "eval_54_81d52ee2",
+      "question": "Who did Kubiak take the place of after Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7649045947213344
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.44384557783244993
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.35582156478496746
+        }
+      ],
+      "add_time": 9.273,
+      "search_time": 0.343,
+      "answer_time": 0.831,
+      "total_time": 10.447,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 55,
+      "user_id": "eval_55_c61bc4f8",
+      "question": "Who was the Panthers head coach for the 2015 season?",
+      "ground_truth": "rivera",
+      "prediction": "Rivera",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.33413075835883427
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.32596353897195957
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.29778738114814385
+        }
+      ],
+      "add_time": 11.458,
+      "search_time": 0.248,
+      "answer_time": 0.684,
+      "total_time": 12.39,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 56,
+      "user_id": "eval_56_7a182bd6",
+      "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+      "ground_truth": "germany",
+      "prediction": "Germany",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Rococo Augustus Rex bureau cabinet features especially fine marquetry and ormolu mounts",
+          "score": 0.7335908586398883
+        },
+        {
+          "memory": "One of the finest pieces of continental furniture in the collection is the Rococo Augustus Rex bureau cabinet, dated circa 1750 from Germany",
+          "score": 0.7277527464697886
+        },
+        {
+          "memory": "One of the grandest pieces of 19th-century furniture is the highly elaborate French cabinet, dated 1861-1867, made by M. Fourdenoy",
+          "score": 0.5177397507791213
+        },
+        {
+          "memory": "The French cabinet is made from ebony inlaid with box, lime, holly, pear, walnut, and mahogany woods, as well as marble with gilded carvings",
+          "score": 0.46752543322666357
+        },
+        {
+          "memory": "Furniture designed by Ernest Gimson, Edward William Godwin, Charles Voisay, Adolf Loos, and Otto Wagner are among the late 19th-century and early 20th-century examples in the collection",
+          "score": 0.3979312708559519
+        },
+        {
+          "memory": "There are a set of beautiful inlaid doors dated 1580 from Antwerp City Hall, attributed to Hans Vreidman de Vries",
+          "score": 0.33846996608578334
+        },
+        {
+          "memory": "The work of modernists in the collection includes Le Corbusier, Marcel Breuer, Charles and Ray Eames, and Gio Ponti",
+          "score": 0.31023130146901523
+        }
+      ],
+      "add_time": 22.311,
+      "search_time": 0.395,
+      "answer_time": 0.808,
+      "total_time": 23.514,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 57,
+      "user_id": "eval_57_570bab1c",
+      "question": "What has replaced the former shipping premises?",
+      "ground_truth": "largescale regeneration",
+      "prediction": "New office developments",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with new office developments",
+          "score": 0.6839346374870908
+        },
+        {
+          "memory": "The Newcastle and Gateshead quaysides are now a thriving, cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.3708633264326995
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle quayside with major cultural developments in Gateshead",
+          "score": 0.3157184634067203
+        },
+        {
+          "memory": "Major cultural developments in Gateshead include the Baltic Centre for Contemporary Art and the Sage Gateshead Music Centre designed by Norman Foster",
+          "score": 0.2749466746977171
+        },
+        {
+          "memory": "The River Tyne had the temporary Bambuco Bridge in 2008 for 10 days",
+          "score": 0.2725177191252546
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' for tourism promotion and regeneration of the Northeast",
+          "score": 0.27076451848930955
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.20547361711553966
+        },
+        {
+          "memory": "The Bambuco Bridge was not made for walking, road use, or cycling, but was just a sculpture",
+          "score": 0.13395443766561474
+        }
+      ],
+      "add_time": 18.451,
+      "search_time": 0.38,
+      "answer_time": 0.802,
+      "total_time": 19.633,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 58,
+      "user_id": "eval_58_e22e63a1",
+      "question": "Who designed the Sage Gateshead music center?",
+      "ground_truth": "norman foster",
+      "prediction": "Norman Foster",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Major cultural developments in Gateshead include the Baltic Centre for Contemporary Art and the Sage Gateshead Music Centre designed by Norman Foster",
+          "score": 0.7229854790309082
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.5675833652234246
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle quayside with major cultural developments in Gateshead",
+          "score": 0.510302010743395
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' to promote the regeneration of the Northeast",
+          "score": 0.4099502653989504
+        },
+        {
+          "memory": "The Newcastle and Gateshead quaysides are now a thriving, cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.39987446709856156
+        },
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with new office developments, including an innovative tilting bridge",
+          "score": 0.33325588673786943
+        },
+        {
+          "memory": "The River Tyne had the temporary Bambuco Bridge in 2008 for 10 days",
+          "score": 0.31348070228187536
+        },
+        {
+          "memory": "The Bambuco Bridge was not made for walking, road, or cycling, but was just a sculpture",
+          "score": 0.22340718728378262
+        }
+      ],
+      "add_time": 20.356,
+      "search_time": 0.306,
+      "answer_time": 0.663,
+      "total_time": 21.324,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 59,
+      "user_id": "eval_59_773d94fb",
+      "question": "How many days did the River Tyne have the Bambuco Bridge?",
+      "ground_truth": "ten",
+      "prediction": "10 days",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The River Tyne had the temporary Bambuco Bridge in 2008 for 10 days",
+          "score": 0.8362004817148769
+        },
+        {
+          "memory": "The Bambuco Bridge was not made for walking, road, or cycling, but was just a sculpture",
+          "score": 0.5081010284317362
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.4674590350897811
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle quayside with major cultural developments in Gateshead",
+          "score": 0.43463814680842394
+        },
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with new office developments, including an innovative tilting bridge",
+          "score": 0.33959100948799636
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' to promote the regeneration of the Northeast",
+          "score": 0.30971260887905133
+        },
+        {
+          "memory": "The Newcastle and Gateshead quaysides are now a thriving, cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.304551652047632
+        },
+        {
+          "memory": "Major cultural developments in Gateshead include the Baltic Centre for Contemporary Art and the Sage Gateshead Music Centre designed by Norman Foster",
+          "score": 0.24129695263199985
+        }
+      ],
+      "add_time": 18.613,
+      "search_time": 0.394,
+      "answer_time": 0.902,
+      "total_time": 19.909,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 60,
+      "user_id": "eval_60_774f9c2d",
+      "question": "In between French and British, what groups controlled land?",
+      "ground_truth": "native tribes",
+      "prediction": "Native tribes",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Large areas between the French and the British were dominated by native tribes",
+          "score": 0.7082395326356641
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki held sway in parts of Nova Scotia, Acadia, and eastern portions of Canada",
+          "score": 0.4485840961357913
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki were engaged in Father Le Loutre's War",
+          "score": 0.411410089341717
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki also held sway in much of present-day Maine",
+          "score": 0.4050713196417303
+        },
+        {
+          "memory": "These tribes were formally under Iroquois rule and were limited by them in authority to make agreements",
+          "score": 0.37613435343315405
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present-day upstate New York and the Ohio Country",
+          "score": 0.35870392939860696
+        },
+        {
+          "memory": "The Ohio Country included Algonquian-speaking populations of Delaware and Shawnee",
+          "score": 0.31065223783577245
+        },
+        {
+          "memory": "The Ohio Country also included Iroquoian-speaking Mingo",
+          "score": 0.3009766206651363
+        }
+      ],
+      "add_time": 21.259,
+      "search_time": 0.335,
+      "answer_time": 0.676,
+      "total_time": 22.269,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 61,
+      "user_id": "eval_61_eb7b4a77",
+      "question": "What rule did some native live under?",
+      "ground_truth": "iroquois",
+      "prediction": "Iroquois rule",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "These tribes were formally under Iroquois rule and were limited by them in their authority to make agreements",
+          "score": 0.5074560542517123
+        },
+        {
+          "memory": "Large areas between the French and the British were dominated by native tribes",
+          "score": 0.4393647152293809
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki held sway in parts of Nova Scotia, Acadia, and the eastern portions of Canada",
+          "score": 0.3238889808383577
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present-day upstate New York and the Ohio Country",
+          "score": 0.3090248511248722
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki also held sway in much of present-day Maine",
+          "score": 0.3025636251018773
+        },
+        {
+          "memory": "The Ohio Country also included Iroquoian-speaking Mingo",
+          "score": 0.2754443734653135
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki were engaged in Father Le Loutre's War",
+          "score": 0.2614913595671935
+        },
+        {
+          "memory": "The Ohio Country included Algonquian-speaking populations of Delaware and Shawnee",
+          "score": 0.24792355920133707
+        }
+      ],
+      "add_time": 16.841,
+      "search_time": 0.275,
+      "answer_time": 0.921,
+      "total_time": 18.037,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 62,
+      "user_id": "eval_62_7a2e4c05",
+      "question": "What commemorates Warsaw's heroic history?",
+      "ground_truth": "many places",
+      "prediction": "The Warsaw Uprising Monument and the Statue of the Little Insurgent.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.6578019419990295
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.6547638100398507
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Kukma",
+          "score": 0.6411160771803632
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.5957208449866176
+        },
+        {
+          "memory": "The Statue of the Little Insurgent commemorates the children who served as messengers and frontline troops in the Warsaw Uprising",
+          "score": 0.5403185563280745
+        },
+        {
+          "memory": "Pawiak is an infamous German Gestapo prison now occupied by a mausoleum of memory and a museum",
+          "score": 0.4485905085258736
+        },
+        {
+          "memory": "The Statue of the Little Insurgent is located at the ramparts of the Old Town",
+          "score": 0.35499653067607206
+        }
+      ],
+      "add_time": 17.925,
+      "search_time": 0.25,
+      "answer_time": 0.7,
+      "total_time": 18.875,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 63,
+      "user_id": "eval_63_25742292",
+      "question": "What fortification was built in the 19th century after the defeat of the November Uprising?",
+      "ground_truth": "the warsaw citadel",
+      "prediction": "Warsaw Citadel",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.6171004284317323
+        },
+        {
+          "memory": "The Statue of the Little Insurgent is located at the ramparts of the Old Town",
+          "score": 0.3991306152814765
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.3231721222460311
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.31028524558892767
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Kukma",
+          "score": 0.3088786862067916
+        },
+        {
+          "memory": "The Statue of the Little Insurgent commemorates the children who served as messengers and frontline troops in the Warsaw Uprising",
+          "score": 0.29933889853343953
+        },
+        {
+          "memory": "Pawiak is an infamous German Gestapo prison now occupied by a mausoleum of memory and a museum",
+          "score": 0.252935559561546
+        }
+      ],
+      "add_time": 17.372,
+      "search_time": 0.272,
+      "answer_time": 1.121,
+      "total_time": 18.765,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 64,
+      "user_id": "eval_64_753ac59d",
+      "question": "Who does the statue of Little Insurgent commemorate?",
+      "ground_truth": "children",
+      "prediction": "Children who served as messengers and frontline troops in the Warsaw Uprising",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Statue of the Little Insurgent is located at the ramparts of the Old Town",
+          "score": 0.7435821357327395
+        },
+        {
+          "memory": "The Statue of the Little Insurgent commemorates the children who served as messengers and frontline troops in the Warsaw Uprising",
+          "score": 0.7409547865242885
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Kukma",
+          "score": 0.44219959878022286
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.4161484649335057
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.269715416989709
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.26349185555306864
+        },
+        {
+          "memory": "Pawiak is an infamous German Gestapo prison now occupied by a mausoleum of memory and a museum",
+          "score": 0.1925274510160213
+        }
+      ],
+      "add_time": 16.728,
+      "search_time": 0.263,
+      "answer_time": 0.843,
+      "total_time": 17.834,
+      "em": 0,
+      "f1": 0.1667,
+      "bleu": 0.0833
+    },
+    {
+      "idx": 65,
+      "user_id": "eval_65_a2d9be09",
+      "question": "What monument is in memory of the largest insurrection of WWII?",
+      "ground_truth": "warsaw uprising monument",
+      "prediction": "Warsaw Uprising Monument",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.7266564363766306
+        },
+        {
+          "memory": "The Statue of the Little Insurgent commemorates the children who served as messengers and frontline troops in the Warsaw Uprising",
+          "score": 0.49465484993814735
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Kukma",
+          "score": 0.4877858775786295
+        },
+        {
+          "memory": "The Statue of the Little Insurgent is located at the ramparts of the Old Town",
+          "score": 0.4424804412620806
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.38231035489777654
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.3749290688984648
+        },
+        {
+          "memory": "Pawiak is an infamous German Gestapo prison now occupied by a mausoleum of memory and a museum",
+          "score": 0.37099623088091993
+        }
+      ],
+      "add_time": 17.925,
+      "search_time": 0.299,
+      "answer_time": 0.709,
+      "total_time": 18.933,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 66,
+      "user_id": "eval_66_44671796",
+      "question": "What was Genghis Khan's tribes burial custom?",
+      "ground_truth": "buried without markings",
+      "prediction": "Buried without markings",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Genghis Khan asked to be buried without markings according to the customs of his tribe",
+          "score": 0.7923225764896515
+        },
+        {
+          "memory": "According to legend, the funeral escort killed anyone and anything across their path to conceal where Genghis Khan was buried",
+          "score": 0.7068969244320211
+        },
+        {
+          "memory": "After Genghis Khan died, his body was returned to Mongolia, presumably to his birthplace in Kenti Aymog",
+          "score": 0.6638448408484204
+        },
+        {
+          "memory": "Many assume Genghis Khan is buried somewhere close to the Onan River and the Birkin Khaldun Mountain",
+          "score": 0.616357832689236
+        },
+        {
+          "memory": "The Genghis Khan Mausoleum is his memorial but not his burial site",
+          "score": 0.5843556341494037
+        },
+        {
+          "memory": "The Birkin Khaldun Mountain is part of the Kenti Mountain Range",
+          "score": 0.16081986858862524
+        }
+      ],
+      "add_time": 17.47,
+      "search_time": 0.369,
+      "answer_time": 0.851,
+      "total_time": 18.691,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 67,
+      "user_id": "eval_67_b628fc67",
+      "question": "What is Raghuram Rajan's career?",
+      "ground_truth": "economist",
+      "prediction": "Central banking economist",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan is a central banking economist",
+          "score": 0.7268149238172394
+        },
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities have created deep financial 'fault lines'",
+          "score": 0.5256262735369011
+        },
+        {
+          "memory": "There is a tendency in the American economy to go 'from bubble to bubble'",
+          "score": 0.26205864645115595
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower- and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.2504138397704331
+        },
+        {
+          "memory": "This tendency is fueled by 'unsustainable monetary stimulation'",
+          "score": 0.21661417514658873
+        },
+        {
+          "memory": "Easier credit has been particularly aimed at helping lower- and middle-income earners buy homes",
+          "score": 0.21346708565641567
+        },
+        {
+          "memory": "The financial crisis of 2007\u201308 is cited as the most recent example of this phenomenon",
+          "score": 0.20209701995636342
+        },
+        {
+          "memory": "These financial 'fault lines' have made financial crises more likely to occur than in the past",
+          "score": 0.141332525673578
+        }
+      ],
+      "add_time": 17.689,
+      "search_time": 0.389,
+      "answer_time": 1.306,
+      "total_time": 19.384,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 68,
+      "user_id": "eval_68_07888ace",
+      "question": "What does Rajan feel has created deep financial fault lines?",
+      "ground_truth": "systematic economic inequalities",
+      "prediction": "Systematic economic inequalities",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities have created deep financial 'fault lines'",
+          "score": 0.778417649485865
+        },
+        {
+          "memory": "These financial 'fault lines' have made financial crises more likely to occur than in the past",
+          "score": 0.6012322292134413
+        },
+        {
+          "memory": "Raghuram Rajan is a central banking economist",
+          "score": 0.46762204610273495
+        },
+        {
+          "memory": "This tendency is fueled by 'unsustainable monetary stimulation'",
+          "score": 0.4082178182187627
+        },
+        {
+          "memory": "The financial crisis of 2007\u201308 is cited as the most recent example of this trend",
+          "score": 0.4011972435139646
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower- and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.39863966696002845
+        },
+        {
+          "memory": "There is a tendency in the American economy to go 'from bubble to bubble'",
+          "score": 0.3459497031748534
+        },
+        {
+          "memory": "Easier credit has been particularly aimed at helping lower- and middle-income earners buy homes",
+          "score": 0.2966702069141299
+        }
+      ],
+      "add_time": 18.576,
+      "search_time": 0.365,
+      "answer_time": 0.81,
+      "total_time": 19.751,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 69,
+      "user_id": "eval_69_12a5f58e",
+      "question": "What has given the American economy a tendency to go \"from bubble to bubble\"?",
+      "ground_truth": "easier credit",
+      "prediction": "Unsustainable monetary stimulation",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "There is a tendency in the American economy to go 'from bubble to bubble'",
+          "score": 0.8868767584041612
+        },
+        {
+          "memory": "This tendency is fueled by 'unsustainable monetary stimulation'",
+          "score": 0.5048803696185
+        },
+        {
+          "memory": "The financial crisis of 2007\u201308 is cited as the most recent example of this trend",
+          "score": 0.45436370563370465
+        },
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities have created deep financial 'fault lines'",
+          "score": 0.3955895987515036
+        },
+        {
+          "memory": "These financial 'fault lines' have made financial crises more likely to occur than in the past",
+          "score": 0.38974629034144076
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower- and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.3890031567508395
+        },
+        {
+          "memory": "Raghuram Rajan is a central banking economist",
+          "score": 0.28868271263498313
+        },
+        {
+          "memory": "Easier credit has been particularly aimed at helping lower- and middle-income earners buy homes",
+          "score": 0.28582654810038394
+        }
+      ],
+      "add_time": 17.336,
+      "search_time": 0.286,
+      "answer_time": 1.27,
+      "total_time": 18.892,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 70,
+      "user_id": "eval_70_dd342b2d",
+      "question": "What Yuan policies did Muslims dislike?",
+      "ground_truth": "circumcision",
+      "prediction": "Restrictions on halal slaughter and other Islamic practices.",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Some policies of the Yuan emperors severely discriminated against Muslims, restricting halal slaughter and other Islamic practices like circumcision",
+          "score": 0.7888680808060458
+        },
+        {
+          "memory": "Kosher butchering for Jews was also restricted by Yuan policies, forcing them to eat food the Mongol way",
+          "score": 0.5524731937345445
+        },
+        {
+          "memory": "The Ming founder Xu Yuanzhang had Muslim generals like Lan Yu who rebelled against the Mongols and defeated them in combat",
+          "score": 0.5274922689880857
+        },
+        {
+          "memory": "The Muslims in the Simu class revolted against the Yuan dynasty in the Ispah Rebellion, which was crushed",
+          "score": 0.5199574194652513
+        },
+        {
+          "memory": "Muslims were massacred by the Yuan loyalist commander Chen Yuding during the Ispah Rebellion",
+          "score": 0.5178608392461987
+        },
+        {
+          "memory": "Corruption and persecution became severe, leading Muslim generals to join Han Chinese in rebelling against the Mongols",
+          "score": 0.4970555483667343
+        },
+        {
+          "memory": "Among the Ming Emperor Xu Yuanzhang's armies was the Hui Muslim Feng Sheng",
+          "score": 0.49117881455976004
+        },
+        {
+          "memory": "Many Hui Muslims claim their surname was given in thanks by the Han Chinese for assisting in the war against the Mongols",
+          "score": 0.48480698359393115
+        },
+        {
+          "memory": "Some Muslim communities had a Chinese surname that meant 'barracks' and could also mean 'thanks'",
+          "score": 0.3730842299756748
+        }
+      ],
+      "add_time": 22.779,
+      "search_time": 0.292,
+      "answer_time": 0.743,
+      "total_time": 23.814,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 71,
+      "user_id": "eval_71_4158cd5b",
+      "question": "What Jewish practice did the Yuan ban?",
+      "ground_truth": "kosher butchering",
+      "prediction": "Kosher butchering",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Kosher butchering for Jews was also restricted by Yuan policies, forcing them to eat food the Mongol way",
+          "score": 0.6615528511191198
+        },
+        {
+          "memory": "Some policies of the Yuan emperors severely discriminated against Muslims, restricting halal slaughter and other Islamic practices like circumcision",
+          "score": 0.6503344545194127
+        },
+        {
+          "memory": "Toward the end of the Yuan dynasty, corruption and persecution became severe, leading Muslim generals to join Han Chinese in rebelling against the Mongols",
+          "score": 0.4971844579255225
+        },
+        {
+          "memory": "Muslims were massacred by the Yuan loyalist commander Chen Yuding during the Ispah Rebellion",
+          "score": 0.4338855928096259
+        },
+        {
+          "memory": "The Ming founder Xu Yuanzhang had Muslim generals like Lan Yu who rebelled against the Mongols and defeated them in combat",
+          "score": 0.4331890588608842
+        },
+        {
+          "memory": "Among the Ming Emperor Xu Yuanzhang's armies was the Hui Muslim Feng Sheng",
+          "score": 0.3888033084391727
+        },
+        {
+          "memory": "The Muslims in the Simu class revolted against the Yuan dynasty in the Ispah Rebellion, which was crushed",
+          "score": 0.3877760887305873
+        },
+        {
+          "memory": "Many Hui Muslims claim their surname was given in thanks by the Han Chinese for assisting them during the war against the Mongols",
+          "score": 0.3659346950958929
+        },
+        {
+          "memory": "Some Muslim communities had a Chinese surname that meant 'barracks' and could also mean 'thanks'",
+          "score": 0.2968966128651057
+        }
+      ],
+      "add_time": 24.364,
+      "search_time": 0.295,
+      "answer_time": 0.713,
+      "total_time": 25.372,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 72,
+      "user_id": "eval_72_9ff52b5e",
+      "question": "How are the certain costs which are difficult to avoid shared?",
+      "ground_truth": "by everyone",
+      "prediction": "By everyone",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Certain costs that are difficult to avoid and are shared by everyone include housing, pensions, education, and health care",
+          "score": 0.7277186981565027
+        },
+        {
+          "memory": "Individuals on lower incomes are often the least equipped to manage their finances",
+          "score": 0.33537778125662027
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.33184244945787517
+        },
+        {
+          "memory": "Aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.3013755389173709
+        },
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.2959697769737225
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.21146661819849705
+        }
+      ],
+      "add_time": 15.013,
+      "search_time": 0.25,
+      "answer_time": 0.649,
+      "total_time": 15.913,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 73,
+      "user_id": "eval_73_96c5b5ad",
+      "question": "What are those with lower incomes often unable to manage?",
+      "ground_truth": "finances",
+      "prediction": "Their finances",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Those on lower incomes are often the least equipped to manage their finances",
+          "score": 0.7587716502076256
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.5522748481157241
+        },
+        {
+          "memory": "Certain costs that are difficult to avoid and are shared by everyone include housing, pensions, education, and health care",
+          "score": 0.3896088564851204
+        },
+        {
+          "memory": "The result of aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.3486718995202339
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.34231502048463874
+        },
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.3197387821153028
+        }
+      ],
+      "add_time": 15.396,
+      "search_time": 0.254,
+      "answer_time": 0.822,
+      "total_time": 16.473,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 74,
+      "user_id": "eval_74_90d93bdb",
+      "question": "When people take on debt, it leads potentially to what?",
+      "ground_truth": "greater inequality and potential economic instability",
+      "prediction": "Greater inequality and potential economic instability",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.5862167925379416
+        },
+        {
+          "memory": "The result of aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.49530745666821513
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.452269321205677
+        },
+        {
+          "memory": "Individuals on lower incomes are often the least equipped to manage their finances",
+          "score": 0.4077030407985417
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.34963639757442755
+        },
+        {
+          "memory": "Certain costs that are difficult to avoid and are shared by everyone include housing, pensions, education, and health care",
+          "score": 0.3063890331759118
+        }
+      ],
+      "add_time": 15.275,
+      "search_time": 0.401,
+      "answer_time": 0.623,
+      "total_time": 16.3,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 75,
+      "user_id": "eval_75_5ce102c2",
+      "question": "Who did Tesla think would run the world of the future?",
+      "ground_truth": "women",
+      "prediction": "Queen Bees",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla indicated that humanity's future would be run by Queen Bees",
+          "score": 0.523264775264785
+        },
+        {
+          "memory": "Tesla believed that women would become the dominant sex",
+          "score": 0.4778244234761305
+        },
+        {
+          "memory": "In 1926, Tesla commented on the social subservience of women and their struggle for gender equality",
+          "score": 0.44976055530679004
+        }
+      ],
+      "add_time": 8.02,
+      "search_time": 0.255,
+      "answer_time": 1.164,
+      "total_time": 9.439,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 76,
+      "user_id": "eval_76_c4ff209f",
+      "question": "What term did he use for what he believed would be humanity's future rulers?",
+      "ground_truth": "queen bees",
+      "prediction": "Queen Bees",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla indicated that humanity's future would be run by Queen Bees",
+          "score": 0.46837434824254054
+        },
+        {
+          "memory": "Tesla believed that women would become the dominant sex",
+          "score": 0.2959205380253284
+        },
+        {
+          "memory": "In 1926, Tesla commented on the social subservience of women and their struggle for gender equality",
+          "score": 0.23675363199894087
+        }
+      ],
+      "add_time": 10.154,
+      "search_time": 0.265,
+      "answer_time": 0.641,
+      "total_time": 11.059,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 77,
+      "user_id": "eval_77_9e644b54",
+      "question": "Which South Asian island nation is represented in the V&A collection?",
+      "ground_truth": "thailand",
+      "prediction": "Sri Lanka",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Art from Thailand, Burma, Cambodia, Indonesia, and Sri Lanka is represented in gold, silver, bronze, stone, terracotta, and ivory",
+          "score": 0.4691464632978636
+        },
+        {
+          "memory": "The smaller galleries cover Korea, the Himalayan kingdoms, and Southeast Asia",
+          "score": 0.42973912227589317
+        },
+        {
+          "memory": "Items on show include betel nut cutters, ivory combs, and bronze palanquin hooks",
+          "score": 0.42124448412125015
+        },
+        {
+          "memory": "Refined Hindu and Buddhist sculptures reflect the influence of India",
+          "score": 0.3910326536674425
+        },
+        {
+          "memory": "Himalayan items between 500 AD and 2000 include important early Nepalese bronze sculptures, repouss\u00e9 work, and embroidery",
+          "score": 0.33808062132778915
+        },
+        {
+          "memory": "Himalayan art from the 14th to the 19th century includes notable 14th and 15th-century religious images in wood and bronze, scroll paintings, and ritual objects",
+          "score": 0.33668955823308866
+        },
+        {
+          "memory": "Korean displays include green-glazed ceramics, silk embroideries from officials' robes, and gleaming boxes inlaid with mother-of-pearl",
+          "score": 0.29310609432200174
+        },
+        {
+          "memory": "The displays span the 6th to 19th centuries",
+          "score": 0.209119772577897
+        }
+      ],
+      "add_time": 21.41,
+      "search_time": 0.44,
+      "answer_time": 0.678,
+      "total_time": 22.528,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 78,
+      "user_id": "eval_78_d95d30c6",
+      "question": "Some of the combs in the V&A collection of South East Asian art is made of what material?",
+      "ground_truth": "ivory",
+      "prediction": "Ivory",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Items on show include betel nut cutters, ivory combs, and bronze palanquin hooks",
+          "score": 0.5713617459532567
+        },
+        {
+          "memory": "Art from Thailand, Burma, Cambodia, Indonesia, and Sri Lanka is represented in gold, silver, bronze, stone, terracotta, and ivory",
+          "score": 0.49934815130540483
+        },
+        {
+          "memory": "Himalayan items between 500 AD and 2000 include important early Nepalese bronze sculptures, repouss\u00e9 work, and embroidery",
+          "score": 0.39383302476471616
+        },
+        {
+          "memory": "Korean displays include green-glazed ceramics, silk embroideries from officials' robes, and gleaming boxes inlaid with mother-of-pearl",
+          "score": 0.39221080217061816
+        },
+        {
+          "memory": "Refined Hindu and Buddhist sculptures reflect the influence of India",
+          "score": 0.3911770530484826
+        },
+        {
+          "memory": "Himalayan art from the 14th to the 19th century includes notable 14th and 15th-century religious images in wood and bronze, scroll paintings, and ritual objects",
+          "score": 0.3580978798578276
+        },
+        {
+          "memory": "The smaller galleries cover Korea, the Himalayan kingdoms, and Southeast Asia",
+          "score": 0.33663809519087673
+        },
+        {
+          "memory": "The displays span the 6th to 19th centuries",
+          "score": 0.17588262423231324
+        }
+      ],
+      "add_time": 20.497,
+      "search_time": 0.308,
+      "answer_time": 1.009,
+      "total_time": 21.813,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 79,
+      "user_id": "eval_79_e769b815",
+      "question": "Where did Mongke Khan attack the Song dynasty?",
+      "ground_truth": "southern china",
+      "prediction": "Southern China",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Mongke Khan commenced a military campaign against the Chinese Song dynasty in southern China",
+          "score": 0.7495870806624217
+        },
+        {
+          "memory": "Kublai returned from fighting the Song in 1260 when he learned that his brother, Ariq, was challenging his claim to the throne",
+          "score": 0.5435452690823012
+        },
+        {
+          "memory": "A rival Kurultai in Mongolia proclaimed Ariq B\u00f6ke Great Khan, beginning a civil war",
+          "score": 0.48719789687463916
+        },
+        {
+          "memory": "Mongke Khan died in 1259 without a successor",
+          "score": 0.48158009212084674
+        },
+        {
+          "memory": "The Mongol force that invaded southern China was far greater than the force sent to invade the Middle East in 1256",
+          "score": 0.45726016018896903
+        },
+        {
+          "memory": "Kublai convened a Kurultai in Kaiping that elected him Great Khan",
+          "score": 0.4545611746104396
+        },
+        {
+          "memory": "Civil strife had permanently divided the Mongol Empire",
+          "score": 0.41689039816729034
+        },
+        {
+          "memory": "Kublai depended on the cooperation of his Chinese subjects to ensure that his army received ample resources",
+          "score": 0.3736763586373629
+        },
+        {
+          "memory": "Kublai bolstered his popularity among his subjects by modeling his government on the bureaucracy of traditional Chinese dynasties and adopting the Chinese-era name of Zongtong",
+          "score": 0.3713003239781901
+        },
+        {
+          "memory": "Ariq B\u00f6ke was hampered by inadequate supplies and surrendered in 1264",
+          "score": 0.30910718186713454
+        }
+      ],
+      "add_time": 25.448,
+      "search_time": 0.395,
+      "answer_time": 0.67,
+      "total_time": 26.513,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 80,
+      "user_id": "eval_80_c87e251c",
+      "question": "How many electorates does the State of Victoria have?",
+      "ground_truth": "eight",
+      "prediction": "Eight electorates",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.7343060044123102
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.5419150020120785
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.5233041583079854
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.47647699501957963
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22 two-member electorates",
+          "score": 0.4259301118202274
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.27659468555393674
+        },
+        {
+          "memory": "The total number of upper house members was reduced from 44 to 40",
+          "score": 0.2717755449387523
+        },
+        {
+          "memory": "The term of office for upper house members is now four years, the same as lower house members",
+          "score": 0.21854409619357795
+        }
+      ],
+      "add_time": 16.686,
+      "search_time": 0.295,
+      "answer_time": 0.705,
+      "total_time": 17.686,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 81,
+      "user_id": "eval_81_2a86070a",
+      "question": "How many representatives does each electorate have?",
+      "ground_truth": "five",
+      "prediction": "Five",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.6930290098425691
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22 two-member electorates",
+          "score": 0.49241533697088763
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.46119162578326767
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.39172227388382974
+        },
+        {
+          "memory": "The total number of upper house members was reduced from 44 to 40",
+          "score": 0.3749726316575552
+        },
+        {
+          "memory": "The term of office for upper house members is now four years, the same as lower house members",
+          "score": 0.34286806510035556
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are fixed and occur in November every four years",
+          "score": 0.3133688541855105
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.31293079262030776
+        }
+      ],
+      "add_time": 18.027,
+      "search_time": 0.292,
+      "answer_time": 1.032,
+      "total_time": 19.352,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 82,
+      "user_id": "eval_82_a89c6a95",
+      "question": "What is the term of office for each house member?",
+      "ground_truth": "four years",
+      "prediction": "Four years",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The term of office for upper house members is now four years, the same as lower house members",
+          "score": 0.6627244098359911
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22 two-member electorates",
+          "score": 0.44063696551866505
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.3489170081327261
+        },
+        {
+          "memory": "The total number of upper house members was reduced from 44 to 40",
+          "score": 0.34227991821499815
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.2804805672209544
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.23816539588534263
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.23803570088666126
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.23254920239751536
+        }
+      ],
+      "add_time": 18.59,
+      "search_time": 0.304,
+      "answer_time": 1.207,
+      "total_time": 20.102,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 83,
+      "user_id": "eval_83_af9d7cf8",
+      "question": "How often are elections held for the Victorian Parliament?",
+      "ground_truth": "every four years",
+      "prediction": "Every four years",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.7954853258633083
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.5887710930321625
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.5661545762152291
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22 two-member electorates",
+          "score": 0.428282490310515
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.40176026149032984
+        },
+        {
+          "memory": "The term of office for upper house members is now four years, the same as lower house members",
+          "score": 0.39568776840004805
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.32660666439372155
+        },
+        {
+          "memory": "The total number of upper house members was reduced from 44 to 40",
+          "score": 0.2224140509141891
+        }
+      ],
+      "add_time": 17.01,
+      "search_time": 0.299,
+      "answer_time": 1.215,
+      "total_time": 18.524,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 84,
+      "user_id": "eval_84_cae1abf5",
+      "question": "What advancements besides military technology did Europe achieve?",
+      "ground_truth": "communication",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.7324312938920057
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.5851957701369586
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.4486592044174162
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.40321804728354066
+        },
+        {
+          "memory": "Armies in less-developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3381450761786378
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.2772116732558473
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.16956243665201542
+        }
+      ],
+      "add_time": 15.18,
+      "search_time": 0.292,
+      "answer_time": 0.92,
+      "total_time": 16.391,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 85,
+      "user_id": "eval_85_93235648",
+      "question": "What did European chemists make that could be used in warfare?",
+      "ground_truth": "deadly explosives",
+      "prediction": "Deadly explosives",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.7257766318946863
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.5632590990811583
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.5011743863731666
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.3875131495157006
+        },
+        {
+          "memory": "Armies in less-developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3720047063710217
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.3131739031385907
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.25463952967090203
+        }
+      ],
+      "add_time": 15.348,
+      "search_time": 0.266,
+      "answer_time": 0.696,
+      "total_time": 16.31,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 86,
+      "user_id": "eval_86_a9828cb8",
+      "question": "what was invented in 1880 that revolutionized warfare?",
+      "ground_truth": "machine gun",
+      "prediction": "Machine gun",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.5923105430381297
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.5609799503817331
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.49086487292686426
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.4433731445961812
+        },
+        {
+          "memory": "Armies in less-developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.38293409063095585
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.37180236012658835
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.3269659141080127
+        }
+      ],
+      "add_time": 17.039,
+      "search_time": 0.28,
+      "answer_time": 0.668,
+      "total_time": 17.987,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 87,
+      "user_id": "eval_87_bfb6b1dd",
+      "question": "What weapons were the Zulus using during the Anglo-Zulu War of 1879?",
+      "ground_truth": "arrows swords and leather shields",
+      "prediction": "Traditional weapons",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.8574901997296304
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.34980247667387965
+        },
+        {
+          "memory": "Armies in less-developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3340525230149133
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.29061635894601606
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.28444773246095567
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.23723779780636714
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.20408096067745202
+        }
+      ],
+      "add_time": 18.071,
+      "search_time": 0.343,
+      "answer_time": 0.662,
+      "total_time": 19.076,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 88,
+      "user_id": "eval_88_6cf56aa3",
+      "question": "Which region invented the machine gun?",
+      "ground_truth": "european",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.5478558107714032
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.5427265134597206
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.3903979153108361
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.3559632375626862
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.3301380125953818
+        },
+        {
+          "memory": "Armies in less-developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.2637542087065554
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.263659744983885
+        }
+      ],
+      "add_time": 15.521,
+      "search_time": 0.321,
+      "answer_time": 0.826,
+      "total_time": 16.668,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 89,
+      "user_id": "eval_89_e1d93ae8",
+      "question": "What inventor built on to the findings of Philo of  Byzantium?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.7085892219774489
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.4787537164231985
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.4512873555229542
+        },
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.43732317889237726
+        },
+        {
+          "memory": "In his work, Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.435086320505138
+        }
+      ],
+      "add_time": 16.926,
+      "search_time": 0.466,
+      "answer_time": 1.008,
+      "total_time": 18.399,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 90,
+      "user_id": "eval_90_d27f9fdb",
+      "question": "Pneumatica was written by what Greek writer?",
+      "ground_truth": "philo",
+      "prediction": "Philo of Byzantium",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.5163912777027483
+        },
+        {
+          "memory": "In his work, Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.45014670543663327
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire",
+          "score": 0.38719462620363876
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.34434163856038724
+        },
+        {
+          "memory": "Philo believed that parts of the air were able to escape through pores in the glass",
+          "score": 0.3363116509341163
+        },
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.321215210176792
+        }
+      ],
+      "add_time": 17.175,
+      "search_time": 0.272,
+      "answer_time": 0.696,
+      "total_time": 18.143,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 91,
+      "user_id": "eval_91_180f57a0",
+      "question": "What early Greek wrote about experiments on air and combustion?",
+      "ground_truth": "philo",
+      "prediction": "Philo of Byzantium",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.6657835868391496
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.5544455706254862
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.4949076333325992
+        },
+        {
+          "memory": "In his work, Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.48572131098393245
+        },
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.4739272032055507
+        }
+      ],
+      "add_time": 17.882,
+      "search_time": 0.29,
+      "answer_time": 0.741,
+      "total_time": 18.913,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 92,
+      "user_id": "eval_92_4ab983b9",
+      "question": "What did Philo incorrectly assume that the air became?",
+      "ground_truth": "fire",
+      "prediction": "Fire",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.688856430961954
+        },
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.5622923338358048
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.537847647953305
+        },
+        {
+          "memory": "In his work Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.493212329575721
+        },
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.41057229088896496
+        }
+      ],
+      "add_time": 15.084,
+      "search_time": 0.252,
+      "answer_time": 0.687,
+      "total_time": 16.023,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 93,
+      "user_id": "eval_93_798dd04f",
+      "question": "What famous artist later further investigated Philo's experiments?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.5245911267899035
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.5116114961406635
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.4795889022720282
+        },
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.478348850996401
+        },
+        {
+          "memory": "In his work, Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.46947911423587
+        }
+      ],
+      "add_time": 15.353,
+      "search_time": 0.289,
+      "answer_time": 0.611,
+      "total_time": 16.252,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 94,
+      "user_id": "eval_94_e10c9be0",
+      "question": "Of what did da Vinci think a part  was consumed during combustion?",
+      "ground_truth": "air",
+      "prediction": "Air",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.6846567332430323
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.45637825773122753
+        },
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air",
+          "score": 0.45403641834237396
+        },
+        {
+          "memory": "In his work Pneumatica, Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.34961056005200664
+        },
+        {
+          "memory": "Philo of Byzantium was a 2nd century BCE Greek writer on mechanics",
+          "score": 0.19434644097778042
+        }
+      ],
+      "add_time": 18.759,
+      "search_time": 0.255,
+      "answer_time": 0.653,
+      "total_time": 19.668,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 95,
+      "user_id": "eval_95_a08c2044",
+      "question": "What country did the Normans invade in 1169?",
+      "ground_truth": "ireland",
+      "prediction": "Ireland",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Normans invaded Ireland at Bannow Bay in 1169",
+          "score": 0.7483331100501404
+        },
+        {
+          "memory": "The Normans had a profound effect on Irish culture and history",
+          "score": 0.55946320472066
+        },
+        {
+          "memory": "Over time, the Normans became subsumed into Irish culture",
+          "score": 0.5464235608411476
+        },
+        {
+          "memory": "The Normans settled mostly in the east of Ireland, an area later known as the Pale",
+          "score": 0.5338825096105072
+        },
+        {
+          "memory": "Initially, the Normans maintained a distinct culture and ethnicity",
+          "score": 0.5301998221076568
+        },
+        {
+          "memory": "Norman descendants can be recognized by their surnames",
+          "score": 0.44920761043504476
+        },
+        {
+          "memory": "The Normans built many fine castles and settlements, including Trim Castle and Dublin Castle",
+          "score": 0.42190351331355636
+        },
+        {
+          "memory": "The surname Furlong is predominant in the area of the first Norman settlements",
+          "score": 0.3880593146199734
+        },
+        {
+          "memory": "Common Norman surnames in the southeast of Ireland include French, De Roche, Devereux, Darcy, Tracey, and Lacey",
+          "score": 0.37764049832367835
+        },
+        {
+          "memory": "Names beginning with Fitz, such as Fitzgerald, Fitzgibbons, and Fitzmaurice, indicate Norman ancestry",
+          "score": 0.3032302374971206
+        }
+      ],
+      "add_time": 25.642,
+      "search_time": 0.415,
+      "answer_time": 0.899,
+      "total_time": 26.956,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 96,
+      "user_id": "eval_96_a38f2300",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "ground_truth": "irish",
+      "prediction": "Irish culture",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Over time, the Normans became subsumed into Irish culture",
+          "score": 0.7645805452321643
+        },
+        {
+          "memory": "The Normans had a profound effect on Irish culture and history",
+          "score": 0.7570145651075824
+        },
+        {
+          "memory": "The Normans settled mostly in the east of Ireland, an area later known as the Pale",
+          "score": 0.6684700588242736
+        },
+        {
+          "memory": "The Normans invaded Ireland at Bannow Bay in 1169",
+          "score": 0.6424551726126831
+        },
+        {
+          "memory": "Initially, the Normans maintained a distinct culture and ethnicity",
+          "score": 0.6311389246393326
+        },
+        {
+          "memory": "The Normans built many fine castles and settlements, including Trim Castle and Dublin Castle",
+          "score": 0.5472114631582443
+        },
+        {
+          "memory": "Common Norman surnames in the southeast of Ireland include French, De, Roche, Devereux, Darcy, Tracey, and Lacey",
+          "score": 0.5210517151729478
+        },
+        {
+          "memory": "Norman descendants can be recognized by their surnames",
+          "score": 0.446851354611263
+        },
+        {
+          "memory": "Names beginning with Fitz indicate Norman ancestry, including Fitzgerald, Fitzgibbons, and Fitzmaurice",
+          "score": 0.36560436529487683
+        },
+        {
+          "memory": "The name Morrel is derived from the French Norman name Morel",
+          "score": 0.32553718069125664
+        }
+      ],
+      "add_time": 24.897,
+      "search_time": 0.282,
+      "answer_time": 0.617,
+      "total_time": 25.796,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 97,
+      "user_id": "eval_97_4b995d6f",
+      "question": "What happened to his lab?",
+      "ground_truth": "his lab was torn down",
+      "prediction": "It was torn down.",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "The contents of Tesla's lab were sold two years later to satisfy a debt",
+          "score": 0.4743932483897247
+        },
+        {
+          "memory": "Tesla's lab was torn down in 1904",
+          "score": 0.4181450129966817
+        },
+        {
+          "memory": "On 7 January 1900, Tesla left Colorado Springs",
+          "score": 0.24233976139187402
+        }
+      ],
+      "add_time": 9.012,
+      "search_time": 0.284,
+      "answer_time": 0.683,
+      "total_time": 9.979,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 98,
+      "user_id": "eval_98_ce819f98",
+      "question": "What happened to the things inside the lab after it was torn down?",
+      "ground_truth": "sold",
+      "prediction": "They were sold to satisfy a debt.",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla's lab was torn down in 1904",
+          "score": 0.5460572714163341
+        },
+        {
+          "memory": "The contents of Tesla's lab were sold two years later to satisfy a debt",
+          "score": 0.47448085599153556
+        },
+        {
+          "memory": "On 7 January 1900, Tesla left Colorado Springs",
+          "score": 0.1851819043248517
+        }
+      ],
+      "add_time": 9.284,
+      "search_time": 0.256,
+      "answer_time": 1.427,
+      "total_time": 10.968,
+      "em": 0,
+      "f1": 0.2857,
+      "bleu": 0.1429
+    },
+    {
+      "idx": 99,
+      "user_id": "eval_99_90fca1e3",
+      "question": "Where were the Germanic tribes originally located?",
+      "ground_truth": "scandinavia and northern europe",
+      "prediction": "Scandinavia and Northern Europe",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Germanic tribes expanded from their original homelands in Scandinavia and Northern Europe throughout Northern and Western Europe during the middle period of Classical Antiquity",
+          "score": 0.6023793123392888
+        },
+        {
+          "memory": "Germanic tribes expanded into Southern Europe in Late Antiquity, conquering Celtic and other peoples",
+          "score": 0.5830151766288083
+        },
+        {
+          "memory": "By 800 CE, Germanic tribes formed the Holy Roman Empire, the First German Empire",
+          "score": 0.5651492251249804
+        },
+        {
+          "memory": "By 1000 CE, the Germanic conquest of Central, Western, and Southern Europe, west of and including Italy, was complete, excluding only Muslim Iberia",
+          "score": 0.5065188149529987
+        },
+        {
+          "memory": "There was no real systemic continuity from the Western Roman Empire to its German successor",
+          "score": 0.44683287414134565
+        },
+        {
+          "memory": "'Germany' remained largely a conceptual term referring to an amorphous area of Central Europe",
+          "score": 0.4040446037669576
+        },
+        {
+          "memory": "There was little cultural integration or national identity in the Holy Roman Empire",
+          "score": 0.3192457489403868
+        },
+        {
+          "memory": "A great number of small states and principalities existed in a loosely autonomous confederation within the Holy Roman Empire",
+          "score": 0.2815364663230604
+        },
+        {
+          "memory": "The Holy Roman Empire was described as 'not holy,' 'not Roman,' and 'not an empire'",
+          "score": 0.2543200798377606
+        }
+      ],
+      "add_time": 21.958,
+      "search_time": 0.304,
+      "answer_time": 0.764,
+      "total_time": 23.026,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    }
+  ]
+}
