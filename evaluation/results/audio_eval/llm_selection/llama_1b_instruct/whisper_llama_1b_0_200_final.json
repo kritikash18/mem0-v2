@@ -1,0 +1,4939 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "whisper_llama_1b_0_200",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "ollama/llama3.2:1b-instruct-q4_1",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text",
+    "judge_batch_size": 20,
+    "sample_count": 200
+  },
+  "summary": {
+    "count": 200,
+    "em_mean": 0.015,
+    "em_std": 0.1219,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.0404,
+    "f1_std": 0.1696,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.0235,
+    "bleu_std": 0.1321,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "llm_mean": 0.065,
+    "llm_std": 0.2471,
+    "llm_min": 0,
+    "llm_max": 1,
+    "total_time_mean": 32.6706,
+    "total_time_std": 21.0893,
+    "total_time_min": 8.205,
+    "total_time_max": 127.991,
+    "add_time_mean": 32.1738,
+    "add_time_std": 21.1296,
+    "add_time_min": 7.87,
+    "add_time_max": 127.699,
+    "search_time_mean": 0.3702,
+    "search_time_std": 0.2227,
+    "search_time_min": 0.241,
+    "search_time_max": 2.517,
+    "answer_time_mean": 0.1265,
+    "answer_time_std": 0.1776,
+    "answer_time_min": 0.0,
+    "answer_time_max": 0.588,
+    "em_correct": 3,
+    "em_pct": 1.5,
+    "llm_correct": 13,
+    "llm_pct": 6.5
+  },
+  "distributions": {
+    "f1": {
+      "total": 200,
+      "zero": 185,
+      "perfect": 3,
+      "above_50": 9,
+      "above_80": 5
+    },
+    "bleu": {
+      "total": 200,
+      "zero": 190,
+      "perfect": 3,
+      "above_50": 4,
+      "above_80": 3
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_fbaa30b5",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "I don't know",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.4712220792663369
+        },
+        {
+          "memory": "In these sermons, he hammered home the primacy of core Christian values such as love, patience, charity, and freedom, and reminded the citizens to trust God's Word rather than violence to bring about necessary change.",
+          "score": 0.4526666244907039
+        },
+        {
+          "memory": "For eight days in Lent, beginning on Invocavit Sunday, 9 March, Luther preached eight sermons, which became known as the 'Invocavit Sermons'.",
+          "score": 0.40413781279901706
+        },
+        {
+          "memory": "He wrote to the Elector, 'During my absence, Satan has entered my sheepfold, and committed ravages which I cannot repair by writing, but only by my personal presence and living word.'",
+          "score": 0.33607585222192726
+        }
+      ],
+      "add_time": 20.441,
+      "search_time": 0.292,
+      "answer_time": 0.362,
+      "total_time": 21.095,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_204d8849",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "# 6,650 kilometres",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "For eight days in Lent, beginning on Invocavit Sunday, 9 March, Luther preached eight sermons, which became known as the 'Invocavit Sermons'.",
+          "score": 0.6478719748889956
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.6352545588233706
+        },
+        {
+          "memory": "He wrote to the Elector, 'During my absence, Satan has entered my sheepfold, and committed ravages which I cannot repair by writing, but only by my personal presence and living word.'",
+          "score": 0.39217833627226584
+        },
+        {
+          "memory": "In these sermons, he hammered home the primacy of core Christian values such as love, patience, charity, and freedom, and reminded the citizens to trust God's Word rather than violence to bring about necessary change.",
+          "score": 0.31764888660826074
+        }
+      ],
+      "add_time": 17.765,
+      "search_time": 0.333,
+      "answer_time": 0.367,
+      "total_time": 18.466,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_0b08dc9c",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "I don't know",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "In these sermons, he hammered home the primacy of core Christian values such as love, patience, charity, and freedom, and reminded the citizens to trust God's Word rather than violence to bring about necessary change.",
+          "score": 0.490353625316779
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.4626934228588007
+        },
+        {
+          "memory": "For eight days in Lent, beginning on Invocavit Sunday, 9 March, Luther preached eight sermons, which became known as the 'Invocavit Sermons'.",
+          "score": 0.45776080675230035
+        },
+        {
+          "memory": "He wrote to the Elector, 'During my absence, Satan has entered my sheepfold, and committed ravages which I cannot repair by writing, but only by my personal presence and living word.'",
+          "score": 0.33993809495267013
+        }
+      ],
+      "add_time": 18.068,
+      "search_time": 0.529,
+      "answer_time": 0.359,
+      "total_time": 18.956,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_f96fcd8b",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "6,650",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces attacked Fort William Henry throughout the first half of 1757",
+          "score": 0.8097791928634185
+        },
+        {
+          "memory": "In January, they ambushed British Rangers near Ticonderoga",
+          "score": 0.6210684453599769
+        },
+        {
+          "memory": "In early August, Montcalm and 7,000 troops besieged the fort",
+          "score": 0.5266076141929613
+        },
+        {
+          "memory": "In February, they launched a daring raid against the position across Lake George",
+          "score": 0.5031484285768415
+        },
+        {
+          "memory": "When the withdrawal began, some of Montcalm's Indian allies attacked the British column",
+          "score": 0.501582626190862
+        },
+        {
+          "memory": "Destroying storehouses and buildings outside the main fortification",
+          "score": 0.3234236478490171
+        },
+        {
+          "memory": "Angered at the lost opportunity for plunder, they killed and captured several hundred men, women, and slaves",
+          "score": 0.3092003013986688
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.2478618167592587
+        },
+        {
+          "memory": "Which capitulated with an agreement to withdraw under parole",
+          "score": 0.18176872598569027
+        }
+      ],
+      "add_time": 26.672,
+      "search_time": 0.316,
+      "answer_time": 0.384,
+      "total_time": 27.371,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_b9380c5c",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "6,650",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces attacked Fort William Henry throughout the first half of 1757",
+          "score": 0.6098350126682275
+        },
+        {
+          "memory": "In February, they launched a daring raid against the position across Lake George",
+          "score": 0.5209839167288182
+        },
+        {
+          "memory": "In January, they ambushed British Rangers near Ticonderoga",
+          "score": 0.4814980141939335
+        },
+        {
+          "memory": "In early August, Montcalm and 7,000 troops besieged the fort",
+          "score": 0.44946653952113236
+        },
+        {
+          "memory": "When the withdrawal began, some of Montcalm's Indian allies attacked the British column",
+          "score": 0.3531284176258955
+        },
+        {
+          "memory": "Destroying storehouses and buildings outside the main fortification",
+          "score": 0.29247177391256507
+        },
+        {
+          "memory": "Angered at the lost opportunity for plunder, they killed and captured several hundred men, women, and slaves",
+          "score": 0.24803228600215785
+        },
+        {
+          "memory": "Which capitulated with an agreement to withdraw under parole",
+          "score": 0.22645377136222927
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.14218391136957986
+        }
+      ],
+      "add_time": 26.59,
+      "search_time": 0.291,
+      "answer_time": 0.37,
+      "total_time": 27.25,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_ef3ad7a5",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 10.253,
+      "search_time": 0.268,
+      "answer_time": 0.0,
+      "total_time": 10.521,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_fe598fbf",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 13.453,
+      "search_time": 0.275,
+      "answer_time": 0.0,
+      "total_time": 13.728,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_3774deba",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 12.989,
+      "search_time": 0.252,
+      "answer_time": 0.0,
+      "total_time": 13.241,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_52e80da4",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 13.611,
+      "search_time": 0.257,
+      "answer_time": 0.0,
+      "total_time": 13.868,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_3345f010",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.182,
+      "search_time": 0.253,
+      "answer_time": 0.0,
+      "total_time": 18.435,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_59787440",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "Rugby",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport in Southern California\u2014particularly at the high school level\u2014with increasing numbers of schools adding rugby as an official school sport",
+          "score": 0.6589201888029167
+        }
+      ],
+      "add_time": 10.363,
+      "search_time": 0.25,
+      "answer_time": 0.319,
+      "total_time": 10.933,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_51749045",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "# ANSWER: High school",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport in Southern California\u2014particularly at the high school level\u2014with increasing numbers of schools adding rugby as an official school sport",
+          "score": 0.45288645108964093
+        }
+      ],
+      "add_time": 10.764,
+      "search_time": 0.257,
+      "answer_time": 0.343,
+      "total_time": 11.364,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_d5958d54",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport in Southern California\u2014particularly at the high school level\u2014with increasing numbers of schools adding rugby as an official school sport",
+          "score": 0.68793374610623
+        }
+      ],
+      "add_time": 8.957,
+      "search_time": 0.279,
+      "answer_time": 0.331,
+      "total_time": 9.566,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_7b41ba67",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 15.422,
+      "search_time": 0.3,
+      "answer_time": 0.0,
+      "total_time": 15.722,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_9b42697f",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 16.51,
+      "search_time": 0.312,
+      "answer_time": 0.0,
+      "total_time": 16.822,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_04aa990e",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 16.843,
+      "search_time": 0.271,
+      "answer_time": 0.0,
+      "total_time": 17.114,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_be4e8837",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.467,
+      "search_time": 0.358,
+      "answer_time": 0.0,
+      "total_time": 18.826,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_b32aad58",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 30.385,
+      "search_time": 0.277,
+      "answer_time": 0.0,
+      "total_time": 30.662,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_c370183d",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 30.957,
+      "search_time": 0.293,
+      "answer_time": 0.0,
+      "total_time": 31.25,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_95b283ff",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 34.118,
+      "search_time": 0.343,
+      "answer_time": 0.0,
+      "total_time": 34.462,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_786383bf",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 31.651,
+      "search_time": 0.334,
+      "answer_time": 0.0,
+      "total_time": 31.986,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_e4e6d05a",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 61.705,
+      "search_time": 0.302,
+      "answer_time": 0.0,
+      "total_time": 62.007,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_f678a3da",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 62.043,
+      "search_time": 0.473,
+      "answer_time": 0.0,
+      "total_time": 62.517,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_cc74d154",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 61.394,
+      "search_time": 0.318,
+      "answer_time": 0.0,
+      "total_time": 61.712,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_9ebb3cde",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 62.638,
+      "search_time": 0.335,
+      "answer_time": 0.0,
+      "total_time": 62.974,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_e8849fc2",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "# 1973",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis began in October 1973 when the members of the Organization of Arab Petroleum Exporting Countries (OAPEC) - consisting of the Arab members of OPEC plus Egypt and Syria - proclaimed an oil embargo",
+          "score": 0.775005765039537
+        },
+        {
+          "memory": "It was later called the 'first oil shock', followed by the 1979 oil crisis",
+          "score": 0.6597446338576145
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.5945964601177993
+        },
+        {
+          "memory": "As prices rose significantly, the embargo caused an oil crisis - or, shock - with many short and long-term effects on global politics and the global economy",
+          "score": 0.525774274077823
+        },
+        {
+          "memory": "And the 'second oil shock'",
+          "score": 0.48776994428113996
+        }
+      ],
+      "add_time": 18.563,
+      "search_time": 0.322,
+      "answer_time": 0.377,
+      "total_time": 19.262,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_00a93995",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "\"Oil embargo\"",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "It was later called the 'first oil shock', followed by the 1979 oil crisis",
+          "score": 0.6807278471366833
+        },
+        {
+          "memory": "And the 'second oil shock'",
+          "score": 0.6341686605410104
+        },
+        {
+          "memory": "As prices rose significantly, the embargo caused an oil crisis - or, shock - with many short and long-term effects on global politics and the global economy",
+          "score": 0.6021642231361833
+        },
+        {
+          "memory": "The 1973 oil crisis began in October 1973 when the members of the Organization of Arab Petroleum Exporting Countries (OAPEC) - consisting of the Arab members of OPEC plus Egypt and Syria - proclaimed an oil embargo",
+          "score": 0.5569826299942142
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.4565860607199418
+        }
+      ],
+      "add_time": 18.084,
+      "search_time": 0.282,
+      "answer_time": 0.371,
+      "total_time": 18.736,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_8b1a8f60",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 36.756,
+      "search_time": 0.646,
+      "answer_time": 0.0,
+      "total_time": 37.402,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_c39a441c",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 34.47,
+      "search_time": 0.622,
+      "answer_time": 0.0,
+      "total_time": 35.092,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_efd79299",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 21.966,
+      "search_time": 0.317,
+      "answer_time": 0.0,
+      "total_time": 22.283,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_f64b7d52",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 21.269,
+      "search_time": 0.304,
+      "answer_time": 0.0,
+      "total_time": 21.573,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_42da41a1",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.003,
+      "search_time": 0.29,
+      "answer_time": 0.0,
+      "total_time": 19.293,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_f42cb3d2",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.113,
+      "search_time": 0.283,
+      "answer_time": 0.0,
+      "total_time": 19.396,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_740e3510",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 17.458,
+      "search_time": 0.282,
+      "answer_time": 0.0,
+      "total_time": 17.74,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_7bbd2728",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "I don't know",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "The act banned cigarette advertising from all television and radio networks, including ABC, when it took effect on January 2, 1971",
+          "score": 0.3014050413197875
+        },
+        {
+          "memory": "Congress passed the Public Health Cigarette Smoking Act in April 1970",
+          "score": 0.13727512124979993
+        }
+      ],
+      "add_time": 19.553,
+      "search_time": 0.303,
+      "answer_time": 0.333,
+      "total_time": 20.189,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_45447baf",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 64.878,
+      "search_time": 0.307,
+      "answer_time": 0.0,
+      "total_time": 65.185,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_f4230254",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 65.899,
+      "search_time": 0.344,
+      "answer_time": 0.0,
+      "total_time": 66.244,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_7a236784",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines were the driving force behind the industrial revolution",
+          "score": 0.6778176487716622
+        },
+        {
+          "memory": "Steam-powered farm tractors, motorcycles, and automobiles were developed",
+          "score": 0.5234568619804087
+        },
+        {
+          "memory": "Steam engines powered pumping stations and propelling transport appliances like railway locomotives, ships, and road vehicles",
+          "score": 0.511595894940222
+        },
+        {
+          "memory": "Their use in agriculture led to an increase in land available for cultivation",
+          "score": 0.26006371026383945
+        },
+        {
+          "memory": "Although with limited success",
+          "score": 0.07540076933140286
+        }
+      ],
+      "add_time": 16.006,
+      "search_time": 0.356,
+      "answer_time": 0.351,
+      "total_time": 16.713,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_adaf117b",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "6",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines powered pumping stations and propelling transport appliances like railway locomotives, ships, and road vehicles",
+          "score": 0.6770103990713064
+        },
+        {
+          "memory": "Steam engines were the driving force behind the industrial revolution",
+          "score": 0.6376516847187569
+        },
+        {
+          "memory": "Steam-powered farm tractors, motorcycles, and automobiles were developed",
+          "score": 0.54115937812257
+        },
+        {
+          "memory": "Their use in agriculture led to an increase in land available for cultivation",
+          "score": 0.24878339303209177
+        },
+        {
+          "memory": "Although with limited success",
+          "score": 0.11198561324980821
+        }
+      ],
+      "add_time": 15.848,
+      "search_time": 0.275,
+      "answer_time": 0.333,
+      "total_time": 16.457,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_5c5907f5",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "automobile",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Steam-powered farm tractors, motorcycles, and automobiles were developed",
+          "score": 0.6134171245899345
+        },
+        {
+          "memory": "Steam engines powered pumping stations and propelling transport appliances like railway locomotives, ships, and road vehicles",
+          "score": 0.5678017186374916
+        },
+        {
+          "memory": "Steam engines were the driving force behind the industrial revolution",
+          "score": 0.4779262792735402
+        },
+        {
+          "memory": "Although with limited success",
+          "score": 0.07672560769789759
+        },
+        {
+          "memory": "Their use in agriculture led to an increase in land available for cultivation",
+          "score": 0.06186570832908022
+        }
+      ],
+      "add_time": 14.948,
+      "search_time": 0.291,
+      "answer_time": 0.333,
+      "total_time": 15.572,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_43254c3b",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "6,650",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines powered pumping stations and propelling transport appliances like railway locomotives, ships, and road vehicles",
+          "score": 0.5741286193966948
+        },
+        {
+          "memory": "Steam engines were the driving force behind the industrial revolution",
+          "score": 0.5731343634978601
+        },
+        {
+          "memory": "Steam-powered farm tractors, motorcycles, and automobiles were developed",
+          "score": 0.46101091087818863
+        },
+        {
+          "memory": "Their use in agriculture led to an increase in land available for cultivation",
+          "score": 0.2119542144170823
+        },
+        {
+          "memory": "Although with limited success",
+          "score": 0.09378807084255893
+        }
+      ],
+      "add_time": 17.06,
+      "search_time": 0.29,
+      "answer_time": 0.337,
+      "total_time": 17.687,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_1971cc8a",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "A. H. Compton",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "R. A. Millikan",
+          "score": 0.27585598970236713
+        },
+        {
+          "memory": "A. A. Michelson",
+          "score": 0.18508483449370555
+        },
+        {
+          "memory": "E. Teller",
+          "score": 0.18259440728610488
+        },
+        {
+          "memory": "A. H. Compton",
+          "score": 0.17618003339766566
+        },
+        {
+          "memory": "S. T. Lee",
+          "score": 0.10268264225114893
+        }
+      ],
+      "add_time": 14.308,
+      "search_time": 0.377,
+      "answer_time": 0.318,
+      "total_time": 15.004,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_aa661468",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "A. H. Compton",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "E. Teller",
+          "score": 0.3646233800543804
+        },
+        {
+          "memory": "R. A. Millikan",
+          "score": 0.34796879327073577
+        },
+        {
+          "memory": "A. A. Michelson",
+          "score": 0.2598368417963663
+        },
+        {
+          "memory": "A. H. Compton",
+          "score": 0.25960163101342015
+        },
+        {
+          "memory": "S. T. Lee",
+          "score": 0.22258963211790228
+        }
+      ],
+      "add_time": 13.408,
+      "search_time": 0.407,
+      "answer_time": 0.352,
+      "total_time": 14.167,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_1f942349",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 63.892,
+      "search_time": 0.355,
+      "answer_time": 0.0,
+      "total_time": 64.247,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_1eef0b00",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 64.781,
+      "search_time": 0.293,
+      "answer_time": 0.0,
+      "total_time": 65.075,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_e7319d22",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.835,
+      "search_time": 0.317,
+      "answer_time": 0.0,
+      "total_time": 59.152,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_8940bb5a",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.378,
+      "search_time": 0.307,
+      "answer_time": 0.0,
+      "total_time": 60.685,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_28c901ea",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.731,
+      "search_time": 0.312,
+      "answer_time": 0.0,
+      "total_time": 59.043,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_b2a38b34",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.116,
+      "search_time": 0.284,
+      "answer_time": 0.0,
+      "total_time": 60.4,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_347440b6",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "GOOD (answer only):         \"Chicago Bears\"",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.7717849957701826
+        },
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3782775708580858
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37826501287587067
+        }
+      ],
+      "add_time": 11.56,
+      "search_time": 0.261,
+      "answer_time": 0.368,
+      "total_time": 12.189,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 50,
+      "user_id": "eval_50_32845e7d",
+      "question": "What position did Rivera play in Super Bowl XX?",
+      "ground_truth": "linebacker",
+      "prediction": "GOOD (answer only):         \"Linebacker\"",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.7634356864875129
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3651999902040639
+        },
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.347647338098474
+        }
+      ],
+      "add_time": 9.784,
+      "search_time": 0.284,
+      "answer_time": 0.376,
+      "total_time": 10.443,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 51,
+      "user_id": "eval_51_4344f416",
+      "question": "Who was replaced by Kubiak in Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Kubiak",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7349097035733746
+        },
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.4821706563886263
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3416010933549737
+        }
+      ],
+      "add_time": 10.036,
+      "search_time": 0.318,
+      "answer_time": 0.34,
+      "total_time": 10.694,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 52,
+      "user_id": "eval_52_d6c95311",
+      "question": "What team did Kubiak play for in Super Bowl XXI?",
+      "ground_truth": "broncos",
+      "prediction": "GOOD (answer only):         \"The New York Giants\"",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.6699015467055609
+        },
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.5026702165758599
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37353898538100916
+        }
+      ],
+      "add_time": 10.042,
+      "search_time": 0.341,
+      "answer_time": 0.342,
+      "total_time": 10.726,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 53,
+      "user_id": "eval_53_e7f9ddba",
+      "question": "What position did Rivera play in Super Bowl XX? ",
+      "ground_truth": "linebacker",
+      "prediction": "SUPER BOWL XX",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.7637233287049503
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37855240434299336
+        },
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3445759984523164
+        }
+      ],
+      "add_time": 12.024,
+      "search_time": 0.28,
+      "answer_time": 0.346,
+      "total_time": 12.65,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 54,
+      "user_id": "eval_54_463a36bd",
+      "question": "Who did Kubiak take the place of after Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Kubiak",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.747789664319485
+        },
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.4582177108670209
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3559685033471194
+        }
+      ],
+      "add_time": 10.727,
+      "search_time": 0.269,
+      "answer_time": 0.337,
+      "total_time": 11.333,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 55,
+      "user_id": "eval_55_72a175b6",
+      "question": "Who was the Panthers head coach for the 2015 season?",
+      "ground_truth": "rivera",
+      "prediction": "Panthers",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3341300606510822
+        },
+        {
+          "memory": "Kubiak replacing Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3212261359794393
+        },
+        {
+          "memory": "Rivera as a linebacker for the Chicago Bears in Super Bowl XX",
+          "score": 0.30199688107375944
+        }
+      ],
+      "add_time": 10.985,
+      "search_time": 0.277,
+      "answer_time": 0.338,
+      "total_time": 11.6,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 56,
+      "user_id": "eval_56_fd117cc9",
+      "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+      "ground_truth": "germany",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 37.875,
+      "search_time": 0.329,
+      "answer_time": 0.0,
+      "total_time": 38.204,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 57,
+      "user_id": "eval_57_2a7c1041",
+      "question": "What has replaced the former shipping premises?",
+      "ground_truth": "largescale regeneration",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 65.791,
+      "search_time": 0.835,
+      "answer_time": 0.0,
+      "total_time": 66.626,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 58,
+      "user_id": "eval_58_c4738fd7",
+      "question": "Who designed the Sage Gateshead music center?",
+      "ground_truth": "norman foster",
+      "prediction": "Norman Foster",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The venue for the Turner Prize 2011 and the Norman Foster designed the Sage Gateshead Music Center",
+          "score": 0.7434115795255878
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council and has integrated the older Newcastle quayside with major cultural developments in Gateshead",
+          "score": 0.5458461743245263
+        },
+        {
+          "memory": "Including the Baldec Center for Contemporary Art",
+          "score": 0.39251864755785326
+        },
+        {
+          "memory": "The Newcastle and Gateshead quaysides are now a thriving, cosmopolitan area",
+          "score": 0.3866781141343728
+        },
+        {
+          "memory": "As a tourist promotion, Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' to spearhead the regeneration of the Northeast",
+          "score": 0.3746678750173341
+        },
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with imposing new office developments",
+          "score": 0.3004136846393557
+        },
+        {
+          "memory": "An innovative tilting bridge",
+          "score": 0.29347590261473444
+        }
+      ],
+      "add_time": 25.108,
+      "search_time": 0.286,
+      "answer_time": 0.359,
+      "total_time": 25.754,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 59,
+      "user_id": "eval_59_17b5ff0f",
+      "question": "How many days did the River Tyne have the Bambuco Bridge?",
+      "ground_truth": "ten",
+      "prediction": "GOOD (answer only):  3",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council and has integrated the older Newcastle quayside with major cultural developments in Gateshead",
+          "score": 0.44823299307241005
+        },
+        {
+          "memory": "An innovative tilting bridge",
+          "score": 0.37639829057181945
+        },
+        {
+          "memory": "The Newcastle and Gateshead quaysides are now a thriving, cosmopolitan area",
+          "score": 0.3207059686327566
+        },
+        {
+          "memory": "As a tourist promotion, Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' to spearhead the regeneration of the Northeast",
+          "score": 0.28942823485447566
+        },
+        {
+          "memory": "The venue for the Turner Prize 2011 and the Norman Foster designed the Sage Gateshead Music Center",
+          "score": 0.21928393040621869
+        },
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with imposing new office developments",
+          "score": 0.17423930171604707
+        },
+        {
+          "memory": "Including the Baldec Center for Contemporary Art",
+          "score": 0.09149938239748881
+        }
+      ],
+      "add_time": 24.39,
+      "search_time": 0.287,
+      "answer_time": 0.392,
+      "total_time": 25.069,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 60,
+      "user_id": "eval_60_6f1d5d13",
+      "question": "In between French and British, what groups controlled land?",
+      "ground_truth": "native tribes",
+      "prediction": "# ANSWER: The Mi'kmaq and the Abenaki were engaged in Father Leloutre's War (relevance: 0.4047698310522818)",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The Mikmaq and the Abenaki were engaged in Father Leloutre's War",
+          "score": 0.4047698310522818
+        }
+      ],
+      "add_time": 17.252,
+      "search_time": 0.35,
+      "answer_time": 0.47,
+      "total_time": 18.071,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 61,
+      "user_id": "eval_61_c3843b6b",
+      "question": "What rule did some native live under?",
+      "ground_truth": "iroquois",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The Mikmaq and the Abenaki were engaged in Father Leloutre's War",
+          "score": 0.2509461485433525
+        }
+      ],
+      "add_time": 19.007,
+      "search_time": 0.362,
+      "answer_time": 0.341,
+      "total_time": 19.71,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 62,
+      "user_id": "eval_62_75d17738",
+      "question": "What commemorates Warsaw's heroic history?",
+      "ground_truth": "many places",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 83.976,
+      "search_time": 0.332,
+      "answer_time": 0.0,
+      "total_time": 84.308,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 63,
+      "user_id": "eval_63_1f689581",
+      "question": "What fortification was built in the 19th century after the defeat of the November Uprising?",
+      "ground_truth": "the warsaw citadel",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 72.825,
+      "search_time": 0.333,
+      "answer_time": 0.0,
+      "total_time": 73.157,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 64,
+      "user_id": "eval_64_a4e42637",
+      "question": "Who does the statue of Little Insurgent commemorate?",
+      "ground_truth": "children",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 74.931,
+      "search_time": 0.314,
+      "answer_time": 0.0,
+      "total_time": 75.244,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 65,
+      "user_id": "eval_65_c79f4f33",
+      "question": "What monument is in memory of the largest insurrection of WWII?",
+      "ground_truth": "warsaw uprising monument",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 82.902,
+      "search_time": 0.266,
+      "answer_time": 0.0,
+      "total_time": 83.168,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 66,
+      "user_id": "eval_66_b9fea845",
+      "question": "What was Genghis Khan's tribes burial custom?",
+      "ground_truth": "buried without markings",
+      "prediction": "GOOD (answer only):         \"The funeral escort killed anyone and anything across their path to conceal where he was buried\"",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Genghis Khan requested to be buried in silence after his death",
+          "score": 0.7015762599538176
+        },
+        {
+          "memory": "The Genghis Khan Mausoleum is his memorial, but not his burial site",
+          "score": 0.5866349008157348
+        },
+        {
+          "memory": "His body was returned to Mongolia and presumed to be buried in Kenti Aymog",
+          "score": 0.5509518009981356
+        },
+        {
+          "memory": "According to legend, the funeral escort killed anyone and anything across their path to conceal where he was buried",
+          "score": 0.46866709417401403
+        },
+        {
+          "memory": "Many assume he is buried near the Onan River and Birkin Khaldun Mountain in the Kenti Mountain Range",
+          "score": 0.3843354550372008
+        }
+      ],
+      "add_time": 18.216,
+      "search_time": 0.323,
+      "answer_time": 0.449,
+      "total_time": 18.987,
+      "em": 0,
+      "f1": 0.0952,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 67,
+      "user_id": "eval_67_21db9a70",
+      "question": "What is Raghuram Rajan's career?",
+      "ground_truth": "economist",
+      "prediction": "# ANSWER: Economist",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities\u2014within the United States and around the world\u2014have created deep financial fault lines that have made financial crises more likely to happen than in the past, the financial crisis of 2007\u201308 being the most recent example",
+          "score": 0.5102481833658206
+        }
+      ],
+      "add_time": 18.483,
+      "search_time": 0.262,
+      "answer_time": 0.312,
+      "total_time": 19.057,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 68,
+      "user_id": "eval_68_eafb91be",
+      "question": "What does Rajan feel has created deep financial fault lines?",
+      "ground_truth": "systematic economic inequalities",
+      "prediction": "WHAT DOES RAJAN FEEL HAS CREATED DEEP FINANCIAL FAULT LINES",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities\u2014within the United States and around the world\u2014have created deep financial fault lines that have made financial crises more likely to happen than in the past, the financial crisis of 2007\u201308 being the most recent example",
+          "score": 0.6906590812803074
+        }
+      ],
+      "add_time": 16.364,
+      "search_time": 0.251,
+      "answer_time": 0.401,
+      "total_time": 17.016,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 69,
+      "user_id": "eval_69_8785ffec",
+      "question": "What has given the American economy a tendency to go \"from bubble to bubble\"?",
+      "ground_truth": "easier credit",
+      "prediction": "# ANSWER:",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan argues that systematic economic inequalities\u2014within the United States and around the world\u2014have created deep financial fault lines that have made financial crises more likely to happen than in the past, the financial crisis of 2007\u201308 being the most recent example",
+          "score": 0.43196738347866337
+        }
+      ],
+      "add_time": 19.694,
+      "search_time": 0.287,
+      "answer_time": 0.334,
+      "total_time": 20.316,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 70,
+      "user_id": "eval_70_217ba76c",
+      "question": "What Yuan policies did Muslims dislike?",
+      "ground_truth": "circumcision",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 27.448,
+      "search_time": 0.293,
+      "answer_time": 0.0,
+      "total_time": 27.741,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 71,
+      "user_id": "eval_71_2ca89af5",
+      "question": "What Jewish practice did the Yuan ban?",
+      "ground_truth": "kosher butchering",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 26.402,
+      "search_time": 0.373,
+      "answer_time": 0.0,
+      "total_time": 26.774,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 72,
+      "user_id": "eval_72_fdc4ef25",
+      "question": "How are the certain costs which are difficult to avoid shared?",
+      "ground_truth": "by everyone",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.846,
+      "search_time": 0.289,
+      "answer_time": 0.0,
+      "total_time": 24.134,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 73,
+      "user_id": "eval_73_21e73081",
+      "question": "What are those with lower incomes often unable to manage?",
+      "ground_truth": "finances",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.92,
+      "search_time": 0.712,
+      "answer_time": 0.0,
+      "total_time": 19.632,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 74,
+      "user_id": "eval_74_f29b9af1",
+      "question": "When people take on debt, it leads potentially to what?",
+      "ground_truth": "greater inequality and potential economic instability",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.307,
+      "search_time": 0.306,
+      "answer_time": 0.0,
+      "total_time": 22.613,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 75,
+      "user_id": "eval_75_e3011176",
+      "question": "Who did Tesla think would run the world of the future?",
+      "ground_truth": "women",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.21,
+      "search_time": 0.313,
+      "answer_time": 0.0,
+      "total_time": 24.523,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 76,
+      "user_id": "eval_76_cae8a870",
+      "question": "What term did he use for what he believed would be humanity's future rulers?",
+      "ground_truth": "queen bees",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.568,
+      "search_time": 0.241,
+      "answer_time": 0.0,
+      "total_time": 23.81,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 77,
+      "user_id": "eval_77_8743a1d3",
+      "question": "Which South Asian island nation is represented in the V&A collection?",
+      "ground_truth": "thailand",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 47.714,
+      "search_time": 0.321,
+      "answer_time": 0.0,
+      "total_time": 48.035,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 78,
+      "user_id": "eval_78_55484776",
+      "question": "Some of the combs in the V&A collection of South East Asian art is made of what material?",
+      "ground_truth": "ivory",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 47.226,
+      "search_time": 0.304,
+      "answer_time": 0.0,
+      "total_time": 47.53,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 79,
+      "user_id": "eval_79_839878f8",
+      "question": "Where did Mongke Khan attack the Song dynasty?",
+      "ground_truth": "southern china",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 70.903,
+      "search_time": 0.331,
+      "answer_time": 0.0,
+      "total_time": 71.235,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 80,
+      "user_id": "eval_80_b95488ec",
+      "question": "How many electorates does the State of Victoria have?",
+      "ground_truth": "eight",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.37,
+      "search_time": 0.307,
+      "answer_time": 0.0,
+      "total_time": 22.677,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 81,
+      "user_id": "eval_81_1361c27f",
+      "question": "How many representatives does each electorate have?",
+      "ground_truth": "five",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 21.981,
+      "search_time": 0.326,
+      "answer_time": 0.0,
+      "total_time": 22.307,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 82,
+      "user_id": "eval_82_b13cc2e6",
+      "question": "What is the term of office for each house member?",
+      "ground_truth": "four years",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 26.945,
+      "search_time": 0.52,
+      "answer_time": 0.0,
+      "total_time": 27.465,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 83,
+      "user_id": "eval_83_61123793",
+      "question": "How often are elections held for the Victorian Parliament?",
+      "ground_truth": "every four years",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.708,
+      "search_time": 0.296,
+      "answer_time": 0.0,
+      "total_time": 23.005,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 84,
+      "user_id": "eval_84_487dd248",
+      "question": "What advancements besides military technology did Europe achieve?",
+      "ground_truth": "communication",
+      "prediction": "6",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.7447168043212554
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.5851957701369586
+        },
+        {
+          "memory": "with innovations in machinery, they were able to manufacture improved firearms",
+          "score": 0.4423562080529795
+        },
+        {
+          "memory": "European chemists created deadly explosives that could be used in combat",
+          "score": 0.37129378487526077
+        },
+        {
+          "memory": "as armies in less-developed countries were still fighting with arrows, swords, and leather shields, such as the Zulus in southern Africa during the Anglo-Zulu War of 1879",
+          "score": 0.2972358072018334
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.2772116732558473
+        }
+      ],
+      "add_time": 18.779,
+      "search_time": 0.312,
+      "answer_time": 0.34,
+      "total_time": 19.431,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 85,
+      "user_id": "eval_85_9b49b4b7",
+      "question": "What did European chemists make that could be used in warfare?",
+      "ground_truth": "deadly explosives",
+      "prediction": "GOOD (answer only):         \"Deadly explosives\"",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "European chemists created deadly explosives that could be used in combat",
+          "score": 0.7413595451627597
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.5632362718627675
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.5248850538424685
+        },
+        {
+          "memory": "with innovations in machinery, they were able to manufacture improved firearms",
+          "score": 0.39248417181472106
+        },
+        {
+          "memory": "as armies in less-developed countries were still fighting with arrows, swords, and leather shields, such as the Zulus in southern Africa during the Anglo-Zulu War of 1879",
+          "score": 0.3546531767286569
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.3131739031385907
+        }
+      ],
+      "add_time": 18.591,
+      "search_time": 0.303,
+      "answer_time": 0.397,
+      "total_time": 19.291,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 86,
+      "user_id": "eval_86_3a045af9",
+      "question": "what was invented in 1880 that revolutionized warfare?",
+      "ground_truth": "machine gun",
+      "prediction": "GOOD (answer only):         \"The machine gun\"",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.592397398202795
+        },
+        {
+          "memory": "with innovations in machinery, they were able to manufacture improved firearms",
+          "score": 0.5535608327037154
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.49084907039972037
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.46168336929821907
+        },
+        {
+          "memory": "as armies in less-developed countries were still fighting with arrows, swords, and leather shields, such as the Zulus in southern Africa during the Anglo-Zulu War of 1879",
+          "score": 0.4373095948040826
+        },
+        {
+          "memory": "European chemists created deadly explosives that could be used in combat",
+          "score": 0.36860675172576185
+        }
+      ],
+      "add_time": 19.965,
+      "search_time": 1.169,
+      "answer_time": 0.408,
+      "total_time": 21.542,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.1667,
+      "llm": 1
+    },
+    {
+      "idx": 87,
+      "user_id": "eval_87_6189d907",
+      "question": "What weapons were the Zulus using during the Anglo-Zulu War of 1879?",
+      "ground_truth": "arrows swords and leather shields",
+      "prediction": "6",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "as armies in less-developed countries were still fighting with arrows, swords, and leather shields, such as the Zulus in southern Africa during the Anglo-Zulu War of 1879",
+          "score": 0.6627447411896257
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.34978187754467416
+        },
+        {
+          "memory": "with innovations in machinery, they were able to manufacture improved firearms",
+          "score": 0.31618115904237
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.28446138494838047
+        },
+        {
+          "memory": "European chemists created deadly explosives that could be used in combat",
+          "score": 0.23297141124501008
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.2233501496123896
+        }
+      ],
+      "add_time": 19.823,
+      "search_time": 0.313,
+      "answer_time": 0.345,
+      "total_time": 20.481,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 88,
+      "user_id": "eval_88_3cd1138e",
+      "question": "Which region invented the machine gun?",
+      "ground_truth": "european",
+      "prediction": "GOOD (answer only):         \"Europe\"",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.5426756363737587
+        },
+        {
+          "memory": "with innovations in machinery, they were able to manufacture improved firearms",
+          "score": 0.5142332825227187
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.3935331920681862
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.3903979153108361
+        },
+        {
+          "memory": "European chemists created deadly explosives that could be used in combat",
+          "score": 0.3108614413384215
+        },
+        {
+          "memory": "as armies in less-developed countries were still fighting with arrows, swords, and leather shields, such as the Zulus in southern Africa during the Anglo-Zulu War of 1879",
+          "score": 0.29878871633723725
+        }
+      ],
+      "add_time": 20.731,
+      "search_time": 0.303,
+      "answer_time": 0.383,
+      "total_time": 21.417,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 89,
+      "user_id": "eval_89_0d6fb87f",
+      "question": "What inventor built on to the findings of Philo of  Byzantium?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 64.011,
+      "search_time": 2.517,
+      "answer_time": 0.0,
+      "total_time": 66.527,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 90,
+      "user_id": "eval_90_d6d885cd",
+      "question": "Pneumatica was written by what Greek writer?",
+      "ground_truth": "philo",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 66.967,
+      "search_time": 0.301,
+      "answer_time": 0.0,
+      "total_time": 67.268,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 91,
+      "user_id": "eval_91_aa0db53e",
+      "question": "What early Greek wrote about experiments on air and combustion?",
+      "ground_truth": "philo",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 70.758,
+      "search_time": 0.328,
+      "answer_time": 0.0,
+      "total_time": 71.085,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 92,
+      "user_id": "eval_92_f39477bc",
+      "question": "What did Philo incorrectly assume that the air became?",
+      "ground_truth": "fire",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 65.37,
+      "search_time": 0.32,
+      "answer_time": 0.0,
+      "total_time": 65.69,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 93,
+      "user_id": "eval_93_299e5789",
+      "question": "What famous artist later further investigated Philo's experiments?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 63.212,
+      "search_time": 0.338,
+      "answer_time": 0.0,
+      "total_time": 63.55,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 94,
+      "user_id": "eval_94_90187c8f",
+      "question": "Of what did da Vinci think a part  was consumed during combustion?",
+      "ground_truth": "air",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 66.664,
+      "search_time": 0.302,
+      "answer_time": 0.0,
+      "total_time": 66.966,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 95,
+      "user_id": "eval_95_3ac83f6b",
+      "question": "What country did the Normans invade in 1169?",
+      "ground_truth": "ireland",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 43.408,
+      "search_time": 0.3,
+      "answer_time": 0.0,
+      "total_time": 43.708,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 96,
+      "user_id": "eval_96_307a0f0c",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "ground_truth": "irish",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 44.283,
+      "search_time": 0.385,
+      "answer_time": 0.0,
+      "total_time": 44.668,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 97,
+      "user_id": "eval_97_b8e021d5",
+      "question": "What happened to his lab?",
+      "ground_truth": "his lab was torn down",
+      "prediction": "# ANSWER: \nDirect statement: \"Nikola Tesla died on January 7, 1943, in New York City\"",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Nikola Tesla died on January 7, 1943, in New York City",
+          "score": 0.19646467706706355
+        }
+      ],
+      "add_time": 8.217,
+      "search_time": 0.342,
+      "answer_time": 0.433,
+      "total_time": 8.992,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 98,
+      "user_id": "eval_98_8ecbe5e0",
+      "question": "What happened to the things inside the lab after it was torn down?",
+      "ground_truth": "sold",
+      "prediction": "# ANSWER:",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Nikola Tesla died on January 7, 1943, in New York City",
+          "score": 0.15969978353448772
+        }
+      ],
+      "add_time": 8.184,
+      "search_time": 0.243,
+      "answer_time": 0.333,
+      "total_time": 8.761,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 99,
+      "user_id": "eval_99_5b03694e",
+      "question": "Where were the Germanic tribes originally located?",
+      "ground_truth": "scandinavia and northern europe",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 28.163,
+      "search_time": 0.288,
+      "answer_time": 0.0,
+      "total_time": 28.451,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 100,
+      "user_id": "eval_100_c8b3e073",
+      "question": "When did the Germanic tribes claim territory in north and west Europe?",
+      "ground_truth": "the middle period of classical antiquity",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 27.587,
+      "search_time": 0.313,
+      "answer_time": 0.0,
+      "total_time": 27.9,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 101,
+      "user_id": "eval_101_8f78f1b0",
+      "question": "Germany referred to which area more so than an actual country?",
+      "ground_truth": "central europe",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 25.236,
+      "search_time": 0.289,
+      "answer_time": 0.0,
+      "total_time": 25.525,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 102,
+      "user_id": "eval_102_e94bc30a",
+      "question": "what was NTL Telewest re-branded to in 2007?",
+      "ground_truth": "virgin media",
+      "prediction": "NTL",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media was rebranded in 2007 from NTL. Telewest began offering high-definition television.",
+          "score": 0.7234209528769778
+        },
+        {
+          "memory": "HDTV-capable set-top boxes were introduced.",
+          "score": 0.300669911989197
+        }
+      ],
+      "add_time": 33.747,
+      "search_time": 0.303,
+      "answer_time": 0.327,
+      "total_time": 34.377,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 103,
+      "user_id": "eval_103_3595c707",
+      "question": "What did Virgin Media concentrate on instead of offering linear channels?",
+      "ground_truth": "video on demand",
+      "prediction": "# ANSWER:  Virgin Media was rebranded in 2007 from NTL. Telewest began offering high-definition television.",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media was rebranded in 2007 from NTL. Telewest began offering high-definition television.",
+          "score": 0.6108966190863109
+        },
+        {
+          "memory": "HDTV-capable set-top boxes were introduced.",
+          "score": 0.39274811621499084
+        }
+      ],
+      "add_time": 29.822,
+      "search_time": 0.321,
+      "answer_time": 0.427,
+      "total_time": 30.569,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 104,
+      "user_id": "eval_104_39b5cd07",
+      "question": "What unit is measured to determine circuit complexity?",
+      "ground_truth": "number of gates",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.623,
+      "search_time": 0.299,
+      "answer_time": 0.0,
+      "total_time": 19.922,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 105,
+      "user_id": "eval_105_f1d8c8a3",
+      "question": "There is a public database of epitopes for pathogens known to be recognizable by what cells?",
+      "ground_truth": "b",
+      "prediction": "1. A publicly accessible database has been established for the cataloging of epitopes from pathogens.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "A publicly accessible database has been established for the cataloging of epitopes from pathogens.",
+          "score": 0.7415770092977617
+        },
+        {
+          "memory": "Known to be recognized by B-cells.",
+          "score": 0.5895950189278094
+        },
+        {
+          "memory": "However, more recent developments rely on machine learning techniques using databases of existing known epitopes\u2014usually on well-studied virus proteins.",
+          "score": 0.5809611061150115
+        },
+        {
+          "memory": "Early techniques relied mainly on the observation that hydrophilic amino acids are overrepresented in epitope regions than hydrophobic amino acids.",
+          "score": 0.4887771039175093
+        },
+        {
+          "memory": "Computational methods have been developed to predict the immunogenicity of peptides and proteins, which are particularly useful in designing therapeutic antibodies, assessing the likely virulence of mutations in viral coat particles, and validating proposed peptide-based drug treatments.",
+          "score": 0.4338735313093419
+        },
+        {
+          "memory": "Immunoproteomics is the study of large sets of proteins\u2014proteomics\u2014involved in the immune response.",
+          "score": 0.35080605673338133
+        },
+        {
+          "memory": "The emerging field of bioinformatics-based studies of immunogenicity is referred to as immunoinformatics.",
+          "score": 0.3353255746403061
+        },
+        {
+          "memory": "Larger drugs can provoke a neutralizing immune response, particularly if the drugs are administered repeatedly, or in larger doses.",
+          "score": 0.32035716618710924
+        },
+        {
+          "memory": "This limits the effectiveness of drugs based on larger peptides and proteins, which are typically larger than 6,000.",
+          "score": 0.3129963283532263
+        },
+        {
+          "memory": "In some cases, the drug itself is not immunogenic, but may be co-administered with an immunogenic compound\u2014as is sometimes the case for Taxol.",
+          "score": 0.25660427348501846
+        }
+      ],
+      "add_time": 39.212,
+      "search_time": 0.631,
+      "answer_time": 0.479,
+      "total_time": 40.321,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 106,
+      "user_id": "eval_106_cbf9a90b",
+      "question": "What event took away his ability of speech?",
+      "ground_truth": "apoplectic stroke",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.733,
+      "search_time": 1.585,
+      "answer_time": 0.0,
+      "total_time": 61.318,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 107,
+      "user_id": "eval_107_0b034a8d",
+      "question": "Where was Luther buried?",
+      "ground_truth": "castle church in wittenberg",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.027,
+      "search_time": 0.631,
+      "answer_time": 0.0,
+      "total_time": 58.657,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 108,
+      "user_id": "eval_108_01033256",
+      "question": "What is the key accomplishment of Genghis Khan that modern Mongolians celebrate?",
+      "ground_truth": "uniting warring tribes",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.528,
+      "search_time": 0.291,
+      "answer_time": 0.0,
+      "total_time": 22.819,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 109,
+      "user_id": "eval_109_bb282ff4",
+      "question": "How do Mongolians sometime describe their relationship to Genghis Khan?",
+      "ground_truth": "genghis khans children",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 21.227,
+      "search_time": 0.561,
+      "answer_time": 0.0,
+      "total_time": 21.788,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 110,
+      "user_id": "eval_110_397a544b",
+      "question": "What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?",
+      "ground_truth": "his brutality",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.242,
+      "search_time": 0.516,
+      "answer_time": 0.0,
+      "total_time": 22.757,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 111,
+      "user_id": "eval_111_ebcaea4b",
+      "question": "What is the general perception of non-Mongolian histories of Genghis Khan by Mongolians themselves?",
+      "ground_truth": "unfairly biased",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.739,
+      "search_time": 0.31,
+      "answer_time": 0.0,
+      "total_time": 20.049,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 112,
+      "user_id": "eval_112_42b156f5",
+      "question": "Who continued to hold the citadel of Bukhara after the Mongols took the rest of the city?",
+      "ground_truth": "turkish defenders",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 33.918,
+      "search_time": 0.362,
+      "answer_time": 0.0,
+      "total_time": 34.279,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 113,
+      "user_id": "eval_113_df38ab93",
+      "question": "How did Genghis Khan describe himself to the people of Bukhara?",
+      "ground_truth": "the flail of god",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 37.02,
+      "search_time": 0.31,
+      "answer_time": 0.0,
+      "total_time": 37.33,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 114,
+      "user_id": "eval_114_a9732825",
+      "question": "Higher rates of health and social problems are just two of examples of effects from what?",
+      "ground_truth": "inequality",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.205,
+      "search_time": 0.349,
+      "answer_time": 0.0,
+      "total_time": 23.554,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 115,
+      "user_id": "eval_115_7633901f",
+      "question": "Why does a lower level of economic growth occur due to high-end consumption?",
+      "ground_truth": "human capital is neglected",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 20.04,
+      "search_time": 0.276,
+      "answer_time": 0.0,
+      "total_time": 20.316,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 116,
+      "user_id": "eval_116_d38dbcad",
+      "question": "What is lower in countries with more inequality for the top 21 industrialized countries?",
+      "ground_truth": "life expectancy",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.12,
+      "search_time": 0.801,
+      "answer_time": 0.0,
+      "total_time": 19.922,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 117,
+      "user_id": "eval_117_5b71ef49",
+      "question": "What is a lower rate of social goods an effect of?",
+      "ground_truth": "inequality",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.693,
+      "search_time": 0.313,
+      "answer_time": 0.0,
+      "total_time": 20.006,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 118,
+      "user_id": "eval_118_89e517bc",
+      "question": "In U.S. states, what happens to the life expectancy in less economically equal ones?",
+      "ground_truth": "life expectancy is lower",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 19.584,
+      "search_time": 0.346,
+      "answer_time": 0.0,
+      "total_time": 19.93,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 119,
+      "user_id": "eval_119_43069f94",
+      "question": "What other areas did the Apollo missions help spur advancements in?",
+      "ground_truth": "avionics telecommunications and computers",
+      "prediction": "# OTHER AREAS\n\n1. Materials science\n2. Materials engineering\n3. Materials science and engineering\n4. Materials science and engineering\n5. Materials science and engineering\n6. Materials science and engineering\n7. Materials science and engineering\n8. Materials science and engineering",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Apollo also spurred advances in many areas of technology incidental to rocketry and manned spaceflight, including avionics, telecommunications, and computers",
+          "score": 0.747255752447682
+        },
+        {
+          "memory": "Apollo achieved several major human spaceflight milestones",
+          "score": 0.5764051159730458
+        },
+        {
+          "memory": "The program laid the foundation for NASA's current human spaceflight capability",
+          "score": 0.48287314865207753
+        },
+        {
+          "memory": "The program funded construction of its Johnson Space Center and Kennedy Space Center",
+          "score": 0.42219021887988806
+        },
+        {
+          "memory": "It stands alone in sending manned missions beyond low Earth orbit",
+          "score": 0.4194658482779262
+        },
+        {
+          "memory": "The final Apollo 17 mission marked the sixth Moon landing and the ninth manned mission beyond low Earth orbit",
+          "score": 0.4163765715605396
+        },
+        {
+          "memory": "Apollo 8 was the first manned spacecraft to orbit another celestial body",
+          "score": 0.41550061866255383
+        },
+        {
+          "memory": "The program returned 842 pounds\u2014382 kilograms\u2014of lunar rocks and soil to Earth",
+          "score": 0.3165678627824888
+        }
+      ],
+      "add_time": 22.49,
+      "search_time": 0.393,
+      "answer_time": 0.588,
+      "total_time": 23.472,
+      "em": 0,
+      "f1": 0.0476,
+      "bleu": 0.1538,
+      "llm": 0
+    },
+    {
+      "idx": 120,
+      "user_id": "eval_120_48c0e719",
+      "question": "What resource is the economy of southern California depedent on?",
+      "ground_truth": "petroleum",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 17.848,
+      "search_time": 0.863,
+      "answer_time": 0.0,
+      "total_time": 18.712,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 121,
+      "user_id": "eval_121_8f3c3596",
+      "question": "Southern California is most famous for tourism and what notably named district?",
+      "ground_truth": "hollywood",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.19,
+      "search_time": 0.301,
+      "answer_time": 0.0,
+      "total_time": 22.491,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 122,
+      "user_id": "eval_122_816631f0",
+      "question": "The region was a leader in what event between 2001 - 2007?",
+      "ground_truth": "the housing bubble",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.697,
+      "search_time": 0.304,
+      "answer_time": 0.0,
+      "total_time": 19.0,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 123,
+      "user_id": "eval_123_aea8062c",
+      "question": "What was the effect of the housing crash on the region?",
+      "ground_truth": "heavily impacted",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.315,
+      "search_time": 0.374,
+      "answer_time": 0.0,
+      "total_time": 18.689,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 124,
+      "user_id": "eval_124_85508489",
+      "question": "What alumni was also Obama's campaign adviser?",
+      "ground_truth": "david axelrod",
+      "prediction": "Paul Wolfowitz",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Saul Alinsky, Obama campaign advisor and top advisor to President Bill Clinton",
+          "score": 0.6284826040067455
+        },
+        {
+          "memory": "David Axelrod, Attorney General and Federal Judge",
+          "score": 0.4153617971495155
+        },
+        {
+          "memory": "Bernie Sanders, 2016 Democratic presidential candidate",
+          "score": 0.3098394211945375
+        },
+        {
+          "memory": "Paul Wolfowitz, Former World Bank President",
+          "score": 0.29965661449514885
+        },
+        {
+          "memory": "Carol Moseley Braun, First female African-American Senator",
+          "score": 0.29673242402255595
+        },
+        {
+          "memory": "Robert Bork, Attorney General",
+          "score": 0.283111464662547
+        },
+        {
+          "memory": "John Paul Stevens, Supreme Court Justice",
+          "score": 0.21760182355504182
+        },
+        {
+          "memory": "United States Senator from Vermont",
+          "score": 0.20705329998667085
+        },
+        {
+          "memory": "Ramsey Clark, Prohibition Agent",
+          "score": 0.20341639819628252
+        },
+        {
+          "memory": "Elliot Ness, Supreme Court Justice",
+          "score": 0.18264930188525608
+        }
+      ],
+      "add_time": 37.107,
+      "search_time": 0.313,
+      "answer_time": 0.373,
+      "total_time": 37.793,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 125,
+      "user_id": "eval_125_1c26be46",
+      "question": "What alumni was also an Attorney General and a federal judge?",
+      "ground_truth": "robert bork",
+      "prediction": "GOOD (answer only):         \"David Axelrod\"",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "David Axelrod, Attorney General and Federal Judge",
+          "score": 0.6525988310266322
+        },
+        {
+          "memory": "Robert Bork, Attorney General",
+          "score": 0.5324942129120654
+        },
+        {
+          "memory": "John Paul Stevens, Supreme Court Justice",
+          "score": 0.4398744062304965
+        },
+        {
+          "memory": "Elliot Ness, Supreme Court Justice",
+          "score": 0.41492828938784326
+        },
+        {
+          "memory": "United States Senator from Vermont",
+          "score": 0.32075077031454974
+        },
+        {
+          "memory": "Saul Alinsky, Obama campaign advisor and top advisor to President Bill Clinton",
+          "score": 0.30430563845448216
+        },
+        {
+          "memory": "Carol Moseley Braun, First female African-American Senator",
+          "score": 0.2790261659440657
+        },
+        {
+          "memory": "Ramsey Clark, Prohibition Agent",
+          "score": 0.27276234318487796
+        },
+        {
+          "memory": "Paul Wolfowitz, Former World Bank President",
+          "score": 0.22779761120931807
+        },
+        {
+          "memory": "Masaaki Shirakawa, Governor of the Bank of Japan",
+          "score": 0.19898977579638438
+        }
+      ],
+      "add_time": 36.065,
+      "search_time": 0.902,
+      "answer_time": 0.4,
+      "total_time": 37.366,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 126,
+      "user_id": "eval_126_3c6bd421",
+      "question": "What kind of immune system do bacteria have?",
+      "ground_truth": "rudimentary",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 25.057,
+      "search_time": 0.391,
+      "answer_time": 0.0,
+      "total_time": 25.448,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 127,
+      "user_id": "eval_127_9adf718a",
+      "question": "Which other ancient organism formed basic immune mechanisms?",
+      "ground_truth": "bacteria",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.338,
+      "search_time": 0.311,
+      "answer_time": 0.0,
+      "total_time": 24.649,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 128,
+      "user_id": "eval_128_487dbba3",
+      "question": "How does adaptive/acquired immunity help in the future?",
+      "ground_truth": "creates immunological memory",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.22,
+      "search_time": 0.289,
+      "answer_time": 0.0,
+      "total_time": 24.509,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 129,
+      "user_id": "eval_129_5d13cb68",
+      "question": "The idea of acquired immunity in jawed vertebrates is the basis of what medical treatment?",
+      "ground_truth": "vaccination",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.245,
+      "search_time": 0.356,
+      "answer_time": 0.0,
+      "total_time": 24.601,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 130,
+      "user_id": "eval_130_cec19c69",
+      "question": "What is the ability to recognize and adapt to new specific pathogens called?",
+      "ground_truth": "adaptive or acquired immunity",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.678,
+      "search_time": 0.304,
+      "answer_time": 0.0,
+      "total_time": 23.982,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 131,
+      "user_id": "eval_131_fd8566be",
+      "question": "What is the name for O3 most often used?",
+      "ground_truth": "ozone",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.683,
+      "search_time": 0.355,
+      "answer_time": 0.0,
+      "total_time": 60.038,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 132,
+      "user_id": "eval_132_5ecb5418",
+      "question": "What  does ozone's characteristic to cause damage effect?",
+      "ground_truth": "lung tissue",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.541,
+      "search_time": 0.353,
+      "answer_time": 0.0,
+      "total_time": 60.894,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 133,
+      "user_id": "eval_133_370074bb",
+      "question": "What function does ozone perform for the planet?",
+      "ground_truth": "protective radiation shield",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 61.099,
+      "search_time": 0.33,
+      "answer_time": 0.0,
+      "total_time": 61.43,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 134,
+      "user_id": "eval_134_31e10a2d",
+      "question": "What light radiation does ozone absorb?",
+      "ground_truth": "ultraviolet",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 63.79,
+      "search_time": 0.363,
+      "answer_time": 0.0,
+      "total_time": 64.153,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 135,
+      "user_id": "eval_135_53d3cd47",
+      "question": "How many sons did B\u00f6rte bear Genghis Khan after Jochi?",
+      "ground_truth": "three",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.927,
+      "search_time": 0.33,
+      "answer_time": 0.0,
+      "total_time": 61.257,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 136,
+      "user_id": "eval_136_943ef019",
+      "question": "How many names of Ghengis Khan's daughters are known?",
+      "ground_truth": "six",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.872,
+      "search_time": 0.362,
+      "answer_time": 0.0,
+      "total_time": 61.233,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 137,
+      "user_id": "eval_137_27ba2602",
+      "question": "What did Luther seek to restore?",
+      "ground_truth": "public order",
+      "prediction": "WHAT",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Luther next set about reversing or modifying the new church practices.",
+          "score": 0.6031192750932306
+        },
+        {
+          "memory": "By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation.",
+          "score": 0.5019620656943363
+        },
+        {
+          "memory": "After banishing the Zwickau prophets, he faced a battle against not only the established church, but also the radical reformers who threatened the new order by fomenting social unrest and violence",
+          "score": 0.4640401141248003
+        }
+      ],
+      "add_time": 13.602,
+      "search_time": 0.262,
+      "answer_time": 0.323,
+      "total_time": 14.187,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 138,
+      "user_id": "eval_138_e7aaf453",
+      "question": "What was Luther's force within the Reformation?",
+      "ground_truth": "conservative",
+      "prediction": "GOOD (answer only):         \"The Reformation\"",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Luther next set about reversing or modifying the new church practices.",
+          "score": 0.6029326042953282
+        },
+        {
+          "memory": "By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation.",
+          "score": 0.5527557813817399
+        },
+        {
+          "memory": "After banishing the Zwickau prophets, he faced a battle against not only the established church, but also the radical reformers who threatened the new order by fomenting social unrest and violence",
+          "score": 0.5249970720490659
+        }
+      ],
+      "add_time": 13.504,
+      "search_time": 0.25,
+      "answer_time": 0.353,
+      "total_time": 14.107,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 139,
+      "user_id": "eval_139_c3177fa8",
+      "question": "What did the radical reformers cause in the new order?",
+      "ground_truth": "unrest and violence",
+      "prediction": "I don't know",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "After banishing the Zwickau prophets, he faced a battle against not only the established church, but also the radical reformers who threatened the new order by fomenting social unrest and violence",
+          "score": 0.5314691153324053
+        },
+        {
+          "memory": "Luther next set about reversing or modifying the new church practices.",
+          "score": 0.5146606634538868
+        },
+        {
+          "memory": "By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation.",
+          "score": 0.49787643374180324
+        }
+      ],
+      "add_time": 12.707,
+      "search_time": 0.46,
+      "answer_time": 0.333,
+      "total_time": 13.499,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 140,
+      "user_id": "eval_140_aa8f20a6",
+      "question": "Besides the radicals who else did Luther have to deal with?",
+      "ground_truth": "established church",
+      "prediction": "I don't know",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Luther next set about reversing or modifying the new church practices.",
+          "score": 0.5976042575347265
+        },
+        {
+          "memory": "After banishing the Zwickau prophets, he faced a battle against not only the established church, but also the radical reformers who threatened the new order by fomenting social unrest and violence",
+          "score": 0.5942867794733442
+        },
+        {
+          "memory": "By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation.",
+          "score": 0.4423346791689675
+        }
+      ],
+      "add_time": 14.508,
+      "search_time": 0.922,
+      "answer_time": 0.326,
+      "total_time": 15.756,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 141,
+      "user_id": "eval_141_8dea1a3d",
+      "question": "How many times has Polonia won the cup?",
+      "ground_truth": "twice",
+      "prediction": "6",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "Polonia Warsaw has significantly fewer supporters",
+          "score": 0.4761447490101443
+        },
+        {
+          "memory": "They won the Ekstraklasa Championship in 2000",
+          "score": 0.3964196452335258
+        }
+      ],
+      "add_time": 22.089,
+      "search_time": 0.309,
+      "answer_time": 0.305,
+      "total_time": 22.703,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 142,
+      "user_id": "eval_142_4f7a28cd",
+      "question": "How many lakes are there in Warsaw?",
+      "ground_truth": "several",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 22.771,
+      "search_time": 0.301,
+      "answer_time": 0.0,
+      "total_time": 23.073,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 143,
+      "user_id": "eval_143_4e0384e2",
+      "question": "Why are the small lakes in the parks emptied before winter?",
+      "ground_truth": "to clean them",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.992,
+      "search_time": 0.309,
+      "answer_time": 0.0,
+      "total_time": 24.302,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 144,
+      "user_id": "eval_144_50a627d9",
+      "question": "What is stage 1 in the life of a bill?",
+      "ground_truth": "introductory",
+      "prediction": "# ANSWER: \"The first stage in the life of a bill is the introduction stage.\"",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The meeting is at 3pm tomorrow, and we need to discuss the budget for Q4",
+          "score": 0.19140930727530797
+        }
+      ],
+      "add_time": 21.385,
+      "search_time": 0.249,
+      "answer_time": 0.361,
+      "total_time": 21.995,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 145,
+      "user_id": "eval_145_7714ff8e",
+      "question": "What are presented to parliament in addition to the bill itself?",
+      "ground_truth": "accompanying documents",
+      "prediction": "WHAT",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The meeting is at 3pm tomorrow, and we need to discuss the budget for Q4",
+          "score": 0.2679560333940634
+        }
+      ],
+      "add_time": 21.402,
+      "search_time": 0.28,
+      "answer_time": 0.313,
+      "total_time": 21.995,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 146,
+      "user_id": "eval_146_57e9a18c",
+      "question": "Where are bills typically gestated in Stage 1?",
+      "ground_truth": "in the relevant committee or committees",
+      "prediction": "# ANSWER:",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The meeting is at 3pm tomorrow, and we need to discuss the budget for Q4",
+          "score": 0.16933812117913405
+        }
+      ],
+      "add_time": 19.535,
+      "search_time": 0.256,
+      "answer_time": 0.317,
+      "total_time": 20.108,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 147,
+      "user_id": "eval_147_13872df8",
+      "question": "Which group did not agree to sign these agreements?",
+      "ground_truth": "the swiss cities",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 8.265,
+      "search_time": 0.259,
+      "answer_time": 0.0,
+      "total_time": 8.525,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 148,
+      "user_id": "eval_148_83221f9f",
+      "question": "Where did Apollo 1's crew conduct tests at Kennedy Space Center?",
+      "ground_truth": "altitude chamber",
+      "prediction": "Apollo 1",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1",
+          "score": 0.5426848725637113
+        }
+      ],
+      "add_time": 12.859,
+      "search_time": 0.256,
+      "answer_time": 0.322,
+      "total_time": 13.437,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 149,
+      "user_id": "eval_149_53ae0b24",
+      "question": "What was a plugs-out test done to simulate on the LC-34?",
+      "ground_truth": "launch countdown",
+      "prediction": "GOOD (answer only):         \"The LC-34 was a test for the Apollo spacecraft's power system.\"",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1",
+          "score": 0.1622715236881106
+        }
+      ],
+      "add_time": 14.963,
+      "search_time": 0.273,
+      "answer_time": 0.37,
+      "total_time": 15.607,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 150,
+      "user_id": "eval_150_64fdf3ac",
+      "question": "What other location did Apollo 1 test at besides Kennedy Space Center?",
+      "ground_truth": "north american",
+      "prediction": "6,650 kilometres",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1",
+          "score": 0.516466197095474
+        }
+      ],
+      "add_time": 12.559,
+      "search_time": 0.349,
+      "answer_time": 0.302,
+      "total_time": 13.21,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 151,
+      "user_id": "eval_151_a1981560",
+      "question": "What was the Henry Cole Wing previously called?",
+      "ground_truth": "school for naval architects",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 27.631,
+      "search_time": 0.404,
+      "answer_time": 0.0,
+      "total_time": 28.035,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 152,
+      "user_id": "eval_152_a4bd722a",
+      "question": "What part of the V&A collection does the Henry Cole Wing houses?",
+      "ground_truth": "prints drawings paintings and photographs",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 29.248,
+      "search_time": 0.302,
+      "answer_time": 0.0,
+      "total_time": 29.55,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 153,
+      "user_id": "eval_153_fce2e86a",
+      "question": "Where is corporal punishment practiced the most?",
+      "ground_truth": "the south",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.5923469887098738
+        }
+      ],
+      "add_time": 16.143,
+      "search_time": 0.247,
+      "answer_time": 0.32,
+      "total_time": 16.709,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 154,
+      "user_id": "eval_154_1dd57458",
+      "question": "Is corporal punishment increasing or declining in the South?",
+      "ground_truth": "declining",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.568226973171053
+        }
+      ],
+      "add_time": 15.681,
+      "search_time": 0.291,
+      "answer_time": 0.314,
+      "total_time": 16.286,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 155,
+      "user_id": "eval_155_c274419c",
+      "question": "What tool is used in corporal punishment?",
+      "ground_truth": "wooden paddle",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.4976435377435567
+        }
+      ],
+      "add_time": 16.375,
+      "search_time": 0.271,
+      "answer_time": 0.308,
+      "total_time": 16.954,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 156,
+      "user_id": "eval_156_4ae1590a",
+      "question": "Where is corporal punishment usually performed these days?",
+      "ground_truth": "principals office",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment",
+          "score": 0.5889460808346838
+        }
+      ],
+      "add_time": 14.635,
+      "search_time": 0.333,
+      "answer_time": 0.328,
+      "total_time": 15.296,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 157,
+      "user_id": "eval_157_388cf768",
+      "question": "What religion's schools were integrated into New Zealand public schools between 1979 and 1984?",
+      "ground_truth": "catholic",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 32.941,
+      "search_time": 0.313,
+      "answer_time": 0.0,
+      "total_time": 33.254,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 158,
+      "user_id": "eval_158_5e2665ba",
+      "question": "What city, along with Hamilton, Wellington and Christchurch, is one of the largest in New Zealand?",
+      "ground_truth": "auckland",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 31.349,
+      "search_time": 0.327,
+      "answer_time": 0.0,
+      "total_time": 31.675,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 159,
+      "user_id": "eval_159_5fccd23f",
+      "question": "The region spans starting at islands found in which body of water?",
+      "ground_truth": "pacific ocean",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.147,
+      "search_time": 0.331,
+      "answer_time": 0.0,
+      "total_time": 23.479,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 160,
+      "user_id": "eval_160_a1ebf19e",
+      "question": "What term best describes southern California's collection of landscapes?",
+      "ground_truth": "varied",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 25.397,
+      "search_time": 0.327,
+      "answer_time": 0.0,
+      "total_time": 25.724,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 161,
+      "user_id": "eval_161_55703299",
+      "question": "What type of landscapes other than geologic and natural ecosystem landscapes can be found in southern California?",
+      "ground_truth": "topographic",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.493,
+      "search_time": 0.336,
+      "answer_time": 0.0,
+      "total_time": 23.828,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 162,
+      "user_id": "eval_162_be52b2f9",
+      "question": "The region spans which mountains other than the Transverse ranges?",
+      "ground_truth": "peninsular ranges",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.228,
+      "search_time": 0.296,
+      "answer_time": 0.0,
+      "total_time": 24.524,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 163,
+      "user_id": "eval_163_956fea54",
+      "question": "The mountain ranges tail off into what kind of geographical formation?",
+      "ground_truth": "valleys",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.128,
+      "search_time": 0.446,
+      "answer_time": 0.0,
+      "total_time": 23.574,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 164,
+      "user_id": "eval_164_16552c4e",
+      "question": "Newcastle served as a northern fortress for which country during the Middle Ages?",
+      "ground_truth": "england",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 76.89,
+      "search_time": 0.326,
+      "answer_time": 0.0,
+      "total_time": 77.217,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 165,
+      "user_id": "eval_165_9776f099",
+      "question": "Who granted Newcastle a new charter in 1589?",
+      "ground_truth": "elizabeth",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 75.739,
+      "search_time": 0.332,
+      "answer_time": 0.0,
+      "total_time": 76.071,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 166,
+      "user_id": "eval_166_53da17d9",
+      "question": "How many times did Newcastle fight off the Scots during the 14th century?",
+      "ground_truth": "three times",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 75.253,
+      "search_time": 0.32,
+      "answer_time": 0.0,
+      "total_time": 75.574,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 167,
+      "user_id": "eval_167_23714de5",
+      "question": "In 1735, where did John and Charles Wesley teach the gospel in America?",
+      "ground_truth": "colony of georgia",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 64.161,
+      "search_time": 0.307,
+      "answer_time": 0.0,
+      "total_time": 64.469,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 168,
+      "user_id": "eval_168_9afe0209",
+      "question": "In 1735, who did John and Charles Wesley teach the gospel to in America?",
+      "ground_truth": "american indians",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 66.051,
+      "search_time": 0.314,
+      "answer_time": 0.0,
+      "total_time": 66.366,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 169,
+      "user_id": "eval_169_d5e1deaa",
+      "question": "What did \"The Holy Club's\" teachings emphasize?",
+      "ground_truth": "salvation by gods grace",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 127.699,
+      "search_time": 0.293,
+      "answer_time": 0.0,
+      "total_time": 127.991,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 170,
+      "user_id": "eval_170_69c61fbb",
+      "question": "In what century did the history of the steam engine begin?",
+      "ground_truth": "first century ad",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 27.264,
+      "search_time": 0.301,
+      "answer_time": 0.0,
+      "total_time": 27.566,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 171,
+      "user_id": "eval_171_001111be",
+      "question": "Who conceptualized the aeolipile?",
+      "ground_truth": "hero of alexandria",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 26.568,
+      "search_time": 0.278,
+      "answer_time": 0.0,
+      "total_time": 26.846,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 172,
+      "user_id": "eval_172_8707665e",
+      "question": "What was Hero of Alexandria's nationality?",
+      "ground_truth": "greek",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 26.362,
+      "search_time": 0.431,
+      "answer_time": 0.0,
+      "total_time": 26.794,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 173,
+      "user_id": "eval_173_57152d6f",
+      "question": "Where was the Space Task Group located?",
+      "ground_truth": "nasas langley research center",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 64.445,
+      "search_time": 1.02,
+      "answer_time": 0.0,
+      "total_time": 65.465,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 174,
+      "user_id": "eval_174_bfa4434a",
+      "question": "Where was the Manned Spacecraft Center located?",
+      "ground_truth": "houston texas",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 62.813,
+      "search_time": 0.365,
+      "answer_time": 0.0,
+      "total_time": 63.179,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 175,
+      "user_id": "eval_175_88428143",
+      "question": "What university donated the land for the Manned Spacecraft Center?",
+      "ground_truth": "rice university",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 65.974,
+      "search_time": 0.357,
+      "answer_time": 0.0,
+      "total_time": 66.331,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 176,
+      "user_id": "eval_176_c98d9163",
+      "question": "In what state were the original launching facilities for missions?",
+      "ground_truth": "florida",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 63.431,
+      "search_time": 0.364,
+      "answer_time": 0.0,
+      "total_time": 63.794,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 177,
+      "user_id": "eval_177_b96fedcc",
+      "question": "How does HT strive to amass power?",
+      "ground_truth": "ideological struggle",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 7.87,
+      "search_time": 0.335,
+      "answer_time": 0.0,
+      "total_time": 8.205,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 178,
+      "user_id": "eval_178_d1e8678f",
+      "question": "Who specifically does HT target to change the opinion of?",
+      "ground_truth": "government",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 9.023,
+      "search_time": 0.619,
+      "answer_time": 0.0,
+      "total_time": 9.642,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 179,
+      "user_id": "eval_179_1b81179c",
+      "question": "Where did HT fail to pull off a bloodless coup in 1974?",
+      "ground_truth": "egypt",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 8.379,
+      "search_time": 0.335,
+      "answer_time": 0.0,
+      "total_time": 8.714,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 180,
+      "user_id": "eval_180_88ebeca6",
+      "question": "What have many HT members graduated to joining?",
+      "ground_truth": "terrorist groups",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 9.458,
+      "search_time": 0.262,
+      "answer_time": 0.0,
+      "total_time": 9.721,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 181,
+      "user_id": "eval_181_4eff9808",
+      "question": "What is the second largest contrubtor to Kenyas GDP?",
+      "ground_truth": "agriculture",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 24.208,
+      "search_time": 0.351,
+      "answer_time": 0.0,
+      "total_time": 24.558,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 182,
+      "user_id": "eval_182_067f9c21",
+      "question": "What can cause fluctuations in the production of corn?",
+      "ground_truth": "weather",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 25.65,
+      "search_time": 0.29,
+      "answer_time": 0.0,
+      "total_time": 25.94,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 183,
+      "user_id": "eval_183_13f86eae",
+      "question": "What is it called when people in society rebel against laws they think are unfair?",
+      "ground_truth": "civil disobedience",
+      "prediction": "I don't know",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.6747565591548071
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.2932380358309898
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.29241207918048345
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.28798223235047127
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.28328485419084093
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.2403121403189286
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.23195901502311975
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.2301323452593625
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.22259763393265625
+        }
+      ],
+      "add_time": 30.4,
+      "search_time": 0.308,
+      "answer_time": 0.37,
+      "total_time": 31.079,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 184,
+      "user_id": "eval_184_54d635e6",
+      "question": "What is an example of major civil disobedience in South Africa?",
+      "ground_truth": "the fight against apartheid",
+      "prediction": "1. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws (relevance: 0.614044070366754)",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.614044070366754
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.5796287094064823
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.46731742613018734
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.36489580071426814
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.3371978409716848
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.3291502428937905
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.30664338662068896
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.2960656354967378
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.2903756133335971
+        }
+      ],
+      "add_time": 31.07,
+      "search_time": 0.315,
+      "answer_time": 0.5,
+      "total_time": 31.886,
+      "em": 0,
+      "f1": 0.08,
+      "bleu": 0.0909,
+      "llm": 0
+    },
+    {
+      "idx": 185,
+      "user_id": "eval_185_f1083ae4",
+      "question": "What was the the movement called that brought Baltic countries independence from the Soviet Union?",
+      "ground_truth": "singing revolution",
+      "prediction": "# ANSWER: The Singing Revolution",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.6889760728518176
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.47507545015389274
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.42193886976995776
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.324708012432221
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.24307344397627278
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.2246320018515478
+        },
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.19778226747774424
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.17782907375957588
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.10462819793762101
+        }
+      ],
+      "add_time": 28.915,
+      "search_time": 0.381,
+      "answer_time": 0.394,
+      "total_time": 29.69,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 0.4,
+      "llm": 1
+    },
+    {
+      "idx": 186,
+      "user_id": "eval_186_fd429b7a",
+      "question": "In 2004 the Orange revolution occurred in what country?",
+      "ground_truth": "ukraine",
+      "prediction": "GOOD (answer only):         \"Ukraine\"",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.731397764184456
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.4956418745434835
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.4340691687306577
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.25517306671981965
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.2510141869521186
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.21813312958231584
+        },
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.20268396842305697
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.18999953331644528
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.13985434480450287
+        }
+      ],
+      "add_time": 29.312,
+      "search_time": 0.336,
+      "answer_time": 0.41,
+      "total_time": 30.057,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 187,
+      "user_id": "eval_187_9495e3f1",
+      "question": "Where was the location of the 2003 Rose revolution?",
+      "ground_truth": "georgia",
+      "prediction": "1. Czechoslovakia",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.6180600908956153
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.37974152755720775
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.3271490815986282
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.3007587372256283
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.28902332976725553
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.27039154262984694
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.2538383954095515
+        },
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.20275381183340996
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.17818594189074063
+        }
+      ],
+      "add_time": 27.495,
+      "search_time": 0.322,
+      "answer_time": 0.388,
+      "total_time": 28.206,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 188,
+      "user_id": "eval_188_9388e580",
+      "question": "Which people brought forward one of the earliest examples of Civil Disobedience?",
+      "ground_truth": "egyptians",
+      "prediction": "1",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.6104793507810846
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.42837408475204036
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.39102609677934075
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.38980743786222616
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.34872578392645304
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.2557455465825088
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.25485377970799633
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.2530666123908234
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.24973240449774192
+        }
+      ],
+      "add_time": 27.158,
+      "search_time": 0.301,
+      "answer_time": 0.371,
+      "total_time": 27.831,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 189,
+      "user_id": "eval_189_e1b6e7ab",
+      "question": "Who was one of the earliest examples of Civil Disobedience against?",
+      "ground_truth": "the british",
+      "prediction": "GOOD (answer only):         \"Gandhi\"",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.6292889925656877
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.4280007553085641
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.3965883075715595
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.3749777774883706
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.34440291904093373
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.24983971096167193
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.23555922814816288
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.2335665841996712
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.22221131396227434
+        }
+      ],
+      "add_time": 27.223,
+      "search_time": 0.304,
+      "answer_time": 0.411,
+      "total_time": 27.937,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 190,
+      "user_id": "eval_190_bf28ac4b",
+      "question": "Why do people chose civil disobedience to protest?",
+      "ground_truth": "nonviolent resistance",
+      "prediction": "I don't know",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.7046424411967325
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.4511819258890063
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.3325407155920296
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.32696932048713634
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.2973216935149544
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.2723921466483059
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.26667488819434
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.2379273609943201
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.22906106760497025
+        }
+      ],
+      "add_time": 29.295,
+      "search_time": 0.306,
+      "answer_time": 0.36,
+      "total_time": 29.961,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 191,
+      "user_id": "eval_191_d1be7a19",
+      "question": "What civil rights movement in the US was known for it's disobedience?",
+      "ground_truth": "american civil rights movement",
+      "prediction": "1. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws (relevance: 0.6023408584879313)",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws",
+          "score": 0.6023408584879313
+        },
+        {
+          "memory": "In the American Civil Rights Movement",
+          "score": 0.5015744333427743
+        },
+        {
+          "memory": "It has been used in many non-violent resistance movements in India",
+          "score": 0.39493665835422487
+        },
+        {
+          "memory": "Gandhi's campaigns for independence from the British Empire",
+          "score": 0.35106025617502873
+        },
+        {
+          "memory": "Recently, the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine",
+          "score": 0.2907705546873808
+        },
+        {
+          "memory": "In the Singing Revolution to bring independence to the Baltic countries from the Soviet Union",
+          "score": 0.268914354454907
+        },
+        {
+          "memory": "In South Africa to fight against apartheid",
+          "score": 0.25347501217250945
+        },
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution",
+          "score": 0.24691651033735204
+        },
+        {
+          "memory": "In Czechoslovakia's Velvet Revolution and in East Germany to oust their communist governments",
+          "score": 0.2369444783060308
+        }
+      ],
+      "add_time": 26.652,
+      "search_time": 0.313,
+      "answer_time": 0.529,
+      "total_time": 27.495,
+      "em": 0,
+      "f1": 0.0769,
+      "bleu": 0.0455,
+      "llm": 0
+    },
+    {
+      "idx": 192,
+      "user_id": "eval_192_c8001089",
+      "question": "What health condition can deep sea diving cause?",
+      "ground_truth": "oxygen toxicity",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 20.351,
+      "search_time": 0.46,
+      "answer_time": 0.0,
+      "total_time": 20.811,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 193,
+      "user_id": "eval_193_329acc86",
+      "question": "To what can the use of prolonged breathing of oxygen at 60 kPa lead?",
+      "ground_truth": "permanent pulmonary fibrosis",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 18.981,
+      "search_time": 0.317,
+      "answer_time": 0.0,
+      "total_time": 19.299,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 194,
+      "user_id": "eval_194_4926c464",
+      "question": "What is the most feared condition that divers want to avoid?",
+      "ground_truth": "seizures",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 23.055,
+      "search_time": 0.39,
+      "answer_time": 0.0,
+      "total_time": 23.445,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 195,
+      "user_id": "eval_195_1524ffb1",
+      "question": "What physical condition can acute oxygen toxicity cause?",
+      "ground_truth": "seizures",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 20.34,
+      "search_time": 0.656,
+      "answer_time": 0.0,
+      "total_time": 20.996,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 196,
+      "user_id": "eval_196_f63ba5a7",
+      "question": "Where did Huguenots and Walloons settle in England?",
+      "ground_truth": "canterbury",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 87.47,
+      "search_time": 0.378,
+      "answer_time": 0.0,
+      "total_time": 87.848,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 197,
+      "user_id": "eval_197_4663d3dc",
+      "question": "What house was the site of a weaving school in Canterbury?",
+      "ground_truth": "the weavers",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.143,
+      "search_time": 0.355,
+      "answer_time": 0.0,
+      "total_time": 60.499,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 198,
+      "user_id": "eval_198_8de1304c",
+      "question": "What social construct did Huguenot refugees in Canterbury practice?",
+      "ground_truth": "economic separation",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.848,
+      "search_time": 0.322,
+      "answer_time": 0.0,
+      "total_time": 60.17,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 199,
+      "user_id": "eval_199_dd6d6424",
+      "question": "What is located on the site of The Weaving House currently?",
+      "ground_truth": "restaurant",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.602,
+      "search_time": 0.333,
+      "answer_time": 0.0,
+      "total_time": 58.936,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    }
+  ]
+}

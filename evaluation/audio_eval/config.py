@@ -85,9 +85,15 @@ LLM_JUDGE_MODEL = None           # None = "gpt-4o-mini". Examples: "qwen2.5", "l
 # EMBEDDER
 # =============================================================================
 
+# Option 1: OpenAI embeddings (requires API key)
 EMBEDDER_PROVIDER = "openai"
 EMBEDDER_MODEL = "text-embedding-3-small"
 EMBEDDING_DIMS = 1536            # 1536 for text-embedding-3-small, 3072 for text-embedding-3-large
+
+# Option 2: Local HuggingFace embeddings (no API key, runs locally)
+# EMBEDDER_PROVIDER = "huggingface"
+# EMBEDDER_MODEL = "sentence-transformers/all-MiniLM-L6-v2"  # or "multi-qa-MiniLM-L6-cos-v1"
+# EMBEDDING_DIMS = 384             # all-MiniLM-L6-v2 outputs 384-dim vectors
 
 # =============================================================================
 # VECTOR STORE

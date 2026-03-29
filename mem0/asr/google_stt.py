@@ -80,6 +80,65 @@ class GoogleSTTASR(ASRBase):
         }
         return encoding_map.get(format.lower(), self.speech.RecognitionConfig.AudioEncoding.LINEAR16)
 
+    def _transcribe_long_audio_chunked(
+        self,
+        audio_bytes: bytes,
+        config,
+        sample_rate: int,
+        chunk_duration: int = 50,
+    ) -> str:
+        """
+        Transcribe long audio by chunking it into smaller segments.
+        
+        Args:
+            audio_bytes: Raw audio bytes (16-bit PCM)
+            config: Google Speech RecognitionConfig
+            sample_rate: Audio sample rate
+            chunk_duration: Duration of each chunk in seconds (default: 50s)
+            
+        Returns:
+            str: Transcribed text from all chunks
+        """
+        bytes_per_sample = 2  # 16-bit audio
+        num_channels = 1  # mono
+        bytes_per_second = sample_rate * bytes_per_sample * num_channels
+        chunk_size_bytes = chunk_duration * bytes_per_second
+        
+        transcripts = []
+        total_chunks = (len(audio_bytes) + chunk_size_bytes - 1) // chunk_size_bytes
+        
+        logger.info(f"Splitting audio into {total_chunks} chunks of {chunk_duration}s each")
+        
+        for i in range(0, len(audio_bytes), chunk_size_bytes):
+            chunk = audio_bytes[i:i + chunk_size_bytes]
+            chunk_num = i // chunk_size_bytes + 1
+            
+            logger.debug(f"Transcribing chunk {chunk_num}/{total_chunks} ({len(chunk)} bytes)")
+            
+            # Create audio object for this chunk
+            audio_obj = self.speech.RecognitionAudio(content=chunk)
+            
+            try:
+                # Perform synchronous recognition on chunk
+                response = self.client.recognize(config=config, audio=audio_obj)
+                
+                # Extract text from results
+                chunk_text = []
+                for result in response.results:
+                    if result.alternatives:
+                        chunk_text.append(result.alternatives[0].transcript)
+                
+                chunk_transcript = " ".join(chunk_text).strip()
+                if chunk_transcript:
+                    transcripts.append(chunk_transcript)
+                    logger.debug(f"Chunk {chunk_num} transcript: {chunk_transcript[:100]}...")
+                    
+            except Exception as e:
+                logger.error(f"Error transcribing chunk {chunk_num}: {e}")
+                # Continue with other chunks
+                
+        return " ".join(transcripts).strip()
+
     def transcribe(
         self,
         audio: Union[str, bytes, "np.ndarray", Dict[str, Any], AudioInput],
@@ -88,6 +147,7 @@ class GoogleSTTASR(ASRBase):
     ) -> str:
         """
         Transcribe audio using Google Cloud Speech-to-Text.
+        Automatically uses long_running_recognize for audio > 60 seconds.
 
         Args:
             audio: Audio input (file path, URL, bytes, numpy array, etc.)
@@ -103,6 +163,16 @@ class GoogleSTTASR(ASRBase):
             # Get audio content
             audio_bytes = audio_input.get_audio_bytes()
 
+            # Check audio duration (Google STT has 60s limit for synchronous recognize)
+            # Calculate duration: num_bytes / (sample_rate * bytes_per_sample * num_channels)
+            # Assuming 16-bit audio (2 bytes per sample) and mono (1 channel)
+            sample_rate = audio_input.sample_rate or self.config.sample_rate
+            bytes_per_sample = 2  # 16-bit audio
+            num_channels = 1  # mono audio (AudioInput converts to mono)
+            duration_seconds = len(audio_bytes) / (sample_rate * bytes_per_sample * num_channels)
+            
+            logger.debug(f"Audio duration: {duration_seconds:.1f}s (bytes={len(audio_bytes)}, rate={sample_rate})")
+            
             # Determine encoding from source
             source_type = audio_input.source_type
             if source_type == "file":
@@ -139,16 +209,27 @@ class GoogleSTTASR(ASRBase):
             # Create audio object
             audio_obj = self.speech.RecognitionAudio(content=audio_bytes)
 
-            # Perform recognition
-            response = self.client.recognize(config=config, audio=audio_obj)
+            # Choose recognition method based on duration
+            # Use 59s threshold (1s safety margin) to avoid edge cases
+            if duration_seconds > 59:
+                logger.warning(
+                    f"Audio duration ({duration_seconds:.1f}s) exceeds Google STT's 60s limit for inline audio. "
+                    f"Chunking audio into segments for processing."
+                )
+                # Chunk audio into 50-second segments (with 10s safety margin)
+                return self._transcribe_long_audio_chunked(audio_bytes, config, sample_rate)
+            else:
+                # Perform synchronous recognition for short audio
+                logger.debug(f"Using synchronous recognize for {duration_seconds:.1f}s audio")
+                response = self.client.recognize(config=config, audio=audio_obj)
 
-            # Extract text from results
-            texts = []
-            for result in response.results:
-                if result.alternatives:
-                    texts.append(result.alternatives[0].transcript)
+                # Extract text from results
+                texts = []
+                for result in response.results:
+                    if result.alternatives:
+                        texts.append(result.alternatives[0].transcript)
 
-            return " ".join(texts).strip()
+                return " ".join(texts).strip()
 
         finally:
             audio_input.cleanup()

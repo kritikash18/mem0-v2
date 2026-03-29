@@ -1,0 +1,81 @@
+{
+  "config": {
+    "framework": "cognee",
+    "experiment": "default",
+    "dataset": "byteCode18/spoken-squad-1k-memory-eval",
+    "cognee_llm": "openai/gpt-4o-mini",
+    "cognee_embedding": "openai/text-embedding-3-small",
+    "search_type": "GRAPH_COMPLETION",
+    "answer_llm": "openai/gpt-4o-mini",
+    "top_k": 5
+  },
+  "summary": {
+    "count": 1,
+    "em_mean": 0,
+    "em_std": 0.0,
+    "em_min": 0,
+    "em_max": 0,
+    "f1_mean": 0.6667,
+    "f1_std": 0.0,
+    "f1_min": 0.6667,
+    "f1_max": 0.6667,
+    "bleu_mean": 0.2857,
+    "bleu_std": 0.0,
+    "bleu_min": 0.2857,
+    "bleu_max": 0.2857,
+    "llm_mean": 1,
+    "llm_std": 0.0,
+    "llm_min": 1,
+    "llm_max": 1,
+    "total_time_mean": 96.585,
+    "total_time_std": 0.0,
+    "total_time_min": 96.585,
+    "total_time_max": 96.585,
+    "search_time_mean": 3.965,
+    "search_time_std": 0.0,
+    "search_time_min": 3.965,
+    "search_time_max": 3.965,
+    "answer_time_mean": 0.746,
+    "answer_time_std": 0.0,
+    "answer_time_min": 0.746,
+    "answer_time_max": 0.746,
+    "em_correct": 0,
+    "em_pct": 0.0,
+    "llm_correct": 1,
+    "llm_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 1,
+      "above_80": 0
+    },
+    "bleu": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 0,
+      "above_80": 0
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "question": "What does UMC stand for?",
+      "ground_truth": "united methodist church",
+      "prediction": "UMC stands for the United Methodist Church.",
+      "num_results": 1,
+      "search_results_preview": "1. {'dataset_id': UUID('6b3d8486-5abf-5561-bf33-699aaee73341'), 'dataset_name': 'eval_doc', 'dataset_tenant_id': None, 'search_result': ['UMC stands for the United Methodist Church.']}",
+      "cognify_time": 91.874,
+      "search_time": 3.965,
+      "answer_time": 0.746,
+      "total_time": 96.585,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.2857,
+      "llm": 1
+    }
+  ]
+}

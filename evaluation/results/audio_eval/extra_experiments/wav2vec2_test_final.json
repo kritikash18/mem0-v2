@@ -1,0 +1,118 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "wav2vec2_test",
+    "dataset": "byteCode18/spoken-squad-1k-memory-eval",
+    "asr": "local/facebook/wav2vec2-base-960h",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": true
+  },
+  "summary": {
+    "count": 1,
+    "em_mean": 0,
+    "em_std": 0.0,
+    "em_min": 0,
+    "em_max": 0,
+    "f1_mean": 0.6667,
+    "f1_std": 0.0,
+    "f1_min": 0.6667,
+    "f1_max": 0.6667,
+    "bleu_mean": 0.3333,
+    "bleu_std": 0.0,
+    "bleu_min": 0.3333,
+    "bleu_max": 0.3333,
+    "llm_mean": 1,
+    "llm_std": 0.0,
+    "llm_min": 1,
+    "llm_max": 1,
+    "total_time_mean": 18.698,
+    "total_time_std": 0.0,
+    "total_time_min": 18.698,
+    "total_time_max": 18.698,
+    "add_time_mean": 17.59,
+    "add_time_std": 0.0,
+    "add_time_min": 17.59,
+    "add_time_max": 17.59,
+    "search_time_mean": 0.295,
+    "search_time_std": 0.0,
+    "search_time_min": 0.295,
+    "search_time_max": 0.295,
+    "answer_time_mean": 0.813,
+    "answer_time_std": 0.0,
+    "answer_time_min": 0.813,
+    "answer_time_max": 0.813,
+    "em_correct": 0,
+    "em_pct": 0.0,
+    "llm_correct": 1,
+    "llm_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 1,
+      "above_80": 0
+    },
+    "bleu": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 0,
+      "above_80": 0
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_6d9b3875",
+      "question": "What does UMC stand for?",
+      "ground_truth": "united methodist church",
+      "prediction": "UMC stands for United Methodist Church.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "UMC was founded in 1968 by the union of the Methodist Church (USA) and the Evangelical United Brethren Church",
+          "score": 0.6432029214730798
+        },
+        {
+          "memory": "In the nineteenth century, UMC's main predecessor was a leader in evangelicalism",
+          "score": 0.6419669693712855
+        },
+        {
+          "memory": "The United Methodist Church (UMC) is a mainline Protestant Methodist denomination",
+          "score": 0.6050261713250951
+        },
+        {
+          "memory": "UMC embraces both liturgical and evangelical elements",
+          "score": 0.5089618420238606
+        },
+        {
+          "memory": "UMC traces its roots back to the revival movement of John and Charles Wesley in England",
+          "score": 0.5028629902284859
+        },
+        {
+          "memory": "UMC traces its roots back to the Great Awakening in the United States",
+          "score": 0.49727116330562043
+        },
+        {
+          "memory": "The church's theological orientation is decidedly Wesleyan",
+          "score": 0.33737826460611875
+        }
+      ],
+      "add_time": 17.59,
+      "search_time": 0.295,
+      "answer_time": 0.813,
+      "total_time": 18.698,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.3333,
+      "llm": 1
+    }
+  ]
+}

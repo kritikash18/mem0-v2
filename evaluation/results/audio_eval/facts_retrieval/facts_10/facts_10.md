@@ -10,7 +10,7 @@
 | llm | `openai/gpt-4o-mini` |
 | embedder | `openai/text-embedding-3-small` |
 | judge | `openai/gpt-4o-mini` |
-| top_k | `10` |
+| facts | `10` |
 
 ## Accuracy
 

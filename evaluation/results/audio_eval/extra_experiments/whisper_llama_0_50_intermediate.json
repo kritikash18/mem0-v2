@@ -1,0 +1,2204 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "whisper_llama_0_50",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "ollama/llama3.2",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "ollama/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false
+  },
+  "summary": {
+    "count": 50,
+    "em_mean": 0.44,
+    "em_std": 0.5014,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.5657,
+    "f1_std": 0.4453,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.5455,
+    "bleu_std": 0.4598,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 36.2501,
+    "total_time_std": 17.7807,
+    "total_time_min": 12.493,
+    "total_time_max": 74.137,
+    "add_time_mean": 35.0751,
+    "add_time_std": 18.0659,
+    "add_time_min": 11.346,
+    "add_time_max": 73.756,
+    "search_time_mean": 0.4019,
+    "search_time_std": 0.1442,
+    "search_time_min": 0.245,
+    "search_time_max": 0.964,
+    "answer_time_mean": 0.7733,
+    "answer_time_std": 0.3725,
+    "answer_time_min": 0.0,
+    "answer_time_max": 1.2,
+    "em_correct": 22,
+    "em_pct": 44.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 50,
+      "zero": 16,
+      "perfect": 22,
+      "above_50": 31,
+      "above_80": 23
+    },
+    "bleu": {
+      "total": 50,
+      "zero": 16,
+      "perfect": 24,
+      "above_50": 26,
+      "above_80": 24
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_27b53d7f",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "Trust in God's Word.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Luther wrote to the Elector saying Satan had entered his sheepfold and committed ravages",
+          "score": 0.5291666225233763
+        },
+        {
+          "memory": "The Invocavit Sermons reminded citizens to trust God's Word rather than violence to bring about change",
+          "score": 0.48067258098853344
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.4712220792663369
+        },
+        {
+          "memory": "The Invocavit Sermons were preached by Luther for eight days starting on 9 March 1522",
+          "score": 0.4518970009865174
+        },
+        {
+          "memory": "Luther preached eight sermons in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.4296584997293068
+        },
+        {
+          "memory": "The Invocavit Sermons emphasized core Christian values such as love, patience, charity, and freedom",
+          "score": 0.31980889833536885
+        },
+        {
+          "memory": "The Invocavit Sermons became known as the 'Invocavit Sermons'",
+          "score": 0.20814105377906092
+        }
+      ],
+      "add_time": 27.381,
+      "search_time": 0.651,
+      "answer_time": 0.963,
+      "total_time": 28.995,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_3617f062",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "Preached eight sermons.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Luther preached eight sermons in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.6937831284243205
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.6352110213852471
+        },
+        {
+          "memory": "The Invocavit Sermons were preached by Luther for eight days starting on 9 March 1522",
+          "score": 0.6125256596145503
+        },
+        {
+          "memory": "Luther wrote to the Elector saying Satan had entered his sheepfold and committed ravages",
+          "score": 0.5124528706347903
+        },
+        {
+          "memory": "The Invocavit Sermons emphasized core Christian values such as love, patience, charity, and freedom",
+          "score": 0.30715992508379764
+        },
+        {
+          "memory": "The Invocavit Sermons became known as the 'Invocavit Sermons'",
+          "score": 0.29537681802284915
+        },
+        {
+          "memory": "The Invocavit Sermons reminded citizens to trust God's Word rather than violence to bring about change",
+          "score": 0.29019412768398084
+        }
+      ],
+      "add_time": 25.966,
+      "search_time": 0.383,
+      "answer_time": 0.966,
+      "total_time": 27.314,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_272cb162",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "Trust God's Word.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Invocavit Sermons reminded citizens to trust God's Word rather than violence to bring about change",
+          "score": 0.5029801933764455
+        },
+        {
+          "memory": "Luther wrote to the Elector saying Satan had entered his sheepfold and committed ravages",
+          "score": 0.5027482903876681
+        },
+        {
+          "memory": "Luther preached eight sermons in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.4823769227264759
+        },
+        {
+          "memory": "The Invocavit Sermons were preached by Luther for eight days starting on 9 March 1522",
+          "score": 0.4811323297265315
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.4626461853465473
+        },
+        {
+          "memory": "The Invocavit Sermons emphasized core Christian values such as love, patience, charity, and freedom",
+          "score": 0.3652891053158266
+        },
+        {
+          "memory": "The Invocavit Sermons became known as the 'Invocavit Sermons'",
+          "score": 0.2545566290410687
+        }
+      ],
+      "add_time": 24.178,
+      "search_time": 0.286,
+      "answer_time": 0.952,
+      "total_time": 25.416,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_e1f06bf0",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "French irregular forces, Canadian scouts, and Indians.",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.7832104729969882
+        },
+        {
+          "memory": "In January 1757, they ambushed British Rangers near Ticonderoga",
+          "score": 0.6466174295803083
+        },
+        {
+          "memory": "In February 1757, they launched a daring raid against the position across the frozen Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.6405322701765791
+        },
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged the fort",
+          "score": 0.5840055644262229
+        },
+        {
+          "memory": "When the withdrawal began, some of Montcalm's Indian allies, angered at the lost opportunity for loot, attacked the British column, killing and capturing several hundred men, women, children, and slaves",
+          "score": 0.4593081851889418
+        },
+        {
+          "memory": "Some Indians were reported to have traveled from beyond the Mississippi to participate in the campaign and returned afterward having been exposed to European carriers",
+          "score": 0.34815436434654545
+        },
+        {
+          "memory": "The fort capitulated with an agreement to withdraw under parole",
+          "score": 0.2720655999683684
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.2477785108676791
+        }
+      ],
+      "add_time": 30.708,
+      "search_time": 0.362,
+      "answer_time": 1.065,
+      "total_time": 32.135,
+      "em": 0,
+      "f1": 0.6,
+      "bleu": 0.2857
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_411c71bb",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "Lake George",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "In February 1757, they launched a daring raid against the position across the frozen Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.5581532322487756
+        },
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.5341938621575737
+        },
+        {
+          "memory": "In January 1757, they ambushed British Rangers near Ticonderoga",
+          "score": 0.4648583819424458
+        },
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged the fort",
+          "score": 0.41607542011110965
+        },
+        {
+          "memory": "When the withdrawal began, some of Montcalm's Indian allies, angered at the lost opportunity for loot, attacked the British column, killing and capturing several hundred men, women, children, and slaves",
+          "score": 0.3290561128638217
+        },
+        {
+          "memory": "The fort capitulated with an agreement to withdraw under parole",
+          "score": 0.2936336057866869
+        },
+        {
+          "memory": "Some Indians were reported to have traveled from beyond the Mississippi to participate in the campaign and returned afterward having been exposed to European carriers",
+          "score": 0.2475026025326042
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.14227093359674473
+        }
+      ],
+      "add_time": 30.267,
+      "search_time": 0.314,
+      "answer_time": 1.002,
+      "total_time": 31.583,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_6c618524",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "Guidance and intervention",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The people of these climates were believed to be in need of guidance and intervention from the European Empire",
+          "score": 0.6417054189326549
+        },
+        {
+          "memory": "Tropical climates yielded lazy attitudes, sexual promiscuity, exotic culture, and moral degeneracy",
+          "score": 0.4589195717769406
+        },
+        {
+          "memory": "The people of these climates were seen as incapable of achieving a more evolved social structure",
+          "score": 0.44321334932582673
+        },
+        {
+          "memory": "The world can be divided into climatic zones according to geographic scholars under colonizing empires",
+          "score": 0.34642139059230465
+        },
+        {
+          "memory": "Northern Europe and the mid-Atlantic temperate climate produced a hard-working, moral, and upstanding human being",
+          "score": 0.28018330278647274
+        },
+        {
+          "memory": "Orientalism is a view of a people based on their geographical location",
+          "score": 0.2776786406854722
+        }
+      ],
+      "add_time": 23.004,
+      "search_time": 0.337,
+      "answer_time": 0.932,
+      "total_time": 24.273,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_9d2088d6",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "Electronics Manufacturer Radio Corporation of America, RCA",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "The National Broadcasting Company, NBC, was owned by Electronics Manufacturer Radio Corporation of America, RCA",
+          "score": 0.6469933452191824
+        },
+        {
+          "memory": "The NBC Blue network was created in 1927",
+          "score": 0.6113882325473334
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies",
+          "score": 0.5805866524691696
+        },
+        {
+          "memory": "The three companies were the Columbia Broadcasting System, CBS, the Mutual Broadcasting System, and the National Broadcasting Company, NBC",
+          "score": 0.5794742915573509
+        },
+        {
+          "memory": "The NBC Red network served the major cities",
+          "score": 0.5400216752706686
+        },
+        {
+          "memory": "The NBC Red network served the major cities and was created to test drama series",
+          "score": 0.517360016041691
+        },
+        {
+          "memory": "The NBC Blue network was created for the primary purpose of testing new programs on markets of lesser importance",
+          "score": 0.48059625657361593
+        },
+        {
+          "memory": "The NBC Blue network was created to test drama series",
+          "score": 0.4678628554879375
+        },
+        {
+          "memory": "RCA owned two radio networks that each ran different varieties of programming",
+          "score": 0.45985669599991275
+        }
+      ],
+      "add_time": 26.765,
+      "search_time": 0.432,
+      "answer_time": 1.012,
+      "total_time": 28.21,
+      "em": 0,
+      "f1": 0.7273,
+      "bleu": 0.4286
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_90903155",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "Major cities",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "The NBC Red network served the major cities",
+          "score": 0.7920506856707171
+        },
+        {
+          "memory": "The NBC Red network served the major cities and was created to test drama series",
+          "score": 0.7454392475296618
+        },
+        {
+          "memory": "The NBC Blue network was created for the primary purpose of testing new programs on markets of lesser importance",
+          "score": 0.6568524984435884
+        },
+        {
+          "memory": "The NBC Blue network was created in 1927",
+          "score": 0.5741772430944573
+        },
+        {
+          "memory": "The NBC Blue network was created to test drama series",
+          "score": 0.5644355123306165
+        },
+        {
+          "memory": "The National Broadcasting Company, NBC, was owned by Electronics Manufacturer Radio Corporation of America, RCA",
+          "score": 0.5289862644958734
+        },
+        {
+          "memory": "RCA owned two radio networks that each ran different varieties of programming",
+          "score": 0.5144149994796781
+        },
+        {
+          "memory": "The three companies were the Columbia Broadcasting System, CBS, the Mutual Broadcasting System, and the National Broadcasting Company, NBC",
+          "score": 0.5133543161615781
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies",
+          "score": 0.4194628507198971
+        }
+      ],
+      "add_time": 28.743,
+      "search_time": 0.314,
+      "answer_time": 0.937,
+      "total_time": 29.994,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_b5777bfb",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "NBC Blue",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "The NBC Blue network was created for the primary purpose of testing new programs on markets of lesser importance",
+          "score": 0.6857098832511264
+        },
+        {
+          "memory": "The NBC Red network served the major cities and was created to test drama series",
+          "score": 0.6805067074767608
+        },
+        {
+          "memory": "The NBC Blue network was created to test drama series",
+          "score": 0.6701898339222669
+        },
+        {
+          "memory": "The NBC Red network served the major cities",
+          "score": 0.5669211955364628
+        },
+        {
+          "memory": "RCA owned two radio networks that each ran different varieties of programming",
+          "score": 0.5537960307301035
+        },
+        {
+          "memory": "The NBC Blue network was created in 1927",
+          "score": 0.5287061444662611
+        },
+        {
+          "memory": "The three companies were the Columbia Broadcasting System, CBS, the Mutual Broadcasting System, and the National Broadcasting Company, NBC",
+          "score": 0.5177935216618466
+        },
+        {
+          "memory": "The National Broadcasting Company, NBC, was owned by Electronics Manufacturer Radio Corporation of America, RCA",
+          "score": 0.5169004686713019
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies",
+          "score": 0.47944279199455897
+        }
+      ],
+      "add_time": 28.002,
+      "search_time": 0.293,
+      "answer_time": 0.937,
+      "total_time": 29.233,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 1.0
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_0f77ef3b",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 71.324,
+      "search_time": 0.375,
+      "answer_time": 0.0,
+      "total_time": 71.7,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_0c39489c",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "Rugby",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is particularly popular at the high school level in Southern California",
+          "score": 0.6355815004838095
+        },
+        {
+          "memory": "Rugby is a growing sport",
+          "score": 0.4605669006487223
+        },
+        {
+          "memory": "Increasing numbers of schools are adding rugby as an official school sport",
+          "score": 0.33782615197413624
+        }
+      ],
+      "add_time": 11.43,
+      "search_time": 0.274,
+      "answer_time": 0.789,
+      "total_time": 12.493,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_d666067b",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "High school",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport",
+          "score": 0.5089779995400319
+        },
+        {
+          "memory": "Increasing numbers of schools are adding rugby as an official school sport",
+          "score": 0.49214780054935
+        },
+        {
+          "memory": "Rugby is particularly popular at the high school level in Southern California",
+          "score": 0.47356395230562975
+        }
+      ],
+      "add_time": 11.346,
+      "search_time": 0.466,
+      "answer_time": 0.779,
+      "total_time": 12.591,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_507954d4",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "A growing sport",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Increasing numbers of schools are adding rugby as an official school sport",
+          "score": 0.6778853856512219
+        },
+        {
+          "memory": "Rugby is a growing sport",
+          "score": 0.6568909308293849
+        },
+        {
+          "memory": "Rugby is particularly popular at the high school level in Southern California",
+          "score": 0.6523340629964555
+        }
+      ],
+      "add_time": 11.663,
+      "search_time": 0.245,
+      "answer_time": 0.793,
+      "total_time": 12.701,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_d52ee0ba",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7760631673971434
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine\u2014Old Rhine",
+          "score": 0.6162100391287382
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.6146048076351014
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.5634533950454022
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.44300779388943434
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, Hochst, and Fussach",
+          "score": 0.40016742947241074
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2973365199862871
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced \u00abesel\u00bb",
+          "score": 0.20776384173487192
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is also \u00abesel\u00bb",
+          "score": 0.1601626087413816
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is used in the official name of many local fields",
+          "score": 0.1414806685645794
+        }
+      ],
+      "add_time": 28.948,
+      "search_time": 0.533,
+      "answer_time": 0.978,
+      "total_time": 30.459,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_7ae00464",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "Donkey",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.5945931928373003
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.4662886863671801
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.433888452766744
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine\u2014Old Rhine",
+          "score": 0.4261240915747828
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is also \u00abesel\u00bb",
+          "score": 0.3406016674867022
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced \u00abesel\u00bb",
+          "score": 0.32544203034674474
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is used in the official name of many local fields",
+          "score": 0.3022123728865293
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, Hochst, and Fussach",
+          "score": 0.26832048731244024
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2421645606923276
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.16995139495840594
+        }
+      ],
+      "add_time": 30.149,
+      "search_time": 0.269,
+      "answer_time": 0.965,
+      "total_time": 31.382,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_7cfe8e89",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7646760908310888
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine\u2014Old Rhine",
+          "score": 0.6407734811212524
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.5905814736559429
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.5537796910692672
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, Hochst, and Fussach",
+          "score": 0.4098373446093079
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.4093897836538142
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2986027726031518
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced \u00abesel\u00bb",
+          "score": 0.23624298442826552
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is also \u00abesel\u00bb",
+          "score": 0.19460283957945373
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is used in the official name of many local fields",
+          "score": 0.15517062543134086
+        }
+      ],
+      "add_time": 31.639,
+      "search_time": 0.299,
+      "answer_time": 0.982,
+      "total_time": 32.92,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_ff84d8ef",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "Islands",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.615008758053993
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.5221024313254472
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, Hochst, and Fussach",
+          "score": 0.5012950628741089
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.49600650043920813
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine\u2014Old Rhine",
+          "score": 0.4931278334500009
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.2480898942876904
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced \u00abesel\u00bb",
+          "score": 0.22433046823481284
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.13258499051149894
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is also \u00abesel\u00bb",
+          "score": 0.12456536223116738
+        },
+        {
+          "memory": "The local pronunciation of \"donkey\" is used in the official name of many local fields",
+          "score": 0.1134944974599032
+        }
+      ],
+      "add_time": 29.719,
+      "search_time": 0.252,
+      "answer_time": 0.983,
+      "total_time": 30.954,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 1.0
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_036c1504",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 72.661,
+      "search_time": 0.371,
+      "answer_time": 0.0,
+      "total_time": 73.031,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_44d8248a",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 71.921,
+      "search_time": 0.301,
+      "answer_time": 0.0,
+      "total_time": 72.222,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_c3f592ec",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 70.145,
+      "search_time": 0.541,
+      "answer_time": 0.0,
+      "total_time": 70.686,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_f68c298e",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 68.433,
+      "search_time": 0.313,
+      "answer_time": 0.0,
+      "total_time": 68.745,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_b22318e7",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "Ancient Greece",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Forces have magnitude and direction",
+          "score": 0.44488479714845636
+        },
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.43763192843703524
+        },
+        {
+          "memory": "The resultant force, also called the net force, can be determined by following the parallelogram rule of vector addition",
+          "score": 0.29515213827855225
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.2832362154097823
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.10708527287533526
+        }
+      ],
+      "add_time": 27.535,
+      "search_time": 0.698,
+      "answer_time": 0.888,
+      "total_time": 29.121,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_c712fd9f",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "Vector quantities",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.780613916855732
+        },
+        {
+          "memory": "Forces have magnitude and direction",
+          "score": 0.5273551111292822
+        },
+        {
+          "memory": "The resultant force, also called the net force, can be determined by following the parallelogram rule of vector addition",
+          "score": 0.48836507623500364
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.47428612962804306
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.3786286002007664
+        }
+      ],
+      "add_time": 25.472,
+      "search_time": 0.313,
+      "answer_time": 0.87,
+      "total_time": 26.655,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_0b1378b0",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "Net force",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The resultant force, also called the net force, can be determined by following the parallelogram rule of vector addition",
+          "score": 0.6762612784146775
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.6404421666449095
+        },
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.5423625346463081
+        },
+        {
+          "memory": "Forces have magnitude and direction",
+          "score": 0.5070290906220631
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.4401012571740808
+        }
+      ],
+      "add_time": 24.546,
+      "search_time": 0.549,
+      "answer_time": 0.88,
+      "total_time": 25.975,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_90aae8f6",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "Inertia",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.4587644933245083
+        },
+        {
+          "memory": "Forces have magnitude and direction",
+          "score": 0.4431975101874549
+        },
+        {
+          "memory": "The resultant force, also called the net force, can be determined by following the parallelogram rule of vector addition",
+          "score": 0.39597500546500863
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum, depending on the angle between their lines of action",
+          "score": 0.38098016539359103
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.25728181674463513
+        }
+      ],
+      "add_time": 23.687,
+      "search_time": 0.542,
+      "answer_time": 0.879,
+      "total_time": 25.107,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_ee8f32f8",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "October 1973",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.9099522893213835
+        },
+        {
+          "memory": "The 1973 oil crisis ended in March 1974",
+          "score": 0.7892852594061315
+        },
+        {
+          "memory": "The 1979 oil crisis followed the 1973 oil crisis",
+          "score": 0.73635314039548
+        },
+        {
+          "memory": "The 1973 oil crisis was caused by an oil embargo proclaimed by OAPEC",
+          "score": 0.732919478008241
+        },
+        {
+          "memory": "The 1973 oil crisis had significant effects on global politics and the global economy",
+          "score": 0.7288201839775321
+        },
+        {
+          "memory": "The 1973 oil crisis was later called the 'first oil shock'",
+          "score": 0.7222096585464308
+        },
+        {
+          "memory": "The price of oil rose from $3 per barrel to nearly $12 globally by the end of the embargo",
+          "score": 0.47777431460136194
+        }
+      ],
+      "add_time": 24.352,
+      "search_time": 0.287,
+      "answer_time": 0.902,
+      "total_time": 25.541,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_b815d98f",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "First oil shock",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis was later called the 'first oil shock'",
+          "score": 0.6419768950019845
+        },
+        {
+          "memory": "The 1973 oil crisis was caused by an oil embargo proclaimed by OAPEC",
+          "score": 0.6109152720267528
+        },
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.6101424025758246
+        },
+        {
+          "memory": "The 1979 oil crisis followed the 1973 oil crisis",
+          "score": 0.5854059851577043
+        },
+        {
+          "memory": "The 1973 oil crisis had significant effects on global politics and the global economy",
+          "score": 0.5754991163721059
+        },
+        {
+          "memory": "The 1973 oil crisis ended in March 1974",
+          "score": 0.550937382276791
+        },
+        {
+          "memory": "The price of oil rose from $3 per barrel to nearly $12 globally by the end of the embargo",
+          "score": 0.45052021665080766
+        }
+      ],
+      "add_time": 24.196,
+      "search_time": 0.54,
+      "answer_time": 0.922,
+      "total_time": 25.657,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_6ab28e97",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "Peanuts",
+      "num_memories_added": 20,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "ABC currently holds the television rights to most of the Peanuts television specials",
+          "score": 0.5754056345205139
+        },
+        {
+          "memory": "ABC acquired the broadcast rights to the Peanuts specials from CBS",
+          "score": 0.5441161287032585
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include A Charlie Brown Thanksgiving",
+          "score": 0.5142879336653838
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Disney Parks Christmas Day Parade",
+          "score": 0.49705702346530267
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Emmy Awards",
+          "score": 0.4890504390000443
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards",
+          "score": 0.47832000550911935
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include It's the Great Pumpkin, Charlie Brown",
+          "score": 0.47694878628834625
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the American Music Awards",
+          "score": 0.4499968721597697
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Tournament of Roses Parade",
+          "score": 0.44850514609740716
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the CMA Music Festival",
+          "score": 0.4197126120280973
+        }
+      ],
+      "add_time": 50.431,
+      "search_time": 0.726,
+      "answer_time": 0.983,
+      "total_time": 52.14,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_02045a75",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "Academy Awards",
+      "num_memories_added": 20,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards",
+          "score": 0.7199313055742371
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Emmy Awards",
+          "score": 0.7003159959788192
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the American Music Awards",
+          "score": 0.6285558275994104
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Country Music Association Awards",
+          "score": 0.609898800240529
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the CMA Music Festival",
+          "score": 0.5635281955470373
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Disney Parks Christmas Day Parade",
+          "score": 0.5605346291211115
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Tournament of Roses Parade",
+          "score": 0.5574278955064322
+        },
+        {
+          "memory": "ABC currently holds the television rights to most of the Peanuts television specials",
+          "score": 0.5269720899549626
+        },
+        {
+          "memory": "The Emmy Awards are rotated across all four major networks on a year-to-year basis",
+          "score": 0.49570919529656166
+        },
+        {
+          "memory": "The American Music Awards are rotated across all four major networks on a year-to-year basis",
+          "score": 0.46261960641130684
+        }
+      ],
+      "add_time": 48.557,
+      "search_time": 0.492,
+      "answer_time": 0.983,
+      "total_time": 50.032,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_85b8d9d4",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "No",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.8457829019094005
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access to BSKYB's EPG for a fee",
+          "score": 0.6675473518110847
+        },
+        {
+          "memory": "BSKYB does not carry control over the channel's content",
+          "score": 0.6437086507004166
+        },
+        {
+          "memory": "BSKYB does not carry control over carriage issues such as picture quality",
+          "score": 0.5760160455387977
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts on EPG entries",
+          "score": 0.5250041662713575
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.46704503862310026
+        },
+        {
+          "memory": "Free carriage on a BSKYB leased transponder is available",
+          "score": 0.44014216131590733
+        },
+        {
+          "memory": "The fee for EPG access ranges from \u00a315,000 to \u00a3100,000",
+          "score": 0.361905825704455
+        },
+        {
+          "memory": "Discounts for encryption include reduced prices to free EPG entries",
+          "score": 0.35883993062151975
+        },
+        {
+          "memory": "Actual payment for carriage is also available",
+          "score": 0.20799734529760527
+        }
+      ],
+      "add_time": 30.737,
+      "search_time": 0.31,
+      "answer_time": 1.049,
+      "total_time": 32.095,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_d60732ab",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "BSkyB does not have control over the channel's content",
+          "score": 0.8357737691179511
+        },
+        {
+          "memory": "BSkyB does not have control over carriage issues such as picture quality",
+          "score": 0.7100224265775499
+        },
+        {
+          "memory": "BSkyB has no veto over the presence of channels on their EPG",
+          "score": 0.7049932091202611
+        },
+        {
+          "memory": "Open access is an enforced part of BSkyB's operating license from Ofcom",
+          "score": 0.6494671672422807
+        },
+        {
+          "memory": "Free carriage on a BSkyB leased transponder or actual payment for carriage are available",
+          "score": 0.5815628806706612
+        },
+        {
+          "memory": "Access to BSkyB's EPG for a fee ranges from \u00a315 to \u00a3100,000",
+          "score": 0.5603312563295976
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0E is entitled to",
+          "score": 0.4771600185875812
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts ranging from reduced prices to free EPG entries",
+          "score": 0.3873084777702979
+        }
+      ],
+      "add_time": 25.984,
+      "search_time": 0.332,
+      "answer_time": 0.953,
+      "total_time": 27.269,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_efdff7af",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "BSKYB does not carry control over carriage issues such as picture quality.",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB does not carry control over carriage issues such as picture quality",
+          "score": 0.7640233524576594
+        },
+        {
+          "memory": "BSKYB does not carry control over the channel's content",
+          "score": 0.6854287903364868
+        },
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.6281696261723966
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access to BSKYB's EPG for a fee",
+          "score": 0.591598788001249
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.4435780128488451
+        },
+        {
+          "memory": "Free carriage on a BSKYB leased transponder is available",
+          "score": 0.40820384281767086
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts on EPG entries",
+          "score": 0.39492254854217623
+        },
+        {
+          "memory": "Discounts for encryption include reduced prices to free EPG entries",
+          "score": 0.23936576657746073
+        },
+        {
+          "memory": "The fee for EPG access ranges from \u00a315,000 to \u00a3100,000",
+          "score": 0.23703874738129063
+        },
+        {
+          "memory": "Actual payment for carriage is also available",
+          "score": 0.19555784335220272
+        }
+      ],
+      "add_time": 30.4,
+      "search_time": 0.448,
+      "answer_time": 1.2,
+      "total_time": 32.048,
+      "em": 0,
+      "f1": 0.1538,
+      "bleu": 0.0833
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_d61852da",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "William Booth",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "William Booth founded the Salvation Army",
+          "score": 0.7045237600268721
+        },
+        {
+          "memory": "John Wesley is the founder of Methodism",
+          "score": 0.42609119404535745
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.26097560740776504
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr",
+          "score": 0.25150652977623555
+        }
+      ],
+      "add_time": 25.913,
+      "search_time": 0.311,
+      "answer_time": 0.819,
+      "total_time": 27.043,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_45f9b9fe",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "John Wesley",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "John Wesley is the founder of Methodism",
+          "score": 0.8004669741295055
+        },
+        {
+          "memory": "William Booth founded the Salvation Army",
+          "score": 0.3510540916740301
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr",
+          "score": 0.33186680239874033
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.2841258911455437
+        }
+      ],
+      "add_time": 24.691,
+      "search_time": 0.352,
+      "answer_time": 0.82,
+      "total_time": 25.863,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_a9100220",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "Elton Rule",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Goldenson became President of ABC a few months after Elton Rule's appointment",
+          "score": 0.6645007629331097
+        },
+        {
+          "memory": "Elton Rule was named President and Chief Operating Officer of ABC on January 17, 1972",
+          "score": 0.5823491664278112
+        },
+        {
+          "memory": "ABC Great States\u2014the Central West Division of ABC Theatres\u2014was sold to Henry Plitt in 1974",
+          "score": 0.33722525735713893
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act banned cigarette advertising from all television and radio networks",
+          "score": 0.20033705234713955
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act took effect on January 2, 1971",
+          "score": 0.1545526421758731
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act was passed by Congress in April 1970",
+          "score": 0.13649956141464864
+        }
+      ],
+      "add_time": 21.48,
+      "search_time": 0.351,
+      "answer_time": 0.92,
+      "total_time": 22.751,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_8a19b414",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "Position of people within the four-class system.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Frederick W. Mote argued that the 'position of people within the four-class system was not an indication of their actual social power or wealth'",
+          "score": 0.5067913722255832
+        },
+        {
+          "memory": "The four-class system was misleading because it did not accurately reflect social power or wealth",
+          "score": 0.4613708015131859
+        },
+        {
+          "memory": "There were Mongols and Simu who lived in poverty and were ill-treated",
+          "score": 0.4207227057179456
+        },
+        {
+          "memory": "A person's standing within the classes was not a guarantee of their standing",
+          "score": 0.4142928319429743
+        },
+        {
+          "memory": "There were rich and well-socially standing Chinese",
+          "score": 0.4081192328971015
+        },
+        {
+          "memory": "There were less wealthy Mongols and Simu",
+          "score": 0.3931369674742755
+        },
+        {
+          "memory": "The four-class system entitled people to 'degrees of privilege' that were institutionally and legally guaranteed",
+          "score": 0.39216687252123134
+        }
+      ],
+      "add_time": 24.521,
+      "search_time": 0.309,
+      "answer_time": 0.97,
+      "total_time": 25.8,
+      "em": 0,
+      "f1": 0.2,
+      "bleu": 0.1429
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_16446721",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "Poverty",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "There were rich and well-socially standing Chinese",
+          "score": 0.5925977846372548
+        },
+        {
+          "memory": "There were Mongols and Simu who lived in poverty and were ill-treated",
+          "score": 0.4044466982694723
+        },
+        {
+          "memory": "A person's standing within the classes was not a guarantee of their standing",
+          "score": 0.3713457944835895
+        },
+        {
+          "memory": "The four-class system entitled people to 'degrees of privilege' that were institutionally and legally guaranteed",
+          "score": 0.3399357054587714
+        },
+        {
+          "memory": "There were less wealthy Mongols and Simu",
+          "score": 0.319682743858827
+        },
+        {
+          "memory": "The four-class system was misleading because it did not accurately reflect social power or wealth",
+          "score": 0.2609393229873363
+        },
+        {
+          "memory": "Frederick W. Mote argued that the 'position of people within the four-class system was not an indication of their actual social power or wealth'",
+          "score": 0.20121306946250866
+        }
+      ],
+      "add_time": 23.807,
+      "search_time": 0.289,
+      "answer_time": 0.934,
+      "total_time": 25.029,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_26154dea",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.5789784393697313
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives",
+          "score": 0.5162112333029805
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.4432574578086541
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.4317172491694673
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4276709660488923
+        },
+        {
+          "memory": "There have been steam-powered automobiles, including the Stanley steamer",
+          "score": 0.40770659440968904
+        },
+        {
+          "memory": "There have been steam-powered motorcycles",
+          "score": 0.3996505571686182
+        },
+        {
+          "memory": "Steam engines were used in ships",
+          "score": 0.38659910972407097
+        },
+        {
+          "memory": "Steam engines were used in road vehicles",
+          "score": 0.38221057407531267
+        },
+        {
+          "memory": "Steam engines were used in steamboats",
+          "score": 0.36594694520848703
+        }
+      ],
+      "add_time": 27.116,
+      "search_time": 0.298,
+      "answer_time": 0.961,
+      "total_time": 28.375,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_194cf4e3",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "Steamboats",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines were used in road vehicles",
+          "score": 0.683008596065457
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives",
+          "score": 0.6629341518842975
+        },
+        {
+          "memory": "Steam engines were used in steamboats",
+          "score": 0.6446755018710646
+        },
+        {
+          "memory": "Steam engines were used in ships",
+          "score": 0.6349978989607832
+        },
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.6154978850223158
+        },
+        {
+          "memory": "There have been steam-powered automobiles, including the Stanley steamer",
+          "score": 0.5545605949315991
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.5217972576436412
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5115676809631263
+        },
+        {
+          "memory": "There have been steam-powered motorcycles",
+          "score": 0.5108163809310545
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.5013670373209278
+        }
+      ],
+      "add_time": 25.549,
+      "search_time": 0.297,
+      "answer_time": 0.959,
+      "total_time": 26.805,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_703e3f03",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "Stanley steamer",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "There have been steam-powered automobiles, including the Stanley steamer",
+          "score": 0.7491085410005777
+        },
+        {
+          "memory": "There have been steam-powered motorcycles",
+          "score": 0.6876320907669113
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives",
+          "score": 0.6042331871733259
+        },
+        {
+          "memory": "Steam engines were used in road vehicles",
+          "score": 0.5865123618280279
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.5756689515403606
+        },
+        {
+          "memory": "Steam engines were used in steamboats",
+          "score": 0.5505868542753335
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.4952588367289834
+        },
+        {
+          "memory": "Steam engines were used in ships",
+          "score": 0.48215107732124685
+        },
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.4794688152792138
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.42671720048634204
+        }
+      ],
+      "add_time": 25.755,
+      "search_time": 0.542,
+      "answer_time": 0.974,
+      "total_time": 27.271,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_5f4a7984",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "Factories",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.7454138562779887
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5498019743788255
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives",
+          "score": 0.5341195795602237
+        },
+        {
+          "memory": "Steam engines were used in steamboats",
+          "score": 0.5250546628812875
+        },
+        {
+          "memory": "Steam engines were used in ships",
+          "score": 0.4918236953296591
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4881168257048013
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.47754108511114085
+        },
+        {
+          "memory": "Steam engines were used in road vehicles",
+          "score": 0.4643868884701155
+        },
+        {
+          "memory": "There have been steam-powered automobiles, including the Stanley steamer",
+          "score": 0.4581946863967411
+        },
+        {
+          "memory": "There have been steam-powered motorcycles",
+          "score": 0.440106564041457
+        }
+      ],
+      "add_time": 26.443,
+      "search_time": 0.301,
+      "answer_time": 0.956,
+      "total_time": 27.7,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_1f078a29",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "Enrico Fermi",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Enrico Fermi was the creator of the first nuclear reactor",
+          "score": 0.7075164088816801
+        },
+        {
+          "memory": "Edward Teller was the father of the hydrogen bomb",
+          "score": 0.3677131090360341
+        },
+        {
+          "memory": "The elementary charge calculator Robert A. Millikan was a notable physicist",
+          "score": 0.303054411562739
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.29610228290647544
+        },
+        {
+          "memory": "Arthur H. Compton was the discoverer of the Compton effect",
+          "score": 0.2737083464193121
+        },
+        {
+          "memory": "Luis Walter Alvarez was a notable physicist",
+          "score": 0.2543463517835699
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.23135960303057237
+        },
+        {
+          "memory": "The speed of light calculator A. A. Michelson was a notable physicist",
+          "score": 0.20716564803250054
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was an astrophysicist",
+          "score": 0.1747608515092536
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.17254702703383534
+        }
+      ],
+      "add_time": 29.895,
+      "search_time": 0.324,
+      "answer_time": 0.956,
+      "total_time": 31.175,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_b10aeb0a",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "Edward Teller",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Edward Teller was the father of the hydrogen bomb",
+          "score": 0.698835685708701
+        },
+        {
+          "memory": "Enrico Fermi was the creator of the first nuclear reactor",
+          "score": 0.42896548070290264
+        },
+        {
+          "memory": "The elementary charge calculator Robert A. Millikan was a notable physicist",
+          "score": 0.3382262454096916
+        },
+        {
+          "memory": "Luis Walter Alvarez was a notable physicist",
+          "score": 0.30654298822459475
+        },
+        {
+          "memory": "Arthur H. Compton was the discoverer of the Compton effect",
+          "score": 0.2930958381814112
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was an astrophysicist",
+          "score": 0.2623596058151022
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.25415679309344585
+        },
+        {
+          "memory": "The speed of light calculator A. A. Michelson was a notable physicist",
+          "score": 0.25272637304175105
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.24454563229015674
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.2422507893902574
+        }
+      ],
+      "add_time": 30.15,
+      "search_time": 0.372,
+      "answer_time": 0.987,
+      "total_time": 31.509,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_cfaa6013",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "Dallas, Texas",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The new denomination was formed at the Constituting General Conference in Dallas, Texas",
+          "score": 0.569328205860818
+        },
+        {
+          "memory": "The new denomination was given birth by the phrase 'Lord of the Church, we are united in thee. In thy Church and now in the United Methodist Church.'",
+          "score": 0.5311006301531513
+        },
+        {
+          "memory": "The Evangelical United Brethren Church and the Methodist Church joined to form the United Methodist Church",
+          "score": 0.5277270831340828
+        },
+        {
+          "memory": "The United Methodist Church is a result of the union of two churches with distinguished histories and influential ministries",
+          "score": 0.4909905044416315
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.4206746507467228
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.38280357607603643
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.3623502634470406
+        }
+      ],
+      "add_time": 36.725,
+      "search_time": 0.308,
+      "answer_time": 0.949,
+      "total_time": 37.982,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_5ffb86d8",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "Lord Reuben H. Mueller",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The new denomination was given birth by the phrase 'Lord of the Church, we are united in thee. In thy Church and now in the United Methodist Church.'",
+          "score": 0.5943918520694818
+        },
+        {
+          "memory": "The Evangelical United Brethren Church and the Methodist Church joined to form the United Methodist Church",
+          "score": 0.41213181993976844
+        },
+        {
+          "memory": "The United Methodist Church is a result of the union of two churches with distinguished histories and influential ministries",
+          "score": 0.402345629983611
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.3862711439321125
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.3727654245627853
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.32514503062056654
+        },
+        {
+          "memory": "The new denomination was formed at the Constituting General Conference in Dallas, Texas",
+          "score": 0.314801324440953
+        }
+      ],
+      "add_time": 38.706,
+      "search_time": 0.515,
+      "answer_time": 0.968,
+      "total_time": 40.189,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_d0ffe062",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 67.295,
+      "search_time": 0.54,
+      "answer_time": 0.0,
+      "total_time": 67.834,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_0e78ba1e",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 73.756,
+      "search_time": 0.381,
+      "answer_time": 0.0,
+      "total_time": 74.137,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_7da902e0",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 68.279,
+      "search_time": 0.333,
+      "answer_time": 0.0,
+      "total_time": 68.612,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_332cd9b5",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 70.323,
+      "search_time": 0.964,
+      "answer_time": 0.0,
+      "total_time": 71.288,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_b2d1f219",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "Chicago Bears",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7945990785621242
+        },
+        {
+          "memory": "Rivera was the linebacker for the Bears",
+          "score": 0.6203024951509322
+        },
+        {
+          "memory": "Super Bowl XX was played by the Bears",
+          "score": 0.5814181651109662
+        },
+        {
+          "memory": "Super Bowl XXI and XXIV were played by the Broncos",
+          "score": 0.552089817224135
+        },
+        {
+          "memory": "The Broncos lost Super Bowls XXI and XXIV",
+          "score": 0.48474595462961395
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.39262248527905974
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3776275671097923
+        },
+        {
+          "memory": "Elway was the quarterback for the Broncos",
+          "score": 0.327934221546474
+        },
+        {
+          "memory": "Kubiak was the head coach of the Broncos",
+          "score": 0.26790506017945653
+        }
+      ],
+      "add_time": 23.06,
+      "search_time": 0.461,
+      "answer_time": 0.946,
+      "total_time": 24.466,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    }
+  ]
+}

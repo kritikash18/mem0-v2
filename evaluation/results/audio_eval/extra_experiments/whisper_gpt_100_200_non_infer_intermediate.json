@@ -1,0 +1,2266 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "whisper_gpt_100_200_non_infer",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": false,
+    "cleanup_after_sample": false,
+    "query_mode": "text"
+  },
+  "summary": {
+    "count": 100,
+    "em_mean": 0.58,
+    "em_std": 0.496,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.7638,
+    "f1_std": 0.3391,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.7062,
+    "bleu_std": 0.3857,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 21.2693,
+    "total_time_std": 107.4863,
+    "total_time_min": 6.44,
+    "total_time_max": 1085.101,
+    "add_time_mean": 20.1177,
+    "add_time_std": 107.3699,
+    "add_time_min": 5.45,
+    "add_time_max": 1082.821,
+    "search_time_mean": 0.2989,
+    "search_time_std": 0.0754,
+    "search_time_min": 0.246,
+    "search_time_max": 0.812,
+    "answer_time_mean": 0.8528,
+    "answer_time_std": 0.3799,
+    "answer_time_min": 0.558,
+    "answer_time_max": 2.439,
+    "em_correct": 58,
+    "em_pct": 58.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 100,
+      "zero": 10,
+      "perfect": 58,
+      "above_50": 83,
+      "above_80": 63
+    },
+    "bleu": {
+      "total": 100,
+      "zero": 15,
+      "perfect": 57,
+      "above_50": 74,
+      "above_80": 57
+    }
+  },
+  "results": [
+    {
+      "idx": 100,
+      "user_id": "eval_100_e26f62ca",
+      "question": "When did the Germanic tribes claim territory in north and west Europe?",
+      "ground_truth": "the middle period of classical antiquity",
+      "prediction": "During the middle period of Classical Antiquity.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "From their original homelands in Scandinavia and Northern Europe, Germanic tribes expanded throughout Northern and Western Europe during the middle period of Classical Antiquity and into Southern Europe in Late Antiquity, conquering Celtic and other peoples. By 800 CE, they formed the Holy Roman Empire, the First German Empire. However, there was no real systemic continuity from the Western Roman Empire to its German successor, which was famously described as \"not holy,\" \"not Roman,\" and \"not an empire.\" A great number of small states and principalities existed in a loosely autonomous confederation. By 1000 CE, the Germanic conquest of Central, Western, and Southern Europe, west of and including Italy, was complete, excluding only Muslim Iberia. However, there was little cultural integration or national identity, and \"Germany\" remained largely a conceptual term referring to an amorphous area of Central Europe.",
+          "score": 0.6293249444902472
+        }
+      ],
+      "add_time": 12.185,
+      "search_time": 0.261,
+      "answer_time": 2.439,
+      "total_time": 14.885,
+      "em": 0,
+      "f1": 0.9091,
+      "bleu": 0.7143
+    },
+    {
+      "idx": 101,
+      "user_id": "eval_101_1e9049f5",
+      "question": "Germany referred to which area more so than an actual country?",
+      "ground_truth": "central europe",
+      "prediction": "An amorphous area of Central Europe",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "From their original homelands in Scandinavia and Northern Europe, Germanic tribes expanded throughout Northern and Western Europe during the middle period of Classical Antiquity and into Southern Europe in Late Antiquity, conquering Celtic and other peoples. By 800 CE, they formed the Holy Roman Empire, the First German Empire. However, there was no real systemic continuity from the Western Roman Empire to its German successor, which was famously described as \"not holy,\" \"not Roman,\" and \"not an empire.\" A great number of small states and principalities existed in a loosely autonomous confederation. By 1000 CE, the Germanic conquest of Central, Western, and Southern Europe, west of and including Italy, was complete, excluding only Muslim Iberia. However, there was little cultural integration or national identity, and \"Germany\" remained largely a conceptual term referring to an amorphous area of Central Europe.",
+          "score": 0.47545178190135057
+        }
+      ],
+      "add_time": 11.49,
+      "search_time": 0.278,
+      "answer_time": 0.868,
+      "total_time": 12.635,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 102,
+      "user_id": "eval_102_88a986e0",
+      "question": "what was NTL Telewest re-branded to in 2007?",
+      "ground_truth": "virgin media",
+      "prediction": "Virgin Media",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media rebranded in 2007 from NTL. Telewest started to offer high-definition television with a capable set-top box. However, from 30 November 2006 until 30 July 2009, it only carried one linear HD channel, BBC HD, after the conclusion of the ITV HD trial. Virgin Media claimed that other HD channels were \"locked up\" or otherwise withheld from their platform, although they did have the option to carry Channel 4 HD in the future. Nonetheless, the linear channels were not offered, and Virgin Media concentrated on its video on demand service to carry a modest selection of HD content. Virgin Media has made a number of statements over the years suggesting that more linear HD channels are on the way.",
+          "score": 0.5545476431539804
+        }
+      ],
+      "add_time": 8.676,
+      "search_time": 0.32,
+      "answer_time": 0.739,
+      "total_time": 9.735,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 103,
+      "user_id": "eval_103_a5379030",
+      "question": "What did Virgin Media concentrate on instead of offering linear channels?",
+      "ground_truth": "video on demand",
+      "prediction": "Video on demand service",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Virgin Media rebranded in 2007 from NTL. Telewest started to offer high-definition television with a capable set-top box. However, from 30 November 2006 until 30 July 2009, it only carried one linear HD channel, BBC HD, after the conclusion of the ITV HD trial. Virgin Media claimed that other HD channels were \"locked up\" or otherwise withheld from their platform, although they did have the option to carry Channel 4 HD in the future. Nonetheless, the linear channels were not offered, and Virgin Media concentrated on its video on demand service to carry a modest selection of HD content. Virgin Media has made a number of statements over the years suggesting that more linear HD channels are on the way.",
+          "score": 0.7180563553438678
+        }
+      ],
+      "add_time": 9.405,
+      "search_time": 0.352,
+      "answer_time": 0.713,
+      "total_time": 10.47,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.75
+    },
+    {
+      "idx": 104,
+      "user_id": "eval_104_9392447d",
+      "question": "What unit is measured to determine circuit complexity?",
+      "ground_truth": "number of gates",
+      "prediction": "Number of gates",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "A problem is regarded as inherently difficult if its solution requires significant resources. Whatever the algorithm used, the theory formalizes this intuition by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication in communication complexity, the number of gates in a circuit used in circuit complexity, and the number of processors in parallel computing. One of the roles of computational complexity theory is to determine the practical limits on what computers can and cannot do.",
+          "score": 0.5300969122507158
+        }
+      ],
+      "add_time": 7.06,
+      "search_time": 0.272,
+      "answer_time": 0.723,
+      "total_time": 8.055,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 105,
+      "user_id": "eval_105_4f24d8f8",
+      "question": "There is a public database of epitopes for pathogens known to be recognizable by what cells?",
+      "ground_truth": "b",
+      "prediction": "B-cells",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Larger drugs, greater than 500 DA, can provoke a neutralizing immune response, particularly if the drugs are administered repeatedly or in larger doses. This limits the effectiveness of drugs based on larger peptides and proteins, which are typically larger than 6,000 DA. In some cases, the drug itself is not immunogenic but may be co-administered with an immunogenic compound, as is sometimes the case for Taxol. \n\nComputational methods have been developed to predict the immunogenicity of peptides and proteins, which are particularly useful in designing therapeutic antibodies, assessing the likely virulence of mutations in viral coat particles, and validating proposed peptide-based drug treatments. Early techniques relied mainly on the observation that hydrophilic amino acids are overrepresented in epitope regions compared to hydrophobic amino acids. However, more recent developments rely on machine learning techniques using databases of existing known epitopes, usually from well-studied virus proteins. \n\nAs a training set, a publicly accessible database has been established for cataloging epitopes from pathogens known to be recognizable by B-cells. The emerging field of bioinformatics-based studies of immunogenicity is referred to as immunoinformatics. Immunoproteomics is the study of large sets of proteins involved in the immune response.",
+          "score": 0.5381209664606426
+        }
+      ],
+      "add_time": 14.432,
+      "search_time": 0.274,
+      "answer_time": 0.713,
+      "total_time": 15.42,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.0
+    },
+    {
+      "idx": 106,
+      "user_id": "eval_106_81a6503f",
+      "question": "What event took away his ability of speech?",
+      "ground_truth": "apoplectic stroke",
+      "prediction": "Apoplectic stroke",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "An apoplectic stroke deprived him of his speech, and he died shortly afterwards at 2:45 a.m. on 18 February 1546, aged 62, in Eilben, the city of his birth. He was buried in the castle church in Wittenberg, beneath the pulpit. The funeral was held by his friends Johannes Bugenhagen and Philip Melanchthon. A year later, troops of Luther's adversary, Charles V, Holy Roman Emperor, entered the town but were ordered by Charles not to disturb the grave.",
+          "score": 0.40114271403602275
+        }
+      ],
+      "add_time": 6.95,
+      "search_time": 0.264,
+      "answer_time": 0.869,
+      "total_time": 8.083,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 107,
+      "user_id": "eval_107_c8660ed6",
+      "question": "Where was Luther buried?",
+      "ground_truth": "castle church in wittenberg",
+      "prediction": "Wittenberg",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "An apoplectic stroke deprived him of his speech, and he died shortly afterwards at 2:45 a.m. on 18 February 1546, aged 62, in Eilben, the city of his birth. He was buried in the castle church in Wittenberg, beneath the pulpit. The funeral was held by his friends Johannes Bugenhagen and Philip Melanchthon. A year later, troops of Luther's adversary, Charles V, Holy Roman Emperor, entered the town but were ordered by Charles not to disturb the grave.",
+          "score": 0.6709957392157542
+        }
+      ],
+      "add_time": 5.864,
+      "search_time": 0.285,
+      "answer_time": 0.754,
+      "total_time": 6.902,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 1.0
+    },
+    {
+      "idx": 108,
+      "user_id": "eval_108_c55d2a2d",
+      "question": "What is the key accomplishment of Genghis Khan that modern Mongolians celebrate?",
+      "ground_truth": "uniting warring tribes",
+      "prediction": "Uniting warring tribes",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In the early 1990s, the memory of Genghis Khan and the Mongolian national identity experienced a powerful revival, partly due to his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of national identity. He is viewed positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as Genghis Khan's Mongolia, to themselves as Genghis Khan's children, and to Genghis Khan as the father of the Mongols, especially among the younger generation. However, there is a significant divide in the perception of his brutality. Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan, claiming that his butchery is exaggerated while his positive contributions are underrated.",
+          "score": 0.627192630386239
+        }
+      ],
+      "add_time": 9.08,
+      "search_time": 0.262,
+      "answer_time": 0.724,
+      "total_time": 10.066,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 109,
+      "user_id": "eval_109_4c8bab13",
+      "question": "How do Mongolians sometime describe their relationship to Genghis Khan?",
+      "ground_truth": "genghis khans children",
+      "prediction": "Genghis Khan's children",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In the early 1990s, the memory of Genghis Khan and the Mongolian national identity experienced a powerful revival, partly due to his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of national identity. He is viewed positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as Genghis Khan's Mongolia and to themselves as Genghis Khan's children. They also refer to Genghis Khan as the father of the Mongols, especially among the younger generation. However, there is a significant divide in the perception of his brutality. Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan, claiming that his butchery is exaggerated while his positive contributions are underrated.",
+          "score": 0.7188118076649019
+        }
+      ],
+      "add_time": 11.547,
+      "search_time": 0.349,
+      "answer_time": 1.002,
+      "total_time": 12.897,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 110,
+      "user_id": "eval_110_65ccdd2d",
+      "question": "What do some Mongolians feel non-Mongolian historians exaggerate about Genghis Khan?",
+      "ground_truth": "his brutality",
+      "prediction": "His butchery",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In the early 1990s, the memory of Genghis Khan and the Mongolian national identity experienced a powerful revival, partly due to his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of national identity. He is viewed positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as Genghis Khan's Mongolia, to themselves as Genghis Khan's children, and to Genghis Khan as the father of the Mongols, especially among the younger generation. However, there is a significant divide in the perception of his brutality. Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan, claiming that his butchery is exaggerated while his positive role is underrated.",
+          "score": 0.7160161587098517
+        }
+      ],
+      "add_time": 10.925,
+      "search_time": 0.285,
+      "answer_time": 0.745,
+      "total_time": 11.956,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 111,
+      "user_id": "eval_111_39243ae8",
+      "question": "What is the general perception of non-Mongolian histories of Genghis Khan by Mongolians themselves?",
+      "ground_truth": "unfairly biased",
+      "prediction": "Unfairly biased",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In the early 1990s, the memory of Genghis Khan and the Mongolian national identity experienced a powerful revival, partly due to his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of national identity. He is viewed positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as Genghis Khan's Mongolia, to themselves as Genghis Khan's children, and to Genghis Khan as the father of the Mongols, especially among the younger generation. However, there is a significant divide in the perception of his brutality. Mongolians argue that historical records written by non-Mongolians are unfairly biased against Genghis Khan, claiming that his butchery is exaggerated while his positive role is underrated.",
+          "score": 0.7260316696325604
+        }
+      ],
+      "add_time": 11.257,
+      "search_time": 0.28,
+      "answer_time": 0.888,
+      "total_time": 12.426,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 112,
+      "user_id": "eval_112_68d70e66",
+      "question": "Who continued to hold the citadel of Bukhara after the Mongols took the rest of the city?",
+      "ground_truth": "turkish defenders",
+      "prediction": "A unit of Turkish defenders",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The city of Bukhara was not heavily fortified, featuring only a moat and a single wall, along with a citadel typical of Khwarezmi cities. The city leaders opened the gates to the Mongols, although a unit of Turkish defenders held the city's citadel for another twelve days. Survivors from the citadel were executed, and artisans and craftsmen were sent back to Mongolia. Young men who had not fought were drafted into the Mongolian army, while the rest of the population was sent into slavery. As the Mongol soldiers looted the city, a fire broke out, razing most of it to the ground. Genghis Khan had the surviving population assemble in the main mosque of the town, where he declared that he was the flail of God, sent to punish them for their sins.",
+          "score": 0.6791491990225671
+        }
+      ],
+      "add_time": 10.74,
+      "search_time": 0.371,
+      "answer_time": 0.686,
+      "total_time": 11.797,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.4
+    },
+    {
+      "idx": 113,
+      "user_id": "eval_113_dcfae64f",
+      "question": "How did Genghis Khan describe himself to the people of Bukhara?",
+      "ground_truth": "the flail of god",
+      "prediction": "The flail of God",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The city of Bukhara was not heavily fortified, featuring only a moat and a single wall, along with a citadel typical of Khwarezmi cities. The city leaders opened the gates to the Mongols, although a unit of Turkish defenders held the city's citadel for another 12 days. Survivors from the citadel were executed, and artisans and craftsmen were sent back to Mongolia. Young men who had not fought were drafted into the Mongolian army, while the rest of the population was sent into slavery. As the Mongol soldiers looted the city, a fire broke out, razing most of it to the ground. Genghis Khan had the surviving population assemble in the main mosque of the town, where he declared that he was the flail of God, sent to punish them for their sins.",
+          "score": 0.5629354208212108
+        }
+      ],
+      "add_time": 9.89,
+      "search_time": 0.327,
+      "answer_time": 0.669,
+      "total_time": 10.886,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 114,
+      "user_id": "eval_114_88d51bc9",
+      "question": "Higher rates of health and social problems are just two of examples of effects from what?",
+      "ground_truth": "inequality",
+      "prediction": "Inequality",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems, lower rates of social goods, and a lower level of economic utility in society due to resources devoted to high-end consumption. There is also a lower level of economic growth when human capital is neglected for high-end consumption. For the top 21 industrialized countries, counting each person equally, life expectancy is lower in more unequal countries, with a correlation coefficient of R = 0.907. A similar relationship exists among U.S. states, with R = -0.620.",
+          "score": 0.5229786777800141
+        }
+      ],
+      "add_time": 7.029,
+      "search_time": 0.274,
+      "answer_time": 2.058,
+      "total_time": 9.361,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 115,
+      "user_id": "eval_115_75f5dacc",
+      "question": "Why does a lower level of economic growth occur due to high-end consumption?",
+      "ground_truth": "human capital is neglected",
+      "prediction": "Resources devoted to high-end consumption neglect human capital.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems, lower rates of social goods, and a lower level of economic utility in society due to resources devoted to high-end consumption. There is also a lower level of economic growth when human capital is neglected for high-end consumption. For the top 21 industrialized countries, counting each person equally, life expectancy is lower in more unequal countries, with a correlation coefficient of R equals .907. A similar relationship exists among U.S. states, with R equals \u2212.620.",
+          "score": 0.5813005011263682
+        }
+      ],
+      "add_time": 7.523,
+      "search_time": 0.26,
+      "answer_time": 0.832,
+      "total_time": 8.615,
+      "em": 0,
+      "f1": 0.3077,
+      "bleu": 0.125
+    },
+    {
+      "idx": 116,
+      "user_id": "eval_116_f577f174",
+      "question": "What is lower in countries with more inequality for the top 21 industrialized countries?",
+      "ground_truth": "life expectancy",
+      "prediction": "Life expectancy",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems, lower rates of social goods, and a lower level of economic utility in society due to resources devoted to high-end consumption. There is also a lower level of economic growth when human capital is neglected for high-end consumption. For the top 21 industrialized countries, counting each person equally, life expectancy is lower in more unequal countries, with a correlation coefficient of R = 0.907. A similar relationship exists among U.S. states, with R = -0.620.",
+          "score": 0.7061872525182671
+        }
+      ],
+      "add_time": 9.916,
+      "search_time": 0.371,
+      "answer_time": 0.666,
+      "total_time": 10.954,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 117,
+      "user_id": "eval_117_b76038f8",
+      "question": "What is a lower rate of social goods an effect of?",
+      "ground_truth": "inequality",
+      "prediction": "Inequality",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems, lower rates of social goods, and a lower level of economic utility in society due to resources devoted to high-end consumption. There is also a lower level of economic growth when human capital is neglected for high-end consumption. For the top 21 industrialized countries, counting each person equally, life expectancy is lower in more unequal countries, with a correlation coefficient of R = 0.907. A similar relationship exists among U.S. states, with R = -0.620.",
+          "score": 0.5917839544420385
+        }
+      ],
+      "add_time": 7.898,
+      "search_time": 0.267,
+      "answer_time": 0.651,
+      "total_time": 8.816,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 118,
+      "user_id": "eval_118_3f466d2b",
+      "question": "In U.S. states, what happens to the life expectancy in less economically equal ones?",
+      "ground_truth": "life expectancy is lower",
+      "prediction": "Lower life expectancy",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Effects of inequality include higher rates of health and social problems, lower rates of social goods, and a lower level of economic utility in society due to resources devoted to high-end consumption. There is also a lower level of economic growth when human capital is neglected for high-end consumption. For the top 21 industrialized countries, counting each person equally, life expectancy is lower in more unequal countries, with a correlation coefficient of R equals .907. A similar relationship exists among U.S. states, with R equals \u2212.620.",
+          "score": 0.6297352528074419
+        }
+      ],
+      "add_time": 7.715,
+      "search_time": 0.266,
+      "answer_time": 0.619,
+      "total_time": 8.601,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 1.0
+    },
+    {
+      "idx": 119,
+      "user_id": "eval_119_7e04f4bf",
+      "question": "What other areas did the Apollo missions help spur advancements in?",
+      "ground_truth": "avionics telecommunications and computers",
+      "prediction": "Avionics, telecommunications, computers",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Apollo set several major human spaceflight milestones. It stands alone in sending manned missions beyond low Earth orbit. Apollo 8 was the first manned spacecraft to orbit another celestial body, while the final Apollo 17 mission marked the sixth Moon landing and the ninth manned mission beyond low Earth orbit. The program returned 842 pounds (382 kilograms) of lunar rocks and soil to Earth, greatly contributing to the understanding of the Moon's composition and geological history. The program laid the foundation for NASA's current human spaceflight capability and funded the construction of its Johnson Space Center and Kennedy Space Center. Apollo also spurred advances in many areas of technology incidental to rocketry and manned spaceflight, including avionics, telecommunications, and computers.",
+          "score": 0.6114268656268419
+        }
+      ],
+      "add_time": 9.268,
+      "search_time": 0.314,
+      "answer_time": 0.683,
+      "total_time": 10.265,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 120,
+      "user_id": "eval_120_1db7898d",
+      "question": "What resource is the economy of southern California depedent on?",
+      "ground_truth": "petroleum",
+      "prediction": "Petroleum",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States. It is dominated and heavily dependent on an abundance of petroleum, unlike other regions where automobiles are not as dominant. The vast majority of transport runs on this fuel. Southern California is famous for tourism, Hollywood, film, television, and music. Other industries include software, automotive, ports, finance, biomedical, and regional logistics. The region was a leader in the housing bubble from 2001 to 2007 and has been heavily impacted by the housing crash.",
+          "score": 0.7474303863908356
+        }
+      ],
+      "add_time": 7.076,
+      "search_time": 0.27,
+      "answer_time": 0.614,
+      "total_time": 7.96,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 121,
+      "user_id": "eval_121_de813dc2",
+      "question": "Southern California is most famous for tourism and what notably named district?",
+      "ground_truth": "hollywood",
+      "prediction": "Hollywood",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States. It is dominated and heavily dependent on an abundance of petroleum, unlike other regions where automobiles are not as dominant. The vast majority of transport runs on this fuel. Southern California is famous for tourism, Hollywood, film, television, and music. Other industries include software, automotive, ports, finance, biomedical, and regional logistics. The region was a leader in the housing bubble from 2001 to 2007 and has been heavily impacted by the housing crash.",
+          "score": 0.5879504149369452
+        }
+      ],
+      "add_time": 6.807,
+      "search_time": 0.304,
+      "answer_time": 0.665,
+      "total_time": 7.776,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 122,
+      "user_id": "eval_122_2dc1d73c",
+      "question": "The region was a leader in what event between 2001 - 2007?",
+      "ground_truth": "the housing bubble",
+      "prediction": "The housing bubble",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States. It is dominated and heavily dependent on an abundance of petroleum, unlike other regions where automobiles are not as dominant. The vast majority of transport runs on this fuel. Southern California is famous for tourism, Hollywood, film, television, and music. Other industries include software, automotive, ports, finance, biomedical, and regional logistics. The region was a leader in the housing bubble from 2001 to 2007 and has been heavily impacted by the housing crash.",
+          "score": 0.20706493391861783
+        }
+      ],
+      "add_time": 9.205,
+      "search_time": 0.27,
+      "answer_time": 0.608,
+      "total_time": 10.082,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 123,
+      "user_id": "eval_123_ec729ecd",
+      "question": "What was the effect of the housing crash on the region?",
+      "ground_truth": "heavily impacted",
+      "prediction": "Heavily impacted",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California's economy is diverse and one of the largest in the United States. It is dominated and heavily dependent on an abundance of petroleum, unlike other regions where automobiles are not as dominant. The vast majority of transport runs on this fuel. Southern California is famous for tourism, Hollywood, film, television, and music. Other industries include software, automotive, ports, finance, biomedical, and regional logistics. The region was a leader in the housing bubble from 2001 to 2007 and has been heavily impacted by the housing crash.",
+          "score": 0.3680124904996311
+        }
+      ],
+      "add_time": 7.747,
+      "search_time": 0.284,
+      "answer_time": 0.764,
+      "total_time": 8.794,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 124,
+      "user_id": "eval_124_63fb80d0",
+      "question": "What alumni was also Obama's campaign adviser?",
+      "ground_truth": "david axelrod",
+      "prediction": "David Axelrod",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Notable alumni in the field of government and politics include the founder of Modern Community Organizing, Saul Alinsky; Obama campaign advisor and top political advisor to President Bill Clinton, David Axelrod; Attorney General and Federal Judge, Robert Bork; Attorney General, Ramsey Clark; Prohibition Agent, Elliot Ness; Supreme Court Justice, John Paul Stevens; Prime Minister of Canada, William Lyon Mackenzie King; Eleventh Prime Minister of Poland, Marek Belka; Governor of the Bank of Japan, Masaaki Shirakawa; the first female African-American Senator, Carol Moseley Braun; United States Senator from Vermont and 2016 Democratic presidential candidate, Bernie Sanders; and former World Bank President, Paul Wolfowitz.",
+          "score": 0.5110311957386632
+        }
+      ],
+      "add_time": 8.068,
+      "search_time": 0.27,
+      "answer_time": 0.63,
+      "total_time": 8.968,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 125,
+      "user_id": "eval_125_03856475",
+      "question": "What alumni was also an Attorney General and a federal judge?",
+      "ground_truth": "robert bork",
+      "prediction": "Robert Bork",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Notable alumni in the field of government and politics include the founder of Modern Community Organizing, Saul Alinsky; Obama campaign advisor and top political advisor to President Bill Clinton, David Axelrod; Attorney General and Federal Judge, Robert Bork; Attorney General, Ramsey Clark; Prohibition Agent, Elliot Ness; Supreme Court Justice, John Paul Stevens; Prime Minister of Canada, William Lyon Mackenzie King; Eleventh Prime Minister of Poland, Marek Belka; Governor of the Bank of Japan, Masaaki Shirakawa; the first female African-American Senator, Carol Moseley Braun; United States Senator from Vermont and 2016 Democratic presidential candidate, Bernie Sanders; and former World Bank President, Paul Wolfowitz.",
+          "score": 0.5014056633147642
+        }
+      ],
+      "add_time": 8.879,
+      "search_time": 0.269,
+      "answer_time": 0.756,
+      "total_time": 9.904,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 126,
+      "user_id": "eval_126_512437f6",
+      "question": "What kind of immune system do bacteria have?",
+      "ground_truth": "rudimentary",
+      "prediction": "Rudimentary immune system",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, thereby avoiding detection and neutralization by the immune system. However, multiple defense mechanisms have also evolved to recognize and neutralize pathogens. Even simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections. Other basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates. These mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system. Jawed vertebrates, including humans, have even more sophisticated defense mechanisms, including the ability to adapt over time to recognize specific pathogens more efficiently. Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen, leading to an enhanced response to subsequent encounters with that same pathogen. This process of acquired immunity is the basis of vaccination.",
+          "score": 0.5511103712595292
+        }
+      ],
+      "add_time": 11.496,
+      "search_time": 0.268,
+      "answer_time": 1.006,
+      "total_time": 12.77,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 127,
+      "user_id": "eval_127_8c414e96",
+      "question": "Which other ancient organism formed basic immune mechanisms?",
+      "ground_truth": "bacteria",
+      "prediction": "Plants",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, thereby avoiding detection and neutralization by the immune system. However, multiple defense mechanisms have also evolved to recognize and neutralize pathogens. Even simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections. Other basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates. These mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system. Jawed vertebrates, including humans, have even more sophisticated defense mechanisms, including the ability to adapt over time to recognize specific pathogens more efficiently. Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen, leading to an enhanced response to subsequent encounters with that same pathogen. This process of acquired immunity is the basis of vaccination.",
+          "score": 0.6273841682646292
+        }
+      ],
+      "add_time": 11.326,
+      "search_time": 0.353,
+      "answer_time": 0.619,
+      "total_time": 12.298,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 128,
+      "user_id": "eval_128_62175a2e",
+      "question": "How does adaptive/acquired immunity help in the future?",
+      "ground_truth": "creates immunological memory",
+      "prediction": "Creates immunological memory for enhanced response to subsequent encounters.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, thereby avoiding detection and neutralization by the immune system. However, multiple defense mechanisms have also evolved to recognize and neutralize pathogens. Even simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections. Other basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates. These mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system. Jawed vertebrates, including humans, have even more sophisticated defense mechanisms, including the ability to adapt over time to recognize specific pathogens more efficiently. Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen, leading to an enhanced response to subsequent encounters with that same pathogen. This process of acquired immunity is the basis of vaccination.",
+          "score": 0.5758141797758449
+        }
+      ],
+      "add_time": 10.139,
+      "search_time": 0.278,
+      "answer_time": 0.805,
+      "total_time": 11.222,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 129,
+      "user_id": "eval_129_268e2977",
+      "question": "The idea of acquired immunity in jawed vertebrates is the basis of what medical treatment?",
+      "ground_truth": "vaccination",
+      "prediction": "Vaccination",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, thereby avoiding detection and neutralization by the immune system. However, multiple defense mechanisms have also evolved to recognize and neutralize pathogens. Even simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections. Other basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates. These mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system. Jawed vertebrates, including humans, have even more sophisticated defense mechanisms, including the ability to adapt over time to recognize specific pathogens more efficiently. Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen, leading to an enhanced response to subsequent encounters with that same pathogen. This process of acquired immunity is the basis of vaccination.",
+          "score": 0.4901742088174819
+        }
+      ],
+      "add_time": 12.163,
+      "search_time": 0.279,
+      "answer_time": 0.629,
+      "total_time": 13.071,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 130,
+      "user_id": "eval_130_f123706e",
+      "question": "What is the ability to recognize and adapt to new specific pathogens called?",
+      "ground_truth": "adaptive or acquired immunity",
+      "prediction": "Adaptive immunity",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Pathogens can rapidly evolve and adapt, thereby avoiding detection and neutralization by the immune system. However, multiple defense mechanisms have also evolved to recognize and neutralize pathogens. Even simple unicellular organisms, such as bacteria, possess a rudimentary immune system in the form of enzymes that protect against bacteriophage infections. Other basic immune mechanisms evolved in ancient eukaryotes and remain in their modern descendants, such as plants and invertebrates. These mechanisms include phagocytosis, antimicrobial peptides called defensins, and the complement system. Jawed vertebrates, including humans, have even more sophisticated defense mechanisms, including the ability to adapt over time to recognize specific pathogens more efficiently. Adaptive, or acquired, immunity creates immunological memory after an initial response to a specific pathogen, leading to an enhanced response to subsequent encounters with that same pathogen. This process of acquired immunity is the basis of vaccination.",
+          "score": 0.6155784768958916
+        }
+      ],
+      "add_time": 10.575,
+      "search_time": 0.266,
+      "answer_time": 0.735,
+      "total_time": 11.576,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 1.0
+    },
+    {
+      "idx": 131,
+      "user_id": "eval_131_9f9a9f0b",
+      "question": "What is the name for O3 most often used?",
+      "ground_truth": "ozone",
+      "prediction": "Ozone",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Trioxygen, O3, is usually known as ozone and is a very reactive allotrope of oxygen that is damaging to lung tissue. Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation, since ozone absorbs strongly in the UV region of the spectrum. The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet. Near the Earth's surface, it is a pollutant formed as a byproduct of automobile exhaust. The metastable molecule tetraoxygen, O4, was discovered in 2001 and was assumed to exist in one of the six phases of solid oxygen. It was proven in 2006 that this phase\u2014created by pressurizing O2 to 20 GPa\u2014is in fact a rhombohedral O8 cluster. This cluster has the potential to be a much more powerful oxidizer than either O2 or O3 and may therefore be used in rocket fuel. A metallic phase was discovered in 1990 when solid oxygen is subjected to a pressure above 96 GPa, and it was shown in 1998 that at very low temperatures, this phase becomes superconducting.",
+          "score": 0.6434632554332776
+        }
+      ],
+      "add_time": 11.61,
+      "search_time": 0.296,
+      "answer_time": 0.613,
+      "total_time": 12.519,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 132,
+      "user_id": "eval_132_5b5dc94d",
+      "question": "What  does ozone's characteristic to cause damage effect?",
+      "ground_truth": "lung tissue",
+      "prediction": "Damaging to lung tissue",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Trioxygen, O3, is usually known as ozone and is a very reactive allotrope of oxygen that is damaging to lung tissue. Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation, since ozone absorbs strongly in the UV region of the spectrum. The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet. Near the Earth's surface, it is a pollutant formed as a byproduct of automobile exhaust. The metastable molecule tetraoxygen, O4, was discovered in 2001 and was assumed to exist in one of the six phases of solid oxygen. It was proven in 2006 that this phase\u2014created by pressurizing O2 to 20 GPa\u2014is in fact a rhombohedral O8 cluster. This cluster has the potential to be a much more powerful oxidizer than either O2 or O3 and may therefore be used in rocket fuel. A metallic phase was discovered in 1990 when solid oxygen is subjected to a pressure above 96 GPa, and it was shown in 1998 that at very low temperatures, this phase becomes superconducting.",
+          "score": 0.48794670507776794
+        }
+      ],
+      "add_time": 13.276,
+      "search_time": 0.265,
+      "answer_time": 0.86,
+      "total_time": 14.401,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 133,
+      "user_id": "eval_133_fa14fec4",
+      "question": "What function does ozone perform for the planet?",
+      "ground_truth": "protective radiation shield",
+      "prediction": "Protective radiation shield",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Trioxygen, O3, is usually known as ozone and is a very reactive allotrope of oxygen that is damaging to lung tissue. Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation, since ozone absorbs strongly in the UV region of the spectrum. The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet. Near the Earth's surface, it is a pollutant formed as a byproduct of automobile exhaust. The metastable molecule tetraoxygen, O4, was discovered in 2001 and was assumed to exist in one of the six phases of solid oxygen. It was proven in 2006 that this phase\u2014created by pressurizing O2 to 20 GPa\u2014is in fact a rhombohedral O8 cluster. This cluster has the potential to be a much more powerful oxidizer than either O2 or O3 and may therefore be used in rocket fuel. A metallic phase was discovered in 1990 when solid oxygen is subjected to a pressure above 96 GPa, and it was shown in 1998 that at very low temperatures, this phase becomes superconducting.",
+          "score": 0.49606477069829374
+        }
+      ],
+      "add_time": 16.079,
+      "search_time": 0.533,
+      "answer_time": 0.676,
+      "total_time": 17.287,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 134,
+      "user_id": "eval_134_2cbeaee9",
+      "question": "What light radiation does ozone absorb?",
+      "ground_truth": "ultraviolet",
+      "prediction": "Ultraviolet (UV) radiation",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Trioxygen, O3, is usually known as ozone and is a very reactive allotrope of oxygen that is damaging to lung tissue. Ozone is produced in the upper atmosphere when O2 combines with atomic oxygen made by the splitting of O2 by ultraviolet (UV) radiation, since ozone absorbs strongly in the UV region of the spectrum. The ozone layer of the upper atmosphere functions as a protective radiation shield for the planet. Near the Earth's surface, it is a pollutant formed as a byproduct of automobile exhaust. The metastable molecule tetraoxygen, O4, was discovered in 2001 and was assumed to exist in one of the six phases of solid oxygen. It was proven in 2006 that this phase\u2014created by pressurizing O2 to 20 GPa\u2014is in fact a rhombohedral O8 cluster. This cluster has the potential to be a much more powerful oxidizer than either O2 or O3 and may therefore be used in rocket fuel. A metallic phase was discovered in 1990 when solid oxygen is subjected to a pressure above 96 GPa, and it was shown in 1998 that at very low temperatures, this phase becomes superconducting.",
+          "score": 0.42307376826961335
+        }
+      ],
+      "add_time": 16.551,
+      "search_time": 0.271,
+      "answer_time": 0.744,
+      "total_time": 17.566,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 135,
+      "user_id": "eval_135_0f3cfd88",
+      "question": "How many sons did B\u00f6rte bear Genghis Khan after Jochi?",
+      "ground_truth": "three",
+      "prediction": "Three",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Borte had three more sons: Chagatai (1187\u20131241), Ogedei (1189\u20131241), and Tolui (1190\u20131232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of his sons were documented, the names of his daughters were not. At least six daughters are known to have existed, and they played significant roles behind the scenes during his lifetime. However, no documents have survived that definitively provide the number or names of the daughters born to the consorts of Genghis Khan.",
+          "score": 0.6715611674336499
+        }
+      ],
+      "add_time": 11.033,
+      "search_time": 0.307,
+      "answer_time": 0.753,
+      "total_time": 12.093,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 136,
+      "user_id": "eval_136_44db240a",
+      "question": "How many names of Ghengis Khan's daughters are known?",
+      "ground_truth": "six",
+      "prediction": "None",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Borte had three more sons: Chagatai (1187\u20131241), Ogedei (1189\u20131241), and Tolui (1190\u20131232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of his sons were documented, the names of his daughters were not. At least six daughters are known to have existed, and they played significant roles behind the scenes during his lifetime. However, no documents have survived that definitively provide the number or names of the daughters born to the consorts of Genghis Khan.",
+          "score": 0.7537767361212764
+        }
+      ],
+      "add_time": 7.179,
+      "search_time": 0.308,
+      "answer_time": 0.609,
+      "total_time": 8.096,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 137,
+      "user_id": "eval_137_51924cf4",
+      "question": "What did Luther seek to restore?",
+      "ground_truth": "public order",
+      "prediction": "Public order",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Luther set about reversing or modifying the new church practices. By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation. After banishing the Zwickau prophets, he faced a battle against not only the established church but also the radical reformers who threatened the new order by fomenting social unrest and violence.",
+          "score": 0.6752702169062959
+        }
+      ],
+      "add_time": 6.913,
+      "search_time": 0.285,
+      "answer_time": 0.606,
+      "total_time": 7.804,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 138,
+      "user_id": "eval_138_b68846bf",
+      "question": "What was Luther's force within the Reformation?",
+      "ground_truth": "conservative",
+      "prediction": "Conservative force",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Luther set about reversing or modifying the new church practices. By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation. After banishing the Zwickau prophets, he faced a battle against not only the established church but also the radical reformers who threatened the new order by fomenting social unrest and violence.",
+          "score": 0.7105866198044759
+        }
+      ],
+      "add_time": 5.45,
+      "search_time": 0.271,
+      "answer_time": 0.719,
+      "total_time": 6.44,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 139,
+      "user_id": "eval_139_36251665",
+      "question": "What did the radical reformers cause in the new order?",
+      "ground_truth": "unrest and violence",
+      "prediction": "Social unrest and violence",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Luther set about reversing or modifying the new church practices. By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation. After banishing the Zwickau prophets, he faced a battle against not only the established church but also the radical reformers who threatened the new order by fomenting social unrest and violence.",
+          "score": 0.5716490036056954
+        }
+      ],
+      "add_time": 5.657,
+      "search_time": 0.32,
+      "answer_time": 0.615,
+      "total_time": 6.592,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.75
+    },
+    {
+      "idx": 140,
+      "user_id": "eval_140_4ea654cc",
+      "question": "Besides the radicals who else did Luther have to deal with?",
+      "ground_truth": "established church",
+      "prediction": "The established church",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Luther set about reversing or modifying the new church practices. By working alongside the authorities to restore public order, he signaled his reinvention as a conservative force within the Reformation. After banishing the Zwickau prophets, he faced a battle against not only the established church but also the radical reformers who threatened the new order by fomenting social unrest and violence.",
+          "score": 0.6731202736209926
+        }
+      ],
+      "add_time": 5.594,
+      "search_time": 0.271,
+      "answer_time": 0.626,
+      "total_time": 6.491,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 141,
+      "user_id": "eval_141_59b9989e",
+      "question": "How many times has Polonia won the cup?",
+      "ground_truth": "twice",
+      "prediction": "Twice",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Their local rivals, Polonia Warsaw, have significantly fewer supporters. Yet, they managed to win the Ekstraklasa Championship in 2000. They also won the country's championship in 1946 and the cup twice as well. Polonia's home venue is located on Konviktorska Street, a 10-minute walk north from the Old Town. Polonia was relegated from the country's top flight in 2013 because of their disastrous financial situation. They are now playing in the 4th League, the 5th tier in Poland, which is the bottom professional league in the National Polish Football Association (PZPN).",
+          "score": 0.6392565412122002
+        }
+      ],
+      "add_time": 7.464,
+      "search_time": 0.308,
+      "answer_time": 0.656,
+      "total_time": 8.428,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 142,
+      "user_id": "eval_142_cd016349",
+      "question": "How many lakes are there in Warsaw?",
+      "ground_truth": "several",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "There are 13 natural reserves in Warsaw, including Bielany Forest, Kibaty Woods, and Czerniakow Lake, which is about 15 km (9 mi) from the city. The Vistula River's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat that includes otters, beavers, and hundreds of bird species. There are also several lakes in Warsaw, mainly the Okspo Lakes, such as Czerniakow Lake, and the lakes in Lazienki and Wilan\u00f3w Parks, as well as Kamionek Lake. There are many small lakes in the parks, but only a few are permanent; the majority are emptied before winter to clean them of plants and sediments.",
+          "score": 0.7238786241041701
+        }
+      ],
+      "add_time": 8.992,
+      "search_time": 0.415,
+      "answer_time": 0.608,
+      "total_time": 10.015,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 143,
+      "user_id": "eval_143_36f0511c",
+      "question": "Why are the small lakes in the parks emptied before winter?",
+      "ground_truth": "to clean them",
+      "prediction": "To clean them of plants and sediments.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "There are 13 natural reserves in Warsaw, including Bielany Forest, Kibaty Woods, and Czerniakow Lake, which is about 15 km (9 mi) from the city. The Vistula River's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat that includes otters, beavers, and hundreds of bird species. There are also several lakes in Warsaw, mainly the Okspo Lakes, such as Czerniakow Lake, and the lakes in Lazienki and Wilan\u00f3w Parks, as well as Kamionek Lake. There are many small lakes in the parks, but only a few are permanent; the majority are emptied before winter to clean them of plants and sediments.",
+          "score": 0.3682221560087772
+        }
+      ],
+      "add_time": 9.447,
+      "search_time": 0.278,
+      "answer_time": 0.773,
+      "total_time": 10.497,
+      "em": 0,
+      "f1": 0.6,
+      "bleu": 0.4286
+    },
+    {
+      "idx": 144,
+      "user_id": "eval_144_2aae018b",
+      "question": "What is stage 1 in the life of a bill?",
+      "ground_truth": "introductory",
+      "prediction": "The first, or introductory, stage of the Bill where it is formally introduced to Parliament.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Stage 1 is the first, or introductory, stage of the Bill, where the Minister or Member in charge of the Bill will formally introduce it to Parliament. This includes its accompanying documents: explanatory notes, which are a policy memorandum outlining the policy underlying the Bill, and a financial memorandum detailing the costs and savings associated with it. Documents from the Presiding Officer and the Member in charge of the Bill are also lodged, indicating whether the Bill is within the legislative competence of the Parliament. Stage 1 usually takes place initially in the relevant committee or committees and is then submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill. If the whole Parliament agrees in a vote to the general principles of the Bill, it then proceeds to Stage 2.",
+          "score": 0.6946826608560953
+        }
+      ],
+      "add_time": 8.78,
+      "search_time": 0.271,
+      "answer_time": 0.991,
+      "total_time": 10.041,
+      "em": 0,
+      "f1": 0.1429,
+      "bleu": 0.0
+    },
+    {
+      "idx": 145,
+      "user_id": "eval_145_8ab0a55c",
+      "question": "What are presented to parliament in addition to the bill itself?",
+      "ground_truth": "accompanying documents",
+      "prediction": "Explanatory notes, financial memorandum, documents from the Presiding Officer, documents from the Member in charge of the Bill.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Stage 1 is the first, or introductory, stage of the Bill, where the Minister or Member in charge of the Bill formally introduces it to Parliament. This includes its accompanying documents: explanatory notes, which are a policy memorandum outlining the policy underlying the Bill, and a financial memorandum detailing the costs and savings associated with it. Documents from the Presiding Officer and the Member in charge of the Bill are also lodged, indicating whether the Bill is within the legislative competence of the Parliament. Stage 1 usually takes place initially in the relevant committee or committees and is then submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill. If the whole Parliament agrees in a vote to the general principles of the Bill, it then proceeds to Stage 2.",
+          "score": 0.5617081250807279
+        }
+      ],
+      "add_time": 10.685,
+      "search_time": 0.273,
+      "answer_time": 1.184,
+      "total_time": 12.142,
+      "em": 0,
+      "f1": 0.1176,
+      "bleu": 0.1111
+    },
+    {
+      "idx": 146,
+      "user_id": "eval_146_6bfb5c97",
+      "question": "Where are bills typically gestated in Stage 1?",
+      "ground_truth": "in the relevant committee or committees",
+      "prediction": "In the relevant committee or committees",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Stage 1 is the first, or introductory, stage of the Bill, where the Minister or Member in charge of the Bill formally introduces it to Parliament. This includes accompanying documents, such as explanatory notes\u2014a policy memorandum outlining the policy underlying the Bill\u2014and a financial memorandum detailing the costs and savings associated with it. Documents from the Presiding Officer and the Member in charge of the Bill are also lodged, indicating whether the Bill is within the legislative competence of the Parliament. Stage 1 usually takes place initially in the relevant committee or committees and is then submitted to the whole Parliament for a full debate in the Chamber on the general principles of the Bill. If the whole Parliament agrees in a vote to the general principles of the Bill, it then proceeds to Stage 2.",
+          "score": 0.5027180114044036
+        }
+      ],
+      "add_time": 10.701,
+      "search_time": 0.253,
+      "answer_time": 0.796,
+      "total_time": 11.751,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 147,
+      "user_id": "eval_147_32c322d0",
+      "question": "Which group did not agree to sign these agreements?",
+      "ground_truth": "the swiss cities",
+      "prediction": "The Swiss cities",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Despite the disagreements on the Eucharist, the Marburg Colloquy paved the way for the signing of the Augsburg Confession in 1530 and for the formation of the Schmalkaldic League the following year by leading Protestant nobles such as John of Saxony, Philip of Hesse, and George, Margrave of Brandenburg-Ansbach. The Swiss cities, however, did not sign these agreements.",
+          "score": 0.378866725699305
+        }
+      ],
+      "add_time": 5.658,
+      "search_time": 0.273,
+      "answer_time": 1.394,
+      "total_time": 7.325,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 148,
+      "user_id": "eval_148_cab0f08f",
+      "question": "Where did Apollo 1's crew conduct tests at Kennedy Space Center?",
+      "ground_truth": "altitude chamber",
+      "prediction": "Altitude chamber",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1 as a motivational focus on the first manned flight. They trained and conducted tests of their spacecraft at North American and in the altitude chamber at the Kennedy Space Center. A plugs-out test was planned for January, which would simulate a launch countdown on LC-34 with the spacecraft transferring from pads supplied to internal power. If successful, this would be followed by a more rigorous countdown simulation test closer to the February 21 launch, with both the spacecraft and launch vehicle fueled.",
+          "score": 0.6890329025726305
+        }
+      ],
+      "add_time": 8.673,
+      "search_time": 0.282,
+      "answer_time": 0.753,
+      "total_time": 9.709,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 149,
+      "user_id": "eval_149_a620625b",
+      "question": "What was a plugs-out test done to simulate on the LC-34?",
+      "ground_truth": "launch countdown",
+      "prediction": "A launch countdown",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1 as a motivational focus on the first manned flight. They trained and conducted tests of their spacecraft at North American and in the altitude chamber at the Kennedy Space Center. A plugs-out test was planned for January, which would simulate a launch countdown on LC-34 with the spacecraft transferring from pads supplied to internal power. If successful, this would be followed by a more rigorous countdown simulation test closer to the February 21 launch, with both the spacecraft and launch vehicle fueled.",
+          "score": 0.4136838023224244
+        }
+      ],
+      "add_time": 7.173,
+      "search_time": 0.266,
+      "answer_time": 0.731,
+      "total_time": 8.17,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 150,
+      "user_id": "eval_150_e051a81f",
+      "question": "What other location did Apollo 1 test at besides Kennedy Space Center?",
+      "ground_truth": "north american",
+      "prediction": "North American",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Grissom, White, and Chaffee decided to name their flight Apollo 1 as a motivational focus on the first manned flight. They trained and conducted tests of their spacecraft at North American and in the altitude chamber at the Kennedy Space Center. A plugs-out test was planned for January, which would simulate a launch countdown on LC-34 with the spacecraft transferring from pads supplied to internal power. If successful, this would be followed by a more rigorous countdown simulation test closer to the February 21 launch, with both the spacecraft and launch vehicle fueled.",
+          "score": 0.6415768857202435
+        }
+      ],
+      "add_time": 7.513,
+      "search_time": 0.329,
+      "answer_time": 0.585,
+      "total_time": 8.427,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 151,
+      "user_id": "eval_151_0d200a34",
+      "question": "What was the Henry Cole Wing previously called?",
+      "ground_truth": "school for naval architects",
+      "prediction": "Science Schools",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "With the death of Captain Francis Fowke, Royal Engineers, the next architect to work at the museum was Colonel, later Major General, Henry Young Darrochcott Scott, also of the Royal Engineers. He designed the five-story school for naval architects, known as the Science Schools, to the northwest of the garden, now the Henry Cole Wing, between 1867 and 1872. Scott's assistant, J. W. Wilde, designed the impressive staircase that rises the full height of the building. Made from Cadeby stone, the steps are seven feet, or one meter, in length. The balustrades and columns are made of Portland stone. The building now houses the prints and architectural drawings of the V&A, as well as prints, drawings, paintings, and photographs from the Royal Institute of British Architects (RIBA) Drawings and Archives Collections, and the Sackler Centre for Arts Education, which opened in 2008.",
+          "score": 0.4212382564263213
+        }
+      ],
+      "add_time": 10.276,
+      "search_time": 0.255,
+      "answer_time": 0.74,
+      "total_time": 11.271,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 152,
+      "user_id": "eval_152_f0678938",
+      "question": "What part of the V&A collection does the Henry Cole Wing houses?",
+      "ground_truth": "prints drawings paintings and photographs",
+      "prediction": "Prints and architectural drawings",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "With the death of Captain Francis Fowke, Royal Engineers, the next architect to work at the museum was Colonel, later Major General, Henry Young Darrochcott Scott, also of the Royal Engineers. He designed the five-story school for naval architects, known as the Science Schools, to the northwest of the garden, now the Henry Cole Wing, between 1867 and 1872. Scott's assistant, J. W. Wilde, designed the impressive staircase that rises the full height of the building. Made from Cadeby stone, the steps are seven feet, or one meter, in length. The balustrades and columns are made of Portland stone. The building now houses the prints and architectural drawings of the V&A, as well as prints, drawings, paintings, photographs, and the Royal Institute of British Architects (RIBA) Drawings and Archives Collections. It also includes the Sackler Centre for Arts Education, which opened in 2008.",
+          "score": 0.5330336621359626
+        }
+      ],
+      "add_time": 10.195,
+      "search_time": 0.339,
+      "answer_time": 0.645,
+      "total_time": 11.179,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.75
+    },
+    {
+      "idx": 153,
+      "user_id": "eval_153_4dbe1b63",
+      "question": "Where is corporal punishment practiced the most?",
+      "ground_truth": "the south",
+      "prediction": "Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, Texas",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment; the others, mostly in the South, have not. It is still used to a significant, though declining, degree in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas. Private schools in these and most other states may also use it. Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle. This often took place in the classroom or hallway, but nowadays the punishment is usually given privately in the principal's office.",
+          "score": 0.6940121352059788
+        }
+      ],
+      "add_time": 8.212,
+      "search_time": 0.251,
+      "answer_time": 0.817,
+      "total_time": 9.279,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 154,
+      "user_id": "eval_154_816772ac",
+      "question": "Is corporal punishment increasing or declining in the South?",
+      "ground_truth": "declining",
+      "prediction": "Declining",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment; the others, mostly in the South, have not. It is still used to a significant, though declining, degree in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas. Private schools in these and most other states may also use it. Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle. This often took place in the classroom or hallway, but nowadays the punishment is usually given privately in the principal's office.",
+          "score": 0.6609173313731107
+        }
+      ],
+      "add_time": 7.515,
+      "search_time": 0.401,
+      "answer_time": 0.586,
+      "total_time": 8.502,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 155,
+      "user_id": "eval_155_1625f743",
+      "question": "What tool is used in corporal punishment?",
+      "ground_truth": "wooden paddle",
+      "prediction": "Wooden paddle",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment; the others, mostly in the South, have not. It is still used to a significant, though declining, degree in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas. Private schools in these and most other states may also use it. Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle. This often took place in the classroom or hallway, but nowadays the punishment is usually given privately in the principal's office.",
+          "score": 0.5987740725795132
+        }
+      ],
+      "add_time": 10.203,
+      "search_time": 0.297,
+      "answer_time": 0.848,
+      "total_time": 11.349,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 156,
+      "user_id": "eval_156_3476f1f9",
+      "question": "Where is corporal punishment usually performed these days?",
+      "ground_truth": "principals office",
+      "prediction": "In the principal's office.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Thirty U.S. states have banned corporal punishment; the others, mostly in the South, have not. It is still used to a significant, though declining, degree in some public schools in Alabama, Arkansas, Georgia, Louisiana, Mississippi, Oklahoma, Tennessee, and Texas. Private schools in these and most other states may also use it. Corporal punishment in American schools is administered to the seat of the student's trousers or skirt with a specially made wooden paddle. This often took place in the classroom or hallway, but nowadays the punishment is usually given privately in the principal's office.",
+          "score": 0.7075341359679994
+        }
+      ],
+      "add_time": 8.825,
+      "search_time": 0.285,
+      "answer_time": 0.651,
+      "total_time": 9.761,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.0
+    },
+    {
+      "idx": 157,
+      "user_id": "eval_157_32d5a44b",
+      "question": "What religion's schools were integrated into New Zealand public schools between 1979 and 1984?",
+      "ground_truth": "catholic",
+      "prediction": "Catholic",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "As of April 2014, there are 88 private schools in New Zealand, catering to around 28,000 students, or 3.7% of the entire student population. Private school numbers have been in decline since the mid-1970s due to many private schools opting to become state-integrated schools, mostly because of financial difficulties stemming from changes in student numbers and the economy. State-integrated schools maintain their private school special character and receive state funds in return for operating like a state school. For example, they must teach the state curriculum, employ registered teachers, and cannot charge tuition fees. However, they can charge attendance dues for the upkeep of the private school land and buildings. The largest decline in private school numbers occurred between 1979 and 1984 when the nation's private Catholic school system integrated. As a result, private schools in New Zealand are now largely restricted to the largest cities: Auckland, Hamilton, Wellington, and Christchurch, as well as niche markets.",
+          "score": 0.6332252438444641
+        }
+      ],
+      "add_time": 12.458,
+      "search_time": 0.291,
+      "answer_time": 0.605,
+      "total_time": 13.354,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 158,
+      "user_id": "eval_158_f3a2ab5c",
+      "question": "What city, along with Hamilton, Wellington and Christchurch, is one of the largest in New Zealand?",
+      "ground_truth": "auckland",
+      "prediction": "Auckland",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "As of April 2014, there are 88 private schools in New Zealand, catering to around 28,000 students, or 3.7% of the entire student population. Private school numbers have been in decline since the mid-1970s due to many private schools opting to become state-integrated schools, mostly because of financial difficulties stemming from changes in student numbers and the economy. State-integrated schools maintain their private school special character and receive state funds in return for operating like a state school. For example, they must teach the state curriculum, employ registered teachers, and cannot charge tuition fees. However, they can charge attendance dues for the upkeep of the private school land and buildings. The largest decline in private school numbers occurred between 1979 and 1984 when the nation's private Catholic school system integrated. As a result, private schools in New Zealand are now largely restricted to the largest cities: Auckland, Hamilton, Wellington, and Christchurch, as well as niche markets.",
+          "score": 0.4976175075999708
+        }
+      ],
+      "add_time": 13.014,
+      "search_time": 0.3,
+      "answer_time": 1.683,
+      "total_time": 14.997,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 159,
+      "user_id": "eval_159_7be601cf",
+      "question": "The region spans starting at islands found in which body of water?",
+      "ground_truth": "pacific ocean",
+      "prediction": "Pacific Ocean",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of one of the most varied collections of geologic, topographic, and natural ecosystem landscapes, with a diversity that outnumbers other major regions in the state and country. The region spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains, through the transverse and peninsular ranges with their peaks, into the large and small interior valleys, and extends to the vast deserts of California.",
+          "score": 0.3464875548577947
+        }
+      ],
+      "add_time": 7.271,
+      "search_time": 0.265,
+      "answer_time": 0.632,
+      "total_time": 8.167,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 160,
+      "user_id": "eval_160_d6c14de6",
+      "question": "What term best describes southern California's collection of landscapes?",
+      "ground_truth": "varied",
+      "prediction": "Diversity",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of one of the most varied collections of geologic, topographic, and natural ecosystem landscapes, with a diversity that outnumbers other major regions in the state and country. The region spans from Pacific Ocean islands, shorelines, beaches, and coastal plains, through the transverse and peninsular ranges with their peaks, into the large and small interior valleys, and to the vast deserts of California.",
+          "score": 0.7356929910972395
+        }
+      ],
+      "add_time": 7.413,
+      "search_time": 0.268,
+      "answer_time": 0.585,
+      "total_time": 8.265,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 161,
+      "user_id": "eval_161_662c17aa",
+      "question": "What type of landscapes other than geologic and natural ecosystem landscapes can be found in southern California?",
+      "ground_truth": "topographic",
+      "prediction": "Topographic landscapes",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of one of the most varied collections of geologic, topographic, and natural ecosystem landscapes, with a diversity that outnumbers other major regions in the state and country. The region spans from the Pacific Ocean islands, shorelines, beaches, and coastal plains, through the transverse and peninsular ranges with their peaks, into the large and small interior valleys, and extends to the vast deserts of California.",
+          "score": 0.6891653821761261
+        }
+      ],
+      "add_time": 5.968,
+      "search_time": 0.249,
+      "answer_time": 0.669,
+      "total_time": 6.886,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 162,
+      "user_id": "eval_162_2b23dcae",
+      "question": "The region spans which mountains other than the Transverse ranges?",
+      "ground_truth": "peninsular ranges",
+      "prediction": "Peninsular ranges",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of one of the most varied collections of geologic, topographic, and natural ecosystem landscapes, with a diversity that outnumbers other major regions in the state and country. The region spans from Pacific Ocean islands, shorelines, beaches, and coastal plains, through the transverse and peninsular ranges with their peaks, into the large and small interior valleys, and to the vast deserts of California.",
+          "score": 0.367116594717037
+        }
+      ],
+      "add_time": 6.982,
+      "search_time": 0.326,
+      "answer_time": 0.667,
+      "total_time": 7.975,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 163,
+      "user_id": "eval_163_436e50a8",
+      "question": "The mountain ranges tail off into what kind of geographical formation?",
+      "ground_truth": "valleys",
+      "prediction": "Deserts",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Southern California consists of one of the most varied collections of geologic, topographic, and natural ecosystem landscapes, with a diversity that outnumbers other major regions in the state and country. The region spans from Pacific Ocean islands, shorelines, beaches, and coastal plains, through the transverse and peninsular ranges with their peaks, into the large and small interior valleys, and to the vast deserts of California.",
+          "score": 0.3698890219171501
+        }
+      ],
+      "add_time": 6.17,
+      "search_time": 0.268,
+      "answer_time": 0.574,
+      "total_time": 7.013,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 164,
+      "user_id": "eval_164_e0470e3b",
+      "question": "Newcastle served as a northern fortress for which country during the Middle Ages?",
+      "ground_truth": "england",
+      "prediction": "England",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress. Incorporated first by Henry III, the city had a new charter granted by Elizabeth in 1589. A 25-foot (7.6 meters) high stone wall was built around the town in the 13th century to defend it from invaders during the Border War against Scotland. The Scots King William the Lion was imprisoned in Newcastle in 1174, and Edward I brought the Stone of Scone and William Wallace south through the town. Newcastle was successfully defended against the Scots three times during the 14th century and was created a county corporate with its own sheriff by Henry IV in 1400.",
+          "score": 0.7442448863769633
+        }
+      ],
+      "add_time": 8.797,
+      "search_time": 0.266,
+      "answer_time": 0.558,
+      "total_time": 9.62,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 165,
+      "user_id": "eval_165_116d67ef",
+      "question": "Who granted Newcastle a new charter in 1589?",
+      "ground_truth": "elizabeth",
+      "prediction": "Elizabeth",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress. Incorporated first by Henry III, the city had a new charter granted by Elizabeth in 1589. A 25-foot (7.6 meters) high stone wall was built around the town in the 13th century to defend it from invaders during the Border War against Scotland. The Scots King William the Lion was imprisoned in Newcastle in 1174, and Edward I brought the Stone of Scone and William Wallace south through the town. Newcastle was successfully defended against the Scots three times during the 14th century and was created a county corporate with its own sheriff by Henry IV in 1400.",
+          "score": 0.665580044709898
+        }
+      ],
+      "add_time": 9.989,
+      "search_time": 0.358,
+      "answer_time": 0.736,
+      "total_time": 11.084,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 166,
+      "user_id": "eval_166_25058e03",
+      "question": "How many times did Newcastle fight off the Scots during the 14th century?",
+      "ground_truth": "three times",
+      "prediction": "Three times",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Throughout the Middle Ages, Newcastle was England's northern fortress. Incorporated first by Henry III, the city had a new charter granted by Elizabeth in 1589. A 25-foot (7.6 meters) high stone wall was built around the town in the 13th century to defend it from invaders during the Border War against Scotland. The Scots King William the Lion was imprisoned in Newcastle in 1174, and Edward I brought the Stone of Scone and William Wallace south through the town. Newcastle was successfully defended against the Scots three times during the 14th century and was created a county corporate with its own sheriff by Henry IV in 1400.",
+          "score": 0.6500191916428155
+        }
+      ],
+      "add_time": 8.034,
+      "search_time": 0.322,
+      "answer_time": 0.616,
+      "total_time": 8.972,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 167,
+      "user_id": "eval_167_f1f0400a",
+      "question": "In 1735, where did John and Charles Wesley teach the gospel in America?",
+      "ground_truth": "colony of georgia",
+      "prediction": "Georgia",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In 1735, John and Charles Wesley went to America to teach the gospel to the American Indians in the colony of Georgia. In less than two years, the \"Holy Club\" disbanded. John Wesley returned to England and met with a group of clergy he respected. He said they appeared to be of one heart, as well as of one judgment, resolved to be Bible Christians at all events and wherever they were to preach with all their might plain \"old\" Bible Christianity. The ministers retained their membership in the Church of England, though it was not always emphasized or appreciated in the Anglican churches of their day. Their teaching emphasized salvation by God's grace, acquired through faith in Christ. Three teachings they saw as the foundation of Christian faith were",
+          "score": 0.7463949835141814
+        }
+      ],
+      "add_time": 9.124,
+      "search_time": 0.269,
+      "answer_time": 0.614,
+      "total_time": 10.006,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 1.0
+    },
+    {
+      "idx": 168,
+      "user_id": "eval_168_a10ce4c2",
+      "question": "In 1735, who did John and Charles Wesley teach the gospel to in America?",
+      "ground_truth": "american indians",
+      "prediction": "American Indians",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In 1735, John and Charles Wesley went to America to teach the gospel to the American Indians in the colony of Georgia. In less than two years, the \"Holy Club\" disbanded. John Wesley returned to England and met with a group of clergy he respected. He said they appeared to be of one heart, as well as of one judgment, resolved to be Bible Christians at all events and wherever they were to preach with all their might plain \"old\" Bible Christianity. The ministers retained their membership in the Church of England, though it was not always emphasized or appreciated in the Anglican churches of their day. Their teaching emphasized salvation by God's grace, acquired through faith in Christ. Three teachings they saw as the foundation of Christian faith were",
+          "score": 0.7547493423903036
+        }
+      ],
+      "add_time": 7.792,
+      "search_time": 0.247,
+      "answer_time": 0.63,
+      "total_time": 8.668,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 169,
+      "user_id": "eval_169_128ba740",
+      "question": "What did \"The Holy Club's\" teachings emphasize?",
+      "ground_truth": "salvation by gods grace",
+      "prediction": "Salvation by God's grace, acquired through faith in Christ.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "In 1735, John and Charles Wesley went to America to teach the gospel to the American Indians in the colony of Georgia. In less than two years, the \"Holy Club\" disbanded. John Wesley returned to England and met with a group of clergy he respected. He said they appeared to be of one heart, as well as of one judgment, resolved to be Bible Christians at all events and, wherever they were, to preach with all their might plain \"old\" Bible Christianity. The ministers retained their membership in the Church of England, though it was not always emphasized or appreciated in the Anglican churches of their day. Their teaching emphasized salvation by God's grace, acquired through faith in Christ. Three teachings they saw as the foundation of Christian faith were",
+          "score": 0.47835868160368517
+        }
+      ],
+      "add_time": 8.436,
+      "search_time": 0.362,
+      "answer_time": 0.773,
+      "total_time": 9.57,
+      "em": 0,
+      "f1": 0.4286,
+      "bleu": 0.2222
+    },
+    {
+      "idx": 170,
+      "user_id": "eval_170_cb184826",
+      "question": "In what century did the history of the steam engine begin?",
+      "ground_truth": "first century ad",
+      "prediction": "1st century AD",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The history of the steam engine stretches back as far as the 1st century AD. The first recorded rudimentary steam engine was the aeolipile, described by the Greek mathematician Hero of Alexandria. In the following centuries, the few steam-powered engines known were, like the aeolipile, essentially experimental devices used by inventors to demonstrate the properties of steam. A rudimentary steam turbine device was described by Taqi al-Din in 1551 and by Giovanni Branca in 1629. Geronimo de Ibarra y Beaumont received patents in 1606 for 50 steam-powered inventions, including a water pump for draining inundated mines. Denis Papin, a Huguenot refugee, did some useful work on the steam digester in 1679 and first used a piston to raise weights in 1690.",
+          "score": 0.7300809787279792
+        }
+      ],
+      "add_time": 9.513,
+      "search_time": 0.263,
+      "answer_time": 0.611,
+      "total_time": 10.388,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 171,
+      "user_id": "eval_171_ea27c454",
+      "question": "Who conceptualized the aeolipile?",
+      "ground_truth": "hero of alexandria",
+      "prediction": "Hero of Alexandria",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The history of the steam engine stretches back as far as the 1st century AD. The first recorded rudimentary steam engine was the aeolipile, described by the Greek mathematician Hero of Alexandria. In the following centuries, the few steam-powered engines known were, like the aeolipile, essentially experimental devices used by inventors to demonstrate the properties of steam. A rudimentary steam turbine device was described by Taqi al-Din in 1551 and by Giovanni Branca in 1629. Geronimo de Ayanz y Beaumont received patents in 1606 for 50 steam-powered inventions, including a water pump for draining inundated mines. Denis Papin, a Huguenot refugee, did some useful work on the steam digester in 1679 and first used a piston to raise weights in 1690.",
+          "score": 0.36196254204191075
+        }
+      ],
+      "add_time": 9.844,
+      "search_time": 0.317,
+      "answer_time": 0.675,
+      "total_time": 10.836,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 172,
+      "user_id": "eval_172_eeb03137",
+      "question": "What was Hero of Alexandria's nationality?",
+      "ground_truth": "greek",
+      "prediction": "Greek",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "The history of the steam engine stretches back as far as the 1st century AD. The first recorded rudimentary steam engine was the aeolipile, described by the Greek mathematician Hero of Alexandria. In the following centuries, the few steam-powered engines known were, like the aeolipile, essentially experimental devices used by inventors to demonstrate the properties of steam. A rudimentary steam turbine device was described by Taki al-Din in 1551 and by Giovanni Branca in 1629. Geronimo de Ibarra y Beaumont received patents in 1606 for 50 steam-powered inventions, including a water pump for draining inundated mines. Denis Papin, a Huguenot refugee, did some useful work on the steam digester in 1679 and first used a piston to raise weights in 1690.",
+          "score": 0.2084512210736048
+        }
+      ],
+      "add_time": 1082.821,
+      "search_time": 0.812,
+      "answer_time": 1.469,
+      "total_time": 1085.101,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 173,
+      "user_id": "eval_173_0fd27184",
+      "question": "Where was the Space Task Group located?",
+      "ground_truth": "nasas langley research center",
+      "prediction": "NASA's Langley Research Center",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "It became clear that managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear that NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida. Therefore, a new Mission Control Center would be included in the MSC.",
+          "score": 0.5234272012931869
+        }
+      ],
+      "add_time": 8.916,
+      "search_time": 0.261,
+      "answer_time": 0.91,
+      "total_time": 10.087,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.75
+    },
+    {
+      "idx": 174,
+      "user_id": "eval_174_3bd03631",
+      "question": "Where was the Manned Spacecraft Center located?",
+      "ground_truth": "houston texas",
+      "prediction": "Houston, Texas",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "It became clear that managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear that NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida. Therefore, a new Mission Control Center would be included in the MSC.",
+          "score": 0.7084702358751054
+        }
+      ],
+      "add_time": 9.082,
+      "search_time": 0.253,
+      "answer_time": 0.819,
+      "total_time": 10.154,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5
+    },
+    {
+      "idx": 175,
+      "user_id": "eval_175_cbfccf6f",
+      "question": "What university donated the land for the Manned Spacecraft Center?",
+      "ground_truth": "rice university",
+      "prediction": "Rice University",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "It became clear that managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear that NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida. Therefore, a new Mission Control Center would be included in the MSC.",
+          "score": 0.6109534163156594
+        }
+      ],
+      "add_time": 8.928,
+      "search_time": 0.269,
+      "answer_time": 1.149,
+      "total_time": 10.346,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 176,
+      "user_id": "eval_176_967c938d",
+      "question": "In what state were the original launching facilities for missions?",
+      "ground_truth": "florida",
+      "prediction": "Florida",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "It became clear that managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear that NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida. Therefore, a new Mission Control Center would be included in the MSC.",
+          "score": 0.4839055417114282
+        }
+      ],
+      "add_time": 10.019,
+      "search_time": 0.248,
+      "answer_time": 0.876,
+      "total_time": 11.142,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 177,
+      "user_id": "eval_177_e7b8a652",
+      "question": "How does HT strive to amass power?",
+      "ground_truth": "ideological struggle",
+      "prediction": "Through ideological struggle and a \"bloodless\" coup.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HT does not engage in armed jihad or work for a democratic system. Instead, it seeks to take power through ideological struggle to change Muslim public opinion, particularly through elites who will facilitate a change of government. This includes a \"bloodless\" coup, which it allegedly attempted and failed in 1968 and 1969 in Jordan. HT was banned in 1974 in Egypt and is now banned in both countries. However, many HT members have gone on to join terrorist groups, and many jihadi terrorists have cited HT as a key influence.",
+          "score": 0.5640387595297252
+        }
+      ],
+      "add_time": 7.263,
+      "search_time": 0.27,
+      "answer_time": 1.161,
+      "total_time": 8.694,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.2857
+    },
+    {
+      "idx": 178,
+      "user_id": "eval_178_09fdece5",
+      "question": "Who specifically does HT target to change the opinion of?",
+      "ground_truth": "government",
+      "prediction": "Muslim public opinion, particularly through elites.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HT does not engage in armed jihad or work for a democratic system. Instead, it seeks to take power through ideological struggle to change Muslim public opinion, particularly through elites who will facilitate a change of government. This includes a \"bloodless\" coup, which it allegedly attempted and failed in 1968 and 1969 in Jordan. HT was banned in 1974 in Egypt and is now banned in both countries. However, many HT members have gone on to join terrorist groups, and many jihadi terrorists have cited HT as a key influence.",
+          "score": 0.4912290571998661
+        }
+      ],
+      "add_time": 7.511,
+      "search_time": 0.259,
+      "answer_time": 1.411,
+      "total_time": 9.181,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 179,
+      "user_id": "eval_179_9acf9e1a",
+      "question": "Where did HT fail to pull off a bloodless coup in 1974?",
+      "ground_truth": "egypt",
+      "prediction": "Egypt",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HT does not engage in armed jihad or work for a democratic system. Instead, it seeks to take power through ideological struggle to change Muslim public opinion, particularly through elites who will facilitate a change of government. This includes a \"bloodless\" coup, which it allegedly attempted and failed in 1968 and 1969 in Jordan. HT was banned in 1974 in Egypt and is now banned in both countries. However, many HT members have gone on to join terrorist groups, and many jihadi terrorists have cited HT as a key influence.",
+          "score": 0.5703886326132311
+        }
+      ],
+      "add_time": 8.279,
+      "search_time": 0.258,
+      "answer_time": 0.938,
+      "total_time": 9.475,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 180,
+      "user_id": "eval_180_7d71e90b",
+      "question": "What have many HT members graduated to joining?",
+      "ground_truth": "terrorist groups",
+      "prediction": "Terrorist groups",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HT does not engage in armed jihad or work for a democratic system. Instead, it seeks to take power through ideological struggle to change Muslim public opinion, particularly through elites who will facilitate a change of government. This includes a \"bloodless\" coup, which it allegedly attempted and failed in 1968 and 1969 in Jordan. HT was banned in 1974 in Egypt and is now banned in both countries. However, many HT members have gone on to join terrorist groups, and many jihadi terrorists have cited HT as a key influence.",
+          "score": 0.4648518819714097
+        }
+      ],
+      "add_time": 9.475,
+      "search_time": 0.259,
+      "answer_time": 0.865,
+      "total_time": 10.6,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 181,
+      "user_id": "eval_181_310ca977",
+      "question": "What is the second largest contrubtor to Kenyas GDP?",
+      "ground_truth": "agriculture",
+      "prediction": "Agriculture",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Agriculture is the second largest contributor to Kenya's gross domestic product (GDP), after the service sector. In 2005, agriculture\u2014including forestry and fishing\u2014accounted for 24% of GDP, 18% of wage employment, and 50% of revenue from exports. The principal cash crops are tea, horticultural produce, and coffee. Horticultural produce and tea are the main growth sectors and the two most valuable of all of Kenya's exports. The production of major food staples, such as corn, is subject to sharp weather-related fluctuations. Production downturns periodically necessitate food aid; for example, in 2004, aid was provided for 1.8 million people due to one of Kenya's intermittent droughts.",
+          "score": 0.7227200485881351
+        }
+      ],
+      "add_time": 9.242,
+      "search_time": 0.323,
+      "answer_time": 2.226,
+      "total_time": 11.791,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 182,
+      "user_id": "eval_182_58b04af1",
+      "question": "What can cause fluctuations in the production of corn?",
+      "ground_truth": "weather",
+      "prediction": "Weather-related fluctuations",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Agriculture is the second largest contributor to Kenya's gross domestic product (GDP), after the service sector. In 2005, agriculture\u2014including forestry and fishing\u2014accounted for 24% of GDP, 18% of wage employment, and 50% of revenue from exports. The principal cash crops are tea, horticultural produce, and coffee. Horticultural produce and tea are the main growth sectors and the two most valuable of all of Kenya's exports. The production of major food staples, such as corn, is subject to sharp weather-related fluctuations. Production downturns periodically necessitate food aid; for example, in 2004, aid was provided for 1.8 million people due to one of Kenya's intermittent droughts.",
+          "score": 0.3026036052859986
+        }
+      ],
+      "add_time": 8.131,
+      "search_time": 0.257,
+      "answer_time": 0.617,
+      "total_time": 9.005,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.0
+    },
+    {
+      "idx": 183,
+      "user_id": "eval_183_129b44c4",
+      "question": "What is it called when people in society rebel against laws they think are unfair?",
+      "ground_truth": "civil disobedience",
+      "prediction": "Civil disobedience",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also employed in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. More recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.5238082269163811
+        }
+      ],
+      "add_time": 9.958,
+      "search_time": 0.283,
+      "answer_time": 0.712,
+      "total_time": 10.952,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 184,
+      "user_id": "eval_184_3a842223",
+      "question": "What is an example of major civil disobedience in South Africa?",
+      "ground_truth": "the fight against apartheid",
+      "prediction": "Fight against apartheid",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also employed in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.6293154562692448
+        }
+      ],
+      "add_time": 9.645,
+      "search_time": 0.264,
+      "answer_time": 0.621,
+      "total_time": 10.53,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 185,
+      "user_id": "eval_185_9c6dcb23",
+      "question": "What was the the movement called that brought Baltic countries independence from the Soviet Union?",
+      "ground_truth": "singing revolution",
+      "prediction": "Singing Revolution",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also used in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.3877787702206873
+        }
+      ],
+      "add_time": 9.885,
+      "search_time": 0.448,
+      "answer_time": 0.95,
+      "total_time": 11.283,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 186,
+      "user_id": "eval_186_193395dc",
+      "question": "In 2004 the Orange revolution occurred in what country?",
+      "ground_truth": "ukraine",
+      "prediction": "Ukraine",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also used in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.4808760266617098
+        }
+      ],
+      "add_time": 10.497,
+      "search_time": 0.597,
+      "answer_time": 0.855,
+      "total_time": 11.95,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 187,
+      "user_id": "eval_187_b99d98a9",
+      "question": "Where was the location of the 2003 Rose revolution?",
+      "ground_truth": "georgia",
+      "prediction": "Georgia",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also employed in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.45246347442403134
+        }
+      ],
+      "add_time": 10.235,
+      "search_time": 0.29,
+      "answer_time": 0.733,
+      "total_time": 11.259,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 188,
+      "user_id": "eval_188_9506e64f",
+      "question": "Which people brought forward one of the earliest examples of Civil Disobedience?",
+      "ground_truth": "egyptians",
+      "prediction": "Egyptians",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also used in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.6145722648297265
+        }
+      ],
+      "add_time": 8.101,
+      "search_time": 0.309,
+      "answer_time": 0.791,
+      "total_time": 9.2,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 189,
+      "user_id": "eval_189_5b9e6cea",
+      "question": "Who was one of the earliest examples of Civil Disobedience against?",
+      "ground_truth": "the british",
+      "prediction": "British occupation",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also employed in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.6003935574336674
+        }
+      ],
+      "add_time": 20.116,
+      "search_time": 0.256,
+      "answer_time": 1.954,
+      "total_time": 22.326,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 190,
+      "user_id": "eval_190_163a6d72",
+      "question": "Why do people chose civil disobedience to protest?",
+      "ground_truth": "nonviolent resistance",
+      "prediction": "To rebel against unfair laws.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and East Germany to oust their communist governments. It was also used in South Africa in the fight against apartheid, in the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.6323927603441339
+        }
+      ],
+      "add_time": 8.634,
+      "search_time": 0.296,
+      "answer_time": 1.695,
+      "total_time": 10.625,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 191,
+      "user_id": "eval_191_8160da9f",
+      "question": "What civil rights movement in the US was known for it's disobedience?",
+      "ground_truth": "american civil rights movement",
+      "prediction": "American Civil Rights Movement",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "One of its earliest massive implementations was brought about by Egyptians against the British occupation in the 1919 revolution. Civil disobedience is one of the many ways people have rebelled against what they deem to be unfair laws. It has been used in many non-violent resistance movements, such as Gandhi's campaigns for independence from the British Empire, Czechoslovakia's Velvet Revolution, and in East Germany to oust their communist governments. It was also used in South Africa in the fight against apartheid, during the American Civil Rights Movement, and in the Singing Revolution to bring independence to the Baltic countries from the Soviet Union. Recently, it was seen in the 2003 Rose Revolution in Georgia and the 2004 Orange Revolution in Ukraine, among other various movements worldwide.",
+          "score": 0.5970706967613378
+        }
+      ],
+      "add_time": 8.884,
+      "search_time": 0.314,
+      "answer_time": 2.292,
+      "total_time": 11.49,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 192,
+      "user_id": "eval_192_316dcfd9",
+      "question": "What health condition can deep sea diving cause?",
+      "ground_truth": "oxygen toxicity",
+      "prediction": "Oxygen toxicity",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving. Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can eventually lead to permanent pulmonary fibrosis. Exposure to O2 partial pressures greater than 160 kPa\u2014about 1.6 atmospheres\u2014may lead to convulsions, which are normally fatal for divers. Acute oxygen toxicity, causing seizures, is the most feared effect for divers and can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more. The same effect can occur by breathing 100% O2 at only 6 meters.",
+          "score": 0.627915161383712
+        }
+      ],
+      "add_time": 9.38,
+      "search_time": 0.251,
+      "answer_time": 0.873,
+      "total_time": 10.504,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 193,
+      "user_id": "eval_193_d0b45a20",
+      "question": "To what can the use of prolonged breathing of oxygen at 60 kPa lead?",
+      "ground_truth": "permanent pulmonary fibrosis",
+      "prediction": "Permanent pulmonary fibrosis",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving. Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can eventually lead to permanent pulmonary fibrosis. Exposure to O2 partial pressures greater than 160 kPa\u2014about 1.6 atmospheres\u2014may lead to convulsions, which are normally fatal for divers. Acute oxygen toxicity, causing seizures, is the most feared effect for divers and can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more. The same effect can occur by breathing 100% O2 at a depth of only 6 meters.",
+          "score": 0.6033529742014465
+        }
+      ],
+      "add_time": 9.125,
+      "search_time": 0.256,
+      "answer_time": 0.96,
+      "total_time": 10.342,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 194,
+      "user_id": "eval_194_902cd9a6",
+      "question": "What is the most feared condition that divers want to avoid?",
+      "ground_truth": "seizures",
+      "prediction": "Acute oxygen toxicity",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving. Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can eventually lead to permanent pulmonary fibrosis. Exposure to O2 partial pressures greater than 160 kPa\u2014about 1.6 atmospheres\u2014may lead to convulsions, which are normally fatal for divers. Acute oxygen toxicity, causing seizures, is the most feared effect for divers and can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more. The same effect can occur by breathing 100% O2 at only 6 meters.",
+          "score": 0.5740917714742038
+        }
+      ],
+      "add_time": 10.804,
+      "search_time": 0.276,
+      "answer_time": 0.7,
+      "total_time": 11.779,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 195,
+      "user_id": "eval_195_e4d0b448",
+      "question": "What physical condition can acute oxygen toxicity cause?",
+      "ground_truth": "seizures",
+      "prediction": "Seizures",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Oxygen toxicity to the lungs and central nervous system can occur in deep scuba diving and surface-supplied diving. Prolonged breathing of an air mixture with an O2 partial pressure greater than 60 kPa can eventually lead to permanent pulmonary fibrosis. Exposure to O2 partial pressures greater than 160 kPa\u2014about 1.6 atmospheres\u2014may lead to convulsions, which are normally fatal for divers. Acute oxygen toxicity, causing seizures, is the most feared effect for divers and can occur by breathing an air mixture with 21% O2 at a depth of 66 meters or more. The same effect can occur by breathing 100% O2 at a depth of only 6 meters.",
+          "score": 0.6089764632436838
+        }
+      ],
+      "add_time": 8.204,
+      "search_time": 0.255,
+      "answer_time": 0.67,
+      "total_time": 9.129,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 196,
+      "user_id": "eval_196_8e10fb4c",
+      "question": "Where did Huguenots and Walloons settle in England?",
+      "ground_truth": "canterbury",
+      "prediction": "Canterbury, Sandwich, Faversham, Maidstone",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Other evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane, where weavers' windows survive on the top floor, as many Huguenots worked as weavers. The Weavers', a half-timbered house by the river, was the site of a weaving school from the late 16th century to about 1830. It has been adapted as a restaurant. The house derives its name from a weaving school that was moved there in the last years of the 19th century, reviving an earlier use. Other refugees practiced a variety of occupations necessary to sustain the community, distinct from the indigenous population. Such economic separation was the condition of the refugees' initial acceptance in the city. They also settled elsewhere in Kent\u2014particularly Sandwich, Faversham, and Maidstone, towns in which there used to be refugee churches.",
+          "score": 0.609770879222751
+        }
+      ],
+      "add_time": 11.516,
+      "search_time": 0.254,
+      "answer_time": 0.786,
+      "total_time": 12.556,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.0
+    },
+    {
+      "idx": 197,
+      "user_id": "eval_197_07694438",
+      "question": "What house was the site of a weaving school in Canterbury?",
+      "ground_truth": "the weavers",
+      "prediction": "The Weavers'",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Other evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane, where weavers' windows survive on the top floor, as many Huguenots worked as weavers. The Weavers', a half-timbered house by the river, was the site of a weaving school from the late 16th century to about 1830. It has been adapted as a restaurant. The house derives its name from a weaving school that was moved there in the last years of the 19th century, reviving an earlier use. Other refugees practiced a variety of occupations necessary to sustain the community, distinct from the indigenous population. Such economic separation was the condition of the refugees' initial acceptance in the city. They also settled elsewhere in Kent\u2014particularly Sandwich, Faversham, and Maidstone, towns in which there used to be refugee churches.",
+          "score": 0.6335431640924061
+        }
+      ],
+      "add_time": 11.363,
+      "search_time": 0.246,
+      "answer_time": 0.873,
+      "total_time": 12.482,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5
+    },
+    {
+      "idx": 198,
+      "user_id": "eval_198_1eba232c",
+      "question": "What social construct did Huguenot refugees in Canterbury practice?",
+      "ground_truth": "economic separation",
+      "prediction": "Economic separation",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Other evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane, where weavers' windows survive on the top floor, as many Huguenots worked as weavers. The Weaver's, a half-timbered house by the river, was the site of a weaving school from the late 16th century to about 1830. It has been adapted as a restaurant. The house derives its name from a weaving school that was moved there in the last years of the 19th century, reviving an earlier use. Other refugees practiced a variety of occupations necessary to sustain the community, distinct from the indigenous population. Such economic separation was the condition of the refugees' initial acceptance in the city. They also settled elsewhere in Kent, particularly in Sandwich, Faversham, and Maidstone, towns in which there used to be refugee churches.",
+          "score": 0.6362963775706654
+        }
+      ],
+      "add_time": 10.167,
+      "search_time": 0.246,
+      "answer_time": 0.665,
+      "total_time": 11.078,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 199,
+      "user_id": "eval_199_695e31a6",
+      "question": "What is located on the site of The Weaving House currently?",
+      "ground_truth": "restaurant",
+      "prediction": "A restaurant",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "Other evidence of the Walloons and Huguenots in Canterbury includes a block of houses in Turnagin Lane, where weavers' windows survive on the top floor, as many Huguenots worked as weavers. The Weavers', a half-timbered house by the river, was the site of a weaving school from the late 16th century to about 1830. It has been adapted as a restaurant. The house derives its name from a weaving school that was moved there in the last years of the 19th century, reviving an earlier use. Other refugees practiced a variety of occupations necessary to sustain the community, distinct from the indigenous population. Such economic separation was the condition of the refugees' initial acceptance in the city. They also settled elsewhere in Kent\u2014particularly Sandwich, Faversham, and Maidstone, towns in which there used to be refugee churches.",
+          "score": 0.47484390925264014
+        }
+      ],
+      "add_time": 12.798,
+      "search_time": 0.258,
+      "answer_time": 0.635,
+      "total_time": 13.691,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.5
+    }
+  ]
+}

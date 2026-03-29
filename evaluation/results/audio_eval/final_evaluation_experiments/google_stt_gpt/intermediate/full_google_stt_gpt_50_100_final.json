@@ -1,0 +1,2431 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "full_google_stt_gpt_50_100",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "google_stt/default",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text",
+    "judge_batch_size": 20
+  },
+  "summary": {
+    "count": 50,
+    "em_mean": 0.54,
+    "em_std": 0.5035,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.6731,
+    "f1_std": 0.4127,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.639,
+    "bleu_std": 0.4264,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "llm_mean": 0.8,
+    "llm_std": 0.4041,
+    "llm_min": 0,
+    "llm_max": 1,
+    "total_time_mean": 35.7625,
+    "total_time_std": 13.6989,
+    "total_time_min": 15.78,
+    "total_time_max": 77.799,
+    "add_time_mean": 34.3058,
+    "add_time_std": 13.6307,
+    "add_time_min": 14.77,
+    "add_time_max": 76.648,
+    "search_time_mean": 0.5001,
+    "search_time_std": 0.344,
+    "search_time_min": 0.275,
+    "search_time_max": 2.245,
+    "answer_time_mean": 0.9565,
+    "answer_time_std": 0.3946,
+    "answer_time_min": 0.574,
+    "answer_time_max": 2.502,
+    "em_correct": 27,
+    "em_pct": 54.0,
+    "llm_correct": 40,
+    "llm_pct": 80.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 50,
+      "zero": 11,
+      "perfect": 27,
+      "above_50": 37,
+      "above_80": 27
+    },
+    "bleu": {
+      "total": 50,
+      "zero": 11,
+      "perfect": 27,
+      "above_50": 34,
+      "above_80": 27
+    }
+  },
+  "results": [
+    {
+      "idx": 50,
+      "user_id": "eval_50_688bbd90",
+      "question": "What position did Rivera play in Super Bowl XX?",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7810226571751737
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.36520089407132883
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.36109405219391033
+        }
+      ],
+      "add_time": 21.143,
+      "search_time": 2.245,
+      "answer_time": 1.793,
+      "total_time": 25.181,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 51,
+      "user_id": "eval_51_7d530cf1",
+      "question": "Who was replaced by Kubiak in Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.75047639327759
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.4736532067033844
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3416550433450525
+        }
+      ],
+      "add_time": 17.044,
+      "search_time": 0.395,
+      "answer_time": 0.72,
+      "total_time": 18.16,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 52,
+      "user_id": "eval_52_a7b21cdd",
+      "question": "What team did Kubiak play for in Super Bowl XXI?",
+      "ground_truth": "broncos",
+      "prediction": "Broncos",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7005221941802124
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.5023499344478786
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37352737751112497
+        }
+      ],
+      "add_time": 18.708,
+      "search_time": 0.296,
+      "answer_time": 1.096,
+      "total_time": 20.101,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 53,
+      "user_id": "eval_53_0433b473",
+      "question": "What position did Rivera play in Super Bowl XX? ",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7774372125872245
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3785471939905328
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.35525704113425083
+        }
+      ],
+      "add_time": 15.027,
+      "search_time": 0.426,
+      "answer_time": 2.502,
+      "total_time": 17.955,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 54,
+      "user_id": "eval_54_811bdc6d",
+      "question": "Who did Kubiak take the place of after Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.7671411143115303
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.44238721269159786
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.3555739323232074
+        }
+      ],
+      "add_time": 15.473,
+      "search_time": 0.4,
+      "answer_time": 0.673,
+      "total_time": 16.546,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 55,
+      "user_id": "eval_55_7e75c130",
+      "question": "Who was the Panthers head coach for the 2015 season?",
+      "ground_truth": "rivera",
+      "prediction": "I don't know",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.33422604628214625
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.3260719401522674
+        },
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.29778043399413373
+        }
+      ],
+      "add_time": 21.403,
+      "search_time": 0.281,
+      "answer_time": 0.87,
+      "total_time": 22.554,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 56,
+      "user_id": "eval_56_8cfcbffd",
+      "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+      "ground_truth": "germany",
+      "prediction": "Germany",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The collection includes the Racco Augustus Rex bureau cabinet, dated circa 1750 from Germany",
+          "score": 0.6583107649908209
+        },
+        {
+          "memory": "The Racco Augustus Rex bureau cabinet features specially fine marquetry and ormolu mounts",
+          "score": 0.635255658975391
+        },
+        {
+          "memory": "One of the grandest pieces of 19th-century furniture is a highly elaborate French cabinet, dated 1861 to 1867, made by M. Ford",
+          "score": 0.49806713764973876
+        },
+        {
+          "memory": "The French cabinet is made from ebony inlaid with box, lime, holly, pear, walnut, and mahogany woods, as well as marble with gilded carvings",
+          "score": 0.4675366811992925
+        },
+        {
+          "memory": "Furniture designed by Ernest Usen, Edward William Godwin, Charles Vois, Aido Flu, and Otto Wagner are among the late 19th century and early 20th century examples in the collection",
+          "score": 0.39531615261935427
+        },
+        {
+          "memory": "The inlaid doors are considered one of the finest pieces of Continental furniture",
+          "score": 0.39299174044576224
+        },
+        {
+          "memory": "There are a set of beautiful inlaid doors dated 1580 from Antwerp, City Hall, attributed to Hans Reedman of Rise",
+          "score": 0.3613655995529344
+        },
+        {
+          "memory": "The collection includes the work of modernists such as Le Corbusier, Marcel Breuer, Charles and Ray Eames, and Gi\u00f2 Ponti",
+          "score": 0.3085781293057961
+        }
+      ],
+      "add_time": 43.72,
+      "search_time": 0.329,
+      "answer_time": 0.89,
+      "total_time": 44.94,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 57,
+      "user_id": "eval_57_ee6017d1",
+      "question": "What has replaced the former shipping premises?",
+      "ground_truth": "largescale regeneration",
+      "prediction": "New office developments",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with new office developments",
+          "score": 0.6838317642626359
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle Quayside with major cultural developments in Gateshead",
+          "score": 0.31359752039338956
+        },
+        {
+          "memory": "Newcastle and Gateshead are now a thriving cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.30092034770148207
+        },
+        {
+          "memory": "The purpose of the 'Newcastle Gateshead' initiative is to spearhead the regeneration of the Northeast",
+          "score": 0.29413639426999955
+        },
+        {
+          "memory": "The Baltic Centre for Contemporary Art is located in Gateshead and was the venue for the Turner Prize in 2011",
+          "score": 0.28117256653270756
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' for tourist promotion",
+          "score": 0.26218518939223734
+        },
+        {
+          "memory": "A temporary bamboo bridge was installed in 2008 for 10 days",
+          "score": 0.23358598510074463
+        },
+        {
+          "memory": "The Sage Gateshead Music Centre was designed by Norman Foster",
+          "score": 0.21884429270679642
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.2054484261105319
+        },
+        {
+          "memory": "The temporary bamboo bridge was not made for walking or cycling, but was just a sculpture",
+          "score": 0.14006930732596112
+        }
+      ],
+      "add_time": 42.997,
+      "search_time": 0.455,
+      "answer_time": 0.951,
+      "total_time": 44.403,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 58,
+      "user_id": "eval_58_7becb7cb",
+      "question": "Who designed the Sage Gateshead music center?",
+      "ground_truth": "norman foster",
+      "prediction": "Norman Foster",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Sage Gateshead Music Centre was designed by Norman Foster",
+          "score": 0.828483506695765
+        },
+        {
+          "memory": "The Baltic Centre for Contemporary Art is located in Gateshead",
+          "score": 0.5676173683224551
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.5676101526178629
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle Quayside with major cultural developments in Gateshead",
+          "score": 0.5083884516943935
+        },
+        {
+          "memory": "The regeneration of the Northeast is spearheaded by the 'Newcastle Gateshead' initiative",
+          "score": 0.44836101229367353
+        },
+        {
+          "memory": "Newcastle and Gateshead are now a thriving cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.44159457144965525
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' for tourist promotion",
+          "score": 0.403177862415022
+        },
+        {
+          "memory": "The Baltic Centre for Contemporary Art was the venue for the Turner Prize in 2011",
+          "score": 0.33640040493643564
+        },
+        {
+          "memory": "Large-scale regeneration has replaced former shipping premises with new office developments",
+          "score": 0.2767072905477586
+        },
+        {
+          "memory": "The temporary bamboo bridge was not made for walking or cycling, but was just a sculpture",
+          "score": 0.24866664545907047
+        }
+      ],
+      "add_time": 38.867,
+      "search_time": 1.071,
+      "answer_time": 1.358,
+      "total_time": 41.296,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 59,
+      "user_id": "eval_59_db66a495",
+      "question": "How many days did the River Tyne have the Bambuco Bridge?",
+      "ground_truth": "ten",
+      "prediction": "10 days",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "A temporary bamboo bridge was installed in 2008 for 10 days",
+          "score": 0.5182257020403613
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was commissioned by Gateshead Council",
+          "score": 0.46747876809527555
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge has integrated the older Newcastle Quayside with major cultural developments in Gateshead",
+          "score": 0.43114440986585845
+        },
+        {
+          "memory": "The temporary bamboo bridge was not made for walking or cycling, but was just a sculpture",
+          "score": 0.39456235878646073
+        },
+        {
+          "memory": "Newcastle and Gateshead have linked together under the banner 'Newcastle Gateshead' for tourist promotion",
+          "score": 0.31588183210473597
+        },
+        {
+          "memory": "The purpose of the 'Newcastle Gateshead' initiative is to spearhead the regeneration of the Northeast",
+          "score": 0.2784833537066878
+        },
+        {
+          "memory": "Newcastle and Gateshead are now a thriving cosmopolitan area with bars, restaurants, and public spaces",
+          "score": 0.27569884132873396
+        },
+        {
+          "memory": "Major cultural developments in Gateshead include the Baltic Centre for Contemporary Art and the Sage Gateshead Music Centre",
+          "score": 0.2341380811041079
+        },
+        {
+          "memory": "The Sage Gateshead Music Centre was designed by Norman Foster",
+          "score": 0.21138351198008792
+        },
+        {
+          "memory": "The Baltic Centre for Contemporary Art was the venue for the Turner Prize in 2011",
+          "score": 0.1921971658904691
+        }
+      ],
+      "add_time": 44.574,
+      "search_time": 1.425,
+      "answer_time": 0.884,
+      "total_time": 46.882,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 60,
+      "user_id": "eval_60_9e666500",
+      "question": "In between French and British, what groups controlled land?",
+      "ground_truth": "native tribes",
+      "prediction": "Native tribes",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Large areas between the French and the British were dominated by native tribes",
+          "score": 0.708147706139928
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki held sway in parts of Nova Scotia, Acadia, and the eastern portions of Canada",
+          "score": 0.44636606269336565
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki were engaged in Father Louis' war",
+          "score": 0.4151746264814806
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki also held sway in much of present-day Maine",
+          "score": 0.4049968916174036
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present-day upstate New York and the Ohio country",
+          "score": 0.36214249914536556
+        },
+        {
+          "memory": "The Iroquois Confederation included Algonquian-speaking populations of Delaware and Shawnee",
+          "score": 0.35663581714112924
+        },
+        {
+          "memory": "The tribes under Iroquois rule were limited by them in authority to make agreements",
+          "score": 0.35258313927805957
+        },
+        {
+          "memory": "The Iroquois Confederation included Iroquoian-speaking Mingo",
+          "score": 0.3441393032179343
+        }
+      ],
+      "add_time": 32.075,
+      "search_time": 0.315,
+      "answer_time": 1.035,
+      "total_time": 33.426,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 61,
+      "user_id": "eval_61_b3c552ed",
+      "question": "What rule did some native live under?",
+      "ground_truth": "iroquois",
+      "prediction": "Iroquois rule",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The tribes under Iroquois rule were limited by them in authority to make agreements",
+          "score": 0.4913891202718073
+        },
+        {
+          "memory": "Large areas between the French and the British were dominated by native tribes",
+          "score": 0.4394146137583831
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki held sway in parts of Nova Scotia, Acadia, and the eastern portions of Canada",
+          "score": 0.32391573833084236
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present-day upstate New York and the Ohio country",
+          "score": 0.31072471501241367
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki also held sway in much of present-day Maine",
+          "score": 0.30268702549462856
+        },
+        {
+          "memory": "The Iroquois Confederation included Iroquoian-speaking Mingo",
+          "score": 0.2907747100835834
+        },
+        {
+          "memory": "The Iroquois Confederation included Algonquian-speaking populations of Delaware and Shawnee",
+          "score": 0.2804221216637188
+        },
+        {
+          "memory": "The Mi'kmaq and the Abenaki were engaged in Father Louis' war",
+          "score": 0.2523385391732381
+        }
+      ],
+      "add_time": 31.63,
+      "search_time": 0.329,
+      "answer_time": 0.834,
+      "total_time": 32.794,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 62,
+      "user_id": "eval_62_7fadcd59",
+      "question": "What commemorates Warsaw's heroic history?",
+      "ground_truth": "many places",
+      "prediction": "Many places",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "There are many places commemorating the heroic history of Warsaw",
+          "score": 0.8477467418953245
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.6578102656400346
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Cakma",
+          "score": 0.6548456092754997
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.6547957723861685
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.5959009521442782
+        },
+        {
+          "memory": "The German Gestapo prison in Warsaw is now occupied by a mausoleum of memory and martyrdom and a museum",
+          "score": 0.5902851852846807
+        },
+        {
+          "memory": "The statue of the Little Insurgent is located at the ramparts of the Old Town in Warsaw",
+          "score": 0.5714535160511204
+        },
+        {
+          "memory": "The statue of the Little Insurgent commemorates the children who served as messengers and front-line troops in the Warsaw Uprising",
+          "score": 0.5445804089543497
+        }
+      ],
+      "add_time": 34.045,
+      "search_time": 0.775,
+      "answer_time": 0.788,
+      "total_time": 35.609,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 63,
+      "user_id": "eval_63_6be7eeb5",
+      "question": "What fortification was built in the 19th century after the defeat of the November Uprising?",
+      "ground_truth": "the warsaw citadel",
+      "prediction": "Warsaw Citadel",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.6170614171090038
+        },
+        {
+          "memory": "The statue of the Little Insurgent is located at the ramparts of the Old Town in Warsaw",
+          "score": 0.3527392075227724
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.32329066161016284
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.31029671293676747
+        },
+        {
+          "memory": "The statue of the Little Insurgent commemorates the children who served as messengers and front-line troops in the Warsaw Uprising",
+          "score": 0.2988150972593539
+        },
+        {
+          "memory": "There are many places commemorating the heroic history of Warsaw",
+          "score": 0.2974390354266243
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was designed by Wincenty Cakma",
+          "score": 0.29136843770121
+        },
+        {
+          "memory": "The German Gestapo prison in Warsaw is now occupied by a mausoleum of memory and martyrdom and a museum",
+          "score": 0.26510075951341716
+        }
+      ],
+      "add_time": 34.086,
+      "search_time": 0.32,
+      "answer_time": 0.629,
+      "total_time": 35.035,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 64,
+      "user_id": "eval_64_88077b50",
+      "question": "Who does the statue of Little Insurgent commemorate?",
+      "ground_truth": "children",
+      "prediction": "Children who served as messengers and front-line troops in the Warsaw Uprising",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The statue of the Little Insurgent commemorates the children who served as messengers and front-line troops in the Warsaw Uprising",
+          "score": 0.7500140206449435
+        },
+        {
+          "memory": "The statue of the Little Insurgent is located at the ramparts of the Old Town in Warsaw",
+          "score": 0.6876751110393916
+        },
+        {
+          "memory": "The Warsaw Uprising Monument commemorates the largest insurrection of World War II",
+          "score": 0.436113069101699
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was created by Wincenty Cakma",
+          "score": 0.42863384243363034
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.2697436478756237
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.26351452303537065
+        },
+        {
+          "memory": "There are many places commemorating the heroic history of Warsaw",
+          "score": 0.2290486195951385
+        },
+        {
+          "memory": "The German Gestapo prison in Warsaw is now occupied by a mausoleum of memory and a museum",
+          "score": 0.20349232172638002
+        }
+      ],
+      "add_time": 34.374,
+      "search_time": 0.436,
+      "answer_time": 0.946,
+      "total_time": 35.757,
+      "em": 0,
+      "f1": 0.1538,
+      "bleu": 0.0833,
+      "llm": 1
+    },
+    {
+      "idx": 65,
+      "user_id": "eval_65_ea8876a1",
+      "question": "What monument is in memory of the largest insurrection of WWII?",
+      "ground_truth": "warsaw uprising monument",
+      "prediction": "Warsaw Uprising Monument",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Warsaw Uprising Monument was erected in memory of the largest insurrection of World War II",
+          "score": 0.7267160485295665
+        },
+        {
+          "memory": "The statue of the Little Insurgent is located at the ramparts of the Old Town in Warsaw",
+          "score": 0.48432240229426754
+        },
+        {
+          "memory": "The statue of the Little Insurgent commemorates the children who served as messengers and front-line troops in the Warsaw Uprising",
+          "score": 0.4839218202703797
+        },
+        {
+          "memory": "The German Gestapo prison in Warsaw is now occupied by a mausoleum of memory and martyrdom and a museum",
+          "score": 0.4600205200082671
+        },
+        {
+          "memory": "The Warsaw Uprising Monument was designed by Wincenty Cakma",
+          "score": 0.44510699935700937
+        },
+        {
+          "memory": "There are many places commemorating the heroic history of Warsaw",
+          "score": 0.4286171475688878
+        },
+        {
+          "memory": "The Warsaw Citadel was a place of martyrdom for the Poles",
+          "score": 0.38233517627800795
+        },
+        {
+          "memory": "The Warsaw Citadel is a 19th-century fortification built after the defeat of the November Uprising",
+          "score": 0.37493054216318966
+        }
+      ],
+      "add_time": 32.555,
+      "search_time": 0.557,
+      "answer_time": 0.632,
+      "total_time": 33.744,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 66,
+      "user_id": "eval_66_67cb533b",
+      "question": "What was Genghis Khan's tribes burial custom?",
+      "ground_truth": "buried without markings",
+      "prediction": "Returning the body to Mongolia after death",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "According to the customs of his tribe, Genghis Khan's body was returned to Mongolia after he died",
+          "score": 0.7286154799377808
+        },
+        {
+          "memory": "Genghis Khan asked to be buried without markings years before his death",
+          "score": 0.721197709527233
+        },
+        {
+          "memory": "According to legend, the funeral escort killed anyone and anything across their path to conceal Genghis Khan's burial location",
+          "score": 0.7007133738571035
+        },
+        {
+          "memory": "Genghis Khan is presumed to be buried close to the Onen River and the Burkin Cauldon Mountain",
+          "score": 0.6493762276738768
+        },
+        {
+          "memory": "The Genghis Khan Mausoleum is his memorial but not his burial site",
+          "score": 0.5844067770605523
+        },
+        {
+          "memory": "The Burkin Cauldon Mountain is part of the Kenty mountain range",
+          "score": 0.1259232551411962
+        }
+      ],
+      "add_time": 28.347,
+      "search_time": 0.546,
+      "answer_time": 1.547,
+      "total_time": 30.44,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 67,
+      "user_id": "eval_67_ac0e6113",
+      "question": "What is Raghuram Rajan's career?",
+      "ground_truth": "economist",
+      "prediction": "Central Banking Economist",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan is a Central Banking Economist",
+          "score": 0.7359024572873587
+        },
+        {
+          "memory": "Raghuram Rajan argues that systemic economic inequalities within the United States and around the world have created deep financial fault lines",
+          "score": 0.4799374745589141
+        },
+        {
+          "memory": "Easier credit has been provided in general to keep unemployment rates low",
+          "score": 0.2560563441307031
+        },
+        {
+          "memory": "The American economy has a tendency to go from bubble to bubble",
+          "score": 0.2538853244348514
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.25333093730756673
+        },
+        {
+          "memory": "Easier credit has been particularly extended to lower and middle-income earners to buy homes",
+          "score": 0.24522667409142612
+        },
+        {
+          "memory": "This tendency is fueled by unsustainable monetary stimulation",
+          "score": 0.19136548662609648
+        },
+        {
+          "memory": "The financial crisis of 2007-2008 is the most recent example of a financial crisis",
+          "score": 0.16751756888164493
+        },
+        {
+          "memory": "These financial fault lines make financial crises more likely to occur than in the past",
+          "score": 0.13355111264140235
+        }
+      ],
+      "add_time": 38.041,
+      "search_time": 0.317,
+      "answer_time": 1.395,
+      "total_time": 39.754,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 68,
+      "user_id": "eval_68_177a1737",
+      "question": "What does Rajan feel has created deep financial fault lines?",
+      "ground_truth": "systematic economic inequalities",
+      "prediction": "Systemic economic inequalities",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Raghuram Rajan argues that systemic economic inequalities within the United States and around the world have created deep financial fault lines",
+          "score": 0.7089913369893368
+        },
+        {
+          "memory": "These financial fault lines make financial crises more likely to occur than in the past",
+          "score": 0.5949677408275497
+        },
+        {
+          "memory": "Raghuram Rajan is a Central Banking Economist",
+          "score": 0.45667750300800003
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.3962715240833135
+        },
+        {
+          "memory": "This tendency is fueled by unsustainable monetary stimulation",
+          "score": 0.3826393882996279
+        },
+        {
+          "memory": "The financial crisis of 2007-2008 is the most recent example of a financial crisis",
+          "score": 0.36148818912516417
+        },
+        {
+          "memory": "The American economy has a tendency to go from bubble to bubble",
+          "score": 0.33957615393960255
+        },
+        {
+          "memory": "Easier credit has been particularly extended to lower and middle-income earners to buy homes",
+          "score": 0.32720102099264925
+        },
+        {
+          "memory": "Easier credit has been provided in general to keep unemployment rates low",
+          "score": 0.28070601107922105
+        }
+      ],
+      "add_time": 41.752,
+      "search_time": 0.412,
+      "answer_time": 0.695,
+      "total_time": 42.859,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.6667,
+      "llm": 1
+    },
+    {
+      "idx": 69,
+      "user_id": "eval_69_d7885958",
+      "question": "What has given the American economy a tendency to go \"from bubble to bubble\"?",
+      "ground_truth": "easier credit",
+      "prediction": "Unsustainable monetary stimulation",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "The American economy has a tendency to go from bubble to bubble",
+          "score": 0.8928396458212282
+        },
+        {
+          "memory": "This tendency is fueled by unsustainable monetary stimulation",
+          "score": 0.5061390127309191
+        },
+        {
+          "memory": "Raghuram Rajan argues that systemic economic inequalities within the United States and around the world have created deep financial fault lines",
+          "score": 0.41747290645031226
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle-income earners to compensate for stagnating and declining purchasing power",
+          "score": 0.3844044811055036
+        },
+        {
+          "memory": "Easier credit has also been provided in general to keep unemployment rates low",
+          "score": 0.38379527067655245
+        },
+        {
+          "memory": "The financial crisis of 2007-2008 is the most recent example of such a crisis",
+          "score": 0.37466660658012185
+        },
+        {
+          "memory": "These financial fault lines make financial crises more likely to occur than in the past",
+          "score": 0.3741893559985392
+        },
+        {
+          "memory": "Raghuram Rajan is a Central Banking Economist",
+          "score": 0.28754777917004304
+        },
+        {
+          "memory": "Easier credit has been particularly extended to help lower and middle-income earners buy homes",
+          "score": 0.2787724819882586
+        }
+      ],
+      "add_time": 34.731,
+      "search_time": 0.298,
+      "answer_time": 0.733,
+      "total_time": 35.762,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 70,
+      "user_id": "eval_70_c451f4b9",
+      "question": "What Yuan policies did Muslims dislike?",
+      "ground_truth": "circumcision",
+      "prediction": "Discrimination, forced consumption of non-compliant food, restrictions on Halal slaughter, and limitations on Islamic practices.",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Some policies of the Yuan Emperors severely discriminated against Muslims",
+          "score": 0.8210022118820333
+        },
+        {
+          "memory": "Muslims were forced to eat non-compliant food under Yuan policies",
+          "score": 0.6932662500089467
+        },
+        {
+          "memory": "Yuan policies restricted Halal slaughter and other Islamic practices, such as circumcision and kosher butchering for Jews",
+          "score": 0.6697116503830658
+        },
+        {
+          "memory": "Muslims were massacred by the Yuan loyalist commander Chen Yuing",
+          "score": 0.6295645971056342
+        },
+        {
+          "memory": "Muslims in the Simu class revolted against the Yuan Dynasty",
+          "score": 0.6006361187724308
+        },
+        {
+          "memory": "The Ming founders, including Zhu Yuanzhang, had Muslim generals like Lan You who rebelled against the Mongols",
+          "score": 0.534787116763491
+        },
+        {
+          "memory": "Muslims claimed their adoption of Chinese surnames was in thanks for their role in overthrowing the Mongols",
+          "score": 0.5009694825453908
+        },
+        {
+          "memory": "Lan You and other Muslim generals defeated the Mongols in combat",
+          "score": 0.45888267737243343
+        },
+        {
+          "memory": "Toward the end of Mongol rule, corruption and persecution became severe",
+          "score": 0.4516652178895399
+        },
+        {
+          "memory": "During the war against the Mongols, the Muslim general Fungi was part of Ming Emperor Zhu Yuanzhang's armies",
+          "score": 0.4358740828024236
+        }
+      ],
+      "add_time": 69.329,
+      "search_time": 0.909,
+      "answer_time": 1.463,
+      "total_time": 71.7,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 71,
+      "user_id": "eval_71_d9d8d29a",
+      "question": "What Jewish practice did the Yuan ban?",
+      "ground_truth": "kosher butchering",
+      "prediction": "Kosher butchering",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Yuan policies restricted Halal slaughter and other Islamic practices, such as circumcision and kosher butchering for Jews",
+          "score": 0.7029405492375609
+        },
+        {
+          "memory": "Some policies of the Yuan Emperors severely discriminated against Muslims",
+          "score": 0.6258998271628446
+        },
+        {
+          "memory": "Muslims were massacred by the Yuan loyalist commander Chen Yuing",
+          "score": 0.5399701677274998
+        },
+        {
+          "memory": "Muslims in the Simu class revolted against the Yuan Dynasty, but the rebellion was crushed",
+          "score": 0.47256086743661463
+        },
+        {
+          "memory": "Muslims were forced to eat food in the Mongol way",
+          "score": 0.46769459326545976
+        },
+        {
+          "memory": "Muslims claimed their Chinese surname was given in thanks by the Han Chinese for assisting in overthrowing the Mongols",
+          "score": 0.4038530445836608
+        },
+        {
+          "memory": "The Ming founders included Zhu Yuanzhang, who had Muslim generals like Lan You that rebelled against the Mongols",
+          "score": 0.4037199243211057
+        },
+        {
+          "memory": "Corruption and persecution became severe, leading Muslim generals to join Han Chinese in rebelling against the Mongols",
+          "score": 0.39196348007174275
+        },
+        {
+          "memory": "Lan You and other Muslim generals defeated the Mongols in combat",
+          "score": 0.38031471975634606
+        },
+        {
+          "memory": "During the war against the Mongols, the Muslim general Fungi was part of Ming Emperor Zhu Yuanzhang's armies",
+          "score": 0.36668384307338986
+        }
+      ],
+      "add_time": 76.648,
+      "search_time": 0.325,
+      "answer_time": 0.826,
+      "total_time": 77.799,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 72,
+      "user_id": "eval_72_547dc7a1",
+      "question": "How are the certain costs which are difficult to avoid shared?",
+      "ground_truth": "by everyone",
+      "prediction": "By everyone",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Certain costs that are difficult to avoid and are shared by everyone include housing, pensions, education, and health care",
+          "score": 0.7276905249672043
+        },
+        {
+          "memory": "Taking on debt to achieve aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.3352525831310233
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.33171866152385593
+        },
+        {
+          "memory": "Those on lower incomes are often the least equipped to manage their finances",
+          "score": 0.32668830935076354
+        },
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.2960292364515037
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.2114432777272987
+        }
+      ],
+      "add_time": 30.514,
+      "search_time": 0.443,
+      "answer_time": 0.616,
+      "total_time": 31.572,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 73,
+      "user_id": "eval_73_360a8ded",
+      "question": "What are those with lower incomes often unable to manage?",
+      "ground_truth": "finances",
+      "prediction": "Their finances",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Those on lower incomes are often the least equipped to manage their finances",
+          "score": 0.758914606232928
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.5522487196767774
+        },
+        {
+          "memory": "Taking on debt to achieve aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.3971693174612729
+        },
+        {
+          "memory": "Certain costs that are difficult to avoid and are shared by everyone include housing, pensions, education, and health care",
+          "score": 0.38960397900481913
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.342592395419984
+        },
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.3196664107017052
+        }
+      ],
+      "add_time": 28.606,
+      "search_time": 0.308,
+      "answer_time": 0.893,
+      "total_time": 29.807,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 74,
+      "user_id": "eval_74_94292bef",
+      "question": "When people take on debt, it leads potentially to what?",
+      "ground_truth": "greater inequality and potential economic instability",
+      "prediction": "Greater inequality and potential economic instability",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Taking on debt to achieve aspirational consumption can lead to greater inequality and potential economic instability",
+          "score": 0.6750449547262518
+        },
+        {
+          "memory": "One method of achieving aspirational consumption is by taking on debt",
+          "score": 0.5863282373694421
+        },
+        {
+          "memory": "If the state does not provide housing, pensions, education, and health care services, those on lower incomes must borrow to cover these costs",
+          "score": 0.45230266508949973
+        },
+        {
+          "memory": "Those on lower incomes are often the least equipped to manage their finances",
+          "score": 0.38110435518619423
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by wealthier counterparts",
+          "score": 0.3495954879262136
+        },
+        {
+          "memory": "Certain costs that are difficult to avoid include housing, pensions, education, and health care",
+          "score": 0.3343984160266372
+        }
+      ],
+      "add_time": 27.687,
+      "search_time": 0.343,
+      "answer_time": 0.917,
+      "total_time": 28.947,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 75,
+      "user_id": "eval_75_49012a69",
+      "question": "Who did Tesla think would run the world of the future?",
+      "ground_truth": "women",
+      "prediction": "Queen bees",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla indicated that humanity's future would be run by queen bees",
+          "score": 0.5464555701567448
+        },
+        {
+          "memory": "Tesla believed that women would become the dominant sex in the future",
+          "score": 0.5009968613773182
+        },
+        {
+          "memory": "In 1926, Tesla commented on the ills of the social subservience of women",
+          "score": 0.45255930677299716
+        },
+        {
+          "memory": "Tesla discussed the struggle for gender equality in 1926",
+          "score": 0.3636182103997865
+        }
+      ],
+      "add_time": 19.29,
+      "search_time": 0.309,
+      "answer_time": 0.626,
+      "total_time": 20.225,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 76,
+      "user_id": "eval_76_53f6848a",
+      "question": "What term did he use for what he believed would be humanity's future rulers?",
+      "ground_truth": "queen bees",
+      "prediction": "Queen bees",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla indicated that humanity's future would be run by queen bees",
+          "score": 0.4864171904323228
+        },
+        {
+          "memory": "Tesla believed that women would become the dominant sex in the future",
+          "score": 0.3293576814939495
+        },
+        {
+          "memory": "In 1926, Tesla commented on the ills of the social subservience of women",
+          "score": 0.25550097729616295
+        },
+        {
+          "memory": "Tesla discussed the struggle for gender equality in 1926",
+          "score": 0.14214189079532916
+        }
+      ],
+      "add_time": 15.126,
+      "search_time": 0.291,
+      "answer_time": 1.088,
+      "total_time": 16.506,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 77,
+      "user_id": "eval_77_397ee2de",
+      "question": "Which South Asian island nation is represented in the V&A collection?",
+      "ground_truth": "thailand",
+      "prediction": "Sri Lanka",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Scroll paintings and ritual objects from Thailand, Burma, Cambodia, Indonesia, and Sri Lanka are included in the displays",
+          "score": 0.4343213432342775
+        },
+        {
+          "memory": "The smaller galleries cover Korea, the Himalayan kingdoms, and Southeast Asia",
+          "score": 0.42975535061119907
+        },
+        {
+          "memory": "Items on show include betel nut cutters, ivory combs, and bronze palanquin hooks",
+          "score": 0.42125269755302397
+        },
+        {
+          "memory": "Refined Hindu and Buddhist sculptures reflect the influence of India",
+          "score": 0.3913908369732729
+        },
+        {
+          "memory": "Notable 14th and 15th-century religious images in wood and bronze are represented in the Himalayan displays",
+          "score": 0.3853025551273291
+        },
+        {
+          "memory": "The items from Southeast Asia are made of gold, silver, bronze, terracotta, and ivory",
+          "score": 0.37923863108766986
+        },
+        {
+          "memory": "Himalayan items include important early Nepalese bronze sculptures, embroidery, and Tibetan art from the 14th to the 19th century",
+          "score": 0.359228101136546
+        },
+        {
+          "memory": "Korean displays include green glazed ceramics, silk embroideries from officials' robes, and gleaming boxes inlaid with mother of pearl made between 500 AD and 2000",
+          "score": 0.2708900744789583
+        },
+        {
+          "memory": "The displays span the sixth to 19th centuries",
+          "score": 0.19650108879722283
+        }
+      ],
+      "add_time": 45.651,
+      "search_time": 1.115,
+      "answer_time": 1.668,
+      "total_time": 48.434,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 78,
+      "user_id": "eval_78_79743fd0",
+      "question": "Some of the combs in the V&A collection of South East Asian art is made of what material?",
+      "ground_truth": "ivory",
+      "prediction": "Ivory",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Items on show include betel nut cutters, ivory combs, and bronze palanquin hooks",
+          "score": 0.571599795562771
+        },
+        {
+          "memory": "The scroll paintings and ritual objects are made from gold, silver, bronze, terracotta, and ivory",
+          "score": 0.41675498837147573
+        },
+        {
+          "memory": "Scroll paintings and ritual objects from Thailand, Burma, Cambodia, Indonesia, and Sri Lanka are included in the displays",
+          "score": 0.399721889409508
+        },
+        {
+          "memory": "Refined Hindu and Buddhist sculptures reflect the influence of India",
+          "score": 0.39088624404581407
+        },
+        {
+          "memory": "Korean displays include green glazed ceramics, silk embroideries from officials' robes, and gleaming boxes inlaid with mother of pearl made between 500 AD and 2000",
+          "score": 0.3865790742313243
+        },
+        {
+          "memory": "Himalayan items include important early Nepalese bronze sculptures, embroidery, and Tibetan art from the 14th to the 19th century",
+          "score": 0.3832600103861601
+        },
+        {
+          "memory": "The smaller galleries cover Korea, the Himalayan kingdoms, and Southeast Asia",
+          "score": 0.3365176814853156
+        },
+        {
+          "memory": "Notable 14th and 15th-century religious images in wood and bronze are represented in the Himalayan displays",
+          "score": 0.3089933697253778
+        },
+        {
+          "memory": "The displays span the sixth to 19th centuries",
+          "score": 0.16624462983134008
+        }
+      ],
+      "add_time": 46.244,
+      "search_time": 0.543,
+      "answer_time": 1.698,
+      "total_time": 48.485,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 79,
+      "user_id": "eval_79_3d035049",
+      "question": "Where did Mongke Khan attack the Song dynasty?",
+      "ground_truth": "southern china",
+      "prediction": "Southern China",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Kublai Khan returned from fighting the Song in 1260",
+          "score": 0.6343470814419445
+        },
+        {
+          "memory": "Monk con commenced a military campaign against the Chinese Song Dynasty in southern China",
+          "score": 0.5566225641951801
+        },
+        {
+          "memory": "A rival kurultai in Mongolia proclaimed Ariq Boke as Great Khan, beginning a civil war",
+          "score": 0.4773564640681044
+        },
+        {
+          "memory": "The Mongol force that invaded southern China was far greater than the force they sent to invade the Middle East in 1256",
+          "score": 0.46403097551827477
+        },
+        {
+          "memory": "Kublai Khan convened a kurultai in Kaiping that elected him Great Khan",
+          "score": 0.46076295485803326
+        },
+        {
+          "memory": "Kublai Khan adopted the Chinese era name of Zhongtong",
+          "score": 0.44629937665037106
+        },
+        {
+          "memory": "Civil strife had permanently divided the Mongol Empire",
+          "score": 0.4168591117316346
+        },
+        {
+          "memory": "Kublai Khan depended on the cooperation of his Chinese subjects to ensure that his army received ample resources",
+          "score": 0.4105795668871051
+        },
+        {
+          "memory": "Kublai Khan bolstered his popularity among his subjects by modeling his government on the bureaucracy of traditional Chinese dynasties",
+          "score": 0.3895655709105236
+        },
+        {
+          "memory": "Only the Ilkhanate truly recognized Kublai Khan as Great Khan",
+          "score": 0.3685482445941437
+        }
+      ],
+      "add_time": 56.577,
+      "search_time": 0.415,
+      "answer_time": 0.911,
+      "total_time": 57.902,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 80,
+      "user_id": "eval_80_37a28cfc",
+      "question": "How many electorates does the State of Victoria have?",
+      "ground_truth": "eight",
+      "prediction": "Eight electorates",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.7343536141995275
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.5419390793536407
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.52333961375998
+        },
+        {
+          "memory": "Prior to the 2006 election, members were elected to eight-year terms from 22 two-member electorates",
+          "score": 0.4768565862178077
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.4763852582370825
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members",
+          "score": 0.36890761202999
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.2766463647510559
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.2755537278003473
+        },
+        {
+          "memory": "The term of office for Upper House members is now four years",
+          "score": 0.21281580387534338
+        },
+        {
+          "memory": "The term of office for Upper House members is the same as the lower house members",
+          "score": 0.17800870834315013
+        }
+      ],
+      "add_time": 32.393,
+      "search_time": 0.299,
+      "answer_time": 0.909,
+      "total_time": 33.602,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 81,
+      "user_id": "eval_81_e8cac1ba",
+      "question": "How many representatives does each electorate have?",
+      "ground_truth": "five",
+      "prediction": "Five representatives",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.6929987608293878
+        },
+        {
+          "memory": "Prior to the 2006 election, members were elected to eight-year terms from 22 two-member electorates",
+          "score": 0.5464688790481863
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.46119160102275375
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members",
+          "score": 0.41538043725743
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.3917160200773113
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.3772300617470684
+        },
+        {
+          "memory": "The term of office for Upper House members is the same as the lower house members",
+          "score": 0.3292683880271873
+        },
+        {
+          "memory": "The term of office for Upper House members is now four years",
+          "score": 0.31843689077870774
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.31312460917735646
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.300984531182625
+        }
+      ],
+      "add_time": 32.347,
+      "search_time": 0.544,
+      "answer_time": 0.753,
+      "total_time": 33.645,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 82,
+      "user_id": "eval_82_2cad6b02",
+      "question": "What is the term of office for each house member?",
+      "ground_truth": "four years",
+      "prediction": "Four years",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The term of office for Upper House members is the same as the lower house members",
+          "score": 0.6891705306735001
+        },
+        {
+          "memory": "The term of office for Upper House members is now four years",
+          "score": 0.6549222670205354
+        },
+        {
+          "memory": "Prior to the 2006 election, members were elected to eight-year terms from 22 two-member electorates",
+          "score": 0.5057920224303538
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members",
+          "score": 0.3518932479495236
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.3488467537979504
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.33980729117792574
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.28048056393860377
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.23839213296341677
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.23800583252746074
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.23254918991238466
+        }
+      ],
+      "add_time": 40.193,
+      "search_time": 0.303,
+      "answer_time": 0.817,
+      "total_time": 41.312,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 83,
+      "user_id": "eval_83_a755f485",
+      "question": "How often are elections held for the Victorian Parliament?",
+      "ground_truth": "every four years",
+      "prediction": "Every four years",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.7954853165540652
+        },
+        {
+          "memory": "The Victorian Legislative Council elections were held in November 2006",
+          "score": 0.5887710665728967
+        },
+        {
+          "memory": "The state of Victoria was divided into eight electorates",
+          "score": 0.5660313799789205
+        },
+        {
+          "memory": "Prior to the 2006 election, members were elected to eight-year terms from 22 two-member electorates",
+          "score": 0.4924886359194575
+        },
+        {
+          "memory": "Each electorate is represented by five representatives elected by single transferable vote",
+          "score": 0.4017175396045401
+        },
+        {
+          "memory": "The term of office for Upper House members is now four years",
+          "score": 0.3885538674504043
+        },
+        {
+          "memory": "The term of office for Upper House members is the same as the lower house members",
+          "score": 0.3582606335829507
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members",
+          "score": 0.3271937398721797
+        },
+        {
+          "memory": "The elections were held under a new multi-member proportional representation system",
+          "score": 0.3266066478952624
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.2315684970545356
+        }
+      ],
+      "add_time": 38.28,
+      "search_time": 0.541,
+      "answer_time": 1.335,
+      "total_time": 40.156,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 84,
+      "user_id": "eval_84_4fd47e79",
+      "question": "What advancements besides military technology did Europe achieve?",
+      "ground_truth": "communication",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.7324394135336936
+        },
+        {
+          "memory": "The technology of the machine gun gave European armies an advantage over their opponents",
+          "score": 0.5271880689604818
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.4485269282352331
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.40324000472346516
+        },
+        {
+          "memory": "Armies in less developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3421695595555402
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.27727350387795596
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.1696400177093217
+        }
+      ],
+      "add_time": 35.175,
+      "search_time": 0.556,
+      "answer_time": 1.625,
+      "total_time": 37.356,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 85,
+      "user_id": "eval_85_71e1e0d4",
+      "question": "What did European chemists make that could be used in warfare?",
+      "ground_truth": "deadly explosives",
+      "prediction": "Deadly explosives",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.72579557059015
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.5012371325312178
+        },
+        {
+          "memory": "The technology of the machine gun gave European armies an advantage over their opponents",
+          "score": 0.4704954905842591
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.3874532351173528
+        },
+        {
+          "memory": "Armies in less developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3720163425704681
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.3131197347091575
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.25271010549016293
+        }
+      ],
+      "add_time": 25.601,
+      "search_time": 0.556,
+      "answer_time": 0.628,
+      "total_time": 26.785,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 86,
+      "user_id": "eval_86_5017e2a1",
+      "question": "what was invented in 1880 that revolutionized warfare?",
+      "ground_truth": "machine gun",
+      "prediction": "Machine gun",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.5922702376349762
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.5610006276415233
+        },
+        {
+          "memory": "The technology of the machine gun gave European armies an advantage over their opponents",
+          "score": 0.4603330198664721
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.44336511220642516
+        },
+        {
+          "memory": "Armies in less developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.38759975692437254
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.3718023689333301
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.3270043289278919
+        }
+      ],
+      "add_time": 37.136,
+      "search_time": 0.317,
+      "answer_time": 0.612,
+      "total_time": 38.065,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 87,
+      "user_id": "eval_87_a11d16c0",
+      "question": "What weapons were the Zulus using during the Anglo-Zulu War of 1879?",
+      "ground_truth": "arrows swords and leather shields",
+      "prediction": "Traditional weapons",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.8588944875362159
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.3497312540039355
+        },
+        {
+          "memory": "Armies in less developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.3306980702188459
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.2905367436126276
+        },
+        {
+          "memory": "The technology of machine guns gave European armies an advantage over their opponents",
+          "score": 0.2848959929397427
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.2371955417893971
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.20405971293701142
+        }
+      ],
+      "add_time": 31.541,
+      "search_time": 0.305,
+      "answer_time": 0.642,
+      "total_time": 32.488,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 88,
+      "user_id": "eval_88_68e2c43e",
+      "question": "Which region invented the machine gun?",
+      "ground_truth": "european",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The technology of machine guns gave European armies an advantage over their opponents",
+          "score": 0.5830725496687882
+        },
+        {
+          "memory": "Innovations in machinery allowed for the manufacture of improved firearms",
+          "score": 0.5478558176362316
+        },
+        {
+          "memory": "By the 1880s, the machine gun had become an effective battlefield weapon",
+          "score": 0.5427264904504818
+        },
+        {
+          "memory": "Europe advanced in military technology alongside advancements in communication",
+          "score": 0.3559451383681266
+        },
+        {
+          "memory": "European chemists developed deadly explosives for combat",
+          "score": 0.33017376611199395
+        },
+        {
+          "memory": "Armies in less developed countries were still fighting with arrows, swords, and leather shields",
+          "score": 0.26533935591407104
+        },
+        {
+          "memory": "The Zulus in southern Africa fought with traditional weapons during the Anglo-Zulu War of 1879",
+          "score": 0.26365974072420606
+        }
+      ],
+      "add_time": 24.44,
+      "search_time": 0.415,
+      "answer_time": 0.693,
+      "total_time": 25.548,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 89,
+      "user_id": "eval_89_ea046988",
+      "question": "What inventor built on to the findings of Philo of  Byzantium?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.7078663763100028
+        },
+        {
+          "memory": "Philo of Byzantium conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.5886600790001015
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.47867329269785835
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.45110298476306293
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.3864831882761971
+        }
+      ],
+      "add_time": 29.785,
+      "search_time": 0.551,
+      "answer_time": 0.605,
+      "total_time": 30.942,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 90,
+      "user_id": "eval_90_76857606",
+      "question": "Pneumatica was written by what Greek writer?",
+      "ground_truth": "philo",
+      "prediction": "Philo of Byzantium",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo of Byzantium conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.5733087557415233
+        },
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.5163734771164449
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.3573894201289085
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.34424092719301913
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.18476078335363724
+        }
+      ],
+      "add_time": 29.806,
+      "search_time": 0.476,
+      "answer_time": 0.769,
+      "total_time": 31.051,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 91,
+      "user_id": "eval_91_a2690e84",
+      "question": "What early Greek wrote about experiments on air and combustion?",
+      "ground_truth": "philo",
+      "prediction": "Philo of Byzantium",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.7172523757220374
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.5544456737132415
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire",
+          "score": 0.5417225082594159
+        },
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.47505454126131347
+        },
+        {
+          "memory": "Philo believed that parts of the air were able to escape through pores in the glass",
+          "score": 0.3864109668178023
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.3847105531350677
+        }
+      ],
+      "add_time": 29.645,
+      "search_time": 0.511,
+      "answer_time": 0.834,
+      "total_time": 30.991,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 92,
+      "user_id": "eval_92_797853a2",
+      "question": "What did Philo incorrectly assume that the air became?",
+      "ground_truth": "fire",
+      "prediction": "Fire",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.6889417749588485
+        },
+        {
+          "memory": "Philo of Byzantium conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.5704025512482503
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.5378169698858946
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.4187155706867558
+        },
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.40508613376194635
+        }
+      ],
+      "add_time": 31.849,
+      "search_time": 0.441,
+      "answer_time": 0.574,
+      "total_time": 32.864,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 93,
+      "user_id": "eval_93_b5aed22e",
+      "question": "What famous artist later further investigated Philo's experiments?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.5445869135212626
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.5114230615849995
+        },
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.4798795102763096
+        },
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.47946168195603045
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.42448305061298663
+        }
+      ],
+      "add_time": 28.133,
+      "search_time": 0.416,
+      "answer_time": 0.799,
+      "total_time": 29.347,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 94,
+      "user_id": "eval_94_deec6989",
+      "question": "Of what did da Vinci think a part  was consumed during combustion?",
+      "ground_truth": "air",
+      "prediction": "Air",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Leonardo da Vinci built on Philo's work by observing that a portion of air is consumed during combustion and respiration",
+          "score": 0.6857395685558216
+        },
+        {
+          "memory": "Philo incorrectly surmised that parts of the air in the vessel were converted into the classical element fire and were able to escape through pores in the glass",
+          "score": 0.4563782661892707
+        },
+        {
+          "memory": "Philo conducted one of the first known experiments on the relationship between combustion and air in his work 'Pneumatica'",
+          "score": 0.4375488078889689
+        },
+        {
+          "memory": "Philo observed that inverting a vessel over a burning candle and surrounding the vessel's neck with water resulted in some water rising into the neck",
+          "score": 0.3221639838304754
+        },
+        {
+          "memory": "Philo of Byzantium was a second-century BCE Greek writer on mechanics",
+          "score": 0.18800564003168302
+        }
+      ],
+      "add_time": 25.169,
+      "search_time": 0.286,
+      "answer_time": 0.59,
+      "total_time": 26.046,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 95,
+      "user_id": "eval_95_99359be0",
+      "question": "What country did the Normans invade in 1169?",
+      "ground_truth": "ireland",
+      "prediction": "Ireland",
+      "num_memories_added": 14,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Normans invaded Ireland at Bonneau Bay in 1169",
+          "score": 0.742039114050692
+        },
+        {
+          "memory": "The Normans had a profound effect on Irish culture and history",
+          "score": 0.5595475900800998
+        },
+        {
+          "memory": "The Normans settled mostly in an area in the east of Ireland known as the Pale",
+          "score": 0.5522109655794523
+        },
+        {
+          "memory": "Over time, the Normans became subsumed into Irish culture",
+          "score": 0.5465046158012992
+        },
+        {
+          "memory": "Initially, the Normans maintained a distinct culture and ethnicity",
+          "score": 0.5302375747417307
+        },
+        {
+          "memory": "The first Norman settlements in Ireland were established in the southern part of County Wexford",
+          "score": 0.4681616543718068
+        },
+        {
+          "memory": "Norman descendants can be recognized by their surnames",
+          "score": 0.4492660497099773
+        },
+        {
+          "memory": "Norman and Irish cultures intermixed, borrowing from each other's language, culture, and outlook",
+          "score": 0.4458645277563063
+        },
+        {
+          "memory": "The Normans built many fine castles and settlements, including Trim Castle and Dublin Castle",
+          "score": 0.4219564722526866
+        },
+        {
+          "memory": "The surname Furlong is predominant in the area of the first Norman settlements",
+          "score": 0.3879255507768446
+        }
+      ],
+      "add_time": 62.082,
+      "search_time": 0.299,
+      "answer_time": 0.791,
+      "total_time": 63.171,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 96,
+      "user_id": "eval_96_f304639a",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "ground_truth": "irish",
+      "prediction": "Irish culture",
+      "num_memories_added": 14,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Over time, the Normans became subsumed into Irish culture",
+          "score": 0.7645313450794599
+        },
+        {
+          "memory": "The Normans had a profound effect on Irish culture and history",
+          "score": 0.7570351631328514
+        },
+        {
+          "memory": "Norman and Irish cultures intermixed, borrowing from each other's language, culture, and outlook",
+          "score": 0.7551097900656848
+        },
+        {
+          "memory": "The Normans settled mostly in an area in the east of Ireland known as the Pale",
+          "score": 0.6786139952670784
+        },
+        {
+          "memory": "The Normans invaded Ireland at Bonneau Bay in 1169",
+          "score": 0.6604521579192352
+        },
+        {
+          "memory": "Initially, the Normans maintained a distinct culture and ethnicity",
+          "score": 0.6309928847120574
+        },
+        {
+          "memory": "The first Norman settlements in Ireland were established in the southern part of County Wexford",
+          "score": 0.555684223423077
+        },
+        {
+          "memory": "The Normans built many fine castles and settlements, including Trim Castle and Dublin Castle",
+          "score": 0.547151853831406
+        },
+        {
+          "memory": "Other families bearing surnames such as Barry, de Barra, and de Burca are also of Norman extraction",
+          "score": 0.5048065616533908
+        },
+        {
+          "memory": "Common Norman surnames in the southeast of Ireland include Friend, de Row, de Burgh, Darcy, Tracy, and Lacey",
+          "score": 0.4764598477995317
+        }
+      ],
+      "add_time": 57.74,
+      "search_time": 0.684,
+      "answer_time": 0.799,
+      "total_time": 59.223,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 97,
+      "user_id": "eval_97_6b867a3f",
+      "question": "What happened to his lab?",
+      "ground_truth": "his lab was torn down",
+      "prediction": "It was torn down.",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "The contents of Tesla's lab were sold two years later in 1906 to satisfy a debt",
+          "score": 0.44919518341488696
+        },
+        {
+          "memory": "Tesla's lab was torn down in 1904",
+          "score": 0.4181449854503114
+        },
+        {
+          "memory": "On the 7th of January, 1900, Tesla left Colorado Springs",
+          "score": 0.2470411562541321
+        }
+      ],
+      "add_time": 14.77,
+      "search_time": 0.288,
+      "answer_time": 0.723,
+      "total_time": 15.78,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 98,
+      "user_id": "eval_98_2f8ac47a",
+      "question": "What happened to the things inside the lab after it was torn down?",
+      "ground_truth": "sold",
+      "prediction": "They were sold in 1906.",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla's lab was torn down in 1904",
+          "score": 0.5460572354434172
+        },
+        {
+          "memory": "The contents of Tesla's lab were sold two years later in 1906 to satisfy a debt",
+          "score": 0.4651255917203627
+        },
+        {
+          "memory": "On the 7th of January, 1900, Tesla left Colorado Springs",
+          "score": 0.19686096669214842
+        }
+      ],
+      "add_time": 21.208,
+      "search_time": 0.275,
+      "answer_time": 0.691,
+      "total_time": 22.174,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.2,
+      "llm": 1
+    },
+    {
+      "idx": 99,
+      "user_id": "eval_99_5c48ef3f",
+      "question": "Where were the Germanic tribes originally located?",
+      "ground_truth": "scandinavia and northern europe",
+      "prediction": "Scandinavia and Northern Europe",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Germanic tribes expanded throughout northern and western Europe from their original homelands in Scandinavia and Northern Europe during the middle period of classical antiquity",
+          "score": 0.6239403054921555
+        },
+        {
+          "memory": "In late antiquity, Germanic tribes conquered Celtic and other peoples",
+          "score": 0.5706588804649817
+        },
+        {
+          "memory": "By 800 CE, Germanic tribes formed the Holy Roman Empire",
+          "score": 0.5471568310686139
+        },
+        {
+          "memory": "By 1000 CE, the Germanic conquest of central, western, and southern Europe was complete, excluding only Muslim Iberia",
+          "score": 0.515193910780491
+        },
+        {
+          "memory": "There was little cultural integration or national identity in the Germanic regions",
+          "score": 0.5057240499032183
+        },
+        {
+          "memory": "There was no real systemic continuity from the Western Roman Empire to its German successor",
+          "score": 0.44677322655977125
+        },
+        {
+          "memory": "Germany remained largely a conceptual term referring to an amorphous area of Central Europe",
+          "score": 0.4090688157500777
+        },
+        {
+          "memory": "A great number of small states and principalities existed in a loosely autonomous confederation within the Holy Roman Empire",
+          "score": 0.28161419041110064
+        },
+        {
+          "memory": "The Holy Roman Empire was described as not wholly Roman and not an empire",
+          "score": 0.25239783284747686
+        }
+      ],
+      "add_time": 51.735,
+      "search_time": 0.313,
+      "answer_time": 0.957,
+      "total_time": 53.005,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    }
+  ]
+}

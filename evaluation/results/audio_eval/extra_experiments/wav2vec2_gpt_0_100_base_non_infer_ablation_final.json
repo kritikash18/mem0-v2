@@ -1,0 +1,2373 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "wav2vec2_gpt_0_100_base_non_infer_ablation",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "local/facebook/wav2vec2-base-960h",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": false,
+    "cleanup_after_sample": false,
+    "query_mode": "text",
+    "judge_batch_size": 20
+  },
+  "summary": {
+    "count": 100,
+    "em_mean": 0.59,
+    "em_std": 0.4943,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.7272,
+    "f1_std": 0.3783,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.6885,
+    "bleu_std": 0.4028,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "llm_mean": 0.84,
+    "llm_std": 0.3685,
+    "llm_min": 0,
+    "llm_max": 1,
+    "total_time_mean": 3.0428,
+    "total_time_std": 0.6714,
+    "total_time_min": 1.821,
+    "total_time_max": 4.84,
+    "add_time_mean": 1.959,
+    "add_time_std": 0.6043,
+    "add_time_min": 0.899,
+    "add_time_max": 3.904,
+    "search_time_mean": 0.3037,
+    "search_time_std": 0.0859,
+    "search_time_min": 0.231,
+    "search_time_max": 0.629,
+    "answer_time_mean": 0.78,
+    "answer_time_std": 0.2073,
+    "answer_time_min": 0.546,
+    "answer_time_max": 1.651,
+    "em_correct": 59,
+    "em_pct": 59.0,
+    "llm_correct": 84,
+    "llm_pct": 84.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 100,
+      "zero": 14,
+      "perfect": 59,
+      "above_50": 77,
+      "above_80": 62
+    },
+    "bleu": {
+      "total": 100,
+      "zero": 16,
+      "perfect": 58,
+      "above_50": 73,
+      "above_80": 60
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_553771ae",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "Trust in God's word",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LUTHER SECRETLY RETURNED TO WHITTENBURG ON THE SIXTH OF MARCH FIFTEEN TWENTY TWO HE WROTE TO THE ELECTOR DURING MY ABSENCE SATAN HAS ENTERED MY SHEEPFOLD AND COMMITTED RAVAGES WHICH I CANNOT REPAIR BY WRITING BUT ONLY BY MY PERSONAL PRESENCE AND LIVING WORD FOR EIGHT DAYS IN LENT BEGINNING ON INVOCAVIT SUNDAY THE NINTH OF MARCH LUTHER PREACHED EIGHT SERMONS WHICH BECAME KNOWN AS THE INVOCAVIT SERMONS IN THESE SERMONS HEHAMMERED HOME THE PRIMACY OF COOR CHRISTIAN VALUES SUCH AS LOVE PATIENCE CHARITY AND FREEDOM AND REMINDED THE CITIZENS TO TRUST GOD'S WORD RATHER THAN VIOLINCE TO BRING ABOUT NECESSARY CHANGE",
+          "score": 0.5058502513107669
+        }
+      ],
+      "add_time": 2.76,
+      "search_time": 0.247,
+      "answer_time": 0.943,
+      "total_time": 3.95,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_d8e1290d",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "Preached eight sermons known as the Invocavit Sermons.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LUTHER SECRETLY RETURNED TO WHITTENBURG ON THE SIXTH OF MARCH FIFTEEN TWENTY TWO HE WROTE TO THE ELECTOR DURING MY ABSENCE SATAN HAS ENTERED MY SHEEPFOLD AND COMMITTED RAVAGES WHICH I CANNOT REPAIR BY WRITING BUT ONLY BY MY PERSONAL PRESENCE AND LIVING WORD FOR EIGHT DAYS IN LENT BEGINNING ON INVOCAVIT SUNDAY THE NINTH OF MARCH LUTHER PREACHED EIGHT SERMONS WHICH BECAME KNOWN AS THE INVOCAVIT SERMONS IN THESE SERMONS HEHAMMERED HOME THE PRIMACY OF COOR CHRISTIAN VALUES SUCH AS LOVE PATIENCE CHARITY AND FREEDOM AND REMINDED THE CITIZENS TO TRUST GOD'S WORD RATHER THAN VIOLINCE TO BRING ABOUT NECESSARY CHANGE",
+          "score": 0.6086753577849389
+        }
+      ],
+      "add_time": 1.706,
+      "search_time": 0.562,
+      "answer_time": 0.76,
+      "total_time": 3.028,
+      "em": 0,
+      "f1": 0.25,
+      "bleu": 0.125,
+      "llm": 1
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_91d809eb",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "Trust God's word rather than violence.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LUTHER SECRETLY RETURNED TO WHITTENBURG ON THE SIXTH OF MARCH FIFTEEN TWENTY TWO HE WROTE TO THE ELECTOR DURING MY ABSENCE SATAN HAS ENTERED MY SHEEPFOLD AND COMMITTED RAVAGES WHICH I CANNOT REPAIR BY WRITING BUT ONLY BY MY PERSONAL PRESENCE AND LIVING WORD FOR EIGHT DAYS IN LENT BEGINNING ON INVOCAVIT SUNDAY THE NINTH OF MARCH LUTHER PREACHED EIGHT SERMONS WHICH BECAME KNOWN AS THE INVOCAVIT SERMONS IN THESE SERMONS HEHAMMERED HOME THE PRIMACY OF COOR CHRISTIAN VALUES SUCH AS LOVE PATIENCE CHARITY AND FREEDOM AND REMINDED THE CITIZENS TO TRUST GOD'S WORD RATHER THAN VIOLINCE TO BRING ABOUT NECESSARY CHANGE",
+          "score": 0.5328086948924325
+        }
+      ],
+      "add_time": 1.939,
+      "search_time": 0.247,
+      "answer_time": 0.708,
+      "total_time": 2.894,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_c3af9d16",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "French irregular forces and Canadian scouts and Indians",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FRENCH IRREGULAR FORCES CANADIAN SCOUTS AND INDIANS HARASSED FORT WILLIAM HENRY THROUGHOUT THE FIRST HALF OF SEVENTEEN FIFTY SEVEN IN JANUARY THEY AMBUSHED BRITISH RANGERS NEAR TYCONDEROGA IN FEBRUARY THEY LAUNCHED A DARING RAID AGAINST THE POSITION ACROSS THE FROZEN LAKE GEORGE DESTROYING STOREHOUSES AND BUILDINGS OUTSIDE THE MAIN FORTIFICATION IN EARLY AUGUST MONTCOMMON SEVEN O O O TROOPS BESIEGED THE FORT WHICH CAPITULATED WITH AN AGREEMENT TO WITHDRAW UNDER PAROLE WHEN THE WITHDRAWAL BEGAN SOME OF MONTCOM'S INDIAN ALLIES ANGERED AT THE LOST OPPORTUNITY FOR LOUTE ATTACKED THE BRITISH COLUMN KILLING AND CAPTURING SEVERAL HUNDRED MEN WOMEN CHILDREN AND SLAVES THE AFTERMATH OF THE SIEGE MAY HAVE CONTRIBUTED TO THE TRANSMISTION OF SMALL POX INTO REMOTE INDIAN POPULATIONS AS SOME INDIANS WERE RE PORTED TO HAVE TRAVELLED FROM BEYOND THE MISSISSIPPI TO PARTICIPATE IN THEE CAMPAIGN AND RETURN AFTERWARD HAVING BEEN EXPOSED TO EUROPEAN CARRIERS",
+          "score": 0.577465194231415
+        }
+      ],
+      "add_time": 2.867,
+      "search_time": 0.46,
+      "answer_time": 0.979,
+      "total_time": 4.307,
+      "em": 0,
+      "f1": 0.5455,
+      "bleu": 0.375,
+      "llm": 1
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_72b0d8ec",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "Lake George",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FRENCH IRREGULAR FORCES CANADIAN SCOUTS AND INDIANS HARASSED FORT WILLIAM HENRY THROUGHOUT THE FIRST HALF OF SEVENTEEN FIFTY SEVEN IN JANUARY THEY AMBUSHED BRITISH RANGERS NEAR TYCONDEROGA IN FEBRUARY THEY LAUNCHED A DARING RAID AGAINST THE POSITION ACROSS THE FROZEN LAKE GEORGE DESTROYING STOREHOUSES AND BUILDINGS OUTSIDE THE MAIN FORTIFICATION IN EARLY AUGUST MONTCOMMON SEVEN O O O TROOPS BESIEGED THE FORT WHICH CAPITULATED WITH AN AGREEMENT TO WITHDRAW UNDER PAROLE WHEN THE WITHDRAWAL BEGAN SOME OF MONTCOM'S INDIAN ALLIES ANGERED AT THE LOST OPPORTUNITY FOR LOUTE ATTACKED THE BRITISH COLUMN KILLING AND CAPTURING SEVERAL HUNDRED MEN WOMEN CHILDREN AND SLAVES THE AFTERMATH OF THE SIEGE MAY HAVE CONTRIBUTED TO THE TRANSMISTION OF SMALL POX INTO REMOTE INDIAN POPULATIONS AS SOME INDIANS WERE RE PORTED TO HAVE TRAVELLED FROM BEYOND THE MISSISSIPPI TO PARTICIPATE IN THEE CAMPAIGN AND RETURN AFTERWARD HAVING BEEN EXPOSED TO EUROPEAN CARRIERS",
+          "score": 0.45866084033275495
+        }
+      ],
+      "add_time": 2.781,
+      "search_time": 0.255,
+      "answer_time": 0.938,
+      "total_time": 3.975,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_10f7a952",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "Guidance and intervention",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ACCORDING TO GEOGRAPHIC SCHOLARS UNDER COLONIZING EMPIRES THE WORLD COULD BE SPLIT INTO CLIMATIC ZONES THESE SCHOLARS BELIEVED THAT NORTHERN EUROPE AND THE MID ATLANTIC TEMPERATE CLIMATE PRODUCED A HARD WORKING MORAL AND UPSTANDING HUMAN BEING ALTERNATIVELY TROPICAL CLIMATES YIELDED LAZY ATTITUDES SEXUAL PROMISCUITY EXOTIC CULTURE AN MORAL DEGENERACY THE PEOPLE OF THESE CLIMATES WERE BELIEVED TO BE IN NEED OF GUIDANCE AND INTERVENTION FROM THE EUROPEAN EMPIRE TO AID IN THE GOVERNING OF A MORE EVOLVED SOCIAL STRUCTURE THEY WERE SEEN AS INCAPABLE OF SUCH A FEAT SIMILARLY ORIENTALISM IS A VIEW OF A PEOPLE BASED ON THEIR GEOGRAPHICAL LOCATION",
+          "score": 0.5270556918603794
+        }
+      ],
+      "add_time": 2.115,
+      "search_time": 0.246,
+      "answer_time": 0.849,
+      "total_time": 3.21,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_83d85c28",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "Radio Corporation of America (RCA)",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN THE NINETEEN THIRTIES RADIO IN THE UNITED STATES WAS DOMINATED BY THREE COMPANIES THE COLUMBIA BROADCASTING SYSTEM C B S THE MUTUAL BROADCASTING SYSTEM AND THE NATIONAL BROADCASTING COMPANY N B C THE LAST WAS OWNED BY ELECTRONICS MANUFACTURER RADIO CORPORATION OF AMERICA R C A WHICH OWN TWO RADIO NETWORKS THAT EACH RAN DIFFERENT VARIETIES OF PROGRAMMING N B C BLUE AND N B C RED THE N B C BLUE NETWORK WAS CREATED IN NINETEEN TWENTY SEVEN FOR THE PRIMARY PURPOSE OF TESTING NEW PROGRAMMS ON MARKETS OF LESSER IMPORTANCE THAN THOSE SERVED BY N B C RED WHICH SERVED THE MAJOR CITIES AND DETEST DRAMA CERIES",
+          "score": 0.5675888438958298
+        }
+      ],
+      "add_time": 1.954,
+      "search_time": 0.321,
+      "answer_time": 0.64,
+      "total_time": 2.916,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 0.8,
+      "llm": 1
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_3abb0180",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "Major cities",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN THE NINETEEN THIRTIES RADIO IN THE UNITED STATES WAS DOMINATED BY THREE COMPANIES THE COLUMBIA BROADCASTING SYSTEM C B S THE MUTUAL BROADCASTING SYSTEM AND THE NATIONAL BROADCASTING COMPANY N B C THE LAST WAS OWNED BY ELECTRONICS MANUFACTURER RADIO CORPORATION OF AMERICA R C A WHICH OWN TWO RADIO NETWORKS THAT EACH RAN DIFFERENT VARIETIES OF PROGRAMMING N B C BLUE AND N B C RED THE N B C BLUE NETWORK WAS CREATED IN NINETEEN TWENTY SEVEN FOR THE PRIMARY PURPOSE OF TESTING NEW PROGRAMMS ON MARKETS OF LESSER IMPORTANCE THAN THOSE SERVED BY N B C RED WHICH SERVED THE MAJOR CITIES AND DETEST DRAMA CERIES",
+          "score": 0.5733334997208852
+        }
+      ],
+      "add_time": 2.034,
+      "search_time": 0.441,
+      "answer_time": 0.745,
+      "total_time": 3.22,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_70ed53dc",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "NBC Blue",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN THE NINETEEN THIRTIES RADIO IN THE UNITED STATES WAS DOMINATED BY THREE COMPANIES THE COLUMBIA BROADCASTING SYSTEM C B S THE MUTUAL BROADCASTING SYSTEM AND THE NATIONAL BROADCASTING COMPANY N B C THE LAST WAS OWNED BY ELECTRONICS MANUFACTURER RADIO CORPORATION OF AMERICA R C A WHICH OWN TWO RADIO NETWORKS THAT EACH RAN DIFFERENT VARIETIES OF PROGRAMMING N B C BLUE AND N B C RED THE N B C BLUE NETWORK WAS CREATED IN NINETEEN TWENTY SEVEN FOR THE PRIMARY PURPOSE OF TESTING NEW PROGRAMMS ON MARKETS OF LESSER IMPORTANCE THAN THOSE SERVED BY N B C RED WHICH SERVED THE MAJOR CITIES AND DETEST DRAMA CERIES",
+          "score": 0.5734367928512303
+        }
+      ],
+      "add_time": 2.011,
+      "search_time": 0.247,
+      "answer_time": 0.81,
+      "total_time": 3.068,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_76473561",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "pH or available iron",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITHIN THE GENATORINARY AND GASTROANTESTINAL TRACTS COMMENSAL FLORA SERVE AS BIOLOGICAL BARRIERS BY COMPETING WITH PATHAGENIC BACTERA FOR FOOD END SPASE END INSOME CASIS BY CHANGING THE CONDITIONS IN THEIR ENVIRONMENT SUCH AS P AH OR AVAILABLE IRON THIS REDUCES THE PROBABILITY THAT PATHAGONS WILL REACH SUFFICIENT NUMBERS TO CAUSE ILLNESS HOWEVER SINCE MOST ANTIBIOTICS NON SPECIFICALLY TARGET BACTERIA AND DO NOT AFFECT FUNGI ORAL ANTIBIOTICS CAN LEAD TO AN OVERGROWTH OF FUNGI AN COST CONDITIONS SUCH AS O VAGENAL CANDODIASIS A YEAST INFECTION THERE IS GOOD EVIDENCE THAT RAY INTRODUCTION OF PROBIOTIC FLORA SUCH AS PURE CULTURES OF THE LACTOBASILLI NORMALLY FOUND IN UN PASTERIZED YOGERT HELPS RESTORA HEALTHY BALANCE OF MICROBIAL POPULATIONS IN INTESTINAL INFECTIONS IN CHILDREN END INCOURAGING PRELIMINARY DATA IN STUDIES ON BACTERIAL GASTRO ANTERITIS INFLAMATORY BOWEL DISEASES URINARY TRACT INFECTION AND POST SURGICAL INFECTIONS",
+          "score": 0.6010327723828546
+        }
+      ],
+      "add_time": 2.898,
+      "search_time": 0.3,
+      "answer_time": 0.784,
+      "total_time": 3.983,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_cdb7b262",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "Rugby",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY IS ALSO A GROWING SPORT IN SOUTHERN CALIFORNIA PARTICULARLY AT THE HIGH SCHOOL LEVEL WITH INCREASING NUMBERS OF SCHOOLS ADDING RUGBY AS AN OFFICIAL SCHOOL SPORT",
+          "score": 0.6337486816924186
+        }
+      ],
+      "add_time": 0.913,
+      "search_time": 0.629,
+      "answer_time": 0.787,
+      "total_time": 2.329,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_7017beea",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "High school",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY IS ALSO A GROWING SPORT IN SOUTHERN CALIFORNIA PARTICULARLY AT THE HIGH SCHOOL LEVEL WITH INCREASING NUMBERS OF SCHOOLS ADDING RUGBY AS AN OFFICIAL SCHOOL SPORT",
+          "score": 0.4356800986358772
+        }
+      ],
+      "add_time": 1.243,
+      "search_time": 0.306,
+      "answer_time": 0.855,
+      "total_time": 2.404,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_5fce4644",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "An official school sport",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY IS ALSO A GROWING SPORT IN SOUTHERN CALIFORNIA PARTICULARLY AT THE HIGH SCHOOL LEVEL WITH INCREASING NUMBERS OF SCHOOLS ADDING RUGBY AS AN OFFICIAL SCHOOL SPORT",
+          "score": 0.6315451586743354
+        }
+      ],
+      "add_time": 0.979,
+      "search_time": 0.329,
+      "answer_time": 0.683,
+      "total_time": 1.991,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_f90b9a9a",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE MOUTH OF THE RHINE INTO LAKE CONSTANCE FORMS AN INLAND DELTA THE DELTA IS DELIMITED IN THE WEST BY THE ALTAR RHINE OLD RHINE AND IN THE EAST BY A MODERN CANTALIZED SECTION MOST OF THE DELTA IS A NATURE RESERVE AND BIRD SANCTUARY IT INCLUDES THE AUSTRIAN TOWNS OF GAISAU HOXT AND FUSSECK THE NATURAL RHINE ORIGINALLY BRANCHED INTO AT LEAST TWO ARMS AND FORMED SMALL ISLANDS BY PRECIPITATING SEDIMENTS IN THE LOCAL ALAMANIC DIALECT THE SINGULAR IS PRONOUNCED E SELL AND THIS IS ALSO THE LOCAL PRONUNCIATION OF ESSEL DONKEY MANY LOCAL FIELDS HAVE AN OFFICIAL NAME CONTAINING THIS ELEMENT",
+          "score": 0.6736960509838127
+        }
+      ],
+      "add_time": 1.709,
+      "search_time": 0.254,
+      "answer_time": 0.798,
+      "total_time": 2.762,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_0131efb8",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "Donkey",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE MOUTH OF THE RHINE INTO LAKE CONSTANCE FORMS AN INLAND DELTA THE DELTA IS DELIMITED IN THE WEST BY THE ALTAR RHINE OLD RHINE AND IN THE EAST BY A MODERN CANTALIZED SECTION MOST OF THE DELTA IS A NATURE RESERVE AND BIRD SANCTUARY IT INCLUDES THE AUSTRIAN TOWNS OF GAISAU HOXT AND FUSSECK THE NATURAL RHINE ORIGINALLY BRANCHED INTO AT LEAST TWO ARMS AND FORMED SMALL ISLANDS BY PRECIPITATING SEDIMENTS IN THE LOCAL ALAMANIC DIALECT THE SINGULAR IS PRONOUNCED E SELL AND THIS IS ALSO THE LOCAL PRONUNCIATION OF ESSEL DONKEY MANY LOCAL FIELDS HAVE AN OFFICIAL NAME CONTAINING THIS ELEMENT",
+          "score": 0.5382830123981658
+        }
+      ],
+      "add_time": 1.681,
+      "search_time": 0.308,
+      "answer_time": 0.655,
+      "total_time": 2.643,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_88289958",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE MOUTH OF THE RHINE INTO LAKE CONSTANCE FORMS AN INLAND DELTA THE DELTA IS DELIMITED IN THE WEST BY THE ALTAR RHINE OLD RHINE AND IN THE EAST BY A MODERN CANTALIZED SECTION MOST OF THE DELTA IS A NATURE RESERVE AND BIRD SANCTUARY IT INCLUDES THE AUSTRIAN TOWNS OF GAISAU HOXT AND FUSSECK THE NATURAL RHINE ORIGINALLY BRANCHED INTO AT LEAST TWO ARMS AND FORMED SMALL ISLANDS BY PRECIPITATING SEDIMENTS IN THE LOCAL ALAMANIC DIALECT THE SINGULAR IS PRONOUNCED E SELL AND THIS IS ALSO THE LOCAL PRONUNCIATION OF ESSEL DONKEY MANY LOCAL FIELDS HAVE AN OFFICIAL NAME CONTAINING THIS ELEMENT",
+          "score": 0.6768067563939033
+        }
+      ],
+      "add_time": 1.737,
+      "search_time": 0.257,
+      "answer_time": 0.706,
+      "total_time": 2.699,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_922f77a8",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "Small islands",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE MOUTH OF THE RHINE INTO LAKE CONSTANCE FORMS AN INLAND DELTA THE DELTA IS DELIMITED IN THE WEST BY THE ALTAR RHINE OLD RHINE AND IN THE EAST BY A MODERN CANTALIZED SECTION MOST OF THE DELTA IS A NATURE RESERVE AND BIRD SANCTUARY IT INCLUDES THE AUSTRIAN TOWNS OF GAISAU HOXT AND FUSSECK THE NATURAL RHINE ORIGINALLY BRANCHED INTO AT LEAST TWO ARMS AND FORMED SMALL ISLANDS BY PRECIPITATING SEDIMENTS IN THE LOCAL ALAMANIC DIALECT THE SINGULAR IS PRONOUNCED E SELL AND THIS IS ALSO THE LOCAL PRONUNCIATION OF ESSEL DONKEY MANY LOCAL FIELDS HAVE AN OFFICIAL NAME CONTAINING THIS ELEMENT",
+          "score": 0.5168060401379372
+        }
+      ],
+      "add_time": 1.726,
+      "search_time": 0.355,
+      "answer_time": 1.144,
+      "total_time": 3.224,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_f06e3501",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "Kim Wilki",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE CENTRAL GARDEN WAS REDESIGNED BY KIM WILKI AND OPENED AS THE JOHN MEDESKI GARDEN ON THE FIFTH OF JULY TWO THOUSAND FIVE THE DESIGN IS A SUBTLE BLEND OF THE TRADITIONAL AN MODERN THE LAYOUT IS FORMAL THERE IS AN ELIPTICAL WATER FEATURE LINED IN STONE WITH STEPS AROUND THE EDGE WHICH MAY BE DRAINED TO USE THE AREA FOR RECEPTIONS GATHERINGS OR EXHIBITION PURPOSES THIS IS IN FRONT OF THE BRONZE DOORS LEADING TO THE REFRESHMENT ROOMS A CENTRAL PATH FLANKED BY LAWNS LEADS TO THE SCULPTURE GALLERY THE NORTH EAST AND WEST SIDES HAVE HURBACIOUS BORDERS ALONG THE MUSEUM WALLS WITH PATHS IN FRONT WHICH CONTINUES ALONG THE SOUTH FASADE IN THE TWO CORNERS BY THE NORTH FASADE THERE IS PLANTED AN AMERICAN SWEETGUM TREE THE SOUTHERN EASTERN AND WESTERN EDGES OF THE LAWNS HAVE GLASS PLANTERS WHICH CONTAIN ORANGE AND LEMON TREES IN SUMMER THESE ARE REPLACED BY BAY TREES IN WINTER",
+          "score": 0.6068657902368769
+        }
+      ],
+      "add_time": 2.569,
+      "search_time": 0.28,
+      "answer_time": 0.814,
+      "total_time": 3.663,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_a5139cd3",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "Elliptical",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE CENTRAL GARDEN WAS REDESIGNED BY KIM WILKI AND OPENED AS THE JOHN MEDESKI GARDEN ON THE FIFTH OF JULY TWO THOUSAND FIVE THE DESIGN IS A SUBTLE BLEND OF THE TRADITIONAL AN MODERN THE LAYOUT IS FORMAL THERE IS AN ELIPTICAL WATER FEATURE LINED IN STONE WITH STEPS AROUND THE EDGE WHICH MAY BE DRAINED TO USE THE AREA FOR RECEPTIONS GATHERINGS OR EXHIBITION PURPOSES THIS IS IN FRONT OF THE BRONZE DOORS LEADING TO THE REFRESHMENT ROOMS A CENTRAL PATH FLANKED BY LAWNS LEADS TO THE SCULPTURE GALLERY THE NORTH EAST AND WEST SIDES HAVE HURBACIOUS BORDERS ALONG THE MUSEUM WALLS WITH PATHS IN FRONT WHICH CONTINUES ALONG THE SOUTH FASADE IN THE TWO CORNERS BY THE NORTH FASADE THERE IS PLANTED AN AMERICAN SWEETGUM TREE THE SOUTHERN EASTERN AND WESTERN EDGES OF THE LAWNS HAVE GLASS PLANTERS WHICH CONTAIN ORANGE AND LEMON TREES IN SUMMER THESE ARE REPLACED BY BAY TREES IN WINTER",
+          "score": 0.4944057894627715
+        }
+      ],
+      "add_time": 2.293,
+      "search_time": 0.336,
+      "answer_time": 0.705,
+      "total_time": 3.334,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_531c9a3f",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "Receptions, gatherings, or exhibition purposes",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE CENTRAL GARDEN WAS REDESIGNED BY KIM WILKI AND OPENED AS THE JOHN MEDESKI GARDEN ON THE FIFTH OF JULY TWO THOUSAND FIVE THE DESIGN IS A SUBTLE BLEND OF THE TRADITIONAL AN MODERN THE LAYOUT IS FORMAL THERE IS AN ELIPTICAL WATER FEATURE LINED IN STONE WITH STEPS AROUND THE EDGE WHICH MAY BE DRAINED TO USE THE AREA FOR RECEPTIONS GATHERINGS OR EXHIBITION PURPOSES THIS IS IN FRONT OF THE BRONZE DOORS LEADING TO THE REFRESHMENT ROOMS A CENTRAL PATH FLANKED BY LAWNS LEADS TO THE SCULPTURE GALLERY THE NORTH EAST AND WEST SIDES HAVE HURBACIOUS BORDERS ALONG THE MUSEUM WALLS WITH PATHS IN FRONT WHICH CONTINUES ALONG THE SOUTH FASADE IN THE TWO CORNERS BY THE NORTH FASADE THERE IS PLANTED AN AMERICAN SWEETGUM TREE THE SOUTHERN EASTERN AND WESTERN EDGES OF THE LAWNS HAVE GLASS PLANTERS WHICH CONTAIN ORANGE AND LEMON TREES IN SUMMER THESE ARE REPLACED BY BAY TREES IN WINTER",
+          "score": 0.31398868606389524
+        }
+      ],
+      "add_time": 2.503,
+      "search_time": 0.329,
+      "answer_time": 1.297,
+      "total_time": 4.129,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6,
+      "llm": 1
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_ed1e6882",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "American sweetgum tree",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE CENTRAL GARDEN WAS REDESIGNED BY KIM WILKI AND OPENED AS THE JOHN MEDESKI GARDEN ON THE FIFTH OF JULY TWO THOUSAND FIVE THE DESIGN IS A SUBTLE BLEND OF THE TRADITIONAL AN MODERN THE LAYOUT IS FORMAL THERE IS AN ELIPTICAL WATER FEATURE LINED IN STONE WITH STEPS AROUND THE EDGE WHICH MAY BE DRAINED TO USE THE AREA FOR RECEPTIONS GATHERINGS OR EXHIBITION PURPOSES THIS IS IN FRONT OF THE BRONZE DOORS LEADING TO THE REFRESHMENT ROOMS A CENTRAL PATH FLANKED BY LAWNS LEADS TO THE SCULPTURE GALLERY THE NORTH EAST AND WEST SIDES HAVE HURBACIOUS BORDERS ALONG THE MUSEUM WALLS WITH PATHS IN FRONT WHICH CONTINUES ALONG THE SOUTH FASADE IN THE TWO CORNERS BY THE NORTH FASADE THERE IS PLANTED AN AMERICAN SWEETGUM TREE THE SOUTHERN EASTERN AND WESTERN EDGES OF THE LAWNS HAVE GLASS PLANTERS WHICH CONTAIN ORANGE AND LEMON TREES IN SUMMER THESE ARE REPLACED BY BAY TREES IN WINTER",
+          "score": 0.4282153737712989
+        }
+      ],
+      "add_time": 2.469,
+      "search_time": 0.27,
+      "answer_time": 0.654,
+      "total_time": 3.393,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_60964384",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "Conditions of static equilibrium",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HISTORICALLY FORCES WERE FIRST QUANTITATIVELY INVESTIGATED IN CONDITIONS OF STATIT EQUILIBRIUM WHERE SEVERAL FORCES CANCELED EACH OTHER OUT SUCH EXPERIMENTS DEMONSTRATE THE CRUCIAL PROPERTIES THAT FORCES ARE ATITIVE VECTOR QUANTITIES THEY HAVE MAGNITUDE AND DIRECTION WHEN TWO FORCES ACT ON A POINT PARTICLE THE RESULTING FORCE THE RESULTANT ALSO CALLED THE NET FORCE CAN BE DETERMENT BY FOLLOWING THE PARALLELOGRAM RULE OF VECTOREDITION THE ADDITION OF TWO VECTORS REPRESENTED BY SIDES OF HA PARALLELOGRAM GIVES AN EQUIVALENT RESULTANT VECTOR THATT IS EQUAL IN MAGNITUDE AND DIRECTION TO THE TRANSVERSAL OF THE PARALLELOGRAM THE MAGNITUDE OF THE RESULTANT VARIES FROM THE DIFFERENCE OF THE MAGNITUDES OF THE TWO FORCES TOO THEIR SUM DEPENDING ON THE ANGLE BETWEEN THEIRLLINES OF ACTION HOWEVER IF THE FORCES ARE ACTING ON AN EXTENDED BODY THEIR RESPECTIVE LINES OF APPLICATION MUST ALSO BE SPECIFIED IN ORDER TO ACCOUNT FOR THEIR EFFECTS ON THE MOTION OF THE BODY",
+          "score": 0.5362437541743115
+        }
+      ],
+      "add_time": 2.728,
+      "search_time": 0.252,
+      "answer_time": 0.73,
+      "total_time": 3.71,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_7d539727",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "Magnitude and direction",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HISTORICALLY FORCES WERE FIRST QUANTITATIVELY INVESTIGATED IN CONDITIONS OF STATIT EQUILIBRIUM WHERE SEVERAL FORCES CANCELED EACH OTHER OUT SUCH EXPERIMENTS DEMONSTRATE THE CRUCIAL PROPERTIES THAT FORCES ARE ATITIVE VECTOR QUANTITIES THEY HAVE MAGNITUDE AND DIRECTION WHEN TWO FORCES ACT ON A POINT PARTICLE THE RESULTING FORCE THE RESULTANT ALSO CALLED THE NET FORCE CAN BE DETERMENT BY FOLLOWING THE PARALLELOGRAM RULE OF VECTOREDITION THE ADDITION OF TWO VECTORS REPRESENTED BY SIDES OF HA PARALLELOGRAM GIVES AN EQUIVALENT RESULTANT VECTOR THATT IS EQUAL IN MAGNITUDE AND DIRECTION TO THE TRANSVERSAL OF THE PARALLELOGRAM THE MAGNITUDE OF THE RESULTANT VARIES FROM THE DIFFERENCE OF THE MAGNITUDES OF THE TWO FORCES TOO THEIR SUM DEPENDING ON THE ANGLE BETWEEN THEIRLLINES OF ACTION HOWEVER IF THE FORCES ARE ACTING ON AN EXTENDED BODY THEIR RESPECTIVE LINES OF APPLICATION MUST ALSO BE SPECIFIED IN ORDER TO ACCOUNT FOR THEIR EFFECTS ON THE MOTION OF THE BODY",
+          "score": 0.5394017943016899
+        }
+      ],
+      "add_time": 2.729,
+      "search_time": 0.522,
+      "answer_time": 0.776,
+      "total_time": 4.028,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_c0bea45b",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "Resultant",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HISTORICALLY FORCES WERE FIRST QUANTITATIVELY INVESTIGATED IN CONDITIONS OF STATIT EQUILIBRIUM WHERE SEVERAL FORCES CANCELED EACH OTHER OUT SUCH EXPERIMENTS DEMONSTRATE THE CRUCIAL PROPERTIES THAT FORCES ARE ATITIVE VECTOR QUANTITIES THEY HAVE MAGNITUDE AND DIRECTION WHEN TWO FORCES ACT ON A POINT PARTICLE THE RESULTING FORCE THE RESULTANT ALSO CALLED THE NET FORCE CAN BE DETERMENT BY FOLLOWING THE PARALLELOGRAM RULE OF VECTOREDITION THE ADDITION OF TWO VECTORS REPRESENTED BY SIDES OF HA PARALLELOGRAM GIVES AN EQUIVALENT RESULTANT VECTOR THATT IS EQUAL IN MAGNITUDE AND DIRECTION TO THE TRANSVERSAL OF THE PARALLELOGRAM THE MAGNITUDE OF THE RESULTANT VARIES FROM THE DIFFERENCE OF THE MAGNITUDES OF THE TWO FORCES TOO THEIR SUM DEPENDING ON THE ANGLE BETWEEN THEIRLLINES OF ACTION HOWEVER IF THE FORCES ARE ACTING ON AN EXTENDED BODY THEIR RESPECTIVE LINES OF APPLICATION MUST ALSO BE SPECIFIED IN ORDER TO ACCOUNT FOR THEIR EFFECTS ON THE MOTION OF THE BODY",
+          "score": 0.5397316963176767
+        }
+      ],
+      "add_time": 2.66,
+      "search_time": 0.521,
+      "answer_time": 1.578,
+      "total_time": 4.76,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_dc4fa4f3",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "Their respective lines of application",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "HISTORICALLY FORCES WERE FIRST QUANTITATIVELY INVESTIGATED IN CONDITIONS OF STATIT EQUILIBRIUM WHERE SEVERAL FORCES CANCELED EACH OTHER OUT SUCH EXPERIMENTS DEMONSTRATE THE CRUCIAL PROPERTIES THAT FORCES ARE ATITIVE VECTOR QUANTITIES THEY HAVE MAGNITUDE AND DIRECTION WHEN TWO FORCES ACT ON A POINT PARTICLE THE RESULTING FORCE THE RESULTANT ALSO CALLED THE NET FORCE CAN BE DETERMENT BY FOLLOWING THE PARALLELOGRAM RULE OF VECTOREDITION THE ADDITION OF TWO VECTORS REPRESENTED BY SIDES OF HA PARALLELOGRAM GIVES AN EQUIVALENT RESULTANT VECTOR THATT IS EQUAL IN MAGNITUDE AND DIRECTION TO THE TRANSVERSAL OF THE PARALLELOGRAM THE MAGNITUDE OF THE RESULTANT VARIES FROM THE DIFFERENCE OF THE MAGNITUDES OF THE TWO FORCES TOO THEIR SUM DEPENDING ON THE ANGLE BETWEEN THEIRLLINES OF ACTION HOWEVER IF THE FORCES ARE ACTING ON AN EXTENDED BODY THEIR RESPECTIVE LINES OF APPLICATION MUST ALSO BE SPECIFIED IN ORDER TO ACCOUNT FOR THEIR EFFECTS ON THE MOTION OF THE BODY",
+          "score": 0.4368468299952981
+        }
+      ],
+      "add_time": 2.467,
+      "search_time": 0.295,
+      "answer_time": 0.698,
+      "total_time": 3.461,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 0.8,
+      "llm": 1
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_355fd99b",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "October 1973",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE NINETEEN SEVENTY THREE OIL CRISIS BEGAN IN OCTOBER NINETEEN SEVENTY THREE WHEN THE MEMBERS OF THE ORGANIZATION OF ARAB PETROLEUM EXPORTING COUNTRIES O A P E C CONSISTING OF THE ARAB MEMBERS OF OPECH PLUS EGYPT AND SYRIA PROCLAIMED AN OIL M BARGO BY THE END OF THE MBARGO IN MARCH NINETEEN SEVENTY FOUR THE PRICE OF OIL HAD RISEN FROM THREE DOLLARS PERBERAL TO NEARLY TWELVE DOLLARS GLOBALLY AS PRICES WERE SIGNIFICANTLY HIGHER THE MBARGO COSED AN OIL CRISIS OR SHOCK WITH MANY SHORT AND LONG TERM EFFECTS ON GLOBAL POLITICS AND THE GLOBAL ECONOMY IT WAS LATER CALLED THE FIRST OIL SHOCK FOLLOWED BY THE NINETEEN SEVENTY NINE OIL CRISIS TERMED THE SECOND OIL SHOCK QUOTE",
+          "score": 0.6510711425604463
+        }
+      ],
+      "add_time": 1.977,
+      "search_time": 0.259,
+      "answer_time": 0.676,
+      "total_time": 2.912,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_74f66376",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "First oil shock",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE NINETEEN SEVENTY THREE OIL CRISIS BEGAN IN OCTOBER NINETEEN SEVENTY THREE WHEN THE MEMBERS OF THE ORGANIZATION OF ARAB PETROLEUM EXPORTING COUNTRIES O A P E C CONSISTING OF THE ARAB MEMBERS OF OPECH PLUS EGYPT AND SYRIA PROCLAIMED AN OIL M BARGO BY THE END OF THE MBARGO IN MARCH NINETEEN SEVENTY FOUR THE PRICE OF OIL HAD RISEN FROM THREE DOLLARS PERBERAL TO NEARLY TWELVE DOLLARS GLOBALLY AS PRICES WERE SIGNIFICANTLY HIGHER THE MBARGO COSED AN OIL CRISIS OR SHOCK WITH MANY SHORT AND LONG TERM EFFECTS ON GLOBAL POLITICS AND THE GLOBAL ECONOMY IT WAS LATER CALLED THE FIRST OIL SHOCK FOLLOWED BY THE NINETEEN SEVENTY NINE OIL CRISIS TERMED THE SECOND OIL SHOCK QUOTE",
+          "score": 0.6060137707929291
+        }
+      ],
+      "add_time": 1.917,
+      "search_time": 0.247,
+      "answer_time": 0.71,
+      "total_time": 2.874,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_7ac5e6de",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "The Peanuts television specials",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "A B C CURRENTLY HOLDS THE BROADCAST WRITES TO THE ACADEMY AWARDS EMIAWARDS WHICH ARE ROTATED ACROSS ALL FOUR MAJOR NETWORKS ON A YEAR TO YEAR BASIS AMERICAN MUSIC AWARDS DISNEY PARKS CHRISTMAS DAY PARADE TOURNAMEN OF ROSES PARADE COUNTRY MUSIC ASSOCIATION AWARDS AND THE C MA MUSIC FESTIVAL SINCE TWO THOUSAND A B C HAS ALSO OWNED THE TELEVISION WRITES TO MOST OF THE PEANUT'S TELEVISION SPECIALS HAVING ACQUIRED THE BROADCAST WRITES FROM C B S WHICH ORIGINATED THE SPECIALS IN NINETEEN SIXTY FIVE WITH THE DA BEW OF A CHARLIE BROWN CHRISTMAS OTHER PEANUT SPECIALS BROADCAST ANNUALLY BY A B C INCLUDING A CHARLIE BROWN CHRISTMAS INCLUDED THE GREAT PUMPKIN CHARLIE BROWN AND A CHARLIE BROWN THANKSGIVING",
+          "score": 0.514456847804622
+        }
+      ],
+      "add_time": 2.17,
+      "search_time": 0.257,
+      "answer_time": 0.779,
+      "total_time": 3.206,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.25,
+      "llm": 1
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_4a6b015b",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "Academy Awards",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "A B C CURRENTLY HOLDS THE BROADCAST WRITES TO THE ACADEMY AWARDS EMIAWARDS WHICH ARE ROTATED ACROSS ALL FOUR MAJOR NETWORKS ON A YEAR TO YEAR BASIS AMERICAN MUSIC AWARDS DISNEY PARKS CHRISTMAS DAY PARADE TOURNAMEN OF ROSES PARADE COUNTRY MUSIC ASSOCIATION AWARDS AND THE C MA MUSIC FESTIVAL SINCE TWO THOUSAND A B C HAS ALSO OWNED THE TELEVISION WRITES TO MOST OF THE PEANUT'S TELEVISION SPECIALS HAVING ACQUIRED THE BROADCAST WRITES FROM C B S WHICH ORIGINATED THE SPECIALS IN NINETEEN SIXTY FIVE WITH THE DA BEW OF A CHARLIE BROWN CHRISTMAS OTHER PEANUT SPECIALS BROADCAST ANNUALLY BY A B C INCLUDING A CHARLIE BROWN CHRISTMAS INCLUDED THE GREAT PUMPKIN CHARLIE BROWN AND A CHARLIE BROWN THANKSGIVING",
+          "score": 0.5403139526460423
+        }
+      ],
+      "add_time": 2.391,
+      "search_time": 0.365,
+      "answer_time": 0.854,
+      "total_time": 3.61,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_ce65651e",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "No",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "B S K WY B HAS NO VETO OVER THE PRESENCE OF CHANNELS ON THEIR E P G WITH OPEN ACCESS BEING AN ENFORCED PART OF THEIR OPERATING LICENSE FROM OFF CALM ANY CHANNEL WHICH CAN GET CARRIAGE ON A SUITABLE BEAM OF A SATELLITE AT TWENTY EIGHT DEGREES EAST IS ENTITLED TO ACCESS TO BISKEEB  P G FOR A F RANGING FROM FIFTEEN POUNDS MINUS ONE HUNDRED O O O THIRD PARTY CHANNELS WHICH OPT FOR INCRIPTION RECEIVE DISCOUNTS RANGING FROM REDUCED PRICE TO FREE E P G ENTRIES FREE CARRIAGE ON A B S K WY B LEAST TRANSPONDER OR ACTUAL PAYMENT FOR BING CARRIED HOWEVER EVEN IN THIS CASE B S K WY B DOES NOT CARRY ANY CONTROL OVER THE CHANNELS CONTENT OR CARRIAGE ISSUES SUCH AS PICTURE QUALITY",
+          "score": 0.6335200972140681
+        }
+      ],
+      "add_time": 2.077,
+      "search_time": 0.358,
+      "answer_time": 0.633,
+      "total_time": 3.068,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_ddea814e",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "B S K WY B HAS NO VETO OVER THE PRESENCE OF CHANNELS ON THEIR E P G WITH OPEN ACCESS BEING AN ENFORCED PART OF THEIR OPERATING LICENSE FROM OFF CALM ANY CHANNEL WHICH CAN GET CARRIAGE ON A SUITABLE BEAM OF A SATELLITE AT TWENTY EIGHT DEGREES EAST IS ENTITLED TO ACCESS TO BISKEEB  P G FOR A F RANGING FROM FIFTEEN POUNDS MINUS ONE HUNDRED O O O THIRD PARTY CHANNELS WHICH OPT FOR INCRIPTION RECEIVE DISCOUNTS RANGING FROM REDUCED PRICE TO FREE E P G ENTRIES FREE CARRIAGE ON A B S K WY B LEAST TRANSPONDER OR ACTUAL PAYMENT FOR BING CARRIED HOWEVER EVEN IN THIS CASE B S K WY B DOES NOT CARRY ANY CONTROL OVER THE CHANNELS CONTENT OR CARRIAGE ISSUES SUCH AS PICTURE QUALITY",
+          "score": 0.645098659931007
+        }
+      ],
+      "add_time": 1.906,
+      "search_time": 0.27,
+      "answer_time": 0.652,
+      "total_time": 2.829,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_4a484b6a",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "B S K WY B HAS NO VETO OVER THE PRESENCE OF CHANNELS ON THEIR E P G WITH OPEN ACCESS BEING AN ENFORCED PART OF THEIR OPERATING LICENSE FROM OFF CALM ANY CHANNEL WHICH CAN GET CARRIAGE ON A SUITABLE BEAM OF A SATELLITE AT TWENTY EIGHT DEGREES EAST IS ENTITLED TO ACCESS TO BISKEEB  P G FOR A F RANGING FROM FIFTEEN POUNDS MINUS ONE HUNDRED O O O THIRD PARTY CHANNELS WHICH OPT FOR INCRIPTION RECEIVE DISCOUNTS RANGING FROM REDUCED PRICE TO FREE E P G ENTRIES FREE CARRIAGE ON A B S K WY B LEAST TRANSPONDER OR ACTUAL PAYMENT FOR BING CARRIED HOWEVER EVEN IN THIS CASE B S K WY B DOES NOT CARRY ANY CONTROL OVER THE CHANNELS CONTENT OR CARRIAGE ISSUES SUCH AS PICTURE QUALITY",
+          "score": 0.6312913352604392
+        }
+      ],
+      "add_time": 1.916,
+      "search_time": 0.249,
+      "answer_time": 0.647,
+      "total_time": 2.812,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_7f962dbe",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "William Booth",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "METHODIST INSTITUTIONS MAY BE NAMED AFTER A BIBLICAL FIGURE E G SAINT JAMES U M C METHODISTS ALSO HONOR NOTABLE HEROES AND HEROINES OF THE CHRISTIAN FAITH AND LOOK TO THESE PROMINENT SAINTS AS PROVIDING EXAMPLES OF HOLY LIVING AND COMMITMENT TO CHRIST THAT ARE WORTHY OF IMITATION SEE FIRST CORINTHIANS CHAPTER ELEVEN ONE SUCH EXEMPLARY SAINTS INCLUDE MARTYRS CONFESSORS OF THE FAITH EVANGELISTS OR IMPORTANT BIBLICAL FIGURES SUCH AS SAINT MATTHEW LUTHERAN THEOLOGIAN AND MARTYR TO THE NATSEES DIETRICH BONHAFFER SALVATION ARMY FOUNDER WILLIAM BOOTH AFRICAN MISSIONARY DAVID LIVINGSTONE AND METHODISMS REVERED FOUNDER JOHN WESLEY ARE AMONG MANY CITED AS PROTESTANT SAINTS",
+          "score": 0.3074968066151077
+        }
+      ],
+      "add_time": 2.154,
+      "search_time": 0.309,
+      "answer_time": 0.613,
+      "total_time": 3.076,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_b0e08e56",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "John Wesley",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "METHODIST INSTITUTIONS MAY BE NAMED AFTER A BIBLICAL FIGURE E G SAINT JAMES U M C METHODISTS ALSO HONOR NOTABLE HEROES AND HEROINES OF THE CHRISTIAN FAITH AND LOOK TO THESE PROMINENT SAINTS AS PROVIDING EXAMPLES OF HOLY LIVING AND COMMITMENT TO CHRIST THAT ARE WORTHY OF IMITATION SEE FIRST CORINTHIANS CHAPTER ELEVEN ONE SUCH EXEMPLARY SAINTS INCLUDE MARTYRS CONFESSORS OF THE FAITH EVANGELISTS OR IMPORTANT BIBLICAL FIGURES SUCH AS SAINT MATTHEW LUTHERAN THEOLOGIAN AND MARTYR TO THE NATSEES DIETRICH BONHAFFER SALVATION ARMY FOUNDER WILLIAM BOOTH AFRICAN MISSIONARY DAVID LIVINGSTONE AND METHODISMS REVERED FOUNDER JOHN WESLEY ARE AMONG MANY CITED AS PROTESTANT SAINTS",
+          "score": 0.5723266331591303
+        }
+      ],
+      "add_time": 1.993,
+      "search_time": 0.295,
+      "answer_time": 1.006,
+      "total_time": 3.294,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_7cf1dfb1",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "Elten Rule",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN APRIL NINETEEN SEVENTY CONGRESS PASSED THE PUBLIC HEALTH CIGARETTE SMOKING ACT WHICH BANN CIGARETTE ADVERTISING FROM ALL TELA VISION AND RADIO NETWORKS INCLUDING A B C WHEN IT TOOK EFFECT ON JANUARY SECON NINETEEN SEVENTY ONE CITING LIMITED PROFITABILITY OF ITS CINEMAS A B C GREAT STATES THE CENTRAL WEST DIVISION OF A B C THEATERS WAS SOLD TO HENERY PLIT IN NINETEEN SEVENTY FOUR ON JANUARY SEVENTEENTH NINETEEN SEVENTY TWO ELTEN RULE WAS NAMED PRESIDENT IN CHIEF OPERATING OFFICER OF A B C A FEW MONTHS AFTER GOLDEN SIN REDUCED HIS ROLE IN THE COMPANY AFTER SUFFERING A HARD ATTACK",
+          "score": 0.4675267784610034
+        }
+      ],
+      "add_time": 1.78,
+      "search_time": 0.242,
+      "answer_time": 0.738,
+      "total_time": 2.76,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_28899e84",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "Degrees of privilege",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE HISTORIAN FREDERIC W MOTE WROTE THAT THE USAGE OF THE TERM SOCIAL CLASSES FOR THIS SYSTEM WAS MISLEADING AND THAT THEE POSITION OF PEOPLE WITHIN THE FOUR CLASS SYSTEM WAS NOT AN INDICATION OF THEIR ACTUAL SOCIAL POWER AND WEALTH BUT JUST ENTAILED DEGREES OF PRIVILEGE TO WHICH THEY WERE ENTITLED INSTITUTIONALLY AND LEGALLY SO A PERSON STANDING WITHIN THE CLASSES WAS NOT A GUARANTEE OF THEIR STANDING SINCE THERE WERE RICH AND WELL SOCIALLY STANDING CHINESE WHILE THERE WERE LESS RICH MONGEL AND SEEMU AN THERE WERE MONGEL AND SIMU WHO LIVED IN POVERTY AND WERE ILL TREATED",
+          "score": 0.594175026636605
+        }
+      ],
+      "add_time": 1.66,
+      "search_time": 0.243,
+      "answer_time": 0.546,
+      "total_time": 2.449,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_0beb8fff",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "Wealth and social standing",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE HISTORIAN FREDERIC W MOTE WROTE THAT THE USAGE OF THE TERM SOCIAL CLASSES FOR THIS SYSTEM WAS MISLEADING AND THAT THEE POSITION OF PEOPLE WITHIN THE FOUR CLASS SYSTEM WAS NOT AN INDICATION OF THEIR ACTUAL SOCIAL POWER AND WEALTH BUT JUST ENTAILED DEGREES OF PRIVILEGE TO WHICH THEY WERE ENTITLED INSTITUTIONALLY AND LEGALLY SO A PERSON STANDING WITHIN THE CLASSES WAS NOT A GUARANTEE OF THEIR STANDING SINCE THERE WERE RICH AND WELL SOCIALLY STANDING CHINESE WHILE THERE WERE LESS RICH MONGEL AND SEEMU AN THERE WERE MONGEL AND SIMU WHO LIVED IN POVERTY AND WERE ILL TREATED",
+          "score": 0.3951483115999108
+        }
+      ],
+      "add_time": 1.612,
+      "search_time": 0.388,
+      "answer_time": 0.667,
+      "total_time": 2.666,
+      "em": 0,
+      "f1": 0.4444,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_a403783a",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "STEAM ENGINES CAN BE SAID TO HAVE BEEN THE MOVING FORCE BEHIND THE INDUSTRIAL REVOLUTION AND SAW WIDESPREAD COMMERCIAL USE DRIVING MACHINERY IN FACTORIES MILLS AND MINES POWERING PUMPING STATIONS AND PREPELLING TRANSPORT APPLIANCES SUCH AS RAILWAY LOCOMOTIVES SHIPS STEAMBOATS AND ROAD VEHICLES THEIR USE IN AGRICULTURE LED TO AN INCREASE IN THE LAND AVAILABLE FOR CULTIVATION THERE HAVE AT ONE TIME OR ANOTHER BEEN STEAM POWERED FARM TRACTORS MOTOR CYCLES WITHOUT MUCH SUCCESS AND EVEN AUTOMOBILES AS THE STANDLY STEAMER",
+          "score": 0.5955737188697021
+        }
+      ],
+      "add_time": 1.574,
+      "search_time": 0.259,
+      "answer_time": 0.546,
+      "total_time": 2.378,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_f140e87f",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "Steamboats",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "STEAM ENGINES CAN BE SAID TO HAVE BEEN THE MOVING FORCE BEHIND THE INDUSTRIAL REVOLUTION AND SAW WIDESPREAD COMMERCIAL USE DRIVING MACHINERY IN FACTORIES MILLS AND MINES POWERING PUMPING STATIONS AND PREPELLING TRANSPORT APPLIANCES SUCH AS RAILWAY LOCOMOTIVES SHIPS STEAMBOATS AND ROAD VEHICLES THEIR USE IN AGRICULTURE LED TO AN INCREASE IN THE LAND AVAILABLE FOR CULTIVATION THERE HAVE AT ONE TIME OR ANOTHER BEEN STEAM POWERED FARM TRACTORS MOTOR CYCLES WITHOUT MUCH SUCCESS AND EVEN AUTOMOBILES AS THE STANDLY STEAMER",
+          "score": 0.6439312729327259
+        }
+      ],
+      "add_time": 1.481,
+      "search_time": 0.248,
+      "answer_time": 0.683,
+      "total_time": 2.411,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_66f8cf3e",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "Standly Steamer",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "STEAM ENGINES CAN BE SAID TO HAVE BEEN THE MOVING FORCE BEHIND THE INDUSTRIAL REVOLUTION AND SAW WIDESPREAD COMMERCIAL USE DRIVING MACHINERY IN FACTORIES MILLS AND MINES POWERING PUMPING STATIONS AND PREPELLING TRANSPORT APPLIANCES SUCH AS RAILWAY LOCOMOTIVES SHIPS STEAMBOATS AND ROAD VEHICLES THEIR USE IN AGRICULTURE LED TO AN INCREASE IN THE LAND AVAILABLE FOR CULTIVATION THERE HAVE AT ONE TIME OR ANOTHER BEEN STEAM POWERED FARM TRACTORS MOTOR CYCLES WITHOUT MUCH SUCCESS AND EVEN AUTOMOBILES AS THE STANDLY STEAMER",
+          "score": 0.5756919469537829
+        }
+      ],
+      "add_time": 1.647,
+      "search_time": 0.249,
+      "answer_time": 0.991,
+      "total_time": 2.886,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_373dfe91",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "Factories",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "STEAM ENGINES CAN BE SAID TO HAVE BEEN THE MOVING FORCE BEHIND THE INDUSTRIAL REVOLUTION AND SAW WIDESPREAD COMMERCIAL USE DRIVING MACHINERY IN FACTORIES MILLS AND MINES POWERING PUMPING STATIONS AND PREPELLING TRANSPORT APPLIANCES SUCH AS RAILWAY LOCOMOTIVES SHIPS STEAMBOATS AND ROAD VEHICLES THEIR USE IN AGRICULTURE LED TO AN INCREASE IN THE LAND AVAILABLE FOR CULTIVATION THERE HAVE AT ONE TIME OR ANOTHER BEEN STEAM POWERED FARM TRACTORS MOTOR CYCLES WITHOUT MUCH SUCCESS AND EVEN AUTOMOBILES AS THE STANDLY STEAMER",
+          "score": 0.6086770424450012
+        }
+      ],
+      "add_time": 1.576,
+      "search_time": 0.244,
+      "answer_time": 0.644,
+      "total_time": 2.464,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_8c2a0b70",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "Enrico Fermi",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "NOTABLE FACULTY IN PHYSICS HAVE INCLUDED THE SPEED OF LIGHT CALCULATOR A A MICHAELSON ELEMENTARY CHARGE CALCULATOR ROBERT A MILIHAN DISCOVERER OF THE COMPTON EFFECT ARTHUR H COMPTON THE CREATOR OF THE FIRST NUCLEER REACTOR AND REKO FIRMY THE FATHER OF THE HYDROGEN BOM EDWARD TELLER ONE OF THE MOST BRILLIANT AND PRODUCTIVE EXPERIMENTAL PHYSICISTS OF THE TWENTIETH CENTURY LOUISE WALDER ALVEREZ MURRAY JEL MAN WHO INTRODUCED THE QUORK SECOND FEMALE NOBELL LAURIAT MARIA GOPERT MAYOR THE YOUNGEST AMERICAN WINNER OF THE NOBELL PRIZE SUNG DAULEE AND ASTROPHYSICIST SUBROMENIAN CHONDRES SACRE",
+          "score": 0.40624915512799775
+        }
+      ],
+      "add_time": 1.736,
+      "search_time": 0.267,
+      "answer_time": 0.655,
+      "total_time": 2.659,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_498dbd65",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "Edward Teller",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "NOTABLE FACULTY IN PHYSICS HAVE INCLUDED THE SPEED OF LIGHT CALCULATOR A A MICHAELSON ELEMENTARY CHARGE CALCULATOR ROBERT A MILIHAN DISCOVERER OF THE COMPTON EFFECT ARTHUR H COMPTON THE CREATOR OF THE FIRST NUCLEER REACTOR AND REKO FIRMY THE FATHER OF THE HYDROGEN BOM EDWARD TELLER ONE OF THE MOST BRILLIANT AND PRODUCTIVE EXPERIMENTAL PHYSICISTS OF THE TWENTIETH CENTURY LOUISE WALDER ALVEREZ MURRAY JEL MAN WHO INTRODUCED THE QUORK SECOND FEMALE NOBELL LAURIAT MARIA GOPERT MAYOR THE YOUNGEST AMERICAN WINNER OF THE NOBELL PRIZE SUNG DAULEE AND ASTROPHYSICIST SUBROMENIAN CHONDRES SACRE",
+          "score": 0.45630627985985944
+        }
+      ],
+      "add_time": 1.639,
+      "search_time": 0.247,
+      "answer_time": 0.652,
+      "total_time": 2.539,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_83a0f3bc",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "Dallas, Texas",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ON APRIL TWENTY THIRD NINETEEN SIXTY EIGHT THE UNITED METHODIST CHURCH WAS CREATED WHEN THE EVANGELICAL UNITED BRETHREN CHURCH REPRESENTED BY BISHOP REUBEN ACH MUWLLER AND THE METHODIST CHURCH REPRESENTED BY BISHOP LOYD CHRIST WICH JOINED HANDS AT THE CONSTITUTING GENERAL CONFERENCE IN DALIS TEXAS WITH THE WORDS LORD OF THE CHURCH WE ARE UNITED IN THEE IN THY CHURCH AND NOW IN THE UNITED METHODIST CHURCH THE NEW DENOMINATION WAS GIVEN BIRTH BY THEE TWO CHURCHES THAT HAD DISTINGUISHED HISTORIES AND INFLUENTIAL MINISTRIES IN VARIOUS PARTS OF THEE WORLD",
+          "score": 0.522266106486965
+        }
+      ],
+      "add_time": 1.596,
+      "search_time": 0.268,
+      "answer_time": 0.583,
+      "total_time": 2.447,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_08397d37",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "Bishop Reuben Ach Muwlller",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ON APRIL TWENTY THIRD NINETEEN SIXTY EIGHT THE UNITED METHODIST CHURCH WAS CREATED WHEN THE EVANGELICAL UNITED BRETHREN CHURCH REPRESENTED BY BISHOP REUBEN ACH MUWLLER AND THE METHODIST CHURCH REPRESENTED BY BISHOP LOYD CHRIST WICH JOINED HANDS AT THE CONSTITUTING GENERAL CONFERENCE IN DALIS TEXAS WITH THE WORDS LORD OF THE CHURCH WE ARE UNITED IN THEE IN THY CHURCH AND NOW IN THE UNITED METHODIST CHURCH THE NEW DENOMINATION WAS GIVEN BIRTH BY THEE TWO CHURCHES THAT HAD DISTINGUISHED HISTORIES AND INFLUENTIAL MINISTRIES IN VARIOUS PARTS OF THEE WORLD",
+          "score": 0.4599719568556091
+        }
+      ],
+      "add_time": 1.576,
+      "search_time": 0.264,
+      "answer_time": 0.789,
+      "total_time": 2.629,
+      "em": 0,
+      "f1": 0.2857,
+      "bleu": 0.25,
+      "llm": 0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_ee72822c",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "Waxy cuticle",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "SEVERAL BARRIERS PROTECT ORGANISMS FROM INFECTION INCLUDING MECHANICAL CHEMICAL AND BIOLOGICAL BARRIERS THE WAXY CUTICAL OF MANY LEAVES THE EXOSKELEDON OF INSECTS THE SHELLS AND MEMBRANES OF EXTERNALLY DEPOSITED EGGS AND SKIN ARE EXAMPLES OF MECHANICAL BARRIERS THAT ARE THE FIRST LINE OF DEFENCE AGAINST INFECTION HOWEVER AS ORGANISMS CANNOT BE COMPLETELY SEALED FROM THEIR ENVIRONMENTS OTHER SYSTEMS ACT TO PROTECT BODY OPENINGS SUCH AS THE LUNGS INTESTANS AND THE GENITORINARY TRACT IN THE LUNGS COUGHING AND SNEEZING MECHANICALLY EJECT PATHAGANS AND OTHER IRITANS FROM THE RESPIRATORY TRACT THE FLUSHING ACTION OF TEARS AND URINE ALSO MECHANICALLY EXPELS PATHAGONS WHILE MUCUS SECRETED BY THE RESPIRATORY AND GASTROAN TESTINAL TRACT SERVES TO TRAP AND INTANGLE MICROORGANISMS",
+          "score": 0.544705597378959
+        }
+      ],
+      "add_time": 2.191,
+      "search_time": 0.413,
+      "answer_time": 0.692,
+      "total_time": 3.296,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_a477a0da",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "Coughing and sneezing",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "SEVERAL BARRIERS PROTECT ORGANISMS FROM INFECTION INCLUDING MECHANICAL CHEMICAL AND BIOLOGICAL BARRIERS THE WAXY CUTICAL OF MANY LEAVES THE EXOSKELEDON OF INSECTS THE SHELLS AND MEMBRANES OF EXTERNALLY DEPOSITED EGGS AND SKIN ARE EXAMPLES OF MECHANICAL BARRIERS THAT ARE THE FIRST LINE OF DEFENCE AGAINST INFECTION HOWEVER AS ORGANISMS CANNOT BE COMPLETELY SEALED FROM THEIR ENVIRONMENTS OTHER SYSTEMS ACT TO PROTECT BODY OPENINGS SUCH AS THE LUNGS INTESTANS AND THE GENITORINARY TRACT IN THE LUNGS COUGHING AND SNEEZING MECHANICALLY EJECT PATHAGANS AND OTHER IRITANS FROM THE RESPIRATORY TRACT THE FLUSHING ACTION OF TEARS AND URINE ALSO MECHANICALLY EXPELS PATHAGONS WHILE MUCUS SECRETED BY THE RESPIRATORY AND GASTROAN TESTINAL TRACT SERVES TO TRAP AND INTANGLE MICROORGANISMS",
+          "score": 0.6041811550310165
+        }
+      ],
+      "add_time": 2.439,
+      "search_time": 0.246,
+      "answer_time": 0.687,
+      "total_time": 3.372,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_ac23891f",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "Mucus",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "SEVERAL BARRIERS PROTECT ORGANISMS FROM INFECTION INCLUDING MECHANICAL CHEMICAL AND BIOLOGICAL BARRIERS THE WAXY CUTICAL OF MANY LEAVES THE EXOSKELEDON OF INSECTS THE SHELLS AND MEMBRANES OF EXTERNALLY DEPOSITED EGGS AND SKIN ARE EXAMPLES OF MECHANICAL BARRIERS THAT ARE THE FIRST LINE OF DEFENCE AGAINST INFECTION HOWEVER AS ORGANISMS CANNOT BE COMPLETELY SEALED FROM THEIR ENVIRONMENTS OTHER SYSTEMS ACT TO PROTECT BODY OPENINGS SUCH AS THE LUNGS INTESTANS AND THE GENITORINARY TRACT IN THE LUNGS COUGHING AND SNEEZING MECHANICALLY EJECT PATHAGANS AND OTHER IRITANS FROM THE RESPIRATORY TRACT THE FLUSHING ACTION OF TEARS AND URINE ALSO MECHANICALLY EXPELS PATHAGONS WHILE MUCUS SECRETED BY THE RESPIRATORY AND GASTROAN TESTINAL TRACT SERVES TO TRAP AND INTANGLE MICROORGANISMS",
+          "score": 0.47726852743506903
+        }
+      ],
+      "add_time": 2.585,
+      "search_time": 0.257,
+      "answer_time": 0.701,
+      "total_time": 3.544,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_f936a342",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "Tears",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "SEVERAL BARRIERS PROTECT ORGANISMS FROM INFECTION INCLUDING MECHANICAL CHEMICAL AND BIOLOGICAL BARRIERS THE WAXY CUTICAL OF MANY LEAVES THE EXOSKELEDON OF INSECTS THE SHELLS AND MEMBRANES OF EXTERNALLY DEPOSITED EGGS AND SKIN ARE EXAMPLES OF MECHANICAL BARRIERS THAT ARE THE FIRST LINE OF DEFENCE AGAINST INFECTION HOWEVER AS ORGANISMS CANNOT BE COMPLETELY SEALED FROM THEIR ENVIRONMENTS OTHER SYSTEMS ACT TO PROTECT BODY OPENINGS SUCH AS THE LUNGS INTESTANS AND THE GENITORINARY TRACT IN THE LUNGS COUGHING AND SNEEZING MECHANICALLY EJECT PATHAGANS AND OTHER IRITANS FROM THE RESPIRATORY TRACT THE FLUSHING ACTION OF TEARS AND URINE ALSO MECHANICALLY EXPELS PATHAGONS WHILE MUCUS SECRETED BY THE RESPIRATORY AND GASTROAN TESTINAL TRACT SERVES TO TRAP AND INTANGLE MICROORGANISMS",
+          "score": 0.47321287734075196
+        }
+      ],
+      "add_time": 2.405,
+      "search_time": 0.244,
+      "answer_time": 0.653,
+      "total_time": 3.302,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_c8f9c3cc",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "Chicago Bears",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.45052580322899227
+        }
+      ],
+      "add_time": 0.974,
+      "search_time": 0.447,
+      "answer_time": 0.641,
+      "total_time": 2.061,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 50,
+      "user_id": "eval_50_7f99cc0d",
+      "question": "What position did Rivera play in Super Bowl XX?",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.456021767477359
+        }
+      ],
+      "add_time": 0.965,
+      "search_time": 0.231,
+      "answer_time": 0.727,
+      "total_time": 1.924,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 51,
+      "user_id": "eval_51_45ac9ee4",
+      "question": "Who was replaced by Kubiak in Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.4274518686950682
+        }
+      ],
+      "add_time": 1.0,
+      "search_time": 0.319,
+      "answer_time": 0.56,
+      "total_time": 1.879,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 52,
+      "user_id": "eval_52_92286c23",
+      "question": "What team did Kubiak play for in Super Bowl XXI?",
+      "ground_truth": "broncos",
+      "prediction": "Broncos",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.43512067956589795
+        }
+      ],
+      "add_time": 1.042,
+      "search_time": 0.259,
+      "answer_time": 0.637,
+      "total_time": 1.937,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 53,
+      "user_id": "eval_53_69fb236d",
+      "question": "What position did Rivera play in Super Bowl XX? ",
+      "ground_truth": "linebacker",
+      "prediction": "Linebacker",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.45600015255808546
+        }
+      ],
+      "add_time": 1.002,
+      "search_time": 0.264,
+      "answer_time": 0.989,
+      "total_time": 2.255,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 54,
+      "user_id": "eval_54_a6b5162a",
+      "question": "Who did Kubiak take the place of after Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "Elway",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.44577475062499217
+        }
+      ],
+      "add_time": 1.186,
+      "search_time": 0.242,
+      "answer_time": 0.653,
+      "total_time": 2.081,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 55,
+      "user_id": "eval_55_7ce63d5e",
+      "question": "Who was the Panthers head coach for the 2015 season?",
+      "ground_truth": "rivera",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "WITH RAVERA HAVING BEEN A LINE BACKER WITH THE CHICAGO BEARS IN SUPER BULL X X AND CUBIAC REPLACING ELWAY AT THE END OF THE BRONCO'S DEFEATS IN SUPER BULLS EX X I AND X X I V THIS WILL BE THE FIRST SUPER BULL IN WHICH BOTH HEAD COACHES PLAYED IN THE GAME THEMSELVES",
+          "score": 0.3193447278818353
+        }
+      ],
+      "add_time": 1.132,
+      "search_time": 0.259,
+      "answer_time": 0.637,
+      "total_time": 2.029,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 56,
+      "user_id": "eval_56_d1819339",
+      "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+      "ground_truth": "germany",
+      "prediction": "Germany",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THERE ARE A SET OF BEAUTIFUL INLAID DOORS DATED FIFTEEN EIGHTY FROM ANTWERP CITY HALL ATTRIBUTED TO HANS REEDMAN DOF RISE ONE OF THE FINEST PIECES OF CONTINENTAL FURNITURE IN THE COLLECTION IS THE RECOCO AUGUSTUS WRECK BUREAU CABINET DATED C ONE SEVEN PIVOU FROM GERMANY WITH E SPECIALLY FINE MARCETURY IN ORMALU MOUNTS ONE OF THE GRANDEST PIECES OF NINETEENTH CENTURY FURNITURE IS THE HIGHLY ELABORATE FRENCH CABINET DATED EIGHTEEN SIXTY ONETO EIGHTEENTH SIXTY SEVEN MADE BY M FORDENOA MADE FROM EBONY INLAID WITH BOX LIME HALLEY PAR WALNUT AND MAHOGANY WOODS AS WELL AS MARBLE WITH GILDED CARVINGS FURNITURE DESIGNED BY EARNEST GIMSON EDWARD WILLIAM GODWIN CHARLES VOISEY ADE ALL FLEWS AND OTTO WAGNER ARE AMONG THE LATE NINETEENTH CENTURY IN EARLY TWENTIETH CENTURY EXAMPLES IN THEE COLLECTION THE WORK OF MODERNISTS IN THE COLLECTION IN CLUDE LA CORBUCIER MARSELL BREWER CHARLES AND RAY EAMES AND GEO PONTI",
+          "score": 0.5323985378950556
+        }
+      ],
+      "add_time": 2.63,
+      "search_time": 0.253,
+      "answer_time": 0.587,
+      "total_time": 3.469,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 57,
+      "user_id": "eval_57_2e1be985",
+      "question": "What has replaced the former shipping premises?",
+      "ground_truth": "largescale regeneration",
+      "prediction": "Imposing new office developments",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LARGE SCALE REGENERATION HAS REPLACED FORMER SHIPPING PREMISES WITH IMPOSING NEW OFFICE DEVELOPMENTS AND INEVATIVE TILTING BRIDGE THE GATESHEAD MALENNIUM BRIDGE WAS COMMISSION BY GATESHEAD COUNSIL AND HAS INTEGRATED THE OLDER NEWCASTLE KEISIDE MORE CLOSELY WITH MAJOR CULTURAL DEVELOPMENTS IN GATES HEAD INCLUDING THE BALDIC CENTER FOR CONTEMPORARY ART THE VENU FOR THE TURNER PRIZE TWENTY ELEVEN AND THE NORMAN FOSTER DESIGNED THE SAGE GATES HEAD MUSIC CENTER THE NEWCASTLE AND GATESHEAD KEISIDES ARE NOW A THRIVING COSMOPOLIDAN AREA WITH BARS RESTAURANTS AND PUBLIC SPACES AS A TOURIST PROMOTION NEWCASTLE AND GATESHEAD HAVE LINKED TOGETHER UNDER THE BANNER NEWCASTLE GATESHEAD TO SPEARHEAD THE REGENERATION OF THE NORTHEAST THE RIVER TINE HAD THE TEMPORARY BAMBUKO BRIDGE IN TWO THOUSAND ATE FOR TEN DAYS IT WAS NOT MADE FOR WALKING ROAD OR CYCLING BUT WAS JUST A SCULPTURE",
+          "score": 0.39198687089971485
+        }
+      ],
+      "add_time": 2.27,
+      "search_time": 0.25,
+      "answer_time": 1.204,
+      "total_time": 3.723,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 58,
+      "user_id": "eval_58_a65a1abf",
+      "question": "Who designed the Sage Gateshead music center?",
+      "ground_truth": "norman foster",
+      "prediction": "Norman Foster",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LARGE SCALE REGENERATION HAS REPLACED FORMER SHIPPING PREMISES WITH IMPOSING NEW OFFICE DEVELOPMENTS AND INEVATIVE TILTING BRIDGE THE GATESHEAD MALENNIUM BRIDGE WAS COMMISSION BY GATESHEAD COUNSIL AND HAS INTEGRATED THE OLDER NEWCASTLE KEISIDE MORE CLOSELY WITH MAJOR CULTURAL DEVELOPMENTS IN GATES HEAD INCLUDING THE BALDIC CENTER FOR CONTEMPORARY ART THE VENU FOR THE TURNER PRIZE TWENTY ELEVEN AND THE NORMAN FOSTER DESIGNED THE SAGE GATES HEAD MUSIC CENTER THE NEWCASTLE AND GATESHEAD KEISIDES ARE NOW A THRIVING COSMOPOLIDAN AREA WITH BARS RESTAURANTS AND PUBLIC SPACES AS A TOURIST PROMOTION NEWCASTLE AND GATESHEAD HAVE LINKED TOGETHER UNDER THE BANNER NEWCASTLE GATESHEAD TO SPEARHEAD THE REGENERATION OF THE NORTHEAST THE RIVER TINE HAD THE TEMPORARY BAMBUKO BRIDGE IN TWO THOUSAND ATE FOR TEN DAYS IT WAS NOT MADE FOR WALKING ROAD OR CYCLING BUT WAS JUST A SCULPTURE",
+          "score": 0.5446530207477627
+        }
+      ],
+      "add_time": 2.232,
+      "search_time": 0.246,
+      "answer_time": 0.632,
+      "total_time": 3.11,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 59,
+      "user_id": "eval_59_bc612178",
+      "question": "How many days did the River Tyne have the Bambuco Bridge?",
+      "ground_truth": "ten",
+      "prediction": "Ten days",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "LARGE SCALE REGENERATION HAS REPLACED FORMER SHIPPING PREMISES WITH IMPOSING NEW OFFICE DEVELOPMENTS AND INEVATIVE TILTING BRIDGE THE GATESHEAD MALENNIUM BRIDGE WAS COMMISSION BY GATESHEAD COUNSIL AND HAS INTEGRATED THE OLDER NEWCASTLE KEISIDE MORE CLOSELY WITH MAJOR CULTURAL DEVELOPMENTS IN GATES HEAD INCLUDING THE BALDIC CENTER FOR CONTEMPORARY ART THE VENU FOR THE TURNER PRIZE TWENTY ELEVEN AND THE NORMAN FOSTER DESIGNED THE SAGE GATES HEAD MUSIC CENTER THE NEWCASTLE AND GATESHEAD KEISIDES ARE NOW A THRIVING COSMOPOLIDAN AREA WITH BARS RESTAURANTS AND PUBLIC SPACES AS A TOURIST PROMOTION NEWCASTLE AND GATESHEAD HAVE LINKED TOGETHER UNDER THE BANNER NEWCASTLE GATESHEAD TO SPEARHEAD THE REGENERATION OF THE NORTHEAST THE RIVER TINE HAD THE TEMPORARY BAMBUKO BRIDGE IN TWO THOUSAND ATE FOR TEN DAYS IT WAS NOT MADE FOR WALKING ROAD OR CYCLING BUT WAS JUST A SCULPTURE",
+          "score": 0.46064147024146584
+        }
+      ],
+      "add_time": 2.463,
+      "search_time": 0.272,
+      "answer_time": 0.625,
+      "total_time": 3.36,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 60,
+      "user_id": "eval_60_f9db65ed",
+      "question": "In between French and British, what groups controlled land?",
+      "ground_truth": "native tribes",
+      "prediction": "Native tribes",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN BETWEEN THE FRENCH AND THE BRITISH LARGE AREAS WERE DOMINATED BY NATIVE TRIBES TO THE NORTH THE M I KA M AKU AND THE ABANAKHI WERE ENGAGED IN FATHER LALEUTRE'S WAR AND STILL HELD SWAY IN PARTS OF NOVASCOTIA AKADIA AN THE EASTERN PORTIONS OF THE PROVINCE OF CANADA AS WELL AS MUCH OF PRESENT DAYMAIN THE IROQUIS CONFEDERATION DOMINATED MUCH OF PRESENT DAY UP STATE NEW YORK AND THE OHIO COUNTRY ALTHOUGH THE LATTER ALSO INCLUDED ALGONQUE AN SPEAKING POPULATIONS OF DELAWARE AND SHANE AS WELL AS IROQUOI AN SPEAKING MINGO THESE TRIBES WERE FORMALLY UNDER IROQUIS RULE AND WERE LIMITED BY THEM IN AUTHORITY TO MAKE AGREEMENTS",
+          "score": 0.5532381191939091
+        }
+      ],
+      "add_time": 1.752,
+      "search_time": 0.354,
+      "answer_time": 0.784,
+      "total_time": 2.89,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 61,
+      "user_id": "eval_61_5d723647",
+      "question": "What rule did some native live under?",
+      "ground_truth": "iroquois",
+      "prediction": "Iroquois rule",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN BETWEEN THE FRENCH AND THE BRITISH LARGE AREAS WERE DOMINATED BY NATIVE TRIBES TO THE NORTH THE M I KA M AKU AND THE ABANAKHI WERE ENGAGED IN FATHER LALEUTRE'S WAR AND STILL HELD SWAY IN PARTS OF NOVASCOTIA AKADIA AN THE EASTERN PORTIONS OF THE PROVINCE OF CANADA AS WELL AS MUCH OF PRESENT DAYMAIN THE IROQUIS CONFEDERATION DOMINATED MUCH OF PRESENT DAY UP STATE NEW YORK AND THE OHIO COUNTRY ALTHOUGH THE LATTER ALSO INCLUDED ALGONQUE AN SPEAKING POPULATIONS OF DELAWARE AND SHANE AS WELL AS IROQUOI AN SPEAKING MINGO THESE TRIBES WERE FORMALLY UNDER IROQUIS RULE AND WERE LIMITED BY THEM IN AUTHORITY TO MAKE AGREEMENTS",
+          "score": 0.38309345800577854
+        }
+      ],
+      "add_time": 1.692,
+      "search_time": 0.258,
+      "answer_time": 0.983,
+      "total_time": 2.933,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 62,
+      "user_id": "eval_62_ff0908f0",
+      "question": "What commemorates Warsaw's heroic history?",
+      "ground_truth": "many places",
+      "prediction": "Places commemorating the heroic history of Warsaw include the mausoleum of memory of martyrdom, the statue of Little Insurgent, and the Warsaw Uprising Monument.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THERE ARE ALSO MANY PLACES COMMEMORATING THE HEROIC HISTORY OF WAR SAW PAVIIC AND INFAMOUS GERMAN GUSTAPO PRISON NOW OCCUPIED BY A MAUSOLEUM OF MEMORY OF MARTYRDOM AND THE MUSEUM IS ONLY THE BEGINNING OF A WALK IN THE TRACES OF HEROIC CITY THE WAR SAWCITADEL AND IMPRESSIVE NINETEENTH CENTURY FORTIFICATION BUILT AFTER THE DEFEAT OF THE NOVEMBER UPRISING WAS A PLACE OF MARTYR FOR THE POLES ANOTHER IMPORTANT MONUMENT THE STATUE OF LITTLE IN SURGEON LOCATED AT THE RAMPARTS OF THE OLD TOWN COMMEMORATES THE CHILDREN WHO SERVED AS MESSENGERS AND FRONT LINE TROOPS IN THE WAR SAW UPRISING WHILE THE IMPRESSIVE WAR SAW UPRISING MONUMENT BY WHINCENTECOKHMA WAS ERECTED IN MEMORY OF THEE LARGEST INSURRECTION OF WORLD WAR E",
+          "score": 0.6132151900560133
+        }
+      ],
+      "add_time": 1.96,
+      "search_time": 0.275,
+      "answer_time": 1.651,
+      "total_time": 3.886,
+      "em": 0,
+      "f1": 0.0909,
+      "bleu": 0.0417,
+      "llm": 1
+    },
+    {
+      "idx": 63,
+      "user_id": "eval_63_c2c0ce33",
+      "question": "What fortification was built in the 19th century after the defeat of the November Uprising?",
+      "ground_truth": "the warsaw citadel",
+      "prediction": "Warsaw Citadel",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THERE ARE ALSO MANY PLACES COMMEMORATING THE HEROIC HISTORY OF WAR SAW PAVIIC AND INFAMOUS GERMAN GUSTAPO PRISON NOW OCCUPIED BY A MAUSOLEUM OF MEMORY OF MARTYRDOM AND THE MUSEUM IS ONLY THE BEGINNING OF A WALK IN THE TRACES OF HEROIC CITY THE WAR SAWCITADEL AND IMPRESSIVE NINETEENTH CENTURY FORTIFICATION BUILT AFTER THE DEFEAT OF THE NOVEMBER UPRISING WAS A PLACE OF MARTYR FOR THE POLES ANOTHER IMPORTANT MONUMENT THE STATUE OF LITTLE IN SURGEON LOCATED AT THE RAMPARTS OF THE OLD TOWN COMMEMORATES THE CHILDREN WHO SERVED AS MESSENGERS AND FRONT LINE TROOPS IN THE WAR SAW UPRISING WHILE THE IMPRESSIVE WAR SAW UPRISING MONUMENT BY WHINCENTECOKHMA WAS ERECTED IN MEMORY OF THEE LARGEST INSURRECTION OF WORLD WAR E",
+          "score": 0.4154793660839732
+        }
+      ],
+      "add_time": 1.812,
+      "search_time": 0.282,
+      "answer_time": 1.228,
+      "total_time": 3.323,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 64,
+      "user_id": "eval_64_fc86e7e0",
+      "question": "Who does the statue of Little Insurgent commemorate?",
+      "ground_truth": "children",
+      "prediction": "Children who served as messengers and front line troops in the Warsaw Uprising",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THERE ARE ALSO MANY PLACES COMMEMORATING THE HEROIC HISTORY OF WAR SAW PAVIIC AND INFAMOUS GERMAN GUSTAPO PRISON NOW OCCUPIED BY A MAUSOLEUM OF MEMORY OF MARTYRDOM AND THE MUSEUM IS ONLY THE BEGINNING OF A WALK IN THE TRACES OF HEROIC CITY THE WAR SAWCITADEL AND IMPRESSIVE NINETEENTH CENTURY FORTIFICATION BUILT AFTER THE DEFEAT OF THE NOVEMBER UPRISING WAS A PLACE OF MARTYR FOR THE POLES ANOTHER IMPORTANT MONUMENT THE STATUE OF LITTLE IN SURGEON LOCATED AT THE RAMPARTS OF THE OLD TOWN COMMEMORATES THE CHILDREN WHO SERVED AS MESSENGERS AND FRONT LINE TROOPS IN THE WAR SAW UPRISING WHILE THE IMPRESSIVE WAR SAW UPRISING MONUMENT BY WHINCENTECOKHMA WAS ERECTED IN MEMORY OF THEE LARGEST INSURRECTION OF WORLD WAR E",
+          "score": 0.37653425656695383
+        }
+      ],
+      "add_time": 1.818,
+      "search_time": 0.257,
+      "answer_time": 0.911,
+      "total_time": 2.986,
+      "em": 0,
+      "f1": 0.1538,
+      "bleu": 0.0769,
+      "llm": 1
+    },
+    {
+      "idx": 65,
+      "user_id": "eval_65_f1089515",
+      "question": "What monument is in memory of the largest insurrection of WWII?",
+      "ground_truth": "warsaw uprising monument",
+      "prediction": "Warsaw Uprising Monument",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THERE ARE ALSO MANY PLACES COMMEMORATING THE HEROIC HISTORY OF WAR SAW PAVIIC AND INFAMOUS GERMAN GUSTAPO PRISON NOW OCCUPIED BY A MAUSOLEUM OF MEMORY OF MARTYRDOM AND THE MUSEUM IS ONLY THE BEGINNING OF A WALK IN THE TRACES OF HEROIC CITY THE WAR SAWCITADEL AND IMPRESSIVE NINETEENTH CENTURY FORTIFICATION BUILT AFTER THE DEFEAT OF THE NOVEMBER UPRISING WAS A PLACE OF MARTYR FOR THE POLES ANOTHER IMPORTANT MONUMENT THE STATUE OF LITTLE IN SURGEON LOCATED AT THE RAMPARTS OF THE OLD TOWN COMMEMORATES THE CHILDREN WHO SERVED AS MESSENGERS AND FRONT LINE TROOPS IN THE WAR SAW UPRISING WHILE THE IMPRESSIVE WAR SAW UPRISING MONUMENT BY WHINCENTECOKHMA WAS ERECTED IN MEMORY OF THEE LARGEST INSURRECTION OF WORLD WAR E",
+          "score": 0.5031574446734757
+        }
+      ],
+      "add_time": 1.865,
+      "search_time": 0.324,
+      "answer_time": 0.91,
+      "total_time": 3.099,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 66,
+      "user_id": "eval_66_2dd3f9bf",
+      "question": "What was Genghis Khan's tribes burial custom?",
+      "ground_truth": "buried without markings",
+      "prediction": "Buried without markings",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "YEARS BEFORE HIS DEATH GENGAS KAN ASKED TO BE BURIED WITHOUT MARKINGS ACCORDING TO THE CUSTOMS OF HIS TRIBE AFTER HE DIED HIS BODY WAS RETURNED TO MONGOLIA AND PRESUMABLY TO HIS BIRTHPLACE IN KENTE IMOG WHERE MANY ASSUME HE IS BURIED SOMEWHERE CLOSE TO THE ONEN RIVER IN THE BERKEN KALDEN MOUNTAIN PART OF THE KENTE MOUNTAIN RANGE ACCORDING TO LEGEND THE FUNERAL ESCORT KILLED ANY ONE AND ANYTHING ACROSS THEIR PATH TO CONCEAL WHERE HE WAS FINALLY BURIED THE GENGAS KON MAUSOLEUM CONSTRUCTED MANY YEARS AFTER HIS DEATH IS HIS MEMORIAL BUT NOT HIS BURIAL SITE",
+          "score": 0.6248130769186461
+        }
+      ],
+      "add_time": 1.619,
+      "search_time": 0.236,
+      "answer_time": 0.701,
+      "total_time": 2.556,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 67,
+      "user_id": "eval_67_757592c5",
+      "question": "What is Raghuram Rajan's career?",
+      "ground_truth": "economist",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "CENTRAL BANKING ECONOMIST ROGURUM ROGEN ARGUES THAT SYSTEMATIC ECONOMIC INEQUALITIES WITHIN THE UNITED STATES AND AROUND THE WORLD HAVE CREATED DEEP FINANCIAL FAULT LINES THAT HAVE MADE FINANCIAL CRISES MORE LIKELY TO HAPPEN THAN IN THE PAST THE FINANCIAL CRISIS OF TWO THOUSAND SEVEN O EIGHT BEING THE MOST RECENT EXAMPLE TO COMPENSATE FOR STAGNATING AND DECLINING PURCHASING POWER POLITICAL PRESSURE HAS DEVELOPED TO EXTEND EASIER CREDIT TO THE LOWER AND MIDDLE INCOME EARNERS PARTICULARLY TO BY HOMES AND EASIER CREDIT IN GENERAL TO KEEP UNEMPLOYMENT RATES LOW THIS HAS GIVEN THE AMERICAN ECONOMY A TENDENCY TO GO FROM BUBBLE TO BUBBLE FUELED BY UNSUSTAINABLE MONITARY STIMULATION",
+          "score": 0.30209133450552783
+        }
+      ],
+      "add_time": 1.945,
+      "search_time": 0.254,
+      "answer_time": 0.655,
+      "total_time": 2.854,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 68,
+      "user_id": "eval_68_524d0f47",
+      "question": "What does Rajan feel has created deep financial fault lines?",
+      "ground_truth": "systematic economic inequalities",
+      "prediction": "Systematic economic inequalities",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "CENTRAL BANKING ECONOMIST ROGURUM ROGEN ARGUES THAT SYSTEMATIC ECONOMIC INEQUALITIES WITHIN THE UNITED STATES AND AROUND THE WORLD HAVE CREATED DEEP FINANCIAL FAULT LINES THAT HAVE MADE FINANCIAL CRISES MORE LIKELY TO HAPPEN THAN IN THE PAST THE FINANCIAL CRISIS OF TWO THOUSAND SEVEN O EIGHT BEING THE MOST RECENT EXAMPLE TO COMPENSATE FOR STAGNATING AND DECLINING PURCHASING POWER POLITICAL PRESSURE HAS DEVELOPED TO EXTEND EASIER CREDIT TO THE LOWER AND MIDDLE INCOME EARNERS PARTICULARLY TO BY HOMES AND EASIER CREDIT IN GENERAL TO KEEP UNEMPLOYMENT RATES LOW THIS HAS GIVEN THE AMERICAN ECONOMY A TENDENCY TO GO FROM BUBBLE TO BUBBLE FUELED BY UNSUSTAINABLE MONITARY STIMULATION",
+          "score": 0.49626934448170323
+        }
+      ],
+      "add_time": 1.849,
+      "search_time": 0.248,
+      "answer_time": 0.679,
+      "total_time": 2.776,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 69,
+      "user_id": "eval_69_9d40c9b1",
+      "question": "What has given the American economy a tendency to go \"from bubble to bubble\"?",
+      "ground_truth": "easier credit",
+      "prediction": "Unsustainable monetary stimulation",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "CENTRAL BANKING ECONOMIST ROGURUM ROGEN ARGUES THAT SYSTEMATIC ECONOMIC INEQUALITIES WITHIN THE UNITED STATES AND AROUND THE WORLD HAVE CREATED DEEP FINANCIAL FAULT LINES THAT HAVE MADE FINANCIAL CRISES MORE LIKELY TO HAPPEN THAN IN THE PAST THE FINANCIAL CRISIS OF TWO THOUSAND SEVEN O EIGHT BEING THE MOST RECENT EXAMPLE TO COMPENSATE FOR STAGNATING AND DECLINING PURCHASING POWER POLITICAL PRESSURE HAS DEVELOPED TO EXTEND EASIER CREDIT TO THE LOWER AND MIDDLE INCOME EARNERS PARTICULARLY TO BY HOMES AND EASIER CREDIT IN GENERAL TO KEEP UNEMPLOYMENT RATES LOW THIS HAS GIVEN THE AMERICAN ECONOMY A TENDENCY TO GO FROM BUBBLE TO BUBBLE FUELED BY UNSUSTAINABLE MONITARY STIMULATION",
+          "score": 0.5928604225964862
+        }
+      ],
+      "add_time": 1.803,
+      "search_time": 0.249,
+      "answer_time": 0.705,
+      "total_time": 2.757,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 70,
+      "user_id": "eval_70_26315ea3",
+      "question": "What Yuan policies did Muslims dislike?",
+      "ground_truth": "circumcision",
+      "prediction": "Restrictions on halal slaughter, circumcision, and kosher butchering.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "DESPITE THE HIGH POSITION GIVEN TO MUSLEMS SOME POLICIES OF THE UAN EMPERORS SEVERELY DISCRIMINATED AGAINST THEM RESTRICTING HULAL SLAUGHTER AND OTHER ISLAMIC PRACTICES LIKE CIRCUMCISION AS WELL AS COCHER BUTCHERING FOR JEWS FORCING THEM TO EAT FOOD THE MONGL WAY TOWARD THE END CORRUPTION AND THE PERSECUTION BECAME SO SEVERE THAT MUSLEM GENERALS JOINED HAN CHINESE IN REBELLING AGAINST THE MONGELS THE MINGFOUNDER ZU UAN ZANG HAD MUSLEM GENERALS LIKE LAN U WHO REBELLED AGAINST THE MONGELS EN DEFEATED THEM IN COMBAT SOME MUSLEM COMMUNITIES HAD A CHINESE SURNAME WHICH MEANT BARRACKS AND COULD ALSO MEAN THANKS MANY WAY MUSLEMS CLAIM THIS IS BECAUSE THAT THEY PLAYED AN IMPORTANT ROLL IN OVERTHROWING THEE MONGELES AND IT WAS GIVEN IN THANKS BY THE HAN CHINESE FOR ASSISTING THEM DURING THE WAR FIGHTING THE MONGELS AME MONG THE MING EMPEROR ZU UAN ZANG'S ARMIES WAS THE WAY MUSLEM FUNG SHANG THE MUSLEMS IN THE CMU CLASS ALSO REVOLDED AGAINST THE UAN DYNASTY IN THE I S P A H REBELLION BUT THEE REBELLION WAS CRUSHED AND THE MUSLEMS WERE MASSACRED BY THE UAN LOYALIST COMMANDER CHEN UTING",
+          "score": 0.48225806661014187
+        }
+      ],
+      "add_time": 3.141,
+      "search_time": 0.518,
+      "answer_time": 0.877,
+      "total_time": 4.537,
+      "em": 0,
+      "f1": 0.2222,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 71,
+      "user_id": "eval_71_beae0f9d",
+      "question": "What Jewish practice did the Yuan ban?",
+      "ground_truth": "kosher butchering",
+      "prediction": "Kosher butchering",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "DESPITE THE HIGH POSITION GIVEN TO MUSLEMS SOME POLICIES OF THE UAN EMPERORS SEVERELY DISCRIMINATED AGAINST THEM RESTRICTING HULAL SLAUGHTER AND OTHER ISLAMIC PRACTICES LIKE CIRCUMCISION AS WELL AS COCHER BUTCHERING FOR JEWS FORCING THEM TO EAT FOOD THE MONGL WAY TOWARD THE END CORRUPTION AND THE PERSECUTION BECAME SO SEVERE THAT MUSLEM GENERALS JOINED HAN CHINESE IN REBELLING AGAINST THE MONGELS THE MINGFOUNDER ZU UAN ZANG HAD MUSLEM GENERALS LIKE LAN U WHO REBELLED AGAINST THE MONGELS EN DEFEATED THEM IN COMBAT SOME MUSLEM COMMUNITIES HAD A CHINESE SURNAME WHICH MEANT BARRACKS AND COULD ALSO MEAN THANKS MANY WAY MUSLEMS CLAIM THIS IS BECAUSE THAT THEY PLAYED AN IMPORTANT ROLL IN OVERTHROWING THEE MONGELES AND IT WAS GIVEN IN THANKS BY THE HAN CHINESE FOR ASSISTING THEM DURING THE WAR FIGHTING THE MONGELS AME MONG THE MING EMPEROR ZU UAN ZANG'S ARMIES WAS THE WAY MUSLEM FUNG SHANG THE MUSLEMS IN THE CMU CLASS ALSO REVOLDED AGAINST THE UAN DYNASTY IN THE I S P A H REBELLION BUT THEE REBELLION WAS CRUSHED AND THE MUSLEMS WERE MASSACRED BY THE UAN LOYALIST COMMANDER CHEN UTING",
+          "score": 0.4207159015645245
+        }
+      ],
+      "add_time": 2.779,
+      "search_time": 0.262,
+      "answer_time": 1.11,
+      "total_time": 4.151,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 72,
+      "user_id": "eval_72_61ba166f",
+      "question": "How are the certain costs which are difficult to avoid shared?",
+      "ground_truth": "by everyone",
+      "prediction": "By everyone",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FIRSTLY CERTAIN COSTS ARE DIFFICULT TO AVOID AND ARE SHARED BY EVERY ONE SUCH AS THE COSTS OF HOUSING PENSIONS EDUCATION AND HEALTH CARE IF THE STATE DOES NOT PROVIDE THESE SERVICES THEN FOR THOSE ON LOWER INCOMES THE COSTS MUST BE BORROWED AND OFTEN THOSE ON LOWER INCOMES ARE THOSE WHO ARE WORSE EQUIPPED TO MANAGE THEIR FINANCES SECONDLY ASPIRATIONAL CONSUMPTION DESCRIBES THE PROCESS OF MIDDLE INCOME EARNERS ASPIRING TO ACHIEVE THEE STANDARDS OF LIVING ENJOYED BY THEIR WEALTHIER COUNTER PARTS AND ONE METHOD OF ACHIEVING THIS ASPIRATION IS BY TAKING ON DEBT THE RESULT LEADS TO EVEN GREATER INEQUALITY AND POTENTIAL ECONOMIC INSTABILITY",
+          "score": 0.4812058232248708
+        }
+      ],
+      "add_time": 2.008,
+      "search_time": 0.301,
+      "answer_time": 0.655,
+      "total_time": 2.964,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 73,
+      "user_id": "eval_73_b0de4ae1",
+      "question": "What are those with lower incomes often unable to manage?",
+      "ground_truth": "finances",
+      "prediction": "Their finances",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FIRSTLY CERTAIN COSTS ARE DIFFICULT TO AVOID AND ARE SHARED BY EVERY ONE SUCH AS THE COSTS OF HOUSING PENSIONS EDUCATION AND HEALTH CARE IF THE STATE DOES NOT PROVIDE THESE SERVICES THEN FOR THOSE ON LOWER INCOMES THE COSTS MUST BE BORROWED AND OFTEN THOSE ON LOWER INCOMES ARE THOSE WHO ARE WORSE EQUIPPED TO MANAGE THEIR FINANCES SECONDLY ASPIRATIONAL CONSUMPTION DESCRIBES THE PROCESS OF MIDDLE INCOME EARNERS ASPIRING TO ACHIEVE THEE STANDARDS OF LIVING ENJOYED BY THEIR WEALTHIER COUNTER PARTS AND ONE METHOD OF ACHIEVING THIS ASPIRATION IS BY TAKING ON DEBT THE RESULT LEADS TO EVEN GREATER INEQUALITY AND POTENTIAL ECONOMIC INSTABILITY",
+          "score": 0.4924473783174513
+        }
+      ],
+      "add_time": 1.88,
+      "search_time": 0.259,
+      "answer_time": 0.697,
+      "total_time": 2.836,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 74,
+      "user_id": "eval_74_577288e9",
+      "question": "When people take on debt, it leads potentially to what?",
+      "ground_truth": "greater inequality and potential economic instability",
+      "prediction": "Economic instability",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FIRSTLY CERTAIN COSTS ARE DIFFICULT TO AVOID AND ARE SHARED BY EVERY ONE SUCH AS THE COSTS OF HOUSING PENSIONS EDUCATION AND HEALTH CARE IF THE STATE DOES NOT PROVIDE THESE SERVICES THEN FOR THOSE ON LOWER INCOMES THE COSTS MUST BE BORROWED AND OFTEN THOSE ON LOWER INCOMES ARE THOSE WHO ARE WORSE EQUIPPED TO MANAGE THEIR FINANCES SECONDLY ASPIRATIONAL CONSUMPTION DESCRIBES THE PROCESS OF MIDDLE INCOME EARNERS ASPIRING TO ACHIEVE THEE STANDARDS OF LIVING ENJOYED BY THEIR WEALTHIER COUNTER PARTS AND ONE METHOD OF ACHIEVING THIS ASPIRATION IS BY TAKING ON DEBT THE RESULT LEADS TO EVEN GREATER INEQUALITY AND POTENTIAL ECONOMIC INSTABILITY",
+          "score": 0.498764433605778
+        }
+      ],
+      "add_time": 1.613,
+      "search_time": 0.25,
+      "answer_time": 0.663,
+      "total_time": 2.527,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 1.0,
+      "llm": 0
+    },
+    {
+      "idx": 75,
+      "user_id": "eval_75_17f0865a",
+      "question": "Who did Tesla think would run the world of the future?",
+      "ground_truth": "women",
+      "prediction": "Queen bees",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NINETEEN TWENTY SIX TESTLA COMMENTED ON THE ILLS OF THE SOCIAL SUBSERVIENCE OF WOMEN AND THE STRUGGLE OF WOMEN TOWARD GENDER EQUALITY AND INDICATED THAT HUMANITY'S FUTURE WOULD BE RUN BY QUEEN BEES HE BELIEVED THAT WOMEN WOULD BECOME THE DOMINANT SEX IN THE FUTURE",
+          "score": 0.28032662696217747
+        }
+      ],
+      "add_time": 0.973,
+      "search_time": 0.256,
+      "answer_time": 1.174,
+      "total_time": 2.404,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 76,
+      "user_id": "eval_76_1039c86d",
+      "question": "What term did he use for what he believed would be humanity's future rulers?",
+      "ground_truth": "queen bees",
+      "prediction": "\"Queen bees\"",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NINETEEN TWENTY SIX TESTLA COMMENTED ON THE ILLS OF THE SOCIAL SUBSERVIENCE OF WOMEN AND THE STRUGGLE OF WOMEN TOWARD GENDER EQUALITY AND INDICATED THAT HUMANITY'S FUTURE WOULD BE RUN BY QUEEN BEES HE BELIEVED THAT WOMEN WOULD BECOME THE DOMINANT SEX IN THE FUTURE",
+          "score": 0.3484821978389863
+        }
+      ],
+      "add_time": 0.985,
+      "search_time": 0.252,
+      "answer_time": 0.585,
+      "total_time": 1.821,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 77,
+      "user_id": "eval_77_c90fda87",
+      "question": "Which South Asian island nation is represented in the V&A collection?",
+      "ground_truth": "thailand",
+      "prediction": "Sri Lanka",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE SMALLER GALLERIES COVER CAREA THE HIMALAYAN KINGDEMS AND SOUTHEAST ASIA CAREAN DISPLAYS INCLUDE GREEN GLAZED SERAMICS SILK EMBROIDERIES FROM OFFICIAL'S ROBES AND GLEAMING BOXES INLAID WITH MOTHER OF PEARL MAD BETWEEN FIVE HUNDRED ADAN TWO THOUSAND HIMALAY AND ITEMS INCLUDE INPORTANT EARLY NEPALESE BRONZE SCULPTURES RIPPOSAY WORK AND EMBROIDERY TOBETAND ART FROM THE FOURTEENTH TO THE NINETEENTH CENTURY IS REPRESENTED BY NOTABLE FOURTEENTH AND FIFTEENTH CENTURY RELIGIOUS IMAGES IN WOOD AND BRONZE SCROLL PAINTINGS AND RITUAL OBJECTS ART FROM TYLAND BERMA CAMBODIA INDANESIA AND SHRIE LANCA IN GOLD SILVER BRONZE STONE TERACATTA AND IVORY REPRESENTS THESE RICH AND COMPLEX CULPTURES THE DISPLAYS SPAN THE SIXTH TO NINETEENTH CENTURIES REFINED HINDU AN BUDDHIST SCULPTURES REFLECT THE INFLUENCE OF INDIA ITEMS ON SHOW INCLUDE BEETLE NUT CUTTERS IVORY COMBS AND BRONZE PALANQUIN HOOKS",
+          "score": 0.48913762841502706
+        }
+      ],
+      "add_time": 2.604,
+      "search_time": 0.27,
+      "answer_time": 0.699,
+      "total_time": 3.573,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 78,
+      "user_id": "eval_78_2969c10c",
+      "question": "Some of the combs in the V&A collection of South East Asian art is made of what material?",
+      "ground_truth": "ivory",
+      "prediction": "Ivory",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE SMALLER GALLERIES COVER CAREA THE HIMALAYAN KINGDEMS AND SOUTHEAST ASIA CAREAN DISPLAYS INCLUDE GREEN GLAZED SERAMICS SILK EMBROIDERIES FROM OFFICIAL'S ROBES AND GLEAMING BOXES INLAID WITH MOTHER OF PEARL MAD BETWEEN FIVE HUNDRED ADAN TWO THOUSAND HIMALAY AND ITEMS INCLUDE INPORTANT EARLY NEPALESE BRONZE SCULPTURES RIPPOSAY WORK AND EMBROIDERY TOBETAND ART FROM THE FOURTEENTH TO THE NINETEENTH CENTURY IS REPRESENTED BY NOTABLE FOURTEENTH AND FIFTEENTH CENTURY RELIGIOUS IMAGES IN WOOD AND BRONZE SCROLL PAINTINGS AND RITUAL OBJECTS ART FROM TYLAND BERMA CAMBODIA INDANESIA AND SHRIE LANCA IN GOLD SILVER BRONZE STONE TERACATTA AND IVORY REPRESENTS THESE RICH AND COMPLEX CULPTURES THE DISPLAYS SPAN THE SIXTH TO NINETEENTH CENTURIES REFINED HINDU AN BUDDHIST SCULPTURES REFLECT THE INFLUENCE OF INDIA ITEMS ON SHOW INCLUDE BEETLE NUT CUTTERS IVORY COMBS AND BRONZE PALANQUIN HOOKS",
+          "score": 0.4547682367921675
+        }
+      ],
+      "add_time": 2.732,
+      "search_time": 0.428,
+      "answer_time": 0.667,
+      "total_time": 3.827,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 79,
+      "user_id": "eval_79_064ed263",
+      "question": "Where did Mongke Khan attack the Song dynasty?",
+      "ground_truth": "southern china",
+      "prediction": "Southern China",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "MON KAN COMMENCED A MILITARY CAMPAIGN AGAINST THE CHINESE SONG DYNASTY IN SOUTHERN CHINA THE MONGAL FORCE THAT INVADED SOUTHERN CHINA WAS FAR GREATER THAN THE FORCE THEY SENT TO INVADE THEE MIDDLEEAST IN TWELVE FIFTY SIX HE DIED IN TWELVE FIFTY NINE WITHOUT A SUCCESSOR COOBLAY RETURNED FROM FIGHTING THE SONG IN TWELVE SIXTY WHEN HE LEARNED THAT HIS BROTHER A R I KU BOK WAS CHALLENGING HIS CLAIM TO THE THRONE COOBLAY CONVENED A CURAL TI IN KIPING THAT ELECTED HIM GREAT KON A RIVAL CURAL TI AN MONGOLIA PROCLIMED A AR I CU BOK GREAT KON BEGINNING A CIVIL WAR COOBLAY DEPENDED ON THE COOPERATION OF HIS CHINESE SUBJECTS TO INSURE THAT HIS ARMY RECEIVED AMPLE RESOURCES HE BOLSTERED HIS POPULARITY AMONG HIS SUBJECTS BY MODELLING HIS GOVERNMENT ON THE BUROCROCY OF TRADITIONAL CHINESE DYNASTIES AND ADOPTING THE CHINESE ERA NAME OF ZON TON A R I U BOK WAS HAMPERED BY INADEQUATE SUPPLIES AND SURRENDERED IN TWELVE SIXTY FOUR ALL OF THE THREE WESTERN KONATES GOLDEN HORD CHAGATI KONATE AND EL KONATE BECAME FUNCTIONALLY AUTONAMUS ALTHOUGH ONLY THE ILKANS TRULY RECOGNIZED COOBLAYA'S GREAT KON CIVIL STRIFE HAD PERMANENTLY DIVIDED THE MONGEL EMPIRE",
+          "score": 0.4754696901666664
+        }
+      ],
+      "add_time": 3.675,
+      "search_time": 0.373,
+      "answer_time": 0.674,
+      "total_time": 4.722,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 80,
+      "user_id": "eval_80_0286b814",
+      "question": "How many electorates does the State of Victoria have?",
+      "ground_truth": "eight",
+      "prediction": "Eight",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NOVEMBER TWO THOUSAND SIX THE VICTORIAN LEGISLATIVE COUNCIL ELECTIONS WERE HELD UNDER A NEW MULTI MEMBER PROPORTIONAL REPRESENTATION SYSTEM THE STATE OF VICTORIA WAS DIVIDED INTO EIGHT ELECTORATES WITH EACH ELECTORATE REPRESENTED BY FIVE REPRESENTATIVES ELECTED BY SINGLE TRANSFERBALE VOTE THE TOTAL NUMBER OF UPPER HOUSE MEMBERS WAS REDUCED FROM FORTY FOUR TO FORTY AND THEIR TERM OF OFFICE AS NOW THE SAME AS THE LOWER HOUSE MEMBERS FOUR YEARS ELECTIONS FOR THE VICTORTIAN PARLIAMENT ARE NOW FIXED AND OCCUR IN NOVEMBER EVERY FOUR YEARS PRIOR TO THE TWO THOUSAND SIX ELECTION THE LEGISLATIVE COUNCIL CONSISTED OF FORTY FOUR MEMBERS ELECTED TO EIGHT YEAR TERMS FROM TWENTY TWO TWO MEMBER ELECTORATES",
+          "score": 0.6149108764082836
+        }
+      ],
+      "add_time": 1.898,
+      "search_time": 0.313,
+      "answer_time": 0.929,
+      "total_time": 3.139,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 81,
+      "user_id": "eval_81_c752c439",
+      "question": "How many representatives does each electorate have?",
+      "ground_truth": "five",
+      "prediction": "Five",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NOVEMBER TWO THOUSAND SIX THE VICTORIAN LEGISLATIVE COUNCIL ELECTIONS WERE HELD UNDER A NEW MULTI MEMBER PROPORTIONAL REPRESENTATION SYSTEM THE STATE OF VICTORIA WAS DIVIDED INTO EIGHT ELECTORATES WITH EACH ELECTORATE REPRESENTED BY FIVE REPRESENTATIVES ELECTED BY SINGLE TRANSFERBALE VOTE THE TOTAL NUMBER OF UPPER HOUSE MEMBERS WAS REDUCED FROM FORTY FOUR TO FORTY AND THEIR TERM OF OFFICE AS NOW THE SAME AS THE LOWER HOUSE MEMBERS FOUR YEARS ELECTIONS FOR THE VICTORTIAN PARLIAMENT ARE NOW FIXED AND OCCUR IN NOVEMBER EVERY FOUR YEARS PRIOR TO THE TWO THOUSAND SIX ELECTION THE LEGISLATIVE COUNCIL CONSISTED OF FORTY FOUR MEMBERS ELECTED TO EIGHT YEAR TERMS FROM TWENTY TWO TWO MEMBER ELECTORATES",
+          "score": 0.47472270893659296
+        }
+      ],
+      "add_time": 2.15,
+      "search_time": 0.258,
+      "answer_time": 0.639,
+      "total_time": 3.048,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 82,
+      "user_id": "eval_82_f0ad39de",
+      "question": "What is the term of office for each house member?",
+      "ground_truth": "four years",
+      "prediction": "Four years",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NOVEMBER TWO THOUSAND SIX THE VICTORIAN LEGISLATIVE COUNCIL ELECTIONS WERE HELD UNDER A NEW MULTI MEMBER PROPORTIONAL REPRESENTATION SYSTEM THE STATE OF VICTORIA WAS DIVIDED INTO EIGHT ELECTORATES WITH EACH ELECTORATE REPRESENTED BY FIVE REPRESENTATIVES ELECTED BY SINGLE TRANSFERBALE VOTE THE TOTAL NUMBER OF UPPER HOUSE MEMBERS WAS REDUCED FROM FORTY FOUR TO FORTY AND THEIR TERM OF OFFICE AS NOW THE SAME AS THE LOWER HOUSE MEMBERS FOUR YEARS ELECTIONS FOR THE VICTORTIAN PARLIAMENT ARE NOW FIXED AND OCCUR IN NOVEMBER EVERY FOUR YEARS PRIOR TO THE TWO THOUSAND SIX ELECTION THE LEGISLATIVE COUNCIL CONSISTED OF FORTY FOUR MEMBERS ELECTED TO EIGHT YEAR TERMS FROM TWENTY TWO TWO MEMBER ELECTORATES",
+          "score": 0.4014141537692621
+        }
+      ],
+      "add_time": 1.936,
+      "search_time": 0.253,
+      "answer_time": 1.385,
+      "total_time": 3.574,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 83,
+      "user_id": "eval_83_84f6adfb",
+      "question": "How often are elections held for the Victorian Parliament?",
+      "ground_truth": "every four years",
+      "prediction": "Every four years",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "IN NOVEMBER TWO THOUSAND SIX THE VICTORIAN LEGISLATIVE COUNCIL ELECTIONS WERE HELD UNDER A NEW MULTI MEMBER PROPORTIONAL REPRESENTATION SYSTEM THE STATE OF VICTORIA WAS DIVIDED INTO EIGHT ELECTORATES WITH EACH ELECTORATE REPRESENTED BY FIVE REPRESENTATIVES ELECTED BY SINGLE TRANSFERBALE VOTE THE TOTAL NUMBER OF UPPER HOUSE MEMBERS WAS REDUCED FROM FORTY FOUR TO FORTY AND THEIR TERM OF OFFICE AS NOW THE SAME AS THE LOWER HOUSE MEMBERS FOUR YEARS ELECTIONS FOR THE VICTORTIAN PARLIAMENT ARE NOW FIXED AND OCCUR IN NOVEMBER EVERY FOUR YEARS PRIOR TO THE TWO THOUSAND SIX ELECTION THE LEGISLATIVE COUNCIL CONSISTED OF FORTY FOUR MEMBERS ELECTED TO EIGHT YEAR TERMS FROM TWENTY TWO TWO MEMBER ELECTORATES",
+          "score": 0.6368927281302865
+        }
+      ],
+      "add_time": 2.136,
+      "search_time": 0.545,
+      "answer_time": 0.772,
+      "total_time": 3.453,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 84,
+      "user_id": "eval_84_e1d3d9dd",
+      "question": "What advancements besides military technology did Europe achieve?",
+      "ground_truth": "communication",
+      "prediction": "I don't know",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ALONG WITH ADVANCEMENTS IN COMMUNICATION EUROPE ALSO CONTINUED TO ADVANCE IN MILITARY TECHNOLOGY EUROPEAN CHEMISTS MADE DEADLY EXPLOSIVES THAT COULD BE USED IN COMBAT AND WITH INNOVATIONS IN MACHINERY THEY WERE ABLE TO MANUFACTURE IMPROVED FIREARMS BY THE EIGHTEEN EIGHTIES THE MACHINE GUN HAD BECOME AN EFFECTIVE BATTLEFIELD WEAPON THIS TECHNOLOGY GAVE EUROPEAN ARMIES AN ADVANTAGE OVER THEIR OPPONENTS AS ARMIES IN LESS DEVELOPED COUNTRIES WERE STILL FIGHTING WITH ARROWS SWORDS AND LEATHER SHIELDS E G THE ZULUS IN SOUTHERN AFRICA DURING THE ANGLO ZOLU WAR OF EIGHTEEN SEVENTY NINE",
+          "score": 0.5551735232280772
+        }
+      ],
+      "add_time": 1.599,
+      "search_time": 0.239,
+      "answer_time": 0.676,
+      "total_time": 2.514,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 85,
+      "user_id": "eval_85_20ae43f7",
+      "question": "What did European chemists make that could be used in warfare?",
+      "ground_truth": "deadly explosives",
+      "prediction": "Deadly explosives",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ALONG WITH ADVANCEMENTS IN COMMUNICATION EUROPE ALSO CONTINUED TO ADVANCE IN MILITARY TECHNOLOGY EUROPEAN CHEMISTS MADE DEADLY EXPLOSIVES THAT COULD BE USED IN COMBAT AND WITH INNOVATIONS IN MACHINERY THEY WERE ABLE TO MANUFACTURE IMPROVED FIREARMS BY THE EIGHTEEN EIGHTIES THE MACHINE GUN HAD BECOME AN EFFECTIVE BATTLEFIELD WEAPON THIS TECHNOLOGY GAVE EUROPEAN ARMIES AN ADVANTAGE OVER THEIR OPPONENTS AS ARMIES IN LESS DEVELOPED COUNTRIES WERE STILL FIGHTING WITH ARROWS SWORDS AND LEATHER SHIELDS E G THE ZULUS IN SOUTHERN AFRICA DURING THE ANGLO ZOLU WAR OF EIGHTEEN SEVENTY NINE",
+          "score": 0.5655618208768685
+        }
+      ],
+      "add_time": 1.699,
+      "search_time": 0.244,
+      "answer_time": 0.558,
+      "total_time": 2.501,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 86,
+      "user_id": "eval_86_b82389b4",
+      "question": "what was invented in 1880 that revolutionized warfare?",
+      "ground_truth": "machine gun",
+      "prediction": "Machine gun",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ALONG WITH ADVANCEMENTS IN COMMUNICATION EUROPE ALSO CONTINUED TO ADVANCE IN MILITARY TECHNOLOGY EUROPEAN CHEMISTS MADE DEADLY EXPLOSIVES THAT COULD BE USED IN COMBAT AND WITH INNOVATIONS IN MACHINERY THEY WERE ABLE TO MANUFACTURE IMPROVED FIREARMS BY THE EIGHTEEN EIGHTIES THE MACHINE GUN HAD BECOME AN EFFECTIVE BATTLEFIELD WEAPON THIS TECHNOLOGY GAVE EUROPEAN ARMIES AN ADVANTAGE OVER THEIR OPPONENTS AS ARMIES IN LESS DEVELOPED COUNTRIES WERE STILL FIGHTING WITH ARROWS SWORDS AND LEATHER SHIELDS E G THE ZULUS IN SOUTHERN AFRICA DURING THE ANGLO ZOLU WAR OF EIGHTEEN SEVENTY NINE",
+          "score": 0.4702130508144865
+        }
+      ],
+      "add_time": 1.645,
+      "search_time": 0.336,
+      "answer_time": 0.555,
+      "total_time": 2.536,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 87,
+      "user_id": "eval_87_7b022d23",
+      "question": "What weapons were the Zulus using during the Anglo-Zulu War of 1879?",
+      "ground_truth": "arrows swords and leather shields",
+      "prediction": "Arrows, swords, and leather shields",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ALONG WITH ADVANCEMENTS IN COMMUNICATION EUROPE ALSO CONTINUED TO ADVANCE IN MILITARY TECHNOLOGY EUROPEAN CHEMISTS MADE DEADLY EXPLOSIVES THAT COULD BE USED IN COMBAT AND WITH INNOVATIONS IN MACHINERY THEY WERE ABLE TO MANUFACTURE IMPROVED FIREARMS BY THE EIGHTEEN EIGHTIES THE MACHINE GUN HAD BECOME AN EFFECTIVE BATTLEFIELD WEAPON THIS TECHNOLOGY GAVE EUROPEAN ARMIES AN ADVANTAGE OVER THEIR OPPONENTS AS ARMIES IN LESS DEVELOPED COUNTRIES WERE STILL FIGHTING WITH ARROWS SWORDS AND LEATHER SHIELDS E G THE ZULUS IN SOUTHERN AFRICA DURING THE ANGLO ZOLU WAR OF EIGHTEEN SEVENTY NINE",
+          "score": 0.52215733641537
+        }
+      ],
+      "add_time": 1.577,
+      "search_time": 0.253,
+      "answer_time": 0.82,
+      "total_time": 2.65,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6,
+      "llm": 1
+    },
+    {
+      "idx": 88,
+      "user_id": "eval_88_f2431309",
+      "question": "Which region invented the machine gun?",
+      "ground_truth": "european",
+      "prediction": "Europe",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ALONG WITH ADVANCEMENTS IN COMMUNICATION EUROPE ALSO CONTINUED TO ADVANCE IN MILITARY TECHNOLOGY EUROPEAN CHEMISTS MADE DEADLY EXPLOSIVES THAT COULD BE USED IN COMBAT AND WITH INNOVATIONS IN MACHINERY THEY WERE ABLE TO MANUFACTURE IMPROVED FIREARMS BY THE EIGHTEEN EIGHTIES THE MACHINE GUN HAD BECOME AN EFFECTIVE BATTLEFIELD WEAPON THIS TECHNOLOGY GAVE EUROPEAN ARMIES AN ADVANTAGE OVER THEIR OPPONENTS AS ARMIES IN LESS DEVELOPED COUNTRIES WERE STILL FIGHTING WITH ARROWS SWORDS AND LEATHER SHIELDS E G THE ZULUS IN SOUTHERN AFRICA DURING THE ANGLO ZOLU WAR OF EIGHTEEN SEVENTY NINE",
+          "score": 0.44130215487257285
+        }
+      ],
+      "add_time": 1.928,
+      "search_time": 0.289,
+      "answer_time": 0.732,
+      "total_time": 2.949,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 89,
+      "user_id": "eval_89_68f19fea",
+      "question": "What inventor built on to the findings of Philo of  Byzantium?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.34937055958564656
+        }
+      ],
+      "add_time": 1.971,
+      "search_time": 0.253,
+      "answer_time": 0.791,
+      "total_time": 3.015,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 90,
+      "user_id": "eval_90_3975a118",
+      "question": "Pneumatica was written by what Greek writer?",
+      "ground_truth": "philo",
+      "prediction": "Philo of Byzantium",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.34736461884995296
+        }
+      ],
+      "add_time": 1.704,
+      "search_time": 0.283,
+      "answer_time": 0.721,
+      "total_time": 2.708,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 91,
+      "user_id": "eval_91_c4478f3c",
+      "question": "What early Greek wrote about experiments on air and combustion?",
+      "ground_truth": "philo",
+      "prediction": "Filo of Byzantium",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.681402768858961
+        }
+      ],
+      "add_time": 1.806,
+      "search_time": 0.249,
+      "answer_time": 0.72,
+      "total_time": 2.775,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 92,
+      "user_id": "eval_92_ce9ace9b",
+      "question": "What did Philo incorrectly assume that the air became?",
+      "ground_truth": "fire",
+      "prediction": "Fire",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.41641292772334626
+        }
+      ],
+      "add_time": 1.743,
+      "search_time": 0.273,
+      "answer_time": 0.563,
+      "total_time": 2.579,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 93,
+      "user_id": "eval_93_9954a2b8",
+      "question": "What famous artist later further investigated Philo's experiments?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "Leonardo da Vinci",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.35244300463635303
+        }
+      ],
+      "add_time": 1.688,
+      "search_time": 0.262,
+      "answer_time": 0.843,
+      "total_time": 2.793,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 94,
+      "user_id": "eval_94_f4c70cbb",
+      "question": "Of what did da Vinci think a part  was consumed during combustion?",
+      "ground_truth": "air",
+      "prediction": "Air",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ONE OF THE FIRST KNOWN EXPERIMENTS ON THE RELATIONSHIP BETWEEN COMBUSTION AND AIR WAS CONDUCTED BY THE SECOND CENTURY B C E GREEK WRITER ON MECHANICS FILO OF BEZANTIUM IN HIS WORK NUMATICA FILO OBSERVED THAT IN VURNING A VESSEL OVER A BURNING CANDLE AND SURROUNDING THE VESSEL'S NECK WITH WATER RESULTED IND SOME WATER RISING INTO THE NECK FILO INCORRECTLY SURMISE THAT PARTS OF THE AIR IN THE VESSEL WERE CONVERTED INTO THE CLASSICAL ELEMENT FIRE AND THUS WERE ABLE TO ESCAPE THROUGH PORES IN THE GLASS MANY CENTURIES LATER LEONARDO DE VINCHI BUILT ON FILO'S WORK BY OBSERVING THAT A PORTION OF AIR IS CONSUMED DURING COMBUSTION AND RESPIRATION",
+          "score": 0.5649032359710213
+        }
+      ],
+      "add_time": 1.702,
+      "search_time": 0.413,
+      "answer_time": 0.811,
+      "total_time": 2.926,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 95,
+      "user_id": "eval_95_5f3a10ef",
+      "question": "What country did the Normans invade in 1169?",
+      "ground_truth": "ireland",
+      "prediction": "Ireland",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE NORMANS HAD A PROFOUND EFFECT ON IRISH CULTURE AND HISTORY AFTER THEIR INVASION AT BANOBAY IN ELEVEN SIXTY NINE INITIALLY THE NORMANS MAINTAINED A DISTINCT CULTURE AND ETHNICITY YET WITHTIME THEY CAME TO BE SUBSUMED INTO IRISH CULTURE TO THE POINT THAT IT HAS BEEN SAID THAT THEY BECAME MORE IRISH THAN THE IRISH THEMSELVES THE NORMANS SETTLED MOSTLY IN AN AREA IN THE EAST OF IRELAND LATER KNOWN AS THE PAL AND ALSO BUILT MANY FINE CASTLES AND SETTLEMENDS INCLUDING TRIM CASTLE AND DUBLIN CASTLE BOTH CULTURES INTERMIXED BORROWING FROM EACH OTHERS LANGUAGE CULTURE AND OUTLOOK NORMAN DESCENDANS TO DAY CAN BE RECOGNIZED BY THEIR SURNAMES NAMES SUCH AS FRENCH DET ROSCH DEVERU DARSEE TRACY AND LACY ARE PARTICULARLY COMMON IN THE SOUTHEAST OF IRELAND ESPECIALLY IN THE SOUTHERN PART OF COUNTY WEXFORD WHERE THE FIRST NORMAN SETTLEMENTS WERE ESTABLISHED OTHER NORMAN NAMES SUCH AS FURLONG PREDOMANAT THERE AN OTHER COMMAN NORMAN IRISH NAME WAS MORAL MORAL DERIVED FROM THE FRENCH NORMAN NAME MOREL OTHER NAMES BEGINNING WITH FITS FROM THE NORMAN FOR SUN INDICATE NORMAN ANCESTRY THESE INCLUDED FITZGERAL FITZGIBBONS GIBBONS DYNASTY FITZMORIS OTHER FAMILIES BEARING SUCH SURNAMES AS BERY DEBARA AND DEBERKA BERK ARE ALSO OF NORMAN EXTRACTION",
+          "score": 0.5444245366937945
+        }
+      ],
+      "add_time": 3.904,
+      "search_time": 0.259,
+      "answer_time": 0.677,
+      "total_time": 4.84,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 96,
+      "user_id": "eval_96_ae1b02aa",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "ground_truth": "irish",
+      "prediction": "Irish culture",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "THE NORMANS HAD A PROFOUND EFFECT ON IRISH CULTURE AND HISTORY AFTER THEIR INVASION AT BANOBAY IN ELEVEN SIXTY NINE INITIALLY THE NORMANS MAINTAINED A DISTINCT CULTURE AND ETHNICITY YET WITHTIME THEY CAME TO BE SUBSUMED INTO IRISH CULTURE TO THE POINT THAT IT HAS BEEN SAID THAT THEY BECAME MORE IRISH THAN THE IRISH THEMSELVES THE NORMANS SETTLED MOSTLY IN AN AREA IN THE EAST OF IRELAND LATER KNOWN AS THE PAL AND ALSO BUILT MANY FINE CASTLES AND SETTLEMENDS INCLUDING TRIM CASTLE AND DUBLIN CASTLE BOTH CULTURES INTERMIXED BORROWING FROM EACH OTHERS LANGUAGE CULTURE AND OUTLOOK NORMAN DESCENDANS TO DAY CAN BE RECOGNIZED BY THEIR SURNAMES NAMES SUCH AS FRENCH DET ROSCH DEVERU DARSEE TRACY AND LACY ARE PARTICULARLY COMMON IN THE SOUTHEAST OF IRELAND ESPECIALLY IN THE SOUTHERN PART OF COUNTY WEXFORD WHERE THE FIRST NORMAN SETTLEMENTS WERE ESTABLISHED OTHER NORMAN NAMES SUCH AS FURLONG PREDOMANAT THERE AN OTHER COMMAN NORMAN IRISH NAME WAS MORAL MORAL DERIVED FROM THE FRENCH NORMAN NAME MOREL OTHER NAMES BEGINNING WITH FITS FROM THE NORMAN FOR SUN INDICATE NORMAN ANCESTRY THESE INCLUDED FITZGERAL FITZGIBBONS GIBBONS DYNASTY FITZMORIS OTHER FAMILIES BEARING SUCH SURNAMES AS BERY DEBARA AND DEBERKA BERK ARE ALSO OF NORMAN EXTRACTION",
+          "score": 0.6343811763384902
+        }
+      ],
+      "add_time": 3.542,
+      "search_time": 0.344,
+      "answer_time": 0.644,
+      "total_time": 4.53,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 97,
+      "user_id": "eval_97_e587dc5a",
+      "question": "What happened to his lab?",
+      "ground_truth": "his lab was torn down",
+      "prediction": "It was torn down and its contents were sold to satisfy a debt.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ON THE SEVENTH OF JANUARY NINETEEN HUNDRED TESTLA LEFT COLORADO SPRINGS CITATION NEEDED HIS LAB WAS TORN DOWN IN NINETEEN O FOUR AND ITS CONTENTS WERE SOLD TWO YEARS LATER TO SATISFY A DEBT",
+          "score": 0.3659546626113329
+        }
+      ],
+      "add_time": 0.899,
+      "search_time": 0.566,
+      "answer_time": 1.018,
+      "total_time": 2.484,
+      "em": 0,
+      "f1": 0.3529,
+      "bleu": 0.2308,
+      "llm": 0
+    },
+    {
+      "idx": 98,
+      "user_id": "eval_98_2144ee7e",
+      "question": "What happened to the things inside the lab after it was torn down?",
+      "ground_truth": "sold",
+      "prediction": "Sold to satisfy a debt",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "ON THE SEVENTH OF JANUARY NINETEEN HUNDRED TESTLA LEFT COLORADO SPRINGS CITATION NEEDED HIS LAB WAS TORN DOWN IN NINETEEN O FOUR AND ITS CONTENTS WERE SOLD TWO YEARS LATER TO SATISFY A DEBT",
+          "score": 0.37219950274594693
+        }
+      ],
+      "add_time": 0.941,
+      "search_time": 0.272,
+      "answer_time": 0.729,
+      "total_time": 1.942,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.2,
+      "llm": 1
+    },
+    {
+      "idx": 99,
+      "user_id": "eval_99_c7e73bc2",
+      "question": "Where were the Germanic tribes originally located?",
+      "ground_truth": "scandinavia and northern europe",
+      "prediction": "Scandinavia and Northern Europe",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "FROM THEIR ORIGINAL HOME LANDS IN SCANDINAVIA AND NORTHERN EUROPE GERMANIC TRIBES EXPANDED THROUGHOUT NORTHERN AND WESTERN EUROPE IN THE MIDDLE PERIOD OF CLASSICAL ANTIQUITY SOUTHERN EUROPE IN LATE ANTIQUITY CONQUERING CELTIC AND OTHER PEOPLES AND BY EIGHT HUNDRED C E FORMING THE HOLY ROMAN EMPIRE THE FIRST GERMAN EMPIRE HOWEVER THERE WAS NO REAL SYSTHEMIC CONTINUITY FROM THE WESTERN ROMAN EMPIRE TO ITS GERMAN SUCCESSOR WHICH WAS FAMOUSLY DESCRIBED AS NOT HOLY NOT ROMAN AND NOT AN EMPIRE AS A GREAT NUMBER OF SMALL STATES AND PRINCIPALITIES EXISTED IN THE LOOSELY AUTONYMUS CONFEDERATION ALTHOUGH BY ONE THOUSAND C E THE GERMANIC CONQUEST OF CENTRAL WESTERN AND SOUTHERN EUROPE WEST OF AND INCLUDING ITALY WAS COMPLETE EXCLUDING ONLY MUSLEM IBERIA THERE WAS HOWEVER LITTLE CULTURAL INTIGRATION OR NATIONAL IDENTITY AND GERMANY REMAINED LARGELY A CONCEPTUAL TERM REFERRING TO AN AMORPHOUS AREA OF CENTRAL EUROPE",
+          "score": 0.5079625048496459
+        }
+      ],
+      "add_time": 2.567,
+      "search_time": 0.259,
+      "answer_time": 0.681,
+      "total_time": 3.506,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    }
+  ]
+}

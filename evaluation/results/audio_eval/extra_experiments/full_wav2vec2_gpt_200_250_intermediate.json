@@ -1,0 +1,2638 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "full_wav2vec2_gpt_200_250",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "local/facebook/wav2vec2-base-960h",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text"
+  },
+  "summary": {
+    "count": 50,
+    "em_mean": 0.52,
+    "em_std": 0.5047,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.6623,
+    "f1_std": 0.4116,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.614,
+    "bleu_std": 0.4161,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 21.2284,
+    "total_time_std": 4.6445,
+    "total_time_min": 14.123,
+    "total_time_max": 33.472,
+    "add_time_mean": 20.0006,
+    "add_time_std": 4.6877,
+    "add_time_min": 13.077,
+    "add_time_max": 32.235,
+    "search_time_mean": 0.3872,
+    "search_time_std": 0.1172,
+    "search_time_min": 0.279,
+    "search_time_max": 0.794,
+    "answer_time_mean": 0.8406,
+    "answer_time_std": 0.3028,
+    "answer_time_min": 0.578,
+    "answer_time_max": 2.136,
+    "em_correct": 26,
+    "em_pct": 52.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 50,
+      "zero": 11,
+      "perfect": 26,
+      "above_50": 35,
+      "above_80": 27
+    },
+    "bleu": {
+      "total": 50,
+      "zero": 11,
+      "perfect": 24,
+      "above_50": 33,
+      "above_80": 24
+    }
+  },
+  "results": [
+    {
+      "idx": 200,
+      "user_id": "eval_200_7b4c7937",
+      "question": "What is Donald Davies credited with ",
+      "ground_truth": "coining the modern name packet switching",
+      "prediction": "Coining the modern name 'packet switching'",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Donald Davies worked independently at the National Physical Laboratory in the United Kingdom in the late nineteen sixties",
+          "score": 0.5331519297997466
+        },
+        {
+          "memory": "Donald Davies is credited with coining the modern name 'packet switching'",
+          "score": 0.5324056082909556
+        },
+        {
+          "memory": "Donald Davies inspired numerous packet switching networks in Europe in the decade following his work",
+          "score": 0.5125435341133593
+        },
+        {
+          "memory": "Starting in the late nineteen fifties, Paul Baran developed the concept of distributed adaptive message block switching",
+          "score": 0.26413602984305584
+        },
+        {
+          "memory": "The concept of distributed adaptive message block switching found little resonance among network implementers until the late nineteen sixties",
+          "score": 0.2566269437448035
+        },
+        {
+          "memory": "Paul Baran's research program was at the RAND Corporation and funded by the Department of Defense",
+          "score": 0.24205428291086584
+        },
+        {
+          "memory": "The concept of distributed adaptive message block switching contrasted with established principles of network bandwidth allocation",
+          "score": 0.1947591972903401
+        },
+        {
+          "memory": "Established principles of network bandwidth allocation were largely fortified by the development of telecommunications in the Bell System",
+          "score": 0.1914184105874372
+        },
+        {
+          "memory": "The goal of distributed adaptive message block switching was to provide a fault-tolerant, efficient routing method for telecommunication messages",
+          "score": 0.18575304525372563
+        },
+        {
+          "memory": "The concept of packet switching was incorporated in the early ARPANET in the United States",
+          "score": 0.15066200688355802
+        }
+      ],
+      "add_time": 24.386,
+      "search_time": 0.311,
+      "answer_time": 0.742,
+      "total_time": 25.438,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 201,
+      "user_id": "eval_201_5c4525cc",
+      "question": "Who is credited with the modern name for this system ",
+      "ground_truth": "donald davies",
+      "prediction": "Donald Davies",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Donald Davies is credited with coining the modern name 'packet switching'",
+          "score": 0.4451465334011042
+        },
+        {
+          "memory": "Established principles of network bandwidth allocation were largely fortified by the development of telecommunications in the Bell System",
+          "score": 0.2804638191450733
+        },
+        {
+          "memory": "Donald Davies inspired numerous packet switching networks in Europe in the decade following his work",
+          "score": 0.2638960788131274
+        },
+        {
+          "memory": "Starting in the late nineteen fifties, Paul Baran developed the concept of distributed adaptive message block switching",
+          "score": 0.26251553993588606
+        },
+        {
+          "memory": "The concept of packet switching was incorporated in the early ARPANET in the United States",
+          "score": 0.2534128581217284
+        },
+        {
+          "memory": "The concept of distributed adaptive message block switching found little resonance among network implementers until the late nineteen sixties",
+          "score": 0.24604562580133726
+        },
+        {
+          "memory": "Donald Davies worked independently at the National Physical Laboratory in the United Kingdom in the late nineteen sixties",
+          "score": 0.20925191643824287
+        },
+        {
+          "memory": "The concept of distributed adaptive message block switching contrasted with established principles of network bandwidth allocation",
+          "score": 0.20112769806621272
+        },
+        {
+          "memory": "The goal of distributed adaptive message block switching was to provide a fault-tolerant, efficient routing method for telecommunication messages",
+          "score": 0.17735576899665095
+        },
+        {
+          "memory": "Paul Baran's research program was at the RAND Corporation and funded by the Department of Defense",
+          "score": 0.12548818956193486
+        }
+      ],
+      "add_time": 25.011,
+      "search_time": 0.361,
+      "answer_time": 0.637,
+      "total_time": 26.008,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 202,
+      "user_id": "eval_202_35407eba",
+      "question": "Some elements of the Brotherhood directed what action against the government?",
+      "ground_truth": "violence",
+      "prediction": "Violence",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Some elements of the Brotherhood engaged in violence against the government",
+          "score": 0.8718701242635312
+        },
+        {
+          "memory": "The Brotherhood has suffered periodic repression in Egypt",
+          "score": 0.5870041605199746
+        },
+        {
+          "memory": "The Brotherhood was banned several years later following confrontations with Egyptian President Gamal Abdel Nasser",
+          "score": 0.5590033532136468
+        },
+        {
+          "memory": "The Brotherhood has been banned several times, including in 1948",
+          "score": 0.5439331504983667
+        },
+        {
+          "memory": "The founder of the Brotherhood, Albana, was assassinated in 1949",
+          "score": 0.48674952673441413
+        },
+        {
+          "memory": "Gamal Abdel Nasser jailed thousands of Brotherhood members for several years",
+          "score": 0.4321865123805876
+        },
+        {
+          "memory": "Albana's assassination was in retaliation for the assassination of Egypt's Premier Mamoud Fami Nakrashi three months earlier",
+          "score": 0.3433857851157016
+        }
+      ],
+      "add_time": 14.454,
+      "search_time": 0.46,
+      "answer_time": 0.665,
+      "total_time": 15.579,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 203,
+      "user_id": "eval_203_694d1048",
+      "question": "Who was Count of Melfi",
+      "ground_truth": "william iron arm",
+      "prediction": "William Iron Arm",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "William Iron Arm was awarded the title of Count in Melphi by Prince Guamar IV of Salerno",
+          "score": 0.5595009881873869
+        },
+        {
+          "memory": "Drogo was named Duke and Master of Italy and Count of the Normans of all Apulia and Calabria",
+          "score": 0.4513455480412949
+        },
+        {
+          "memory": "Renulf Drengo received the County of Aversa in 1030",
+          "score": 0.4204271624457387
+        },
+        {
+          "memory": "The Drengo family attained the Principality of Capua",
+          "score": 0.4020164427965362
+        },
+        {
+          "memory": "The Hauteville family achieved princely rank by proclaiming Prince Guamar IV of Salerno Duke of Puglia and Calabria",
+          "score": 0.3943584970496651
+        },
+        {
+          "memory": "Renulf Drengo was the first Norman to hold land in the south from Duke Sergius IV of Naples",
+          "score": 0.3633293970714172
+        },
+        {
+          "memory": "Emperor Henry ennobled the Hauteville leader Drogo as Duke et Magister Attalie Camesk Normanorum Todius Apule et Calibrie in 1047",
+          "score": 0.33019860241914717
+        },
+        {
+          "memory": "The two most prominent Norman families to arrive in the Mediterranean were descendants of Tancred of Hauteville and the Drengo family",
+          "score": 0.2894863762942361
+        }
+      ],
+      "add_time": 20.943,
+      "search_time": 0.397,
+      "answer_time": 0.612,
+      "total_time": 21.952,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 204,
+      "user_id": "eval_204_2920567a",
+      "question": "What type of numbers are always multiples of 2?",
+      "ground_truth": "even",
+      "prediction": "Even numbers",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Even numbers are multiples of two",
+          "score": 0.7738354238652301
+        },
+        {
+          "memory": "Numbers ending in zero or five are multiples of five",
+          "score": 0.5544370294819829
+        },
+        {
+          "memory": "Any even number greater than two has at least three distinct divisors: one, two, and itself",
+          "score": 0.5143807667618634
+        },
+        {
+          "memory": "No even number greater than two is prime",
+          "score": 0.5105345580301499
+        },
+        {
+          "memory": "All prime numbers larger than five end in one, three, seven, or nine",
+          "score": 0.41662038222557135
+        },
+        {
+          "memory": "Twelve equals three times four",
+          "score": 0.399262743826023
+        },
+        {
+          "memory": "Twelve is not a prime number",
+          "score": 0.38329918469123464
+        },
+        {
+          "memory": "The term 'prime' refers to any prime number greater than two",
+          "score": 0.36043457503718357
+        },
+        {
+          "memory": "Six is not a prime number",
+          "score": 0.2622973429295289
+        }
+      ],
+      "add_time": 15.863,
+      "search_time": 0.788,
+      "answer_time": 0.867,
+      "total_time": 17.518,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 205,
+      "user_id": "eval_205_19ce83af",
+      "question": "What art forms did Luther use to connect his hymns?",
+      "ground_truth": "high art and folk music",
+      "prediction": "Singing and lute accompaniment",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Luther's tool of choice for connecting high art and folk music was the singing of German hymns",
+          "score": 0.8001058688733144
+        },
+        {
+          "memory": "Luther connected high art and folk music",
+          "score": 0.7463672806322432
+        },
+        {
+          "memory": "Luther was a prolific hymn writer",
+          "score": 0.7081073392507052
+        },
+        {
+          "memory": "Luther often accompanied the sung hymns with a lute",
+          "score": 0.7020442727098696
+        },
+        {
+          "memory": "Luther engaged all classes\u2014clergy and laity, men, women, and children",
+          "score": 0.549175062521958
+        },
+        {
+          "memory": "Luther authored the hymn 'Von Himmel Hoch, Da Komm Ich Her,' based on Luke chapter two, verses eleven to twelve",
+          "score": 0.5404414150014963
+        },
+        {
+          "memory": "German hymns were sung in worship, school, home, and the public arena",
+          "score": 0.5264567344474568
+        },
+        {
+          "memory": "Luther authored the hymn 'A Mighty Fortress Is Our God,' based on Psalm chapter forty-six",
+          "score": 0.5211353198950982
+        },
+        {
+          "memory": "The lute was later recreated as the zither",
+          "score": 0.30517024845541574
+        },
+        {
+          "memory": "The zither became a national instrument of Germany in the twentieth century",
+          "score": 0.294487122748172
+        }
+      ],
+      "add_time": 20.172,
+      "search_time": 0.337,
+      "answer_time": 0.673,
+      "total_time": 21.181,
+      "em": 0,
+      "f1": 0.2222,
+      "bleu": 0.25
+    },
+    {
+      "idx": 206,
+      "user_id": "eval_206_b427ebdc",
+      "question": "What did Luther use to celebrate worship?",
+      "ground_truth": "singing",
+      "prediction": "German hymns",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Luther's tool of choice for connecting high art and folk music was the singing of German hymns",
+          "score": 0.6877814348157971
+        },
+        {
+          "memory": "Luther often accompanied the sung hymns with a lute",
+          "score": 0.6641633653496115
+        },
+        {
+          "memory": "Luther connected high art and folk music, engaging all classes including clergy and laity, men, women, and children",
+          "score": 0.6290266762541579
+        },
+        {
+          "memory": "Luther was a prolific hymn writer",
+          "score": 0.6234781199049615
+        },
+        {
+          "memory": "German hymns were sung in worship, school, home, and the public arena",
+          "score": 0.5124273886089273
+        },
+        {
+          "memory": "Luther authored the hymn 'A Mighty Fortress Is Our God,' based on Psalm chapter 46",
+          "score": 0.49152473952777925
+        },
+        {
+          "memory": "Luther authored the hymn 'Vom Himmel hoch, da komm ich her,' based on Luke chapter 2, verses 11 to 12",
+          "score": 0.4879870830424981
+        },
+        {
+          "memory": "The zither became a national instrument of Germany in the twentieth century",
+          "score": 0.29199009607424353
+        },
+        {
+          "memory": "The lute was later recreated as the zither",
+          "score": 0.2819111286345508
+        }
+      ],
+      "add_time": 18.692,
+      "search_time": 0.333,
+      "answer_time": 0.652,
+      "total_time": 19.676,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 207,
+      "user_id": "eval_207_2f210c5f",
+      "question": "What did Luther use as accompaniment to his hymns?",
+      "ground_truth": "singing",
+      "prediction": "Lute",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Luther often accompanied the sung hymns with a lute",
+          "score": 0.7896931011812491
+        },
+        {
+          "memory": "Luther's tool of choice for connecting high art and folk music was the singing of German hymns",
+          "score": 0.7447693471396615
+        },
+        {
+          "memory": "Luther was a prolific hymn writer",
+          "score": 0.6788032222062099
+        },
+        {
+          "memory": "Luther connected high art and folk music, engaging all classes including clergy and laity, men, women, and children",
+          "score": 0.6138009354445704
+        },
+        {
+          "memory": "Luther authored the hymn 'Von Himmel Hoch, Da Komm Ich Her,' based on Luke chapter two, verses eleven to twelve",
+          "score": 0.5435400190198179
+        },
+        {
+          "memory": "German hymns were sung in worship, school, home, and the public arena",
+          "score": 0.5364908079016001
+        },
+        {
+          "memory": "Luther authored the hymn 'A Mighty Fortress Is Our God,' based on Psalm chapter forty-six",
+          "score": 0.5318941052260845
+        },
+        {
+          "memory": "The lute was later recreated as the zither",
+          "score": 0.3561226985881321
+        },
+        {
+          "memory": "The zither became a national instrument of Germany in the twentieth century",
+          "score": 0.3549783894865467
+        }
+      ],
+      "add_time": 21.382,
+      "search_time": 0.329,
+      "answer_time": 0.628,
+      "total_time": 22.338,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 208,
+      "user_id": "eval_208_f4e040f7",
+      "question": "What did Tesla begin to research in March 1896?",
+      "ground_truth": "xray imaging",
+      "prediction": "X-ray imaging",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "In March 1896, Tesla conducted experiments in X-ray imaging after hearing of Wilhelm R\u00f6ntgen's discovery of X-rays",
+          "score": 0.7261660311863251
+        },
+        {
+          "memory": "Tesla believed that his circuits would enable the generation of X-rays of much greater power than obtainable with ordinary apparatus",
+          "score": 0.5334704451397141
+        },
+        {
+          "memory": "Tesla devised several experimental setups to produce X-rays",
+          "score": 0.5162704876065575
+        },
+        {
+          "memory": "The vacuum tube developed by Tesla worked from the output of the Tesla coil",
+          "score": 0.47769432989906
+        },
+        {
+          "memory": "Tesla developed a high-energy, single-terminal vacuum tube of his own design that had no target electrode",
+          "score": 0.4645265163633629
+        },
+        {
+          "memory": "The modern term for the phenomenon produced by Tesla's device is bremsstrahlung or breaking radiation",
+          "score": 0.40588875544933023
+        }
+      ],
+      "add_time": 16.028,
+      "search_time": 0.393,
+      "answer_time": 0.972,
+      "total_time": 17.394,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.5
+    },
+    {
+      "idx": 209,
+      "user_id": "eval_209_3911f9d3",
+      "question": "What is another term for x-ray imaging?",
+      "ground_truth": "radiography",
+      "prediction": "Bremsstrahlung",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "In March 1896, Tesla began conducting experiments in X-ray imaging after hearing of Wilhelm R\u00f6ntgen's discovery of X-rays",
+          "score": 0.43240279165868806
+        },
+        {
+          "memory": "Tesla devised several experimental setups to produce X-rays",
+          "score": 0.38934870935135
+        },
+        {
+          "memory": "Tesla believed that his circuits would enable the generation of X-rays of much greater power than obtainable with ordinary apparatus",
+          "score": 0.3203776116759107
+        },
+        {
+          "memory": "The modern term for the phenomenon produced by Tesla's device is bremsstrahlung or breaking radiation",
+          "score": 0.3100875326021839
+        },
+        {
+          "memory": "Tesla developed a high-energy single-terminal vacuum tube of his own design that had no target electrode",
+          "score": 0.16406632336690694
+        },
+        {
+          "memory": "The vacuum tube developed by Tesla worked from the output of the Tesla coil",
+          "score": 0.15448967540905081
+        }
+      ],
+      "add_time": 14.958,
+      "search_time": 0.536,
+      "answer_time": 0.9,
+      "total_time": 16.395,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 210,
+      "user_id": "eval_210_76ad16d2",
+      "question": "What did Tesla's device work from the output of?",
+      "ground_truth": "tesla coil",
+      "prediction": "The Tesla coil",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The vacuum tube developed by Tesla worked from the output of the Tesla coil",
+          "score": 0.7107735164481045
+        },
+        {
+          "memory": "Tesla believed that his circuits would enable the generation of X-rays of much greater power than obtainable with ordinary apparatus",
+          "score": 0.579960637809893
+        },
+        {
+          "memory": "Tesla developed a high-energy single-terminal vacuum tube of his own design that had no target electrode",
+          "score": 0.56291908596936
+        },
+        {
+          "memory": "The modern term for the phenomenon produced by Tesla's device is bremsstrahlung or breaking radiation",
+          "score": 0.5295153885972597
+        },
+        {
+          "memory": "In March 1896, Tesla began conducting experiments in X-ray imaging after hearing of Wilhelm R\u00f6ntgen's discovery of X-rays",
+          "score": 0.5246317339052349
+        },
+        {
+          "memory": "Tesla devised several experimental setups to produce X-rays",
+          "score": 0.5067417153934928
+        }
+      ],
+      "add_time": 15.237,
+      "search_time": 0.326,
+      "answer_time": 0.914,
+      "total_time": 16.478,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 211,
+      "user_id": "eval_211_c82bc385",
+      "question": "What powered Tesla's high energy terminal vacuum tube?",
+      "ground_truth": "tesla coil",
+      "prediction": "The output of the Tesla coil",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla developed a high-energy, single-terminal vacuum tube of his own design that had no target electrode",
+          "score": 0.7893557296531284
+        },
+        {
+          "memory": "The vacuum tube developed by Tesla worked from the output of the Tesla coil",
+          "score": 0.7159814442402695
+        },
+        {
+          "memory": "Tesla believed that his circuits would enable the generation of X-rays of much greater power than obtainable with ordinary apparatus",
+          "score": 0.5998010614205409
+        },
+        {
+          "memory": "Tesla devised several experimental setups to produce X-rays",
+          "score": 0.5099145069959514
+        },
+        {
+          "memory": "In March 1896, Tesla conducted experiments in X-ray imaging after hearing of Wilhelm R\u00f6ntgen's discovery of X-rays",
+          "score": 0.49005208500019637
+        },
+        {
+          "memory": "The modern term for the phenomenon produced by Tesla's device is bremsstrahlung or breaking radiation",
+          "score": 0.4481274781836243
+        }
+      ],
+      "add_time": 18.524,
+      "search_time": 0.345,
+      "answer_time": 0.839,
+      "total_time": 19.709,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 212,
+      "user_id": "eval_212_4f374e79",
+      "question": "What is that power that enables us to love?",
+      "ground_truth": "god",
+      "prediction": "Prevenient grace",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Prevenient grace is the power that enables us to love and motivates us to seek a relationship with God through Jesus Christ",
+          "score": 0.5136065369485544
+        },
+        {
+          "memory": "Prevenient grace is the present work of God to turn us from our sin-corrupted human will to the loving will of the Father",
+          "score": 0.37460445068463
+        },
+        {
+          "memory": "Prevenient grace allows those tainted by sin to make a truly free choice to accept or reject God's salvation in Christ",
+          "score": 0.31106236250240527
+        },
+        {
+          "memory": "Prevenient grace is the grace that goes before us and is given to all people",
+          "score": 0.310181847007169
+        },
+        {
+          "memory": "In the work of prevenient grace, God desires that we might sense both our sinfulness before Him and His offer of salvation",
+          "score": 0.2779258713644042
+        }
+      ],
+      "add_time": 13.528,
+      "search_time": 0.41,
+      "answer_time": 0.739,
+      "total_time": 14.677,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 213,
+      "user_id": "eval_213_a1cc4b37",
+      "question": "What is Prevenient grace?",
+      "ground_truth": "the grace that goes before us",
+      "prediction": "The grace that goes before us and is given to all people.",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "Prevenient grace is the grace that goes before us and is given to all people",
+          "score": 0.8798295359257211
+        },
+        {
+          "memory": "Prevenient grace is the power that enables us to love and motivates us to seek a relationship with God through Jesus Christ",
+          "score": 0.8325241648357786
+        },
+        {
+          "memory": "Prevenient grace is the present work of God to turn us from our sin-corrupted human will to the loving will of the Father",
+          "score": 0.7920578213400675
+        },
+        {
+          "memory": "Prevenient grace allows those tainted by sin to make a truly free choice to accept or reject God's salvation in Christ",
+          "score": 0.7591534238164097
+        },
+        {
+          "memory": "In the work of prevenient grace, God desires that we might sense both our sinfulness before Him and His offer of salvation",
+          "score": 0.6697469575828938
+        }
+      ],
+      "add_time": 14.695,
+      "search_time": 0.41,
+      "answer_time": 1.155,
+      "total_time": 16.26,
+      "em": 0,
+      "f1": 0.625,
+      "bleu": 0.5
+    },
+    {
+      "idx": 214,
+      "user_id": "eval_214_1529d2f1",
+      "question": "Who was the world's second largest oil producer?",
+      "ground_truth": "iran",
+      "prediction": "Iran",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "At the time of the attack, Iran was the world's second-largest oil exporter",
+          "score": 0.5616460882527252
+        },
+        {
+          "memory": "The Shah of Iran claimed that Western nations bought crude oil from Iran and sold it back as petrochemicals at a significantly higher price",
+          "score": 0.3520210409501195
+        },
+        {
+          "memory": "The renewal of hostilities released underlying economic pressure on oil prices",
+          "score": 0.34967333451411353
+        },
+        {
+          "memory": "The Shah of Iran suggested that it was fair for Western nations to pay more for oil, proposing a price increase of ten times more",
+          "score": 0.33530443524258957
+        },
+        {
+          "memory": "Weeks after the attack, the Shah of Iran stated that the price of oil was going to rise",
+          "score": 0.3036470159737808
+        },
+        {
+          "memory": "The Shah of Iran compared the increase in oil prices to the increase in prices of wheat, sugar, and cement sold to Western nations",
+          "score": 0.2906929839453659
+        },
+        {
+          "memory": "The attack on Israel was supported by other Arab nations",
+          "score": 0.16400679071915694
+        },
+        {
+          "memory": "On October 6, 1973, Syria and Egypt launched a surprise attack on Israel on Yom Kippur",
+          "score": 0.13954489571437148
+        },
+        {
+          "memory": "The attack marked a renewal of hostilities in the Arab-Israeli conflict",
+          "score": 0.06329154854580307
+        }
+      ],
+      "add_time": 21.409,
+      "search_time": 0.334,
+      "answer_time": 0.64,
+      "total_time": 22.383,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 215,
+      "user_id": "eval_215_69c98d40",
+      "question": "How many times more did the other nations have to pay for oil after the surprise attack?",
+      "ground_truth": "ten",
+      "prediction": "Ten times more",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Weeks after the attack, the Shah of Iran stated that the price of oil was going to rise",
+          "score": 0.5408916974375351
+        },
+        {
+          "memory": "The Shah of Iran suggested that it was fair for Western nations to pay more for oil, proposing a price increase of ten times more",
+          "score": 0.521548691069257
+        },
+        {
+          "memory": "At the time of the attack, Iran was the world's second-largest oil exporter",
+          "score": 0.49106913964219595
+        },
+        {
+          "memory": "The renewal of hostilities released underlying economic pressure on oil prices",
+          "score": 0.4617542793720426
+        },
+        {
+          "memory": "The Shah of Iran claimed that Western nations bought crude oil from Iran and sold it back as petrochemicals at a significantly higher price",
+          "score": 0.4454081444538269
+        },
+        {
+          "memory": "The attack on Israel was supported by other Arab nations",
+          "score": 0.4402852384003233
+        },
+        {
+          "memory": "The Shah of Iran compared the increase in oil prices to the increase in prices of wheat, sugar, and cement sold to Iran by Western nations",
+          "score": 0.42256323190953726
+        },
+        {
+          "memory": "The attack marked a renewal of hostilities in the Arab-Israeli conflict",
+          "score": 0.328621370870108
+        },
+        {
+          "memory": "On October 6, 1973, Syria and Egypt launched a surprise attack on Israel on Yom Kippur",
+          "score": 0.3221571078749474
+        }
+      ],
+      "add_time": 27.128,
+      "search_time": 0.375,
+      "answer_time": 0.684,
+      "total_time": 28.187,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 216,
+      "user_id": "eval_216_c7001b77",
+      "question": "Which oil producer is a close ally of the United States?",
+      "ground_truth": "iran",
+      "prediction": "I don't know",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "At the time of the attack, Iran was the world's second-largest oil exporter",
+          "score": 0.4438009123077574
+        },
+        {
+          "memory": "The renewal of hostilities released underlying economic pressure on oil prices",
+          "score": 0.41998135516845514
+        },
+        {
+          "memory": "The Shah of Iran claimed that Western nations bought crude oil and sold it back as petrochemicals at a significantly higher price",
+          "score": 0.4012006576763496
+        },
+        {
+          "memory": "The Shah of Iran suggested that it was fair for Western nations to pay more for oil, proposing a price increase of ten times more",
+          "score": 0.34676485390924994
+        },
+        {
+          "memory": "Weeks after the attack, the Shah of Iran stated that the price of oil was going to rise",
+          "score": 0.34018787177173815
+        },
+        {
+          "memory": "The Shah of Iran compared the increase in oil prices to the increase in prices of wheat, sugar, and cement sold to Western nations",
+          "score": 0.3211752470662903
+        },
+        {
+          "memory": "The attack on Israel was supported by other Arab nations",
+          "score": 0.27102819788798277
+        },
+        {
+          "memory": "On October 6, 1973, Syria and Egypt launched a surprise attack on Israel on Yom Kippur",
+          "score": 0.1773489181669659
+        },
+        {
+          "memory": "The attack marked a renewal of hostilities in the Arab-Israeli conflict",
+          "score": 0.14778730627226488
+        }
+      ],
+      "add_time": 21.245,
+      "search_time": 0.365,
+      "answer_time": 1.856,
+      "total_time": 23.466,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 217,
+      "user_id": "eval_217_73c71311",
+      "question": "Why did the Shah of Iran gave an interview?",
+      "ground_truth": "renewal of hostilities",
+      "prediction": "I don't know",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "The Shah of Iran suggested that it was fair for Western nations to pay more for oil, proposing a price increase of ten times more",
+          "score": 0.5475733355446729
+        },
+        {
+          "memory": "The Shah of Iran claimed that Western nations bought crude oil from Iran and sold it back as petrochemicals at a significantly higher price",
+          "score": 0.5355015520115305
+        },
+        {
+          "memory": "The Shah of Iran compared the increase in oil prices to the increase in the price of wheat, sugar, and cement sold to Iran by Western nations",
+          "score": 0.5238280203115564
+        },
+        {
+          "memory": "Weeks after the attack, the Shah of Iran stated that the price of oil was going to rise",
+          "score": 0.5142616454838735
+        },
+        {
+          "memory": "At the time of the attack, Iran was the world's second-largest oil exporter",
+          "score": 0.3728743341437604
+        },
+        {
+          "memory": "The renewal of hostilities released underlying economic pressure on oil prices",
+          "score": 0.2608436623210764
+        },
+        {
+          "memory": "On October 6, 1973, Syria and Egypt launched a surprise attack on Israel on Yom Kippur",
+          "score": 0.20909224937110238
+        },
+        {
+          "memory": "The attack marked a renewal of hostilities in the Arab-Israeli conflict",
+          "score": 0.1706416708549377
+        },
+        {
+          "memory": "The attack on Israel was supported by other Arab nations",
+          "score": 0.1643502698765014
+        }
+      ],
+      "add_time": 21.262,
+      "search_time": 0.522,
+      "answer_time": 0.721,
+      "total_time": 22.504,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 218,
+      "user_id": "eval_218_2a338ec8",
+      "question": "What do some encrypted broadcasts require to view?",
+      "ground_truth": "monthly subscription",
+      "prediction": "A monthly subscription",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Some broadcasts are pay-per-view services to view encrypted content",
+          "score": 0.7021051817000319
+        },
+        {
+          "memory": "Some broadcasts are encrypted and require a monthly subscription",
+          "score": 0.701925741270526
+        },
+        {
+          "memory": "Some broadcasts are encrypted but do not require a monthly subscription, known as free-to-view",
+          "score": 0.6463345563591552
+        },
+        {
+          "memory": "Some broadcasts are free-to-air and unencrypted",
+          "score": 0.6399761201846423
+        },
+        {
+          "memory": "The video guard UK equipped receiver cannot be used to decrypt other services",
+          "score": 0.5325678452737934
+        },
+        {
+          "memory": "Most digital receivers will receive free-to-air channels",
+          "score": 0.40707753228552446
+        },
+        {
+          "memory": "Unofficial cams are available to view the service",
+          "score": 0.39746722952043767
+        },
+        {
+          "memory": "The video guard UK equipped receiver is dedicated to the Sky service",
+          "score": 0.36349630527861426
+        },
+        {
+          "memory": "The use of unofficial cams invalidates the user's rights to use the card",
+          "score": 0.31895944473247184
+        },
+        {
+          "memory": "The use of unofficial cams breaks the user's contract with Sky",
+          "score": 0.30842578952913235
+        }
+      ],
+      "add_time": 19.408,
+      "search_time": 0.331,
+      "answer_time": 0.847,
+      "total_time": 20.587,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6667
+    },
+    {
+      "idx": 219,
+      "user_id": "eval_219_a5f0a7c3",
+      "question": "What service is a VideoGuard UK equipped receiver dedicated to decrypt?",
+      "ground_truth": "sky",
+      "prediction": "Sky service",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The video guard UK equipped receiver cannot be used to decrypt other services",
+          "score": 0.8041577678875892
+        },
+        {
+          "memory": "The video guard UK equipped receiver is dedicated to the Sky service",
+          "score": 0.7028146065322809
+        },
+        {
+          "memory": "Some broadcasts are pay-per-view services to view encrypted content",
+          "score": 0.5407035894449046
+        },
+        {
+          "memory": "Some broadcasts are encrypted and require a monthly subscription",
+          "score": 0.4449290783998985
+        },
+        {
+          "memory": "Most digital receivers will receive free-to-air channels",
+          "score": 0.4273095493050995
+        },
+        {
+          "memory": "Some broadcasts are free-to-air and unencrypted",
+          "score": 0.42400502566812437
+        },
+        {
+          "memory": "Some broadcasts are encrypted but do not require a monthly subscription, known as free-to-view",
+          "score": 0.4160093483376614
+        },
+        {
+          "memory": "A universal Cooband LNB 975.6 GAAZ is fitted at the end of the dish and pointed at the correct satellite constellation",
+          "score": 0.33694137252227385
+        },
+        {
+          "memory": "Unofficial cams are available to view the service",
+          "score": 0.3264678250275161
+        },
+        {
+          "memory": "The use of unofficial cams breaks the user's contract with Sky",
+          "score": 0.2860980344323723
+        }
+      ],
+      "add_time": 18.235,
+      "search_time": 0.331,
+      "answer_time": 0.841,
+      "total_time": 19.407,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 220,
+      "user_id": "eval_220_aa80d175",
+      "question": "The frequent availability of what substance allowed land-based steam engines to exhaust a great deal of steam?",
+      "ground_truth": "water",
+      "prediction": "Feed water",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Land-based steam engines could exhaust much of their steam as feed water was usually readily available prior to World War I",
+          "score": 0.6841273441366988
+        },
+        {
+          "memory": "The expansion engine was superseded by the steam turbine for applications where speed was required",
+          "score": 0.5036106278995442
+        },
+        {
+          "memory": "The steam turbine was used in warships such as the Dreadnought battleships and ocean liners",
+          "score": 0.5024964094906529
+        },
+        {
+          "memory": "The steam turbine was a British invention",
+          "score": 0.49187344169430613
+        },
+        {
+          "memory": "The expansion engine dominated marine applications where high vessel speed was not essential",
+          "score": 0.42775314851702007
+        },
+        {
+          "memory": "H.M.S. Dreadnought of 1905 was the first major warship to replace the reciprocating engine with the steam turbine",
+          "score": 0.402258908569842
+        }
+      ],
+      "add_time": 15.039,
+      "search_time": 0.279,
+      "answer_time": 0.594,
+      "total_time": 15.911,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 221,
+      "user_id": "eval_221_aa6226ac",
+      "question": "People of what nationality invented the steam turbine?",
+      "ground_truth": "british",
+      "prediction": "British",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The steam turbine was a British invention",
+          "score": 0.7759223867136694
+        },
+        {
+          "memory": "The steam turbine was used in warships such as the Dreadnought battleships and ocean liners",
+          "score": 0.566400887837091
+        },
+        {
+          "memory": "The expansion engine was superseded by the steam turbine for applications where speed was required",
+          "score": 0.5203436456569627
+        },
+        {
+          "memory": "Land-based steam engines could exhaust much of their steam as feed water was usually readily available prior to World War I",
+          "score": 0.4563277849986803
+        },
+        {
+          "memory": "H.M.S. Dreadnought of 1905 was the first major warship to replace the reciprocating engine with the steam turbine",
+          "score": 0.45218565525463683
+        },
+        {
+          "memory": "The expansion engine dominated marine applications where high vessel speed was not essential",
+          "score": 0.31655186060494467
+        }
+      ],
+      "add_time": 14.211,
+      "search_time": 0.29,
+      "answer_time": 1.104,
+      "total_time": 15.605,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 222,
+      "user_id": "eval_222_b0ed09a6",
+      "question": "Other than warships, what ships typically required high speeds?",
+      "ground_truth": "ocean liners",
+      "prediction": "Ocean liners",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The expansion engine dominated marine applications where high vessel speed was not essential",
+          "score": 0.5910533194016913
+        },
+        {
+          "memory": "The steam turbine was used in warships such as the Dreadnought battleships and ocean liners",
+          "score": 0.5502257041057907
+        },
+        {
+          "memory": "H.M.S. Dreadnought of 1905 was the first major warship to replace the reciprocating engine with the steam turbine",
+          "score": 0.4731473755790082
+        },
+        {
+          "memory": "The expansion engine was superseded by the steam turbine for applications where speed was required",
+          "score": 0.4485793568183128
+        },
+        {
+          "memory": "Land-based steam engines could exhaust much of their steam as feed water was usually readily available prior to World War I",
+          "score": 0.3693683152690538
+        },
+        {
+          "memory": "The steam turbine was a British invention",
+          "score": 0.2723347984450564
+        }
+      ],
+      "add_time": 13.258,
+      "search_time": 0.287,
+      "answer_time": 0.578,
+      "total_time": 14.123,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 223,
+      "user_id": "eval_223_bb884a35",
+      "question": "What ABC action series went up against NBC's variety shows in Fall 1957?",
+      "ground_truth": "zorro",
+      "prediction": "Zorro",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "ABC's western series and the actioner Zorro went up against and defeated variety shows aired by NBC and CBS in the fall of 1957",
+          "score": 0.730243236979584
+        },
+        {
+          "memory": "ABC's detective shows defeated rival networks' shows in the fall of 1959",
+          "score": 0.7274229247192947
+        },
+        {
+          "memory": "ABC offered a strong lineup of programs that contrasted with those on rival networks",
+          "score": 0.632628578834876
+        },
+        {
+          "memory": "ABC's detective shows captivated the audiences of rival networks",
+          "score": 0.5706270552107346
+        },
+        {
+          "memory": "ABC employed a philosophy of counterprogramming against its competitors",
+          "score": 0.5154463564636054
+        },
+        {
+          "memory": "In May 1961, Life criticized public enthusiasm and sponsorship for certain types of shows at the expense of news programming",
+          "score": 0.4543783049214685
+        },
+        {
+          "memory": "Short sixty-six-minute series were scheduled a half hour before their hour-long competition",
+          "score": 0.3771338446735737
+        },
+        {
+          "memory": "This counterprogramming strategy helped Goldenson provide a continuum between film and television",
+          "score": 0.3670080731023362
+        },
+        {
+          "memory": "Life denounced the replacement of good programs with bad ones in unofficial law",
+          "score": 0.26473252001163966
+        }
+      ],
+      "add_time": 22.005,
+      "search_time": 0.335,
+      "answer_time": 0.751,
+      "total_time": 23.091,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 224,
+      "user_id": "eval_224_3b9d6580",
+      "question": "What magazine criticized ABC's programming strategy in May 1961?",
+      "ground_truth": "life",
+      "prediction": "Life",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "In May 1961, Life criticized public enthusiasm and sponsorship for certain types of shows at the expense of news programming",
+          "score": 0.6851898158305739
+        },
+        {
+          "memory": "ABC employed a philosophy of counterprogramming against its competitors",
+          "score": 0.5977099079218989
+        },
+        {
+          "memory": "ABC's detective shows defeated rival networks' shows in the fall of 1959",
+          "score": 0.5880598810238993
+        },
+        {
+          "memory": "ABC offered a strong lineup of programs that contrasted with those on rival networks",
+          "score": 0.5446402136151477
+        },
+        {
+          "memory": "ABC's western series and the actioner Zorro went up against and defeated variety shows aired by NBC and CBS in the fall of 1957",
+          "score": 0.4749223249695233
+        },
+        {
+          "memory": "ABC's detective shows captivated the audiences of rival networks",
+          "score": 0.45463433612201065
+        },
+        {
+          "memory": "This counterprogramming strategy helped Goldenson provide a continuum between film and television",
+          "score": 0.3983650088416814
+        },
+        {
+          "memory": "Life denounced the replacement of good programs with bad ones in unofficial law",
+          "score": 0.3644672234465942
+        },
+        {
+          "memory": "Short sixty-six minute series were scheduled a half hour before their hour-long competition",
+          "score": 0.3017686939916461
+        }
+      ],
+      "add_time": 18.386,
+      "search_time": 0.787,
+      "answer_time": 0.669,
+      "total_time": 19.842,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 225,
+      "user_id": "eval_225_79400575",
+      "question": "What kind of shows were used as counterprogramming by ABC in the Fall of 1959?",
+      "ground_truth": "detective",
+      "prediction": "Detective shows",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "ABC's detective shows defeated rival networks' shows in the fall of 1959",
+          "score": 0.7400152697553182
+        },
+        {
+          "memory": "ABC's western series and the actioner Zorro went up against and defeated variety shows aired by NBC and CBS in the fall of 1957",
+          "score": 0.6330538261055653
+        },
+        {
+          "memory": "ABC offered a strong lineup of programs that contrasted with those on rival networks",
+          "score": 0.6243369283948352
+        },
+        {
+          "memory": "ABC employed a philosophy of counterprogramming against its competitors",
+          "score": 0.5987587661934781
+        },
+        {
+          "memory": "ABC's detective shows captivated the audiences of rival networks",
+          "score": 0.5517423743050165
+        },
+        {
+          "memory": "In May 1961, Life criticized public enthusiasm and sponsorship for certain types of shows at the expense of news programming",
+          "score": 0.5258798144367097
+        },
+        {
+          "memory": "This counterprogramming strategy helped Goldenson provide a continuum between film and television",
+          "score": 0.5022012460374587
+        },
+        {
+          "memory": "Short sixty-six-minute series were scheduled a half hour before their hour-long competition",
+          "score": 0.40346903815660284
+        },
+        {
+          "memory": "Life denounced the replacement of good programs with bad ones in unofficial law",
+          "score": 0.3493263485962651
+        }
+      ],
+      "add_time": 20.102,
+      "search_time": 0.387,
+      "answer_time": 0.874,
+      "total_time": 21.363,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 226,
+      "user_id": "eval_226_9ceed9a1",
+      "question": "What kind of economy does Victoria have?",
+      "ground_truth": "highly diversified",
+      "prediction": "Highly diversified",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The economy of Victoria is highly diversified",
+          "score": 0.8119272219664899
+        },
+        {
+          "memory": "Service sectors in Victoria include financial and property services, health, education, wholesale retail, hospitality, and manufacturing",
+          "score": 0.6181230087511604
+        },
+        {
+          "memory": "Service sectors constitute the majority of employment in Victoria",
+          "score": 0.593163930287228
+        },
+        {
+          "memory": "Victoria's total gross state product (GSP) is ranked second in Australia",
+          "score": 0.5742531247759526
+        },
+        {
+          "memory": "Victoria is ranked fourth in terms of GSP per capita due to its limited mining activity",
+          "score": 0.5655303813582089
+        },
+        {
+          "memory": "Victoria includes eight public universities",
+          "score": 0.48959921591651023
+        },
+        {
+          "memory": "The oldest public university in Victoria is the University of Melbourne",
+          "score": 0.43399491423005176
+        },
+        {
+          "memory": "Melbourne is described as the sporting capital of Australia",
+          "score": 0.38155351357764483
+        },
+        {
+          "memory": "Melbourne is home to a number of museums, art galleries, and theatres",
+          "score": 0.3541722165342165
+        },
+        {
+          "memory": "The University of Melbourne was founded in 1853",
+          "score": 0.30149345101494807
+        }
+      ],
+      "add_time": 26.504,
+      "search_time": 0.332,
+      "answer_time": 0.627,
+      "total_time": 27.463,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 227,
+      "user_id": "eval_227_32d7b669",
+      "question": "Where according to gross state product does Victoria rank in Australia?",
+      "ground_truth": "second",
+      "prediction": "Second",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Victoria's total gross state product (GSP) is ranked second in Australia",
+          "score": 0.8144053937072848
+        },
+        {
+          "memory": "Victoria is ranked fourth in terms of GSP per capita due to its limited mining activity",
+          "score": 0.6270511941598523
+        },
+        {
+          "memory": "The economy of Victoria is highly diversified",
+          "score": 0.6089686706362096
+        },
+        {
+          "memory": "Service sectors in Victoria include financial and property services, health, education, wholesale retail, hospitality, and manufacturing",
+          "score": 0.5628582460451192
+        },
+        {
+          "memory": "Service sectors constitute the majority of employment in Victoria",
+          "score": 0.5507698770056051
+        },
+        {
+          "memory": "Victoria includes eight public universities",
+          "score": 0.4708675166731845
+        },
+        {
+          "memory": "The oldest public university in Victoria is the University of Melbourne",
+          "score": 0.4456094827020368
+        },
+        {
+          "memory": "Melbourne is described as the sporting capital of Australia",
+          "score": 0.4157079540597959
+        },
+        {
+          "memory": "The Melbourne Cricket Ground is the largest stadium in Australia",
+          "score": 0.37903280650470395
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosts the grand final of the Australian Football League each year, usually drawing crowds of over 95,000 people",
+          "score": 0.37040179811422014
+        }
+      ],
+      "add_time": 29.385,
+      "search_time": 0.323,
+      "answer_time": 0.782,
+      "total_time": 30.49,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 228,
+      "user_id": "eval_228_7fbf2bb4",
+      "question": "At what rank does GPS per capita set Victoria?",
+      "ground_truth": "fourth",
+      "prediction": "Fourth",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Victoria is ranked fourth in terms of GSP per capita due to its limited mining activity",
+          "score": 0.598447404321389
+        },
+        {
+          "memory": "Victoria's total gross state product (GSP) is ranked second in Australia",
+          "score": 0.5970280565939763
+        },
+        {
+          "memory": "Victoria includes eight public universities",
+          "score": 0.45546630693881
+        },
+        {
+          "memory": "Service sectors constitute the majority of employment in Victoria",
+          "score": 0.44133455016406326
+        },
+        {
+          "memory": "The economy of Victoria is highly diversified",
+          "score": 0.40598758538703533
+        },
+        {
+          "memory": "Service sectors in Victoria include financial and property services, health, education, wholesale retail, hospitality, and manufacturing",
+          "score": 0.402847922155976
+        },
+        {
+          "memory": "The oldest public university in Victoria is the University of Melbourne",
+          "score": 0.39208326610250066
+        },
+        {
+          "memory": "Melbourne is described as the sporting capital of Australia",
+          "score": 0.3460000407746221
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosts the grand final of the Australian Football League each year, usually drawing crowds of over 95,000 people",
+          "score": 0.3268116300536766
+        },
+        {
+          "memory": "The Melbourne Cricket Ground is the largest stadium in Australia",
+          "score": 0.3264544755951397
+        }
+      ],
+      "add_time": 32.235,
+      "search_time": 0.351,
+      "answer_time": 0.681,
+      "total_time": 33.267,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 229,
+      "user_id": "eval_229_f5850467",
+      "question": "What city in Victoria is called the sporting capital of Australia?",
+      "ground_truth": "melbourne",
+      "prediction": "Melbourne",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Melbourne is described as the sporting capital of Australia",
+          "score": 0.7870392691661365
+        },
+        {
+          "memory": "The Melbourne Cricket Ground is considered the spiritual home of Australian cricket and Australian rules football",
+          "score": 0.6175665622191089
+        },
+        {
+          "memory": "The Melbourne Cricket Ground is the largest stadium in Australia",
+          "score": 0.5631985557959016
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosts the grand final of the Australian Football League each year, usually drawing crowds of over 95,000 people",
+          "score": 0.5584959488901204
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosted the 2006 Commonwealth Games",
+          "score": 0.5251072626062754
+        },
+        {
+          "memory": "The economy of Victoria is highly diversified",
+          "score": 0.522426204680984
+        },
+        {
+          "memory": "The oldest public university in Victoria is the University of Melbourne",
+          "score": 0.517064771435771
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosted the 1956 Summer Olympics",
+          "score": 0.5060959283281323
+        },
+        {
+          "memory": "Victoria's total gross state product (GSP) is ranked second in Australia",
+          "score": 0.4904842248792035
+        },
+        {
+          "memory": "Victoria includes eight public universities",
+          "score": 0.49013185058648356
+        }
+      ],
+      "add_time": 30.644,
+      "search_time": 0.352,
+      "answer_time": 0.605,
+      "total_time": 31.601,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 230,
+      "user_id": "eval_230_415ea32e",
+      "question": "What is the largest stadium in Australia?",
+      "ground_truth": "melbourne cricket ground",
+      "prediction": "Melbourne Cricket Ground",
+      "num_memories_added": 15,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Melbourne Cricket Ground is the largest stadium in Australia",
+          "score": 0.7997396415775656
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosts the grand final of the Australian Football League each year, usually drawing crowds of over 95,000 people",
+          "score": 0.6335887491417589
+        },
+        {
+          "memory": "The Melbourne Cricket Ground is considered the spiritual home of Australian cricket and Australian rules football",
+          "score": 0.606494360729972
+        },
+        {
+          "memory": "Melbourne is described as the sporting capital of Australia",
+          "score": 0.512128796000995
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosted the 2006 Commonwealth Games",
+          "score": 0.48007924996829604
+        },
+        {
+          "memory": "The Melbourne Cricket Ground hosted the 1956 Summer Olympics",
+          "score": 0.4489395654749781
+        },
+        {
+          "memory": "The oldest public university in Victoria is the University of Melbourne",
+          "score": 0.40071463408825264
+        },
+        {
+          "memory": "Melbourne is home to a number of museums, art galleries, and theatres",
+          "score": 0.39300228066525134
+        },
+        {
+          "memory": "The University of Melbourne was founded in 1853",
+          "score": 0.31954798874233864
+        },
+        {
+          "memory": "Victoria includes eight public universities",
+          "score": 0.30545811493202224
+        }
+      ],
+      "add_time": 32.047,
+      "search_time": 0.794,
+      "answer_time": 0.631,
+      "total_time": 33.472,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 231,
+      "user_id": "eval_231_46876e5b",
+      "question": "What is the current status of the Haensch study?",
+      "ground_truth": "confirmed and amended",
+      "prediction": "I don't know",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "The Hench study results have been confirmed and amended based on genetic evidence from Black Death victims in the East Smithfield burial site in England",
+          "score": 0.3485329188028693
+        },
+        {
+          "memory": "Schunamen et al. concluded in 2011 that the Black Death in medieval Europe was caused by a variant of Yersinia pestis that may no longer exist",
+          "score": 0.2765546330079596
+        },
+        {
+          "memory": "A study published in Nature in October 2011 sequenced the genome of Yersinia pestis from plague victims",
+          "score": 0.23371301760152785
+        },
+        {
+          "memory": "The strain that caused the Black Death is ancestral to most modern strains of Yersinia pestis",
+          "score": 0.1047391790603582
+        }
+      ],
+      "add_time": 13.077,
+      "search_time": 0.299,
+      "answer_time": 1.162,
+      "total_time": 14.538,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 232,
+      "user_id": "eval_232_dfcffbca",
+      "question": "Where was the burial site used for testing located?",
+      "ground_truth": "east smithfield",
+      "prediction": "East Smithfield, England",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "The Hench study results have been confirmed and amended based on genetic evidence from Black Death victims in the East Smithfield burial site in England",
+          "score": 0.3716189219163115
+        },
+        {
+          "memory": "A study published in Nature in October 2011 sequenced the genome of Yersinia pestis from plague victims",
+          "score": 0.20886899203206616
+        },
+        {
+          "memory": "Schunamen et al. concluded in 2011 that the Black Death in medieval Europe was caused by a variant of Yersinia pestis that may no longer exist",
+          "score": 0.18846205756917692
+        },
+        {
+          "memory": "The strain that caused the Black Death is ancestral to most modern strains of Yersinia pestis",
+          "score": 0.18241624133782564
+        }
+      ],
+      "add_time": 14.568,
+      "search_time": 0.357,
+      "answer_time": 0.854,
+      "total_time": 15.779,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 233,
+      "user_id": "eval_233_2fae657d",
+      "question": "What is thought to have happened to the y. pestis that caused the black death?",
+      "ground_truth": "may no longer exist",
+      "prediction": "May no longer exist",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "Schunamen et al. concluded in 2011 that the Black Death in medieval Europe was caused by a variant of Yersinia pestis that may no longer exist",
+          "score": 0.6892771248390663
+        },
+        {
+          "memory": "The strain that caused the Black Death is ancestral to most modern strains of Yersinia pestis",
+          "score": 0.6669728779862065
+        },
+        {
+          "memory": "A study published in Nature in October 2011 sequenced the genome of Yersinia pestis from plague victims",
+          "score": 0.5512848560310244
+        },
+        {
+          "memory": "The Hench study results have been confirmed and amended based on genetic evidence from Black Death victims in the East Smithfield burial site in England",
+          "score": 0.5047766250767494
+        }
+      ],
+      "add_time": 16.773,
+      "search_time": 0.438,
+      "answer_time": 1.095,
+      "total_time": 18.307,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 234,
+      "user_id": "eval_234_27927488",
+      "question": "Where was a lab for Tesla set up?",
+      "ground_truth": "manhattan",
+      "prediction": "89 Liberty Street in Manhattan",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "In April 1887, they formed the Tesla Electric Company",
+          "score": 0.5927391542043792
+        },
+        {
+          "memory": "Tesla worked on improving and developing new types of electric motors, generators, and other devices at the laboratory",
+          "score": 0.5851123261973693
+        },
+        {
+          "memory": "They set up a laboratory at 89 Liberty Street in Manhattan",
+          "score": 0.5344871724301472
+        },
+        {
+          "memory": "In late 1886, Tesla met Alfred S. Brown, a Western Union superintendent, and New York attorney Charles F. Peck",
+          "score": 0.5110729800055742
+        },
+        {
+          "memory": "The agreement for the Tesla Electric Company stated that profits from generated patents would go one third to Tesla, one third to Peck and Brown, and one third to fund development",
+          "score": 0.44268844844103816
+        },
+        {
+          "memory": "Brown and Peck agreed to back Tesla financially and handle his patents based on Tesla's patents and other ideas",
+          "score": 0.41658530020376183
+        },
+        {
+          "memory": "Alfred S. Brown and Charles F. Peck were experienced in setting up companies and promoting inventions and patents for financial gain",
+          "score": 0.2380517898730241
+        }
+      ],
+      "add_time": 20.042,
+      "search_time": 0.36,
+      "answer_time": 0.839,
+      "total_time": 21.241,
+      "em": 0,
+      "f1": 0.3333,
+      "bleu": 0.2
+    },
+    {
+      "idx": 235,
+      "user_id": "eval_235_22fae775",
+      "question": "What was Brown's job?",
+      "ground_truth": "western union superintendent",
+      "prediction": "Superintendent",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Alfred S. Brown was a Western Union superintendent",
+          "score": 0.5749837480220779
+        },
+        {
+          "memory": "Brown and Peck were experienced in setting up companies and promoting inventions and patents for financial gain",
+          "score": 0.45809468592740143
+        },
+        {
+          "memory": "Brown and Peck agreed to back Tesla financially and handle his patents based on Tesla's patents and ideas",
+          "score": 0.3598304126355307
+        },
+        {
+          "memory": "In late 1886, Tesla met Alfred S. Brown and Charles F. Peck",
+          "score": 0.29710517700064243
+        },
+        {
+          "memory": "Charles F. Peck was a New York attorney",
+          "score": 0.25630228159066293
+        },
+        {
+          "memory": "They set up a laboratory at 89 Liberty Street in Manhattan",
+          "score": 0.21890969890646428
+        },
+        {
+          "memory": "The agreement for the Tesla Electric Company stated that profits from generated patents would be divided one third to Tesla, one third to Peck and Brown, and one third to fund development",
+          "score": 0.19062342737544588
+        },
+        {
+          "memory": "Tesla worked on improving and developing new types of electric motors, generators, and other devices at the laboratory",
+          "score": 0.09213729685744715
+        },
+        {
+          "memory": "In April 1887, they formed the Tesla Electric Company",
+          "score": 0.04890106210339079
+        }
+      ],
+      "add_time": 20.22,
+      "search_time": 0.333,
+      "answer_time": 0.681,
+      "total_time": 21.235,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 1.0
+    },
+    {
+      "idx": 236,
+      "user_id": "eval_236_d7dd216f",
+      "question": "Where was Tesla's new lab?",
+      "ground_truth": "manhattan",
+      "prediction": "89 Liberty Street, Manhattan",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Tesla worked on improving and developing new types of electric motors, generators, and other devices at the laboratory",
+          "score": 0.563545352968992
+        },
+        {
+          "memory": "In April 1887, they formed the Tesla Electric Company",
+          "score": 0.5384747850440779
+        },
+        {
+          "memory": "In late 1886, Tesla met Alfred S. Brown and Charles F. Peck",
+          "score": 0.5180361071400318
+        },
+        {
+          "memory": "They set up a laboratory at 89 Liberty Street in Manhattan",
+          "score": 0.47615448957691897
+        },
+        {
+          "memory": "The agreement for the Tesla Electric Company stated that profits from generated patents would go one third to Tesla, one third to Peck and Brown, and one third to fund development",
+          "score": 0.42004107126574924
+        },
+        {
+          "memory": "Brown and Peck agreed to back Tesla financially and handle his patents based on Tesla's patents and ideas",
+          "score": 0.3837707502981069
+        },
+        {
+          "memory": "Brown and Peck were experienced in setting up companies and promoting inventions and patents for financial gain",
+          "score": 0.1812785802405151
+        },
+        {
+          "memory": "Alfred S. Brown was a Western Union superintendent",
+          "score": 0.1221195174951806
+        },
+        {
+          "memory": "Charles F. Peck was a New York attorney",
+          "score": 0.11860821821138515
+        }
+      ],
+      "add_time": 17.792,
+      "search_time": 0.472,
+      "answer_time": 0.939,
+      "total_time": 19.202,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.25
+    },
+    {
+      "idx": 237,
+      "user_id": "eval_237_0e41f370",
+      "question": "What was Tesla, Brown and Peck's new company?",
+      "ground_truth": "tesla electric company",
+      "prediction": "Tesla Electric Company",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "In April 1887, Tesla, Brown, and Peck formed the Tesla Electric Company",
+          "score": 0.816145062931886
+        },
+        {
+          "memory": "In late 1886, Tesla met Alfred S. Brown, a Western Union superintendent, and New York attorney Charles F. Peck",
+          "score": 0.7109868581661021
+        },
+        {
+          "memory": "The agreement for the Tesla Electric Company stated that profits from generated patents would be divided one third to Tesla, one third to Peck and Brown, and one third to fund development",
+          "score": 0.6740754484908563
+        },
+        {
+          "memory": "Tesla's patents and ideas led to an agreement for Brown and Peck to back him financially and handle his patents",
+          "score": 0.6704576682087089
+        },
+        {
+          "memory": "Alfred S. Brown and Charles F. Peck were experienced in setting up companies and promoting inventions and patents for financial gain",
+          "score": 0.5257876842184562
+        },
+        {
+          "memory": "A laboratory was set up at 89 Liberty Street in Manhattan for Tesla",
+          "score": 0.4889575534355192
+        },
+        {
+          "memory": "Tesla worked on improving and developing new types of electric motors, generators, and other devices at the laboratory",
+          "score": 0.4405677681844512
+        }
+      ],
+      "add_time": 16.484,
+      "search_time": 0.341,
+      "answer_time": 0.593,
+      "total_time": 17.418,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 238,
+      "user_id": "eval_238_beac7802",
+      "question": "How many NFL teams have finished the regular season with one loss?",
+      "ground_truth": "ten",
+      "prediction": "Ten",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.6409569373669561
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.5962595331823974
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.43135896012384234
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.4177413476169017
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.3476611700543032
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.3099571895393675
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.28384860000072043
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.27912944860675776
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.27499471818531307
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.24027822136637525
+        }
+      ],
+      "add_time": 20.707,
+      "search_time": 0.326,
+      "answer_time": 0.578,
+      "total_time": 21.611,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 239,
+      "user_id": "eval_239_3c192918",
+      "question": "How many NFL teams have gone 15-1 in one season?",
+      "ground_truth": "six",
+      "prediction": "Six",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5790365139597067
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.5099250867777257
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.44934832095126576
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.41729768919255084
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.40272755163620166
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.3329708364127291
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.3177819793785971
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.29372276217178384
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.28951725521382354
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.27599854576131694
+        }
+      ],
+      "add_time": 23.143,
+      "search_time": 0.5,
+      "answer_time": 1.18,
+      "total_time": 24.823,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 240,
+      "user_id": "eval_240_ca04cf5a",
+      "question": "Which team in Super Bowl 50 had a 15-1 record?",
+      "ground_truth": "carolina panthers",
+      "prediction": "Carolina Panthers",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5719021531553721
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.5419517112642012
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVII",
+          "score": 0.515925327117066
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.4973560080008449
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.463632899151313
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.45831855277660527
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.4565913837851642
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.447086601630826
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.4351128810331144
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.4209345110870606
+        }
+      ],
+      "add_time": 19.288,
+      "search_time": 0.346,
+      "answer_time": 2.136,
+      "total_time": 21.769,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 241,
+      "user_id": "eval_241_d23af3b1",
+      "question": "Who was the head coach of the Broncos in Super Bowl XLVIII?",
+      "ground_truth": "john fox",
+      "prediction": "John Fox",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.7193543338534503
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.5989450032629656
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.5310740718018793
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.5070973444191238
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.4321598991492083
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.3391205084453284
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.33896325218404605
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.20416815584627435
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.1973815206936065
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.18677856000824133
+        }
+      ],
+      "add_time": 20.059,
+      "search_time": 0.336,
+      "answer_time": 1.262,
+      "total_time": 21.657,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 242,
+      "user_id": "eval_242_09c74a92",
+      "question": "How many NFL teams have had only one loss by the end of a regular season?",
+      "ground_truth": "ten",
+      "prediction": "Ten",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.6284013357959675
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.5813717377333067
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.42425515700112326
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.4210824543053314
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.3590298793395268
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.3253005279746113
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.281395710783447
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.2759809964060674
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.2585923376189653
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.24613756588145771
+        }
+      ],
+      "add_time": 20.042,
+      "search_time": 0.383,
+      "answer_time": 0.776,
+      "total_time": 21.202,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 243,
+      "user_id": "eval_243_b9fa4b21",
+      "question": "How many teams can boast a 15\u20131 regular season record?",
+      "ground_truth": "ten",
+      "prediction": "Six",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5942934191090131
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.5105147856376543
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.4342950058263432
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.3845297063973797
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.3747801921285463
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.26777970886116276
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.25541250690301487
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.24539889170199725
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.2266604715906648
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.21316957336988399
+        }
+      ],
+      "add_time": 19.769,
+      "search_time": 0.355,
+      "answer_time": 1.17,
+      "total_time": 21.295,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 244,
+      "user_id": "eval_244_1d6fe5e5",
+      "question": "What seed was the Carolina Panthers?",
+      "ground_truth": "number one",
+      "prediction": "I don't know",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5838501031339725
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.5741792893876532
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.5598034336426488
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.5540501293989331
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.5214109413601289
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.3436575314107575
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.3299861656649299
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.2961197022486842
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.28317750577966594
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.27148529440228497
+        }
+      ],
+      "add_time": 19.042,
+      "search_time": 0.339,
+      "answer_time": 0.664,
+      "total_time": 20.046,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 245,
+      "user_id": "eval_245_2aa34915",
+      "question": "What seed was the Denver Broncos?",
+      "ground_truth": "number one",
+      "prediction": "I don't know",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.5617336061438002
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.523210829875463
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.5051783388634671
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.3832277418544358
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.3244632224465462
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.31327605520669366
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.29010437552989415
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.28179892842088705
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.26584314386494573
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.25656374044660624
+        }
+      ],
+      "add_time": 20.554,
+      "search_time": 0.314,
+      "answer_time": 0.624,
+      "total_time": 21.492,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 246,
+      "user_id": "eval_246_c8a966e4",
+      "question": "How many teams have had a 15-1 record for the regular season?",
+      "ground_truth": "ten",
+      "prediction": "Six",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5747275060510196
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.49390602792758787
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.4071215926577588
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.4049696652748147
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.3760444298696195
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.2554729542666969
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.24917192781968708
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.22858866597693572
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.204990033361133
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.1957159594689138
+        }
+      ],
+      "add_time": 22.408,
+      "search_time": 0.319,
+      "answer_time": 0.752,
+      "total_time": 23.479,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 247,
+      "user_id": "eval_247_bf153399",
+      "question": "How many games did the Panthers lose in the regular season before Super Bowl 50?",
+      "ground_truth": "one",
+      "prediction": "One",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.5939577824237436
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.5736829017737076
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.5633057183003785
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.5151629136001084
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.5102975466903437
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.5001646438754372
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.39643698641761893
+        },
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.3899763566929942
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.38789830715613793
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.3761058841706677
+        }
+      ],
+      "add_time": 21.012,
+      "search_time": 0.321,
+      "answer_time": 0.619,
+      "total_time": 21.952,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 248,
+      "user_id": "eval_248_23831ffc",
+      "question": "How many teams up to Super Bowl 50 have been to the championship game eight times?",
+      "ground_truth": "four",
+      "prediction": "Four",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Denver Broncos are one of four teams to have made eight appearances in the Super Bowl",
+          "score": 0.6892548949626709
+        },
+        {
+          "memory": "Both teams were coached by John Fox in their last Super Bowl appearance prior to Super Bowl 50",
+          "score": 0.5122481326836145
+        },
+        {
+          "memory": "The Carolina Panthers' other Super Bowl appearance was Super Bowl XXXVIII",
+          "score": 0.50416715254653
+        },
+        {
+          "memory": "For the third straight season, the number one seeds from both conferences met in the Super Bowl",
+          "score": 0.49867107667556826
+        },
+        {
+          "memory": "The Denver Broncos reached Super Bowl XLVIII",
+          "score": 0.4824949852626894
+        },
+        {
+          "memory": "The Denver Broncos made their second Super Bowl appearance in three years",
+          "score": 0.46781651929662404
+        },
+        {
+          "memory": "The Carolina Panthers are one of only six teams to have acquired a fifteen to one record",
+          "score": 0.4501387941926773
+        },
+        {
+          "memory": "The Carolina Panthers made their second Super Bowl appearance in franchise history",
+          "score": 0.4333665991443006
+        },
+        {
+          "memory": "The Carolina Panthers are one of only ten teams to have completed a regular season with only one loss",
+          "score": 0.40126358349188795
+        },
+        {
+          "memory": "The Carolina Panthers completed a regular season with only one loss",
+          "score": 0.2982313317706364
+        }
+      ],
+      "add_time": 21.658,
+      "search_time": 0.38,
+      "answer_time": 0.676,
+      "total_time": 22.714,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 249,
+      "user_id": "eval_249_b5c01b07",
+      "question": "Evolution of what part of the immune system occurred in the evolutionary ancestor of jawed vertebrates?",
+      "ground_truth": "adaptive immune system",
+      "prediction": "Adaptive immune system",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The evolution of the adaptive immune system occurred in an ancestor of the jawed vertebrates",
+          "score": 0.8840743469791882
+        },
+        {
+          "memory": "Many classical molecules of the adaptive immune system, such as immunoglobulins and T cell receptors, exist only in jawed vertebrates",
+          "score": 0.6759838152588296
+        },
+        {
+          "memory": "A distinct lymphocyte-derived molecule has been discovered in primitive jawless vertebrates, such as the lamprey and hagfish",
+          "score": 0.5794338409137888
+        },
+        {
+          "memory": "Primitive jawless vertebrates possess a large array of molecules called variable lymphocyte receptors (VLRs)",
+          "score": 0.5719687975842281
+        },
+        {
+          "memory": "Variable lymphocyte receptors (VLRs) are produced from only a small number of genes, typically one or two",
+          "score": 0.29259041377999717
+        },
+        {
+          "memory": "Variable lymphocyte receptors (VLRs) are believed to bind pathogenic antigens in a similar way to antibodies",
+          "score": 0.29240578177144294
+        },
+        {
+          "memory": "Variable lymphocyte receptors (VLRs) have the same degree of specificity as antibodies",
+          "score": 0.26883316664218687
+        }
+      ],
+      "add_time": 17.014,
+      "search_time": 0.328,
+      "answer_time": 0.951,
+      "total_time": 18.293,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    }
+  ]
+}

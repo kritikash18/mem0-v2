@@ -1,0 +1,116 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "test_google_stt_idx3",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "google_stt/default",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text"
+  },
+  "summary": {
+    "count": 1,
+    "em_mean": 1,
+    "em_std": 0.0,
+    "em_min": 1,
+    "em_max": 1,
+    "f1_mean": 1.0,
+    "f1_std": 0.0,
+    "f1_min": 1.0,
+    "f1_max": 1.0,
+    "bleu_mean": 1.0,
+    "bleu_std": 0.0,
+    "bleu_min": 1.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 37.05,
+    "total_time_std": 0.0,
+    "total_time_min": 37.05,
+    "total_time_max": 37.05,
+    "add_time_mean": 34.845,
+    "add_time_std": 0.0,
+    "add_time_min": 34.845,
+    "add_time_max": 34.845,
+    "search_time_mean": 0.428,
+    "search_time_std": 0.0,
+    "search_time_min": 0.428,
+    "search_time_max": 0.428,
+    "answer_time_mean": 1.777,
+    "answer_time_std": 0.0,
+    "answer_time_min": 1.777,
+    "answer_time_max": 1.777,
+    "em_correct": 1,
+    "em_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 1,
+      "above_50": 1,
+      "above_80": 1
+    },
+    "bleu": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 1,
+      "above_50": 1,
+      "above_80": 1
+    }
+  },
+  "results": [
+    {
+      "idx": 3,
+      "user_id": "eval_3_f17b183e",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "French irregular forces",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces, Canadian Scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.7857250570279393
+        },
+        {
+          "memory": "In early August 1757, Montcalm besieged Fort William Henry",
+          "score": 0.6688002846634724
+        },
+        {
+          "memory": "In February 1757, French irregular forces launched a raid against the position across Frozen Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.6498451522879674
+        },
+        {
+          "memory": "In January 1757, French irregular forces ambushed British Rangers near Ticonderoga",
+          "score": 0.6299443784344028
+        },
+        {
+          "memory": "Fort William Henry capitulated with an agreement to withdraw under parole",
+          "score": 0.49507424356022955
+        },
+        {
+          "memory": "During the withdrawal, some of Montcalm's Indian allies attacked the British column, killing and capturing several hundred men, women, children, and slaves",
+          "score": 0.45170952551071364
+        },
+        {
+          "memory": "Some Indians who participated in the campaign traveled from beyond the Mississippi and returned afterward having been exposed to European carriers",
+          "score": 0.33702515211308337
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.2478137287111165
+        }
+      ],
+      "add_time": 34.845,
+      "search_time": 0.428,
+      "answer_time": 1.777,
+      "total_time": 37.05,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    }
+  ]
+}

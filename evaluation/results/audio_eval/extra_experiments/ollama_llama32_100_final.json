@@ -1,0 +1,93 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "ollama_llama32_100",
+    "dataset": "byteCode18/spoken-squad-1k-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "ollama/llama3.2",
+    "embedder": "openai/text-embedding-3-small",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": true
+  },
+  "summary": {
+    "count": 1,
+    "em_mean": 0,
+    "em_std": 0.0,
+    "em_min": 0,
+    "em_max": 0,
+    "f1_mean": 0.6667,
+    "f1_std": 0.0,
+    "f1_min": 0.6667,
+    "f1_max": 0.6667,
+    "bleu_mean": 0.3333,
+    "bleu_std": 0.0,
+    "bleu_min": 0.3333,
+    "bleu_max": 0.3333,
+    "llm_mean": 1,
+    "llm_std": 0.0,
+    "llm_min": 1,
+    "llm_max": 1,
+    "total_time_mean": 27.182,
+    "total_time_std": 0.0,
+    "total_time_min": 27.182,
+    "total_time_max": 27.182,
+    "add_time_mean": 26.031,
+    "add_time_std": 0.0,
+    "add_time_min": 26.031,
+    "add_time_max": 26.031,
+    "search_time_mean": 0.482,
+    "search_time_std": 0.0,
+    "search_time_min": 0.482,
+    "search_time_max": 0.482,
+    "answer_time_mean": 0.67,
+    "answer_time_std": 0.0,
+    "answer_time_min": 0.67,
+    "answer_time_max": 0.67,
+    "em_correct": 0,
+    "em_pct": 0.0,
+    "llm_correct": 1,
+    "llm_pct": 100.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 1,
+      "above_80": 0
+    },
+    "bleu": {
+      "total": 1,
+      "zero": 0,
+      "perfect": 0,
+      "above_50": 0,
+      "above_80": 0
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_64145ed2",
+      "question": "What does UMC stand for?",
+      "ground_truth": "united methodist church",
+      "prediction": "UMC stands for United Methodist Church.",
+      "num_memories_added": 1,
+      "num_memories_retrieved": 1,
+      "retrieved_memories": [
+        {
+          "memory": "UMC is a mainline Protestant Methodist denomination",
+          "score": 0.6931324639618682
+        }
+      ],
+      "add_time": 26.031,
+      "search_time": 0.482,
+      "answer_time": 0.67,
+      "total_time": 27.182,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.3333,
+      "llm": 1
+    }
+  ]
+}

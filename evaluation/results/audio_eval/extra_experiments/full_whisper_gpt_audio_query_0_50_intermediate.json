@@ -1,0 +1,2638 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "full_whisper_gpt_audio_query_0_50",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "openai_whisper/whisper-1",
+    "llm": "openai/gpt-4o-mini",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "audio"
+  },
+  "summary": {
+    "count": 50,
+    "em_mean": 0.64,
+    "em_std": 0.4849,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.7942,
+    "f1_std": 0.342,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.7597,
+    "bleu_std": 0.3627,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "total_time_mean": 28.6869,
+    "total_time_std": 5.6914,
+    "total_time_min": 14.041,
+    "total_time_max": 39.829,
+    "add_time_mean": 24.2448,
+    "add_time_std": 5.5354,
+    "add_time_min": 9.68,
+    "add_time_max": 36.647,
+    "search_time_mean": 3.5901,
+    "search_time_std": 1.2824,
+    "search_time_min": 1.868,
+    "search_time_max": 7.523,
+    "answer_time_mean": 0.8519,
+    "answer_time_std": 0.3575,
+    "answer_time_min": 0.545,
+    "answer_time_max": 2.551,
+    "em_correct": 32,
+    "em_pct": 64.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 50,
+      "zero": 6,
+      "perfect": 32,
+      "above_50": 43,
+      "above_80": 36
+    },
+    "bleu": {
+      "total": 50,
+      "zero": 6,
+      "perfect": 32,
+      "above_50": 40,
+      "above_80": 34
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_f4c852b9",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "Trust in God's Word",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded the citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.7027901232076578
+        },
+        {
+          "memory": "Luther stated that he could not repair the ravages by writing, but only by his personal presence and living word",
+          "score": 0.5635359168016554
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized the primacy of core Christian values such as love, patience, charity, and freedom",
+          "score": 0.5026859261953143
+        },
+        {
+          "memory": "Luther wrote to the Elector about Satan entering his sheepfold during his absence",
+          "score": 0.48771802778850637
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.47127083149906873
+        },
+        {
+          "memory": "Luther preached eight sermons for eight days in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.428291236319275
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.4071420041133412
+        }
+      ],
+      "add_time": 21.282,
+      "search_time": 4.019,
+      "answer_time": 0.672,
+      "total_time": 25.973,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_b945ea7c",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "Preached eight sermons.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Luther preached eight sermons for eight days in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.45456490700601165
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.31128096774441155
+        },
+        {
+          "memory": "Luther wrote to the Elector about the ravages committed by Satan during his absence",
+          "score": 0.2837513567361901
+        },
+        {
+          "memory": "Luther stated that he could not repair the ravages by writing, but only by his personal presence and living word",
+          "score": 0.2746630580474989
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized the primacy of core Christian values such as love, patience, charity, and freedom",
+          "score": 0.25525022413110515
+        },
+        {
+          "memory": "Luther reminded the citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.24842670335455153
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.24036325144109466
+        }
+      ],
+      "add_time": 21.528,
+      "search_time": 5.05,
+      "answer_time": 0.911,
+      "total_time": 27.489,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_06abfedc",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "Trust God's Word rather than violence.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded the citizens to trust God's Word rather than violence to bring about necessary change",
+          "score": 0.7037306064240384
+        },
+        {
+          "memory": "Luther stated that he could not repair the ravages by writing, but only by his personal presence and living word",
+          "score": 0.6227128121343928
+        },
+        {
+          "memory": "In the Invocavit Sermons, Luther emphasized the primacy of core Christian values such as love, patience, charity, and freedom",
+          "score": 0.5442332825610763
+        },
+        {
+          "memory": "Luther preached eight sermons for eight days in Lent, beginning on Invocavit Sunday, 9 March",
+          "score": 0.4808674454058689
+        },
+        {
+          "memory": "Luther secretly returned to Wittenberg on 6 March 1522",
+          "score": 0.4626934228588007
+        },
+        {
+          "memory": "Luther wrote to the Elector about Satan entering his sheepfold during his absence",
+          "score": 0.4582711503734972
+        },
+        {
+          "memory": "The eight sermons preached by Luther are known as the Invocavit Sermons",
+          "score": 0.43738456124653746
+        }
+      ],
+      "add_time": 23.733,
+      "search_time": 2.685,
+      "answer_time": 0.682,
+      "total_time": 27.1,
+      "em": 0,
+      "f1": 0.4,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_8763cd1d",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "French irregular forces, Canadian scouts, and Indians",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.7832104729969882
+        },
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged Fort William Henry",
+          "score": 0.7081540702654091
+        },
+        {
+          "memory": "In February 1757, French irregular forces, Canadian scouts, and Indians launched a raid against the position across Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.6821385389816371
+        },
+        {
+          "memory": "In January 1757, French irregular forces, Canadian scouts, and Indians ambushed British Rangers near Ticonderoga",
+          "score": 0.6573811854863731
+        },
+        {
+          "memory": "During the withdrawal from Fort William Henry, some of Montcalm's Indian allies attacked the British column",
+          "score": 0.6223606057208267
+        },
+        {
+          "memory": "Fort William Henry capitulated with an agreement to withdraw under parole",
+          "score": 0.4951265388192232
+        },
+        {
+          "memory": "The attack on the British column resulted in the killing and capturing of several hundred men, women, children, and slaves",
+          "score": 0.43891894366183093
+        },
+        {
+          "memory": "Some Indians who participated in the campaign traveled from beyond the Mississippi and returned having been exposed to European carriers",
+          "score": 0.3503754509221977
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.2477785108676791
+        }
+      ],
+      "add_time": 27.179,
+      "search_time": 3.436,
+      "answer_time": 1.176,
+      "total_time": 31.791,
+      "em": 0,
+      "f1": 0.6,
+      "bleu": 0.2857
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_df4ccdbc",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "Lake George",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "French irregular forces, Canadian scouts, and Indians harassed Fort William Henry throughout the first half of 1757",
+          "score": 0.6440260815216735
+        },
+        {
+          "memory": "In early August 1757, Montcalm and 7,000 troops besieged Fort William Henry",
+          "score": 0.6422145519668128
+        },
+        {
+          "memory": "During the withdrawal from Fort William Henry, some of Montcalm's Indian allies attacked the British column",
+          "score": 0.5748511096006917
+        },
+        {
+          "memory": "In February 1757, French irregular forces launched a raid against the position across Lake George, destroying storehouses and buildings outside the main fortification",
+          "score": 0.5672401966989956
+        },
+        {
+          "memory": "In January 1757, French irregular forces ambushed British Rangers near Ticonderoga",
+          "score": 0.5544841225385402
+        },
+        {
+          "memory": "Fort William Henry capitulated with an agreement to withdraw under parole",
+          "score": 0.5493930332946297
+        },
+        {
+          "memory": "The attack on the British column resulted in the killing and capturing of several hundred men, women, children, and slaves",
+          "score": 0.3451233923429798
+        },
+        {
+          "memory": "Some Indians who participated in the campaign traveled from beyond the Mississippi and returned having been exposed to European carriers",
+          "score": 0.2625077052769549
+        },
+        {
+          "memory": "The aftermath of the siege may have contributed to the transmission of smallpox into remote Indian populations",
+          "score": 0.20144790182947686
+        }
+      ],
+      "add_time": 32.726,
+      "search_time": 2.189,
+      "answer_time": 0.872,
+      "total_time": 35.787,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_228d0bcb",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "Guidance and intervention",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "People from tropical climates were seen as needing guidance and intervention from the European Empire for governance",
+          "score": 0.6608598792410285
+        },
+        {
+          "memory": "It was believed that people from tropical climates were incapable of establishing a more evolved social structure",
+          "score": 0.5229445668860999
+        },
+        {
+          "memory": "Tropical climates were believed to yield lazy attitudes, sexual promiscuity, exotic culture, and moral degeneracy",
+          "score": 0.472134971380062
+        },
+        {
+          "memory": "Geographic scholars under colonizing empires believed the world could be split into climatic zones",
+          "score": 0.3744099075525413
+        },
+        {
+          "memory": "Northern Europe and the mid-Atlantic temperate climate were thought to produce hard-working, moral, and upstanding individuals",
+          "score": 0.3695473855700014
+        },
+        {
+          "memory": "Orientalism is a view of a people based on their geographical location",
+          "score": 0.2730287198168655
+        }
+      ],
+      "add_time": 21.116,
+      "search_time": 3.321,
+      "answer_time": 1.129,
+      "total_time": 25.566,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_0b0e3c12",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "Radio Corporation of America (RCA)",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: CBS, Mutual Broadcasting System, and NBC",
+          "score": 0.6660124116754262
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.6146717877321612
+        },
+        {
+          "memory": "NBC Blue was created in 1927",
+          "score": 0.5516154039836441
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.5142345717813968
+        },
+        {
+          "memory": "NBC Blue was created for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.4736775911908717
+        },
+        {
+          "memory": "NBC Red served the major cities and tested drama series",
+          "score": 0.43357031528401635
+        }
+      ],
+      "add_time": 22.131,
+      "search_time": 2.746,
+      "answer_time": 1.48,
+      "total_time": 26.357,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 0.8
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_e5992630",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "Major cities",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "NBC Blue was created for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.7284626398505832
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.7062277247157992
+        },
+        {
+          "memory": "NBC Red served the major cities",
+          "score": 0.6919231399463145
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.5463999083788786
+        },
+        {
+          "memory": "NBC Blue was created in 1927",
+          "score": 0.5114880238449331
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: CBS, Mutual Broadcasting System, and NBC",
+          "score": 0.5039231090489995
+        },
+        {
+          "memory": "NBC Blue was used to test drama series",
+          "score": 0.49440242216718633
+        }
+      ],
+      "add_time": 24.611,
+      "search_time": 3.224,
+      "answer_time": 0.889,
+      "total_time": 28.724,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_536d9c26",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "NBC Blue",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "NBC Blue was created for the primary purpose of testing new programs in markets of lesser importance than those served by NBC Red",
+          "score": 0.6689121264794837
+        },
+        {
+          "memory": "NBC Blue was used to test drama series",
+          "score": 0.6055052325223728
+        },
+        {
+          "memory": "RCA operated two radio networks: NBC Blue and NBC Red",
+          "score": 0.5703319583238952
+        },
+        {
+          "memory": "In the 1930s, radio in the United States was dominated by three companies: CBS, Mutual Broadcasting System, and NBC",
+          "score": 0.557821098769211
+        },
+        {
+          "memory": "NBC was owned by the Electronics Manufacturer Radio Corporation of America (RCA)",
+          "score": 0.5061827607264964
+        },
+        {
+          "memory": "NBC Red served the major cities",
+          "score": 0.5060898462048545
+        },
+        {
+          "memory": "NBC Blue network was created in 1927",
+          "score": 0.4996894894770187
+        }
+      ],
+      "add_time": 24.889,
+      "search_time": 2.156,
+      "answer_time": 1.211,
+      "total_time": 28.256,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 1.0
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_ce45d898",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "pH or available iron",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Commensal flora can change environmental conditions, such as pH or available iron",
+          "score": 0.7741570835629242
+        },
+        {
+          "memory": "Commensal flora in the genitourinary and gastrointestinal tracts serve as biological barriers by competing with pathogenic bacteria for food and space",
+          "score": 0.6524746869335991
+        },
+        {
+          "memory": "The presence of commensal flora reduces the probability that pathogens will reach sufficient numbers to cause illness",
+          "score": 0.6467802507218836
+        },
+        {
+          "memory": "Preliminary data suggests probiotics may be helpful in studies on bacterial gastroenteritis, inflammatory bowel diseases, urinary tract infections, and post-surgical infections",
+          "score": 0.4678552545738285
+        },
+        {
+          "memory": "Reintroduction of probiotic flora, such as pure cultures of lactobacilli found in unpasteurized yogurt, helps restore a healthy balance of microbial populations",
+          "score": 0.46360893484976223
+        },
+        {
+          "memory": "Oral antibiotics can lead to an overgrowth of fungi and cause conditions such as vaginal candidiasis",
+          "score": 0.43903548179240137
+        },
+        {
+          "memory": "Probiotics are beneficial in treating intestinal infections in children",
+          "score": 0.4328775840433138
+        },
+        {
+          "memory": "Most antibiotics non-specifically target bacteria and do not affect fungi",
+          "score": 0.32895413809018315
+        },
+        {
+          "memory": "Vaginal candidiasis is a type of yeast infection",
+          "score": 0.23665620835497633
+        }
+      ],
+      "add_time": 27.915,
+      "search_time": 6.184,
+      "answer_time": 0.796,
+      "total_time": 34.895,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_7160e559",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "Rugby",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.7633943666317594
+        },
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.6887755674196656
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.6416231391549698
+        }
+      ],
+      "add_time": 12.782,
+      "search_time": 2.418,
+      "answer_time": 0.65,
+      "total_time": 15.85,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_61033e44",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "High school",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.4688826051628591
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.4370541437861133
+        },
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.4162011020617101
+        }
+      ],
+      "add_time": 11.766,
+      "search_time": 6.948,
+      "answer_time": 0.547,
+      "total_time": 19.261,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_449e47f3",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "An official school sport",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rugby is particularly growing at the high school level in Southern California",
+          "score": 0.688273595628102
+        },
+        {
+          "memory": "Increasing numbers of schools in Southern California are adding rugby as an official school sport",
+          "score": 0.6140129067736799
+        },
+        {
+          "memory": "Rugby is a growing sport in Southern California",
+          "score": 0.5722058579014915
+        }
+      ],
+      "add_time": 9.68,
+      "search_time": 3.703,
+      "answer_time": 0.658,
+      "total_time": 14.041,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_208a7930",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7761158297388779
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine)",
+          "score": 0.6222691838106993
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.6146684152805217
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.5634719174539543
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.443028943321738
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.3842331610619667
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.29733592256981367
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel'",
+          "score": 0.2248974967362643
+        },
+        {
+          "memory": "'Esel' is also the local pronunciation of 'essel', meaning 'donkey'",
+          "score": 0.15938157522315832
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.11868494430835473
+        }
+      ],
+      "add_time": 25.586,
+      "search_time": 3.86,
+      "answer_time": 0.658,
+      "total_time": 30.105,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_65f30631",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "Donkey",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.618695383251979
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.49160804849128925
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.45112031741761205
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine)",
+          "score": 0.4435424861887143
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel'",
+          "score": 0.3338616426819163
+        },
+        {
+          "memory": "The local pronunciation of 'essel' means 'donkey'",
+          "score": 0.3082945871819657
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.25225059325905663
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.24245494804258028
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.19612368046566747
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.1724182513269422
+        }
+      ],
+      "add_time": 23.607,
+      "search_time": 7.122,
+      "answer_time": 2.551,
+      "total_time": 33.28,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_79bff141",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7771308236749279
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine)",
+          "score": 0.6513079700132922
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.6136435452364667
+        },
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.5566562272394664
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.4214858365291716
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.4073514216805244
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.3332425439113099
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel'",
+          "score": 0.23799503093757124
+        },
+        {
+          "memory": "The local pronunciation of 'essel' means 'donkey'",
+          "score": 0.21905362799917463
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.14244718341128762
+        }
+      ],
+      "add_time": 27.716,
+      "search_time": 7.523,
+      "answer_time": 0.973,
+      "total_time": 36.212,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_1299b0d7",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "An inland delta",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The natural Rhine originally branched into at least two arms",
+          "score": 0.6150582260408651
+        },
+        {
+          "memory": "The mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.5221350117387272
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine (Old Rhine)",
+          "score": 0.4999014479901819
+        },
+        {
+          "memory": "The natural Rhine formed small islands by precipitating sediments",
+          "score": 0.4960356936158618
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Geisau, H\u00f6chst, and Fu\u00dfach",
+          "score": 0.4830617695590252
+        },
+        {
+          "memory": "The delta is delimited in the east by a modern canalized section",
+          "score": 0.24802596863418808
+        },
+        {
+          "memory": "In the local Alemannic dialect, the singular is pronounced 'esel'",
+          "score": 0.23443377547049998
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.13264132119503358
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'esel'",
+          "score": 0.13192557329818694
+        },
+        {
+          "memory": "The local pronunciation of 'essel' means 'donkey'",
+          "score": 0.10355551992797361
+        }
+      ],
+      "add_time": 23.047,
+      "search_time": 4.703,
+      "answer_time": 0.943,
+      "total_time": 28.693,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_87838adf",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "Kim Wilkie",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.7589866915772777
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.6244160233941907
+        },
+        {
+          "memory": "The layout of the garden is formal",
+          "score": 0.541157443198066
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a subtle blend of the traditional and modern",
+          "score": 0.5264235472702586
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.49421992255015657
+        },
+        {
+          "memory": "The garden features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.46054696938688544
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.433652982927532
+        },
+        {
+          "memory": "An American sweetgum tree is planted in each of the two corners by the north fa\u00e7ade",
+          "score": 0.3697228020546812
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer",
+          "score": 0.36679309031684726
+        },
+        {
+          "memory": "The glass planters are replaced by bay trees in winter",
+          "score": 0.3615456010882741
+        }
+      ],
+      "add_time": 30.3,
+      "search_time": 2.854,
+      "answer_time": 2.014,
+      "total_time": 35.168,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_09902a96",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "Elliptical",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The garden features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.6337539887523367
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a subtle blend of traditional and modern elements",
+          "score": 0.5102366302838143
+        },
+        {
+          "memory": "The water feature may be drained to use the area for receptions, gatherings, or exhibition purposes",
+          "score": 0.45529589971091233
+        },
+        {
+          "memory": "The layout of the garden is formal",
+          "score": 0.441028884238188
+        },
+        {
+          "memory": "The central garden opened as the John Medesky Garden on 5 July 2005",
+          "score": 0.4345538803463728
+        },
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.3983445032157657
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.37965749239150687
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.34182970179466055
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.33677843324509704
+        },
+        {
+          "memory": "Paths in front of the herbaceous borders continue along the south fa\u00e7ade",
+          "score": 0.29309092556967326
+        }
+      ],
+      "add_time": 30.749,
+      "search_time": 4.303,
+      "answer_time": 0.791,
+      "total_time": 35.842,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_2c6ea037",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "Receptions, gatherings, or exhibition purposes",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The water feature may be drained to use the area for receptions, gatherings, or exhibition purposes",
+          "score": 0.6844658523762523
+        },
+        {
+          "memory": "The garden features an elliptical water feature lined in stone with steps around the edge",
+          "score": 0.5612483651087844
+        },
+        {
+          "memory": "The glass planters are replaced by bay trees in winter",
+          "score": 0.3193927450497225
+        },
+        {
+          "memory": "Paths in front of the herbaceous borders continue along the south fa\u00e7ade",
+          "score": 0.3089329596778325
+        },
+        {
+          "memory": "The layout of the garden is formal",
+          "score": 0.2979699551666603
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.2952225985061018
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.29390761758714956
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.28403085566910036
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a subtle blend of traditional and modern elements",
+          "score": 0.27188166923695634
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer",
+          "score": 0.26832496797561767
+        }
+      ],
+      "add_time": 34.887,
+      "search_time": 3.745,
+      "answer_time": 0.913,
+      "total_time": 39.545,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 0.6
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_e05f4448",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "American sweetgum tree",
+      "num_memories_added": 13,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "An American sweetgum tree is planted in each of the two corners by the north fa\u00e7ade",
+          "score": 0.7610578895126443
+        },
+        {
+          "memory": "The glass planters are replaced by bay trees in winter",
+          "score": 0.5218625598740354
+        },
+        {
+          "memory": "The southern, eastern, and western edges of the lawns have glass planters containing orange and lemon trees in summer",
+          "score": 0.5031137692270965
+        },
+        {
+          "memory": "Paths in front of the herbaceous borders continue along the south fa\u00e7ade",
+          "score": 0.4854131618332075
+        },
+        {
+          "memory": "The north, east, and west sides of the garden have herbaceous borders along the museum walls",
+          "score": 0.4807208191576668
+        },
+        {
+          "memory": "The layout of the garden is formal",
+          "score": 0.3862466186535737
+        },
+        {
+          "memory": "The central garden was redesigned by Kim Wilkie",
+          "score": 0.37991737038113366
+        },
+        {
+          "memory": "A central path flanked by lawns leads to the sculpture gallery",
+          "score": 0.37790982091806025
+        },
+        {
+          "memory": "The design of the John Medesky Garden is a subtle blend of traditional and modern elements",
+          "score": 0.36188623921487073
+        },
+        {
+          "memory": "The garden is located in front of the bronze doors leading to the refreshment rooms",
+          "score": 0.3607854186975643
+        }
+      ],
+      "add_time": 31.649,
+      "search_time": 2.922,
+      "answer_time": 0.787,
+      "total_time": 35.359,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_37eda73c",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "Static equilibrium",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium",
+          "score": 0.676513830180281
+        },
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.4377587680185404
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.4205037809528904
+        },
+        {
+          "memory": "In static equilibrium, several forces canceled each other out",
+          "score": 0.35976461932785575
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.34952189593372107
+        },
+        {
+          "memory": "The resultant or net force is determined when two forces act on a point particle",
+          "score": 0.33499216636681395
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.28732766938640975
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.2764559257124238
+        },
+        {
+          "memory": "The variation in magnitude of the resultant depends on the angle between the lines of action of the forces",
+          "score": 0.2700993495376142
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.10729452399584855
+        }
+      ],
+      "add_time": 29.352,
+      "search_time": 4.008,
+      "answer_time": 0.578,
+      "total_time": 33.939,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_49a40b14",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "Magnitude and direction",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.7806284007974678
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.5316869992700346
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.5002333882414532
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium",
+          "score": 0.49088813248191865
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.49046567669772934
+        },
+        {
+          "memory": "The resultant or net force is determined when two forces act on a point particle",
+          "score": 0.4486789951263945
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.43613546534373626
+        },
+        {
+          "memory": "The variation in magnitude of the resultant depends on the angle between the lines of action of the forces",
+          "score": 0.4338623739190366
+        },
+        {
+          "memory": "In static equilibrium, several forces canceled each other out",
+          "score": 0.41596157233995823
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.3795088632728276
+        }
+      ],
+      "add_time": 29.334,
+      "search_time": 3.248,
+      "answer_time": 0.773,
+      "total_time": 33.354,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_33fc7df7",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "Resultant force",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The resultant or net force is determined when two forces act on a point particle",
+          "score": 0.8172738818814187
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.6489069856179621
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.6364661705825926
+        },
+        {
+          "memory": "The variation in magnitude of the resultant depends on the angle between the lines of action of the forces",
+          "score": 0.5837878047783203
+        },
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.5423625346463081
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.5228214101888201
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.4680061903299989
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium",
+          "score": 0.4478704940793943
+        },
+        {
+          "memory": "In static equilibrium, several forces canceled each other out",
+          "score": 0.4442702883617898
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.43754743435248233
+        }
+      ],
+      "add_time": 33.105,
+      "search_time": 3.682,
+      "answer_time": 0.852,
+      "total_time": 37.638,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_6a228a6e",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "Their respective lines of application",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of application must be specified to account for their effects on the motion of the body",
+          "score": 0.832805026804959
+        },
+        {
+          "memory": "Forces were first quantitatively investigated in conditions of static equilibrium",
+          "score": 0.47092489896025536
+        },
+        {
+          "memory": "Forces are additive vector quantities",
+          "score": 0.45909519782229646
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.4415064445366954
+        },
+        {
+          "memory": "When two forces act on a point particle, the resulting force is known as the resultant or net force",
+          "score": 0.41572065274696457
+        },
+        {
+          "memory": "The variation in magnitude of the resultant depends on the angle between the lines of action of the forces",
+          "score": 0.41264984146229
+        },
+        {
+          "memory": "In static equilibrium, several forces canceled each other out",
+          "score": 0.3991647034653363
+        },
+        {
+          "memory": "The resultant force can be determined by following the parallelogram rule of vector addition",
+          "score": 0.3821524315933351
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.35037451578356116
+        },
+        {
+          "memory": "The addition of two vectors represented by the sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.25738730417610556
+        }
+      ],
+      "add_time": 36.647,
+      "search_time": 2.504,
+      "answer_time": 0.678,
+      "total_time": 39.829,
+      "em": 0,
+      "f1": 0.8889,
+      "bleu": 0.8
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_07844ed7",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "October 1973",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.909974196188247
+        },
+        {
+          "memory": "The 1973 oil crisis is referred to as the 'first oil shock'",
+          "score": 0.740901949729069
+        },
+        {
+          "memory": "OAPEC proclaimed an oil embargo in October 1973",
+          "score": 0.6214944707593894
+        },
+        {
+          "memory": "The 1979 oil crisis is referred to as the 'second oil shock'",
+          "score": 0.6213743320196949
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.5946834225216662
+        },
+        {
+          "memory": "The embargo caused an oil crisis, or shock, with many short and long-term effects on global politics and the global economy",
+          "score": 0.5036817833642391
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) consists of the Arab members of OPEC plus Egypt and Syria",
+          "score": 0.2482520754094533
+        }
+      ],
+      "add_time": 19.678,
+      "search_time": 1.991,
+      "answer_time": 0.655,
+      "total_time": 22.324,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_3afc4fe2",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "Oil shock",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The 1979 oil crisis is referred to as the 'second oil shock'",
+          "score": 0.6584102673219572
+        },
+        {
+          "memory": "The 1973 oil crisis is referred to as the 'first oil shock'",
+          "score": 0.641819274385856
+        },
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.610103998905376
+        },
+        {
+          "memory": "The embargo caused an oil crisis, or shock, with many short and long-term effects on global politics and the global economy",
+          "score": 0.6011805179064738
+        },
+        {
+          "memory": "OAPEC proclaimed an oil embargo in October 1973",
+          "score": 0.5108354960984988
+        },
+        {
+          "memory": "By the end of the embargo in March 1974, the price of oil had risen from $3 per barrel to nearly $12 globally",
+          "score": 0.4565306167028226
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) consists of the Arab members of OPEC plus Egypt and Syria",
+          "score": 0.24033594749240916
+        }
+      ],
+      "add_time": 21.187,
+      "search_time": 1.868,
+      "answer_time": 0.573,
+      "total_time": 23.628,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_d6863f86",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "Peanuts television specials",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Since 2000, ABC has owned the television rights to most of the Peanuts television specials",
+          "score": 0.6652211950848792
+        },
+        {
+          "memory": "ABC acquired the broadcast rights to Peanuts specials from CBS",
+          "score": 0.531568393870502
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Disney Parks Christmas Day Parade",
+          "score": 0.49705381319174635
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Emmy Awards",
+          "score": 0.48906238894545556
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards",
+          "score": 0.47832000550911935
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include It's the Great Pumpkin, Charlie Brown and A Charlie Brown Thanksgiving",
+          "score": 0.47642828014670974
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the American Music Awards",
+          "score": 0.4499968721597697
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Tournament of Roses Parade",
+          "score": 0.4484357311808832
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the CMA Music Festival",
+          "score": 0.4197092208822375
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Country Music Association Awards",
+          "score": 0.4190800675137096
+        }
+      ],
+      "add_time": 24.06,
+      "search_time": 3.575,
+      "answer_time": 0.715,
+      "total_time": 28.351,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_c1c984f7",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "Academy Awards",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "ABC currently holds the broadcast rights to the Academy Awards",
+          "score": 0.7199313055742371
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Emmy Awards",
+          "score": 0.7002542134245984
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the American Music Awards",
+          "score": 0.6285558275994104
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Country Music Association Awards",
+          "score": 0.6099436761440686
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the CMA Music Festival",
+          "score": 0.5635281955470373
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Disney Parks Christmas Day Parade",
+          "score": 0.5605346291211115
+        },
+        {
+          "memory": "ABC currently holds the broadcast rights to the Tournament of Roses Parade",
+          "score": 0.5574278955064322
+        },
+        {
+          "memory": "Since 2000, ABC has owned the television rights to most of the Peanuts television specials",
+          "score": 0.5039012447970235
+        },
+        {
+          "memory": "ABC acquired the broadcast rights to Peanuts specials from CBS",
+          "score": 0.37844123662493345
+        },
+        {
+          "memory": "Other Peanuts specials broadcast annually by ABC include It's the Great Pumpkin, Charlie Brown and A Charlie Brown Thanksgiving",
+          "score": 0.3735209858070555
+        }
+      ],
+      "add_time": 27.05,
+      "search_time": 4.207,
+      "answer_time": 0.784,
+      "total_time": 32.041,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_7d6e647b",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "No",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "BSkyB has no veto over the presence of channels on their EPG",
+          "score": 0.8399971546527809
+        },
+        {
+          "memory": "BSkyB does not have control over the channel's content",
+          "score": 0.667808616038515
+        },
+        {
+          "memory": "BSkyB does not have control over carriage issues such as picture quality",
+          "score": 0.5933870336276759
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0E is entitled to access BSkyB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.588615898899499
+        },
+        {
+          "memory": "Third-party channels may receive actual payment for being carried on BSkyB",
+          "score": 0.5772767038591741
+        },
+        {
+          "memory": "Third-party channels may receive free carriage on a BSkyB leased transponder",
+          "score": 0.5618596378060399
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts on EPG access",
+          "score": 0.5155641141350511
+        },
+        {
+          "memory": "Discounts for third-party channels can include reduced prices or free EPG entries",
+          "score": 0.4990434101992314
+        },
+        {
+          "memory": "Open access is an enforced part of BSkyB's operating license from Ofcom",
+          "score": 0.49007469618826494
+        }
+      ],
+      "add_time": 23.206,
+      "search_time": 1.962,
+      "answer_time": 0.777,
+      "total_time": 25.945,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_c5a2cb57",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB does not have control over the channel's content",
+          "score": 0.7827972914428656
+        },
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.6732787701016371
+        },
+        {
+          "memory": "BSKYB does not have control over carriage issues such as picture quality",
+          "score": 0.632707352111185
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access BSKYB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.5863072532273674
+        },
+        {
+          "memory": "Third-party channels can receive actual payment for being carried on BSKYB",
+          "score": 0.5642245629402769
+        },
+        {
+          "memory": "Third-party channels can receive free carriage on a BSKYB leased transponder",
+          "score": 0.5179443057860923
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.5059978705935254
+        },
+        {
+          "memory": "Discounts for third-party channels can include reduced prices or free EPG entries",
+          "score": 0.4016703452946623
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts",
+          "score": 0.2756773275030243
+        }
+      ],
+      "add_time": 30.035,
+      "search_time": 3.947,
+      "answer_time": 0.926,
+      "total_time": 34.908,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_d2e682f3",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "No",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "BSKYB does not have control over carriage issues such as picture quality",
+          "score": 0.7556491003839758
+        },
+        {
+          "memory": "BSKYB does not have control over the channel's content",
+          "score": 0.6836794430595681
+        },
+        {
+          "memory": "BSKYB has no veto over the presence of channels on their EPG",
+          "score": 0.6304019977327331
+        },
+        {
+          "memory": "Any channel that can get carriage on a suitable beam of a satellite at 28\u00b0 East is entitled to access BSKYB's EPG for a fee ranging from \u00a315 to \u00a3100,000",
+          "score": 0.5705269104490841
+        },
+        {
+          "memory": "Open access is an enforced part of BSKYB's operating license from Ofcom",
+          "score": 0.44015766085752306
+        },
+        {
+          "memory": "Discounts for third-party channels can include reduced prices or free EPG entries",
+          "score": 0.3779005655719457
+        },
+        {
+          "memory": "Discounts can also include free carriage on a BSKYB leased transponder or actual payment for being carried",
+          "score": 0.288207753599094
+        },
+        {
+          "memory": "Third-party channels that opt for encryption receive discounts",
+          "score": 0.28561526346865695
+        }
+      ],
+      "add_time": 25.167,
+      "search_time": 3.577,
+      "answer_time": 0.79,
+      "total_time": 29.535,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_ff4e517e",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "William Booth",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "William Booth was the founder of the Salvation Army",
+          "score": 0.7324634305699689
+        },
+        {
+          "memory": "John Wesley is revered as the founder of Methodism",
+          "score": 0.3977750551599509
+        },
+        {
+          "memory": "Notable examples of saints include St. Matthew, Dietrich Bonhoeffer, William Booth, David Livingstone, and John Wesley",
+          "score": 0.2995860615367868
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.26095156076628234
+        },
+        {
+          "memory": "Methodist institutions may be named after a biblical figure, such as St. James U.M.C.",
+          "score": 0.25835589950237864
+        },
+        {
+          "memory": "Methodists honor notable heroes and heroines of the Christian faith as examples of holy living and commitment to Christ",
+          "score": 0.2458367460804064
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr to the Nazis",
+          "score": 0.24100406795565804
+        },
+        {
+          "memory": "1 Corinthians 11:1 references the imitation of prominent saints",
+          "score": 0.1508313038462612
+        },
+        {
+          "memory": "Exemplary saints include martyrs, confessors of the faith, evangelists, and important biblical figures",
+          "score": 0.12312714368713851
+        }
+      ],
+      "add_time": 25.277,
+      "search_time": 2.996,
+      "answer_time": 0.545,
+      "total_time": 28.818,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_b874aabf",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "John Wesley",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "John Wesley is revered as the founder of Methodism",
+          "score": 0.8231459389262059
+        },
+        {
+          "memory": "Methodists honor notable heroes and heroines of the Christian faith as examples of holy living and commitment to Christ",
+          "score": 0.5440513037847388
+        },
+        {
+          "memory": "Methodist institutions may be named after a biblical figure, such as St. James U.M.C.",
+          "score": 0.5321004970431853
+        },
+        {
+          "memory": "Notable examples of saints include St. Matthew, Dietrich Bonhoeffer, William Booth, David Livingstone, and John Wesley",
+          "score": 0.4405734318551351
+        },
+        {
+          "memory": "William Booth was the founder of the Salvation Army",
+          "score": 0.38042621578938374
+        },
+        {
+          "memory": "1 Corinthians 11:1 references the imitation of prominent saints",
+          "score": 0.2872418682042931
+        },
+        {
+          "memory": "David Livingstone was an African missionary",
+          "score": 0.2841321591831729
+        },
+        {
+          "memory": "Dietrich Bonhoeffer was a Lutheran theologian and martyr to the Nazis",
+          "score": 0.2772611604257862
+        },
+        {
+          "memory": "Exemplary saints include martyrs, confessors of the faith, evangelists, and important biblical figures",
+          "score": 0.2348845432276663
+        }
+      ],
+      "add_time": 25.491,
+      "search_time": 1.97,
+      "answer_time": 0.639,
+      "total_time": 28.101,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_05faf74e",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "Elton Rule",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Elton Rule was named President and Chief Operating Officer of ABC a few months after Goldenson reduced his role in the company following a heart attack",
+          "score": 0.7797435693431389
+        },
+        {
+          "memory": "On January 17, 1972, Elton Rule was named President and Chief Operating Officer of ABC",
+          "score": 0.5811203231097255
+        },
+        {
+          "memory": "ABC Great States was the Central West Division of ABC Theatres",
+          "score": 0.3477930099803388
+        },
+        {
+          "memory": "ABC Great States was sold to Henry Plitt in 1974",
+          "score": 0.33114224908077156
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act banned cigarette advertising from all television and radio networks, including ABC",
+          "score": 0.31783846681471606
+        },
+        {
+          "memory": "In April 1970, Congress passed the Public Health Cigarette Smoking Act",
+          "score": 0.15484147289949657
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act took effect on January 2, 1971",
+          "score": 0.15460263335383043
+        },
+        {
+          "memory": "The act cited the limited profitability of its cinemas",
+          "score": 0.13014989984436032
+        }
+      ],
+      "add_time": 20.959,
+      "search_time": 3.443,
+      "answer_time": 0.712,
+      "total_time": 25.114,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_a6809633",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "Degrees of privilege",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Mote stated that the position of people within the four-class system did not indicate their actual social power and wealth",
+          "score": 0.501752084392376
+        },
+        {
+          "memory": "Mote described the four-class system as entailing 'degrees of privilege' to which people were entitled institutionally and legally",
+          "score": 0.49694989878165385
+        },
+        {
+          "memory": "Mote wrote that the usage of the term 'social classes' for the four-class system was misleading",
+          "score": 0.4914907286589331
+        },
+        {
+          "memory": "A person's standing within the classes did not guarantee their social status",
+          "score": 0.4013643430072175
+        },
+        {
+          "memory": "Some Mongols and Simu lived in poverty and were ill-treated",
+          "score": 0.22738156482688013
+        },
+        {
+          "memory": "Frederick W. Mote is a historian",
+          "score": 0.22226174892685713
+        },
+        {
+          "memory": "There were less wealthy Mongols and Simu",
+          "score": 0.18588045010798837
+        },
+        {
+          "memory": "There were wealthy and socially well-standing Chinese individuals",
+          "score": 0.18260938459509352
+        }
+      ],
+      "add_time": 18.859,
+      "search_time": 2.092,
+      "answer_time": 0.898,
+      "total_time": 21.849,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_350409f0",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "Wealthy and socially well-standing",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "There were wealthy and socially well-standing Chinese individuals",
+          "score": 0.5865919782135469
+        },
+        {
+          "memory": "A person's standing within the classes did not guarantee their social status",
+          "score": 0.40395813749751985
+        },
+        {
+          "memory": "Some Mongols and Simu lived in poverty and were ill-treated",
+          "score": 0.35400751540374065
+        },
+        {
+          "memory": "There were less affluent Mongols and Simu",
+          "score": 0.34475919355259144
+        },
+        {
+          "memory": "The four-class system entailed 'degrees of privilege' to which people were entitled institutionally and legally",
+          "score": 0.3148257659352267
+        },
+        {
+          "memory": "Mote stated that the position of people within the four-class system did not indicate their actual social power and wealth",
+          "score": 0.29230109020009526
+        },
+        {
+          "memory": "Mote wrote that the usage of the term 'social classes' for the four-class system was misleading",
+          "score": 0.23037080483396594
+        },
+        {
+          "memory": "Frederick W. Mote is a historian",
+          "score": 0.07484565143292796
+        }
+      ],
+      "add_time": 24.474,
+      "search_time": 3.1,
+      "answer_time": 0.659,
+      "total_time": 28.233,
+      "em": 0,
+      "f1": 0.8,
+      "bleu": 0.5
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_45daab87",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.6916740795870004
+        },
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.5798884264397489
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.49937732778434357
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use",
+          "score": 0.4509678793770617
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.4420824355822779
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.42757045357336343
+        },
+        {
+          "memory": "There have been steam-powered automobiles, such as the Stanley Steamer",
+          "score": 0.41834978380481946
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.4079726423657137
+        },
+        {
+          "memory": "There have been steam-powered motorcycles, although without much success",
+          "score": 0.35826730773757987
+        }
+      ],
+      "add_time": 21.694,
+      "search_time": 4.481,
+      "answer_time": 0.648,
+      "total_time": 26.823,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_e6423573",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "Steamboats",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.7245185899128967
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.6261263511741533
+        },
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.6178977920303149
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use",
+          "score": 0.5904423865203642
+        },
+        {
+          "memory": "There have been steam-powered automobiles, such as the Stanley Steamer",
+          "score": 0.5631642009714517
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.5243992959330193
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.5179791793678641
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5110028783844345
+        },
+        {
+          "memory": "There have been steam-powered motorcycles, although without much success",
+          "score": 0.47536852876068814
+        }
+      ],
+      "add_time": 25.166,
+      "search_time": 4.193,
+      "answer_time": 0.751,
+      "total_time": 30.11,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_90146ea3",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "Stanley Steamer",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "There have been steam-powered automobiles, such as the Stanley Steamer",
+          "score": 0.7631321149919941
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.6329563528945823
+        },
+        {
+          "memory": "There have been steam-powered motorcycles, though without much success",
+          "score": 0.6222036067970181
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.5757486569578569
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.49529232255754074
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.4854933372842823
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use in factories, mills, and mines",
+          "score": 0.43701590001122403
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.4267652261620591
+        }
+      ],
+      "add_time": 20.443,
+      "search_time": 3.487,
+      "answer_time": 0.658,
+      "total_time": 24.588,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_3e4ee74d",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "Factories",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines drove machinery in factories, mills, and mines",
+          "score": 0.7452426575661991
+        },
+        {
+          "memory": "Steam engines were the driving force behind the Industrial Revolution",
+          "score": 0.5730515626446472
+        },
+        {
+          "memory": "Steam engines propelled transport appliances such as railway locomotives, ships, steamboats, and road vehicles",
+          "score": 0.5560134702308341
+        },
+        {
+          "memory": "Steam engines powered pumping stations",
+          "score": 0.5485810527738172
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use",
+          "score": 0.5030045393221974
+        },
+        {
+          "memory": "The use of steam engines in agriculture led to an increase in the land available for cultivation",
+          "score": 0.48796309806612737
+        },
+        {
+          "memory": "There have been steam-powered farm tractors",
+          "score": 0.4769823954907645
+        },
+        {
+          "memory": "There have been steam-powered automobiles, such as the Stanley Steamer",
+          "score": 0.4608534828711943
+        },
+        {
+          "memory": "There have been steam-powered motorcycles, although without much success",
+          "score": 0.3956415033600319
+        }
+      ],
+      "add_time": 25.507,
+      "search_time": 3.223,
+      "answer_time": 0.592,
+      "total_time": 29.322,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_58407118",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "Enrico Fermi",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Enrico Fermi created the first nuclear reactor",
+          "score": 0.711661982011603
+        },
+        {
+          "memory": "Edward Teller is known as the father of the hydrogen bomb",
+          "score": 0.38374498807570545
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.29616975582485955
+        },
+        {
+          "memory": "Luis Walter Alvarez was one of the most brilliant and productive experimental physicists of the 20th century",
+          "score": 0.29379287413123617
+        },
+        {
+          "memory": "Arthur H. Compton discovered the Compton effect",
+          "score": 0.2773557826435568
+        },
+        {
+          "memory": "Robert A. Millikan was notable for calculating the elementary charge",
+          "score": 0.2755596207672427
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.23139287337274733
+        },
+        {
+          "memory": "A. A. Michelson was notable for calculating the speed of light",
+          "score": 0.1867209267335982
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was an astrophysicist",
+          "score": 0.17475726544618614
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.17262274986413553
+        }
+      ],
+      "add_time": 24.69,
+      "search_time": 4.479,
+      "answer_time": 0.777,
+      "total_time": 29.946,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_c24df0ae",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "Edward Teller",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Edward Teller is known as the father of the hydrogen bomb",
+          "score": 0.7339375228115372
+        },
+        {
+          "memory": "Enrico Fermi created the first nuclear reactor",
+          "score": 0.4442869860756993
+        },
+        {
+          "memory": "Luis Walter Alvarez was one of the most brilliant and productive experimental physicists of the 20th century",
+          "score": 0.3415315346190946
+        },
+        {
+          "memory": "Robert A. Millikan was notable for calculating the elementary charge",
+          "score": 0.32831985123597884
+        },
+        {
+          "memory": "Arthur H. Compton discovered the Compton effect",
+          "score": 0.29601636435777484
+        },
+        {
+          "memory": "Murray Gell-Mann introduced the quark",
+          "score": 0.2573928219360156
+        },
+        {
+          "memory": "Subrahmanyan Chandra Sekhar was a notable astrophysicist",
+          "score": 0.2526443670576762
+        },
+        {
+          "memory": "Sung Tao Lee was the youngest American winner of the Nobel Prize",
+          "score": 0.24291882859104458
+        },
+        {
+          "memory": "A. A. Michelson was notable for calculating the speed of light",
+          "score": 0.23883522655020256
+        },
+        {
+          "memory": "Maria Goeppert Mayer was the second female Nobel laureate",
+          "score": 0.23599297998579416
+        }
+      ],
+      "add_time": 22.486,
+      "search_time": 3.63,
+      "answer_time": 1.265,
+      "total_time": 27.382,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_3f0c619d",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "Dallas, Texas",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The new denomination was given birth by the united churches",
+          "score": 0.6634440509148529
+        },
+        {
+          "memory": "The United Methodist Church was formed by the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.5128826339751706
+        },
+        {
+          "memory": "The Evangelical United Brethren Church and the Methodist Church had distinguished histories and influential ministries in various parts of the world",
+          "score": 0.45965134355831383
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.4383369433427817
+        },
+        {
+          "memory": "The proclamation made at the conference was, 'Lord of the Church, we are united in thee. In thy Church and now in the United Methodist Church,'",
+          "score": 0.43162894149757547
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.42015941193336903
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.38728296495825504
+        },
+        {
+          "memory": "The Constituting General Conference took place in Dallas, Texas",
+          "score": 0.3449419405245817
+        }
+      ],
+      "add_time": 21.257,
+      "search_time": 3.741,
+      "answer_time": 0.851,
+      "total_time": 25.849,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_0aba87e4",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The proclamation made at the conference was, 'Lord of the Church, we are united in thee. In thy Church and now in the United Methodist Church, the new denomination was given birth by thee.'",
+          "score": 0.5761840483817569
+        },
+        {
+          "memory": "Bishop Lloyd Christ Wick represented the Methodist Church",
+          "score": 0.3706902815297853
+        },
+        {
+          "memory": "Bishop Reuben H. Mueller represented the Evangelical United Brethren Church",
+          "score": 0.3640023585322862
+        },
+        {
+          "memory": "The United Methodist Church was formed by the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.3627254335365595
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.31996476146051256
+        },
+        {
+          "memory": "The Evangelical United Brethren Church and the Methodist Church had distinguished histories and influential ministries in various parts of the world",
+          "score": 0.3120706301428845
+        },
+        {
+          "memory": "The Constituting General Conference took place in Dallas, Texas",
+          "score": 0.25773679574229336
+        }
+      ],
+      "add_time": 18.93,
+      "search_time": 3.823,
+      "answer_time": 0.918,
+      "total_time": 23.671,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_e4bc1e0e",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "Waxy cuticle",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The waxy cuticle of many leaves is an example of a mechanical barrier",
+          "score": 0.8010038588103074
+        },
+        {
+          "memory": "The exoskeleton of insects is an example of a mechanical barrier",
+          "score": 0.6280039752382658
+        },
+        {
+          "memory": "Skin is an example of a mechanical barrier",
+          "score": 0.6168640154160427
+        },
+        {
+          "memory": "The shells and membranes of externally deposited eggs are examples of mechanical barriers",
+          "score": 0.5367187307452741
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.47704888243704896
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.4761920593419722
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.3612351520766892
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.341525232675842
+        },
+        {
+          "memory": "The flushing action of tears mechanically expels pathogens",
+          "score": 0.3335730744186935
+        },
+        {
+          "memory": "The flushing action of urine mechanically expels pathogens",
+          "score": 0.30104222529506974
+        }
+      ],
+      "add_time": 23.07,
+      "search_time": 2.076,
+      "answer_time": 0.665,
+      "total_time": 25.811,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_336360eb",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "Coughing and sneezing",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.6798284273223618
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.5510805986562146
+        },
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.5278514149583103
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.5128068704002702
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.48943442359612177
+        },
+        {
+          "memory": "The flushing action of tears mechanically expels pathogens",
+          "score": 0.4770138805014612
+        },
+        {
+          "memory": "The flushing action of urine mechanically expels pathogens",
+          "score": 0.45461176197651065
+        },
+        {
+          "memory": "Skin is an example of a mechanical barrier",
+          "score": 0.4310558008890976
+        },
+        {
+          "memory": "The shells and membranes of externally deposited eggs are examples of mechanical barriers",
+          "score": 0.4078253353613316
+        },
+        {
+          "memory": "The exoskeleton of insects is an example of a mechanical barrier",
+          "score": 0.39253845330717985
+        }
+      ],
+      "add_time": 22.81,
+      "search_time": 2.507,
+      "answer_time": 0.679,
+      "total_time": 25.995,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_a2e12a7d",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "Mucus",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.7773458252700256
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.5460561017349279
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.4172929116631413
+        },
+        {
+          "memory": "The flushing action of tears mechanically expels pathogens",
+          "score": 0.3943927375510097
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.37519896607738495
+        },
+        {
+          "memory": "The flushing action of urine mechanically expels pathogens",
+          "score": 0.34097455780467606
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.3253507150570879
+        },
+        {
+          "memory": "The shells and membranes of externally deposited eggs are examples of mechanical barriers",
+          "score": 0.3079160758011774
+        },
+        {
+          "memory": "Skin is an example of a mechanical barrier",
+          "score": 0.299968499030839
+        },
+        {
+          "memory": "The exoskeleton of insects is an example of a mechanical barrier",
+          "score": 0.26998784441882623
+        }
+      ],
+      "add_time": 25.918,
+      "search_time": 4.09,
+      "answer_time": 0.642,
+      "total_time": 30.65,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_01854bed",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "Tears",
+      "num_memories_added": 11,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The flushing action of tears mechanically expels pathogens",
+          "score": 0.7986635313806367
+        },
+        {
+          "memory": "The flushing action of urine mechanically expels pathogens",
+          "score": 0.7025895506186053
+        },
+        {
+          "memory": "Coughing and sneezing mechanically eject pathogens and other irritants from the respiratory tract",
+          "score": 0.44260846768673057
+        },
+        {
+          "memory": "Mechanical barriers serve as the first line of defense against infection",
+          "score": 0.3441655583195541
+        },
+        {
+          "memory": "Mucus secreted by the respiratory and gastrointestinal tracts traps and entangles microorganisms",
+          "score": 0.332197701675508
+        },
+        {
+          "memory": "Other systems protect body openings such as the lungs, intestines, and the genitourinary tract",
+          "score": 0.3100621066518249
+        },
+        {
+          "memory": "Several barriers protect organisms from infection, including mechanical, chemical, and biological barriers",
+          "score": 0.2968369535936233
+        },
+        {
+          "memory": "The waxy cuticle of many leaves is an example of a mechanical barrier",
+          "score": 0.2385245470345264
+        },
+        {
+          "memory": "The shells and membranes of externally deposited eggs are examples of mechanical barriers",
+          "score": 0.22866875342458165
+        },
+        {
+          "memory": "Skin is an example of a mechanical barrier",
+          "score": 0.22863975634387734
+        }
+      ],
+      "add_time": 25.214,
+      "search_time": 2.722,
+      "answer_time": 0.579,
+      "total_time": 28.515,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_8aafb5c2",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "Chicago Bears",
+      "num_memories_added": 3,
+      "num_memories_retrieved": 3,
+      "retrieved_memories": [
+        {
+          "memory": "Rivera was a linebacker with the Chicago Bears in Super Bowl XX",
+          "score": 0.7940813862514325
+        },
+        {
+          "memory": "Kubiak replaced Elway at the end of the Broncos' defeats in Super Bowls XXI and XXIV",
+          "score": 0.39294523286608785
+        },
+        {
+          "memory": "This will be the first Super Bowl in which both head coaches played in the game themselves",
+          "score": 0.37826501287587067
+        }
+      ],
+      "add_time": 12.296,
+      "search_time": 3.773,
+      "answer_time": 0.713,
+      "total_time": 16.781,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0
+    }
+  ]
+}

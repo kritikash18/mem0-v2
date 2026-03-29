@@ -243,6 +243,7 @@ async def evaluate_sample(
     sample: Dict,
     idx: int,
     openai_client: OpenAI,
+    include_llm_judge: bool = True,
 ) -> Dict[str, Any]:
     """
     Evaluate a single sample through the Cognee pipeline.
@@ -305,7 +306,7 @@ async def evaluate_sample(
             question=question,
             prediction=prediction,
             ground_truth=ground_truth,
-            include_llm_judge=True,
+            include_llm_judge=include_llm_judge,
             openai_client=openai_client,
         )
 
@@ -374,6 +375,7 @@ async def _run_evaluation_async(
     end: Optional[int] = None,
     search_type: Optional[str] = None,
     no_reset: bool = False,
+    skip_judge: bool = False,
 ) -> List[Dict[str, Any]]:
     """Async implementation of the evaluation runner."""
 
@@ -426,6 +428,7 @@ async def _run_evaluation_async(
             sample=sample,
             idx=idx,
             openai_client=openai_client,
+            include_llm_judge=not skip_judge,
         )
         results.append(result)
 
@@ -456,6 +459,7 @@ def run_evaluation(
     end: Optional[int] = None,
     search_type: Optional[str] = None,
     no_reset: bool = False,
+    skip_judge: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     Run full Cognee evaluation pipeline (sync wrapper).
@@ -467,8 +471,11 @@ def run_evaluation(
         num_samples: Number of samples to evaluate
         experiment_name: Name for output files
         sample_indices: Specific indices to evaluate
+        start: Start index for range-based evaluation
+        end: End index for range-based evaluation
         search_type: Cognee search type override
         no_reset: Disable prune between samples (memories accumulate across samples)
+        skip_judge: Skip LLM judge during evaluation (run later with run_judge.py)
 
     Returns:
         List of result dictionaries
@@ -481,6 +488,7 @@ def run_evaluation(
         end=end,
         search_type=search_type,
         no_reset=no_reset,
+        skip_judge=skip_judge,
     ))
 
 
@@ -639,6 +647,12 @@ def main():
         default=False,
         help="Disable prune between samples — Cognee knowledge graph accumulates across samples",
     )
+    parser.add_argument(
+        "--skip-judge",
+        action="store_true",
+        default=False,
+        help="Skip LLM judge during evaluation (saves cost). Run scoring later with run_judge.py",
+    )
 
     args = parser.parse_args()
 
@@ -660,6 +674,7 @@ def main():
         end=args.end,
         search_type=args.search_type,
         no_reset=args.no_reset,
+        skip_judge=args.skip_judge,
     )
 
 
