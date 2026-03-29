@@ -1,0 +1,3688 @@
+{
+  "config": {
+    "framework": "mem0",
+    "experiment": "full_wav2vec2_llama_0_50_ablation",
+    "dataset": "byteCode18/spoken-squad-memory-eval",
+    "asr": "local/facebook/wav2vec2-base-960h",
+    "llm": "ollama/llama3.2",
+    "embedder": "openai/text-embedding-3-small",
+    "judge": "openai/gpt-4o-mini",
+    "top_k": 10,
+    "infer_memories": true,
+    "cleanup_after_sample": false,
+    "query_mode": "text",
+    "judge_batch_size": 20,
+    "merged_from": [
+      "results/audio_eval/full_wav2vec2_llama_0_50_ablation_final.json",
+      "results/audio_eval/full_wav2vec2_llama_50_100_ablation_final.json"
+    ],
+    "merged_sample_count": 100
+  },
+  "summary": {
+    "count": 100,
+    "em_mean": 0.26,
+    "em_std": 0.4408,
+    "em_min": 0,
+    "em_max": 1,
+    "f1_mean": 0.3364,
+    "f1_std": 0.4391,
+    "f1_min": 0.0,
+    "f1_max": 1.0,
+    "bleu_mean": 0.3264,
+    "bleu_std": 0.4421,
+    "bleu_min": 0.0,
+    "bleu_max": 1.0,
+    "llm_mean": 0.37,
+    "llm_std": 0.4852,
+    "llm_min": 0,
+    "llm_max": 1,
+    "total_time_mean": 33.1674,
+    "total_time_std": 20.7322,
+    "total_time_min": 0.906,
+    "total_time_max": 66.977,
+    "add_time_mean": 32.2257,
+    "add_time_std": 20.9226,
+    "add_time_min": 0.633,
+    "add_time_max": 65.966,
+    "search_time_mean": 0.3643,
+    "search_time_std": 0.156,
+    "search_time_min": 0.24,
+    "search_time_max": 1.204,
+    "answer_time_mean": 0.5775,
+    "answer_time_std": 0.4579,
+    "answer_time_min": 0.0,
+    "answer_time_max": 1.117,
+    "em_correct": 26,
+    "em_pct": 26.0,
+    "llm_correct": 37,
+    "llm_pct": 37.0
+  },
+  "distributions": {
+    "f1": {
+      "total": 100,
+      "zero": 60,
+      "perfect": 26,
+      "above_50": 38,
+      "above_80": 27
+    },
+    "bleu": {
+      "total": 100,
+      "zero": 61,
+      "perfect": 27,
+      "above_50": 35,
+      "above_80": 27
+    }
+  },
+  "results": [
+    {
+      "idx": 0,
+      "user_id": "eval_0_c497e2ae",
+      "question": "What did Luther think was required to stop the violence?",
+      "ground_truth": "personal presence",
+      "prediction": "Trust in God's word.",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded the citizens to trust God's word rather than violence to bring about change",
+          "score": 0.687691560879718
+        },
+        {
+          "memory": "Luther emphasized Christian values such as love, patience, charity, and freedom",
+          "score": 0.5743782309297355
+        },
+        {
+          "memory": "Luther can only repair the damage by his personal presence and living word",
+          "score": 0.5685668723633168
+        },
+        {
+          "memory": "Luther secretly returned to Whittenburg on the sixth of March, fifteen twenty-two",
+          "score": 0.4807796375129986
+        },
+        {
+          "memory": "Luther wrote to the Elector during his absence",
+          "score": 0.47213168307661485
+        },
+        {
+          "memory": "In the Inocavitus sermons, Luther hammered home the primacy of Christ",
+          "score": 0.4581184255385904
+        },
+        {
+          "memory": "Luther preached eight sermons during Lent, beginning on Inocavitus Sunday",
+          "score": 0.4310066471633552
+        },
+        {
+          "memory": "The Inocavitus sermons became known as the Inocavitus sermons",
+          "score": 0.20895891249824222
+        },
+        {
+          "memory": "Satan has entered my sheepfold and committed ravages",
+          "score": 0.1892551710631681
+        }
+      ],
+      "add_time": 27.548,
+      "search_time": 0.521,
+      "answer_time": 0.993,
+      "total_time": 29.061,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 1,
+      "user_id": "eval_1_9c48871d",
+      "question": "What did Luther do during Lent at this time?",
+      "ground_truth": "preached",
+      "prediction": "Preached eight sermons",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Luther preached eight sermons during Lent, beginning on Inocavitus Sunday",
+          "score": 0.6863101079737838
+        },
+        {
+          "memory": "Luther secretly returned to Whittenburg on the sixth of March, fifteen twenty-two",
+          "score": 0.6533276151768393
+        },
+        {
+          "memory": "Luther wrote to the Elector during his absence",
+          "score": 0.5716199024518179
+        },
+        {
+          "memory": "Luther emphasized Christian values such as love, patience, charity, and freedom",
+          "score": 0.5633069806124099
+        },
+        {
+          "memory": "In the Inocavitus sermons, Luther hammered home the primacy of Christ",
+          "score": 0.5175793786075551
+        },
+        {
+          "memory": "Luther can only repair the damage by his personal presence and living word",
+          "score": 0.5072265021261759
+        },
+        {
+          "memory": "Luther reminded the citizens to trust God's word rather than violence to bring about change",
+          "score": 0.4637633905118612
+        },
+        {
+          "memory": "The Inocavitus sermons became known as the Inocavitus sermons",
+          "score": 0.25495422830321135
+        },
+        {
+          "memory": "Satan has entered my sheepfold and committed ravages",
+          "score": 0.1852840762516559
+        }
+      ],
+      "add_time": 21.632,
+      "search_time": 0.266,
+      "answer_time": 0.981,
+      "total_time": 22.879,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 1
+    },
+    {
+      "idx": 2,
+      "user_id": "eval_2_d9dc0fb6",
+      "question": "How did Luther want people to bring about change?",
+      "ground_truth": "trust gods word",
+      "prediction": "Through non-violent means.",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Luther reminded the citizens to trust God's word rather than violence to bring about change",
+          "score": 0.7025964263381185
+        },
+        {
+          "memory": "Luther can only repair the damage by his personal presence and living word",
+          "score": 0.6090887403009015
+        },
+        {
+          "memory": "Luther emphasized Christian values such as love, patience, charity, and freedom",
+          "score": 0.604284349921031
+        },
+        {
+          "memory": "Luther wrote to the Elector during his absence",
+          "score": 0.48537209071841547
+        },
+        {
+          "memory": "In the Inocavitus sermons, Luther hammered home the primacy of Christ",
+          "score": 0.482567865888792
+        },
+        {
+          "memory": "Luther secretly returned to Whittenburg on the sixth of March, fifteen twenty-two",
+          "score": 0.4736196786759187
+        },
+        {
+          "memory": "Luther preached eight sermons during Lent, beginning on Inocavitus Sunday",
+          "score": 0.4556541112472659
+        },
+        {
+          "memory": "The Inocavitus sermons became known as the Inocavitus sermons",
+          "score": 0.2004880840185283
+        },
+        {
+          "memory": "Satan has entered my sheepfold and committed ravages",
+          "score": 0.17251482267397789
+        }
+      ],
+      "add_time": 23.01,
+      "search_time": 0.297,
+      "answer_time": 0.994,
+      "total_time": 24.3,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 3,
+      "user_id": "eval_3_177e6dc9",
+      "question": "What troops attacked Fort William Henry in early 1757?",
+      "ground_truth": "french irregular forces",
+      "prediction": "Montcommon's Indian allies",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "FORT WILLIAM HENRY WAS AMBUSHED BY BRITISH RANGERS NEAR TYCONDEROGA IN JANUARY 1757",
+          "score": 0.6727005257452049
+        },
+        {
+          "memory": "FORT WILLIAM HENRY",
+          "score": 0.5433340660935742
+        },
+        {
+          "memory": "SOME OF MONTCOMMON'S INDIAN ALLIES ATTACKED THE BRITISH COLUMN KILLING AND CAPTURING SEVERAL HUNDRED MEN WOMEN CHILDREN AND SLAVES",
+          "score": 0.45101441234045886
+        },
+        {
+          "memory": "BRITISH RANGERS LAUNCHED A DARING RAID AGAINST THE FORT ACROSS THE FROZEN LAKE GEORGE IN FEBRUARY",
+          "score": 0.4337909324319109
+        },
+        {
+          "memory": "MONTCOMMON SEVEN O O O TROOPS BESIEGED THE FORT WHICH CAPITULATED WITH AN AGREEMENT TO WITHDRAW UNDER PAROLE",
+          "score": 0.3316660756376061
+        },
+        {
+          "memory": "SOME INDIANS WERE REPORTED TO HAVE TRAVELLED FROM BEYOND THE MISSISSIPPI TO PARTICIPATE IN THE CAMPAIGN AND RETURN AFTERWARD HAVING BEEN EXPOSED TO EUROPEAN CARRIERS",
+          "score": 0.302193092800661
+        },
+        {
+          "memory": "THE AFTERMATH OF THE SIEGE MAY HAVE CONTRIBUTED TO THE TRANSMISSION OF SMALL POX INTO REMOTE INDIAN POPULATIONS",
+          "score": 0.2004957711529951
+        }
+      ],
+      "add_time": 30.801,
+      "search_time": 0.256,
+      "answer_time": 1.117,
+      "total_time": 32.174,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 4,
+      "user_id": "eval_4_0979aa01",
+      "question": "On what lake did troops attack fort willima henry in winter?",
+      "ground_truth": "lake george",
+      "prediction": "Lake George",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "FORT WILLIAM HENRY",
+          "score": 0.5957568219662283
+        },
+        {
+          "memory": "FORT WILLIAM HENRY WAS AMBUSHED BY BRITISH RANGERS NEAR TYCONDEROGA IN JANUARY 1757",
+          "score": 0.5747204695843424
+        },
+        {
+          "memory": "BRITISH RANGERS LAUNCHED A DARING RAID AGAINST THE FORT ACROSS THE FROZEN LAKE GEORGE IN FEBRUARY",
+          "score": 0.4414612222293554
+        },
+        {
+          "memory": "MONTCOMMON SEVEN O O O TROOPS BESIEGED THE FORT WHICH CAPITULATED WITH AN AGREEMENT TO WITHDRAW UNDER PAROLE",
+          "score": 0.2917832519350315
+        },
+        {
+          "memory": "SOME OF MONTCOMMON'S INDIAN ALLIES ATTACKED THE BRITISH COLUMN KILLING AND CAPTURING SEVERAL HUNDRED MEN WOMEN CHILDREN AND SLAVES",
+          "score": 0.26891947962820006
+        },
+        {
+          "memory": "SOME INDIANS WERE REPORTED TO HAVE TRAVELLED FROM BEYOND THE MISSISSIPPI TO PARTICIPATE IN THE CAMPAIGN AND RETURN AFTERWARD HAVING BEEN EXPOSED TO EUROPEAN CARRIERS",
+          "score": 0.2485083742646354
+        },
+        {
+          "memory": "THE AFTERMATH OF THE SIEGE MAY HAVE CONTRIBUTED TO THE TRANSMISSION OF SMALL POX INTO REMOTE INDIAN POPULATIONS",
+          "score": 0.1133102332459231
+        }
+      ],
+      "add_time": 33.604,
+      "search_time": 0.24,
+      "answer_time": 1.093,
+      "total_time": 34.936,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 5,
+      "user_id": "eval_5_d41d1554",
+      "question": "What did the the Europeans think the peoples in the tropics were in need of?",
+      "ground_truth": "guidance and intervention",
+      "prediction": "Guidance and intervention",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The people of these climates were believed to be in need of guidance and intervention from European empires",
+          "score": 0.644902035104657
+        },
+        {
+          "memory": "Tropical climates were associated with lazy attitudes, sexual promiscuity, exotic culture, and moral degeneracy",
+          "score": 0.4514184282822433
+        },
+        {
+          "memory": "They were seen as incapable of governing a more evolved social structure",
+          "score": 0.3470180702022319
+        },
+        {
+          "memory": "Northern Europe and the Mid Atlantic were thought to produce a hard working moral and upright human being",
+          "score": 0.3374385862737572
+        },
+        {
+          "memory": "Geographic scholars believed the world could be split into climatic zones",
+          "score": 0.3263439927595196
+        },
+        {
+          "memory": "Orientalism is a view of a people based on their geographical location",
+          "score": 0.2776786406854722
+        }
+      ],
+      "add_time": 17.462,
+      "search_time": 0.525,
+      "answer_time": 0.919,
+      "total_time": 18.906,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 6,
+      "user_id": "eval_6_f14eca3a",
+      "question": "What company owned NBC in the 1930s?",
+      "ground_truth": "radio corporation of america",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.9,
+      "search_time": 0.3,
+      "answer_time": 0.0,
+      "total_time": 60.2,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 7,
+      "user_id": "eval_7_a6dda223",
+      "question": "What kind of markets did NBC Red serve?",
+      "ground_truth": "major cities",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.353,
+      "search_time": 0.295,
+      "answer_time": 0.0,
+      "total_time": 58.648,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 8,
+      "user_id": "eval_8_23c84df0",
+      "question": "Which NBC radio network was tasked with testing new programs?",
+      "ground_truth": "nbc blue network",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.523,
+      "search_time": 0.342,
+      "answer_time": 0.0,
+      "total_time": 58.865,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 9,
+      "user_id": "eval_9_ebd7df53",
+      "question": "Commensal flora can change what specific conditions of their environment in the gastrointestinal tract?",
+      "ground_truth": "ph or available iron",
+      "prediction": "Pathogen numbers",
+      "num_memories_added": 9,
+      "num_memories_retrieved": 9,
+      "retrieved_memories": [
+        {
+          "memory": "Commensal flora change environmental conditions to reduce pathogen numbers",
+          "score": 0.7992454820469364
+        },
+        {
+          "memory": "Commensal flora compete with pathogenic bacteria for food and space",
+          "score": 0.6824150243460676
+        },
+        {
+          "memory": "Commensal flora in the genatorinary and gastroanestinal tracts serve as biological barriers",
+          "score": 0.6255204772743861
+        },
+        {
+          "memory": "Probiotic introduction can restore healthy balance of microbial populations",
+          "score": 0.4957838770673141
+        },
+        {
+          "memory": "Probiotics may help with bacterial gastroenteritis, inflammatory bowel diseases, urinary tract infections, and post-surgical infections",
+          "score": 0.45330685279907157
+        },
+        {
+          "memory": "Antibiotics can lead to an overgrowth of fungi",
+          "score": 0.41902345965084925
+        },
+        {
+          "memory": "Fungal overgrowth can cause conditions like vaginal candidiasis",
+          "score": 0.41476403735223766
+        },
+        {
+          "memory": "Probiotics, such as Lactobacillus, can help with intestinal infections in children",
+          "score": 0.3882484804194142
+        },
+        {
+          "memory": "Most antibiotics target bacteria, not fungi",
+          "score": 0.297376482093774
+        }
+      ],
+      "add_time": 23.293,
+      "search_time": 0.531,
+      "answer_time": 0.959,
+      "total_time": 24.783,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 10,
+      "user_id": "eval_10_6bdef33d",
+      "question": "What is a growing sport in southern California?",
+      "ground_truth": "rugby",
+      "prediction": "RUGBY",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY is growing in Southern California",
+          "score": 0.718608559274112
+        },
+        {
+          "memory": "RUGBY is particularly popular at the high school level in Southern California",
+          "score": 0.6334493651089195
+        },
+        {
+          "memory": "There is an increasing number of schools adding RUGBY as an official school sport in Southern California",
+          "score": 0.6217599226110828
+        },
+        {
+          "memory": "RUGBY is a sport",
+          "score": 0.30771739268327625
+        }
+      ],
+      "add_time": 11.436,
+      "search_time": 0.288,
+      "answer_time": 0.842,
+      "total_time": 12.566,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 11,
+      "user_id": "eval_11_a212271f",
+      "question": "At which level of education is this sport becoming more popular?",
+      "ground_truth": "high school",
+      "prediction": "High school",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY is particularly popular at the high school level in Southern California",
+          "score": 0.4609202984378528
+        },
+        {
+          "memory": "There is an increasing number of schools adding RUGBY as an official school sport in Southern California",
+          "score": 0.4390105336948882
+        },
+        {
+          "memory": "RUGBY is a sport",
+          "score": 0.387842179659097
+        },
+        {
+          "memory": "RUGBY is growing in Southern California",
+          "score": 0.36462512245131046
+        }
+      ],
+      "add_time": 11.733,
+      "search_time": 0.294,
+      "answer_time": 0.819,
+      "total_time": 12.845,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 12,
+      "user_id": "eval_12_df9c0664",
+      "question": "What is rugby rapidly becoming with high schools?",
+      "ground_truth": "an official school sport",
+      "prediction": "A sport",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "RUGBY is particularly popular at the high school level in Southern California",
+          "score": 0.6390911472731854
+        },
+        {
+          "memory": "There is an increasing number of schools adding RUGBY as an official school sport in Southern California",
+          "score": 0.6173086232944526
+        },
+        {
+          "memory": "RUGBY is growing in Southern California",
+          "score": 0.5516432919521486
+        },
+        {
+          "memory": "RUGBY is a sport",
+          "score": 0.5475295914598186
+        }
+      ],
+      "add_time": 11.044,
+      "search_time": 0.287,
+      "answer_time": 0.795,
+      "total_time": 12.125,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 0
+    },
+    {
+      "idx": 13,
+      "user_id": "eval_13_6747a5e7",
+      "question": "The Rhine forms an inland delta into which lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.768971160221273
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine, Old Rhine, and in the east by a modern cantalized section",
+          "score": 0.5981822423003662
+        },
+        {
+          "memory": "The Natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5917658639621839
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Gaisau, Hoxt, and Fusseck",
+          "score": 0.3999415613748679
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.29735812093154984
+        },
+        {
+          "memory": "The local pronunciation of 'Es' is also the pronunciation of 'Essel Donkey'",
+          "score": 0.16841380373783832
+        },
+        {
+          "memory": "The local Alamanic dialect pronounces the singular as 'E Sell'",
+          "score": 0.12012112680360872
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'Es' or 'E Sell'",
+          "score": 0.09370711050624933
+        }
+      ],
+      "add_time": 20.961,
+      "search_time": 0.289,
+      "answer_time": 0.957,
+      "total_time": 22.207,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 14,
+      "user_id": "eval_14_eb701c08",
+      "question": "What is the animal that the Rhine's islands are named after?",
+      "ground_truth": "donkey",
+      "prediction": "Donkey",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5313365246542732
+        },
+        {
+          "memory": "The Mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.41200668612823843
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine, Old Rhine, and in the east by a modern cantalized section",
+          "score": 0.3720548616377887
+        },
+        {
+          "memory": "The local pronunciation of 'Es' is also the pronunciation of 'Essel Donkey'",
+          "score": 0.3337616472716587
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Gaisau, Hoxt, and Fusseck",
+          "score": 0.2851274253231028
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.2421603541158784
+        },
+        {
+          "memory": "The local Alamanic dialect pronounces the singular as 'E Sell'",
+          "score": 0.16778701440376137
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'Es' or 'E Sell'",
+          "score": 0.1316889875906332
+        }
+      ],
+      "add_time": 21.369,
+      "search_time": 0.287,
+      "answer_time": 0.949,
+      "total_time": 22.606,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 15,
+      "user_id": "eval_15_e7611cc0",
+      "question": "The inland delta at the mouth of the Rhine is with what Lake?",
+      "ground_truth": "lake constance",
+      "prediction": "Lake Constance",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.7612090237843833
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine, Old Rhine, and in the east by a modern cantalized section",
+          "score": 0.6039786423243171
+        },
+        {
+          "memory": "The Natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5811370541596386
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Gaisau, Hoxt, and Fusseck",
+          "score": 0.413504992043944
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.29856614637860246
+        },
+        {
+          "memory": "The local pronunciation of 'Es' is also the pronunciation of 'Essel Donkey'",
+          "score": 0.21137367563558274
+        },
+        {
+          "memory": "The local Alamanic dialect pronounces the singular as 'E Sell'",
+          "score": 0.15047398169299517
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'Es' or 'E Sell'",
+          "score": 0.10688648743003595
+        }
+      ],
+      "add_time": 22.543,
+      "search_time": 0.297,
+      "answer_time": 0.961,
+      "total_time": 23.802,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 16,
+      "user_id": "eval_16_a4e44583",
+      "question": "What did the Rhine branch off to form in Austria?",
+      "ground_truth": "small islands",
+      "prediction": "small islands",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The Natural Rhine originally branched into at least two arms and formed small islands by precipitating sediments",
+          "score": 0.5616623586151566
+        },
+        {
+          "memory": "The delta includes the Austrian towns of Gaisau, Hoxt, and Fusseck",
+          "score": 0.5168712198244956
+        },
+        {
+          "memory": "The Mouth of the Rhine into Lake Constance forms an inland delta",
+          "score": 0.5014751360042679
+        },
+        {
+          "memory": "The delta is delimited in the west by the Altar Rhine, Old Rhine, and in the east by a modern cantalized section",
+          "score": 0.49832831669383715
+        },
+        {
+          "memory": "Most of the delta is a nature reserve and bird sanctuary",
+          "score": 0.13264132119503358
+        },
+        {
+          "memory": "The local pronunciation of 'Es' is also the pronunciation of 'Essel Donkey'",
+          "score": 0.11887940038627026
+        },
+        {
+          "memory": "The local Alamanic dialect pronounces the singular as 'E Sell'",
+          "score": 0.1174576420728854
+        },
+        {
+          "memory": "Many local fields have an official name containing the element 'Es' or 'E Sell'",
+          "score": 0.11053043130892737
+        }
+      ],
+      "add_time": 21.812,
+      "search_time": 0.423,
+      "answer_time": 0.949,
+      "total_time": 23.184,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 17,
+      "user_id": "eval_17_1f250990",
+      "question": "Who redesigned the central garden?",
+      "ground_truth": "kim wilkie",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 61.134,
+      "search_time": 0.287,
+      "answer_time": 0.0,
+      "total_time": 61.421,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 18,
+      "user_id": "eval_18_dd93be2e",
+      "question": "What shape is the water feature in the John Madejski Garden?",
+      "ground_truth": "elliptical",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.181,
+      "search_time": 0.304,
+      "answer_time": 0.0,
+      "total_time": 59.486,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 19,
+      "user_id": "eval_19_a30dcd22",
+      "question": "The steps around the water feature can be drained for what uses?",
+      "ground_truth": "receptions gatherings or exhibition purposes",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.692,
+      "search_time": 0.273,
+      "answer_time": 0.0,
+      "total_time": 59.965,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 20,
+      "user_id": "eval_20_bd99b706",
+      "question": "Which tree species is planted in the two corners by the north facade?",
+      "ground_truth": "orange and lemon trees",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.704,
+      "search_time": 0.269,
+      "answer_time": 0.0,
+      "total_time": 59.973,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 21,
+      "user_id": "eval_21_055d6fd2",
+      "question": "In what conditions were forces first measured historically?",
+      "ground_truth": "static equilibrium",
+      "prediction": "Ancient Greece",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.4205417747899502
+        },
+        {
+          "memory": "Forces are vector quantities that can cause a change in the motion of an object",
+          "score": 0.4074511732334355
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of action must also be specified",
+          "score": 0.3586532510809374
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.27645290168908493
+        },
+        {
+          "memory": "The resultant force is the vector sum of the individual forces acting on an object",
+          "score": 0.2707745584228995
+        },
+        {
+          "memory": "The magnitude of the resultant depends on the angle between the lines of action of the two forces",
+          "score": 0.2690755677859523
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.10704986204666939
+        },
+        {
+          "memory": "The resultant vector is equal in magnitude and direction to the transversal of the parallelogram",
+          "score": 0.10660847019467229
+        }
+      ],
+      "add_time": 25.502,
+      "search_time": 0.245,
+      "answer_time": 1.017,
+      "total_time": 26.763,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 22,
+      "user_id": "eval_22_e957dba5",
+      "question": "What do forces have with regard to additive quantities?",
+      "ground_truth": "magnitude and direction",
+      "prediction": "Additive",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "Forces are vector quantities that can cause a change in the motion of an object",
+          "score": 0.5449817216176227
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.5317035683912794
+        },
+        {
+          "memory": "The resultant force is the vector sum of the individual forces acting on an object",
+          "score": 0.5071289382800332
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.5002333882414532
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of action must also be specified",
+          "score": 0.4510597431970145
+        },
+        {
+          "memory": "The magnitude of the resultant depends on the angle between the lines of action of the two forces",
+          "score": 0.43727572456001185
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.3786790122088004
+        },
+        {
+          "memory": "The resultant vector is equal in magnitude and direction to the transversal of the parallelogram",
+          "score": 0.2775343023811353
+        }
+      ],
+      "add_time": 27.273,
+      "search_time": 0.316,
+      "answer_time": 1.02,
+      "total_time": 28.609,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 23,
+      "user_id": "eval_23_e6a719e8",
+      "question": "What is the resultant force called when two forces act on a particle?",
+      "ground_truth": "net force",
+      "prediction": "Resultant force",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "The resultant force is the vector sum of the individual forces acting on an object",
+          "score": 0.7624980644024981
+        },
+        {
+          "memory": "The magnitude of the resultant depends on the angle between the lines of action of the two forces",
+          "score": 0.6451835606079153
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.6365173645042228
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.5229526254846835
+        },
+        {
+          "memory": "Forces are vector quantities that can cause a change in the motion of an object",
+          "score": 0.5060315873429656
+        },
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of action must also be specified",
+          "score": 0.4607437905206373
+        },
+        {
+          "memory": "The resultant vector is equal in magnitude and direction to the transversal of the parallelogram",
+          "score": 0.4508555229967822
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.44012305421228665
+        }
+      ],
+      "add_time": 26.722,
+      "search_time": 0.247,
+      "answer_time": 1.023,
+      "total_time": 27.992,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 24,
+      "user_id": "eval_24_73c016a4",
+      "question": "When forces are acting on an extended body, what do you need to account for motion effects?",
+      "ground_truth": "respective lines of application",
+      "prediction": "Lines of action",
+      "num_memories_added": 8,
+      "num_memories_retrieved": 8,
+      "retrieved_memories": [
+        {
+          "memory": "If forces are acting on an extended body, their respective lines of action must also be specified",
+          "score": 0.7576520822659611
+        },
+        {
+          "memory": "Forces are vector quantities that can cause a change in the motion of an object",
+          "score": 0.49357678345184625
+        },
+        {
+          "memory": "Forces have both magnitude and direction",
+          "score": 0.44153470262018646
+        },
+        {
+          "memory": "The resultant force is the vector sum of the individual forces acting on an object",
+          "score": 0.41441701846882906
+        },
+        {
+          "memory": "The magnitude of the resultant depends on the angle between the lines of action of the two forces",
+          "score": 0.38349619111631295
+        },
+        {
+          "memory": "The magnitude of the resultant varies from the difference of the magnitudes of the two forces to their sum",
+          "score": 0.35037451578356116
+        },
+        {
+          "memory": "The addition of two vectors represented by sides of a parallelogram gives an equivalent resultant vector",
+          "score": 0.2572334998014408
+        },
+        {
+          "memory": "The resultant vector is equal in magnitude and direction to the transversal of the parallelogram",
+          "score": 0.21680609939408205
+        }
+      ],
+      "add_time": 28.331,
+      "search_time": 0.371,
+      "answer_time": 1.008,
+      "total_time": 29.71,
+      "em": 0,
+      "f1": 0.5714,
+      "bleu": 0.6667,
+      "llm": 1
+    },
+    {
+      "idx": 25,
+      "user_id": "eval_25_a050f289",
+      "question": "When did the 1973 oil crisis begin?",
+      "ground_truth": "october",
+      "prediction": "October 1973",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.9100064881957406
+        },
+        {
+          "memory": "The 1973 oil crisis is also known as the First Oil Shock",
+          "score": 0.7386791234942425
+        },
+        {
+          "memory": "The 1979 oil crisis is also known as the Second Oil Shock",
+          "score": 0.6290100308850981
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) consisting of Arab members of OPEC plus Egypt and Syria proclaimed an oil embargo by the end of the embargo in March 1974",
+          "score": 0.47051537849299035
+        },
+        {
+          "memory": "The price of oil had risen from $3 per barrel to nearly $12 globally as prices were significantly higher",
+          "score": 0.40968222368390195
+        }
+      ],
+      "add_time": 15.87,
+      "search_time": 0.277,
+      "answer_time": 0.89,
+      "total_time": 17.038,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 26,
+      "user_id": "eval_26_4eb23a46",
+      "question": "What was another term used for the oil crisis?",
+      "ground_truth": "shock",
+      "prediction": "Second Oil Shock",
+      "num_memories_added": 5,
+      "num_memories_retrieved": 5,
+      "retrieved_memories": [
+        {
+          "memory": "The 1979 oil crisis is also known as the Second Oil Shock",
+          "score": 0.6412751780585918
+        },
+        {
+          "memory": "The 1973 oil crisis is also known as the First Oil Shock",
+          "score": 0.6224977024055653
+        },
+        {
+          "memory": "The 1973 oil crisis began in October 1973",
+          "score": 0.610103998905376
+        },
+        {
+          "memory": "The price of oil had risen from $3 per barrel to nearly $12 globally as prices were significantly higher",
+          "score": 0.4297576952376219
+        },
+        {
+          "memory": "The Organization of Arab Petroleum Exporting Countries (OAPEC) consisting of Arab members of OPEC plus Egypt and Syria proclaimed an oil embargo by the end of the embargo in March 1974",
+          "score": 0.3671555867419263
+        }
+      ],
+      "add_time": 16.298,
+      "search_time": 0.266,
+      "answer_time": 0.874,
+      "total_time": 17.437,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.3333,
+      "llm": 0
+    },
+    {
+      "idx": 27,
+      "user_id": "eval_27_bea40966",
+      "question": "What television specials did ABC acquire the rights to in 2000?",
+      "ground_truth": "peanuts",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.785,
+      "search_time": 1.064,
+      "answer_time": 0.0,
+      "total_time": 61.849,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 28,
+      "user_id": "eval_28_94fe51f4",
+      "question": "What movie awards show does ABC currently hold the rights to?",
+      "ground_truth": "the academy awards",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.22,
+      "search_time": 0.53,
+      "answer_time": 0.0,
+      "total_time": 59.75,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 29,
+      "user_id": "eval_29_12e0ccd7",
+      "question": "Can BSkyB veto the presence of channels on their EPG?",
+      "ground_truth": "no",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.679,
+      "search_time": 1.204,
+      "answer_time": 0.0,
+      "total_time": 60.882,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 30,
+      "user_id": "eval_30_1c77c682",
+      "question": "Does BSkyB carry any control over a channels content?",
+      "ground_truth": "not",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.627,
+      "search_time": 0.279,
+      "answer_time": 0.0,
+      "total_time": 60.905,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 31,
+      "user_id": "eval_31_6736ae01",
+      "question": "Does BSkyB carry any control over the picture quality of a channel?",
+      "ground_truth": "not",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.856,
+      "search_time": 0.282,
+      "answer_time": 0.0,
+      "total_time": 59.137,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 32,
+      "user_id": "eval_32_2967bcaa",
+      "question": "Who is the founder of the Salvation Army?",
+      "ground_truth": "william booth",
+      "prediction": "William Booth",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "UMC was founded in 1968",
+          "score": 0.20174634279169668
+        },
+        {
+          "memory": "UMC stands for United Methodist Church",
+          "score": 0.1436684703451788
+        }
+      ],
+      "add_time": 65.966,
+      "search_time": 0.243,
+      "answer_time": 0.768,
+      "total_time": 66.977,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 33,
+      "user_id": "eval_33_b3ba464a",
+      "question": "Who is Methodism's revered founder?",
+      "ground_truth": "john wesley",
+      "prediction": "John Wesley",
+      "num_memories_added": 2,
+      "num_memories_retrieved": 2,
+      "retrieved_memories": [
+        {
+          "memory": "UMC stands for United Methodist Church",
+          "score": 0.3392677633499375
+        },
+        {
+          "memory": "UMC was founded in 1968",
+          "score": 0.299762254129025
+        }
+      ],
+      "add_time": 65.051,
+      "search_time": 0.256,
+      "answer_time": 0.766,
+      "total_time": 66.073,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 34,
+      "user_id": "eval_34_fc7a6873",
+      "question": "Who was named the president and CEO of ABC after Goldenson suffered a heart attack?",
+      "ground_truth": "elton rule",
+      "prediction": "I don't know",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Eleven Rules was named President and Chief Operating Officer of A & B in a few months after Golden Sin reduced his role in the company",
+          "score": 0.39813304922354853
+        },
+        {
+          "memory": "Golden Sin suffered a hard attack after reducing his role in the company",
+          "score": 0.3553323214385197
+        },
+        {
+          "memory": "A & B Great States, the Central West Division of A & B Theatres, was sold to Henry Luce in 1974",
+          "score": 0.2594800885075295
+        },
+        {
+          "memory": "The Public Health Cigarette Smoking Act banned cigarette advertising from all television and radio networks",
+          "score": 0.20033616349783057
+        },
+        {
+          "memory": "The sale occurred on January 17, 1972",
+          "score": 0.1848034622971138
+        },
+        {
+          "memory": "The ban took effect on January 1, 1971",
+          "score": 0.15293526465494625
+        },
+        {
+          "memory": "The ban was cited as having limited profitability of its cinemas",
+          "score": 0.1318424284954317
+        }
+      ],
+      "add_time": 21.622,
+      "search_time": 0.262,
+      "answer_time": 0.922,
+      "total_time": 22.806,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 35,
+      "user_id": "eval_35_c4d35c3d",
+      "question": "What did Mote think the Yuan class system really represented?",
+      "ground_truth": "degrees of privilege",
+      "prediction": "Institutional and legal privilege",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The term social classes for this system was misleading",
+          "score": 0.4617866793675505
+        },
+        {
+          "memory": "The position of people within the four class system was not an indication of their actual social power and wealth",
+          "score": 0.4476535194768103
+        },
+        {
+          "memory": "There were Mongel and Simu who lived in poverty and were ill treated",
+          "score": 0.4232343809014211
+        },
+        {
+          "memory": "There were rich and well socially standing Chinese",
+          "score": 0.4082337553056137
+        },
+        {
+          "memory": "The position of people within the four class system was an indication of institutional and legal privilege",
+          "score": 0.4022524582558604
+        },
+        {
+          "memory": "There were less rich Mongel and Seemu",
+          "score": 0.3647643617313925
+        },
+        {
+          "memory": "A person standing within the classes was not a guarantee of their standing",
+          "score": 0.35757842742497525
+        }
+      ],
+      "add_time": 19.637,
+      "search_time": 0.279,
+      "answer_time": 0.944,
+      "total_time": 20.86,
+      "em": 0,
+      "f1": 0.2857,
+      "bleu": 0.25,
+      "llm": 0
+    },
+    {
+      "idx": 36,
+      "user_id": "eval_36_a600f576",
+      "question": "There were many Chinese with what unexpected status?",
+      "ground_truth": "rich and well socially standing",
+      "prediction": "Poverty",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "There were rich and well socially standing Chinese",
+          "score": 0.581726234299284
+        },
+        {
+          "memory": "There were Mongel and Simu who lived in poverty and were ill treated",
+          "score": 0.410639286114739
+        },
+        {
+          "memory": "A person standing within the classes was not a guarantee of their standing",
+          "score": 0.3621581565245395
+        },
+        {
+          "memory": "The position of people within the four class system was an indication of institutional and legal privilege",
+          "score": 0.341076353679877
+        },
+        {
+          "memory": "The position of people within the four class system was not an indication of their actual social power and wealth",
+          "score": 0.3224719142035122
+        },
+        {
+          "memory": "There were less rich Mongel and Seemu",
+          "score": 0.3065830558850627
+        },
+        {
+          "memory": "The term social classes for this system was misleading",
+          "score": 0.3043938749502811
+        }
+      ],
+      "add_time": 19.54,
+      "search_time": 0.449,
+      "answer_time": 0.892,
+      "total_time": 20.881,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 37,
+      "user_id": "eval_37_cc7be4fe",
+      "question": "What devices have been credited as the moving force of the Industrial Revolution?",
+      "ground_truth": "steam engines",
+      "prediction": "Steam engines",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines can be said to have been the moving force behind the Industrial Revolution",
+          "score": 0.7168436355102942
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use driving machinery in factories, mills, and mines",
+          "score": 0.5037381985994384
+        },
+        {
+          "memory": "Steam engines powered pumping stations and pre-pelling transport appliances",
+          "score": 0.49558579356875665
+        },
+        {
+          "memory": "Automobiles were also initially steam-powered",
+          "score": 0.46961720223247116
+        },
+        {
+          "memory": "Steam engines were used in agriculture, leading to an increase in the land available for cultivation",
+          "score": 0.444395430735343
+        },
+        {
+          "memory": "Steam-powered farm tractors and motor cycles were attempted but had little success",
+          "score": 0.44185564631083063
+        }
+      ],
+      "add_time": 15.404,
+      "search_time": 0.531,
+      "answer_time": 0.874,
+      "total_time": 16.809,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 38,
+      "user_id": "eval_38_9a9e51d6",
+      "question": "Along with road vehicles, locomotives and ships, on what vehicles were steam engines used during the Industrial Revolution?",
+      "ground_truth": "steamboats",
+      "prediction": "Factories",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines can be said to have been the moving force behind the Industrial Revolution",
+          "score": 0.633917539796961
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use driving machinery in factories, mills, and mines",
+          "score": 0.6103389471048337
+        },
+        {
+          "memory": "Automobiles were also initially steam-powered",
+          "score": 0.5961563768899429
+        },
+        {
+          "memory": "Steam engines powered pumping stations and pre-pelling transport appliances",
+          "score": 0.5822663651030777
+        },
+        {
+          "memory": "Steam engines were used in agriculture, leading to an increase in the land available for cultivation",
+          "score": 0.5580320306375742
+        },
+        {
+          "memory": "Steam-powered farm tractors and motor cycles were attempted but had little success",
+          "score": 0.4774723141304028
+        }
+      ],
+      "add_time": 14.943,
+      "search_time": 0.297,
+      "answer_time": 0.891,
+      "total_time": 16.132,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 39,
+      "user_id": "eval_39_9d3753aa",
+      "question": "What is an example of a steam-powered automobile?",
+      "ground_truth": "stanley steamer",
+      "prediction": "Steam-powered motor cycle",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Automobiles were also initially steam-powered",
+          "score": 0.7116866158308444
+        },
+        {
+          "memory": "Steam-powered farm tractors and motor cycles were attempted but had little success",
+          "score": 0.5457969002102772
+        },
+        {
+          "memory": "Steam engines powered pumping stations and pre-pelling transport appliances",
+          "score": 0.5352528118041185
+        },
+        {
+          "memory": "Steam engines can be said to have been the moving force behind the Industrial Revolution",
+          "score": 0.4666640017318022
+        },
+        {
+          "memory": "Steam engines saw widespread commercial use driving machinery in factories, mills, and mines",
+          "score": 0.448603619364537
+        },
+        {
+          "memory": "Steam engines were used in agriculture, leading to an increase in the land available for cultivation",
+          "score": 0.4181896102488046
+        }
+      ],
+      "add_time": 15.007,
+      "search_time": 0.29,
+      "answer_time": 0.888,
+      "total_time": 16.184,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 40,
+      "user_id": "eval_40_bf481829",
+      "question": "Along with mills and mines, in what industrial locations did steam drive machines?",
+      "ground_truth": "factories",
+      "prediction": "Factories",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Steam engines saw widespread commercial use driving machinery in factories, mills, and mines",
+          "score": 0.6691965058940001
+        },
+        {
+          "memory": "Steam engines powered pumping stations and pre-pelling transport appliances",
+          "score": 0.5849318958438767
+        },
+        {
+          "memory": "Steam engines can be said to have been the moving force behind the Industrial Revolution",
+          "score": 0.5513471826958305
+        },
+        {
+          "memory": "Automobiles were also initially steam-powered",
+          "score": 0.5117226291334616
+        },
+        {
+          "memory": "Steam engines were used in agriculture, leading to an increase in the land available for cultivation",
+          "score": 0.48861126484467365
+        },
+        {
+          "memory": "Steam-powered farm tractors and motor cycles were attempted but had little success",
+          "score": 0.41201333976306
+        }
+      ],
+      "add_time": 16.843,
+      "search_time": 0.275,
+      "answer_time": 0.864,
+      "total_time": 17.982,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 41,
+      "user_id": "eval_41_c275f321",
+      "question": "Who invented the first nuclear reactor?",
+      "ground_truth": "enrico fermi",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.834,
+      "search_time": 0.319,
+      "answer_time": 0.0,
+      "total_time": 60.153,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 42,
+      "user_id": "eval_42_3a2bfad4",
+      "question": "Who is also known at the father of the hydrogen bomb?",
+      "ground_truth": "edward teller",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.553,
+      "search_time": 0.292,
+      "answer_time": 0.0,
+      "total_time": 58.845,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 43,
+      "user_id": "eval_43_f062f33a",
+      "question": "Where did two leaders join hands and \"give birth\" to a new denomination?",
+      "ground_truth": "constituting general conference in dallas texas",
+      "prediction": "Dallas, Texas",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The new denomination was given birth by the two churches",
+          "score": 0.7512338499404219
+        },
+        {
+          "memory": "The two churches joined hands at the Constituting General Conference in Dallas, Texas",
+          "score": 0.6090669202513896
+        },
+        {
+          "memory": "The United Methodist Church was formed by the union of the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.4732214378997327
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.4206193400238246
+        },
+        {
+          "memory": "The Evangelical United Brethren Church represented Bishop Reuben A. Mueller",
+          "score": 0.42025972426958413
+        },
+        {
+          "memory": "The Methodist Church represented Bishop Lloyd Christ Wich",
+          "score": 0.40440898947749054
+        },
+        {
+          "memory": "The United Methodist Church has a distinct history and influential ministries in various parts of the world",
+          "score": 0.35791503437848793
+        }
+      ],
+      "add_time": 15.755,
+      "search_time": 0.278,
+      "answer_time": 0.889,
+      "total_time": 16.923,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.5,
+      "llm": 1
+    },
+    {
+      "idx": 44,
+      "user_id": "eval_44_73ded955",
+      "question": "Who was one man who joined hands and said \"Lord of the Church, we are united in Thee...?\"",
+      "ground_truth": "bishop lloyd christ",
+      "prediction": "Bishop Lloyd Christ Wich",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The two churches joined hands at the Constituting General Conference in Dallas, Texas",
+          "score": 0.5106689942582082
+        },
+        {
+          "memory": "The Methodist Church represented Bishop Lloyd Christ Wich",
+          "score": 0.3994147995585302
+        },
+        {
+          "memory": "The United Methodist Church was formed by the union of the Evangelical United Brethren Church and the Methodist Church",
+          "score": 0.39898353077555454
+        },
+        {
+          "memory": "The new denomination was given birth by the two churches",
+          "score": 0.39532991382078514
+        },
+        {
+          "memory": "The Evangelical United Brethren Church represented Bishop Reuben A. Mueller",
+          "score": 0.37353128280157655
+        },
+        {
+          "memory": "The United Methodist Church was created on April 23, 1968",
+          "score": 0.32516964701264
+        },
+        {
+          "memory": "The United Methodist Church has a distinct history and influential ministries in various parts of the world",
+          "score": 0.30353189663309216
+        }
+      ],
+      "add_time": 18.912,
+      "search_time": 0.522,
+      "answer_time": 0.947,
+      "total_time": 20.382,
+      "em": 0,
+      "f1": 0.8571,
+      "bleu": 0.75,
+      "llm": 0
+    },
+    {
+      "idx": 45,
+      "user_id": "eval_45_042044d2",
+      "question": "What is an example of a mechanical barrier on leaves?",
+      "ground_truth": "waxy cuticle",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.368,
+      "search_time": 0.29,
+      "answer_time": 0.0,
+      "total_time": 60.658,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 46,
+      "user_id": "eval_46_50daaafd",
+      "question": "What responses protect the lungs by mechanically ejecting pathogens from the respiratory system?",
+      "ground_truth": "coughing and sneezing",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.348,
+      "search_time": 0.275,
+      "answer_time": 0.0,
+      "total_time": 58.623,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 47,
+      "user_id": "eval_47_10048873",
+      "question": "What is secreted by the respiratory tract to trap microorganisms?",
+      "ground_truth": "mucus",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.099,
+      "search_time": 0.295,
+      "answer_time": 0.0,
+      "total_time": 59.393,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 48,
+      "user_id": "eval_48_d070cb74",
+      "question": "The flushing action of what expels pathogens from the eyes?",
+      "ground_truth": "tears",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.95,
+      "search_time": 0.366,
+      "answer_time": 0.0,
+      "total_time": 59.316,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 49,
+      "user_id": "eval_49_e8793a48",
+      "question": "What team did Rivera play for in Super Bowl XX?",
+      "ground_truth": "chicago bears",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.85,
+      "search_time": 0.243,
+      "answer_time": 0.0,
+      "total_time": 1.092,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 50,
+      "user_id": "eval_50_49e1ae09",
+      "question": "What position did Rivera play in Super Bowl XX?",
+      "ground_truth": "linebacker",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 1.162,
+      "search_time": 0.467,
+      "answer_time": 0.0,
+      "total_time": 1.629,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 51,
+      "user_id": "eval_51_42f78c0c",
+      "question": "Who was replaced by Kubiak in Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.675,
+      "search_time": 0.288,
+      "answer_time": 0.0,
+      "total_time": 0.963,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 52,
+      "user_id": "eval_52_03806257",
+      "question": "What team did Kubiak play for in Super Bowl XXI?",
+      "ground_truth": "broncos",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.654,
+      "search_time": 0.261,
+      "answer_time": 0.0,
+      "total_time": 0.916,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 53,
+      "user_id": "eval_53_6af7c091",
+      "question": "What position did Rivera play in Super Bowl XX? ",
+      "ground_truth": "linebacker",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.633,
+      "search_time": 0.273,
+      "answer_time": 0.0,
+      "total_time": 0.906,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 54,
+      "user_id": "eval_54_543512f2",
+      "question": "Who did Kubiak take the place of after Super Bowl XXIV?",
+      "ground_truth": "elway",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.646,
+      "search_time": 0.268,
+      "answer_time": 0.0,
+      "total_time": 0.915,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 55,
+      "user_id": "eval_55_1e591059",
+      "question": "Who was the Panthers head coach for the 2015 season?",
+      "ground_truth": "rivera",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.652,
+      "search_time": 0.26,
+      "answer_time": 0.0,
+      "total_time": 0.912,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 56,
+      "user_id": "eval_56_60f4cbb4",
+      "question": "From which country did the Rococo Augustus Rex Bureau Cabinet come from?",
+      "ground_truth": "germany",
+      "prediction": "Germany",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The Recoco Augustus Wreck Bureau Cabinet is a piece of Continental furniture dated C. One. Seven. Pivou from Germany",
+          "score": 0.6086148272082916
+        },
+        {
+          "memory": "The French Cabinet is a piece of 19th-century furniture dated Eighteen Sixty One Eighty Six Seven",
+          "score": 0.5709227271571404
+        },
+        {
+          "memory": "The Recoco Augustus Wreck Bureau Cabinet features specially fine Marcetury in ormalu mounts",
+          "score": 0.5385472781189424
+        },
+        {
+          "memory": "The French Cabinet is made from Ebony inlaid with Box Lime Halley Par Walnut and Mahogany woods, as well as Marble with Gilded Carvings",
+          "score": 0.4909811645997643
+        },
+        {
+          "memory": "The French Cabinet was designed by Ernest Gimson, Edward William Godwin, Charles Voisey, ADE All FLEWS, and Otto Wagner",
+          "score": 0.47970034072451123
+        },
+        {
+          "memory": "The collection includes works by Modernists such as Claude La Corbusier, Marcel Breuer, Charles and Ray Eames, and George Ponti",
+          "score": 0.3215998245844471
+        }
+      ],
+      "add_time": 20.001,
+      "search_time": 0.536,
+      "answer_time": 0.943,
+      "total_time": 21.479,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 57,
+      "user_id": "eval_57_447eba1e",
+      "question": "What has replaced the former shipping premises?",
+      "ground_truth": "largescale regeneration",
+      "prediction": "Shipping premises",
+      "num_memories_added": 18,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the regeneration of the Northeast",
+          "score": 0.27270063849942355
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Venu for the Turner Prize 2011",
+          "score": 0.25037298085046433
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was in place for 10 days",
+          "score": 0.24395065461336066
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was a temporary structure",
+          "score": 0.240328905130489
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Baltic Center for Contemporary Art",
+          "score": 0.23696225167457907
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was not a functional bridge",
+          "score": 0.21637743124240544
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the Newcastle Gateshead Keisides cosmopolitan area",
+          "score": 0.2152214883925968
+        },
+        {
+          "memory": "The Gateshead Council commissioned the Gateshead Millennium Bridge in 2001",
+          "score": 0.2128066310397852
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the River Tyne",
+          "score": 0.20909031737981112
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is a notable landmark in the UK",
+          "score": 0.20040921043298748
+        }
+      ],
+      "add_time": 43.5,
+      "search_time": 0.532,
+      "answer_time": 0.968,
+      "total_time": 45.0,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 58,
+      "user_id": "eval_58_4190e5d1",
+      "question": "Who designed the Sage Gateshead music center?",
+      "ground_truth": "norman foster",
+      "prediction": "I don't know",
+      "num_memories_added": 18,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Sage Gateshead Music Center",
+          "score": 0.6680301216492598
+        },
+        {
+          "memory": "The Gateshead Council commissioned the Gateshead Millennium Bridge in 2001",
+          "score": 0.5347786496054768
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Baltic Center for Contemporary Art",
+          "score": 0.5193758495197189
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Venu for the Turner Prize 2011",
+          "score": 0.5049979803983693
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was a sculpture",
+          "score": 0.5016729786240661
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the Newcastle Gateshead Keisides cosmopolitan area",
+          "score": 0.4667972022693805
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was a temporary structure",
+          "score": 0.46483406960204776
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is a notable landmark in Europe",
+          "score": 0.46474633002331034
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is a notable landmark in the world",
+          "score": 0.4598182755614163
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the regeneration of the Northeast",
+          "score": 0.4587152554856571
+        }
+      ],
+      "add_time": 41.965,
+      "search_time": 0.337,
+      "answer_time": 0.996,
+      "total_time": 43.297,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 59,
+      "user_id": "eval_59_12ac01a4",
+      "question": "How many days did the River Tyne have the Bambuco Bridge?",
+      "ground_truth": "ten",
+      "prediction": "I don't know",
+      "num_memories_added": 18,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Gateshead Millennium Bridge was in place for 10 days",
+          "score": 0.5940435862987399
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was a temporary structure",
+          "score": 0.5326736954917963
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the River Tyne",
+          "score": 0.5080246111903339
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was not a functional bridge",
+          "score": 0.5053066782988054
+        },
+        {
+          "memory": "The Gateshead Council commissioned the Gateshead Millennium Bridge in 2001",
+          "score": 0.4899816982156922
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the regeneration of the Northeast",
+          "score": 0.455146403827189
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was a sculpture",
+          "score": 0.45199034085248946
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge was not made for walking or cycling but was a sculpture",
+          "score": 0.4297179741620017
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is part of the Newcastle Gateshead tourist promotion",
+          "score": 0.4241642630064324
+        },
+        {
+          "memory": "The Gateshead Millennium Bridge is located near the Venu for the Turner Prize 2011",
+          "score": 0.4173933050198013
+        }
+      ],
+      "add_time": 45.854,
+      "search_time": 0.315,
+      "answer_time": 0.995,
+      "total_time": 47.164,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 60,
+      "user_id": "eval_60_eed5d617",
+      "question": "In between French and British, what groups controlled land?",
+      "ground_truth": "native tribes",
+      "prediction": "Native tribes",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "In between the French and the British large areas were dominated by native tribes",
+          "score": 0.7467868785858115
+        },
+        {
+          "memory": "The Iroquois Confederation formally ruled over tribes such as the Algonque, Delaware, and Mingo",
+          "score": 0.39245876851851813
+        },
+        {
+          "memory": "The Mika Maku and the Abanaki still held sway in parts of Novascotia, Acadia, and the Eastern portions of the Province of Canada",
+          "score": 0.386683290247068
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present day Upstate New York and the Ohio Country",
+          "score": 0.3556490849341347
+        },
+        {
+          "memory": "These tribes were limited in authority to make agreements by the Iroquois Confederation",
+          "score": 0.3423444960917178
+        },
+        {
+          "memory": "The Iroquois Confederation also included populations of Delaware and Shane",
+          "score": 0.3411684253045908
+        },
+        {
+          "memory": "The Mika Maku and the Abanaki were engaged in Father Laleutre's War",
+          "score": 0.30330294576784533
+        }
+      ],
+      "add_time": 21.526,
+      "search_time": 0.474,
+      "answer_time": 0.942,
+      "total_time": 22.941,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 61,
+      "user_id": "eval_61_4bcb54ca",
+      "question": "What rule did some native live under?",
+      "ground_truth": "iroquois",
+      "prediction": "Iroquois Confederation",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "In between the French and the British large areas were dominated by native tribes",
+          "score": 0.4799475559128158
+        },
+        {
+          "memory": "These tribes were limited in authority to make agreements by the Iroquois Confederation",
+          "score": 0.4130081208804149
+        },
+        {
+          "memory": "The Iroquois Confederation formally ruled over tribes such as the Algonque, Delaware, and Mingo",
+          "score": 0.40334243964319066
+        },
+        {
+          "memory": "The Iroquois Confederation dominated much of present day Upstate New York and the Ohio Country",
+          "score": 0.30372233823106576
+        },
+        {
+          "memory": "The Mika Maku and the Abanaki still held sway in parts of Novascotia, Acadia, and the Eastern portions of the Province of Canada",
+          "score": 0.3028626408218462
+        },
+        {
+          "memory": "The Iroquois Confederation also included populations of Delaware and Shane",
+          "score": 0.2975739139667378
+        },
+        {
+          "memory": "The Mika Maku and the Abanaki were engaged in Father Laleutre's War",
+          "score": 0.2037118343715587
+        }
+      ],
+      "add_time": 22.706,
+      "search_time": 0.408,
+      "answer_time": 0.986,
+      "total_time": 24.1,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.5,
+      "llm": 0
+    },
+    {
+      "idx": 62,
+      "user_id": "eval_62_b7dfb533",
+      "question": "What commemorates Warsaw's heroic history?",
+      "ground_truth": "many places",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.502,
+      "search_time": 0.525,
+      "answer_time": 0.0,
+      "total_time": 61.027,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 63,
+      "user_id": "eval_63_3a4827c6",
+      "question": "What fortification was built in the 19th century after the defeat of the November Uprising?",
+      "ground_truth": "the warsaw citadel",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 58.725,
+      "search_time": 0.52,
+      "answer_time": 0.0,
+      "total_time": 59.245,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 64,
+      "user_id": "eval_64_af73fbac",
+      "question": "Who does the statue of Little Insurgent commemorate?",
+      "ground_truth": "children",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.782,
+      "search_time": 0.291,
+      "answer_time": 0.0,
+      "total_time": 60.073,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 65,
+      "user_id": "eval_65_7e3a8d19",
+      "question": "What monument is in memory of the largest insurrection of WWII?",
+      "ground_truth": "warsaw uprising monument",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.948,
+      "search_time": 0.279,
+      "answer_time": 0.0,
+      "total_time": 60.227,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 66,
+      "user_id": "eval_66_1af6f669",
+      "question": "What was Genghis Khan's tribes burial custom?",
+      "ground_truth": "buried without markings",
+      "prediction": "Burial without markings",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Genghis Khan asked to be buried without markings according to the customs of his tribe",
+          "score": 0.7923854436001384
+        },
+        {
+          "memory": "Genghis Khan's body was returned to Mongolia and presumably to his birthplace in Kente Imog",
+          "score": 0.645647278222004
+        },
+        {
+          "memory": "The Genghis Khan Mausoleum was constructed many years after his death as his memorial, but not his burial site",
+          "score": 0.5936517558961943
+        },
+        {
+          "memory": "Many assume Genghis Khan is buried somewhere close to the Onen River in the Berken Kalden mountain part of the Kente mountain range",
+          "score": 0.5769124852147145
+        },
+        {
+          "memory": "Genghis Khan was a Mongol emperor",
+          "score": 0.5080289180400115
+        },
+        {
+          "memory": "According to legend, the funeral escort killed anyone and anything across their path to conceal where he was finally buried",
+          "score": 0.4670657864004941
+        }
+      ],
+      "add_time": 17.026,
+      "search_time": 0.262,
+      "answer_time": 0.939,
+      "total_time": 18.227,
+      "em": 0,
+      "f1": 0.6667,
+      "bleu": 0.6667,
+      "llm": 1
+    },
+    {
+      "idx": 67,
+      "user_id": "eval_67_7467a39d",
+      "question": "What is Raghuram Rajan's career?",
+      "ground_truth": "economist",
+      "prediction": "Economist",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle income earners",
+          "score": 0.2804580220772265
+        },
+        {
+          "memory": "Easier credit has been extended to keep unemployment rates low",
+          "score": 0.26478896294465054
+        },
+        {
+          "memory": "This has given the American economy a tendency to go from bubble to bubble",
+          "score": 0.2530806146961023
+        },
+        {
+          "memory": "Unsustainable monetary stimulation has fueled these bubbles",
+          "score": 0.1918891569903518
+        },
+        {
+          "memory": "The financial crisis of 2008 is the most recent example",
+          "score": 0.18548231462993006
+        },
+        {
+          "memory": "Systematic economic inequalities have created deep financial fault lines",
+          "score": 0.174068759693243
+        },
+        {
+          "memory": "Financial crises are more likely to happen due to these fault lines",
+          "score": 0.15259596206497117
+        }
+      ],
+      "add_time": 17.099,
+      "search_time": 0.38,
+      "answer_time": 0.906,
+      "total_time": 18.386,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 68,
+      "user_id": "eval_68_78cc5c39",
+      "question": "What does Rajan feel has created deep financial fault lines?",
+      "ground_truth": "systematic economic inequalities",
+      "prediction": "Systematic economic inequalities",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Systematic economic inequalities have created deep financial fault lines",
+          "score": 0.6582756460134329
+        },
+        {
+          "memory": "Financial crises are more likely to happen due to these fault lines",
+          "score": 0.6239072105331827
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle income earners",
+          "score": 0.4050770560351823
+        },
+        {
+          "memory": "Unsustainable monetary stimulation has fueled these bubbles",
+          "score": 0.39562288725479466
+        },
+        {
+          "memory": "This has given the American economy a tendency to go from bubble to bubble",
+          "score": 0.38683777691235827
+        },
+        {
+          "memory": "The financial crisis of 2008 is the most recent example",
+          "score": 0.3654498031265325
+        },
+        {
+          "memory": "Easier credit has been extended to keep unemployment rates low",
+          "score": 0.2851728136193765
+        }
+      ],
+      "add_time": 17.054,
+      "search_time": 0.535,
+      "answer_time": 0.914,
+      "total_time": 18.503,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 69,
+      "user_id": "eval_69_9f177890",
+      "question": "What has given the American economy a tendency to go \"from bubble to bubble\"?",
+      "ground_truth": "easier credit",
+      "prediction": "Easier credit",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "This has given the American economy a tendency to go from bubble to bubble",
+          "score": 0.8967099758925875
+        },
+        {
+          "memory": "Unsustainable monetary stimulation has fueled these bubbles",
+          "score": 0.6117055652459256
+        },
+        {
+          "memory": "Easier credit has been extended to keep unemployment rates low",
+          "score": 0.3897332221011543
+        },
+        {
+          "memory": "Financial crises are more likely to happen due to these fault lines",
+          "score": 0.38099969895032537
+        },
+        {
+          "memory": "Political pressure has developed to extend easier credit to lower and middle income earners",
+          "score": 0.3703870089445138
+        },
+        {
+          "memory": "Systematic economic inequalities have created deep financial fault lines",
+          "score": 0.3671327062706544
+        },
+        {
+          "memory": "The financial crisis of 2008 is the most recent example",
+          "score": 0.355061241447724
+        }
+      ],
+      "add_time": 17.501,
+      "search_time": 0.265,
+      "answer_time": 0.885,
+      "total_time": 18.651,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 70,
+      "user_id": "eval_70_1a18ce4f",
+      "question": "What Yuan policies did Muslims dislike?",
+      "ground_truth": "circumcision",
+      "prediction": "Restrictions on Hulal slaughter and other Islamic practices",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The UAN Emperors severely discriminated against Muslims",
+          "score": 0.5888211822852298
+        },
+        {
+          "memory": "Muslims played an important role in overthrowing the Mongels",
+          "score": 0.4672844820953554
+        },
+        {
+          "memory": "Restrictions on Hulal slaughter and other Islamic practices were imposed",
+          "score": 0.45479850887518447
+        },
+        {
+          "memory": "The Han Chinese gave Muslims a surname as a thank you for their assistance",
+          "score": 0.44418392286151775
+        },
+        {
+          "memory": "Muslim generals like Lan U defeated the Mongels in combat",
+          "score": 0.4326675465286117
+        },
+        {
+          "memory": "Muslim generals joined the Han Chinese in rebelling against the Mongels",
+          "score": 0.42772598484740487
+        },
+        {
+          "memory": "The I S P A H Rebellion was crushed and Muslims were massacred by UAN loyalist commander Chen Uting",
+          "score": 0.40469436974809564
+        },
+        {
+          "memory": "Muslims revolted against the UAN Dynasty in the I S P A H Rebellion",
+          "score": 0.39861841639985496
+        },
+        {
+          "memory": "Many Muslim communities had a Chinese surname, meaning 'barracks' or 'thanks'",
+          "score": 0.3840871361179893
+        },
+        {
+          "memory": "Circumcision and Cocher butchering were forbidden for Jews",
+          "score": 0.23195725640539958
+        }
+      ],
+      "add_time": 26.343,
+      "search_time": 0.282,
+      "answer_time": 1.066,
+      "total_time": 27.691,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 71,
+      "user_id": "eval_71_eff0f351",
+      "question": "What Jewish practice did the Yuan ban?",
+      "ground_truth": "kosher butchering",
+      "prediction": "Circumcision",
+      "num_memories_added": 10,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Circumcision and Cocher butchering were forbidden for Jews",
+          "score": 0.4763501313183419
+        },
+        {
+          "memory": "Restrictions on Hulal slaughter and other Islamic practices were imposed",
+          "score": 0.45653596457301315
+        },
+        {
+          "memory": "The UAN Emperors severely discriminated against Muslims",
+          "score": 0.4468491365947177
+        },
+        {
+          "memory": "The Han Chinese gave Muslims a surname as a thank you for their assistance",
+          "score": 0.3545481535789444
+        },
+        {
+          "memory": "Muslim generals like Lan U defeated the Mongels in combat",
+          "score": 0.3319211470642579
+        },
+        {
+          "memory": "Muslims played an important role in overthrowing the Mongels",
+          "score": 0.3312790618879121
+        },
+        {
+          "memory": "Muslim generals joined the Han Chinese in rebelling against the Mongels",
+          "score": 0.32005523347540404
+        },
+        {
+          "memory": "Many Muslim communities had a Chinese surname, meaning 'barracks' or 'thanks'",
+          "score": 0.31048033307169925
+        },
+        {
+          "memory": "The I S P A H Rebellion was crushed and Muslims were massacred by UAN loyalist commander Chen Uting",
+          "score": 0.2885388913385514
+        },
+        {
+          "memory": "Muslims revolted against the UAN Dynasty in the I S P A H Rebellion",
+          "score": 0.2655425019531469
+        }
+      ],
+      "add_time": 26.595,
+      "search_time": 0.31,
+      "answer_time": 0.99,
+      "total_time": 27.895,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 72,
+      "user_id": "eval_72_1a5238e3",
+      "question": "How are the certain costs which are difficult to avoid shared?",
+      "ground_truth": "by everyone",
+      "prediction": "Borrowed",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Certain costs are difficult to avoid and are shared by everyone, such as the costs of housing, pensions, education, and healthcare",
+          "score": 0.7573885400378939
+        },
+        {
+          "memory": "If the state does not provide these services, then for those on lower incomes, the costs must be borrowed",
+          "score": 0.4049353453981339
+        },
+        {
+          "memory": "Those on lower incomes are often worse equipped to manage their finances",
+          "score": 0.32977064206794193
+        },
+        {
+          "memory": "One method of achieving this aspiration is by taking on debt",
+          "score": 0.31238345230311104
+        },
+        {
+          "memory": "This result leads to even greater inequality and potential economic instability",
+          "score": 0.22009916401255922
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by their wealthier counterparts",
+          "score": 0.20993502247130663
+        }
+      ],
+      "add_time": 17.008,
+      "search_time": 0.525,
+      "answer_time": 0.884,
+      "total_time": 18.418,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 73,
+      "user_id": "eval_73_9bfe2646",
+      "question": "What are those with lower incomes often unable to manage?",
+      "ground_truth": "finances",
+      "prediction": "Finances",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Those on lower incomes are often worse equipped to manage their finances",
+          "score": 0.7672466452553093
+        },
+        {
+          "memory": "If the state does not provide these services, then for those on lower incomes, the costs must be borrowed",
+          "score": 0.5176475900520421
+        },
+        {
+          "memory": "Certain costs are difficult to avoid and are shared by everyone, such as the costs of housing, pensions, education, and healthcare",
+          "score": 0.3985505832872206
+        },
+        {
+          "memory": "This result leads to even greater inequality and potential economic instability",
+          "score": 0.34161710444736876
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by their wealthier counterparts",
+          "score": 0.33958571196289467
+        },
+        {
+          "memory": "One method of achieving this aspiration is by taking on debt",
+          "score": 0.3298799171416459
+        }
+      ],
+      "add_time": 17.758,
+      "search_time": 0.528,
+      "answer_time": 0.892,
+      "total_time": 19.178,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 74,
+      "user_id": "eval_74_804b869c",
+      "question": "When people take on debt, it leads potentially to what?",
+      "ground_truth": "greater inequality and potential economic instability",
+      "prediction": "Economic instability",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "One method of achieving this aspiration is by taking on debt",
+          "score": 0.5976669026782713
+        },
+        {
+          "memory": "This result leads to even greater inequality and potential economic instability",
+          "score": 0.4687739361821517
+        },
+        {
+          "memory": "Those on lower incomes are often worse equipped to manage their finances",
+          "score": 0.4077227091265633
+        },
+        {
+          "memory": "If the state does not provide these services, then for those on lower incomes, the costs must be borrowed",
+          "score": 0.3943920156480445
+        },
+        {
+          "memory": "Aspirational consumption describes the process of middle-income earners aspiring to achieve the standards of living enjoyed by their wealthier counterparts",
+          "score": 0.34625896728598116
+        },
+        {
+          "memory": "Certain costs are difficult to avoid and are shared by everyone, such as the costs of housing, pensions, education, and healthcare",
+          "score": 0.3205550394125214
+        }
+      ],
+      "add_time": 17.693,
+      "search_time": 0.279,
+      "answer_time": 0.912,
+      "total_time": 18.884,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 1.0,
+      "llm": 0
+    },
+    {
+      "idx": 75,
+      "user_id": "eval_75_ac88d5ad",
+      "question": "Who did Tesla think would run the world of the future?",
+      "ground_truth": "women",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 2.179,
+      "search_time": 0.24,
+      "answer_time": 0.0,
+      "total_time": 2.419,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 76,
+      "user_id": "eval_76_14944f17",
+      "question": "What term did he use for what he believed would be humanity's future rulers?",
+      "ground_truth": "queen bees",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 0.684,
+      "search_time": 0.247,
+      "answer_time": 0.0,
+      "total_time": 0.931,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 77,
+      "user_id": "eval_77_d5375259",
+      "question": "Which South Asian island nation is represented in the V&A collection?",
+      "ground_truth": "thailand",
+      "prediction": "Sri Lanka",
+      "num_memories_added": 17,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Items in the display include art from Tyland Berma, Cambodia, Indonesia, and Sri Lanka",
+          "score": 0.5216488282689913
+        },
+        {
+          "memory": "The displays reflect the influence of India on the sculptures",
+          "score": 0.43223785108126034
+        },
+        {
+          "memory": "The Smaller Galleries cover Carea, the Himalayan Kingdoms, and Southeast Asia",
+          "score": 0.4303535913793159
+        },
+        {
+          "memory": "Items in the display include important early Nepalese bronze sculptures",
+          "score": 0.39499762094192614
+        },
+        {
+          "memory": "Items on show include ivory combs",
+          "score": 0.3620376921416744
+        },
+        {
+          "memory": "Items on show include bronze palanquin hooks",
+          "score": 0.3573322726363878
+        },
+        {
+          "memory": "Items in the display include Ripposay work and embroidery",
+          "score": 0.33105731044045883
+        },
+        {
+          "memory": "Items in the display include gold, silver, bronze, stone, terracotta, and ivory",
+          "score": 0.31406929660344074
+        },
+        {
+          "memory": "Items in the display include Tobetand art from the Fourteenth to the Nineteenth Century",
+          "score": 0.3015338218594439
+        },
+        {
+          "memory": "Items in the display include ritual objects",
+          "score": 0.2980847480986758
+        }
+      ],
+      "add_time": 34.557,
+      "search_time": 0.292,
+      "answer_time": 0.98,
+      "total_time": 35.83,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 78,
+      "user_id": "eval_78_1a483cf2",
+      "question": "Some of the combs in the V&A collection of South East Asian art is made of what material?",
+      "ground_truth": "ivory",
+      "prediction": "Ivory",
+      "num_memories_added": 17,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Items on show include ivory combs",
+          "score": 0.5811674684462029
+        },
+        {
+          "memory": "Items in the display include art from Tyland Berma, Cambodia, Indonesia, and Sri Lanka",
+          "score": 0.44004727861331006
+        },
+        {
+          "memory": "Items on show include bronze palanquin hooks",
+          "score": 0.4211335855308753
+        },
+        {
+          "memory": "Items in the display include gold, silver, bronze, stone, terracotta, and ivory",
+          "score": 0.3971928226356283
+        },
+        {
+          "memory": "Items in the display include important early Nepalese bronze sculptures",
+          "score": 0.3865668093761376
+        },
+        {
+          "memory": "Items on show include beetle nut cutters",
+          "score": 0.38471436060620334
+        },
+        {
+          "memory": "Items in the display include wood and bronze scroll paintings",
+          "score": 0.37049599800562616
+        },
+        {
+          "memory": "The displays reflect the influence of India on the sculptures",
+          "score": 0.35221248696798857
+        },
+        {
+          "memory": "Items in the display include Ripposay work and embroidery",
+          "score": 0.3424615937206112
+        },
+        {
+          "memory": "Carea displays include gleaming boxes inlaid with mother of pearl",
+          "score": 0.3379579198015634
+        }
+      ],
+      "add_time": 37.456,
+      "search_time": 0.284,
+      "answer_time": 0.981,
+      "total_time": 38.722,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 79,
+      "user_id": "eval_79_94173ca8",
+      "question": "Where did Mongke Khan attack the Song dynasty?",
+      "ground_truth": "southern china",
+      "prediction": "Southern China",
+      "num_memories_added": 12,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "Mon Kan commenced a military campaign against the Chinese Song Dynasty in Southern China",
+          "score": 0.5669366679777232
+        },
+        {
+          "memory": "The Mongal force that invaded Southern China was far greater than the force they sent to invade the Middle East in 1256",
+          "score": 0.4900017250678528
+        },
+        {
+          "memory": "The civil strife had permanently divided the Mongel Empire",
+          "score": 0.43410928370264823
+        },
+        {
+          "memory": "A rival cural ti an Mongolia proclaimed Ariku Bok Great Kon, beginning a civil war",
+          "score": 0.42636152904083446
+        },
+        {
+          "memory": "Cooblay returned from fighting the Song in 1260 when he learned that his brother Ariku Bok was challenging his claim to the throne",
+          "score": 0.38712546338188764
+        },
+        {
+          "memory": "Ariku Bok was hampered by inadequate supplies and surrendered in 1264",
+          "score": 0.30795628753186133
+        },
+        {
+          "memory": "All of the three Western Konates (Golden Horde, Chagatai Konate, and El Konate) became functionally autonomous",
+          "score": 0.28558981477979345
+        },
+        {
+          "memory": "Mon Kan died in 1259 without a successor",
+          "score": 0.26912385481339773
+        },
+        {
+          "memory": "Cooblay depended on the cooperation of his Chinese subjects to insure that his army received ample resources",
+          "score": 0.22260793877066345
+        },
+        {
+          "memory": "Cooblay convened a cural ti in Kiping that elected him Great Kon",
+          "score": 0.19902756140222375
+        }
+      ],
+      "add_time": 33.647,
+      "search_time": 0.316,
+      "answer_time": 0.997,
+      "total_time": 34.96,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 80,
+      "user_id": "eval_80_50c9ebb5",
+      "question": "How many electorates does the State of Victoria have?",
+      "ground_truth": "eight",
+      "prediction": "8",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The State of Victoria was divided into eight electorates with each electorate represented by five representatives elected by single transferable vote",
+          "score": 0.7634111403362667
+        },
+        {
+          "memory": "The Victorian Legislative Council Elections were held in November 2006 under a new multi-member proportional representation system",
+          "score": 0.5445389571660428
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.5418586802576654
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22-member electorates",
+          "score": 0.41457799405709167
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.2755782579436117
+        },
+        {
+          "memory": "The term of office for Upper House members is now the same as the Lower House members, which is four years",
+          "score": 0.19779198995496466
+        }
+      ],
+      "add_time": 19.353,
+      "search_time": 0.275,
+      "answer_time": 0.889,
+      "total_time": 20.517,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 81,
+      "user_id": "eval_81_067581ba",
+      "question": "How many representatives does each electorate have?",
+      "ground_truth": "five",
+      "prediction": "5",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The State of Victoria was divided into eight electorates with each electorate represented by five representatives elected by single transferable vote",
+          "score": 0.5502758927627767
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22-member electorates",
+          "score": 0.4742633849383804
+        },
+        {
+          "memory": "The Victorian Legislative Council Elections were held in November 2006 under a new multi-member proportional representation system",
+          "score": 0.41464621852616257
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.3776747450427734
+        },
+        {
+          "memory": "The term of office for Upper House members is now the same as the Lower House members, which is four years",
+          "score": 0.3345835429708797
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.3010034458409767
+        }
+      ],
+      "add_time": 18.676,
+      "search_time": 0.307,
+      "answer_time": 0.902,
+      "total_time": 19.885,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 82,
+      "user_id": "eval_82_8095fcdf",
+      "question": "What is the term of office for each house member?",
+      "ground_truth": "four years",
+      "prediction": "Four years",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "The term of office for Upper House members is now the same as the Lower House members, which is four years",
+          "score": 0.6669068813632963
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22-member electorates",
+          "score": 0.42737441883198335
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.33975958756901725
+        },
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.28048056393860377
+        },
+        {
+          "memory": "The Victorian Legislative Council Elections were held in November 2006 under a new multi-member proportional representation system",
+          "score": 0.26334102171354906
+        },
+        {
+          "memory": "The State of Victoria was divided into eight electorates with each electorate represented by five representatives elected by single transferable vote",
+          "score": 0.2618992973141997
+        }
+      ],
+      "add_time": 19.617,
+      "search_time": 0.524,
+      "answer_time": 0.901,
+      "total_time": 21.041,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 83,
+      "user_id": "eval_83_f72ab3cb",
+      "question": "How often are elections held for the Victorian Parliament?",
+      "ground_truth": "every four years",
+      "prediction": "Every four years",
+      "num_memories_added": 6,
+      "num_memories_retrieved": 6,
+      "retrieved_memories": [
+        {
+          "memory": "Elections for the Victorian Parliament are now fixed and occur in November every four years",
+          "score": 0.7955415557315817
+        },
+        {
+          "memory": "The State of Victoria was divided into eight electorates with each electorate represented by five representatives elected by single transferable vote",
+          "score": 0.5822672756334264
+        },
+        {
+          "memory": "The Victorian Legislative Council Elections were held in November 2006 under a new multi-member proportional representation system",
+          "score": 0.5813758299760263
+        },
+        {
+          "memory": "Prior to the 2006 election, the Legislative Council consisted of 44 members elected to eight-year terms from 22-member electorates",
+          "score": 0.4117543728028835
+        },
+        {
+          "memory": "The term of office for Upper House members is now the same as the Lower House members, which is four years",
+          "score": 0.38170985933418267
+        },
+        {
+          "memory": "The total number of Upper House members was reduced from 44 to 40",
+          "score": 0.23159661701869264
+        }
+      ],
+      "add_time": 19.138,
+      "search_time": 0.45,
+      "answer_time": 0.928,
+      "total_time": 20.517,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 84,
+      "user_id": "eval_84_eff093d8",
+      "question": "What advancements besides military technology did Europe achieve?",
+      "ground_truth": "communication",
+      "prediction": "Chemical discoveries",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.7447102382227442
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.5851957778253764
+        },
+        {
+          "memory": "Innovations in machinery enabled the manufacture of improved firearms",
+          "score": 0.44181668764080123
+        },
+        {
+          "memory": "European chemists made deadly explosives",
+          "score": 0.33531931297260575
+        },
+        {
+          "memory": "Armed forces in less developed countries were still using archery, swords, and leather shields",
+          "score": 0.32045488447818465
+        },
+        {
+          "memory": "The machine gun became an effective battlefield weapon by the 1880s",
+          "score": 0.2889524263931534
+        },
+        {
+          "memory": "The Zulus in Southern Africa were fighting with these weapons during the Anglo-Zulu War of 1879",
+          "score": 0.1700485307044279
+        }
+      ],
+      "add_time": 17.185,
+      "search_time": 0.307,
+      "answer_time": 0.902,
+      "total_time": 18.394,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 85,
+      "user_id": "eval_85_66745f13",
+      "question": "What did European chemists make that could be used in warfare?",
+      "ground_truth": "deadly explosives",
+      "prediction": "Deadly explosives",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "European chemists made deadly explosives",
+          "score": 0.6795317452964585
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.563325628271612
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.5249191413876688
+        },
+        {
+          "memory": "Innovations in machinery enabled the manufacture of improved firearms",
+          "score": 0.38134321673719335
+        },
+        {
+          "memory": "Armed forces in less developed countries were still using archery, swords, and leather shields",
+          "score": 0.35183524516700304
+        },
+        {
+          "memory": "The machine gun became an effective battlefield weapon by the 1880s",
+          "score": 0.3342227566275553
+        },
+        {
+          "memory": "The Zulus in Southern Africa were fighting with these weapons during the Anglo-Zulu War of 1879",
+          "score": 0.28959975668189586
+        }
+      ],
+      "add_time": 18.182,
+      "search_time": 0.277,
+      "answer_time": 0.901,
+      "total_time": 19.359,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 86,
+      "user_id": "eval_86_e19135ea",
+      "question": "what was invented in 1880 that revolutionized warfare?",
+      "ground_truth": "machine gun",
+      "prediction": "Machine gun",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The machine gun became an effective battlefield weapon by the 1880s",
+          "score": 0.6223422578986919
+        },
+        {
+          "memory": "Innovations in machinery enabled the manufacture of improved firearms",
+          "score": 0.5589122076815447
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.4908648593744053
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.4617042802958661
+        },
+        {
+          "memory": "Armed forces in less developed countries were still using archery, swords, and leather shields",
+          "score": 0.34889235303746174
+        },
+        {
+          "memory": "The Zulus in Southern Africa were fighting with these weapons during the Anglo-Zulu War of 1879",
+          "score": 0.3389613094639926
+        },
+        {
+          "memory": "European chemists made deadly explosives",
+          "score": 0.26323590137759834
+        }
+      ],
+      "add_time": 17.292,
+      "search_time": 0.356,
+      "answer_time": 0.888,
+      "total_time": 18.536,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 87,
+      "user_id": "eval_87_e007caa3",
+      "question": "What weapons were the Zulus using during the Anglo-Zulu War of 1879?",
+      "ground_truth": "arrows swords and leather shields",
+      "prediction": "Armed forces in less developed countries were still using archery, swords, and leather shields.",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The Zulus in Southern Africa were fighting with these weapons during the Anglo-Zulu War of 1879",
+          "score": 0.8774820077735153
+        },
+        {
+          "memory": "The machine gun became an effective battlefield weapon by the 1880s",
+          "score": 0.3828707059518843
+        },
+        {
+          "memory": "Armed forces in less developed countries were still using archery, swords, and leather shields",
+          "score": 0.3493550023774695
+        },
+        {
+          "memory": "Innovations in machinery enabled the manufacture of improved firearms",
+          "score": 0.29439791718914654
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.2844322998437444
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.22338329010672978
+        },
+        {
+          "memory": "European chemists made deadly explosives",
+          "score": 0.17960725757517199
+        }
+      ],
+      "add_time": 18.05,
+      "search_time": 0.295,
+      "answer_time": 1.065,
+      "total_time": 19.41,
+      "em": 0,
+      "f1": 0.4211,
+      "bleu": 0.1429,
+      "llm": 0
+    },
+    {
+      "idx": 88,
+      "user_id": "eval_88_115f6da8",
+      "question": "Which region invented the machine gun?",
+      "ground_truth": "european",
+      "prediction": "Europe",
+      "num_memories_added": 7,
+      "num_memories_retrieved": 7,
+      "retrieved_memories": [
+        {
+          "memory": "The machine gun became an effective battlefield weapon by the 1880s",
+          "score": 0.5795802205061964
+        },
+        {
+          "memory": "Innovations in machinery enabled the manufacture of improved firearms",
+          "score": 0.5535737392142543
+        },
+        {
+          "memory": "Europe continued to advance in military technology",
+          "score": 0.39357765476037465
+        },
+        {
+          "memory": "This technology gave European armies an advantage over their opponents",
+          "score": 0.39049716332944284
+        },
+        {
+          "memory": "The Zulus in Southern Africa were fighting with these weapons during the Anglo-Zulu War of 1879",
+          "score": 0.2975768583002034
+        },
+        {
+          "memory": "Armed forces in less developed countries were still using archery, swords, and leather shields",
+          "score": 0.2644752166748922
+        },
+        {
+          "memory": "European chemists made deadly explosives",
+          "score": 0.26411238541314985
+        }
+      ],
+      "add_time": 18.642,
+      "search_time": 0.359,
+      "answer_time": 0.88,
+      "total_time": 19.881,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 89,
+      "user_id": "eval_89_3d14e78b",
+      "question": "What inventor built on to the findings of Philo of  Byzantium?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 61.531,
+      "search_time": 0.311,
+      "answer_time": 0.0,
+      "total_time": 61.842,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 90,
+      "user_id": "eval_90_51563ff9",
+      "question": "Pneumatica was written by what Greek writer?",
+      "ground_truth": "philo",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.398,
+      "search_time": 0.532,
+      "answer_time": 0.0,
+      "total_time": 59.93,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 91,
+      "user_id": "eval_91_37b06d52",
+      "question": "What early Greek wrote about experiments on air and combustion?",
+      "ground_truth": "philo",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.126,
+      "search_time": 0.367,
+      "answer_time": 0.0,
+      "total_time": 60.493,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 92,
+      "user_id": "eval_92_0afae1b5",
+      "question": "What did Philo incorrectly assume that the air became?",
+      "ground_truth": "fire",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 60.157,
+      "search_time": 0.316,
+      "answer_time": 0.0,
+      "total_time": 60.473,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 93,
+      "user_id": "eval_93_c4d45ca8",
+      "question": "What famous artist later further investigated Philo's experiments?",
+      "ground_truth": "leonardo da vinci",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.942,
+      "search_time": 0.875,
+      "answer_time": 0.0,
+      "total_time": 60.817,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 94,
+      "user_id": "eval_94_c043ac46",
+      "question": "Of what did da Vinci think a part  was consumed during combustion?",
+      "ground_truth": "air",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 59.799,
+      "search_time": 0.524,
+      "answer_time": 0.0,
+      "total_time": 60.323,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 95,
+      "user_id": "eval_95_5df86588",
+      "question": "What country did the Normans invade in 1169?",
+      "ground_truth": "ireland",
+      "prediction": "Ireland",
+      "num_memories_added": 19,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Normans invaded Ireland in 1169",
+          "score": 0.8203173131747139
+        },
+        {
+          "memory": "The Normans settled mainly in the east of Ireland",
+          "score": 0.5874752236895919
+        },
+        {
+          "memory": "The Normans were subsumed into Irish culture over time",
+          "score": 0.5764711904464741
+        },
+        {
+          "memory": "The Normans maintained a distinct culture and ethnicity initially",
+          "score": 0.550302285586243
+        },
+        {
+          "memory": "The Normans built many castles and settlements in Ireland",
+          "score": 0.5490596527833007
+        },
+        {
+          "memory": "The first Norman settlements were established in the southern part of County Wexford",
+          "score": 0.4738722884075385
+        },
+        {
+          "memory": "Norman surnames are also found in other parts of Ireland",
+          "score": 0.4526879142603665
+        },
+        {
+          "memory": "The Norman name Gibbons is derived from the Irish name Gib",
+          "score": 0.4276811285552374
+        },
+        {
+          "memory": "The Norman name Fitz indicates Norman ancestry",
+          "score": 0.42431282179016283
+        },
+        {
+          "memory": "Norman surnames are particularly common in the southeast of Ireland",
+          "score": 0.42281071992767966
+        }
+      ],
+      "add_time": 41.866,
+      "search_time": 0.336,
+      "answer_time": 0.928,
+      "total_time": 43.131,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 96,
+      "user_id": "eval_96_85d734f7",
+      "question": "What culture did the Normans combine with in Ireland?",
+      "ground_truth": "irish",
+      "prediction": "Irish",
+      "num_memories_added": 19,
+      "num_memories_retrieved": 10,
+      "retrieved_memories": [
+        {
+          "memory": "The Normans were subsumed into Irish culture over time",
+          "score": 0.7947506212146382
+        },
+        {
+          "memory": "The Normans settled mainly in the east of Ireland",
+          "score": 0.7240519737532947
+        },
+        {
+          "memory": "The Normans built many castles and settlements in Ireland",
+          "score": 0.7034453552421349
+        },
+        {
+          "memory": "The Normans invaded Ireland in 1169",
+          "score": 0.6784820368580429
+        },
+        {
+          "memory": "The Normans maintained a distinct culture and ethnicity initially",
+          "score": 0.6567363186157538
+        },
+        {
+          "memory": "Norman surnames are also found in other parts of Ireland",
+          "score": 0.6244675901761239
+        },
+        {
+          "memory": "Norman surnames are particularly common in the southeast of Ireland",
+          "score": 0.6102571084774058
+        },
+        {
+          "memory": "The Norman name Mor is derived from the Irish name Mor",
+          "score": 0.5416410295460066
+        },
+        {
+          "memory": "The first Norman settlements were established in the southern part of County Wexford",
+          "score": 0.500453747432286
+        },
+        {
+          "memory": "The Norman name Gibbons is derived from the Irish name Gib",
+          "score": 0.4752312681846632
+        }
+      ],
+      "add_time": 48.114,
+      "search_time": 0.323,
+      "answer_time": 0.952,
+      "total_time": 49.389,
+      "em": 1,
+      "f1": 1.0,
+      "bleu": 1.0,
+      "llm": 1
+    },
+    {
+      "idx": 97,
+      "user_id": "eval_97_d5dd7d4e",
+      "question": "What happened to his lab?",
+      "ground_truth": "his lab was torn down",
+      "prediction": "Sold",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "The lab was sold to satisfy a debt",
+          "score": 0.5853572336924995
+        },
+        {
+          "memory": "The contents of Testla's lab were sold two years later to satisfy a debt",
+          "score": 0.5313733294355965
+        },
+        {
+          "memory": "The lab was torn down in 1904",
+          "score": 0.5235919840371331
+        },
+        {
+          "memory": "Testla left Colorado Springs on January 7, 1904",
+          "score": 0.23260723112553655
+        }
+      ],
+      "add_time": 11.311,
+      "search_time": 0.374,
+      "answer_time": 0.799,
+      "total_time": 12.484,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    },
+    {
+      "idx": 98,
+      "user_id": "eval_98_299a3d7a",
+      "question": "What happened to the things inside the lab after it was torn down?",
+      "ground_truth": "sold",
+      "prediction": "The contents were sold.",
+      "num_memories_added": 4,
+      "num_memories_retrieved": 4,
+      "retrieved_memories": [
+        {
+          "memory": "The lab was torn down in 1904",
+          "score": 0.6829229940599472
+        },
+        {
+          "memory": "The contents of Testla's lab were sold two years later to satisfy a debt",
+          "score": 0.514126547989868
+        },
+        {
+          "memory": "The lab was sold to satisfy a debt",
+          "score": 0.5107401003983258
+        },
+        {
+          "memory": "Testla left Colorado Springs on January 7, 1904",
+          "score": 0.21141878802044162
+        }
+      ],
+      "add_time": 11.332,
+      "search_time": 0.31,
+      "answer_time": 0.83,
+      "total_time": 12.472,
+      "em": 0,
+      "f1": 0.5,
+      "bleu": 0.0,
+      "llm": 1
+    },
+    {
+      "idx": 99,
+      "user_id": "eval_99_52d0c2a1",
+      "question": "Where were the Germanic tribes originally located?",
+      "ground_truth": "scandinavia and northern europe",
+      "prediction": "I don't know",
+      "num_memories_added": 0,
+      "num_memories_retrieved": 0,
+      "retrieved_memories": [],
+      "add_time": 62.749,
+      "search_time": 0.519,
+      "answer_time": 0.0,
+      "total_time": 63.268,
+      "em": 0,
+      "f1": 0.0,
+      "bleu": 0.0,
+      "llm": 0
+    }
+  ]
+}
