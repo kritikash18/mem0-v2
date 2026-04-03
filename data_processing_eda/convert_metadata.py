@@ -1,6 +1,6 @@
 import json
 
-nb_path = "EDA_Spoken_SQuAD_v2.ipynb"
+nb_path = "EDA_Spoken_SQuAD_v3.ipynb"
 
 with open(nb_path, "r", encoding="utf-8") as f:
     nb = json.load(f)
