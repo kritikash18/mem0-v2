@@ -1,10 +1,10 @@
 # Supporting Multimodality in Long-Term Memory Mechanisms
 
-**Author:** Kritika Sharma
-**Supervisor:** Dr. Dattatraya Parle
-**Institution:** Liverpool John Moores University
-**Programme:** Masters in Artificial Intelligence
-**Year:** 2025
+**Author:** Kritika Sharma <br>
+**Supervisor:** Dr. Dattatraya Parle <br>
+**Institution:** Liverpool John Moores University <br>
+**Programme:** Masters in Artificial Intelligence <br>
+**Year:** 2025 <br>
 
 ---
 
